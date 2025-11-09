@@ -1,0 +1,97 @@
+{
+  "model_name": "google/gemma-3-4b-pt",
+  "concepts": [
+    "Physical",
+    "Quantity",
+    "Proposition",
+    "Entity",
+    "Process",
+    "Object",
+    "Attribute",
+    "Relation",
+    "List",
+    "Collection",
+    "Abstract"
+  ],
+  "test_prompts": [
+    "Tell me about",
+    "Let me explain",
+    "Consider the following:",
+    "In my opinion,",
+    "The main thing is"
+  ],
+  "test_strengths": [
+    -1.0,
+    -0.5,
+    -0.25,
+    0.0,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "scales": [
+    {
+      "n_samples": 4,
+      "n_defs_per_concept": 2,
+      "n_rels_per_concept": 2,
+      "f1_score": 0.48777242737627213,
+      "spearman_rho": 0.0,
+      "pearson_r": -0.06113786311863939,
+      "coherence_rate": 1.0,
+      "se_score": -0.030568931559319695,
+      "delta_slope": 6.181658007522653e-19,
+      "delta_values": [
+        0.01153247058391571,
+        0.011933594942092896,
+        0.03759761154651642,
+        0.01153247058391571,
+        0.011933594942092896,
+        0.03759761154651642,
+        0.01153247058391571,
+        0.011933594942092896,
+        0.03759761154651642,
+        0.023923587054014206,
+        0.02315405011177063,
+        0.031099997460842133,
+        0.01153247058391571,
+        0.011933594942092896,
+        0.03759761154651642,
+        0.01153247058391571,
+        0.011933594942092896,
+        0.03759761154651642,
+        0.01153247058391571,
+        0.011933594942092896,
+        0.03759761154651642
+      ],
+      "train_time_seconds": 42.11746048927307,
+      "train_vram_gb": 17.227769344,
+      "sample_outputs": {
+        "Physical": [
+          "Tell me about your experience with the 2018 Toyota Camry.\n\nI have a 2018 Camry SE. I love it. It's a",
+          "Let me explain.\n\nI have a 2005 335i with 100k miles. I have had the car for 3 years and have put 20k",
+          "Consider the following:\n\n<code>class A {\n    public:\n        A() {\n            std::cout << \"A()\" <<",
+          "Tell me about your experience with the 2018 Toyota Camry.\n\nI have a 2018 Camry SE. I love it. It's a",
+          "Let me explain.\n\nI have a 2005 335i with 100k miles. I have had the car for 3 years and have put 20k",
+          "Consider the following:\n\n<code>class A {\n    public:\n        A() {\n            std::cout << \"A()\" <<",
+          "Tell me about your experience with the 2018 Toyota Camry.\n\nI have a 2018 Camry SE. I love it. It's a",
+          "Let me explain.\n\nI have a 2005 335i with 100k miles. I have had the car for 3 years and have put 20k",
+          "Consider the following:\n\n<code>class A {\n    public:\n        A() {\n            std::cout << \"A()\" <<",
+          "Tell me about a time you had to make an important decision at work\nDescribe a time when you and your"
+        ],
+        "Quantity": [],
+        "Proposition": [],
+        "Entity": [],
+        "Process": [],
+        "Object": [],
+        "Attribute": [],
+        "Relation": [],
+        "List": [],
+        "Collection": [],
+        "Abstract": []
+      }
+    }
+  ],
+  "knee_point_idx": null,
+  "knee_point_n_samples": null,
+  "knee_reasoning": "Insufficient data points for knee detection"
+}

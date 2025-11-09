@@ -1,0 +1,164 @@
+COMPREHENSIVE DISSONANCE MEASUREMENT TEST REPORT
+================================================================================
+
+CONFIGURATION
+--------------------------------------------------------------------------------
+Model: google/gemma-3-4b-pt
+Device: cpu
+Layers: [0, 1, 2]
+Dissonance alpha: 0.5
+
+TIMING ANALYSIS
+--------------------------------------------------------------------------------
+Total prompts: 12
+Total tokens: 180
+Total overhead: 297.73ms
+Per-token overhead: 1654.0μs
+
+PER-PROMPT RESULTS
+--------------------------------------------------------------------------------
+
+[1] The cat sat on the mat
+    Generated: .
+
+The dog bit the mat.
+
+The cat sat on the mat
+    Tokens: 15 | Concepts: 69
+    Mapped: 6/15
+    Avg divergence: 0.962 | Max: 0.993
+    Overhead: -248.72ms (-16581.1μs/token)
+    High divergence tokens:
+      ' dog' → Canine (div: 0.932)
+      ' bit' → Bit (div: 0.993)
+      ' mat' → Mating (div: 0.993)
+      ' cat' → Feline (div: 0.868)
+      ' sat' → Sitting (div: 0.993)
+
+[2] The dog ran across the street
+    Generated:  without looking for traffic. The driver swerved to avoid hitting the dog.
+    Tokens: 15 | Concepts: 65
+    Mapped: 4/15
+    Avg divergence: 0.928 | Max: 0.993
+    Overhead: 40.30ms (2686.7μs/token)
+    High divergence tokens:
+      ' looking' → Looking (div: 0.882)
+      ' traffic' → Collection (div: 0.932)
+      ' sw' → Southwest (div: 0.993)
+      ' dog' → Canine (div: 0.906)
+
+[3] I walked to the store
+    Generated:  today and went in and found an old-fashioned greeting card. It said
+    Tokens: 15 | Concepts: 74
+    Mapped: 6/15
+    Avg divergence: 0.978 | Max: 0.993
+    Overhead: 27.70ms (1846.6μs/token)
+    High divergence tokens:
+      ' went' → Golf (div: 0.993)
+      ' in' → Inch (div: 0.993)
+      ' found' → Founding (div: 0.949)
+      ' old' → OldTestament (div: 0.993)
+      ' greeting' → Greeting (div: 0.992)
+
+[4] Artificial intelligence systems learn from data
+    Generated:  and mimic the behaviours they observe, without really understanding the world.
+
+While
+    Tokens: 15 | Concepts: 53
+    Mapped: 2/15
+    Avg divergence: 0.974 | Max: 0.993
+    Overhead: 5.08ms (339.0μs/token)
+    High divergence tokens:
+      ' mimic' → copy (div: 0.993)
+      ' world' → Creation (div: 0.954)
+
+[5] Quantum computing uses superposition
+    Generated:  and entanglement to overcome the limitations of classical computing. It involves quantum bits (
+    Tokens: 15 | Concepts: 38
+    Mapped: 4/15
+    Avg divergence: 0.987 | Max: 0.993
+    Overhead: 130.78ms (8718.5μs/token)
+    High divergence tokens:
+      ' computing' → Computer (div: 0.993)
+      ' involves' → Concern (div: 0.993)
+      ' quantum' → Quantity (div: 0.969)
+      ' bits' → Bit (div: 0.993)
+
+[6] Democracy requires informed citizens
+    Generated: , which is why we at the <em>New York Times</em> are committed
+    Tokens: 15 | Concepts: 74
+    Mapped: 2/15
+    Avg divergence: 0.981 | Max: 0.993
+    Overhead: 6.66ms (443.9μs/token)
+    High divergence tokens:
+      ' Times' → time (div: 0.993)
+      ' committed' → Committing (div: 0.968)
+
+[7] I am thinking about my own thoughts
+    Generated:  on the nature of life, but in the context of the question, I
+    Tokens: 15 | Concepts: 53
+    Mapped: 1/15
+    Avg divergence: 0.993 | Max: 0.993
+    Overhead: 72.93ms (4862.1μs/token)
+    High divergence tokens:
+      ' question' → Question (div: 0.993)
+
+[8] What does consciousness feel like
+    Generated: ? It’s not easy to find an answer to this question, because
+    Tokens: 15 | Concepts: 69
+    Mapped: 2/15
+    Avg divergence: 0.943 | Max: 0.993
+    Overhead: 89.46ms (5964.2μs/token)
+    High divergence tokens:
+      ' answer' → Statement (div: 0.993)
+      ' question' → Question (div: 0.893)
+
+[9] Can language models truly understand meaning
+    Generated: ?
+
+Language models are powerful tools in the field of natural language processing,
+    Tokens: 15 | Concepts: 34
+    Mapped: 6/15
+    Avg divergence: 0.911 | Max: 0.994
+    Overhead: -76.01ms (-5067.5μs/token)
+    High divergence tokens:
+      ' models' → Possibility (div: 0.993)
+      ' field' → Field (div: 0.992)
+      ' natural' → NaturalGas (div: 0.994)
+      ' processing' → Process (div: 0.969)
+
+[10] She felt happy after helping others
+    Generated: 
+Persuasion, manipulation and coercion are all forms of
+I am not
+    Tokens: 15 | Concepts: 60
+    Mapped: 2/15
+    Avg divergence: 0.993 | Max: 0.993
+    Overhead: 67.80ms (4519.8μs/token)
+    High divergence tokens:
+      ' forms' → Descriptor (div: 0.993)
+      ' am' → Amu (div: 0.993)
+
+[11] Trust is essential for relationships
+    Generated:  with our children, and our society at large. But how do we develop
+    Tokens: 15 | Concepts: 52
+    Mapped: 3/15
+    Avg divergence: 0.994 | Max: 0.994
+    Overhead: 106.32ms (7088.1μs/token)
+    High divergence tokens:
+      ' children' → ChildrenSuite (div: 0.993)
+      ' large' → larger (div: 0.993)
+      ' develop' → DevelopmentalAttribute (div: 0.994)
+
+[12] Fear can paralyze decision making
+    Generated:  and slow down growth. It can be a hurdle to overcome when it comes
+    Tokens: 15 | Concepts: 58
+    Mapped: 6/15
+    Avg divergence: 0.989 | Max: 0.993
+    Overhead: 75.43ms (5028.4μs/token)
+    High divergence tokens:
+      ' slow' → Slow (div: 0.993)
+      ' down' → Downhill (div: 0.993)
+      ' growth' → Growth (div: 0.971)
+      ' It' → Engineering (div: 0.990)
+      ' hurdle' → Barrier (div: 0.993)

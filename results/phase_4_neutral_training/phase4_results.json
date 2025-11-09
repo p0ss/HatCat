@@ -1,0 +1,519 @@
+{
+  "config": {
+    "model": "google/gemma-3-4b-pt",
+    "n_concepts": 10,
+    "training": "1\u00d71\u00d71 (pos+neg+neutral)",
+    "testing": "20+20+20 (pos+neg+neutral)",
+    "device": "cuda",
+    "layer_idx": -1,
+    "hidden_dim": 2560
+  },
+  "aggregate": {
+    "mean_f1": 0.7874350984286203,
+    "mean_precision": 0.7886917309743396,
+    "mean_recall": 0.8399999999999999,
+    "mean_tp": 16.8,
+    "mean_tn": 34.7,
+    "mean_fp": 5.3,
+    "mean_fn": 3.2,
+    "positive_confidence_mean": 0.8337067395448685,
+    "positive_confidence_std": 0.23286032245518162,
+    "negative_confidence_mean": 0.17148784473538398,
+    "negative_confidence_std": 0.10217512635266876,
+    "neutral_confidence_mean": 0.13719392726197838,
+    "neutral_confidence_std": 0.15914973598692247
+  },
+  "per_concept": [
+    {
+      "concept": "person",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 16,
+        "tn": 34,
+        "fp": 6,
+        "fn": 4,
+        "precision": 0.7272727272727273,
+        "recall": 0.8,
+        "f1": 0.761904761904762,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.8188613057136536,
+            "std": 0.29955020546913147,
+            "min": 0.11020275205373764,
+            "max": 0.9999222755432129,
+            "median": 0.9755774736404419,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.16175834834575653,
+            "std": 0.20422546565532684,
+            "min": 0.0018350238678976893,
+            "max": 0.8701884746551514,
+            "median": 0.0788942500948906,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.2580714523792267,
+            "std": 0.2378678023815155,
+            "min": 0.024619026109576225,
+            "max": 0.7331252098083496,
+            "median": 0.13733336329460144,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 34.890835762023926
+    },
+    {
+      "concept": "change",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 20,
+        "tn": 20,
+        "fp": 20,
+        "fn": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.9911781549453735,
+            "std": 0.032920319586992264,
+            "min": 0.8479995131492615,
+            "max": 0.9999359846115112,
+            "median": 0.9994469881057739,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.3786097466945648,
+            "std": 0.30472370982170105,
+            "min": 8.953338124229049e-07,
+            "max": 0.8634946346282959,
+            "median": 0.3039167523384094,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.5450273752212524,
+            "std": 0.36747685074806213,
+            "min": 1.003344095806824e-06,
+            "max": 0.9879727363586426,
+            "median": 0.6415619254112244,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 35.045191287994385
+    },
+    {
+      "concept": "bird genus",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 20,
+        "tn": 39,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.9523809523809523,
+        "recall": 1.0,
+        "f1": 0.975609756097561,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.948146641254425,
+            "std": 0.11488749086856842,
+            "min": 0.5776400566101074,
+            "max": 0.9999951124191284,
+            "median": 0.9978074431419373,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.08455535769462585,
+            "std": 0.1441451758146286,
+            "min": 0.001888621598482132,
+            "max": 0.47057825326919556,
+            "median": 0.01912432536482811,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.04926536977291107,
+            "std": 0.17267248034477234,
+            "min": 0.00010445946827530861,
+            "max": 0.7958429455757141,
+            "median": 0.0029311017133295536,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 34.80274820327759
+    },
+    {
+      "concept": "mammal genus",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 20,
+        "tn": 35,
+        "fp": 5,
+        "fn": 0,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.888888888888889,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.9995452165603638,
+            "std": 0.0010851556435227394,
+            "min": 0.9955101013183594,
+            "max": 0.9999996423721313,
+            "median": 0.9999352693557739,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.19817031919956207,
+            "std": 0.34305062890052795,
+            "min": 0.0017599810380488634,
+            "max": 0.9757295846939087,
+            "median": 0.015073521062731743,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.05195283889770508,
+            "std": 0.1651221215724945,
+            "min": 0.0005252909031696618,
+            "max": 0.7673805952072144,
+            "median": 0.00649672606959939,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 35.01362228393555
+    },
+    {
+      "concept": "herb",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 10,
+        "tn": 34,
+        "fp": 6,
+        "fn": 10,
+        "precision": 0.625,
+        "recall": 0.5,
+        "f1": 0.5555555555555556,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.4517142176628113,
+            "std": 0.43694034218788147,
+            "min": 0.0006260766531340778,
+            "max": 0.9999997615814209,
+            "median": 0.4394214153289795,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.10346479713916779,
+            "std": 0.22675548493862152,
+            "min": 5.785802386526484e-06,
+            "max": 0.999552309513092,
+            "median": 0.006338335573673248,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.22692008316516876,
+            "std": 0.3324514925479889,
+            "min": 0.0004145221319049597,
+            "max": 0.909339427947998,
+            "median": 0.018713608384132385,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 35.22638392448425
+    },
+    {
+      "concept": "asterid dicot genus",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 20,
+        "tn": 37,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.8695652173913043,
+        "recall": 1.0,
+        "f1": 0.9302325581395349,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.9993749856948853,
+            "std": 0.0021775681525468826,
+            "min": 0.989993155002594,
+            "max": 1.0,
+            "median": 0.9999977946281433,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.18599452078342438,
+            "std": 0.2799631655216217,
+            "min": 0.0011732985731214285,
+            "max": 0.9998842477798462,
+            "median": 0.02802377939224243,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.03676823899149895,
+            "std": 0.10595552623271942,
+            "min": 0.0001265432219952345,
+            "max": 0.43529802560806274,
+            "median": 0.001248460728675127,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 34.86737418174744
+    },
+    {
+      "concept": "shrub",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 16,
+        "tn": 38,
+        "fp": 2,
+        "fn": 4,
+        "precision": 0.8888888888888888,
+        "recall": 0.8,
+        "f1": 0.8421052631578948,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.8035550117492676,
+            "std": 0.3227524757385254,
+            "min": 0.014726980589330196,
+            "max": 0.9995416402816772,
+            "median": 0.9795472621917725,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.11052094399929047,
+            "std": 0.29381924867630005,
+            "min": 0.0004144253325648606,
+            "max": 0.9996418952941895,
+            "median": 0.004972685128450394,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.010805470868945122,
+            "std": 0.018428344279527664,
+            "min": 0.00011401208757888526,
+            "max": 0.062391914427280426,
+            "median": 0.001876824302598834,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 34.427098989486694
+    },
+    {
+      "concept": "rosid dicot genus",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 20,
+        "tn": 32,
+        "fp": 8,
+        "fn": 0,
+        "precision": 0.7142857142857143,
+        "recall": 1.0,
+        "f1": 0.8333333333333333,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.9931170344352722,
+            "std": 0.02904903143644333,
+            "min": 0.8665175437927246,
+            "max": 0.9999994039535522,
+            "median": 0.9999781847000122,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.3345644772052765,
+            "std": 0.40277373790740967,
+            "min": 8.305248400120036e-08,
+            "max": 0.9847496747970581,
+            "median": 0.05658038705587387,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.06047363206744194,
+            "std": 0.18738830089569092,
+            "min": 3.82025791623164e-05,
+            "max": 0.8319401144981384,
+            "median": 0.0037800511345267296,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 33.86064887046814
+    },
+    {
+      "concept": "fish genus",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 6,
+        "tn": 39,
+        "fp": 1,
+        "fn": 14,
+        "precision": 0.8571428571428571,
+        "recall": 0.3,
+        "f1": 0.4444444444444444,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.33371517062187195,
+            "std": 0.3634597659111023,
+            "min": 5.9238867834210396e-05,
+            "max": 0.9298096895217896,
+            "median": 0.10568107664585114,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.05942631512880325,
+            "std": 0.20683400332927704,
+            "min": 1.6145149857038632e-06,
+            "max": 0.9552284479141235,
+            "median": 0.0027462660800665617,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.0058743758127093315,
+            "std": 0.009540833532810211,
+            "min": 4.575133789330721e-05,
+            "max": 0.03541713207960129,
+            "median": 0.0013061057543382049,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 34.87823438644409
+    },
+    {
+      "concept": "animal order",
+      "training_samples": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 1
+      },
+      "test_samples": {
+        "positive": 20,
+        "negative": 20,
+        "neutral": 20
+      },
+      "metrics": {
+        "tp": 20,
+        "tn": 39,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.9523809523809523,
+        "recall": 1.0,
+        "f1": 0.975609756097561,
+        "confidence_by_label": {
+          "positive": {
+            "mean": 0.9978596568107605,
+            "std": 0.004490458872169256,
+            "min": 0.9829851984977722,
+            "max": 0.9999960660934448,
+            "median": 0.9997431039810181,
+            "n_samples": 20
+          },
+          "negative": {
+            "mean": 0.09781362116336823,
+            "std": 0.14670947194099426,
+            "min": 3.717796630553494e-07,
+            "max": 0.4628763496875763,
+            "median": 0.03141343593597412,
+            "n_samples": 20
+          },
+          "neutral": {
+            "mean": 0.1267804354429245,
+            "std": 0.14364396035671234,
+            "min": 7.855286821722984e-05,
+            "max": 0.5621083378791809,
+            "median": 0.057998985052108765,
+            "n_samples": 20
+          }
+        }
+      },
+      "time_seconds": 35.533987045288086
+    }
+  ],
+  "time_seconds": 353.951486825943
+}

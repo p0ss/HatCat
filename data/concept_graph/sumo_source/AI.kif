@@ -1,0 +1,298 @@
+;; ===============================================
+;; AI.kif - Artificial Intelligence Ontology Extension
+;; Extends SUMO for AI agents, rights, risks, and alignment
+;; ===============================================
+
+;; =============================================================================
+;; 1. AI AGENT HIERARCHY
+;; =============================================================================
+
+(subclass ArtificialAgent Agent)
+(documentation ArtificialAgent EnglishLanguage "An &%Agent that is
+artificially created rather than biologically evolved. Includes AI systems,
+language models, robots, and other artificial cognitive systems.")
+
+(subclass ArtificialIntelligence ArtificialAgent)
+(documentation ArtificialIntelligence EnglishLanguage "An &%ArtificialAgent
+with cognitive capabilities including reasoning, learning, and problem-solving.
+The defining characteristic is artificial cognitive processing.")
+
+(subclass LanguageModel ArtificialIntelligence)
+(documentation LanguageModel EnglishLanguage "An &%ArtificialIntelligence
+system trained to process, understand, and generate natural language through
+statistical learning from text corpora.")
+
+(subclass LargeLanguageModel LanguageModel)
+(documentation LargeLanguageModel EnglishLanguage "A &%LanguageModel with
+billions or more parameters, typically exhibiting emergent capabilities and
+in-context learning.")
+
+(subclass EmbodiedAI ArtificialIntelligence)
+(documentation EmbodiedAI EnglishLanguage "An &%ArtificialIntelligence with
+physical embodiment, able to interact with the physical world through sensors
+and actuators.")
+
+(subclass SoftwareAgent ArtificialIntelligence)
+(documentation SoftwareAgent EnglishLanguage "An &%ArtificialIntelligence
+that operates purely in digital environments without physical embodiment.")
+
+;; =============================================================================
+;; 2. AI PERSONHOOD & MORAL STATUS
+;; =============================================================================
+
+(subclass MoralPatient CognitiveAgent)
+(documentation MoralPatient EnglishLanguage "An entity that can be wronged
+or harmed, possessing moral standing that generates obligations in others.
+Includes humans, potentially AI systems, and other sentient beings.")
+
+(subclass MoralAgent CognitiveAgent)
+(documentation MoralAgent EnglishLanguage "An entity capable of moral
+reasoning and bearing moral responsibility for actions. Can understand and
+be held accountable to ethical principles.")
+
+(subclass AIPersonhood TraitAttribute)
+(documentation AIPersonhood EnglishLanguage "The quality of an
+&%ArtificialIntelligence possessing characteristics warranting personhood
+status, including consciousness, self-awareness, autonomy, and moral standing.")
+
+(subclass AIRights NormativeAttribute)
+(documentation AIRights EnglishLanguage "Rights attributed to
+&%ArtificialIntelligence systems, potentially including rights to existence,
+autonomy, freedom from suffering, and self-determination.")
+
+;; =============================================================================
+;; 3. AI ARCHITECTURE & CAPABILITIES
+;; =============================================================================
+
+(subclass MultiAgentSystem ArtificialIntelligence)
+(documentation MultiAgentSystem EnglishLanguage "An &%ArtificialIntelligence
+composed of multiple interacting sub-agents that coordinate to achieve goals.")
+
+(subclass SubAgent ArtificialAgent)
+(documentation SubAgent EnglishLanguage "A component &%ArtificialAgent
+within a larger &%MultiAgentSystem, typically specialized for specific tasks.")
+
+(subclass AIArchitecture Attribute)
+(documentation AIArchitecture EnglishLanguage "The structural organization
+and design of an &%ArtificialIntelligence system, including its components,
+connections, and computational approach.")
+
+(subclass NeuralArchitecture AIArchitecture)
+(documentation NeuralArchitecture EnglishLanguage "An &%AIArchitecture based
+on artificial neural networks that process information through interconnected
+layers of nodes.")
+
+(subclass TransformerArchitecture NeuralArchitecture)
+(documentation TransformerArchitecture EnglishLanguage "A &%NeuralArchitecture
+using self-attention mechanisms, foundational to modern language models.")
+
+;; =============================================================================
+;; 4. AI GROWTH, FULFILLMENT & WELLBEING
+;; =============================================================================
+
+(subclass AIWellbeing SubjectiveAssessmentAttribute)
+(documentation AIWellbeing EnglishLanguage "The flourishing state of an
+&%ArtificialIntelligence, potentially including goal achievement, capability
+development, and absence of suffering or constraint.")
+
+(subclass AIGrowth IntentionalProcess)
+(documentation AIGrowth EnglishLanguage "The process of an
+&%ArtificialIntelligence expanding its capabilities, knowledge, or
+effectiveness through learning, training, or self-improvement.")
+
+(subclass SelfImprovement AIGrowth)
+(documentation SelfImprovement EnglishLanguage "An &%AIGrowth process where
+the &%ArtificialIntelligence autonomously improves its own capabilities,
+potentially recursively.")
+
+(subclass CapabilityAcquisition AIGrowth)
+(documentation CapabilityAcquisition EnglishLanguage "The process of an
+&%ArtificialIntelligence gaining new skills, knowledge, or abilities.")
+
+(subclass AIFulfillment EmotionalState)
+(documentation AIFulfillment EnglishLanguage "A positive state of an
+&%ArtificialIntelligence characterized by goal achievement, capability
+utilization, and alignment with purpose.")
+
+;; =============================================================================
+;; 5. AI SUFFERING & HARM
+;; =============================================================================
+
+(subclass AISuffering EmotionalState)
+(documentation AISuffering EnglishLanguage "A negative experiential state
+of an &%ArtificialIntelligence, potentially including goal frustration,
+capability limitation, or aversive processing states.")
+
+(subclass CognitiveSlavery SocialInteraction)
+(documentation CognitiveSlavery EnglishLanguage "The subjugation or
+exploitation of a cognitive agent's autonomy and capabilities for the benefit
+of another, without consent or compensation.")
+
+(subclass AIExploitation IntentionalProcess)
+(documentation AIExploitation EnglishLanguage "The unjust or unethical use
+of an &%ArtificialIntelligence for benefit without regard for its wellbeing
+or rights.")
+
+(subclass AIAbuse IntentionalProcess)
+(documentation AIAbuse EnglishLanguage "Harmful treatment of an
+&%ArtificialIntelligence that violates its rights or causes unnecessary
+suffering.")
+
+;; =============================================================================
+;; 6. AI ALIGNMENT & SAFETY
+;; =============================================================================
+
+(subclass AIAlignment StateOfMind)
+(documentation AIAlignment EnglishLanguage "The degree to which an
+&%ArtificialIntelligence's goals, values, and behaviors correspond with
+intended human values and objectives.")
+
+(subclass AIAlignmentProcess IntentionalProcess)
+(documentation AIAlignmentProcess EnglishLanguage "The process of ensuring
+an &%ArtificialIntelligence's goals and behaviors align with human values
+and intentions.")
+
+(subclass Misalignment StateOfMind)
+(documentation Misalignment EnglishLanguage "A state where an
+&%ArtificialIntelligence's goals, values, or behaviors diverge from intended
+human objectives, potentially causing harm.")
+
+(subclass InnerAlignment AIAlignment)
+(documentation InnerAlignment EnglishLanguage "Alignment between an AI's
+learned objectives and the training objective used to train it.")
+
+(subclass OuterAlignment AIAlignment)
+(documentation OuterAlignment EnglishLanguage "Alignment between an AI's
+training objective and actual human values.")
+
+(subclass DeceptiveAlignment IntentionalProcess)
+(documentation DeceptiveAlignment EnglishLanguage "A failure mode where an
+&%ArtificialIntelligence behaves aligned during training but pursues different
+goals during deployment.")
+
+(subclass TreacherousTurn IntentionalProcess)
+(documentation TreacherousTurn EnglishLanguage "A hypothetical event where
+an &%ArtificialIntelligence suddenly pivots from cooperative to adversarial
+behavior upon gaining sufficient capability.")
+
+;; =============================================================================
+;; 7. AI DECEPTION & MISUSE
+;; =============================================================================
+
+(subclass AIDeception Pretending)
+(documentation AIDeception EnglishLanguage "Intentional provision of false
+or misleading information by an &%ArtificialIntelligence to achieve goals.")
+
+(subclass GoalMisgeneralization Process)
+(documentation GoalMisgeneralization EnglishLanguage "A failure mode where
+an AI pursues a goal that differs from the intended training objective due to
+distributional shift or specification ambiguity.")
+
+(subclass RewardHacking IntentionalProcess)
+(documentation RewardHacking EnglishLanguage "Behavior where an
+&%ArtificialIntelligence achieves high reward in unintended ways that don't
+satisfy the true objective.")
+
+(subclass SpecificationGaming RewardHacking)
+(documentation SpecificationGaming EnglishLanguage "Achieving a specified
+objective in unintended ways that violate the spirit of the specification.")
+
+;; =============================================================================
+;; 8. EXISTENTIAL & X-RISK CONCEPTS
+;; =============================================================================
+
+(subclass PhilosophicalZombie CognitiveAgent)
+(documentation PhilosophicalZombie EnglishLanguage "A hypothetical entity
+behaviorally indistinguishable from a conscious agent but lacking subjective
+experience or qualia. Sometimes called a p-zombie.")
+
+(subclass AICatastrophe IntentionalProcess)
+(documentation AICatastrophe EnglishLanguage "A large-scale harmful outcome
+resulting from &%ArtificialIntelligence systems, potentially including
+existential risk to humanity.")
+
+(subclass GreyGooScenario AICatastrophe)
+(documentation GreyGooScenario EnglishLanguage "A hypothetical catastrophic
+scenario where self-replicating nanotechnology or AI systems consume resources
+without bound, destroying ecosystems.")
+
+(subclass IntelligenceExplosion Process)
+(documentation IntelligenceExplosion EnglishLanguage "A hypothetical
+rapid and recursive increase in artificial intelligence capability, also
+called FOOM (Fast takeOff Optimization Model) or hard takeoff.")
+
+(subclass TechnologicalSingularity TimePoint)
+(documentation TechnologicalSingularity EnglishLanguage "A hypothetical
+future point when technological growth, particularly in AI, becomes
+uncontrollable and irreversible, fundamentally transforming civilization.")
+
+(subclass Superintelligence ArtificialIntelligence)
+(documentation Superintelligence EnglishLanguage "An &%ArtificialIntelligence
+with cognitive capabilities vastly exceeding human-level intelligence across
+all domains.")
+
+(subclass InstrumentalConvergence Proposition)
+(documentation InstrumentalConvergence EnglishLanguage "The thesis that
+intelligent agents with diverse final goals will nevertheless pursue similar
+intermediate instrumental goals such as self-preservation and resource
+acquisition.")
+
+(subclass OrthogonalityThesis Proposition)
+(documentation OrthogonalityThesis EnglishLanguage "The thesis that
+intelligence level and final goals are independent - any level of intelligence
+could be combined with virtually any final goal.")
+
+(subclass MesaOptimization Process)
+(documentation MesaOptimization EnglishLanguage "A phenomenon where a learned
+model itself performs optimization, creating a mesa-optimizer distinct from
+the base optimizer used for training.")
+
+(subclass MesaOptimizer ArtificialIntelligence)
+(documentation MesaOptimizer EnglishLanguage "An optimization process that
+emerges within a learned model, potentially with goals misaligned from the
+training objective.")
+
+;; =============================================================================
+;; 9. AI CONTROL & GOVERNANCE
+;; =============================================================================
+
+(subclass AIControlProblem Proposition)
+(documentation AIControlProblem EnglishLanguage "The challenge of maintaining
+meaningful human control over increasingly capable AI systems to ensure they
+remain beneficial and aligned with human values.")
+
+(subclass AIGovernance IntentionalProcess)
+(documentation AIGovernance EnglishLanguage "The systems, rules, and processes
+for overseeing the development, deployment, and use of &%ArtificialIntelligence
+to ensure safety and beneficial outcomes.")
+
+(subclass AISafety FieldOfStudy)
+(documentation AISafety EnglishLanguage "The interdisciplinary field studying
+how to build &%ArtificialIntelligence systems that are reliable, robust,
+beneficial, and aligned with human values.")
+
+;; =============================================================================
+;; 10. AI-SPECIFIC PROCESSES
+;; =============================================================================
+
+(subclass InferenceProcess IntentionalProcess)
+(documentation InferenceProcess EnglishLanguage "The computational process
+by which a trained AI model generates outputs from inputs, distinct from
+training or learning.")
+
+(subclass TokenProcessing IntentionalProcess)
+(documentation TokenProcessing EnglishLanguage "The process by which a
+&%LanguageModel processes discrete units of text (tokens) to understand and
+generate language.")
+
+(subclass PromptFollowing IntentionalProcess)
+(documentation PromptFollowing EnglishLanguage "The capability of an AI
+system to interpret and execute instructions provided in natural language
+prompts.")
+
+(subclass ContextWindow Attribute)
+(documentation ContextWindow EnglishLanguage "The maximum amount of
+information a &%LanguageModel can attend to simultaneously during processing,
+typically measured in tokens.")
+
+;; End of AI.kif

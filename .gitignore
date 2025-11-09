@@ -1,0 +1,116 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Too large
+*.npz
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data files
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Model files
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.bin
+*.h5
+*.hdf5
+
+# Training outputs
+sumo_classifiers_adaptive/
+sumo_classifiers/
+
+# Logs (exclude from repo, too verbose)
+logs/
+*.log
+wandb/
+
+# Results: Exclude large binary files but keep documentation and small outputs
+results/**/*.pt
+results/**/*.pth
+results/**/*.bin
+results/**/*.h5
+results/**/*.hdf5
+results/**/*.npy
+results/**/*.npz
+results/**/*.pkl
+results/**/*.pickle
+results/**/*.joblib
+results/**/*.zip
+results/**/classifiers/
+results/**/checkpoints/
+results/**/text_probes/
+results/**/activation_probes/
+
+# Results: Keep these files (documentation, metrics, plots)
+!results/**/*.md
+!results/**/*.json
+!results/**/*.csv
+!results/**/*.txt
+!results/**/*.png
+!results/**/*.jpg
+!results/**/*.svg
+!results/**/*.pdf
+
+# Checkpoints (exclude entirely)
+checkpoints/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+projectplan.md
+.webui_secret_key
+
+# Probe packs: Keep metadata but ignore large binary probe files
+probe_packs/**/probes/
+probe_packs/**/*.html
+probe_packs/**/*.joblib
+probe_packs/**/*.pt
+probe_packs/**/*.pth
+!probe_packs/**/pack.json
+
+# Concept packs: Keep everything (just metadata)
+# (no exclusions needed - they're small)
+
+# Claude Code documentation (keep it)
+!.claude/

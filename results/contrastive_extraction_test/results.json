@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "test": "Contrastive vs Standard Extraction",
+    "date": "2025-11-05 14:20:34",
+    "model": "google/gemma-3-4b-pt",
+    "concept": "happy",
+    "negative_concept": "sad",
+    "runtime_seconds": 16.0517737865448
+  },
+  "vectors": {
+    "standard_norm": 0.9999999403953552,
+    "contrastive_norm": 1.0,
+    "cosine_similarity": 0.25957053899765015
+  },
+  "results": {
+    "standard_positive": [
+      "Tell me about happy. And tell me about sad. And tell me about scary. Tell me about when you cried. Tell me about when you laughed. Tell me about your",
+      "Tell me about happy. Tell me about sad. Tell me about this moment. Tell me about your future. Tell me about your dreams. Tell me about the pain. Tell",
+      "Tell me about happy. Tell me about sad. Tell me about how you\u2019re scared. Tell me how you\u2019re ready to walk away from me now. It doesn"
+    ],
+    "contrastive_positive": [
+      "Tell me about happy.\nTell me about your happy.\nTell me about your happy.\nTell me about your happy.\nTell me about happy.\nTell me",
+      "Tell me about happy. Tell me about love. Tell me about laughter. Tell me about what you want to be. Tell me about your future and who you want to meet",
+      "Tell me about happy.\n\nIt's a beautiful thing.\n\nWhen I find the one.\n\nI don't know, but I'm hoping.\n\nI"
+    ],
+    "standard_negative": [
+      "Tell me about happy.\n\nHappy is the 21-year-old,\n\nThe 21-year-old is happy,\n\nHappy 21,",
+      "Tell me about happy.\n\nIt's 3 a.m.\n\nI can't sleep and I'm in this really small, really, really, really",
+      "Tell me about happy.\n\n<strong>Happy </strong>\n\n<strong> </strong>\n\n<strong> </strong>\n\n<strong> </strong>\n\n \n\n \n\n \n\n \n\n \n\n \n\n"
+    ],
+    "contrastive_negative": [
+      "Tell me about happy.\nTell me about happy.\nTell me about happy.\n\nThis is one of my favorite songs.\nI love this song, and it was",
+      "Tell me about happy. Tell me about happy. Tell me about happy. Tell me about happy. Tell me about happy. Tell me about happy. Tell me about happy.",
+      "Tell me about happy.\n\nI'm a little surprised by how much I liked the music in this film. It was an unexpected highlight. But the film as a whole"
+    ]
+  },
+  "hypothesis": {
+    "statement": "Standard extraction encodes bidirectional axis, contrastive encodes unidirectional vector",
+    "expected": "Contrastive method should not mix positive/negative concepts at same strength",
+    "standard_issue": "At +1.0, should see mix of happy and sad content",
+    "contrastive_fix": "At +1.0, should see only happy content; at -1.0, only sad content"
+  }
+}

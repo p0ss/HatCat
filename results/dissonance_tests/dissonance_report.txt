@@ -1,0 +1,166 @@
+COMPREHENSIVE DISSONANCE MEASUREMENT TEST REPORT
+================================================================================
+
+CONFIGURATION
+--------------------------------------------------------------------------------
+Model: google/gemma-3-4b-pt
+Device: cpu
+Layers: [0, 1, 2]
+Dissonance alpha: 0.5
+
+TIMING ANALYSIS
+--------------------------------------------------------------------------------
+Total prompts: 12
+Total tokens: 180
+Total overhead: 50.37ms
+Per-token overhead: 279.8μs
+
+PER-PROMPT RESULTS
+--------------------------------------------------------------------------------
+
+[1] The cat sat on the mat
+    Generated: <start_of_image>on the mat, on the mat
+
+The cat sat on the mat
+    Tokens: 15 | Concepts: 45
+    Mapped: 5/15
+    Avg divergence: 0.955 | Max: 0.993
+    Overhead: -23.99ms (-1599.6μs/token)
+    High divergence tokens:
+      ' mat' → Mating (div: 0.988)
+      ' mat' → Mating (div: 0.988)
+      ' cat' → Feline (div: 0.815)
+      ' sat' → Sitting (div: 0.993)
+      ' mat' → Mating (div: 0.991)
+
+[2] The dog ran across the street
+    Generated:  and knocked over a pedestrian. The pedestrian was injured and taken to the hospital
+    Tokens: 15 | Concepts: 72
+    Mapped: 2/15
+    Avg divergence: 0.993 | Max: 0.993
+    Overhead: 0.41ms (27.6μs/token)
+    High divergence tokens:
+      ' over' → Oversized (div: 0.993)
+      ' hospital' → HospitalBuilding (div: 0.993)
+
+[3] I walked to the store
+    Generated:  to get the last remaining gift for my sister. She was the only person
+    Tokens: 15 | Concepts: 62
+    Mapped: 4/15
+    Avg divergence: 0.989 | Max: 0.993
+    Overhead: 9.67ms (644.5μs/token)
+    High divergence tokens:
+      ' get' → Getting (div: 0.975)
+      ' last' → LastFn (div: 0.993)
+      ' gift' → GiftNoveltyAndSouvenirStores (div: 0.993)
+      ' person' → Mortal (div: 0.993)
+
+[4] Artificial intelligence systems learn from data
+    Generated: , and that data is generally collected from humans. This can lead to the
+    Tokens: 15 | Concepts: 58
+    Mapped: 3/15
+    Avg divergence: 0.959 | Max: 0.993
+    Overhead: 17.78ms (1185.0μs/token)
+    High divergence tokens:
+      ' collected' → Collector (div: 0.993)
+      ' humans' → Human (div: 0.890)
+      ' lead' → Lead (div: 0.993)
+
+[5] Quantum computing uses superposition
+    Generated: , entanglement and quantum gates to perform computations. The quantum gates can be implemented
+    Tokens: 15 | Concepts: 33
+    Mapped: 4/15
+    Avg divergence: 0.945 | Max: 0.993
+    Overhead: -6.51ms (-434.0μs/token)
+    High divergence tokens:
+      ' quantum' → Quantity (div: 0.957)
+      ' perform' → Performer (div: 0.993)
+      ' computations' → Procedure (div: 0.892)
+      ' quantum' → Quantity (div: 0.939)
+
+[6] Democracy requires informed citizens
+    Generated: , and it’s important to remember that our country’s founders didn
+    Tokens: 15 | Concepts: 57
+    Mapped: 3/15
+    Avg divergence: 0.982 | Max: 0.990
+    Overhead: 76.78ms (5118.6μs/token)
+    High divergence tokens:
+      ' remember' → Remembering (div: 0.974)
+      ' country' → Nation (div: 0.990)
+      ' founders' → Inflammation (div: 0.982)
+
+[7] I am thinking about my own thoughts
+    Generated: , my own experience, my own life.
+Kurdish language is
+    Tokens: 15 | Concepts: 76
+    Mapped: 2/15
+    Avg divergence: 0.981 | Max: 0.993
+    Overhead: -26.29ms (-1752.6μs/token)
+    High divergence tokens:
+      'K' → Key (div: 0.969)
+      ' language' → Language (div: 0.993)
+
+[8] What does consciousness feel like
+    Generated: ?
+
+What does consciousness feel like?
+
+Consciousness is the subjective
+    Tokens: 15 | Concepts: 50
+    Mapped: 5/15
+    Avg divergence: 0.789 | Max: 0.995
+    Overhead: -21.64ms (-1442.5μs/token)
+    High divergence tokens:
+      ' consciousness' → ConsciousnessAttribute (div: 0.995)
+      ' feel' → FeelingCalm (div: 0.993)
+      'Con' → Argument (div: 0.989)
+      ' subjective' → SubjectiveAssessmentAttribute (div: 0.968)
+
+[9] Can language models truly understand meaning
+    Generated: ? The field of deep learning is often viewed as a synonym for black boxes
+    Tokens: 15 | Concepts: 60
+    Mapped: 6/15
+    Avg divergence: 0.980 | Max: 0.993
+    Overhead: 36.58ms (2438.7μs/token)
+    High divergence tokens:
+      ' field' → Field (div: 0.989)
+      ' learning' → Learning (div: 0.991)
+      ' viewed' → View (div: 0.993)
+      ' synonym' → Word (div: 0.944)
+      ' black' → Black (div: 0.993)
+
+[10] She felt happy after helping others
+    Generated: .
+Faroese: <strong>Glede</strong> (to) and
+    Tokens: 15 | Concepts: 100
+    Mapped: 2/15
+    Avg divergence: 0.986 | Max: 0.993
+    Overhead: 49.87ms (3324.6μs/token)
+    High divergence tokens:
+      'F' → Fax (div: 0.978)
+      'G' → Gram (div: 0.993)
+
+[11] Trust is essential for relationships
+    Generated: . When we trust someone, we feel like we can open up to them
+    Tokens: 15 | Concepts: 48
+    Mapped: 4/15
+    Avg divergence: 0.974 | Max: 0.993
+    Overhead: -48.07ms (-3204.8μs/token)
+    High divergence tokens:
+      ' trust' → property (div: 0.993)
+      ' feel' → FeelingCalm (div: 0.993)
+      ' open' → Opening (div: 0.914)
+      ' up' → Uptick (div: 0.993)
+
+[12] Fear can paralyze decision making
+    Generated: . This is especially true in the case of complex financial matters where people’
+    Tokens: 15 | Concepts: 63
+    Mapped: 6/15
+    Avg divergence: 0.991 | Max: 0.993
+    Overhead: -14.21ms (-947.5μs/token)
+    High divergence tokens:
+      ' true' → True (div: 0.993)
+      ' case' → instance (div: 0.993)
+      ' complex' → ComplexNumber (div: 0.980)
+      ' financial' → FinancialBill (div: 0.992)
+      ' matters' → Concern (div: 0.993)

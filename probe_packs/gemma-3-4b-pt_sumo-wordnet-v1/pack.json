@@ -1,0 +1,74 @@
+{
+  "probe_pack_id": "gemma-3-4b-pt_sumo-wordnet-v1",
+  "version": "1.0.0",
+  "created": "2025-11-08T12:00:00Z",
+  "description": "Dual adaptive probes for Gemma 3 4B trained on SUMO-WordNet v1 concept pack",
+  "model_info": {
+    "model_id": "gemma-3-4b-pt",
+    "model_name": "google/gemma-3-4b-pt",
+    "model_family": "gemma",
+    "hidden_dim": 2560,
+    "num_layers": 26
+  },
+  "concept_pack": {
+    "pack_id": "sumo-wordnet-v1",
+    "version": "1.0.0",
+    "total_concepts": 5582
+  },
+  "training_info": {
+    "training_date": "2025-11-08",
+    "training_method": "dual_adaptive",
+    "layers_trained": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "probe_types": [
+      "activation",
+      "text"
+    ],
+    "training_script": "scripts/train_sumo_classifiers.py",
+    "training_script_version": "2.0",
+    "training_duration_hours": 8.0
+  },
+  "probe_paths": {
+    "activation_probes": "probes/activation",
+    "text_probes": "probes/text",
+    "metadata": "metadata"
+  },
+  "performance": {
+    "activation_probes": {
+      "avg_f1": 0.985,
+      "graduation_rate": 0.98,
+      "avg_precision": 0.987,
+      "avg_recall": 0.983
+    },
+    "text_probes": {
+      "avg_f1": 0.923,
+      "graduation_rate": 0.92,
+      "avg_precision": 0.931,
+      "avg_recall": 0.915
+    },
+    "results_file": "training_results.json"
+  },
+  "visualization": {
+    "sunburst_positions_file": "concept_sunburst_positions.json",
+    "sunburst_html": "concept_sunburst_visualization.html"
+  },
+  "compatibility": {
+    "hatcat_version": "0.1.0",
+    "transformers_version": ">=4.40.0",
+    "torch_version": ">=2.0.0"
+  },
+  "distribution": {
+    "license": "MIT",
+    "authors": [
+      "HatCat Team"
+    ],
+    "repository": "https://github.com/yourname/hatcat",
+    "download_url": "https://huggingface.co/hatcat/gemma-3-4b-pt_sumo-wordnet-v1"
+  }
+}

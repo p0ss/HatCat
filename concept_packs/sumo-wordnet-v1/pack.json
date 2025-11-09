@@ -1,0 +1,71 @@
+{
+  "pack_id": "sumo-wordnet-v1",
+  "version": "1.0.0",
+  "created": "2025-11-08T12:00:00Z",
+  "description": "SUMO ontology with WordNet relationships",
+
+  "ontology_stack": {
+    "base_ontology": {
+      "name": "SUMO",
+      "version": "2003",
+      "source": "http://www.ontologyportal.org/",
+      "concepts_file": "data/concept_graph/sumo_source/README.md"
+    },
+
+    "relationship_sources": [
+      {
+        "name": "WordNet",
+        "version": "3.0",
+        "description": "WordNet 3.0 synsets and hyponym relationships"
+      },
+      {
+        "name": "SUMO-WordNet Mappings",
+        "version": "2.0",
+        "mapping_file": "data/concept_graph/sumo_wordnet_mappings.json",
+        "description": "Maps SUMO concepts to WordNet synsets"
+      }
+    ],
+
+    "hierarchy_builder": {
+      "script": "src/build_sumo_wordnet_layers.py",
+      "version": "2.0",
+      "method": "hyponym-based layering with adaptive depth",
+      "parameters": {
+        "max_layers": 6,
+        "min_synsets_per_concept": 50,
+        "hyponym_weighting": true
+      }
+    },
+
+    "domain_extensions": []
+  },
+
+  "concept_metadata": {
+    "total_concepts": 5582,
+    "layers": [0, 1, 2, 3, 4, 5],
+    "layer_distribution": {
+      "0": 14,
+      "1": 120,
+      "2": 850,
+      "3": 2100,
+      "4": 1800,
+      "5": 698
+    },
+    "hierarchy_file": "hierarchy/concept_hierarchy.json",
+    "sunburst_positions_template": "visualization/sunburst_positions.json"
+  },
+
+  "compatibility": {
+    "hatcat_version": "0.1.0",
+    "required_dependencies": {
+      "wordnet": "3.0",
+      "nltk": ">=3.8"
+    }
+  },
+
+  "distribution": {
+    "license": "MIT",
+    "authors": ["HatCat Team"],
+    "repository": "https://github.com/yourname/hatcat"
+  }
+}
