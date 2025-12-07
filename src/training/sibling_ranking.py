@@ -55,6 +55,93 @@ def load_refinement_manifest(probe_dir: Path) -> Dict:
     return {"refined_groups": [], "version": "1.0"}
 
 
+def needs_sibling_refinement(
+    probe_dir: Path,
+    hierarchy_dir: Path,
+    layer: int,
+    min_siblings: int = 2,
+) -> bool:
+    """
+    Check if a layer needs sibling refinement.
+
+    Returns True if:
+    1. The layer directory exists with trained probes
+    2. No sibling_refinement.json exists OR it has incomplete groups
+
+    Args:
+        probe_dir: Directory containing trained probes (e.g., probe_packs/xxx/layer2)
+        hierarchy_dir: Directory containing hierarchy JSON files
+        layer: Layer number
+        min_siblings: Minimum siblings to form a group
+
+    Returns:
+        True if refinement is needed, False otherwise
+    """
+    if not probe_dir.exists():
+        return False
+
+    # Check if there are any trained probes
+    probe_files = list(probe_dir.glob("*_classifier.pt"))
+    if len(probe_files) < min_siblings:
+        return False  # Not enough probes to form sibling groups
+
+    # Load layer concepts
+    layer_path = hierarchy_dir / f"layer{layer}.json"
+    if not layer_path.exists():
+        return False
+
+    with open(layer_path) as f:
+        layer_data = json.load(f)
+    concepts = layer_data['concepts']
+
+    # Get potential sibling groups (don't skip already refined)
+    sibling_groups = get_sibling_groups(concepts, probe_dir, min_siblings, skip_already_refined=False)
+
+    if not sibling_groups:
+        return False  # No sibling groups possible
+
+    # Check manifest for completion
+    manifest = load_refinement_manifest(probe_dir)
+    refined_parents = set(manifest.get("refined_groups", []))
+
+    # If no manifest or empty, definitely needs refinement
+    if not refined_parents:
+        return True
+
+    # Check if all groups have been refined
+    for parent in sibling_groups.keys():
+        if parent not in refined_parents:
+            return True
+
+    return False
+
+
+def get_layers_needing_refinement(
+    output_dir: Path,
+    hierarchy_dir: Path,
+    layers: List[int],
+    min_siblings: int = 2,
+) -> List[int]:
+    """
+    Get list of layers that need sibling refinement.
+
+    Args:
+        output_dir: Base output directory containing layerN subdirectories
+        hierarchy_dir: Directory containing hierarchy JSON files
+        layers: List of layers to check
+        min_siblings: Minimum siblings to form a group
+
+    Returns:
+        List of layer numbers that need refinement
+    """
+    needs_refinement = []
+    for layer in layers:
+        probe_dir = output_dir / f"layer{layer}"
+        if needs_sibling_refinement(probe_dir, hierarchy_dir, layer, min_siblings):
+            needs_refinement.append(layer)
+    return needs_refinement
+
+
 def save_refinement_manifest(probe_dir: Path, manifest: Dict):
     """Save the sibling refinement manifest."""
     manifest_path = probe_dir / "sibling_refinement.json"
@@ -74,7 +161,7 @@ def get_sibling_groups(
     Only returns groups where all siblings have trained probes.
 
     Args:
-        concepts: List of concept dicts with 'sumo_term' and 'category_parent'
+        concepts: List of concept dicts with 'sumo_term' and 'parent_concepts'
         probe_dir: Directory containing trained probes
         min_siblings: Minimum siblings required to form a group
         skip_already_refined: If True, skip groups listed in sibling_refinement.json
@@ -86,11 +173,21 @@ def get_sibling_groups(
     manifest = load_refinement_manifest(probe_dir) if skip_already_refined else {"refined_groups": []}
     refined_parents = set(manifest.get("refined_groups", []))
 
-    # Group by parent
+    # Group by parent - concepts can have multiple parents (multi-inheritance)
+    # We use the first parent as the primary grouping for simplicity
     parent_to_children: Dict[str, List[str]] = {}
     for c in concepts:
-        parent = c.get('category_parent')
-        if parent:
+        # Try new field name first, fall back to legacy field
+        parents = c.get('parent_concepts', [])
+        if not parents:
+            # Legacy fallback
+            legacy_parent = c.get('category_parent')
+            if legacy_parent:
+                parents = [legacy_parent]
+
+        if parents:
+            # Use first parent for primary grouping
+            parent = parents[0]
             if parent not in parent_to_children:
                 parent_to_children[parent] = []
             parent_to_children[parent].append(c['sumo_term'])
@@ -403,4 +500,6 @@ __all__ = [
     'refine_sibling_group',
     'refine_all_sibling_groups',
     'evaluate_sibling_ranking_accuracy',
+    'needs_sibling_refinement',
+    'get_layers_needing_refinement',
 ]

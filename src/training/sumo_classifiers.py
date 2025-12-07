@@ -639,6 +639,41 @@ def train_sumo_classifiers(
     )
     print("✓ Model loaded")
 
+    # Auto-detect and run missing sibling refinement from prior runs
+    if run_sibling_refinement:
+        from .sibling_ranking import get_layers_needing_refinement, refine_all_sibling_groups
+        hidden_dim = model.config.hidden_size
+
+        layers_needing_refinement = get_layers_needing_refinement(
+            output_dir=output_dir,
+            hierarchy_dir=hierarchy_dir,
+            layers=list(layers),
+        )
+
+        if layers_needing_refinement:
+            print(f"\n{'=' * 80}")
+            print("AUTO-DETECTING MISSING SIBLING REFINEMENT")
+            print(f"{'=' * 80}")
+            print(f"Layers needing refinement: {layers_needing_refinement}")
+            print()
+
+            for layer in layers_needing_refinement:
+                refine_all_sibling_groups(
+                    layer=layer,
+                    probe_dir=output_dir / f"layer{layer}",
+                    hierarchy_dir=hierarchy_dir,
+                    model=model,
+                    tokenizer=tokenizer,
+                    device=device,
+                    n_prompts_per_sibling=sibling_refine_prompts,
+                    epochs=sibling_refine_epochs,
+                    hidden_dim=hidden_dim,
+                )
+
+            print(f"\n{'=' * 80}")
+            print("MISSING REFINEMENT COMPLETE - Continuing with training")
+            print(f"{'=' * 80}\n")
+
     summaries = []
     for layer in layers:
         # When using adaptive training, DualAdaptiveTrainer generates prompts incrementally

@@ -282,8 +282,22 @@ class GraftFacet(Enum):
 1. **Validate probe pack** on test prompts
 2. **Generate CAT training data** from probe activation traces
 3. **Train CAT classifier** on divergence detection
-4. **Test Streamlit UI** with new probe pack
-5. **Update OpenWebUI** with CAT-based divergence
+4. **Update OpenWebUI** with CAT-based divergence (or LLM-as-CAT interim)
+
+### Decoupled Demo Path (Can Do Now)
+
+The demo doesn't need v4.2 or trained CAT. Use LLM-as-CAT for divergence:
+1. Fix OpenWebUI with older working probe pack
+2. Use off-the-shelf LLM to judge probes vs text as interim CAT
+3. Swap for trained CAT later as optimization
+
+### Deployment Manifest (Spec Complete)
+
+See `docs/specification/MAP/MAP_DEPLOYMENT_MANIFEST.md`:
+- Partial loading by layer/domain/branch
+- Contract-driven coverage requirements
+- Cross-model comparability fingerprints
+- Next: Update DynamicProbeManager to respect manifests
 
 ### Structural Cleanup (Can Do Now)
 

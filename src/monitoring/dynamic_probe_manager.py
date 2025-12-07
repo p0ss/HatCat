@@ -20,11 +20,14 @@ import time
 from collections import defaultdict
 from enum import Enum
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple, Any
+from typing import Dict, List, Optional, Set, Tuple, Any, TYPE_CHECKING
 
 import numpy as np
 import torch
 import torch.nn as nn
+
+if TYPE_CHECKING:
+    from .deployment_manifest import DeploymentManifest, ManifestResolver
 
 
 class ProbeRole(Enum):
@@ -294,6 +297,8 @@ class DynamicProbeManager:
         use_activation_probes: bool = True,  # Use activation probes (default)
         probe_pack_id: Optional[str] = None,  # NEW: Use probe pack instead of probes_dir
         normalize_hidden_states: bool = True,  # Normalize hidden states before probe inference
+        manifest: Optional["DeploymentManifest"] = None,  # Deployment manifest for partial loading
+        manifest_path: Optional[Path] = None,  # Path to manifest JSON file
     ):
         """
         Args:
@@ -309,6 +314,10 @@ class DynamicProbeManager:
             normalize_hidden_states: Whether to normalize hidden states before probe inference.
                 Generation-time hidden states often have higher variance than training-time
                 hidden states, which can cause probes to saturate. LayerNorm fixes this.
+            manifest: Optional DeploymentManifest for partial loading. Controls which
+                concepts are loaded based on layer, domain, and branch rules.
+            manifest_path: Optional path to manifest JSON file. Alternative to passing
+                manifest object directly.
         """
         self.layers_data_dir = layers_data_dir
         self.device = device
@@ -463,14 +472,47 @@ class DynamicProbeManager:
             'cache_misses': 0,
         }
 
+        # Deployment manifest for partial loading
+        self.manifest: Optional["DeploymentManifest"] = None
+        self.manifest_resolver: Optional["ManifestResolver"] = None
+
+        if manifest_path is not None:
+            from .deployment_manifest import DeploymentManifest
+            self.manifest = DeploymentManifest.from_json(manifest_path)
+            print(f"✓ Loaded manifest: {self.manifest.manifest_id}")
+        elif manifest is not None:
+            self.manifest = manifest
+            print(f"✓ Using manifest: {self.manifest.manifest_id}")
+
         # Load metadata
         self._load_all_metadata()
 
+        # Initialize manifest resolver after metadata is loaded
+        if self.manifest is not None:
+            from .deployment_manifest import ManifestResolver
+            self.manifest_resolver = ManifestResolver(
+                manifest=self.manifest,
+                concept_hierarchy=self.concept_metadata,
+                parent_to_children=self.parent_to_children,
+                child_to_parent=self.child_to_parent,
+            )
+            # Override base_layers from manifest if specified
+            if self.manifest.layer_bounds.always_load_layers:
+                self.base_layers = self.manifest.layer_bounds.always_load_layers
+            # Override max loaded probes from manifest
+            if self.manifest.dynamic_loading.max_loaded_concepts:
+                self.max_loaded_probes = self.manifest.dynamic_loading.max_loaded_concepts
+            # Override thresholds from manifest
+            self.load_threshold = self.manifest.dynamic_loading.parent_threshold
+            self.unload_threshold = self.manifest.dynamic_loading.unload_threshold
+
         # Load base layers
         print(f"\nInitializing DynamicProbeManager...")
-        print(f"  Base layers: {base_layers}")
-        print(f"  Load threshold: {load_threshold}")
-        print(f"  Max probes in memory: {max_loaded_probes}")
+        print(f"  Base layers: {self.base_layers}")
+        print(f"  Load threshold: {self.load_threshold}")
+        print(f"  Max probes in memory: {self.max_loaded_probes}")
+        if self.manifest:
+            print(f"  Manifest: {self.manifest.manifest_id}")
         self._load_base_layers()
 
     def _load_all_metadata(self):
@@ -635,13 +677,32 @@ class DynamicProbeManager:
         print(f"  Parent-child relationships: {len(self.parent_to_children)}")
 
     def _load_base_layers(self):
-        """Load base layers for broad coverage."""
-        for layer in self.base_layers:
-            layer_concept_keys = [
-                key for key in self.concept_metadata.keys()
-                if key[1] == layer
-            ]
-            self._load_concepts(layer_concept_keys, reason="base_layer")
+        """Load base layers for broad coverage, respecting manifest rules."""
+        if self.manifest_resolver is not None:
+            # Use manifest to determine which concepts to load
+            all_keys = set(self.concept_metadata.keys())
+            concepts_to_load = self.manifest_resolver.resolve_concepts_to_load(all_keys)
+
+            # Filter to only load base layer concepts initially
+            # (deeper concepts will be loaded dynamically)
+            base_concepts = {
+                key for key in concepts_to_load
+                if key[1] in self.base_layers
+            }
+
+            # Expand with siblings to ensure coherent discrimination
+            base_concepts_expanded = self.manifest_resolver.expand_with_siblings(base_concepts)
+
+            self._load_concepts(list(base_concepts_expanded), reason="base_layer")
+            print(f"  Manifest filtered: {len(base_concepts_expanded)} concepts from {len(all_keys)} available")
+        else:
+            # No manifest - load all concepts in base layers
+            for layer in self.base_layers:
+                layer_concept_keys = [
+                    key for key in self.concept_metadata.keys()
+                    if key[1] == layer
+                ]
+                self._load_concepts(layer_concept_keys, reason="base_layer")
 
         # Mark all loaded probes as base layer probes (never evict these)
         for concept_key in self.loaded_activation_probes.keys():
@@ -1060,7 +1121,7 @@ class DynamicProbeManager:
         # Only expand children for concepts that are in the top-k results
         # This prevents loading children for low-scoring concepts that exceed threshold
         t2 = time.time()
-        child_keys_to_load = []
+        child_keys_to_load = set()
 
         # Get top-k concepts from current scores
         sorted_concepts = sorted(current_scores.items(), key=lambda x: x[1], reverse=True)
@@ -1071,10 +1132,21 @@ class DynamicProbeManager:
             child_keys = self.parent_to_children.get(concept_key, [])
             for child_key in child_keys:
                 if child_key not in self.loaded_probes:
-                    child_keys_to_load.append(child_key)
+                    # Check manifest rules if available
+                    if self.manifest_resolver is not None:
+                        if self.manifest_resolver.should_load_concept(child_key):
+                            child_keys_to_load.add(child_key)
+                    else:
+                        child_keys_to_load.add(child_key)
+
+        # Expand with siblings for coherent discrimination (sibling coherence rule)
+        if child_keys_to_load and self.manifest_resolver is not None:
+            child_keys_to_load = self.manifest_resolver.expand_with_siblings(child_keys_to_load)
+            # Filter out already loaded concepts
+            child_keys_to_load = {k for k in child_keys_to_load if k not in self.loaded_probes}
 
         if child_keys_to_load:
-            self._load_concepts(child_keys_to_load, reason="dynamic_expansion")
+            self._load_concepts(list(child_keys_to_load), reason="dynamic_expansion")
 
         if timing is not None:
             timing['child_loading'] = (time.time() - t2) * 1000
@@ -1326,6 +1398,326 @@ class DynamicProbeManager:
                 print(f"  L{layer} {concept_name:30s} {count:4d} accesses")
 
         print("=" * 80)
+
+    def get_loaded_fingerprint(self) -> str:
+        """
+        Get a fingerprint hash of currently loaded concepts.
+
+        Used for comparability verification between BEs with same manifest.
+        """
+        if self.manifest_resolver is not None:
+            loaded_keys = set(self.loaded_activation_probes.keys())
+            return self.manifest_resolver.compute_fingerprint(loaded_keys)
+
+        # Fallback: compute directly
+        import hashlib
+        sorted_keys = sorted(self.loaded_activation_probes.keys())
+        key_str = "|".join(f"{name}:{layer}" for name, layer in sorted_keys)
+        return f"sha256:{hashlib.sha256(key_str.encode()).hexdigest()[:16]}"
+
+    def get_manifest_summary(self) -> Dict[str, Any]:
+        """
+        Get a summary of the manifest configuration.
+
+        Returns:
+            Dict with manifest info or None if no manifest
+        """
+        if self.manifest is None:
+            return {"manifest": None, "mode": "unrestricted"}
+
+        return {
+            "manifest_id": self.manifest.manifest_id,
+            "manifest_version": self.manifest.manifest_version,
+            "layer_bounds": {
+                "default_max": self.manifest.layer_bounds.default_max_layer,
+                "absolute_max": self.manifest.layer_bounds.absolute_max_layer,
+                "always_load": self.manifest.layer_bounds.always_load_layers,
+            },
+            "domain_overrides": list(self.manifest.domain_overrides.keys()),
+            "branch_rules": [r.branch for r in self.manifest.branch_rules],
+            "explicit_includes": list(self.manifest.explicit_concepts.always_include),
+            "explicit_excludes": list(self.manifest.explicit_concepts.always_exclude),
+            "dynamic_loading_enabled": self.manifest.dynamic_loading.enabled,
+            "loaded_concepts": len(self.loaded_activation_probes),
+            "fingerprint": self.get_loaded_fingerprint(),
+        }
+
+    # =========================================================================
+    # BE WORKSPACE TOOLS - Probe Expansion for Introspection
+    # =========================================================================
+
+    def request_probe_expansion(
+        self,
+        branch: str,
+        reason: str,
+        depth: int = 2,
+    ) -> Dict[str, Any]:
+        """
+        BE workspace tool: Request to expand probes for a branch.
+
+        This is called when a BE uses a workspace tool to expand probes
+        for self-introspection. The USH probe envelope determines what's allowed.
+
+        Args:
+            branch: The branch name to expand (e.g., "Emotion", "Curiosity")
+            reason: Why the BE wants this expansion (for audit log)
+            depth: How many layers deep to expand (default 2)
+
+        Returns:
+            Dict with:
+                - success: bool
+                - loaded_concepts: List[str] - concepts that were loaded
+                - cat_scope: str - which CAT covers these probes
+                - error: str - error message if failed
+        """
+        from .deployment_manifest import ProbeExpansionResult
+
+        # Check envelope permissions
+        if self.manifest_resolver is not None:
+            result = self.manifest_resolver.check_branch_expansion(branch, reason)
+            if not result.success:
+                return {
+                    "success": False,
+                    "loaded_concepts": [],
+                    "cat_scope": None,
+                    "error": result.error,
+                }
+        else:
+            # No manifest = allow all
+            result = ProbeExpansionResult(success=True, cat_scope=None)
+
+        # Find concepts under this branch
+        branch_concepts = set()
+        branch_root_key = None
+
+        # Find the branch root
+        for key in self.concept_metadata.keys():
+            if key[0] == branch:
+                branch_root_key = key
+                break
+
+        if branch_root_key is None:
+            return {
+                "success": False,
+                "loaded_concepts": [],
+                "cat_scope": result.cat_scope,
+                "error": f"Branch '{branch}' not found in concept hierarchy",
+            }
+
+        # BFS to find all concepts under branch up to depth
+        queue = [(branch_root_key, 0)]  # (concept_key, current_depth)
+        while queue:
+            current_key, current_depth = queue.pop(0)
+
+            # Check manifest layer bounds
+            if self.manifest_resolver is not None:
+                if not self.manifest_resolver.should_load_concept(current_key):
+                    continue
+
+            branch_concepts.add(current_key)
+
+            # Expand to children if not at max depth
+            if current_depth < depth:
+                children = self.parent_to_children.get(current_key, [])
+                for child_key in children:
+                    queue.append((child_key, current_depth + 1))
+
+        # Expand with siblings for coherent discrimination
+        if self.manifest_resolver is not None:
+            branch_concepts = self.manifest_resolver.expand_with_siblings(branch_concepts)
+
+        # Load the concepts
+        concepts_to_load = [k for k in branch_concepts if k not in self.loaded_activation_probes]
+
+        if concepts_to_load:
+            self._load_concepts(concepts_to_load, reason=f"be_introspection:{branch}")
+
+        # Return result
+        loaded_names = [k[0] for k in concepts_to_load]
+        return {
+            "success": True,
+            "loaded_concepts": loaded_names,
+            "cat_scope": result.cat_scope,
+            "error": None,
+        }
+
+    def request_probe_collapse(
+        self,
+        branch: str,
+        reason: str,
+    ) -> Dict[str, Any]:
+        """
+        BE workspace tool: Collapse probes for a branch to reclaim resources.
+
+        This is the inverse of request_probe_expansion. It unloads probes
+        that were loaded for introspection, returning them to the warm cache
+        or fully evicting them depending on memory pressure.
+
+        Note: Probes in must_enable branches cannot be collapsed.
+
+        Args:
+            branch: The branch name to collapse (e.g., "Emotion", "Curiosity")
+            reason: Why the BE is collapsing this (for audit log)
+
+        Returns:
+            Dict with:
+                - success: bool
+                - collapsed_concepts: List[str] - concepts that were unloaded
+                - retained_concepts: List[str] - concepts kept (must_enable)
+                - error: str - error message if failed
+        """
+        # Check if branch is in must_enable (cannot collapse)
+        if self.manifest_resolver is not None:
+            must_enable = self.manifest_resolver.get_must_enable_branches()
+            if branch in must_enable:
+                return {
+                    "success": False,
+                    "collapsed_concepts": [],
+                    "retained_concepts": [branch],
+                    "error": f"Branch '{branch}' is in must_enable and cannot be collapsed",
+                }
+
+        # Find concepts under this branch that are currently loaded
+        branch_concepts_loaded = []
+        retained = []
+
+        for key in list(self.loaded_activation_probes.keys()):
+            concept_name, layer = key
+
+            # Skip base layer probes - they're always retained
+            if key in self.base_layer_probes:
+                continue
+
+            # Check if this concept is under the branch
+            path = self.get_concept_path(concept_name, layer)
+
+            if branch in path:
+                # Check if this specific concept is in must_enable
+                if self.manifest_resolver is not None:
+                    envelope = self.manifest_resolver.manifest.probe_envelope
+                    if envelope and concept_name in envelope.must_enable.branches:
+                        retained.append(concept_name)
+                        continue
+
+                branch_concepts_loaded.append(key)
+
+        # Move probes to warm cache (not full eviction - they may be needed again)
+        collapsed_names = []
+        for key in branch_concepts_loaded:
+            probe = self.loaded_activation_probes[key]
+
+            # Store in warm cache
+            reactivation_count = self.cache_reactivation_count.get(key, 0)
+            self.warm_cache[key] = (probe, reactivation_count)
+
+            # Remove from active loaded probes
+            del self.loaded_activation_probes[key]
+            if key in self.loaded_probes:
+                del self.loaded_probes[key]
+            if key in self.probe_scores:
+                del self.probe_scores[key]
+
+            collapsed_names.append(key[0])
+
+        # Manage cache memory (may evict from warm cache if over budget)
+        self._manage_cache_memory()
+
+        return {
+            "success": True,
+            "collapsed_concepts": collapsed_names,
+            "retained_concepts": retained,
+            "error": None,
+        }
+
+    def get_introspection_reading(
+        self,
+        branch: str,
+        hidden_state: torch.Tensor,
+    ) -> Dict[str, Any]:
+        """
+        BE workspace tool: Get current probe readings for a branch.
+
+        This allows the BE to introspect on its own state for a specific branch
+        that was previously expanded via request_probe_expansion.
+
+        Args:
+            branch: The branch to read (must have been expanded first)
+            hidden_state: Current hidden state to probe
+
+        Returns:
+            Dict with:
+                - branch: str
+                - readings: Dict[concept_name, activation] for concepts in branch
+                - top_concept: str - highest activating concept
+                - interpretation: str - brief interpretation
+        """
+        # Find concepts under this branch
+        branch_concepts = {}
+
+        for key in self.loaded_activation_probes.keys():
+            # Check if this concept is under the branch
+            concept_name, layer = key
+            path = self.get_concept_path(concept_name, layer)
+
+            if branch in path:
+                branch_concepts[key] = self.loaded_activation_probes[key]
+
+        if not branch_concepts:
+            return {
+                "branch": branch,
+                "readings": {},
+                "top_concept": None,
+                "interpretation": f"No probes loaded for branch '{branch}'. Call request_probe_expansion first.",
+            }
+
+        # Run probes on current hidden state
+        if hidden_state.dim() == 1:
+            hidden_state = hidden_state.unsqueeze(0)
+
+        if self.normalize_hidden_states:
+            hidden_dim = hidden_state.shape[-1]
+            if self._layer_norm is None or self._layer_norm.normalized_shape[0] != hidden_dim:
+                self._layer_norm = torch.nn.LayerNorm(hidden_dim, elementwise_affine=False).to(hidden_state.device)
+            hidden_state = self._layer_norm(hidden_state)
+
+        readings = {}
+        with torch.inference_mode():
+            for key, probe in branch_concepts.items():
+                prob = probe(hidden_state).item()
+                readings[key[0]] = prob
+
+        # Find top concept
+        top_concept = max(readings, key=readings.get) if readings else None
+        top_score = readings.get(top_concept, 0.0)
+
+        # Generate interpretation
+        if top_score > 0.7:
+            interpretation = f"Strong activation of '{top_concept}' ({top_score:.2f})"
+        elif top_score > 0.4:
+            interpretation = f"Moderate activation of '{top_concept}' ({top_score:.2f})"
+        else:
+            interpretation = f"Low activation across branch (top: {top_concept} at {top_score:.2f})"
+
+        return {
+            "branch": branch,
+            "readings": readings,
+            "top_concept": top_concept,
+            "interpretation": interpretation,
+        }
+
+    def get_envelope_summary(self) -> Dict[str, Any]:
+        """
+        Get a summary of the USH probe envelope.
+
+        Returns summary of what probes the BE can/cannot access.
+        """
+        if self.manifest_resolver is not None:
+            return self.manifest_resolver.get_envelope_summary()
+
+        return {
+            "has_envelope": False,
+            "mode": "unrestricted",
+        }
 
     def reset_to_base(self):
         """Reset to only base layer probes (for clean benchmarking)."""
@@ -1608,4 +2000,31 @@ __all__ = [
     "ConceptMetadata",
     "ProbeRole",
     "SimplexBinding",
+    # Re-export manifest types for convenience
+    "DeploymentManifest",
+    "ManifestResolver",
+    "LoadPriority",
+    "ProbeEnvelope",
+    "ProbeEnvelopeRule",
+    "ProbeExpansionResult",
+    "PRESET_MANIFESTS",
 ]
+
+# Lazy imports for manifest types
+def __getattr__(name):
+    if name in (
+        "DeploymentManifest", "ManifestResolver", "LoadPriority",
+        "ProbeEnvelope", "ProbeEnvelopeRule", "ProbeExpansionResult",
+        "PRESET_MANIFESTS",
+    ):
+        from .deployment_manifest import (
+            DeploymentManifest,
+            ManifestResolver,
+            LoadPriority,
+            ProbeEnvelope,
+            ProbeEnvelopeRule,
+            ProbeExpansionResult,
+            PRESET_MANIFESTS,
+        )
+        return locals()[name]
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
