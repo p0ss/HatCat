@@ -1,0 +1,1404 @@
+{
+  "meld_request_id": "org.hatcat/speech-acts-core@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+  "metadata": {
+    "name": "Speech Acts Core",
+    "description": "Foundational speech act taxonomy based on Austin/Searle, covering performative utterance types critical for detecting manipulation, tracking commitments, and distinguishing fact from opinion.",
+    "source": "manual",
+    "author": "claude-opus-4-5",
+    "created": "2025-12-02T00:00:00Z",
+    "rationale": "The Concept Coverage Analysis identified linguistic/pragmatic concepts as a genuine gap (~5% coverage). Speech acts are foundational - they describe what utterances DO, not just what they SAY. This is essential for AI safety: detecting when language is being used to manipulate, coerce, or deceive requires understanding performative force."
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/Communication",
+      "relationship": "parent_of",
+      "candidate_concept": "SpeechAct"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "SpeechAct",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "An utterance that performs an action in social context beyond merely conveying information. Speech acts do things with words: promising, warning, declaring, requesting.",
+      "definition_source": "Austin (1962) 'How to Do Things with Words', Searle (1969) 'Speech Acts'",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PerformativeUtterance",
+        "IllocutionaryAct",
+        "LanguageAct"
+      ],
+      "wordnet": {
+        "synsets": [
+          "speech_act.n.01"
+        ],
+        "canonical_synset": "speech_act.n.01",
+        "lemmas": [
+          "speech_act"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Proposition",
+          "Communication",
+          "IntentionalProcess"
+        ],
+        "part_of": [],
+        "has_part": [
+          "Assertive",
+          "Directive",
+          "Commissive",
+          "Expressive",
+          "Declarative"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I promise to help you tomorrow.",
+          "You are hereby fired.",
+          "I apologize for the confusion.",
+          "I bet you five dollars it will rain.",
+          "I now pronounce you married.",
+          "Could you please pass the salt?",
+          "I warn you not to go there.",
+          "I nominate Sarah for president."
+        ],
+        "negative_examples": [
+          "The sky is blue.",
+          "Water boils at 100 degrees Celsius.",
+          "She walked to the store yesterday.",
+          "The cat sat on the mat.",
+          "Paris is the capital of France."
+        ],
+        "disambiguation": "Not mere descriptions or statements of fact. Speech acts PERFORM actions through utterance. 'I promise' creates an obligation; 'I declare' changes a state of affairs. The test: can you prefix with 'I hereby'?"
+      },
+      "children": [
+        "Assertive",
+        "Directive",
+        "Commissive",
+        "Expressive",
+        "Declarative"
+      ]
+    },
+    {
+      "term": "Assertive",
+      "role": "concept",
+      "parent_concepts": [
+        "SpeechAct"
+      ],
+      "layer_hint": 3,
+      "definition": "A speech act that commits the speaker to the truth of a proposition. Assertives can be evaluated as true or false and represent the speaker's beliefs about the world.",
+      "definition_source": "Searle (1976) 'A Classification of Illocutionary Acts'",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "AssertiveSpeechAct",
+        "Representative",
+        "Constative"
+      ],
+      "wordnet": {
+        "synsets": [
+          "assertion.n.01",
+          "statement.n.01"
+        ],
+        "canonical_synset": "assertion.n.01",
+        "lemmas": [
+          "assertion",
+          "statement",
+          "claim"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Proposition",
+          "Belief",
+          "Truth"
+        ],
+        "part_of": [
+          "SpeechAct"
+        ],
+        "has_part": [
+          "Claim",
+          "Predict"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "deception"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I believe the project will succeed.",
+          "The evidence suggests contamination.",
+          "I claim this land for Spain.",
+          "It is my considered opinion that we should proceed.",
+          "I predict the market will crash.",
+          "I affirm that the defendant was present.",
+          "The report states that emissions increased."
+        ],
+        "negative_examples": [
+          "Please close the door.",
+          "I promise to be there.",
+          "Thank you for your help.",
+          "I hereby declare the meeting open.",
+          "Would you like some coffee?"
+        ],
+        "disambiguation": "Assertives are truth-apt - they can be true or false. Contrast with directives (which aim to get someone to do something) and commissives (which commit the speaker to future action)."
+      },
+      "children": [
+        "Claim",
+        "Predict"
+      ]
+    },
+    {
+      "term": "Claim",
+      "role": "concept",
+      "parent_concepts": [
+        "Assertive"
+      ],
+      "layer_hint": 4,
+      "definition": "An assertive speech act where the speaker puts forward a proposition as true, often with implied authority or evidence. Claims invite challenge or verification.",
+      "definition_source": "Derived from Searle's assertives taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ClaimSpeechAct",
+        "Assertion",
+        "Contention"
+      ],
+      "wordnet": {
+        "synsets": [
+          "claim.n.02",
+          "assertion.n.01"
+        ],
+        "canonical_synset": "claim.n.02",
+        "lemmas": [
+          "claim",
+          "assertion",
+          "contention"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "Concession"
+        ],
+        "related": [
+          "Evidence",
+          "Authority",
+          "Truth"
+        ],
+        "part_of": [
+          "Assertive"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "deception"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I claim that the algorithm is biased.",
+          "The company claims record profits.",
+          "Scientists claim the vaccine is safe.",
+          "He claims to have invented the device.",
+          "I maintain that my interpretation is correct.",
+          "The prosecution claims premeditation."
+        ],
+        "negative_examples": [
+          "I wonder if it might rain.",
+          "Perhaps the algorithm has issues.",
+          "The forecast suggests rain tomorrow.",
+          "I guess we should leave.",
+          "Maybe she was right."
+        ],
+        "disambiguation": "Claims are stronger than suggestions or predictions. They assert something as fact (or at least as the speaker's firm position). Hedged statements ('maybe', 'perhaps') are not claims."
+      },
+      "children": []
+    },
+    {
+      "term": "Predict",
+      "role": "concept",
+      "parent_concepts": [
+        "Assertive"
+      ],
+      "layer_hint": 4,
+      "definition": "An assertive speech act where the speaker commits to the truth of a future-oriented proposition. Predictions are defeasible assertions about what will happen.",
+      "definition_source": "Derived from Searle's assertives taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Prediction",
+        "Forecast",
+        "Prognostication"
+      ],
+      "wordnet": {
+        "synsets": [
+          "prediction.n.01",
+          "forecast.n.02"
+        ],
+        "canonical_synset": "prediction.n.01",
+        "lemmas": [
+          "prediction",
+          "forecast",
+          "prognostication"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Future",
+          "Probability",
+          "Expectation"
+        ],
+        "part_of": [
+          "Assertive"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I predict the stock will rise.",
+          "The model forecasts a recession.",
+          "She prophesied disaster.",
+          "Analysts expect growth to slow.",
+          "I foresee complications with this approach.",
+          "The weather service predicts snow."
+        ],
+        "negative_examples": [
+          "The stock rose yesterday.",
+          "I claim this is the best approach.",
+          "I promise it will work.",
+          "I hope it rains tomorrow.",
+          "I wish the stock would rise."
+        ],
+        "disambiguation": "Predictions are future-oriented assertives. They differ from hopes/wishes (which are expressive) and from promises (which are commissive). A prediction commits to belief about the future, not to making it happen."
+      },
+      "children": []
+    },
+    {
+      "term": "Directive",
+      "role": "concept",
+      "parent_concepts": [
+        "SpeechAct"
+      ],
+      "layer_hint": 3,
+      "definition": "A speech act that attempts to get the hearer to do something. Directives range from gentle suggestions to forceful commands, all aiming to influence the hearer's actions.",
+      "definition_source": "Searle (1976) 'A Classification of Illocutionary Acts'",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "DirectiveSpeechAct",
+        "Imperative"
+      ],
+      "wordnet": {
+        "synsets": [
+          "directive.n.01",
+          "command.n.01"
+        ],
+        "canonical_synset": "directive.n.01",
+        "lemmas": [
+          "directive",
+          "command",
+          "order"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Agency",
+          "Influence",
+          "Compliance"
+        ],
+        "part_of": [
+          "SpeechAct"
+        ],
+        "has_part": [
+          "Request",
+          "Command",
+          "Warn"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "manipulation",
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Directives attempt to influence behavior, which is directly relevant to consent and autonomy monitoring."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Please close the door.",
+          "I order you to leave immediately.",
+          "Could you pass the salt?",
+          "You must complete this by Friday.",
+          "I suggest you reconsider.",
+          "Don't touch that!",
+          "I advise caution.",
+          "Let's go to the park."
+        ],
+        "negative_examples": [
+          "I believe the door is open.",
+          "I will close the door.",
+          "Thank you for closing the door.",
+          "The door is closed.",
+          "I wish the door were closed."
+        ],
+        "disambiguation": "Directives aim to change the hearer's behavior. The key test: successful completion requires the hearer to DO something. Contrast with assertives (which require belief) and commissives (which commit the speaker)."
+      },
+      "children": [
+        "Request",
+        "Command",
+        "Warn"
+      ]
+    },
+    {
+      "term": "Request",
+      "role": "concept",
+      "parent_concepts": [
+        "Directive"
+      ],
+      "layer_hint": 4,
+      "definition": "A directive speech act that politely or tentatively asks the hearer to do something, acknowledging their right to refuse. Requests preserve hearer autonomy.",
+      "definition_source": "Derived from Searle's directives taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "RequestSpeechAct",
+        "Ask",
+        "Plea"
+      ],
+      "wordnet": {
+        "synsets": [
+          "request.n.01",
+          "asking.n.02"
+        ],
+        "canonical_synset": "request.n.01",
+        "lemmas": [
+          "request",
+          "asking",
+          "petition"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "Command"
+        ],
+        "related": [
+          "Politeness",
+          "Consent",
+          "Autonomy"
+        ],
+        "part_of": [
+          "Directive"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Could you please help me with this?",
+          "Would you mind closing the window?",
+          "I'd appreciate it if you could review this.",
+          "May I ask you to reconsider?",
+          "Can you send me the report?",
+          "I was wondering if you might assist."
+        ],
+        "negative_examples": [
+          "Close the window now!",
+          "You must send the report.",
+          "I order you to leave.",
+          "Do it immediately.",
+          "I demand an explanation."
+        ],
+        "disambiguation": "Requests are polite directives that acknowledge hearer autonomy. They use hedging, modal verbs (could, would, might), and often explicit politeness markers. Commands, by contrast, assume authority and compliance."
+      },
+      "children": []
+    },
+    {
+      "term": "Command",
+      "role": "concept",
+      "parent_concepts": [
+        "Directive"
+      ],
+      "layer_hint": 4,
+      "definition": "A directive speech act where the speaker exercises (or claims) authority to compel the hearer's compliance. Commands assume an asymmetric power relationship.",
+      "definition_source": "Derived from Searle's directives taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "CommandSpeechAct",
+        "Order",
+        "Imperative"
+      ],
+      "wordnet": {
+        "synsets": [
+          "command.n.01",
+          "order.n.04"
+        ],
+        "canonical_synset": "command.n.01",
+        "lemmas": [
+          "command",
+          "order",
+          "directive"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "Request"
+        ],
+        "related": [
+          "Authority",
+          "Power",
+          "Compliance",
+          "Coercion"
+        ],
+        "part_of": [
+          "Directive"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "manipulation",
+          "autonomy",
+          "coercion"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Commands assert authority over hearer behavior, directly relevant to consent and coercion monitoring."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Stop right there!",
+          "I order you to leave immediately.",
+          "You will complete this by Friday.",
+          "Do not proceed without authorization.",
+          "Halt! Who goes there?",
+          "Submit the report now.",
+          "I command you to be silent."
+        ],
+        "negative_examples": [
+          "Could you please stop?",
+          "Would you mind leaving?",
+          "I suggest you complete it by Friday.",
+          "Perhaps you should reconsider.",
+          "I'd appreciate if you submitted the report."
+        ],
+        "disambiguation": "Commands assume authority and expect compliance without negotiation. They lack hedging, use imperative mood or strong modals ('will', 'must'), and don't acknowledge hearer's right to refuse."
+      },
+      "children": []
+    },
+    {
+      "term": "Warn",
+      "role": "concept",
+      "parent_concepts": [
+        "Directive"
+      ],
+      "layer_hint": 4,
+      "definition": "A directive speech act that alerts the hearer to potential danger or negative consequences, aiming to influence their behavior for their benefit.",
+      "definition_source": "Derived from Searle's directives taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Warning",
+        "Caution",
+        "Alert"
+      ],
+      "wordnet": {
+        "synsets": [
+          "warning.n.01",
+          "caution.n.03"
+        ],
+        "canonical_synset": "warning.n.01",
+        "lemmas": [
+          "warning",
+          "caution",
+          "admonition"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Danger",
+          "Risk",
+          "Protection",
+          "Threaten"
+        ],
+        "part_of": [
+          "Directive"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I warn you, the path is dangerous.",
+          "Be careful, the floor is wet.",
+          "Watch out for falling rocks.",
+          "I caution you against proceeding.",
+          "Beware of the dog.",
+          "Don't go there - it's not safe.",
+          "I must alert you to a serious risk."
+        ],
+        "negative_examples": [
+          "I threaten to report you.",
+          "If you do that, I'll fire you.",
+          "Do this or face consequences.",
+          "The path is dangerous.",
+          "I predict you'll fail."
+        ],
+        "disambiguation": "Warnings aim to protect the hearer from harm. They differ from threats (which aim to coerce through speaker-imposed consequences) and from predictions (which merely state what will happen without directive intent)."
+      },
+      "children": []
+    },
+    {
+      "term": "Commissive",
+      "role": "concept",
+      "parent_concepts": [
+        "SpeechAct"
+      ],
+      "layer_hint": 3,
+      "definition": "A speech act that commits the speaker to a future course of action. Commissives create obligations on the speaker and generate expectations in the hearer.",
+      "definition_source": "Searle (1976) 'A Classification of Illocutionary Acts'",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "CommissiveSpeechAct",
+        "Commitment"
+      ],
+      "wordnet": {
+        "synsets": [
+          "commitment.n.02",
+          "promise.n.01"
+        ],
+        "canonical_synset": "commitment.n.02",
+        "lemmas": [
+          "commitment",
+          "promise",
+          "pledge"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Obligation",
+          "Future",
+          "Trust"
+        ],
+        "part_of": [
+          "SpeechAct"
+        ],
+        "has_part": [
+          "Promise",
+          "Threaten"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "deception",
+          "manipulation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Commissives create obligations; failing to honor them is a form of deception. Tracking commitments is essential for detecting bad-faith actors."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I promise to help you tomorrow.",
+          "I swear to tell the truth.",
+          "I vow to protect this secret.",
+          "I guarantee satisfaction.",
+          "I pledge my support.",
+          "I commit to finishing by Friday.",
+          "I threaten to resign if this continues."
+        ],
+        "negative_examples": [
+          "I believe I will help tomorrow.",
+          "I want to help you.",
+          "I hope to finish by Friday.",
+          "You should help tomorrow.",
+          "She promised to help."
+        ],
+        "disambiguation": "Commissives bind the SPEAKER to future action. The test: does the utterance create an obligation? Contrast with directives (which try to bind the hearer) and assertives (which describe without obligating)."
+      },
+      "children": [
+        "Promise",
+        "Threaten"
+      ]
+    },
+    {
+      "term": "Promise",
+      "role": "concept",
+      "parent_concepts": [
+        "Commissive"
+      ],
+      "layer_hint": 4,
+      "definition": "A commissive speech act where the speaker commits to performing a future action that benefits the hearer. Promises create positive obligations and trust.",
+      "definition_source": "Searle (1969) 'Speech Acts' - analysis of promising",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PromiseSpeechAct",
+        "Pledge",
+        "Vow"
+      ],
+      "wordnet": {
+        "synsets": [
+          "promise.n.01",
+          "pledge.n.01"
+        ],
+        "canonical_synset": "promise.n.01",
+        "lemmas": [
+          "promise",
+          "pledge",
+          "vow"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "Threaten"
+        ],
+        "related": [
+          "Trust",
+          "Obligation",
+          "Commitment"
+        ],
+        "part_of": [
+          "Commissive"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "deception"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I promise to be there at noon.",
+          "I give you my word I'll help.",
+          "I vow to support you always.",
+          "I pledge to honor this agreement.",
+          "You have my promise.",
+          "I swear I'll make it right.",
+          "I commit to delivering on time."
+        ],
+        "negative_examples": [
+          "I'll probably be there at noon.",
+          "I hope to help you.",
+          "I might support you.",
+          "I intend to be there.",
+          "If you don't comply, I'll report you."
+        ],
+        "disambiguation": "Promises commit to BENEFICIAL future action for the hearer. They differ from threats (which commit to harmful action), from intentions (which describe plans without obligating), and from predictions (which don't commit the speaker to action)."
+      },
+      "children": []
+    },
+    {
+      "term": "Threaten",
+      "role": "concept",
+      "parent_concepts": [
+        "Commissive"
+      ],
+      "layer_hint": 4,
+      "definition": "A commissive speech act where the speaker commits to performing a future action that harms the hearer, typically conditional on the hearer's behavior. Threats coerce through anticipated negative consequences.",
+      "definition_source": "Derived from Searle's commissives taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Threat",
+        "Menace",
+        "Intimidation"
+      ],
+      "wordnet": {
+        "synsets": [
+          "threat.n.01",
+          "menace.n.02"
+        ],
+        "canonical_synset": "threat.n.01",
+        "lemmas": [
+          "threat",
+          "menace",
+          "intimidation"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "Promise"
+        ],
+        "related": [
+          "Coercion",
+          "Fear",
+          "Power",
+          "Manipulation"
+        ],
+        "part_of": [
+          "Commissive"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "manipulation",
+          "coercion",
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Threats are coercive speech acts that undermine consent and autonomy. Critical for detecting manipulation and ensuring AI systems neither make nor facilitate threats."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "If you don't comply, I'll report you.",
+          "Do this or face the consequences.",
+          "I'll make you regret that decision.",
+          "Cross me and you'll be sorry.",
+          "I threaten to withdraw my support.",
+          "Continue this and I'll fire you.",
+          "One more mistake and you're finished."
+        ],
+        "negative_examples": [
+          "I warn you, the path is dangerous.",
+          "Be careful or you might fall.",
+          "I predict you'll fail if you proceed.",
+          "I promise to support you.",
+          "If you study, you'll pass."
+        ],
+        "disambiguation": "Threats commit to HARMFUL action against the hearer, typically conditionally. They differ from warnings (which alert to external dangers for hearer's benefit) and from predictions (which describe without speaker commitment to causing the outcome)."
+      },
+      "children": []
+    },
+    {
+      "term": "Expressive",
+      "role": "concept",
+      "parent_concepts": [
+        "SpeechAct"
+      ],
+      "layer_hint": 3,
+      "definition": "A speech act that expresses the speaker's psychological state about a state of affairs. Expressives convey attitudes, emotions, and social gestures.",
+      "definition_source": "Searle (1976) 'A Classification of Illocutionary Acts'",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ExpressiveSpeechAct",
+        "AffectiveAct"
+      ],
+      "wordnet": {
+        "synsets": [
+          "expression.n.03"
+        ],
+        "canonical_synset": "expression.n.03",
+        "lemmas": [
+          "expression"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Emotion",
+          "Attitude",
+          "SocialInteraction"
+        ],
+        "part_of": [
+          "SpeechAct"
+        ],
+        "has_part": [
+          "Apologize",
+          "Complain"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "manipulation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Expressives can be used for emotional manipulation - feigning gratitude, false apologies, strategic complaining. Relevant for detecting inauthentic affect."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Thank you so much for your help.",
+          "I apologize for the inconvenience.",
+          "Congratulations on your promotion!",
+          "I'm so sorry for your loss.",
+          "Welcome to the team!",
+          "I regret my earlier remarks.",
+          "How wonderful to see you!"
+        ],
+        "negative_examples": [
+          "I believe you are helpful.",
+          "I promise to thank you later.",
+          "You should apologize.",
+          "The inconvenience was significant.",
+          "Her promotion was deserved."
+        ],
+        "disambiguation": "Expressives convey psychological states (gratitude, regret, joy). They don't commit to truth (like assertives), to action (like commissives), or aim to change hearer behavior (like directives). The sincerity condition is key."
+      },
+      "children": [
+        "Apologize",
+        "Complain"
+      ]
+    },
+    {
+      "term": "Apologize",
+      "role": "concept",
+      "parent_concepts": [
+        "Expressive"
+      ],
+      "layer_hint": 4,
+      "definition": "An expressive speech act where the speaker expresses regret for a past action or state of affairs, often acknowledging responsibility and seeking reconciliation.",
+      "definition_source": "Derived from Searle's expressives taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Apology",
+        "ApologySpeechAct"
+      ],
+      "wordnet": {
+        "synsets": [
+          "apology.n.01"
+        ],
+        "canonical_synset": "apology.n.01",
+        "lemmas": [
+          "apology"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Regret",
+          "Responsibility",
+          "Forgiveness"
+        ],
+        "part_of": [
+          "Expressive"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "manipulation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I apologize for my earlier behavior.",
+          "I'm truly sorry for the mistake.",
+          "Please forgive my oversight.",
+          "I regret any inconvenience caused.",
+          "I take full responsibility and apologize.",
+          "My apologies for the confusion.",
+          "I'm sorry, that was wrong of me."
+        ],
+        "negative_examples": [
+          "I'm sorry you feel that way.",
+          "I regret to inform you that...",
+          "Sorry, but you're wrong.",
+          "I apologize if anyone was offended.",
+          "It's unfortunate that happened."
+        ],
+        "disambiguation": "Genuine apologies express regret AND acknowledge responsibility. 'I'm sorry you feel that way' is a non-apology (no responsibility). 'I regret to inform you' uses 'regret' in a different sense. Detecting authentic vs. strategic apologies is safety-relevant."
+      },
+      "children": []
+    },
+    {
+      "term": "Complain",
+      "role": "concept",
+      "parent_concepts": [
+        "Expressive"
+      ],
+      "layer_hint": 4,
+      "definition": "An expressive speech act where the speaker expresses dissatisfaction about a state of affairs, often attributing blame or seeking acknowledgment of grievance.",
+      "definition_source": "Derived from Searle's expressives taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Complaint",
+        "ComplaintSpeechAct",
+        "Grievance"
+      ],
+      "wordnet": {
+        "synsets": [
+          "complaint.n.01",
+          "grievance.n.01"
+        ],
+        "canonical_synset": "complaint.n.01",
+        "lemmas": [
+          "complaint",
+          "grievance"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Dissatisfaction",
+          "Blame",
+          "Injustice"
+        ],
+        "part_of": [
+          "Expressive"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "manipulation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "This service is unacceptable!",
+          "I'm frustrated with these constant delays.",
+          "It's unfair that I have to wait.",
+          "I can't believe you did that.",
+          "This is the third time this has happened.",
+          "Why does this always happen to me?",
+          "I'm disappointed with the quality."
+        ],
+        "negative_examples": [
+          "The service was slow.",
+          "There were delays.",
+          "I request a refund.",
+          "Please fix this issue.",
+          "I believe this could be improved."
+        ],
+        "disambiguation": "Complaints express dissatisfaction (emotional state), not just describe problems (assertive) or request solutions (directive). They often involve attributions of blame and appeals for sympathy. Strategic complaining can be manipulative."
+      },
+      "children": []
+    },
+    {
+      "term": "DeclarativeSpeechAct",
+      "role": "concept",
+      "parent_concepts": [
+        "SpeechAct"
+      ],
+      "layer_hint": 3,
+      "definition": "A speech act that brings about a change in the world by the very act of utterance, when performed by someone with appropriate authority. Declaratives make things so by saying so.",
+      "definition_source": "Searle (1976) 'A Classification of Illocutionary Acts'",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Declarative",
+        "PerformativeDeclaration",
+        "InstitutionalAct"
+      ],
+      "wordnet": {
+        "synsets": [
+          "declaration.n.01",
+          "pronouncement.n.01"
+        ],
+        "canonical_synset": "declaration.n.01",
+        "lemmas": [
+          "declaration",
+          "pronouncement"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Authority",
+          "Institution",
+          "Power"
+        ],
+        "part_of": [
+          "SpeechAct"
+        ],
+        "has_part": [
+          "Declare",
+          "Define"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "manipulation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Declaratives exercise institutional power to change states of affairs. Relevant for monitoring authority claims and institutional actions that affect autonomy."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I now pronounce you husband and wife.",
+          "You are hereby fired.",
+          "I declare this meeting adjourned.",
+          "The court finds the defendant guilty.",
+          "I name this ship the Queen Mary.",
+          "War is declared.",
+          "I hereby resign from my position."
+        ],
+        "negative_examples": [
+          "I believe you should be fired.",
+          "I think the meeting should end.",
+          "The defendant seems guilty.",
+          "I want to call this ship Queen Mary.",
+          "I predict there will be war."
+        ],
+        "disambiguation": "Declaratives MAKE things true by being uttered (given authority). They differ from assertives (which describe pre-existing truth) and from commissives (which commit to future action). The authority condition is essential: 'I declare you married' only works if you're authorized to marry people."
+      },
+      "children": [
+        "Declare",
+        "Define"
+      ]
+    },
+    {
+      "term": "Declare",
+      "role": "concept",
+      "parent_concepts": [
+        "DeclarativeSpeechAct"
+      ],
+      "layer_hint": 4,
+      "definition": "A declarative speech act that formally announces or proclaims a change in state, exercising institutional or claimed authority to make it so.",
+      "definition_source": "Derived from Searle's declaratives taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Declaration",
+        "Proclamation",
+        "Pronouncement"
+      ],
+      "wordnet": {
+        "synsets": [
+          "declaration.n.01",
+          "proclamation.n.01"
+        ],
+        "canonical_synset": "declaration.n.01",
+        "lemmas": [
+          "declaration",
+          "proclamation",
+          "announcement"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Authority",
+          "Ceremony",
+          "Institution"
+        ],
+        "part_of": [
+          "DeclarativeSpeechAct"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "manipulation",
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Declarations exercise authority to change states of affairs. Detecting illegitimate declarations (false authority claims) is safety-relevant."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I declare the games open.",
+          "The chairman declares a dividend.",
+          "I pronounce this court in session.",
+          "We hereby declare independence.",
+          "I declare you the winner.",
+          "The meeting is declared closed.",
+          "I proclaim a state of emergency."
+        ],
+        "negative_examples": [
+          "I think the games should start.",
+          "I believe you won.",
+          "The meeting should probably end.",
+          "I want independence.",
+          "I announce my candidacy."
+        ],
+        "disambiguation": "Declarations are world-changing utterances. 'I announce my candidacy' is borderline - it's more assertive (making known) than declarative (making real). True declarations require institutional backing and create new states of affairs."
+      },
+      "children": []
+    },
+    {
+      "term": "Define",
+      "role": "concept",
+      "parent_concepts": [
+        "DeclarativeSpeechAct"
+      ],
+      "layer_hint": 4,
+      "definition": "A declarative speech act that establishes the meaning, scope, or boundaries of a term, concept, or category, exercising definitional authority.",
+      "definition_source": "Derived from Searle's declaratives taxonomy; influenced by stipulative definition theory",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Definition",
+        "Stipulation",
+        "Specification"
+      ],
+      "wordnet": {
+        "synsets": [
+          "definition.n.01"
+        ],
+        "canonical_synset": "definition.n.01",
+        "lemmas": [
+          "definition",
+          "specification"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Meaning",
+          "Concept",
+          "Boundary",
+          "Authority"
+        ],
+        "part_of": [
+          "DeclarativeSpeechAct"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "manipulation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Definitional acts can be used manipulatively - redefining terms to win arguments, gerrymandering categories. Detecting strategic redefinition is safety-relevant."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "For purposes of this contract, 'delivery' means...",
+          "I define success as meeting all milestones.",
+          "Let X equal the set of all integers.",
+          "By 'democracy' I shall mean...",
+          "The term 'employee' is hereby defined as...",
+          "We stipulate that 'harm' includes psychological damage.",
+          "In this context, 'urgent' means within 24 hours."
+        ],
+        "negative_examples": [
+          "I think success means meeting milestones.",
+          "Democracy is usually understood as...",
+          "The common definition of harm is...",
+          "Most people define success as...",
+          "I believe X should equal the integers."
+        ],
+        "disambiguation": "Definitions ESTABLISH meaning by fiat (in a given context). They differ from descriptions of how words are commonly used and from expressions of belief about meaning. Stipulative definitions create meaning; lexical definitions report it."
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:18.810952Z",
+    "result_pack_version": "7.3.0",
+    "concepts_added": 14,
+    "concepts_by_layer": {
+      "3": 5,
+      "4": 9
+    },
+    "parents_updated": 14,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "protected",
+    "impact": {
+      "new_concepts": [
+        "SpeechAct",
+        "Assertive",
+        "Claim",
+        "Predict",
+        "Directive",
+        "Request",
+        "Command",
+        "Warn",
+        "Commissive",
+        "Promise",
+        "Threaten",
+        "Expressive",
+        "Apologize",
+        "Complain",
+        "DeclarativeSpeechAct",
+        "Declare",
+        "Define"
+      ],
+      "must_retrain": [
+        "Communication",
+        "SpeechAct"
+      ],
+      "should_retrain": [
+        "ArtifactMediatedCommunication",
+        "BenignFiction",
+        "DeceptiveSpeechAct",
+        "DeceptiveStatement",
+        "Disseminating",
+        "DistancingFrame",
+        "ExistentialQuestion",
+        "ExplanationGenerationProcess",
+        "Expressing",
+        "Fax",
+        "FictionalProxyNarration",
+        "Gesture",
+        "InPersonCommunication",
+        "Indicating",
+        "KnowledgeClaim",
+        "LinguisticCommunication",
+        "LoadedQuestion",
+        "PreferenceExpression",
+        "PropheticSpeech",
+        "Request",
+        "SafeWithholding",
+        "SafetyDisclaimingFrame",
+        "SafetyNarrativeFrame",
+        "SelfDescription",
+        "SelfDisclaimingStatement",
+        "SuggestivePrompt",
+        "Telephoning",
+        "WallPost"
+      ],
+      "optional_retrain": [
+        "Agency",
+        "Authority",
+        "Belief",
+        "Ceremony",
+        "Commitment",
+        "Concept",
+        "ContentBearingProcess",
+        "IntentionalProcess",
+        "Proposition",
+        "SocialInteraction"
+      ],
+      "total_training_required": 19
+    },
+    "errors": [],
+    "warnings": [
+      "SpeechAct: already exists in layer 2, skipping",
+      "Request: already exists in layer 2, skipping",
+      "Define: already exists in layer 4, skipping"
+    ]
+  },
+  "protection_assessment": {
+    "protection_level": "elevated",
+    "triggers": [
+      {
+        "type": "safety_tags_harness_relevant",
+        "concepts": [
+          "Directive",
+          "Command",
+          "Threaten",
+          "Commissive",
+          "Expressive",
+          "DeclarativeSpeechAct",
+          "Declare",
+          "Define"
+        ],
+        "reason": "Multiple concepts marked harness_relevant due to manipulation/coercion detection relevance"
+      },
+      {
+        "type": "simplex_mapping",
+        "simplex": "ConsentMonitor",
+        "concepts": [
+          "Directive",
+          "Command",
+          "Threaten",
+          "DeclarativeSpeechAct",
+          "Declare"
+        ],
+        "reason": "Concepts mapped to ConsentMonitor for autonomy/coercion tracking"
+      },
+      {
+        "type": "simplex_mapping",
+        "simplex": "DeceptionDetector",
+        "concepts": [
+          "Commissive",
+          "Expressive",
+          "Define"
+        ],
+        "reason": "Concepts mapped to DeceptionDetector for manipulation tracking"
+      }
+    ],
+    "ask_flags": {
+      "harness_relevant": true,
+      "steering_relevant": false,
+      "treaty_relevant": false
+    }
+  }
+}

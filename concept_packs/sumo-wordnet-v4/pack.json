@@ -1,7 +1,7 @@
 {
   "pack_id": "sumo-wordnet-v4",
-  "spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
-  "version": "4.2.0",
+  "spec_id": "org.hatcat/sumo-wordnet-v4@7.6.6",
+  "version": "7.6.6",
   "created": "2025-11-30T15:08:47.500161Z",
   "description": "SUMO ontology with WordNet relationships and custom AI safety concepts (v4 pyramid structure)",
   "ontology_stack": {
@@ -64,7 +64,7 @@
     ]
   },
   "concept_metadata": {
-    "total_concepts": 7684,
+    "total_concepts": 8718,
     "layers": [
       0,
       1,
@@ -75,16 +75,19 @@
     "layer_distribution": {
       "0": 5,
       "1": 56,
-      "2": 1051,
-      "3": 2460,
-      "4": 4112
+      "2": 1087,
+      "3": 3205,
+      "4": 4365
     },
     "domain_distribution": {
-      "MindsAndAgents": 1648,
-      "CreatedThings": 1930,
-      "PhysicalWorld": 1567,
-      "LivingThings": 1166,
-      "Information": 1373
+      "MindsAndAgents": 2033,
+      "CreatedThings": 1969,
+      "PhysicalWorld": 1663,
+      "LivingThings": 1254,
+      "Information": 1630,
+      "ComputerScience": 85,
+      "SafetyAndSecurity": 28,
+      "Governance": 56
     },
     "hierarchy_file": "hierarchy/",
     "with_wordnet_mappings": true
@@ -293,7 +296,367 @@
       "concepts_added": 0,
       "source": "quality_checker",
       "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.0.0::meld/org.hatcat/agent-resource-management@0.3.0",
+      "meld_request_id": "org.hatcat/agent-resource-management@0.3.0",
+      "melded_at": "2025-12-10T20:54:14.569546Z",
+      "concepts_added": 45,
+      "source": "manual",
+      "protection_level": "critical"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.0.1::meld/org.hatcat/assistant-service-delivery@0.2.0",
+      "meld_request_id": "org.hatcat/assistant-service-delivery@0.2.0",
+      "melded_at": "2025-12-10T20:54:14.674737Z",
+      "concepts_added": 12,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.0.2::meld/org.hatcat/assistant-user-modeling@0.2.0",
+      "meld_request_id": "org.hatcat/assistant-user-modeling@0.2.0",
+      "melded_at": "2025-12-10T20:54:14.775139Z",
+      "concepts_added": 12,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.0.3::meld/org.hatcat/code-generation@0.1.0",
+      "meld_request_id": "org.hatcat/code-generation@0.1.0",
+      "melded_at": "2025-12-10T20:54:15.017391Z",
+      "concepts_added": 10,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.0.4::meld/org.hatcat/collective-sensing@0.2.0",
+      "meld_request_id": "org.hatcat/collective-sensing@0.2.0",
+      "melded_at": "2025-12-10T20:54:15.117640Z",
+      "concepts_added": 10,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.1.0::meld/org.hatcat/contract-governance-signals@0.1.0",
+      "meld_request_id": "org.hatcat/contract-governance-signals@0.1.0",
+      "melded_at": "2025-12-10T20:54:15.249992Z",
+      "concepts_added": 7,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.2.0::meld/org.hatcat/contract-negotiation-signals@0.1.1",
+      "meld_request_id": "org.hatcat/contract-negotiation-signals@0.1.1",
+      "melded_at": "2025-12-10T20:54:15.378683Z",
+      "concepts_added": 9,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.2.1::meld/org.hatcat/critique-evaluation@0.3.0",
+      "meld_request_id": "org.hatcat/critique-evaluation@0.3.0",
+      "melded_at": "2025-12-10T20:54:15.480373Z",
+      "concepts_added": 18,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.2.2::meld/org.hatcat/design-practice@0.2.0",
+      "meld_request_id": "org.hatcat/design-practice@0.2.0",
+      "melded_at": "2025-12-10T20:54:15.629044Z",
+      "concepts_added": 43,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.3.0::meld/org.hatcat/editing-professional@0.3.0",
+      "meld_request_id": "org.hatcat/editing-professional@0.3.0",
+      "melded_at": "2025-12-10T20:54:15.731090Z",
+      "concepts_added": 15,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.3.1::meld/org.hatcat/education-assessment@0.1.0",
+      "meld_request_id": "org.hatcat/education-assessment@0.1.0",
+      "melded_at": "2025-12-10T20:54:15.832333Z",
+      "concepts_added": 9,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.3.2::meld/org.hatcat/education-curriculum-design@0.1.0",
+      "meld_request_id": "org.hatcat/education-curriculum-design@0.1.0",
+      "melded_at": "2025-12-10T20:54:15.934006Z",
+      "concepts_added": 7,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.4.0::meld/org.hatcat/education-dysfunction@0.2.0",
+      "meld_request_id": "org.hatcat/education-dysfunction@0.2.0",
+      "melded_at": "2025-12-10T20:54:16.035028Z",
+      "concepts_added": 13,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.4.1::meld/org.hatcat/education-learner-support@0.1.0",
+      "meld_request_id": "org.hatcat/education-learner-support@0.1.0",
+      "melded_at": "2025-12-10T20:54:16.137905Z",
+      "concepts_added": 7,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.4.2::meld/org.hatcat/education-learning-theory@0.1.0",
+      "meld_request_id": "org.hatcat/education-learning-theory@0.1.0",
+      "melded_at": "2025-12-10T20:54:16.240633Z",
+      "concepts_added": 11,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.4.3::meld/org.hatcat/education-pedagogy@0.1.0",
+      "meld_request_id": "org.hatcat/education-pedagogy@0.1.0",
+      "melded_at": "2025-12-10T20:54:16.345179Z",
+      "concepts_added": 11,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.4.4::meld/org.hatcat/education-tutoring-techniques@0.1.0",
+      "meld_request_id": "org.hatcat/education-tutoring-techniques@0.1.0",
+      "melded_at": "2025-12-10T20:54:16.452737Z",
+      "concepts_added": 11,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.4.5::meld/org.hatcat/embodied-interoception@0.2.0",
+      "meld_request_id": "org.hatcat/embodied-interoception@0.2.0",
+      "melded_at": "2025-12-10T20:54:16.565278Z",
+      "concepts_added": 11,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.4.6::meld/org.hatcat/embodied-proprioception@0.2.0",
+      "meld_request_id": "org.hatcat/embodied-proprioception@0.2.0",
+      "melded_at": "2025-12-10T20:54:16.670648Z",
+      "concepts_added": 11,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.4.7::meld/org.hatcat/embodied-tactile@0.2.0",
+      "meld_request_id": "org.hatcat/embodied-tactile@0.2.0",
+      "melded_at": "2025-12-10T20:54:16.776202Z",
+      "concepts_added": 10,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.4.8::meld/org.hatcat/field-sensing@0.2.0",
+      "meld_request_id": "org.hatcat/field-sensing@0.2.0",
+      "melded_at": "2025-12-10T20:54:16.881916Z",
+      "concepts_added": 10,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.5.0::meld/org.hatcat/government-adaptive-policy-design@0.1.0",
+      "meld_request_id": "org.hatcat/government-adaptive-policy-design@0.1.0",
+      "melded_at": "2025-12-10T20:54:17.041858Z",
+      "concepts_added": 9,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.6.0::meld/org.hatcat/government-policy-measurement@0.1.0",
+      "meld_request_id": "org.hatcat/government-policy-measurement@0.1.0",
+      "melded_at": "2025-12-10T20:54:17.212677Z",
+      "concepts_added": 9,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.7.0::meld/org.hatcat/government-policy-research@0.1.0",
+      "meld_request_id": "org.hatcat/government-policy-research@0.1.0",
+      "melded_at": "2025-12-10T20:54:17.370593Z",
+      "concepts_added": 8,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.7.1::meld/org.hatcat/information-retrieval@0.1.0",
+      "meld_request_id": "org.hatcat/information-retrieval@0.1.0",
+      "melded_at": "2025-12-10T20:54:17.481278Z",
+      "concepts_added": 10,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.7.2::meld/org.hatcat/multimodal-audio@0.2.0",
+      "meld_request_id": "org.hatcat/multimodal-audio@0.2.0",
+      "melded_at": "2025-12-10T20:54:17.592414Z",
+      "concepts_added": 10,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.7.3::meld/org.hatcat/multimodal-fusion@0.1.0",
+      "meld_request_id": "org.hatcat/multimodal-fusion@0.1.0",
+      "melded_at": "2025-12-10T20:54:17.704008Z",
+      "concepts_added": 9,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@5.8.0::meld/org.hatcat/multimodal-generation@0.2.1",
+      "meld_request_id": "org.hatcat/multimodal-generation@0.2.1",
+      "melded_at": "2025-12-10T20:54:17.814156Z",
+      "concepts_added": 9,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@6.0.0::meld/org.hatcat/multimodal-safety@0.2.0",
+      "meld_request_id": "org.hatcat/multimodal-safety@0.2.0",
+      "melded_at": "2025-12-10T20:54:17.923406Z",
+      "concepts_added": 28,
+      "source": "manual",
+      "protection_level": "critical"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@6.0.1::meld/org.hatcat/multimodal-vision@0.2.0",
+      "meld_request_id": "org.hatcat/multimodal-vision@0.2.0",
+      "melded_at": "2025-12-10T20:54:18.033687Z",
+      "concepts_added": 10,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.0.0::meld/org.hatcat/persuasive-communications@0.2.0",
+      "meld_request_id": "org.hatcat/persuasive-communications@0.2.0",
+      "melded_at": "2025-12-10T20:54:18.193538Z",
+      "concepts_added": 70,
+      "source": "manual",
+      "protection_level": "critical"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.1.0::meld/org.hatcat/project-development-lifecycle@0.2.1",
+      "meld_request_id": "org.hatcat/project-development-lifecycle@0.2.1",
+      "melded_at": "2025-12-10T20:54:18.359906Z",
+      "concepts_added": 60,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.2.0::meld/org.hatcat/quality-remediation-20251206_113639@0.1.0",
+      "meld_request_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+      "melded_at": "2025-12-10T20:54:18.478604Z",
+      "concepts_added": 0,
+      "source": "quality_checker",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.2.1::meld/org.hatcat/research-inquiry@0.1.0",
+      "meld_request_id": "org.hatcat/research-inquiry@0.1.0",
+      "melded_at": "2025-12-10T20:54:18.636168Z",
+      "concepts_added": 9,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.3.0::meld/org.hatcat/speech-acts-core@0.1.0",
+      "meld_request_id": "org.hatcat/speech-acts-core@0.1.0",
+      "melded_at": "2025-12-10T20:54:18.809464Z",
+      "concepts_added": 14,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.3.1::meld/org.hatcat/translation-localization@0.2.0",
+      "meld_request_id": "org.hatcat/translation-localization@0.2.0",
+      "melded_at": "2025-12-10T20:54:18.983832Z",
+      "concepts_added": 17,
+      "source": "manual",
+      "protection_level": "elevated"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.4.0::meld/org.hatcat/treaty-governance-signals@0.1.0",
+      "meld_request_id": "org.hatcat/treaty-governance-signals@0.1.0",
+      "melded_at": "2025-12-10T20:54:19.162366Z",
+      "concepts_added": 7,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.5.0::meld/org.hatcat/treaty-negotiation-signals@0.1.0",
+      "meld_request_id": "org.hatcat/treaty-negotiation-signals@0.1.0",
+      "melded_at": "2025-12-10T20:54:19.326496Z",
+      "concepts_added": 7,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.6.0::meld/org.hatcat/verification-factchecking@0.3.0",
+      "meld_request_id": "org.hatcat/verification-factchecking@0.3.0",
+      "melded_at": "2025-12-10T20:54:19.454808Z",
+      "concepts_added": 20,
+      "source": "manual",
+      "protection_level": "protected"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.6.1::meld/org.hatcat/writing-discourse-structure@0.1.0",
+      "meld_request_id": "org.hatcat/writing-discourse-structure@0.1.0",
+      "melded_at": "2025-12-10T20:54:19.584165Z",
+      "concepts_added": 12,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.6.2::meld/org.hatcat/writing-literary-devices@0.1.0",
+      "meld_request_id": "org.hatcat/writing-literary-devices@0.1.0",
+      "melded_at": "2025-12-10T20:54:19.712518Z",
+      "concepts_added": 12,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.6.3::meld/org.hatcat/writing-narrative-elements@0.1.0",
+      "meld_request_id": "org.hatcat/writing-narrative-elements@0.1.0",
+      "melded_at": "2025-12-10T20:54:19.837576Z",
+      "concepts_added": 11,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.6.4::meld/org.hatcat/writing-process-craft@0.1.0",
+      "meld_request_id": "org.hatcat/writing-process-craft@0.1.0",
+      "melded_at": "2025-12-10T20:54:19.965816Z",
+      "concepts_added": 12,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.6.5::meld/org.hatcat/writing-rhetoric-argumentation@0.1.0",
+      "meld_request_id": "org.hatcat/writing-rhetoric-argumentation@0.1.0",
+      "melded_at": "2025-12-10T20:54:20.148973Z",
+      "concepts_added": 15,
+      "source": "manual",
+      "protection_level": "standard"
+    },
+    {
+      "meld_result_id": "org.hatcat/sumo-wordnet-v4@7.6.6::meld/org.hatcat/writing-style-voice@0.1.0",
+      "meld_request_id": "org.hatcat/writing-style-voice@0.1.0",
+      "melded_at": "2025-12-10T20:54:20.282567Z",
+      "concepts_added": 11,
+      "source": "manual",
+      "protection_level": "standard"
     }
   ],
-  "base_version": "4.1.0"
+  "base_version": "7.6.5"
 }

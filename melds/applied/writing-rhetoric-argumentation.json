@@ -1,0 +1,932 @@
+{
+  "meld_request_id": "org.hatcat/writing-rhetoric-argumentation@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Rhetoric and Argumentation",
+    "description": "Concepts for persuasive writing, logical argument construction, and rhetorical strategies. These probes can reveal how models construct and validate claims, select evidence, and structure reasoning.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Proposition",
+      "relationship": "parent_of",
+      "candidate_concept": "RhetoricalConcept"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "RhetoricalConcept",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "Concepts and techniques for effective communication, persuasion, and argumentation in spoken and written discourse",
+      "definition_source": "Classical rhetoric, Aristotle",
+      "domain": "Information",
+      "aliases": [
+        "Rhetoric",
+        "PersuasiveWriting",
+        "ArgumentativeWriting"
+      ],
+      "relationships": {
+        "related": [
+          "Persuasion",
+          "Argument",
+          "Communication",
+          "Writing"
+        ],
+        "has_part": [
+          "Thesis",
+          "Claim",
+          "Evidence",
+          "Warrant",
+          "Counterargument",
+          "Rebuttal",
+          "RhetoricalAppeal",
+          "RhetoricalMode"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Communication framework"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The essay employs ethos by establishing the author's expertise before making claims.",
+          "Classical rhetoric teaches that persuasion depends on logos, pathos, and ethos.",
+          "The rhetorical strategy of concession-rebuttal strengthens the argument.",
+          "Aristotle's rhetorical framework still guides effective argumentation today."
+        ],
+        "negative_examples": [
+          "The essay is well-written.",
+          "The author has opinions.",
+          "The text communicates ideas."
+        ],
+        "disambiguation": "Strategic use of language for persuasion, not just any communication"
+      },
+      "children": [
+        "Thesis",
+        "Claim",
+        "Evidence",
+        "Warrant",
+        "Counterargument",
+        "Rebuttal",
+        "RhetoricalAppeal",
+        "RhetoricalMode"
+      ]
+    },
+    {
+      "term": "Thesis",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalConcept"
+      ],
+      "layer_hint": 3,
+      "definition": "The central argument or main claim of an essay or text that the entire work supports and develops",
+      "definition_source": "Composition studies, rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "ThesisStatement",
+        "CentralArgument",
+        "MainClaim"
+      ],
+      "relationships": {
+        "related": [
+          "Claim",
+          "Argument",
+          "Essay",
+          "TopicSentence"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Argumentative element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The thesis 'Universal basic income would reduce poverty while stimulating innovation' drives the entire essay.",
+          "A strong thesis is specific, arguable, and previews the essay's structure.",
+          "The thesis appears at the end of the introduction and is defended throughout the body.",
+          "This thesis is too broad - 'Climate change is bad' doesn't stake out an arguable position."
+        ],
+        "negative_examples": [
+          "The essay has a main idea.",
+          "The author discusses a topic.",
+          "The first paragraph introduces the subject."
+        ],
+        "disambiguation": "Specific arguable claim that controls the essay, not just a topic or theme"
+      },
+      "children": []
+    },
+    {
+      "term": "Claim",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalConcept"
+      ],
+      "layer_hint": 3,
+      "definition": "An assertion that requires support, including claims of fact, value, or policy",
+      "definition_source": "Toulmin model, argumentation theory",
+      "domain": "Information",
+      "aliases": [
+        "Assertion",
+        "ArgumentativeClaim",
+        "Position"
+      ],
+      "relationships": {
+        "related": [
+          "Evidence",
+          "Warrant",
+          "Thesis",
+          "Statement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Argumentative element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The claim 'Electric vehicles are more environmentally friendly than gasoline cars' is a claim of fact.",
+          "Policy claims argue for specific actions: 'The city should ban single-use plastics.'",
+          "Value claims make judgments: 'Education is more important than entertainment.'",
+          "Each paragraph's topic sentence makes a claim that supports the thesis."
+        ],
+        "negative_examples": [
+          "The author says something.",
+          "The text contains statements.",
+          "The essay has paragraphs."
+        ],
+        "disambiguation": "Assertions requiring evidence, not mere statements or descriptions"
+      },
+      "children": []
+    },
+    {
+      "term": "Evidence",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalConcept"
+      ],
+      "layer_hint": 3,
+      "definition": "Facts, examples, statistics, expert testimony, or other data used to support a claim",
+      "definition_source": "Argumentation theory, rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "Support",
+        "Proof",
+        "Data"
+      ],
+      "relationships": {
+        "related": [
+          "Claim",
+          "Warrant",
+          "Reasoning",
+          "Example"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Argumentative element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The evidence from peer-reviewed studies strengthens the health claim.",
+          "Statistical evidence: 'Vaccination rates above 90% correlate with herd immunity.'",
+          "Expert testimony provides evidence: 'According to Dr. Smith, a leading epidemiologist...'",
+          "The anecdotal evidence is vivid but insufficient to support the broad claim."
+        ],
+        "negative_examples": [
+          "The author includes information.",
+          "The essay has details.",
+          "Facts are mentioned in the text."
+        ],
+        "disambiguation": "Support specifically marshaled for claims, not just any factual content"
+      },
+      "children": []
+    },
+    {
+      "term": "Warrant",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalConcept"
+      ],
+      "layer_hint": 3,
+      "definition": "The reasoning or principle that connects evidence to a claim, explaining why the evidence supports the conclusion",
+      "definition_source": "Toulmin model of argumentation",
+      "domain": "Information",
+      "aliases": [
+        "Reasoning",
+        "Bridge",
+        "Justification"
+      ],
+      "relationships": {
+        "related": [
+          "Claim",
+          "Evidence",
+          "Inference",
+          "Logic"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Logical inference element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The warrant 'cost-effective solutions are preferable' connects the evidence of savings to the policy claim.",
+          "Without a warrant, the reader doesn't understand why the evidence matters.",
+          "Implicit warrants rely on shared assumptions; explicit warrants state the reasoning.",
+          "The warrant 'expert consensus indicates reliable knowledge' backs the appeal to authority."
+        ],
+        "negative_examples": [
+          "The author explains the evidence.",
+          "The reasoning is present.",
+          "The logic seems sound."
+        ],
+        "disambiguation": "Specific reasoning linking evidence to claim, not just any explanation"
+      },
+      "children": []
+    },
+    {
+      "term": "Counterargument",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalConcept"
+      ],
+      "layer_hint": 3,
+      "definition": "An opposing view or objection to the main argument that is acknowledged before being addressed",
+      "definition_source": "Argumentation theory, rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "Objection",
+        "OpposingView",
+        "CounterClaim"
+      ],
+      "relationships": {
+        "related": [
+          "Rebuttal",
+          "Concession",
+          "Argument",
+          "Dialectic"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Dialectical element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The counterargument 'critics argue that the cost is prohibitive' is acknowledged before refutation.",
+          "Addressing counterarguments strengthens credibility by showing awareness of opposing views.",
+          "The strongest counterargument - that implementation is unrealistic - is saved for detailed rebuttal.",
+          "Some counterarguments are conceded: 'While it's true that costs are high initially...'"
+        ],
+        "negative_examples": [
+          "The author disagrees with others.",
+          "Different opinions exist.",
+          "Not everyone agrees."
+        ],
+        "disambiguation": "Specific opposing arguments engaged with, not just acknowledgment of disagreement"
+      },
+      "children": []
+    },
+    {
+      "term": "Rebuttal",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalConcept"
+      ],
+      "layer_hint": 3,
+      "definition": "A response that addresses and refutes counterarguments, defending the original claim",
+      "definition_source": "Argumentation theory, debate",
+      "domain": "Information",
+      "aliases": [
+        "Refutation",
+        "Defense",
+        "CounterResponse"
+      ],
+      "relationships": {
+        "related": [
+          "Counterargument",
+          "Evidence",
+          "Reasoning",
+          "Defense"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Dialectical element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The rebuttal shows that the cost objection fails to account for long-term savings.",
+          "Effective rebuttals attack the counterargument's evidence, warrant, or relevance.",
+          "The rebuttal concedes a minor point while defending the main claim.",
+          "'While the initial investment is substantial, studies show a five-year payback period' rebuts the cost concern."
+        ],
+        "negative_examples": [
+          "The author responds to criticism.",
+          "The argument continues.",
+          "The essay has more paragraphs after mentioning objections."
+        ],
+        "disambiguation": "Specific response that neutralizes the counterargument, not just continued argument"
+      },
+      "children": []
+    },
+    {
+      "term": "RhetoricalAppeal",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalConcept"
+      ],
+      "layer_hint": 3,
+      "definition": "The classical persuasive strategies of ethos (credibility), pathos (emotion), and logos (logic)",
+      "definition_source": "Aristotle's Rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "PersuasiveAppeal",
+        "EthosPathosLogos",
+        "ModesOfPersuasion"
+      ],
+      "relationships": {
+        "related": [
+          "Ethos",
+          "Pathos",
+          "Logos",
+          "Persuasion"
+        ],
+        "has_part": [
+          "EthosAppeal",
+          "PathosAppeal",
+          "LogosAppeal"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Rhetorical framework"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The speech balances logos through statistics, pathos through personal stories, and ethos through citing credentials.",
+          "Overreliance on pathos without logos can feel manipulative rather than persuasive.",
+          "Ethos appeal: 'As a doctor with 30 years of experience...'",
+          "The rhetorical appeals work together to create a comprehensive persuasive strategy."
+        ],
+        "negative_examples": [
+          "The writing is persuasive.",
+          "The author tries to convince the reader.",
+          "The essay has emotional and logical elements."
+        ],
+        "disambiguation": "Specific categories of persuasive strategy, not just general persuasiveness"
+      },
+      "children": [
+        "EthosAppeal",
+        "PathosAppeal",
+        "LogosAppeal"
+      ]
+    },
+    {
+      "term": "EthosAppeal",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalAppeal"
+      ],
+      "layer_hint": 4,
+      "definition": "Persuasion through the speaker's credibility, expertise, character, and trustworthiness",
+      "definition_source": "Aristotle's Rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "Ethos",
+        "CredibilityAppeal",
+        "AuthorityAppeal"
+      ],
+      "relationships": {
+        "related": [
+          "Authority",
+          "Expertise",
+          "Trust",
+          "Character"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Rhetorical strategy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The author establishes ethos by noting her decades of research in the field.",
+          "Acknowledging limitations honestly builds ethos through intellectual honesty.",
+          "Citing reputable sources transfers their ethos to the argument.",
+          "'As someone who has worked in both sectors, I understand both perspectives' builds ethos."
+        ],
+        "negative_examples": [
+          "The author seems knowledgeable.",
+          "The source is reliable.",
+          "The writing sounds professional."
+        ],
+        "disambiguation": "Deliberate establishment of credibility, not just seeming trustworthy"
+      },
+      "children": []
+    },
+    {
+      "term": "PathosAppeal",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalAppeal"
+      ],
+      "layer_hint": 4,
+      "definition": "Persuasion through emotional engagement, creating feelings that motivate belief or action",
+      "definition_source": "Aristotle's Rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "Pathos",
+        "EmotionalAppealRhetorical",
+        "AffectivePersuasion"
+      ],
+      "relationships": {
+        "related": [
+          "Emotion",
+          "Empathy",
+          "Motivation",
+          "Feeling"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Rhetorical strategy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The story of one family's struggle creates pathos that personalizes the policy issue.",
+          "Pathos through vivid imagery: 'Imagine your child unable to find clean water.'",
+          "Strategic use of pathos motivates the audience to care about abstract problems.",
+          "The appeal to fear about consequences serves as negative pathos."
+        ],
+        "negative_examples": [
+          "The writing is emotional.",
+          "The story is sad.",
+          "The reader might feel something."
+        ],
+        "disambiguation": "Strategic emotional engagement for persuasion, not just emotional content"
+      },
+      "children": []
+    },
+    {
+      "term": "LogosAppeal",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalAppeal"
+      ],
+      "layer_hint": 4,
+      "definition": "Persuasion through logical reasoning, evidence, and clear argumentation",
+      "definition_source": "Aristotle's Rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "Logos",
+        "LogicalAppeal",
+        "RationalArgument"
+      ],
+      "relationships": {
+        "related": [
+          "Logic",
+          "Evidence",
+          "Reasoning",
+          "Rationality"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Rhetorical strategy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The logos appeal builds through syllogistic reasoning from premises to conclusion.",
+          "Statistical evidence strengthens the logos: 'Studies show a 40% reduction in incidents.'",
+          "Logos is established through clear cause-and-effect reasoning.",
+          "The logical structure of 'If X, then Y; X is true; therefore Y' exemplifies logos."
+        ],
+        "negative_examples": [
+          "The argument makes sense.",
+          "The evidence is presented.",
+          "The reasoning seems logical."
+        ],
+        "disambiguation": "Explicit logical structure and evidence, not just seeming reasonable"
+      },
+      "children": []
+    },
+    {
+      "term": "RhetoricalMode",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalConcept"
+      ],
+      "layer_hint": 3,
+      "definition": "The fundamental purposes or patterns of discourse: narration, description, exposition, and persuasion/argumentation",
+      "definition_source": "Classical rhetoric, composition studies",
+      "domain": "Information",
+      "aliases": [
+        "DiscourseMode",
+        "WritingMode",
+        "PatternOfDevelopment"
+      ],
+      "relationships": {
+        "related": [
+          "Narration",
+          "Description",
+          "Exposition",
+          "Argumentation"
+        ],
+        "has_part": [
+          "NarrativeMode",
+          "DescriptiveMode",
+          "ExpositoryMode",
+          "ArgumentativeMode"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Discourse classification"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The essay shifts from expository mode when explaining the issue to argumentative mode when proposing solutions.",
+          "Narrative mode tells a story; descriptive mode creates sensory impressions.",
+          "Exposition explains or informs; argumentation persuades.",
+          "Most texts blend rhetorical modes rather than using only one."
+        ],
+        "negative_examples": [
+          "The text has a purpose.",
+          "The author writes in a certain way.",
+          "The essay develops ideas."
+        ],
+        "disambiguation": "Fundamental purposes of discourse, not just topics or formats"
+      },
+      "children": [
+        "NarrativeMode",
+        "DescriptiveMode",
+        "ExpositoryMode",
+        "ArgumentativeMode"
+      ]
+    },
+    {
+      "term": "NarrativeMode",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalMode"
+      ],
+      "layer_hint": 4,
+      "definition": "Discourse that tells a story or recounts events in sequence",
+      "definition_source": "Rhetoric, narratology",
+      "domain": "Information",
+      "aliases": [
+        "Narration",
+        "StoryMode",
+        "TemporalDevelopment"
+      ],
+      "relationships": {
+        "related": [
+          "Story",
+          "Sequence",
+          "Event",
+          "Time"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Discourse pattern"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The narrative mode recounts the discovery chronologically from hypothesis to breakthrough.",
+          "First, then, next, finally - temporal markers signal narrative development.",
+          "The narrative uses scene and summary to pace the storytelling.",
+          "Embedding narrative within exposition personalizes abstract concepts."
+        ],
+        "negative_examples": [
+          "The text tells a story.",
+          "Events are mentioned.",
+          "The author describes what happened."
+        ],
+        "disambiguation": "Strategic use of storytelling for discourse purpose, not just having a story"
+      },
+      "children": []
+    },
+    {
+      "term": "DescriptiveMode",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalMode"
+      ],
+      "layer_hint": 4,
+      "definition": "Discourse that creates sensory impressions and detailed pictures of subjects",
+      "definition_source": "Rhetoric, composition studies",
+      "domain": "Information",
+      "aliases": [
+        "Description",
+        "SensoryWriting",
+        "ImageryMode"
+      ],
+      "relationships": {
+        "related": [
+          "Imagery",
+          "Detail",
+          "Sensory",
+          "Observation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Discourse pattern"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The descriptive mode uses sensory details: the acrid smell, the rough texture, the sharp crack.",
+          "Objective description catalogues features; subjective description conveys impressions.",
+          "Spatial organization in description: from left to right, from far to near.",
+          "Dominant impression unifies the descriptive details into coherent characterization."
+        ],
+        "negative_examples": [
+          "The author describes things.",
+          "Details are provided.",
+          "The text includes adjectives."
+        ],
+        "disambiguation": "Strategic use of sensory detail for discourse purpose, not just having descriptions"
+      },
+      "children": []
+    },
+    {
+      "term": "ExpositoryMode",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalMode"
+      ],
+      "layer_hint": 4,
+      "definition": "Discourse that explains, informs, or clarifies through definition, process, comparison, classification, or cause-effect",
+      "definition_source": "Rhetoric, composition studies",
+      "domain": "Information",
+      "aliases": [
+        "Exposition",
+        "InformativeWriting",
+        "ExplanatoryMode"
+      ],
+      "relationships": {
+        "related": [
+          "Explanation",
+          "Information",
+          "Clarity",
+          "Understanding"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Discourse pattern"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The expository mode explains through process analysis: step one, step two, step three.",
+          "Definition exposition: 'Entropy, in thermodynamics, refers to...'",
+          "Comparison-contrast exposition clarifies by showing similarities and differences.",
+          "Cause-effect exposition traces relationships between events and outcomes."
+        ],
+        "negative_examples": [
+          "The text explains things.",
+          "Information is provided.",
+          "The author teaches the reader."
+        ],
+        "disambiguation": "Specific explanatory strategies, not just presence of information"
+      },
+      "children": []
+    },
+    {
+      "term": "ArgumentativeMode",
+      "role": "concept",
+      "parent_concepts": [
+        "RhetoricalMode"
+      ],
+      "layer_hint": 4,
+      "definition": "Discourse that takes a position and supports it with evidence and reasoning to persuade the audience",
+      "definition_source": "Rhetoric, argumentation theory",
+      "domain": "Information",
+      "aliases": [
+        "Argumentation",
+        "PersuasiveMode",
+        "AdvocacyWriting"
+      ],
+      "relationships": {
+        "related": [
+          "Persuasion",
+          "Claim",
+          "Evidence",
+          "Position"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Discourse pattern"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The argumentative mode stakes a claim, provides evidence, and refutes objections.",
+          "Transitioning to argumentation: 'Therefore, we should...' or 'This evidence demonstrates that...'",
+          "Argumentative mode combines logos, ethos, and pathos for comprehensive persuasion.",
+          "The Toulmin structure (claim, data, warrant, backing, qualifier, rebuttal) organizes argumentation."
+        ],
+        "negative_examples": [
+          "The author has an opinion.",
+          "The essay tries to persuade.",
+          "Arguments are made."
+        ],
+        "disambiguation": "Structured claim-support persuasion, not just having opinions"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:20.150747Z",
+    "result_pack_version": "7.6.5",
+    "concepts_added": 15,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 7,
+      "4": 7
+    },
+    "parents_updated": 15,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "RhetoricalConcept",
+        "Thesis",
+        "Claim",
+        "Evidence",
+        "Warrant",
+        "Counterargument",
+        "Rebuttal",
+        "RhetoricalAppeal",
+        "EthosAppeal",
+        "PathosAppeal",
+        "LogosAppeal",
+        "RhetoricalMode",
+        "NarrativeMode",
+        "DescriptiveMode",
+        "ExpositoryMode",
+        "ArgumentativeMode"
+      ],
+      "must_retrain": [
+        "Proposition"
+      ],
+      "should_retrain": [
+        "Agreement",
+        "Argument",
+        "Axiom",
+        "BankStatement",
+        "BindingCorporateRules",
+        "ClassificationScheme",
+        "ConceptualSituation",
+        "Constitution",
+        "EconomicIndicator",
+        "Equation",
+        "EthicalTheory",
+        "ExplanatoryHypothesis",
+        "FieldOfStudy",
+        "Graph",
+        "GraphElement",
+        "HotelPackage",
+        "LearningTheory",
+        "LyricalContent",
+        "MealPlan",
+        "Model",
+        "MultipolePostulate",
+        "Objective",
+        "Procedure",
+        "RegionalLaw",
+        "SuffrageLaw",
+        "TPFDD"
+      ],
+      "optional_retrain": [
+        "Abstract",
+        "Authority",
+        "Character",
+        "Claim",
+        "Communication",
+        "Essay",
+        "Explanation",
+        "Exposition",
+        "Imagery",
+        "Information",
+        "Observation",
+        "Position",
+        "Reasoning",
+        "Statement",
+        "TopicSentence",
+        "Understanding",
+        "Writing"
+      ],
+      "total_training_required": 17
+    },
+    "errors": [],
+    "warnings": [
+      "Claim: already exists in layer 4, skipping"
+    ]
+  }
+}

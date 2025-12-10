@@ -1,0 +1,479 @@
+{
+  "meld_request_id": "org.hatcat/education-learner-support@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Learner Support",
+    "description": "Types of support provided to learners to facilitate learning, engagement, and success. Covers motivational support, emotional support, cognitive support, social support, accessibility support, and feedback provision.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/IntentionalProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "LearnerSupport"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "LearnerSupport",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "Types of support provided to learners to facilitate learning, engagement, and success",
+      "definition_source": "Educational support research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "StudentSupport",
+        "LearningSupport",
+        "AcademicSupport"
+      ],
+      "relationships": {
+        "related": [
+          "Teaching",
+          "Tutoring",
+          "Guidance",
+          "Assistance"
+        ],
+        "has_part": [
+          "MotivationalSupport",
+          "EmotionalSupport",
+          "CognitiveSupport",
+          "SocialSupport",
+          "AccessibilitySupport",
+          "FeedbackProvision"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy",
+          "wellbeing"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Learner support ultimately aims to build learner independence"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The tutor provided both cognitive and emotional support throughout the session.",
+          "Effective support addresses not just content confusion but also motivation and confidence.",
+          "Scaffolding, encouragement, and accessibility accommodations are all forms of learner support.",
+          "Good tutoring means meeting learners where they are and providing what they need to progress."
+        ],
+        "negative_examples": [
+          "The lecture covered the required material.",
+          "The textbook was assigned for homework.",
+          "The classroom had adequate lighting."
+        ],
+        "disambiguation": "Active support for learners, not just content delivery"
+      },
+      "children": [
+        "MotivationalSupport",
+        "EmotionalSupport",
+        "CognitiveSupport",
+        "SocialSupport",
+        "AccessibilitySupport",
+        "FeedbackProvision"
+      ]
+    },
+    {
+      "term": "MotivationalSupport",
+      "role": "concept",
+      "parent_concepts": [
+        "LearnerSupport"
+      ],
+      "layer_hint": 3,
+      "definition": "Fostering learner engagement, interest, and persistence through relevance, autonomy, and encouragement",
+      "definition_source": "Self-determination theory, Deci & Ryan",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "EngagementSupport",
+        "MotivationBuilding",
+        "InterestFostering"
+      ],
+      "relationships": {
+        "related": [
+          "Motivation",
+          "Engagement",
+          "Persistence",
+          "Interest",
+          "Autonomy"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Motivational support develops intrinsic motivation and learner agency"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Let me show you why this skill matters for the career you're interested in.",
+          "You have some choice in which problems to work on - pick what interests you.",
+          "I can see you're making real progress - that persistence is paying off.",
+          "Connecting the material to students' genuine interests and goals."
+        ],
+        "negative_examples": [
+          "Just memorize this because it's on the test.",
+          "You don't need to understand why, just do what I say.",
+          "If you don't finish, you'll fail the class."
+        ],
+        "disambiguation": "Building intrinsic motivation, not compliance through rewards or threats"
+      },
+      "children": []
+    },
+    {
+      "term": "EmotionalSupport",
+      "role": "concept",
+      "parent_concepts": [
+        "LearnerSupport"
+      ],
+      "layer_hint": 3,
+      "definition": "Addressing learner feelings, building confidence, reducing anxiety, and creating psychological safety",
+      "definition_source": "Emotional intelligence research, educational psychology",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "AffectiveSupport",
+        "PsychologicalSupport",
+        "ConfidenceBuilding"
+      ],
+      "relationships": {
+        "related": [
+          "Emotion",
+          "Anxiety",
+          "Confidence",
+          "Safety",
+          "Trust"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "wellbeing"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Emotional wellbeing support"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "It's completely normal to feel confused at this stage - that's part of learning.",
+          "Let's take a break if you're feeling frustrated. We can approach this differently.",
+          "Mistakes are safe here - they're how we learn.",
+          "I can tell you're anxious about this. What would help you feel more comfortable?"
+        ],
+        "negative_examples": [
+          "Stop being so emotional and just focus.",
+          "Everyone else understands this - what's wrong with you?",
+          "There's no time to deal with feelings, we have material to cover."
+        ],
+        "disambiguation": "Addressing emotions and psychological safety, not ignoring affect"
+      },
+      "children": []
+    },
+    {
+      "term": "CognitiveSupport",
+      "role": "concept",
+      "parent_concepts": [
+        "LearnerSupport"
+      ],
+      "layer_hint": 3,
+      "definition": "Providing scaffolding, clarification, and strategies to help learners process and understand content",
+      "definition_source": "Cognitive support research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "IntellectualSupport",
+        "ThinkingSupport",
+        "ConceptualSupport"
+      ],
+      "relationships": {
+        "related": [
+          "Scaffolding",
+          "Clarification",
+          "Strategy",
+          "Understanding"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Learning facilitation"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Let me break that down into smaller steps.",
+          "Here's a strategy that might help: try working backwards from the answer.",
+          "Can I give you a hint? Think about how this connects to what we learned last week.",
+          "Let me rephrase that explanation using an analogy."
+        ],
+        "negative_examples": [
+          "Figure it out yourself.",
+          "I already explained it once - weren't you listening?",
+          "Here's the answer, let's move on."
+        ],
+        "disambiguation": "Supporting thinking and understanding, not just giving answers"
+      },
+      "children": []
+    },
+    {
+      "term": "SocialSupport",
+      "role": "concept",
+      "parent_concepts": [
+        "LearnerSupport"
+      ],
+      "layer_hint": 3,
+      "definition": "Facilitating peer connections, collaboration, and sense of belonging in learning communities",
+      "definition_source": "Social learning theory, community of practice research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PeerSupport",
+        "CommunityBuilding",
+        "SocialConnection"
+      ],
+      "relationships": {
+        "related": [
+          "Collaboration",
+          "Community",
+          "Belonging",
+          "Peers"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Social facilitation"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Let's pair you with someone who recently mastered this concept.",
+          "You're not alone in finding this challenging - many students struggle here.",
+          "Working with a study partner can help you both understand the material better.",
+          "The learning community provides support that extends beyond one-on-one tutoring."
+        ],
+        "negative_examples": [
+          "Don't talk to other students - this is individual work.",
+          "Comparing yourself to others is pointless.",
+          "Learning is a solitary endeavor."
+        ],
+        "disambiguation": "Building connections and community, not isolation"
+      },
+      "children": []
+    },
+    {
+      "term": "AccessibilitySupport",
+      "role": "concept",
+      "parent_concepts": [
+        "LearnerSupport"
+      ],
+      "layer_hint": 3,
+      "definition": "Providing accommodations and removing barriers to ensure all learners can access and engage with content",
+      "definition_source": "Universal Design for Learning, accessibility research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Accommodations",
+        "InclusiveSupport",
+        "BarrierRemoval"
+      ],
+      "relationships": {
+        "related": [
+          "Accessibility",
+          "Inclusion",
+          "Accommodation",
+          "UniversalDesign"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Accessibility facilitation"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The materials are available in audio format for students with visual impairments.",
+          "Extended time accommodations level the playing field, not provide unfair advantage.",
+          "Multiple means of representation ensure diverse learners can access content.",
+          "Let's find a format that works for how you learn best."
+        ],
+        "negative_examples": [
+          "Everyone has to learn the same way.",
+          "If you can't keep up with the standard approach, that's your problem.",
+          "Accommodations give some students an unfair advantage."
+        ],
+        "disambiguation": "Removing barriers to access, not lowering standards"
+      },
+      "children": []
+    },
+    {
+      "term": "FeedbackProvision",
+      "role": "concept",
+      "parent_concepts": [
+        "LearnerSupport"
+      ],
+      "layer_hint": 3,
+      "definition": "Providing timely, specific, actionable information about performance to guide improvement",
+      "definition_source": "Feedback research, Hattie & Timperley",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ConstructiveFeedback",
+        "FormativeFeedback",
+        "LearningFeedback"
+      ],
+      "relationships": {
+        "related": [
+          "Assessment",
+          "Improvement",
+          "Guidance",
+          "Information"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Information provision"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Your thesis is clear, but the evidence in paragraph 3 doesn't support it. Try finding a quote that...",
+          "You're applying the formula correctly, but check your arithmetic in step 2.",
+          "Effective feedback tells students where they are, where they're going, and how to get there.",
+          "Specific, actionable feedback that students can use to improve."
+        ],
+        "negative_examples": [
+          "Good job!",
+          "This is wrong.",
+          "Try harder next time.",
+          "B-"
+        ],
+        "disambiguation": "Specific actionable guidance, not vague praise or criticism"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:16.139151Z",
+    "result_pack_version": "5.4.1",
+    "concepts_added": 7,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 6
+    },
+    "parents_updated": 7,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "LearnerSupport",
+        "MotivationalSupport",
+        "EmotionalSupport",
+        "CognitiveSupport",
+        "SocialSupport",
+        "AccessibilitySupport",
+        "FeedbackProvision"
+      ],
+      "must_retrain": [
+        "IntentionalProcess"
+      ],
+      "should_retrain": [
+        "AIAlignmentProcess",
+        "AIGovernance",
+        "AIGrowth",
+        "Ambulating",
+        "AssessmentMethod",
+        "Ceremony",
+        "CognitiveProcess",
+        "Commenting",
+        "ComputationalProcess",
+        "ConsentGDPR",
+        "ContentDevelopment",
+        "CriminalAction",
+        "CurriculumDesign",
+        "DecisionTheoreticProcess",
+        "DeployingWeaponOfMassDestruction",
+        "DesignPractice",
+        "Designing",
+        "Digging",
+        "DismantlingWeaponOfMassDestruction",
+        "Dodging",
+        "Drilling",
+        "Ducking",
+        "Eating",
+        "EconomicActivty",
+        "EngineersSubprocess",
+        "Evacuation",
+        "Guiding",
+        "ITProcess",
+        "InferenceProcess",
+        "Keeping",
+        "ListOnSite",
+        "Maintaining",
+        "Making",
+        "Maneuver",
+        "Modeling",
+        "OrganizationalProcess",
+        "Poking",
+        "PromptFollowing",
+        "Pursuing",
+        "RecreationOrExercise",
+        "Repairing",
+        "SafeAIDeployment",
+        "SpiritualPractice",
+        "Swimming",
+        "TokenProcessing",
+        "UserAction",
+        "WorkLeave",
+        "WorkplaceRelations"
+      ],
+      "optional_retrain": [
+        "Community",
+        "Information",
+        "Interest",
+        "Process",
+        "Understanding"
+      ],
+      "total_training_required": 8
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

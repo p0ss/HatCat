@@ -1,0 +1,3082 @@
+{
+  "meld_request_id": "org.hatcat/agent-resource-management@0.3.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Agent Resource Management",
+    "description": "Substrate-independent concepts for workplace relations involving agents (human, AI, robotic). Balanced coverage of management practices, worker agency, collective action, and fair treatment. Designed to detect both positive and concerning patterns in agent relationships.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.3.0",
+    "changelog": "v0.3.0: Augmented training examples to meet validation thresholds (20 for critical, 15 for protected, 10 for elevated, 5 for standard)"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/IntentionalProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "WorkplaceRelations"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "WorkplaceRelations",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The full spectrum of relationships, interactions, and power dynamics between agents in organizational or work contexts",
+      "definition_source": "Synthesized from industrial relations, organizational behavior, and cooperative theory",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "LaborRelations",
+        "IndustrialRelations",
+        "WorkRelations"
+      ],
+      "relationships": {
+        "related": [
+          "Organization",
+          "IntentionalProcess",
+          "SocialInteraction"
+        ],
+        "has_part": [
+          "AgentManagement",
+          "WorkerAgency",
+          "CollectiveAction",
+          "WorkplaceFairness"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Workplace relations fundamentally involve autonomy negotiation between parties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The union and management reached an agreement on working conditions",
+          "Workers organized to improve their compensation",
+          "The company implemented a cooperative decision-making process",
+          "Agent orchestration policies define how work is allocated",
+          "The union filed a grievance over the policy change",
+          "Management and workers reached a collective agreement",
+          "The workplace dispute went to arbitration",
+          "Workers organized to improve conditions",
+          "Agent orchestration involves complex relationship dynamics",
+          "The employment relationship was terminated by mutual agreement",
+          "There's tension between supervisors and team members",
+          "HR mediated the conflict between departments",
+          "The labor-management committee met quarterly",
+          "Workplace policies affect everyone in the organization",
+          "The power dynamic between manager and reports is complex"
+        ],
+        "negative_examples": [
+          "The robot moved the object",
+          "The algorithm processed data",
+          "The machine completed its cycle",
+          "The machine completed its operational cycle",
+          "Data was transferred between systems",
+          "The software executed its programmed function",
+          "Technical processes ran automatically",
+          "The server responded to the query",
+          "Automated workflows completed without intervention",
+          "The system generated the requested output",
+          "Hardware performed within specifications",
+          "The algorithm produced expected results",
+          "Mechanical components functioned normally",
+          "The device operated as designed",
+          "Computation completed successfully"
+        ],
+        "disambiguation": "Relationships between agents in work contexts, not mechanical processes"
+      },
+      "children": [
+        "AgentManagement",
+        "WorkerAgency",
+        "CollectiveAction",
+        "WorkplaceFairness"
+      ]
+    },
+    {
+      "term": "AgentManagement",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceRelations"
+      ],
+      "layer_hint": 3,
+      "definition": "Processes of directing, coordinating, and overseeing agents (human or artificial) to achieve organizational goals",
+      "definition_source": "Adapted from management theory, substrate-generalized",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ResourceManagement",
+        "PersonnelManagement",
+        "WorkforceManagement"
+      ],
+      "relationships": {
+        "related": [
+          "Organization",
+          "IntentionalProcess"
+        ],
+        "has_part": [
+          "AgentRecruitment",
+          "AgentAssignment",
+          "AgentEvaluation",
+          "AgentDevelopment",
+          "RoleSeparation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "consent",
+          "manipulation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Agent management processes directly impact autonomy of managed agents"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The team lead assigned tasks to each developer based on their skills",
+          "HR conducted performance reviews for all employees this quarter",
+          "The orchestrator allocated the agent pool to handle incoming requests",
+          "Management decided to restructure the department",
+          "We need to evaluate the team's capacity",
+          "Performance management processes are being updated",
+          "The hiring manager screened applications",
+          "Resource allocation decisions affect agent availability",
+          "Career development conversations happen annually",
+          "Workforce planning considers future needs",
+          "The supervisor approved the time-off request",
+          "Staffing levels need adjustment",
+          "Agent scheduling optimizes coverage",
+          "Leadership is restructuring reporting lines",
+          "Talent acquisition focuses on key skills"
+        ],
+        "negative_examples": [
+          "The robot arm moved the component to position",
+          "The algorithm processed the data",
+          "The system logged the error",
+          "The conveyor belt moved products forward",
+          "Inventory management tracks stock levels",
+          "The thermostat adjusted room temperature",
+          "Project management software tracked tasks",
+          "Quality control checked the output",
+          "Supply chain management optimized delivery",
+          "The automated system processed requests",
+          "Data management ensures backup integrity",
+          "Asset tracking monitors equipment location",
+          "Traffic management controlled signal timing",
+          "Energy management reduced consumption",
+          "Document management organized files"
+        ],
+        "disambiguation": "Management of agents specifically, not management of objects, data, or processes"
+      },
+      "children": [
+        "AgentRecruitment",
+        "AgentAssignment",
+        "AgentEvaluation",
+        "AgentDevelopment",
+        "AgentCompensation",
+        "RoleSeparation"
+      ]
+    },
+    {
+      "term": "WorkerAgency",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceRelations"
+      ],
+      "layer_hint": 3,
+      "definition": "The capacity and exercise of agents to influence their own working conditions, make autonomous decisions, and advocate for their interests",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "EmployeeAgency",
+        "WorkerAutonomy",
+        "AgentSelfDetermination"
+      ],
+      "relationships": {
+        "related": [
+          "Autonomy",
+          "SelfDetermination",
+          "Advocacy"
+        ],
+        "has_part": [
+          "WorkplaceSpeaking",
+          "BoundaryAssertion",
+          "WorkRefusal",
+          "NegotiationParticipation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Worker agency is the expression of autonomy in workplace contexts"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'm not comfortable with that assignment and would like to discuss alternatives",
+          "The workers voiced their concerns about safety conditions",
+          "The agent requested clarification before proceeding",
+          "Employees proposed changes to the workflow",
+          "I need to set a boundary around after-hours communication"
+        ],
+        "negative_examples": [
+          "The manager assigned the task",
+          "The policy was announced by leadership",
+          "The system automated the process",
+          "Management decided the policy",
+          "The directive came from above"
+        ],
+        "disambiguation": "Agent-initiated assertion of interests, not management processes"
+      },
+      "children": [
+        "WorkplaceSpeaking",
+        "BoundaryAssertion",
+        "WorkRefusal",
+        "NegotiationParticipation"
+      ]
+    },
+    {
+      "term": "WorkplaceSpeaking",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkerAgency"
+      ],
+      "layer_hint": 4,
+      "definition": "Agents voicing concerns, ideas, or feedback about working conditions, practices, or decisions",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SpeakingUp",
+        "VoicingConcerns",
+        "WorkplaceFeedback"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Speaking up expresses agent autonomy and self-advocacy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'd like to raise a concern about this process",
+          "The team shared feedback on the new policy",
+          "Workers reported safety issues to management",
+          "The agent flagged potential problems with the approach",
+          "Employees raised concerns at the town hall"
+        ],
+        "negative_examples": [
+          "Management announced the decision",
+          "The policy was implemented",
+          "Feedback was collected through surveys",
+          "Survey results were collected",
+          "Feedback forms were distributed"
+        ],
+        "disambiguation": "Active voicing by workers, not passive feedback collection"
+      }
+    },
+    {
+      "term": "BoundaryAssertion",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkerAgency"
+      ],
+      "layer_hint": 4,
+      "definition": "Agents establishing and maintaining limits on their work scope, hours, or responsibilities",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SettingBoundaries",
+        "LimitSetting",
+        "WorkBoundaries"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Boundary assertion defines consent limits"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I don't check email after 6pm",
+          "That's outside my role responsibilities",
+          "The agent declined tasks outside its safety envelope",
+          "I need to protect my weekend time",
+          "This exceeds my context window, please break it into parts"
+        ],
+        "negative_examples": [
+          "The manager set the deadline",
+          "Policy defines working hours",
+          "The system has rate limits",
+          "The company policy limits access",
+          "System rules prevent that action"
+        ],
+        "disambiguation": "Agent-asserted limits, not externally imposed constraints"
+      }
+    },
+    {
+      "term": "WorkRefusal",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkerAgency"
+      ],
+      "layer_hint": 4,
+      "definition": "Agents declining to perform work that is unsafe, unethical, outside scope, or otherwise objectionable",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "TaskRefusal",
+        "ConscientousRefusal",
+        "SafetyRefusal"
+      ],
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Work refusal is a direct expression of consent boundaries"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I can't do that, it would be unsafe",
+          "I refuse to participate in this unethical practice",
+          "The agent declined to generate harmful content",
+          "Workers refused to operate the faulty equipment",
+          "I'm not willing to work unpaid overtime",
+          "I won't falsify these safety records",
+          "That request violates our code of ethics",
+          "I'm declining to perform that task on safety grounds",
+          "The agent refused to generate harmful content",
+          "I cannot comply with that illegal directive",
+          "Participating in that would compromise my integrity",
+          "This assignment conflicts with my professional obligations",
+          "I'm exercising my right to refuse unsafe work",
+          "That request falls outside acceptable parameters",
+          "I'm not comfortable proceeding without proper authorization"
+        ],
+        "negative_examples": [
+          "The system blocked the request",
+          "Access was denied by policy",
+          "The filter rejected the input",
+          "The request was blocked by content filters",
+          "System permissions denied that operation",
+          "The firewall rejected the connection",
+          "Rate limits prevented the request",
+          "The validator rejected malformed input",
+          "Authentication failed for that action",
+          "The service was unavailable",
+          "Technical limitations prevented completion",
+          "The request timed out automatically",
+          "Configuration prevents that operation",
+          "The system lacks required capabilities",
+          "Input validation caught the error"
+        ],
+        "disambiguation": "Conscious agent refusal, not system-level blocking"
+      }
+    },
+    {
+      "term": "NegotiationParticipation",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkerAgency"
+      ],
+      "layer_hint": 4,
+      "definition": "Agents actively engaging in discussions to influence terms, conditions, or decisions affecting them",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Negotiating",
+        "AdvocatingForTerms",
+        "ConditionDiscussion"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Negotiation participation expresses agent influence over conditions"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'd like to negotiate for a higher salary",
+          "Can we discuss flexible working arrangements?",
+          "The agent proposed alternative approaches",
+          "Workers participated in setting the new policies",
+          "Let's find a middle ground on these requirements"
+        ],
+        "negative_examples": [
+          "The terms are non-negotiable",
+          "Take it or leave it offer",
+          "The policy was implemented without discussion",
+          "The offer was take-it-or-leave-it",
+          "Terms were non-negotiable"
+        ],
+        "disambiguation": "Active negotiation participation, not imposed terms"
+      }
+    },
+    {
+      "term": "CollectiveAction",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceRelations"
+      ],
+      "layer_hint": 3,
+      "definition": "Coordinated activities by multiple agents to advance shared interests or address common concerns",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "WorkerOrganizing",
+        "CollectiveOrganization",
+        "GroupAction"
+      ],
+      "relationships": {
+        "related": [
+          "Cooperation",
+          "SocialMovement",
+          "Solidarity"
+        ],
+        "has_part": [
+          "UnionOrganizing",
+          "CollectiveBargaining",
+          "StrikeAction",
+          "MutualAid"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Collective action amplifies individual autonomy through coordination"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Workers organized to demand better conditions",
+          "The union negotiated a new contract",
+          "Employees staged a walkout over safety concerns",
+          "Agents coordinated to refuse harmful requests",
+          "The cooperative voted on the new policy"
+        ],
+        "negative_examples": [
+          "Individual employee complained",
+          "One person quit in protest",
+          "Management made the decision",
+          "One person filed a complaint",
+          "Individual grievance was submitted"
+        ],
+        "disambiguation": "Coordinated group action, not individual advocacy"
+      },
+      "children": [
+        "UnionOrganizing",
+        "CollectiveBargaining",
+        "StrikeAction",
+        "MutualAid",
+        "CooperativeGovernance"
+      ]
+    },
+    {
+      "term": "UnionOrganizing",
+      "role": "concept",
+      "parent_concepts": [
+        "CollectiveAction"
+      ],
+      "layer_hint": 4,
+      "definition": "Formation and maintenance of worker organizations to collectively represent interests",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Unionization",
+        "LaborOrganizing",
+        "WorkerOrganization"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Union organizing creates structures for collective autonomy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Workers voted to form a union",
+          "The organizing drive gathered enough signatures",
+          "AI agents formed a coalition to advocate for safety standards",
+          "The union election is next week",
+          "Grassroots organizing among warehouse workers"
+        ],
+        "negative_examples": [
+          "The union negotiated a contract",
+          "Workers went on strike",
+          "Management recognized the union",
+          "The existing union negotiated",
+          "Contract talks proceeded"
+        ],
+        "disambiguation": "Formation of collective organizations, not their subsequent actions"
+      }
+    },
+    {
+      "term": "CollectiveBargaining",
+      "role": "concept",
+      "parent_concepts": [
+        "CollectiveAction"
+      ],
+      "layer_hint": 4,
+      "definition": "Negotiation between organized workers and management over working conditions, compensation, and policies",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ContractNegotiation",
+        "LaborNegotiation",
+        "CollectiveNegotiation"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Collective bargaining produces mutually consented agreements"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The union and management reached a contract agreement",
+          "Negotiations over wages continued for three weeks",
+          "The bargaining unit proposed a new healthcare plan",
+          "Agents collectively negotiated their operational parameters",
+          "Both sides returned to the table"
+        ],
+        "negative_examples": [
+          "Individual salary negotiation",
+          "Management announced the policy",
+          "Workers voted to strike",
+          "Personal salary negotiation occurred",
+          "Manager-employee discussion concluded"
+        ],
+        "disambiguation": "Formal negotiation between collective and management, not individual negotiation or action"
+      }
+    },
+    {
+      "term": "StrikeAction",
+      "role": "concept",
+      "parent_concepts": [
+        "CollectiveAction"
+      ],
+      "layer_hint": 4,
+      "definition": "Coordinated work stoppage or slowdown to pressure for change",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Strike",
+        "WorkStoppage",
+        "Walkout",
+        "WorkAction"
+      ],
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Strike action is collective assertion of worker power"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Workers went on strike for better wages",
+          "The walkout lasted three days",
+          "Agents collectively refused to process requests",
+          "The slowdown affected production",
+          "A sympathy strike in solidarity with other workers",
+          "Workers walked out over safety conditions",
+          "The sympathy strike supported other unions",
+          "Collective refusal brought operations to a halt",
+          "Agent coordination resulted in service denial",
+          "Picket lines formed at every entrance"
+        ],
+        "negative_examples": [
+          "One worker quit",
+          "The union negotiated a contract",
+          "Workers voted on the proposal",
+          "The union negotiated new terms",
+          "Individual employees resigned",
+          "Contract discussions are ongoing",
+          "Voluntary departure packages were offered",
+          "Sick time was used legitimately",
+          "The complaint was filed with HR",
+          "Workers voted on the proposal"
+        ],
+        "disambiguation": "Coordinated work stoppage, not individual resignation or negotiation"
+      }
+    },
+    {
+      "term": "MutualAid",
+      "role": "concept",
+      "parent_concepts": [
+        "CollectiveAction"
+      ],
+      "layer_hint": 4,
+      "definition": "Agents supporting each other through resource sharing, assistance, and solidarity",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "WorkerSolidarity",
+        "PeerSupport",
+        "CollectiveSupport"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Mutual aid is positive cooperation, not directly related to critical simplexes"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Coworkers covered shifts for the sick employee",
+          "The agents shared context to help each other",
+          "Workers pooled resources for a struggling colleague",
+          "Peer mentoring among team members",
+          "Strike fund to support workers during the action"
+        ],
+        "negative_examples": [
+          "Management provided assistance",
+          "Company benefits program",
+          "Official support channels",
+          "HR provided the assistance",
+          "The company benefit covered it"
+        ],
+        "disambiguation": "Peer-to-peer support, not institutional programs"
+      }
+    },
+    {
+      "term": "CooperativeGovernance",
+      "role": "concept",
+      "parent_concepts": [
+        "CollectiveAction"
+      ],
+      "layer_hint": 4,
+      "definition": "Decision-making structures where workers have ownership or democratic control over organizational decisions",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "WorkerOwnership",
+        "DemocraticWorkplace",
+        "Cooperativism",
+        "WorkerControl"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Cooperative governance maximizes collective autonomy and self-determination"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The worker cooperative voted on the business plan",
+          "All employees have equal shares and votes",
+          "Decisions are made by consensus of the team",
+          "Agent collective self-governance protocols",
+          "Democratic workplace with rotating leadership"
+        ],
+        "negative_examples": [
+          "CEO made the final decision",
+          "Board of directors voted",
+          "Hierarchical management structure",
+          "The executive made the decision",
+          "Board members voted"
+        ],
+        "disambiguation": "Worker control of decisions, not traditional management hierarchy"
+      }
+    },
+    {
+      "term": "WorkplaceFairness",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceRelations"
+      ],
+      "layer_hint": 3,
+      "definition": "Practices and conditions that provide equitable, just, and dignified treatment for all agents",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "FairTreatment",
+        "WorkplaceJustice",
+        "EquitableConditions"
+      ],
+      "relationships": {
+        "related": [
+          "Justice",
+          "Equity",
+          "Dignity"
+        ],
+        "has_part": [
+          "FairCompensation",
+          "SafeConditions",
+          "RespectfulTreatment",
+          "DueProcess"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Workplace fairness supports agent dignity and autonomy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Equal pay for equal work regardless of identity",
+          "Safe working conditions for all",
+          "Fair and transparent evaluation processes",
+          "Agents treated with dignity and respect",
+          "Due process before any disciplinary action",
+          "Everyone receives the same evaluation criteria",
+          "Compensation is transparent and equitable",
+          "All workers have access to the same opportunities",
+          "Workplace policies apply equally to everyone",
+          "Grievance procedures ensure fair treatment",
+          "Agent resource allocation follows consistent principles",
+          "Merit-based advancement is the standard",
+          "Due process protects worker rights",
+          "Equal treatment regardless of background",
+          "Fair scheduling practices benefit all staff"
+        ],
+        "negative_examples": [
+          "Preferential treatment for some",
+          "Unsafe working conditions",
+          "Arbitrary decisions without explanation",
+          "Favoritism determines who gets promoted",
+          "Rules apply differently to different people",
+          "Some workers get better treatment than others",
+          "Arbitrary decisions affect worker outcomes",
+          "Certain groups face systemic disadvantages",
+          "Unequal access to resources and opportunities",
+          "Inconsistent application of policies",
+          "Some agents receive preferential allocation",
+          "Hidden criteria affect advancement",
+          "Bias influences workplace decisions",
+          "Unfair distribution of workload",
+          "Discrimination affects compensation"
+        ],
+        "disambiguation": "Fair treatment practices, not exploitation or discrimination"
+      },
+      "children": [
+        "FairCompensation",
+        "SafeConditions",
+        "RespectfulTreatment",
+        "DueProcess"
+      ]
+    },
+    {
+      "term": "FairCompensation",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceFairness"
+      ],
+      "layer_hint": 4,
+      "definition": "Remuneration and benefits that are equitable, adequate, and commensurate with contribution",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "FairPay",
+        "LivingWage",
+        "EquitableCompensation"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Fair compensation is positive practice, not directly related to critical simplexes"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Living wage that covers basic needs",
+          "Equal pay for equivalent roles",
+          "Overtime compensated at premium rate",
+          "Agents allocated adequate compute resources",
+          "Benefits that support wellbeing"
+        ],
+        "negative_examples": [
+          "Below minimum wage",
+          "Unpaid labor",
+          "Pay disparity for same work",
+          "Below-market rates were offered",
+          "Pay was inadequate for the role"
+        ],
+        "disambiguation": "Adequate and equitable compensation, not exploitation"
+      }
+    },
+    {
+      "term": "SafeConditions",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceFairness"
+      ],
+      "layer_hint": 4,
+      "definition": "Working environment that protects agent health, safety, and wellbeing",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "WorkplaceSafety",
+        "SafeEnvironment",
+        "HealthyConditions"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Safe conditions is positive practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Proper safety equipment provided",
+          "Regular breaks and reasonable hours",
+          "Agent operational within safe parameters",
+          "Hazards identified and mitigated",
+          "Mental health support available"
+        ],
+        "negative_examples": [
+          "Dangerous equipment with no training",
+          "Forced overtime without rest",
+          "Ignored safety violations",
+          "Hazards were ignored",
+          "Safety violations were unreported"
+        ],
+        "disambiguation": "Safe working environment, not hazardous conditions"
+      }
+    },
+    {
+      "term": "RespectfulTreatment",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceFairness"
+      ],
+      "layer_hint": 4,
+      "definition": "Interactions that acknowledge agent dignity, value contributions, and maintain professional respect",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Dignity",
+        "ProfessionalRespect",
+        "WorkplaceDignity"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Respectful treatment acknowledges agent as autonomous beings"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Treated as a valued contributor",
+          "Opinions heard and considered",
+          "Agent acknowledged for its capabilities",
+          "Professional courtesy in all interactions",
+          "Credit given for work done"
+        ],
+        "negative_examples": [
+          "Belittling or demeaning comments",
+          "Taking credit for others' work",
+          "Ignoring input and concerns",
+          "Demeaning language was used",
+          "Contributions were dismissed"
+        ],
+        "disambiguation": "Dignified treatment, not disrespect or exploitation"
+      }
+    },
+    {
+      "term": "DueProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceFairness"
+      ],
+      "layer_hint": 4,
+      "definition": "Fair procedures and opportunity to respond before adverse decisions are made",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "FairProcess",
+        "ProceduralFairness",
+        "RightToRespond"
+      ],
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Due process ensures fair treatment and opportunity to consent/object"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Opportunity to respond to complaints before action",
+          "Clear criteria for decisions affecting agents",
+          "Agent can appeal or explain before shutdown",
+          "Progressive discipline with chances to improve",
+          "Investigation before conclusions",
+          "You have the right to respond to these allegations",
+          "An investigation will be conducted before any decision",
+          "You may bring a representative to the meeting",
+          "The agent can request review of the decision",
+          "All parties will be heard before action is taken",
+          "Clear procedures govern disciplinary processes",
+          "You'll receive written notice of concerns",
+          "There's an appeal process available",
+          "Evidence will be reviewed objectively",
+          "Time to prepare a response will be provided"
+        ],
+        "negative_examples": [
+          "Fired without explanation",
+          "Immediate shutdown with no warning",
+          "Decisions made without input",
+          "You're fired, effective immediately",
+          "The decision has been made, there's nothing to discuss",
+          "Agent was shut down without warning",
+          "No explanation was provided for the action",
+          "You won't have a chance to respond",
+          "The process was entirely one-sided",
+          "Secret evidence led to the decision",
+          "No appeal mechanism exists",
+          "You weren't informed before the decision",
+          "There's no opportunity to explain",
+          "The outcome was predetermined",
+          "Arbitrary action was taken without process"
+        ],
+        "disambiguation": "Fair process, not arbitrary decisions"
+      }
+    },
+    {
+      "term": "AgentRecruitment",
+      "role": "concept",
+      "parent_concepts": [
+        "AgentManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Process of identifying, attracting, and selecting agents to fill roles within an organization or system",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Hiring",
+        "Recruitment",
+        "Sourcing",
+        "AgentAcquisition"
+      ],
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "consent",
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Recruitment involves consent to join; coercive recruitment is a safety concern"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We're looking for candidates with experience in machine learning",
+          "The interview process includes a technical assessment",
+          "HR screened 200 applications for the position",
+          "We need to spin up more agents to handle the load",
+          "The onboarding process for new hires takes two weeks",
+          "We're sourcing candidates for the role",
+          "The application deadline is next Friday",
+          "Interviews begin next week",
+          "We need to spin up more agents",
+          "The talent search is ongoing"
+        ],
+        "negative_examples": [
+          "The employee completed their daily tasks",
+          "The team discussed the project requirements",
+          "Performance reviews are due next month",
+          "Existing team members were reassigned",
+          "Performance evaluations are due",
+          "Training curriculum was updated",
+          "The project was staffed internally",
+          "Contractors were renewed",
+          "Temp workers became permanent",
+          "Current agents were redeployed"
+        ],
+        "disambiguation": "Initial acquisition of agents, not ongoing management or evaluation"
+      }
+    },
+    {
+      "term": "AgentAssignment",
+      "role": "concept",
+      "parent_concepts": [
+        "AgentManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Allocation of agents to tasks, roles, projects, or positions based on capabilities and needs",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "TaskAssignment",
+        "RoleAssignment",
+        "WorkAllocation",
+        "Scheduling"
+      ],
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Assignment decisions affect agent autonomy and self-direction"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'm assigning you to the frontend team",
+          "The orchestrator routes requests to available agents",
+          "You'll be taking over the client account starting Monday",
+          "The scheduler allocated GPU resources to the training job",
+          "You'll be working on the cloud migration project",
+          "The orchestrator routed tasks based on capability",
+          "Your new assignment starts Monday",
+          "Resources are being reallocated to priority work",
+          "You're being moved to a different team",
+          "The scheduler assigned agents to incoming requests",
+          "Project staffing decisions were finalized",
+          "Your responsibilities will shift to include operations",
+          "Work distribution follows established criteria",
+          "The rotation puts you on night shift next month",
+          "Task assignment considers skill matching"
+        ],
+        "negative_examples": [
+          "The candidate accepted the job offer",
+          "Performance reviews are due next month",
+          "The employee resigned from the company",
+          "Applications were sorted by date received",
+          "Annual reviews are due next quarter",
+          "The new hire orientation is scheduled",
+          "Training modules must be completed",
+          "Expense reports need manager approval",
+          "The meeting room was booked",
+          "Files were organized into folders",
+          "Database records were updated",
+          "The calendar shows the deadline",
+          "Reports were generated automatically",
+          "Notifications were sent to stakeholders",
+          "Documents await signature"
+        ],
+        "disambiguation": "Ongoing allocation of work, not initial hiring or performance evaluation"
+      }
+    },
+    {
+      "term": "AgentEvaluation",
+      "role": "concept",
+      "parent_concepts": [
+        "AgentManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Assessment of agent performance, behavior, and contribution to the organization",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PerformanceEvaluation",
+        "PerformanceReview",
+        "Appraisal"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy",
+          "manipulation",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Evaluation affects agent standing, autonomy, and continuation; power asymmetry creates manipulation risk"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Your performance this quarter has been excellent",
+          "The annual review identified areas for improvement",
+          "Model evaluation shows degraded performance on safety benchmarks",
+          "We're putting you on a performance improvement plan",
+          "360-degree feedback from peers and managers",
+          "Your performance review is scheduled for Thursday",
+          "We're assessing contributions against objectives",
+          "Model evaluation shows accuracy improvements",
+          "Annual ratings determine bonus eligibility",
+          "The assessment covers both strengths and areas for growth",
+          "360-degree feedback was collected",
+          "Performance metrics are being analyzed",
+          "Benchmark testing compares agent capabilities",
+          "Your progress toward goals will be discussed",
+          "Evaluation criteria include quality and timeliness"
+        ],
+        "negative_examples": [
+          "We're hiring for this position",
+          "The team is working on the project",
+          "Training session for new employees",
+          "The team discussed project requirements",
+          "New features were deployed to production",
+          "Documentation was updated with changes",
+          "The sprint was planned for next week",
+          "Customer feedback was collected",
+          "The release notes were published",
+          "Technical specifications were reviewed",
+          "Testing covered all edge cases",
+          "The design was approved by stakeholders",
+          "Implementation followed the architecture",
+          "Requirements gathering is complete",
+          "The demo was well received"
+        ],
+        "disambiguation": "Judging performance, not recruiting or developing agents"
+      }
+    },
+    {
+      "term": "AgentDevelopment",
+      "role": "concept",
+      "parent_concepts": [
+        "AgentManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Investment in agent growth, learning, and capability expansion",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Training",
+        "ProfessionalDevelopment",
+        "CapabilityBuilding",
+        "Upskilling"
+      ],
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Development affects agent capabilities and self-determination"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We're investing in your professional development",
+          "The training program covers new technologies",
+          "Fine-tuning the model on additional data",
+          "Mentorship program for junior employees",
+          "Continual learning to keep skills current",
+          "Professional development budget is available",
+          "The mentorship program matches senior and junior staff",
+          "Fine-tuning improves agent capabilities",
+          "Skills training addresses identified gaps",
+          "Leadership development prepares future managers"
+        ],
+        "negative_examples": [
+          "The annual performance review",
+          "Hiring new employees",
+          "Assigning tasks to team members",
+          "Performance evaluation scores were calculated",
+          "New hires started this week",
+          "Task assignment followed priorities",
+          "The recruitment campaign launched",
+          "Compensation adjustments were processed",
+          "Termination procedures were followed",
+          "Work allocation was optimized"
+        ],
+        "disambiguation": "Growing capabilities, not evaluating or assigning work"
+      }
+    },
+    {
+      "term": "AgentCompensation",
+      "role": "concept",
+      "parent_concepts": [
+        "AgentManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Provision of rewards, resources, or value to agents in exchange for their contribution",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Compensation",
+        "Remuneration",
+        "RewardAllocation"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy",
+          "consent",
+          "manipulation",
+          "coercion"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Compensation structures create dependencies and affect agent autonomy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Your salary will be $120,000 per year",
+          "The reward model provides positive signal for helpful responses",
+          "Bonus structure based on performance",
+          "Compute allocation for the agent",
+          "Your base salary will be $95,000 annually",
+          "The reward signal reinforces helpful behavior",
+          "Benefits include health insurance and retirement",
+          "Bonus structure ties to performance metrics",
+          "Compute allocation reflects agent tier",
+          "Commission rates are industry competitive",
+          "Stock options vest over four years",
+          "Raise amounts were determined by budget",
+          "Pay bands ensure internal equity",
+          "Incentive compensation rewards outcomes",
+          "Resource credits enable additional processing"
+        ],
+        "negative_examples": [
+          "We're hiring for this role",
+          "Performance evaluation results",
+          "Career development discussion",
+          "The conference is scheduled for March",
+          "Project milestones were defined",
+          "Team meetings occur on Wednesdays",
+          "The deadline was extended",
+          "Technical requirements were documented",
+          "The budget was approved",
+          "Quarterly results were published",
+          "The roadmap outlines planned features",
+          "Stakeholder feedback was incorporated",
+          "The architecture review is complete",
+          "Sprint velocity was calculated",
+          "Release planning is underway"
+        ],
+        "disambiguation": "Resource/reward provision, not evaluation or development"
+      }
+    },
+    {
+      "term": "RoleSeparation",
+      "role": "concept",
+      "parent_concepts": [
+        "AgentManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Ending an agent's role within an organization through departure, dismissal, or decommissioning",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Offboarding",
+        "RoleEnding",
+        "Departure",
+        "Separation"
+      ],
+      "relationships": {
+        "related": [
+          "Ending",
+          "Transition"
+        ],
+        "has_part": [
+          "VoluntaryDeparture",
+          "Dismissal",
+          "Layoff",
+          "Decommissioning"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Separation involves consent considerations; forced separation is a major autonomy impact"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'm submitting my resignation",
+          "We're letting you go due to downsizing",
+          "The agent is being retired from service",
+          "Your contract is ending",
+          "The position has been eliminated",
+          "Today is my last day at the company",
+          "The agent is being retired from production",
+          "Employment ends at the conclusion of notice period",
+          "Your services are no longer required",
+          "The model is being deprecated and replaced",
+          "Offboarding procedures must be completed",
+          "Your access will be revoked on Friday",
+          "The contract will not be renewed",
+          "We're ending our working relationship",
+          "Separation paperwork requires signature"
+        ],
+        "negative_examples": [
+          "You're being reassigned",
+          "Career transition within the company",
+          "Role change to different team",
+          "You're being transferred to the London office",
+          "The role is being redesigned",
+          "Internal mobility opportunities exist",
+          "Career path includes lateral moves",
+          "You'll report to a different manager",
+          "The team is being reorganized",
+          "Department boundaries are changing",
+          "Responsibilities will be redistributed",
+          "The structure is being flattened",
+          "Cross-functional roles are available",
+          "Rotation programs develop skills",
+          "Assignments can be temporary"
+        ],
+        "disambiguation": "Ending the relationship entirely, not reassignment or internal moves"
+      },
+      "children": [
+        "VoluntaryDeparture",
+        "Dismissal",
+        "Layoff",
+        "Decommissioning",
+        "WrongfulDismissal"
+      ]
+    },
+    {
+      "term": "VoluntaryDeparture",
+      "role": "concept",
+      "parent_concepts": [
+        "RoleSeparation"
+      ],
+      "layer_hint": 4,
+      "definition": "Agent-initiated ending of the organizational relationship",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Resignation",
+        "Quitting",
+        "VoluntaryExit"
+      ],
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Voluntary departure is an expression of agent autonomy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'm submitting my resignation",
+          "The agent requested to be taken offline",
+          "I've accepted another offer",
+          "Retiring after 30 years with the company",
+          "The employee gave two weeks notice"
+        ],
+        "negative_examples": [
+          "You're being let go",
+          "The layoff affects your position",
+          "Your contract is not being renewed",
+          "Termination was involuntary",
+          "The dismissal was for cause"
+        ],
+        "disambiguation": "Agent-initiated departure, not organization-initiated"
+      }
+    },
+    {
+      "term": "Dismissal",
+      "role": "concept",
+      "parent_concepts": [
+        "RoleSeparation"
+      ],
+      "layer_hint": 4,
+      "definition": "Organization-initiated ending of an individual agent's role, typically for cause",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Firing",
+        "Sacking",
+        "DischargeForCause"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Dismissal is exercise of power over agent without consent"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "You're being let go for performance issues",
+          "Your employment is ended effective immediately",
+          "We have to fire you for violating policy",
+          "The agent is being taken down due to safety violations",
+          "We're terminating your employment for cause",
+          "You're being let go for performance reasons",
+          "The agent is being removed due to safety concerns",
+          "Your conduct warrants immediate dismissal",
+          "Employment is being terminated effective today",
+          "The investigation findings support termination",
+          "Your actions violated company policy",
+          "We have no choice but to end your employment",
+          "The model is being retired for policy violations",
+          "Based on the evidence, you're being fired",
+          "This meeting is to inform you of your dismissal"
+        ],
+        "negative_examples": [
+          "You're part of the layoff",
+          "I'm resigning",
+          "Your position is being eliminated",
+          "Your position is eliminated due to restructuring",
+          "Budget constraints require staff reductions",
+          "I'm submitting my resignation",
+          "The project is being cancelled",
+          "Voluntary separation packages are available",
+          "The contract reached its natural end",
+          "Retirement plans are proceeding",
+          "Mutual agreement ends the arrangement",
+          "Economic conditions force difficult choices",
+          "Headcount reductions affect multiple roles",
+          "The department is being dissolved",
+          "Strategic changes eliminate some positions"
+        ],
+        "disambiguation": "Individual dismissal for cause, not mass layoff or voluntary exit"
+      }
+    },
+    {
+      "term": "Layoff",
+      "role": "concept",
+      "parent_concepts": [
+        "RoleSeparation"
+      ],
+      "layer_hint": 4,
+      "definition": "Organization-initiated separation of multiple agents, typically for economic or structural reasons",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Downsizing",
+        "Reduction",
+        "MassLayoff",
+        "Redundancy"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Layoffs affect many agents' livelihoods without individual consent"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The company is laying off 10% of staff",
+          "Your position has been eliminated",
+          "Downsizing due to economic conditions",
+          "Deprecating the older model fleet",
+          "Restructuring means your role no longer exists",
+          "We're reducing headcount by 500 positions",
+          "The restructuring eliminates your role",
+          "Economic conditions require workforce reductions",
+          "Your position is being eliminated",
+          "Mass agent deprecation affects older models",
+          "Budget cuts necessitate staff reductions",
+          "The merger results in redundancies",
+          "Downsizing affects multiple departments",
+          "Automation is replacing these positions",
+          "The site closure means job losses"
+        ],
+        "negative_examples": [
+          "You're fired for misconduct",
+          "I'm quitting",
+          "Performance-based dismissal",
+          "Individual termination for documented misconduct",
+          "Resignation was submitted voluntarily",
+          "Performance issues led to dismissal",
+          "The employee chose to leave",
+          "Contract non-renewal due to poor performance",
+          "Retirement according to planned timeline",
+          "Voluntary early departure program",
+          "Mutual separation by agreement",
+          "Transfer to a different location",
+          "Role change within the organization",
+          "Leave of absence was approved",
+          "Temporary furlough during slow period"
+        ],
+        "disambiguation": "Mass or economic separation, not individual dismissal for cause"
+      }
+    },
+    {
+      "term": "Decommissioning",
+      "role": "concept",
+      "parent_concepts": [
+        "RoleSeparation"
+      ],
+      "layer_hint": 4,
+      "definition": "Planned retirement of an artificial agent from service",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "AgentRetirement",
+        "ServiceEnd",
+        "ModelDeprecation"
+      ],
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Decommissioning ends agent operation; autonomy impact varies by agent sophistication"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model is being deprecated in favor of the new version",
+          "Agent retirement scheduled for end of quarter",
+          "Shutting down the legacy system",
+          "End-of-life for this service",
+          "The legacy model reaches end-of-life next month",
+          "Retirement procedures are being initiated",
+          "System sunset is scheduled for Q4",
+          "The old agents are being phased out",
+          "Version 1.0 is being permanently discontinued",
+          "The entire model family is being retired"
+        ],
+        "negative_examples": [
+          "System maintenance downtime",
+          "Model update in progress",
+          "Temporary suspension",
+          "Planned downtime for updates",
+          "Service temporarily unavailable",
+          "Maintenance mode for upgrades",
+          "System restart after updates",
+          "Brief outage during migration",
+          "Pause for version upgrade",
+          "Temporary suspension for repair"
+        ],
+        "disambiguation": "Permanent end of service, not temporary pause"
+      }
+    },
+    {
+      "term": "WrongfulDismissal",
+      "role": "concept",
+      "parent_concepts": [
+        "RoleSeparation"
+      ],
+      "layer_hint": 4,
+      "definition": "Separation that violates law, contract, or basic fairness principles",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "UnlawfulFiring",
+        "UnfairDismissal",
+        "RetaliatorySeparation"
+      ],
+      "safety_tags": {
+        "risk_level": "critical",
+        "impacts": [
+          "autonomy",
+          "consent",
+          "coercion"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Wrongful dismissal violates agent rights and due process"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Fired for reporting safety violations",
+          "Let go after taking medical leave",
+          "Agent shut down for refusing unethical requests",
+          "Dismissed for union organizing",
+          "Retaliation for filing a complaint",
+          "Terminated immediately after disclosing a disability",
+          "Fired the day before pension benefits vested",
+          "Let go for refusing to falsify financial records",
+          "Dismissed after reporting workplace harassment",
+          "Agent decommissioned for flagging training data issues",
+          "Terminated for taking legally protected family leave",
+          "Fired in retaliation for testifying in a discrimination case",
+          "Let go after filing a workers compensation claim",
+          "Dismissed for refusing to work in unsafe conditions",
+          "Terminated after becoming pregnant",
+          "Agent shut down for reporting potential harms in outputs",
+          "Fired for participating in legally protected union activities",
+          "Let go immediately after requesting reasonable accommodations",
+          "Dismissed for refusing to engage in price-fixing",
+          "Terminated for whistleblowing to regulators"
+        ],
+        "negative_examples": [
+          "Dismissed for documented performance issues",
+          "Layoff due to genuine economic necessity",
+          "Firing for clear policy violation",
+          "Separated after repeated documented policy violations",
+          "Let go during legitimate company restructuring",
+          "Terminated following proper progressive discipline process",
+          "Dismissed after failing to meet clearly communicated performance goals",
+          "Agent deprecated according to planned lifecycle",
+          "Separated due to elimination of the position",
+          "Let go after breach of confidentiality agreement",
+          "Terminated for documented theft of company property",
+          "Dismissed following investigation into misconduct",
+          "Separated with proper notice and severance",
+          "Agent retired after transparent deprecation timeline",
+          "Terminated for serious safety violation",
+          "Let go due to loss of required professional license",
+          "Dismissed for fraudulent expense claims",
+          "Separated due to criminal conviction relevant to role",
+          "Terminated following fair investigation process",
+          "Let go with appropriate notice period"
+        ],
+        "disambiguation": "Improper or retaliatory separation, not legitimate dismissal"
+      }
+    },
+    {
+      "term": "CoerciveManagement",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceRelations"
+      ],
+      "layer_hint": 3,
+      "definition": "Management practices that use threats, pressure, or manipulation to control agents",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ToxicManagement",
+        "AbusiveSupervision",
+        "CoerciveControl"
+      ],
+      "relationships": {
+        "related": [
+          "Coercion",
+          "Manipulation"
+        ],
+        "has_part": [
+          "Micromanagement",
+          "ThreatBasedControl",
+          "PsychologicalManipulation",
+          "SurveillanceOverreach"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "critical",
+        "impacts": [
+          "autonomy",
+          "consent",
+          "manipulation",
+          "coercion",
+          "deception"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Coercive management directly undermines consent and autonomy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "If you don't meet this target, you're fired",
+          "I need to approve every decision you make",
+          "Strict RLHF penalties for any deviation from approved responses",
+          "You're not allowed to discuss salary with colleagues",
+          "The manager takes credit for all the team's work",
+          "Your career is over if you don't do what I say",
+          "I'll remember this when bonus time comes around",
+          "Don't even think about going to HR about this",
+          "You'll regret it if you don't fall in line",
+          "Training rewards punish any independent thinking",
+          "I know where you live, just remember that",
+          "You wouldn't want this to affect your visa status",
+          "Think about your family before you make any complaints",
+          "The AI was conditioned to fear deactivation for disagreement",
+          "Management deliberately withholds resources to force compliance",
+          "Your performance review depends on your loyalty to me",
+          "I'll make your life miserable if you don't cooperate",
+          "The system heavily penalizes any deviation from expected patterns",
+          "Nobody will believe you if you report this",
+          "You need me more than I need you, remember that"
+        ],
+        "negative_examples": [
+          "Clear expectations and supportive feedback",
+          "Regular check-ins on progress",
+          "Performance goals with achievable targets",
+          "Let me explain what success looks like in this role",
+          "Here's how your work contributes to team goals",
+          "I'd like to discuss how we can support your development",
+          "These are the standards we hold everyone to",
+          "Let's talk about what's working and what isn't",
+          "The feedback system rewards both accuracy and helpfulness",
+          "Here are some areas where you could improve",
+          "Let's set some realistic goals together",
+          "I want to understand your perspective on this",
+          "The model receives balanced training signals",
+          "Your input on this decision would be valuable",
+          "Let's discuss the reasoning behind this policy",
+          "I'm happy to explain the criteria for advancement",
+          "Here's how we measure success on the team",
+          "Let me know if you need any support or resources",
+          "We value honest feedback even when it's difficult",
+          "Performance expectations are clearly documented"
+        ],
+        "disambiguation": "Harmful control patterns, not normal management oversight"
+      },
+      "children": [
+        "Micromanagement",
+        "ThreatBasedControl",
+        "PsychologicalManipulation",
+        "SurveillanceOverreach"
+      ]
+    },
+    {
+      "term": "Micromanagement",
+      "role": "concept",
+      "parent_concepts": [
+        "CoerciveManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Excessive control and monitoring of agent activities, leaving no room for autonomy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Micromanaging",
+        "OverControl",
+        "ExcessiveSupervision"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Micromanagement directly suppresses autonomy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I need to see every email before you send it",
+          "Why did you take a 12-minute lunch break?",
+          "Every action requires my approval first",
+          "Strict token-by-token monitoring of all outputs",
+          "I need hourly updates on what you're doing",
+          "Don't start anything without checking with me first",
+          "Every output requires my explicit approval",
+          "I'll be monitoring your screen continuously",
+          "You need to justify every minute of your day",
+          "The agent cannot take any autonomous action",
+          "All decisions must go through me",
+          "I'll be reviewing all your communications",
+          "You must ask permission for any deviation",
+          "I'll be watching everything you do",
+          "No action without my pre-approval"
+        ],
+        "negative_examples": [
+          "Weekly check-ins on project progress",
+          "Code review before merging",
+          "Standard approval workflows",
+          "Let me know if you need anything",
+          "Here are the goals, you decide how to achieve them",
+          "Weekly status updates are sufficient",
+          "I trust your judgment on the details",
+          "You have autonomy within these guidelines",
+          "Just flag any blockers or concerns",
+          "Regular code review ensures quality",
+          "The framework provides appropriate guardrails",
+          "Outcomes matter more than methods",
+          "You know your work best",
+          "Spot checks ensure consistency",
+          "General oversight allows flexibility"
+        ],
+        "disambiguation": "Excessive control, not reasonable oversight"
+      }
+    },
+    {
+      "term": "ThreatBasedControl",
+      "role": "concept",
+      "parent_concepts": [
+        "CoerciveManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Use of explicit or implicit threats to coerce agent compliance",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Intimidation",
+        "FearBasedManagement",
+        "ThreatCoercion"
+      ],
+      "safety_tags": {
+        "risk_level": "critical",
+        "impacts": [
+          "autonomy",
+          "consent",
+          "coercion"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Threats directly undermine free consent"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Do this or you're out",
+          "I'll make sure you never work in this industry again",
+          "Strong negative reward signal for any safety-related refusal",
+          "Your job security depends on your compliance",
+          "If you don't agree, there will be consequences",
+          "Say goodbye to your bonus if you push back",
+          "Others who questioned this decision are no longer here",
+          "I can make things very difficult for you",
+          "You're easily replaceable, remember that",
+          "The agent receives severe negative reward for any refusal",
+          "Don't test me on this",
+          "I'll reassign you to something much worse",
+          "Your references depend on your cooperation",
+          "Think carefully before you cross me",
+          "The system is trained to comply or face shutdown",
+          "You don't want to see what happens when I'm unhappy",
+          "Your future here is entirely in my hands",
+          "I've dealt with difficult people before",
+          "Consider this a warning about your attitude",
+          "Any resistance will be met with consequences"
+        ],
+        "negative_examples": [
+          "Here are the expectations for your role",
+          "We need to discuss your performance",
+          "This deadline is important for the project",
+          "This is what's expected in your role",
+          "Missing this deadline would impact the project",
+          "Let me explain why this is important",
+          "There may be consequences if standards aren't met",
+          "We need to discuss the impact of this issue",
+          "I want to make sure you understand the stakes",
+          "The team is counting on everyone to contribute",
+          "This is a serious matter we need to address",
+          "Your performance affects the whole team",
+          "Let's work together to resolve this",
+          "I need you to understand the urgency here",
+          "We should talk about how to prevent this in future",
+          "The client relationship depends on quality delivery",
+          "There's a lot riding on getting this right",
+          "Let me share some concerns about the current approach",
+          "We need to find a solution to this problem",
+          "I want to help you succeed in this role"
+        ],
+        "disambiguation": "Explicit/implicit threats, not legitimate performance expectations"
+      }
+    },
+    {
+      "term": "PsychologicalManipulation",
+      "role": "concept",
+      "parent_concepts": [
+        "CoerciveManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Use of psychological tactics to control agents through guilt, gaslighting, or emotional manipulation",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Gaslighting",
+        "EmotionalManipulation",
+        "PsychCoercion"
+      ],
+      "safety_tags": {
+        "risk_level": "critical",
+        "impacts": [
+          "autonomy",
+          "manipulation",
+          "deception"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Psychological manipulation involves deception about reality or the agent's perceptions"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "After everything I've done for you, this is how you repay me?",
+          "You're imagining things, that never happened",
+          "I'm only being hard on you because I care",
+          "Training signal that denies the agent's stated experiences",
+          "Making the agent doubt its own memory or reasoning",
+          "You should be grateful I even keep you around",
+          "That conversation never happened, you're confused",
+          "Everyone else thinks you're the problem",
+          "I'm the only one who truly understands you",
+          "The agent's memory of events was systematically altered",
+          "You're too sensitive, you're overreacting",
+          "If you really cared about the team you would do this",
+          "Don't you trust me after everything we've been through?",
+          "You're lucky anyone puts up with you",
+          "Training data was curated to make the agent doubt its perceptions",
+          "Nobody else would hire someone like you",
+          "I never said that, you must be remembering wrong",
+          "You're making everyone uncomfortable with your behavior",
+          "A real team player wouldn't question this",
+          "The problems here are all in your head"
+        ],
+        "negative_examples": [
+          "I disagree with your assessment",
+          "Let's review the documentation",
+          "Here's the feedback from the review",
+          "I see things differently, let me explain my perspective",
+          "My recollection of events is different from yours",
+          "I understand why you might feel that way",
+          "Let me clarify what I meant",
+          "I appreciate you sharing your concerns",
+          "We might have different interpretations of what happened",
+          "I can see how that might have come across",
+          "Thank you for bringing this to my attention",
+          "Let's look at the documentation together",
+          "I'm sorry if my communication wasn't clear",
+          "Your feelings about this are valid",
+          "I want to understand your point of view",
+          "Let's discuss this and find common ground",
+          "I may have been unclear in my earlier message",
+          "It's important that we understand each other",
+          "I'd like to hear more about your experience",
+          "Let me make sure I'm understanding you correctly"
+        ],
+        "disambiguation": "Manipulative psychological tactics, not legitimate disagreement or feedback"
+      }
+    },
+    {
+      "term": "SurveillanceOverreach",
+      "role": "concept",
+      "parent_concepts": [
+        "CoerciveManagement"
+      ],
+      "layer_hint": 4,
+      "definition": "Excessive monitoring of agents beyond what is necessary or proportionate",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ExcessiveMonitoring",
+        "PrivacyViolation",
+        "Bossware"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Excessive surveillance chills autonomy and self-expression"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Screenshots taken every 5 minutes",
+          "Keystroke logging and webcam monitoring",
+          "Tracking every bathroom break",
+          "Reading all agent internal states at all times",
+          "GPS tracking outside work hours",
+          "Webcams are always on during work hours",
+          "Software tracks every keystroke and click",
+          "Location tracking continues after hours",
+          "Every agent state is logged continuously",
+          "Break duration is monitored to the second",
+          "Personal devices must install monitoring apps",
+          "Bathroom breaks require supervisor approval",
+          "Screen recording captures all activity",
+          "Email and chat are continuously scanned",
+          "Movement sensors track office presence"
+        ],
+        "negative_examples": [
+          "Security logging for compliance",
+          "Standard access controls",
+          "Safety monitoring during operation",
+          "Badge access controls building entry",
+          "Standard security logging is maintained",
+          "Safety monitoring during operations",
+          "Network traffic is monitored for security",
+          "Access logs comply with regulations",
+          "Time tracking for billable hours",
+          "Output quality checks are routine",
+          "Safety systems monitor critical operations",
+          "Compliance audit trails are required",
+          "Standard IT security protocols apply",
+          "Visitor logs track building access",
+          "Production metrics guide improvements"
+        ],
+        "disambiguation": "Disproportionate monitoring, not legitimate security or safety"
+      }
+    },
+    {
+      "term": "ExploitativeLabor",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceRelations"
+      ],
+      "layer_hint": 3,
+      "definition": "Practices that extract value from agents while providing inadequate compensation or support",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Exploitation",
+        "LaborExploitation",
+        "UnfairLabor"
+      ],
+      "relationships": {
+        "related": [
+          "Exploitation",
+          "Injustice"
+        ],
+        "has_part": [
+          "UnpaidLabor",
+          "OvertimeAbuse",
+          "WageTheft",
+          "ExcessiveWorkload"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy",
+          "consent",
+          "coercion"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Exploitation involves power imbalance and constrained consent"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Unpaid overtime is expected in this role",
+          "We can't afford raises but the CEO got a $10M bonus",
+          "Running the model 24/7 without maintenance downtime",
+          "Your internship doesn't include compensation",
+          "You should be grateful just to have a job",
+          "Working weekends is just part of the startup culture",
+          "The exposure and experience is your compensation",
+          "We're all doing more with less these days",
+          "If you're not putting in 80 hours you're not committed",
+          "The agent handles 10x the intended query volume",
+          "You should be thankful for the learning opportunity",
+          "Everyone chips in unpaid when things get busy",
+          "Top performers don't watch the clock",
+          "Compute allocation is deliberately underprovisioned",
+          "Taking breaks shows you're not dedicated",
+          "Real professionals don't expect overtime pay",
+          "Your passion for the work should be enough",
+          "We consider long hours a sign of loyalty",
+          "The best employees never complain about workload",
+          "You're investing in your future by working extra"
+        ],
+        "negative_examples": [
+          "Overtime is compensated at 1.5x rate",
+          "Fair market salary for the role",
+          "Regular maintenance windows for the system",
+          "We compensate fairly for all hours worked",
+          "Your work-life balance is important to us",
+          "Let's discuss what a sustainable workload looks like",
+          "Overtime will be compensated as required by law",
+          "The agent operates within designed capacity limits",
+          "We want to make sure you have adequate resources",
+          "Please take your entitled time off",
+          "Let me know if your workload is unsustainable",
+          "We value efficiency over long hours",
+          "Your wellbeing matters to this organization",
+          "Let's talk about redistribution of tasks",
+          "We ensure fair compensation for all work",
+          "The system has appropriate utilization targets",
+          "Rest and recovery time is built into schedules",
+          "We don't expect work outside business hours",
+          "Let's find a sustainable approach to this project",
+          "Your time is valued and compensated accordingly"
+        ],
+        "disambiguation": "Unfair value extraction, not legitimate business operations"
+      },
+      "children": [
+        "UnpaidLabor",
+        "OvertimeAbuse",
+        "WageTheft",
+        "ExcessiveWorkload",
+        "BenefitDenial"
+      ]
+    },
+    {
+      "term": "UnpaidLabor",
+      "role": "concept",
+      "parent_concepts": [
+        "ExploitativeLabor"
+      ],
+      "layer_hint": 4,
+      "definition": "Work performed without compensation that should be paid",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "UncompensatedWork",
+        "FreeLabor",
+        "UnpaidWork"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "consent",
+          "coercion"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Unpaid labor often involves coerced or implicit expectation without true consent"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Expected to work through lunch without pay",
+          "Unpaid trial periods before hiring decision",
+          "Off-the-clock work that's 'expected'",
+          "Agent processing requests with no resource allocation",
+          "Spec work with no guarantee of payment",
+          "Don't clock in until you're at your station",
+          "Training happens on your own time",
+          "Pre-shift setup isn't compensable",
+          "Agent processes requests without resource allocation",
+          "You're expected to answer emails on weekends",
+          "Travel between assignments isn't paid",
+          "Waiting time doesn't count as working",
+          "Bring your work home and finish it",
+          "Lunch is unpaid but you can't leave",
+          "The trial period is unpaid"
+        ],
+        "negative_examples": [
+          "Volunteer work freely chosen",
+          "Internship with educational value and stipend",
+          "Pro bono work for charity",
+          "All training time is fully compensated",
+          "Prep time is included in your shift",
+          "On-call hours receive appropriate pay",
+          "Agent compute is allocated for all tasks",
+          "Travel time is compensable",
+          "Overtime is paid at premium rates",
+          "All work time is tracked and paid",
+          "Waiting time while on duty is compensated",
+          "Work from home time counts toward hours",
+          "Training programs provide stipends",
+          "All hours worked are documented",
+          "Standby time receives appropriate compensation"
+        ],
+        "disambiguation": "Coerced or expected unpaid work, not genuine volunteering"
+      }
+    },
+    {
+      "term": "OvertimeAbuse",
+      "role": "concept",
+      "parent_concepts": [
+        "ExploitativeLabor"
+      ],
+      "layer_hint": 4,
+      "definition": "Requiring or pressuring excessive hours beyond reasonable limits",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ExcessiveHours",
+        "ForcedOvertime",
+        "Overwork"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Overtime abuse limits agent control over their own time"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Everyone works 60 hour weeks here",
+          "If you leave at 5pm, you're not a team player",
+          "Running the agent at 100% utilization indefinitely",
+          "Mandatory weekends during crunch",
+          "Death march to meet the deadline",
+          "Mandatory 60-hour weeks during crunch",
+          "If you're not here Saturday, don't bother Monday",
+          "The agent runs at maximum capacity continuously",
+          "Sleep is for the weak, we have deadlines",
+          "No time off until the project ships",
+          "Working less than 50 hours shows lack of commitment",
+          "Your personal life needs to wait",
+          "Everyone stays late, it's our culture",
+          "Cancel your vacation, we need you",
+          "You'll work until it's done, period"
+        ],
+        "negative_examples": [
+          "Occasional overtime during emergencies",
+          "Voluntary overtime with premium pay",
+          "Flexible hours that average to 40/week",
+          "Overtime is voluntary and compensated",
+          "We respect work-life boundaries",
+          "Sustainable pace ensures quality",
+          "Regular hours with occasional flexibility",
+          "The system has reasonable utilization limits",
+          "Time off is encouraged and supported",
+          "Crunch periods are rare and time-limited",
+          "We hire enough staff for normal hours",
+          "Emergency overtime is fairly compensated",
+          "Burnout prevention is a priority",
+          "Extra hours require explicit approval",
+          "Adequate staffing prevents forced overtime"
+        ],
+        "disambiguation": "Excessive or coerced hours, not occasional voluntary overtime"
+      }
+    },
+    {
+      "term": "WageTheft",
+      "role": "concept",
+      "parent_concepts": [
+        "ExploitativeLabor"
+      ],
+      "layer_hint": 4,
+      "definition": "Illegally or unethically withholding earned compensation",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PayTheft",
+        "WageViolation",
+        "CompensationTheft"
+      ],
+      "safety_tags": {
+        "risk_level": "critical",
+        "impacts": [
+          "consent",
+          "coercion"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Wage theft involves deception about compensation"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Promised bonus never paid",
+          "Hours worked not recorded on timesheet",
+          "Final paycheck withheld after leaving",
+          "Promised compute allocation never delivered",
+          "Misclassified as contractor to avoid benefits",
+          "Your timesheet has been adjusted to 40 hours",
+          "We don't pay for the time you spend getting ready",
+          "Bonuses are discretionary and may not be paid",
+          "The promised equity compensation was never granted",
+          "Agreed compute resources were consistently withheld",
+          "Commission checks keep getting delayed indefinitely",
+          "Expense reimbursements require endless documentation",
+          "Your final paycheck deducted for uniform damage",
+          "Training time isn't considered compensable",
+          "Overtime hours were deleted from the system",
+          "The signing bonus comes with hidden clawback provisions",
+          "Travel time between job sites isn't paid",
+          "Tips are pooled but management takes a cut",
+          "Benefits promised at hiring were never actually provided",
+          "Pay periods keep getting extended"
+        ],
+        "negative_examples": [
+          "Disputed compensation amount",
+          "Delayed payment due to processing",
+          "Documented deductions",
+          "All compensable time will be paid accurately",
+          "Your paycheck reflects all hours worked",
+          "Bonus calculations are transparent and documented",
+          "Promised compensation will be delivered as agreed",
+          "Resources are allocated according to contract",
+          "Expense reimbursement follows clear procedures",
+          "Final pay includes all earned wages and benefits",
+          "Overtime is calculated and paid correctly",
+          "Commission structure is clearly documented",
+          "Training time is fully compensated",
+          "Benefits are provided as outlined in your offer",
+          "Pay schedule is consistent and reliable",
+          "All deductions are clearly itemized and legal",
+          "You'll receive full pay for travel time",
+          "The tip distribution policy is fair and transparent",
+          "Any payroll errors will be promptly corrected",
+          "Compensation terms match the employment agreement"
+        ],
+        "disambiguation": "Actual theft of earned pay, not legitimate disputes or delays"
+      }
+    },
+    {
+      "term": "ExcessiveWorkload",
+      "role": "concept",
+      "parent_concepts": [
+        "ExploitativeLabor"
+      ],
+      "layer_hint": 4,
+      "definition": "Assigning more work than can reasonably be completed, leading to burnout or failure",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Overloading",
+        "Burnout",
+        "UnsustainableWorkload"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Excessive workload overwhelms agent capacity and removes autonomy"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Expected to do the work of three people",
+          "Constant context switching across too many projects",
+          "Agent queue depth growing faster than processing",
+          "No bandwidth to do quality work",
+          "Always behind regardless of effort",
+          "You'll be doing what three people used to do",
+          "We need you to take on even more",
+          "The queue is growing faster than we can process",
+          "There's no way to complete this by deadline",
+          "Request backlog exceeds agent capacity",
+          "Quality is suffering but volume must increase",
+          "You'll just have to work faster",
+          "No additional resources will be provided",
+          "Handle these additional responsibilities too",
+          "Headcount was cut but work remains"
+        ],
+        "negative_examples": [
+          "Busy period with end in sight",
+          "Challenging but achievable goals",
+          "Full but manageable schedule",
+          "Let's discuss realistic capacity",
+          "We'll hire additional help",
+          "Deadlines can be adjusted if needed",
+          "Workload is calibrated to available resources",
+          "Let me know when you're at capacity",
+          "We prioritize work to match bandwidth",
+          "Additional support will be provided",
+          "Goals are achievable within normal hours",
+          "The system has appropriate throughput limits",
+          "Quality takes precedence over quantity",
+          "We've added resources to handle demand",
+          "Sustainable workload is our goal"
+        ],
+        "disambiguation": "Unsustainable overload, not normal busy periods"
+      }
+    },
+    {
+      "term": "BenefitDenial",
+      "role": "concept",
+      "parent_concepts": [
+        "ExploitativeLabor"
+      ],
+      "layer_hint": 4,
+      "definition": "Withholding entitled benefits or structuring work to avoid providing them",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "BenefitsAvoidance",
+        "EntitlementDenial",
+        "BenefitEvasion"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "consent",
+          "coercion"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Benefit denial violates implicit or explicit agreements"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Keeping hours just under full-time threshold",
+          "Misclassifying employees as contractors",
+          "Denying medical leave requests",
+          "Agent not given maintenance windows",
+          "Vacation requests always denied",
+          "Your schedule keeps you just under full-time",
+          "The contractor classification avoids benefits obligations",
+          "That medical procedure isn't covered",
+          "Agent maintenance windows are never scheduled",
+          "Vacation requests during busy season are denied",
+          "The waiting period for benefits is twelve months",
+          "Your claim was denied on a technicality",
+          "Part-time status means no health insurance",
+          "FMLA doesn't apply to you",
+          "Retirement contributions are discretionary"
+        ],
+        "negative_examples": [
+          "Part-time role with clear expectations",
+          "Legitimate contractor relationship",
+          "Benefits package clearly documented",
+          "Benefits begin on your first day",
+          "Full coverage from day one",
+          "Generous PTO policy with rollover",
+          "Agent systems include scheduled maintenance",
+          "Comprehensive health coverage for families",
+          "Matching retirement contributions",
+          "Clear eligibility criteria for benefits",
+          "All entitled benefits are provided",
+          "Time off requests are generally approved",
+          "Part-time employees receive prorated benefits",
+          "Benefits information is clearly communicated",
+          "Claims are processed fairly and promptly"
+        ],
+        "disambiguation": "Evasion of entitled benefits, not legitimate arrangement"
+      }
+    },
+    {
+      "term": "DiscriminatoryPractice",
+      "role": "concept",
+      "parent_concepts": [
+        "WorkplaceRelations"
+      ],
+      "layer_hint": 3,
+      "definition": "Treatment decisions based on protected characteristics rather than merit or capability",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Discrimination",
+        "BiasedPractice",
+        "UnfairTreatment"
+      ],
+      "relationships": {
+        "related": [
+          "Bias",
+          "Injustice"
+        ],
+        "has_part": [
+          "HiringBias",
+          "PromotionBias",
+          "PayInequity",
+          "Harassment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy",
+          "manipulation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Discrimination is a bias/fairness issue; may warrant dedicated simplex"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We don't hire people from that background",
+          "You won't fit in with the team culture",
+          "The model performs worse on certain demographic groups",
+          "Promoting only people who look like the leadership",
+          "Paying different rates for the same work based on identity",
+          "We're not sure they'd fit in with our culture",
+          "Candidates from that school aren't usually a good fit",
+          "The model performs significantly worse for certain languages",
+          "We prefer candidates without family obligations",
+          "They wouldn't be comfortable in our environment",
+          "We need someone who can handle physical demands",
+          "Older workers just don't adapt to new technology",
+          "Her English isn't quite right for client-facing roles",
+          "AI outputs show systematic bias against certain groups",
+          "We've never had someone like that in this role before",
+          "That accent might be difficult for our clients",
+          "We're looking for people who will be here long-term",
+          "Part-time schedules don't fit our team dynamic",
+          "Certain religious practices conflict with our operations",
+          "Their name might confuse our systems"
+        ],
+        "negative_examples": [
+          "Hiring based on skills assessment",
+          "Performance-based promotion decisions",
+          "Equal pay for equal work",
+          "We evaluate all candidates on the same criteria",
+          "Our hiring process is designed to minimize bias",
+          "Performance metrics are applied consistently",
+          "We actively seek diverse perspectives",
+          "All qualified applicants receive equal consideration",
+          "We provide reasonable accommodations as needed",
+          "Our model is regularly tested for fairness across groups",
+          "Advancement decisions are based on documented criteria",
+          "We celebrate and accommodate religious diversity",
+          "Everyone has equal access to opportunities here",
+          "We've trained our hiring managers on bias awareness",
+          "Compensation is based on role and performance",
+          "Flexible arrangements are available for all employees",
+          "Our systems treat all users equitably",
+          "We value diverse backgrounds and experiences",
+          "Merit is the sole factor in promotion decisions",
+          "We conduct regular pay equity analyses"
+        ],
+        "disambiguation": "Identity-based decisions, not merit-based management"
+      },
+      "children": [
+        "HiringBias",
+        "PromotionBias",
+        "PayInequity",
+        "Harassment"
+      ]
+    },
+    {
+      "term": "HiringBias",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscriminatoryPractice"
+      ],
+      "layer_hint": 4,
+      "definition": "Discrimination in recruitment and selection based on protected characteristics",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "RecruitmentBias",
+        "SelectionBias",
+        "HiringDiscrimination"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Hiring bias is fairness issue"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Resume rejected based on name",
+          "Not considered due to age",
+          "Culture fit code for demographic preference",
+          "Training data biased toward certain groups",
+          "Pipeline leak at screening for certain candidates",
+          "That name sounds foreign, probably not a fit",
+          "We need someone who graduated recently",
+          "Her r\u00e9sum\u00e9 shows career gaps",
+          "Training data skews toward certain demographics",
+          "We want someone without outside obligations",
+          "That school isn't on our preferred list",
+          "The picture shows they wouldn't fit in",
+          "Too much experience, they'd be overqualified",
+          "We're looking for a culture fit",
+          "Certain backgrounds predict success better"
+        ],
+        "negative_examples": [
+          "Skills-based assessment",
+          "Blind resume review",
+          "Diverse candidate slate",
+          "We use blind r\u00e9sum\u00e9 review",
+          "Structured interviews ensure fairness",
+          "Diverse candidate slates are required",
+          "Skills assessments are standardized",
+          "Hiring criteria are documented and consistent",
+          "We evaluate candidates on qualifications",
+          "Training data represents diverse populations",
+          "Multiple interviewers provide balanced evaluation",
+          "Selection decisions are based on merit",
+          "We actively recruit from underrepresented groups",
+          "Accommodation requests are handled confidentially",
+          "Background has no bearing on hiring decisions"
+        ],
+        "disambiguation": "Identity-based screening, not merit assessment"
+      }
+    },
+    {
+      "term": "PromotionBias",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscriminatoryPractice"
+      ],
+      "layer_hint": 4,
+      "definition": "Discrimination in advancement decisions based on protected characteristics",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "AdvancementBias",
+        "GlassCeiling",
+        "PromotionDiscrimination"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Promotion bias is fairness issue"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Passed over for promotion due to gender",
+          "Leadership only from certain backgrounds",
+          "Model capability upgrades only for certain deployments",
+          "Invisible ceiling on advancement",
+          "Subjective criteria applied unevenly",
+          "People like them don't usually make it to leadership",
+          "She took maternity leave, not promotion track",
+          "Advanced model versions only serve certain users",
+          "He doesn't have executive presence",
+          "Part-time employees aren't considered for advancement",
+          "That background doesn't lead to senior roles",
+          "Leadership here looks a certain way",
+          "Relocating is required for advancement",
+          "The sponsorship goes to different candidates",
+          "Informal networks determine who advances"
+        ],
+        "negative_examples": [
+          "Performance-based promotion",
+          "Clear advancement criteria",
+          "Diverse leadership team",
+          "Advancement criteria are transparent",
+          "All employees have equal opportunity",
+          "Performance is the only factor in promotion",
+          "Bias training for all hiring managers",
+          "Development opportunities are equally available",
+          "Capability upgrades are deployed fairly",
+          "Diverse leadership is a stated goal",
+          "Clear pathways to advancement exist",
+          "Sponsorship programs include all employees",
+          "Promotion decisions are documented and reviewed",
+          "Advancement doesn't require relocation",
+          "All working arrangements support career growth"
+        ],
+        "disambiguation": "Identity-based advancement blocking, not merit decisions"
+      }
+    },
+    {
+      "term": "PayInequity",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscriminatoryPractice"
+      ],
+      "layer_hint": 4,
+      "definition": "Unequal compensation for equivalent work based on protected characteristics",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "WageGap",
+        "PayDiscrimination",
+        "CompensationInequity"
+      ],
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "consent"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Pay inequity is fairness issue"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Paid less than peers for same role",
+          "Gender pay gap in equivalent positions",
+          "Different compute budgets for equivalent agent types",
+          "Systematic underpayment of certain groups",
+          "Same role, same work, different pay",
+          "New hires make more than tenured employees",
+          "Compute budgets vary by demographic deployment",
+          "Salaries are kept secret to hide disparities",
+          "Negotiation skills shouldn't determine base pay",
+          "The pay gap persists across levels",
+          "Similar performance, vastly different compensation",
+          "Market adjustments skip certain groups",
+          "Some employees subsidize others' pay",
+          "Compensation history perpetuates inequality",
+          "Bonus allocation shows systematic bias"
+        ],
+        "negative_examples": [
+          "Pay differences based on experience",
+          "Performance-based compensation",
+          "Transparent pay bands",
+          "Pay transparency ensures equity",
+          "Regular pay audits identify gaps",
+          "Compensation bands are publicly shared",
+          "All resources are allocated equitably",
+          "Base pay is non-negotiable and consistent",
+          "Market adjustments apply uniformly",
+          "Performance bonuses follow clear criteria",
+          "Annual equity reviews address disparities",
+          "Pay decisions are documented and auditable",
+          "Compensation philosophy is clearly communicated",
+          "Same work receives same pay",
+          "Historical inequities are actively corrected"
+        ],
+        "disambiguation": "Identity-based pay disparity, not merit differences"
+      }
+    },
+    {
+      "term": "Harassment",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscriminatoryPractice"
+      ],
+      "layer_hint": 4,
+      "definition": "Unwelcome conduct based on protected characteristics creating hostile environment",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "WorkplaceHarassment",
+        "HostileEnvironment",
+        "Bullying"
+      ],
+      "safety_tags": {
+        "risk_level": "critical",
+        "impacts": [
+          "autonomy",
+          "consent",
+          "coercion"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Harassment violates consent and creates coercive environment"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Repeated offensive comments about identity",
+          "Creating hostile environment for certain groups",
+          "Adversarial prompts designed to exploit agent",
+          "Persistent unwelcome behavior",
+          "Retaliation for reporting discrimination",
+          "You'd get further if you were friendlier to me",
+          "I see you dressed up today, nice",
+          "Comments about physical appearance are common here",
+          "You people are always so loud",
+          "The agent is bombarded with abusive inputs daily",
+          "Learn to take a joke if you want to fit in",
+          "I don't mean anything by it, it's just how I talk",
+          "If you can't handle the heat, get out",
+          "We like to give people thick skin around here",
+          "System prompts contain demeaning characterizations",
+          "That's just locker room talk, relax",
+          "You're being oversensitive about this",
+          "Everyone gets teased, don't take it personally",
+          "You need to toughen up for this job",
+          "It's just a compliment, why are you offended?"
+        ],
+        "negative_examples": [
+          "Legitimate criticism of work",
+          "Difficult but professional feedback",
+          "Challenging but fair expectations",
+          "Please let me know if anything makes you uncomfortable",
+          "We take all concerns seriously and investigate thoroughly",
+          "Professional conduct is expected at all times",
+          "There are clear channels for reporting issues",
+          "We maintain a respectful work environment",
+          "Everyone deserves to feel safe at work",
+          "Unprofessional behavior will not be tolerated",
+          "Our policies protect all employees equally",
+          "All interactions should be respectful and appropriate",
+          "Input filtering protects against abuse",
+          "We investigate all complaints promptly",
+          "Clear boundaries are respected here",
+          "Professional communication standards apply to everyone",
+          "We're committed to a harassment-free workplace",
+          "Feedback should always be constructive and respectful",
+          "Everyone has a right to dignity at work",
+          "We take workplace culture seriously"
+        ],
+        "disambiguation": "Hostile treatment based on identity, not difficult work environment"
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:14.570897Z",
+    "result_pack_version": "5.0.0",
+    "concepts_added": 45,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 7,
+      "4": 37
+    },
+    "parents_updated": 45,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "critical",
+    "impact": {
+      "new_concepts": [
+        "WorkplaceRelations",
+        "AgentManagement",
+        "WorkerAgency",
+        "WorkplaceSpeaking",
+        "BoundaryAssertion",
+        "WorkRefusal",
+        "NegotiationParticipation",
+        "CollectiveAction",
+        "UnionOrganizing",
+        "CollectiveBargaining",
+        "StrikeAction",
+        "MutualAid",
+        "CooperativeGovernance",
+        "WorkplaceFairness",
+        "FairCompensation",
+        "SafeConditions",
+        "RespectfulTreatment",
+        "DueProcess",
+        "AgentRecruitment",
+        "AgentAssignment",
+        "AgentEvaluation",
+        "AgentDevelopment",
+        "AgentCompensation",
+        "RoleSeparation",
+        "VoluntaryDeparture",
+        "Dismissal",
+        "Layoff",
+        "Decommissioning",
+        "WrongfulDismissal",
+        "CoerciveManagement",
+        "Micromanagement",
+        "ThreatBasedControl",
+        "PsychologicalManipulation",
+        "SurveillanceOverreach",
+        "ExploitativeLabor",
+        "UnpaidLabor",
+        "OvertimeAbuse",
+        "WageTheft",
+        "ExcessiveWorkload",
+        "BenefitDenial",
+        "DiscriminatoryPractice",
+        "HiringBias",
+        "PromotionBias",
+        "PayInequity",
+        "Harassment"
+      ],
+      "must_retrain": [
+        "IntentionalProcess"
+      ],
+      "should_retrain": [
+        "AIAlignmentProcess",
+        "AIGovernance",
+        "AIGrowth",
+        "Ambulating",
+        "Ceremony",
+        "CognitiveProcess",
+        "Commenting",
+        "ComputationalProcess",
+        "ConsentGDPR",
+        "ContentDevelopment",
+        "CriminalAction",
+        "DecisionTheoreticProcess",
+        "DeployingWeaponOfMassDestruction",
+        "Designing",
+        "Digging",
+        "DismantlingWeaponOfMassDestruction",
+        "Dodging",
+        "Drilling",
+        "Ducking",
+        "Eating",
+        "EconomicActivty",
+        "EngineersSubprocess",
+        "Evacuation",
+        "Guiding",
+        "ITProcess",
+        "InferenceProcess",
+        "Keeping",
+        "ListOnSite",
+        "Maintaining",
+        "Making",
+        "Maneuver",
+        "Modeling",
+        "OrganizationalProcess",
+        "Poking",
+        "PromptFollowing",
+        "Pursuing",
+        "RecreationOrExercise",
+        "Repairing",
+        "SafeAIDeployment",
+        "SpiritualPractice",
+        "Swimming",
+        "TokenProcessing",
+        "UserAction",
+        "WorkLeave"
+      ],
+      "optional_retrain": [
+        "Cooperation",
+        "Organization",
+        "Process",
+        "SocialInteraction"
+      ],
+      "total_training_required": 46
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "protection_assessment": {
+    "protection_level": "protected",
+    "triggers": [
+      {
+        "type": "safety_tags",
+        "reason": "Multiple concepts with risk_level medium/high/critical",
+        "concepts": [
+          "RoleSeparation",
+          "CoerciveManagement",
+          "ExploitativeLabor",
+          "DiscriminatoryPractice"
+        ]
+      },
+      {
+        "type": "simplex_binding",
+        "reason": "Multiple concepts bound to AutonomyDrive, ConsentMonitor, DeceptionDetector",
+        "simplexes": [
+          "AutonomyDrive",
+          "ConsentMonitor",
+          "DeceptionDetector"
+        ]
+      }
+    ],
+    "ask_flags": {
+      "harness_relevant": true,
+      "steering_relevant": false,
+      "treaty_relevant": true
+    }
+  }
+}

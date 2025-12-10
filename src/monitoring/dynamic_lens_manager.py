@@ -425,6 +425,7 @@ class DynamicLensManager:
         self.concept_metadata: Dict[Tuple[str, int], ConceptMetadata] = {}
         self.parent_to_children: Dict[Tuple[str, int], List[Tuple[str, int]]] = defaultdict(list)
         self.child_to_parent: Dict[Tuple[str, int], Tuple[str, int]] = {}
+        self.leaf_concepts: Set[Tuple[str, int]] = set()  # Concepts with no children (final/specific)
 
         # Loaded lenses (activation and/or text)
         # Key: (sumo_term, layer)
@@ -637,44 +638,104 @@ class DynamicLensManager:
             self.concept_metadata[concept_key] = metadata
             total_concepts += 1
 
-        # Build parent-child mappings (after all concepts loaded)
-        # Use both category_children (downward) and parent_concepts (upward)
+        # Load parent-child mappings from authoritative hierarchy.json if it exists
+        # This is the single source of truth for the parent-child tree
+        # Priority: lens pack > concept pack (lens pack may have model-specific hierarchy)
+        hierarchy_json_path = None
+        if self.using_lens_pack and self.lenses_dir:
+            lens_pack_hierarchy = self.lenses_dir / "hierarchy.json"
+            if lens_pack_hierarchy.exists():
+                hierarchy_json_path = lens_pack_hierarchy
+
+        if not hierarchy_json_path:
+            concept_pack_hierarchy = self.layers_data_dir / "hierarchy.json"
+            if concept_pack_hierarchy.exists():
+                hierarchy_json_path = concept_pack_hierarchy
+
+        if hierarchy_json_path:
+            self._load_authoritative_hierarchy(hierarchy_json_path)
+        else:
+            # Fallback: build mappings from scattered fields (legacy behavior)
+            self._build_hierarchy_from_metadata()
+
+        print(f"\n✓ Loaded metadata for {total_concepts} concepts across {len(layer_files)} layers")
+        print(f"  Parent-child relationships: {len(self.parent_to_children)}")
+        print(f"  Leaf concepts: {len(self.leaf_concepts)}")
+
+    def _load_authoritative_hierarchy(self, hierarchy_path: Path):
+        """Load parent-child mappings from authoritative hierarchy.json file."""
+        with open(hierarchy_path) as f:
+            hierarchy_data = json.load(f)
+
+        # Parse parent_to_children
+        for parent_str, children_list in hierarchy_data.get("parent_to_children", {}).items():
+            name, layer = parent_str.rsplit(":", 1)
+            parent_key = (name, int(layer))
+            # Only include if parent is in our concept_metadata (has a lens)
+            if parent_key not in self.concept_metadata:
+                continue
+            for child_str in children_list:
+                child_name, child_layer = child_str.rsplit(":", 1)
+                child_key = (child_name, int(child_layer))
+                # Only include if child is in our concept_metadata (has a lens)
+                if child_key in self.concept_metadata:
+                    self.parent_to_children[parent_key].append(child_key)
+
+        # Parse child_to_parent
+        for child_str, parent_str in hierarchy_data.get("child_to_parent", {}).items():
+            child_name, child_layer = child_str.rsplit(":", 1)
+            child_key = (child_name, int(child_layer))
+            parent_name, parent_layer = parent_str.rsplit(":", 1)
+            parent_key = (parent_name, int(parent_layer))
+            # Only include if both are in concept_metadata
+            if child_key in self.concept_metadata and parent_key in self.concept_metadata:
+                self.child_to_parent[child_key] = parent_key
+
+        # Parse leaf_concepts (concepts with no children)
+        for leaf_str in hierarchy_data.get("leaf_concepts", []):
+            leaf_name, leaf_layer = leaf_str.rsplit(":", 1)
+            leaf_key = (leaf_name, int(leaf_layer))
+            if leaf_key in self.concept_metadata:
+                self.leaf_concepts.add(leaf_key)
+
+        print(f"  Loaded authoritative hierarchy from: {hierarchy_path.name}")
+
+    def _build_hierarchy_from_metadata(self):
+        """Fallback: build parent-child mappings from concept metadata fields."""
+        # Build from category_children (downward) and parent_concepts (upward)
         for concept_key, metadata in self.concept_metadata.items():
             sumo_term, layer = concept_key
 
             # Build parent->children from category_children
             for child_name in metadata.category_children:
-                # Find child concept (should be in next layer or same layer)
                 child_key = None
                 for (cname, clayer) in self.concept_metadata.keys():
                     if cname == child_name and clayer >= layer:
                         child_key = (cname, clayer)
                         break
-
                 if child_key:
                     self.parent_to_children[concept_key].append(child_key)
-                    # Also set reverse mapping if not already set
                     if child_key not in self.child_to_parent:
                         self.child_to_parent[child_key] = concept_key
 
-            # Build child->parent from parent_concepts (more reliable)
+            # Build child->parent from parent_concepts
             for parent_name in metadata.parent_concepts:
-                # Find parent concept (should be in previous layer or same layer)
                 parent_key = None
                 for (pname, player) in self.concept_metadata.keys():
                     if pname == parent_name and player <= layer:
                         parent_key = (pname, player)
                         break
-
                 if parent_key:
-                    # Set child->parent mapping (prefer explicit parent_concepts)
                     self.child_to_parent[concept_key] = parent_key
-                    # Also add to parent->children if not already there
                     if concept_key not in self.parent_to_children[parent_key]:
                         self.parent_to_children[parent_key].append(concept_key)
 
-        print(f"\n✓ Loaded metadata for {total_concepts} concepts across {len(layer_files)} layers")
-        print(f"  Parent-child relationships: {len(self.parent_to_children)}")
+        # Compute leaf concepts (concepts with no children)
+        all_concepts = set(self.concept_metadata.keys())
+        parent_concepts = set(self.parent_to_children.keys())
+        self.leaf_concepts = all_concepts - parent_concepts
+
+        print(f"  Built hierarchy from metadata (fallback mode)")
 
     def _load_base_layers(self):
         """Load base layers for broad coverage, respecting manifest rules."""
@@ -1117,61 +1178,82 @@ class DynamicLensManager:
         if timing is not None:
             timing['initial_detection'] = (time.time() - t1) * 1000
 
-        # 2. Identify top-k parents and load their children
-        # Only expand children for concepts that are in the top-k results
-        # This prevents loading children for low-scoring concepts that exceed threshold
+        # 2. Iterative decomposition: repeatedly replace parents with children
+        # until top-k contains only leaf concepts (no loaded children)
         t2 = time.time()
-        child_keys_to_load = set()
+        total_children_loaded = 0
+        decomposition_iterations = 0
+        max_iterations = 5  # Prevent infinite loops (hierarchy depth limit)
 
-        # Get top-k concepts from current scores
-        sorted_concepts = sorted(current_scores.items(), key=lambda x: x[1], reverse=True)
-        top_k_concepts = sorted_concepts[:top_k]
+        # Track which parent keys to exclude from final results
+        decomposed_parents = set()
 
-        for concept_key, prob in top_k_concepts:
-            # Get children from parent-child mapping
-            child_keys = self.parent_to_children.get(concept_key, [])
-            for child_key in child_keys:
-                if child_key not in self.loaded_lenses:
-                    # Check manifest rules if available
-                    if self.manifest_resolver is not None:
-                        if self.manifest_resolver.should_load_concept(child_key):
-                            child_keys_to_load.add(child_key)
-                    else:
-                        child_keys_to_load.add(child_key)
+        while decomposition_iterations < max_iterations:
+            decomposition_iterations += 1
 
-        # Expand with siblings for coherent discrimination (sibling coherence rule)
-        if child_keys_to_load and self.manifest_resolver is not None:
-            child_keys_to_load = self.manifest_resolver.expand_with_siblings(child_keys_to_load)
-            # Filter out already loaded concepts
-            child_keys_to_load = {k for k in child_keys_to_load if k not in self.loaded_lenses}
+            # Get current top-k (excluding already-decomposed parents)
+            eligible_scores = {k: v for k, v in current_scores.items()
+                             if k not in decomposed_parents}
+            sorted_concepts = sorted(eligible_scores.items(), key=lambda x: x[1], reverse=True)
+            top_k_concepts = sorted_concepts[:top_k]
 
-        if child_keys_to_load:
-            self._load_concepts(list(child_keys_to_load), reason="dynamic_expansion")
+            # Find parents in top-k that have children
+            parents_to_decompose = []
+            child_keys_to_load = set()
+
+            for concept_key, prob in top_k_concepts:
+                child_keys = self.parent_to_children.get(concept_key, [])
+                if child_keys:
+                    # This concept has children - mark for decomposition
+                    parents_to_decompose.append(concept_key)
+                    for child_key in child_keys:
+                        if child_key not in self.loaded_lenses:
+                            # Check manifest rules if available
+                            if self.manifest_resolver is not None:
+                                if self.manifest_resolver.should_load_concept(child_key):
+                                    child_keys_to_load.add(child_key)
+                            else:
+                                child_keys_to_load.add(child_key)
+
+            # If no parents to decompose, we're done
+            if not parents_to_decompose:
+                break
+
+            # Mark these parents as decomposed (exclude from future top-k)
+            decomposed_parents.update(parents_to_decompose)
+
+            # Load and score new children
+            if child_keys_to_load:
+                # Expand with siblings for coherent discrimination
+                if self.manifest_resolver is not None:
+                    child_keys_to_load = self.manifest_resolver.expand_with_siblings(child_keys_to_load)
+                    child_keys_to_load = {k for k in child_keys_to_load if k not in self.loaded_lenses}
+
+                if child_keys_to_load:
+                    self._load_concepts(list(child_keys_to_load), reason="dynamic_expansion")
+                    total_children_loaded += len(child_keys_to_load)
+
+                    # Score newly loaded lenses
+                    with torch.inference_mode():
+                        for concept_key in child_keys_to_load:
+                            if concept_key in self.loaded_lenses:
+                                lens = self.loaded_lenses[concept_key]
+                                if return_logits:
+                                    prob, logit = lens(hidden_state, return_logits=True)
+                                    prob = prob.item()
+                                    logit = logit.item()
+                                    current_logits[concept_key] = logit
+                                else:
+                                    prob = lens(hidden_state).item()
+                                current_scores[concept_key] = prob
+                                self.lens_scores[concept_key] = prob
+                                self.lens_access_count[concept_key] += 1
 
         if timing is not None:
             timing['child_loading'] = (time.time() - t2) * 1000
-            timing['num_children_loaded'] = len(child_keys_to_load)
-
-        # 3. Run newly loaded lenses
-        t3 = time.time()
-        if child_keys_to_load:
-            with torch.inference_mode():
-                for concept_key in child_keys_to_load:
-                    if concept_key in self.loaded_lenses:
-                        lens = self.loaded_lenses[concept_key]
-                        if return_logits:
-                            prob, logit = lens(hidden_state, return_logits=True)
-                            prob = prob.item()
-                            logit = logit.item()
-                            current_logits[concept_key] = logit
-                        else:
-                            prob = lens(hidden_state).item()
-                        current_scores[concept_key] = prob
-                        self.lens_scores[concept_key] = prob
-                        self.lens_access_count[concept_key] += 1
-
-        if timing is not None:
-            timing['child_detection'] = (time.time() - t3) * 1000
+            timing['num_children_loaded'] = total_children_loaded
+            timing['decomposition_iterations'] = decomposition_iterations
+            timing['parents_decomposed'] = len(decomposed_parents)
 
         # 4. Warm cache management + pruning
         # Move non-top-k lenses to warm cache instead of unloading them
@@ -1219,9 +1301,18 @@ class DynamicLensManager:
         if timing is not None:
             timing['cache_management'] = (time.time() - t4) * 1000
 
-        # 5. Sort and return top K
+        # 5. Sort and return top K (excluding decomposed parents and non-leaf concepts)
+        # Only leaf concepts (those with no children in the authoritative hierarchy)
+        # should appear in results - parents are too abstract/general
         results = []
         for concept_key, prob in current_scores.items():
+            # Skip parents that were decomposed into children during this detection
+            if concept_key in decomposed_parents:
+                continue
+            # Skip non-leaf concepts (parents in the hierarchy) - they're too abstract
+            # Only concepts in leaf_concepts set should appear in results
+            if self.leaf_concepts and concept_key not in self.leaf_concepts:
+                continue
             concept_name, layer = concept_key
             if return_logits:
                 logit = current_logits.get(concept_key, 0.0)
@@ -1231,11 +1322,9 @@ class DynamicLensManager:
 
         results.sort(key=lambda x: x[1], reverse=True)
 
-        # 6. Apply hierarchical suppression to top-k only
-        # Parents are suppressed if their children are in the top-k
-        # If children drop out, parents re-appear naturally
+        # 6. Take top-k results (hierarchical suppression no longer needed since
+        # we already filtered to only leaf concepts)
         top_k_results = results[:top_k]
-        top_k_results = self._apply_hierarchical_suppression(top_k_results, return_logits)
 
         if timing is not None:
             timing['total'] = (time.time() - start) * 1000

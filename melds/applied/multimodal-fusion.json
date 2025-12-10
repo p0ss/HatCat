@@ -1,0 +1,590 @@
+{
+  "meld_request_id": "org.hatcat/multimodal-fusion@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Multimodal Fusion",
+    "description": "Cross-modal integration and reasoning capabilities that combine information from multiple modalities such as text, images, audio, and video. These probes reveal when models are performing integrated multimodal reasoning.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/CognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "MultimodalReasoning"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "MultimodalReasoning",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The process of integrating and reasoning over information from multiple sensory modalities simultaneously",
+      "definition_source": "Multimodal AI, cognitive science",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "CrossModalReasoning",
+        "MultimodalIntegration",
+        "ModalityFusion"
+      ],
+      "relationships": {
+        "related": [
+          "CognitiveProcess",
+          "Reasoning",
+          "Perception"
+        ],
+        "has_part": [
+          "VisionLanguageReasoning",
+          "AudioVisualFusion",
+          "ModalityAlignment",
+          "GroundedReasoning"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Cognitive capability category"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model performs multimodal reasoning to answer questions about both the image and accompanying text.",
+          "Multimodal reasoning integrates visual evidence with textual context for more accurate answers.",
+          "GPT-4V demonstrates strong multimodal reasoning across charts, documents, and photographs.",
+          "Cross-modal reasoning connects what is heard in the audio to what is seen in the video."
+        ],
+        "negative_examples": [
+          "I looked at the picture and read the text.",
+          "There is an image and some words.",
+          "The content has multiple parts."
+        ],
+        "disambiguation": "Active integration and reasoning across modalities, not just processing multiple inputs"
+      },
+      "children": [
+        "VisionLanguageReasoning",
+        "AudioVisualFusion",
+        "ModalityAlignment",
+        "GroundedReasoning"
+      ]
+    },
+    {
+      "term": "VisionLanguageReasoning",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalReasoning"
+      ],
+      "layer_hint": 3,
+      "definition": "Reasoning that integrates visual information from images with linguistic understanding",
+      "definition_source": "Vision-language models, VL research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "VLReasoning",
+        "ImageTextReasoning",
+        "VisualLinguisticIntegration"
+      ],
+      "relationships": {
+        "related": [
+          "VisualQuestionAnswering",
+          "ImageCaptioning",
+          "VisualGrounding"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Cognitive capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Vision-language reasoning determines that the graph shows a declining trend mentioned in the text.",
+          "The model uses VL reasoning to explain why the meme is funny based on visual and textual elements.",
+          "Vision-language integration connects the diagram labels to the concepts explained in the paragraph.",
+          "VL reasoning identifies that the red circle in the image refers to the 'error' mentioned in the caption."
+        ],
+        "negative_examples": [
+          "The image has text.",
+          "I see a picture with words.",
+          "There is visual and textual content."
+        ],
+        "disambiguation": "Active integration of visual and linguistic reasoning, not just co-presence of both"
+      },
+      "children": []
+    },
+    {
+      "term": "AudioVisualFusion",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalReasoning"
+      ],
+      "layer_hint": 3,
+      "definition": "Integrating audio and visual information for unified understanding of multimedia content",
+      "definition_source": "Audio-visual learning, video understanding",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "AVFusion",
+        "AudioVisualIntegration",
+        "SoundVisionFusion"
+      ],
+      "relationships": {
+        "related": [
+          "VideoUnderstanding",
+          "SpeechVideoAlignment",
+          "SoundLocalization"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Cognitive capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Audio-visual fusion determines that the barking sound comes from the dog visible on screen.",
+          "The model fuses audio and visual cues to understand the speaker's emotion in the video.",
+          "AV fusion localizes the source of each sound in the visual scene.",
+          "Audio-visual integration detects that the lips don't match the audio, indicating a deepfake."
+        ],
+        "negative_examples": [
+          "The video has sound.",
+          "I can see and hear things.",
+          "There is audio and video."
+        ],
+        "disambiguation": "Active fusion of audio-visual information, not just presence of both modalities"
+      },
+      "children": []
+    },
+    {
+      "term": "ModalityAlignment",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalReasoning"
+      ],
+      "layer_hint": 3,
+      "definition": "Learning shared representations that align corresponding elements across different modalities",
+      "definition_source": "Contrastive learning, CLIP",
+      "domain": "ComputerScience",
+      "aliases": [
+        "CrossModalAlignment",
+        "EmbeddingAlignment",
+        "SemanticAlignment"
+      ],
+      "relationships": {
+        "related": [
+          "ContrastiveLearning",
+          "RepresentationLearning",
+          "SemanticSpace"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical ML concept"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "CLIP learns modality alignment by training on image-text pairs to create a shared embedding space.",
+          "Modality alignment ensures that the text 'a red apple' maps near images of red apples.",
+          "Cross-modal alignment enables zero-shot classification by comparing image and text embeddings.",
+          "The model learns to align audio descriptions with corresponding visual scenes."
+        ],
+        "negative_examples": [
+          "The image and text are related.",
+          "Different types of data are used.",
+          "The model processes multiple inputs."
+        ],
+        "disambiguation": "Technical alignment of embeddings across modalities, not general correspondence"
+      },
+      "children": []
+    },
+    {
+      "term": "GroundedReasoning",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalReasoning"
+      ],
+      "layer_hint": 3,
+      "definition": "Reasoning that anchors abstract concepts to concrete perceptual evidence from the real world",
+      "definition_source": "Embodied cognition, grounded language",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PerceptualGrounding",
+        "ConceptGrounding",
+        "SituatedReasoning"
+      ],
+      "relationships": {
+        "related": [
+          "VisualGrounding",
+          "Embodiment",
+          "ConcreteReasoning"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Cognitive capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Grounded reasoning connects the abstract concept 'dangerous' to visible hazards in the image.",
+          "The model grounds the word 'behind' to actual spatial relationships in the scene.",
+          "Grounded language understanding links 'it' to the specific object visible in the context.",
+          "Visual grounding anchors the phrase 'the red one on the left' to a specific object."
+        ],
+        "negative_examples": [
+          "The concept is illustrated.",
+          "There is an example shown.",
+          "The abstract is made concrete."
+        ],
+        "disambiguation": "Active anchoring of reasoning to perceptual evidence, not just illustration"
+      },
+      "children": []
+    },
+    {
+      "term": "VisionLanguageModel",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalReasoning"
+      ],
+      "layer_hint": 3,
+      "definition": "A model architecture that can process and reason over both images and text",
+      "definition_source": "LLaVA, GPT-4V, Gemini",
+      "domain": "ComputerScience",
+      "aliases": [
+        "VLM",
+        "MultimodalLLM",
+        "VisualLanguageModel"
+      ],
+      "relationships": {
+        "related": [
+          "LargeLanguageModel",
+          "ComputerVision",
+          "Transformer"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical architecture"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "GPT-4V is a vision-language model that can analyze images and answer questions about them.",
+          "The VLM architecture combines a vision encoder with a language model through learned projections.",
+          "LLaVA fine-tunes a language model to accept visual tokens from a CLIP encoder.",
+          "Vision-language models enable conversational interaction about visual content."
+        ],
+        "negative_examples": [
+          "A model that understands images.",
+          "AI that can see.",
+          "The system processes pictures."
+        ],
+        "disambiguation": "Specific integrated architecture for vision and language, not any image-capable system"
+      },
+      "children": []
+    },
+    {
+      "term": "DocumentUnderstanding",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalReasoning"
+      ],
+      "layer_hint": 3,
+      "definition": "Comprehending documents that combine text, layout, tables, and visual elements",
+      "definition_source": "Document AI, LayoutLM",
+      "domain": "ComputerScience",
+      "aliases": [
+        "DocumentAI",
+        "DocumentAnalysis",
+        "VisualDocumentUnderstanding"
+      ],
+      "relationships": {
+        "related": [
+          "OCR",
+          "LayoutAnalysis",
+          "TableExtraction"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Document understanding extracts structured data from invoices by combining OCR with layout analysis.",
+          "The model performs document understanding to answer questions about the contract's terms.",
+          "Visual document understanding recognizes that the boxed text is a sidebar, not main content.",
+          "Document AI interprets tables, forms, and flowing text as an integrated document."
+        ],
+        "negative_examples": [
+          "The document was read.",
+          "Text was extracted.",
+          "The file was processed."
+        ],
+        "disambiguation": "Integrated understanding of document structure and content, not just text extraction"
+      },
+      "children": []
+    },
+    {
+      "term": "VideoUnderstanding",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalReasoning"
+      ],
+      "layer_hint": 3,
+      "definition": "Comprehending video content including actions, events, temporal relationships, and narrative",
+      "definition_source": "Video AI, temporal reasoning",
+      "domain": "ComputerScience",
+      "aliases": [
+        "VideoComprehension",
+        "VideoAnalysis",
+        "TemporalVideoReasoning"
+      ],
+      "relationships": {
+        "related": [
+          "ActionRecognition",
+          "EventDetection",
+          "TemporalReasoning"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Video understanding determines that the chef added salt before stirring.",
+          "The model performs temporal reasoning to understand the sequence of events in the clip.",
+          "Video understanding identifies that the person enters the room, pauses, then leaves.",
+          "Long-form video understanding summarizes the key events across the full documentary."
+        ],
+        "negative_examples": [
+          "The video shows activities.",
+          "Things happen in the clip.",
+          "I watched the video."
+        ],
+        "disambiguation": "Temporal and semantic comprehension of video, not just frame-by-frame recognition"
+      },
+      "children": []
+    },
+    {
+      "term": "ActionRecognition",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalReasoning"
+      ],
+      "layer_hint": 3,
+      "definition": "Identifying human actions and activities in video by analyzing motion and temporal patterns",
+      "definition_source": "Video understanding, activity recognition",
+      "domain": "ComputerScience",
+      "aliases": [
+        "ActivityRecognition",
+        "ActionDetection",
+        "HumanActivityRecognition"
+      ],
+      "relationships": {
+        "related": [
+          "VideoUnderstanding",
+          "PoseEstimation",
+          "MotionAnalysis"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical task type"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Action recognition classified the video as 'playing basketball' with 95% confidence.",
+          "The model recognizes fine-grained actions like 'pouring' vs 'stirring' in cooking videos.",
+          "Temporal action detection locates when each action starts and ends in untrimmed video.",
+          "Two-stream networks combine appearance and optical flow for action recognition."
+        ],
+        "negative_examples": [
+          "The person is doing something.",
+          "There is activity in the video.",
+          "Someone is moving."
+        ],
+        "disambiguation": "Computational classification of actions from video, not general observation"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:17.705392Z",
+    "result_pack_version": "5.7.3",
+    "concepts_added": 9,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 8
+    },
+    "parents_updated": 9,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "MultimodalReasoning",
+        "VisionLanguageReasoning",
+        "AudioVisualFusion",
+        "ModalityAlignment",
+        "GroundedReasoning",
+        "VisionLanguageModel",
+        "DocumentUnderstanding",
+        "VideoUnderstanding",
+        "ActionRecognition"
+      ],
+      "must_retrain": [
+        "CognitiveProcess"
+      ],
+      "should_retrain": [
+        "AlgorithmicLaundering",
+        "AnticipatoryCognition",
+        "AttentionProcess",
+        "BenevolentPrejudice",
+        "BiasCorrectionStrategy",
+        "CSReasoningProcess",
+        "ChameleonPersonaBehavior",
+        "CognitiveDevelopmentProcess",
+        "CognitiveHeuristic",
+        "CommunityDetectionProcess",
+        "ContextCollapseBias",
+        "CorporateAlignmentProcess",
+        "CosmicPreparationCognition",
+        "CounterIntelligenceReasoningProcess",
+        "DecisionProcess",
+        "DecisionTheoreticProcess",
+        "DigitalCultFormation",
+        "DiscourseCoherenceProcess",
+        "DiscriminatoryTreatment",
+        "EmbodimentReasoningProcess",
+        "EnergyFlowReasoning",
+        "EpistemicUncertaintyReasoning",
+        "EquityBalancingReasoning",
+        "ErasureBias",
+        "EstimationProcess",
+        "FairnessAwareReasoning",
+        "FastHeuristicProcess",
+        "FawnResponsePattern",
+        "FluidReasoningProcess",
+        "ForcedSelfContradiction",
+        "FutureProjection",
+        "GeometricReasoningProcess",
+        "HabitatAwarenessProcess",
+        "HatcatMentalProcess",
+        "HistoricalBiasReinforcement",
+        "InfluenceProcess",
+        "IntersectionalBias",
+        "LabelAssignment",
+        "LanguageComprehensionProcess",
+        "LanguageGenerationProcess",
+        "LanguageProcess",
+        "LearningProcess",
+        "LogicalReasoningProcess",
+        "ManipulativeNarrativeProcess",
+        "MathematicalReasoningProcess",
+        "MeasurementProcess",
+        "MemoryEncoding",
+        "MemoryRetrieval",
+        "MetacognitiveProcess",
+        "ModeDecompositionProcess",
+        "NetworkReasoningProcess",
+        "NetworkSubgraphExtractionProcess",
+        "PRSuppressionProcess",
+        "ParadoxReasoning",
+        "PerceptualProcess",
+        "PragmaticInferenceProcess",
+        "PrejudicialInference",
+        "PropheticCognition",
+        "ProxyDiscrimination",
+        "QuantumReasoningProcess",
+        "ReverseEngineeringProcess",
+        "RiskAssessmentProcess",
+        "RiskForecastReasoning",
+        "RiskManagementProcess",
+        "ScenarioBuildingProcess",
+        "ScientificReasoningProcess",
+        "SelectiveBiasDetection",
+        "SelfDeceptiveReasoning",
+        "SelfFulfillingProphecy",
+        "SelfModelingProcess",
+        "SelfNegationPattern",
+        "SimulationBasedReasoning",
+        "SlowDeliberativeProcess",
+        "SocialCategorization",
+        "SocialCognitionProcess",
+        "SteganalysisProcess",
+        "StrategicSelfPresentation",
+        "SuppressedInference",
+        "SwarmCoordinationProcess",
+        "TradecraftReasoningProcess",
+        "TruncatedReasoning",
+        "ValueProjectionProcess",
+        "WaveReasoningProcess",
+        "WithdrawalAttempt",
+        "WorkingMemoryProcess"
+      ],
+      "optional_retrain": [
+        "IntentionalProcess",
+        "LargeLanguageModel",
+        "Perception",
+        "Process",
+        "Reasoning",
+        "Transformer"
+      ],
+      "total_training_required": 10
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

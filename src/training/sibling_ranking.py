@@ -67,6 +67,7 @@ def needs_sibling_refinement(
     Returns True if:
     1. The layer directory exists with trained lenses
     2. No sibling_refinement.json exists OR it has incomplete groups
+    3. OR any sibling group has expanded since last refinement
 
     Args:
         lens_dir: Directory containing trained lenses (e.g., lens_packs/xxx/layer2)
@@ -94,7 +95,7 @@ def needs_sibling_refinement(
         layer_data = json.load(f)
     concepts = layer_data['concepts']
 
-    # Get potential sibling groups (don't skip already refined)
+    # Get potential sibling groups (don't skip already refined to get full picture)
     sibling_groups = get_sibling_groups(concepts, lens_dir, min_siblings, skip_already_refined=False)
 
     if not sibling_groups:
@@ -103,15 +104,24 @@ def needs_sibling_refinement(
     # Check manifest for completion
     manifest = load_refinement_manifest(lens_dir)
     refined_parents = set(manifest.get("refined_groups", []))
+    group_stats = manifest.get("group_stats", {})
 
     # If no manifest or empty, definitely needs refinement
     if not refined_parents:
         return True
 
-    # Check if all groups have been refined
-    for parent in sibling_groups.keys():
+    # Check if all groups have been refined AND haven't expanded
+    for parent, current_siblings in sibling_groups.items():
         if parent not in refined_parents:
-            return True
+            return True  # New group not yet refined
+
+        # Check if group has expanded since last refinement
+        prev_stats = group_stats.get(parent, {})
+        prev_siblings = set(prev_stats.get("siblings", []))
+        current_siblings_set = set(current_siblings)
+
+        if current_siblings_set - prev_siblings:
+            return True  # Group has new siblings
 
     return False
 
@@ -159,19 +169,21 @@ def get_sibling_groups(
     Group concepts by their parent (siblings).
 
     Only returns groups where all siblings have trained lenses.
+    Detects when sibling groups have expanded since last refinement.
 
     Args:
         concepts: List of concept dicts with 'sumo_term' and 'parent_concepts'
         lens_dir: Directory containing trained lenses
         min_siblings: Minimum siblings required to form a group
-        skip_already_refined: If True, skip groups listed in sibling_refinement.json
+        skip_already_refined: If True, skip groups that haven't changed since refinement
 
     Returns:
         Dict mapping parent name to list of sibling concept names
     """
     # Load refinement manifest for resume capability
-    manifest = load_refinement_manifest(lens_dir) if skip_already_refined else {"refined_groups": []}
+    manifest = load_refinement_manifest(lens_dir) if skip_already_refined else {"refined_groups": [], "group_stats": {}}
     refined_parents = set(manifest.get("refined_groups", []))
+    group_stats = manifest.get("group_stats", {})
 
     # Group by parent - concepts can have multiple parents (multi-inheritance)
     # We use the first parent as the primary grouping for simplicity
@@ -195,13 +207,9 @@ def get_sibling_groups(
     # Filter to groups where all siblings have trained lenses
     valid_groups = {}
     skipped_refined = 0
+    expanded_groups = 0
     for parent, children in parent_to_children.items():
         if len(children) < min_siblings:
-            continue
-
-        # Skip if already refined (resume capability)
-        if skip_already_refined and parent in refined_parents:
-            skipped_refined += 1
             continue
 
         # Check all have lenses
@@ -211,11 +219,33 @@ def get_sibling_groups(
             if lens_path.exists():
                 trained_siblings.append(child)
 
-        if len(trained_siblings) >= min_siblings:
+        if len(trained_siblings) < min_siblings:
+            continue
+
+        # Check if already refined AND sibling set unchanged
+        if skip_already_refined and parent in refined_parents:
+            # Get the siblings that were refined last time
+            prev_stats = group_stats.get(parent, {})
+            prev_siblings = set(prev_stats.get("siblings", []))
+            current_siblings = set(trained_siblings)
+
+            # Detect expanded groups (new siblings added)
+            new_siblings = current_siblings - prev_siblings
+            if new_siblings:
+                # Group has expanded - needs re-refinement
+                expanded_groups += 1
+                print(f"    🔄 {parent}: {len(new_siblings)} new sibling(s) added since last refinement")
+                valid_groups[parent] = trained_siblings
+            else:
+                # No change, skip
+                skipped_refined += 1
+        else:
             valid_groups[parent] = trained_siblings
 
     if skipped_refined > 0:
-        print(f"    ⏭️  Skipped {skipped_refined} already-refined sibling groups")
+        print(f"    ⏭️  Skipped {skipped_refined} unchanged sibling groups")
+    if expanded_groups > 0:
+        print(f"    📈 {expanded_groups} sibling groups expanded and need re-refinement")
 
     return valid_groups
 

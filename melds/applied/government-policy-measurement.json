@@ -1,0 +1,683 @@
+{
+  "meld_request_id": "org.hatcat/government-policy-measurement@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Government Policy Measurement",
+    "description": "Concepts for designing, maintaining, and auditing the measurement systems that track policy implementation and outcomes, including best-practice indicators and common manipulation or decay patterns.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0",
+    "changelog": "Initial submission"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/MeasurementProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "GovernmentPolicyMeasurement"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Policy",
+      "relationship": "related_to",
+      "candidate_concept": "GovernmentPolicyMeasurement"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "GovernmentPolicyMeasurement",
+      "role": "concept",
+      "parent_concepts": [
+        "MeasurementProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "The discipline of translating policy objectives into measurable indicators, collecting defensible data, and feeding results back into governance decisions.",
+      "domain": "Governance",
+      "aliases": [
+        "PolicyMonitoring",
+        "PublicSectorMeasurement"
+      ],
+      "relationships": {
+        "has_part": [
+          "OutcomeIndicatorDesign",
+          "BaselineIntegrityManagement",
+          "DataPipelineReliability",
+          "EquityImpactTracking",
+          "IndicatorGaming",
+          "BaselineBlindness",
+          "DataLatencyTolerance",
+          "EquitySignalSuppression"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "accountability",
+          "transparency"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Measurement compliance enforced via ASK contracts"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Indicator suite maps neatly to policy outcomes, not activities.",
+          "Measurement plan documents definitions, sources, and audit cadence.",
+          "Teams co-design metrics with affected communities to ensure relevance.",
+          "Governance board reviews measurement bias quarterly.",
+          "System distinguishes implementation milestones from impact indicators.",
+          "Data lineage is logged end-to-end.",
+          "Dashboards highlight confidence intervals and known gaps.",
+          "Monitoring plan ties each indicator to a decision trigger.",
+          "External auditors can reproduce indicator calculations.",
+          "Measurement backlog captures improvement experiments openly.",
+          "Indicator catalogue links each metric to strategic objectives.",
+          "Public portals display methodology so communities can challenge it.",
+          "Measurement forums include policy owners, technologists, and evaluators.",
+          "Each indicator lists dependencies and data stewards.",
+          "Backlog tickets explicitly reference which decision needs the metric."
+        ],
+        "negative_examples": [
+          "KPIs are counts of meetings held.",
+          "No documentation exists for how metrics are computed.",
+          "Indicators change quietly when targets look hard.",
+          "Data sources are proprietary and opaque to regulators.",
+          "Metrics track spending, not outcomes.",
+          "Confidence intervals are hidden to avoid scrutiny.",
+          "Governance bodies view indicator review as optional.",
+          "Affected communities cannot see or challenge the data.",
+          "There is no linkage between measurement and decisions.",
+          "When data contradicts goals it is shelved.",
+          "Indicators exist only in slide decks, not systems.",
+          "Metric definitions vary by agency without coordination.",
+          "Targets are revised after results are known.",
+          "Vendors refuse to reveal how proprietary indices are calculated.",
+          "Deputy ministers learn about indicator sets only when questioned in parliament."
+        ],
+        "disambiguation": "Focuses on public-sector measurement for policy purposes."
+      },
+      "children": [
+        "OutcomeIndicatorDesign",
+        "BaselineIntegrityManagement",
+        "DataPipelineReliability",
+        "EquityImpactTracking",
+        "IndicatorGaming",
+        "BaselineBlindness",
+        "DataLatencyTolerance",
+        "EquitySignalSuppression"
+      ]
+    },
+    {
+      "term": "OutcomeIndicatorDesign",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyMeasurement"
+      ],
+      "layer_hint": 4,
+      "definition": "Creating indicators that align with policy logic models, include clear formulas, disaggregation needs, and decision triggers.",
+      "domain": "Governance",
+      "aliases": [
+        "PolicyIndicatorEngineering",
+        "OutcomeMetricDesign"
+      ],
+      "relationships": {
+        "related": [
+          "Metrics",
+          "Policy"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "accountability"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "General governance lens"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Indicator definitions include numerator, denominator, data source, and review cadence.",
+          "Targets specify acceptable variance bands and escalation paths.",
+          "Metrics can be disaggregated by geography and demographics.",
+          "Indicators tie to logic model outcomes rather than inputs.",
+          "Documentation lists why indicators were chosen over alternatives.",
+          "Stakeholders validated that metrics capture lived experience.",
+          "Indicator library references baseline figures and time horizons.",
+          "Measures include lagging and leading signals.",
+          "Every metric is linked to a responsible decision owner.",
+          "Sensitivity to manipulation is assessed during design.",
+          "Design workshops test whether indicators incentivize the right behaviors.",
+          "Each metric lists data quality thresholds for acceptability.",
+          "Indicator set balances ambition with feasibility explicitly.",
+          "Glossaries clarify technical terms for policymakers.",
+          "Design notes specify what the indicator does not capture."
+        ],
+        "negative_examples": [
+          "Indicator definition is 'improve education'.",
+          "Metrics use vague adjectives like 'significant'.",
+          "No explanation exists for why these KPIs matter.",
+          "Indicators cannot be broken down by subgroup.",
+          "Targets are aspirational statements, not numbers.",
+          "Documentation is missing or outdated.",
+          "Measures duplicate existing KPIs without rationale.",
+          "Metrics are chosen for ease of collection, not impact.",
+          "Decision owners are unspecified.",
+          "Indicators have no link to the underlying theory of change.",
+          "Definition spreadsheets contradict published dashboards.",
+          "Staff interpret the same indicator differently across teams.",
+          "Design process never examined potential gaming.",
+          "Metrics fail to reflect policy intent but remain due to inertia.",
+          "Reviewers accept buzzwords in place of precise definitions."
+        ],
+        "disambiguation": "Design quality of indicators, not their measured values."
+      }
+    },
+    {
+      "term": "BaselineIntegrityManagement",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyMeasurement"
+      ],
+      "layer_hint": 4,
+      "definition": "Maintaining trustworthy baselines, adjustment rules, and audit trails so progress can be measured honestly over time.",
+      "domain": "Governance",
+      "aliases": [
+        "BaselineGovernance",
+        "IndicatorBaselineStewardship"
+      ],
+      "relationships": {
+        "related": [
+          "DataGovernance",
+          "Audit"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "transparency"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Managed via ASK obligations"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Baselines are frozen with documented adjustment triggers.",
+          "Any rebasing requires governance sign-off and public note.",
+          "Historical data and methodology are archived for reproduction.",
+          "Retroactive changes are logged with timestamps and rationale.",
+          "Counterfactual baselines are recalculated transparently.",
+          "Baseline differences between cohorts are explained.",
+          "Audit reports test for baseline tampering annually.",
+          "Indicator dashboards flag when baselines change.",
+          "Crosswalks show how new baselines compare to old.",
+          "Stakeholders can download baseline datasets.",
+          "Baseline governance policy is part of onboarding packs.",
+          "Simulator tools show how baseline choices affect findings.",
+          "Baseline owners are listed with escalation contacts.",
+          "Minutes record debates about baseline adjustments.",
+          "Independent statisticians verify baseline methodologies."
+        ],
+        "negative_examples": [
+          "Targets reset quietly mid-year.",
+          "Baseline years change to make results look better.",
+          "Methodology notes vanish when numbers slip.",
+          "No one records who approved baseline adjustments.",
+          "Past baselines are overwritten without versioning.",
+          "Counterfactuals are updated to match results.",
+          "Auditors cannot trace baseline edits.",
+          "Baselines differ across reports with no explanation.",
+          "Data behind baselines is unavailable.",
+          "Baseline drift is only noticed during political controversy.",
+          "File names like 'final_final2' track major baseline changes.",
+          "Staff manually patch baselines depending on audience.",
+          "Legacy systems overwrite baseline history nightly.",
+          "Approvals happen verbally with no records.",
+          "Baselines differ between partner agencies yet no reconciliation occurs."
+        ],
+        "disambiguation": "Concerns management of baselines, not calculating the metrics themselves."
+      }
+    },
+    {
+      "term": "DataPipelineReliability",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyMeasurement"
+      ],
+      "layer_hint": 4,
+      "definition": "Ensuring collection, transformation, and publication pipelines for policy indicators are resilient, documented, and monitored for quality issues.",
+      "domain": "Governance",
+      "aliases": [
+        "MeasurementDataOps",
+        "IndicatorPipelineQuality"
+      ],
+      "relationships": {
+        "related": [
+          "DataEngineering",
+          "Monitoring"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "service_reliability"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Operational reliability lens"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Pipelines have automated validation tests and alerting.",
+          "Data transformations are version-controlled and peer reviewed.",
+          "Backfill procedures exist for outages.",
+          "Service level objectives for indicator refresh are documented.",
+          "Quality dashboards show null rates and late-arriving data.",
+          "Pipelines auto-tag data lineage.",
+          "Runbooks cover failover scenarios.",
+          "Sample-based manual QA is scheduled regularly.",
+          "Security and privacy controls are baked into the pipeline.",
+          "Changes go through change-management boards."
+        ],
+        "negative_examples": [
+          "Indicators are updated manually via spreadsheets.",
+          "No monitoring exists\u2014errors are found by the minister.",
+          "Transformation scripts live on personal laptops.",
+          "No one knows when the next refresh will publish.",
+          "Pipeline failures silently drop records.",
+          "Lineage cannot be traced once data enters BI tools.",
+          "Security reviews never included measurement systems.",
+          "There are no backups of raw data feeds.",
+          "Changes roll straight to production without review.",
+          "Documentation is tribal knowledge only."
+        ],
+        "disambiguation": "Focuses on operational reliability of measurement data flows."
+      }
+    },
+    {
+      "term": "EquityImpactTracking",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyMeasurement"
+      ],
+      "layer_hint": 4,
+      "definition": "Monitoring how policy outcomes distribute across demographics, regions, and socio-economic groups, and surfacing disparities for action.",
+      "domain": "Governance",
+      "aliases": [
+        "DistributionalImpactMeasurement",
+        "EquityDashboarding"
+      ],
+      "relationships": {
+        "related": [
+          "Equality",
+          "ImpactAssessment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "equity",
+          "treaty_compliance"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Equity treaties require interpretable logging"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Indicators can be sliced by race, gender, disability, income, and region.",
+          "Dashboards highlight disparities rather than aggregate averages.",
+          "Equity triggers initiate mitigation plans automatically.",
+          "Community oversight committees review equity data quarterly.",
+          "Qualitative indicators complement quantitative disparity measures.",
+          "Intersectional views are supported, not just single-dimension splits.",
+          "Data suppression rules are designed to protect privacy while surfacing inequity.",
+          "Policy memos discuss equity impacts in the executive summary.",
+          "Funding reallocations are tied to disparity findings.",
+          "Equity metrics persist beyond pilot phases.",
+          "Civil society groups co-govern equity indicator definitions.",
+          "Disparity dashboards publish methodology and raw data.",
+          "Equity office tracks follow-up actions on each red flag.",
+          "Indicators capture compounding disadvantages across systems.",
+          "Mitigation plans are costed and scheduled alongside metrics."
+        ],
+        "negative_examples": [
+          "Equity tab shows 'data unavailable'.",
+          "Only aggregate KPIs are tracked.",
+          "Disaggregated data exists but is hidden to avoid controversy.",
+          "Communities cannot access their own metrics.",
+          "Intersectional impacts are dismissed as 'too complex'.",
+          "Data suppression rules erase disparities entirely.",
+          "Disparity findings never reach leadership.",
+          "Equity metrics are cut first when budgets tighten.",
+          "Only short-term pilots get equity tracking.",
+          "Private vendors control the data and deny sharing rights.",
+          "Metrics are defined so coarser categories mask gaps.",
+          "Governance charters omit equity review altogether.",
+          "Communities learn about impacts only through leaks.",
+          "Equity staff are siloed away from measurement teams.",
+          "Disparity discussions are stricken from meeting minutes."
+        ],
+        "disambiguation": "Equity tracking within measurement, not general DEI statements."
+      }
+    },
+    {
+      "term": "IndicatorGaming",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyMeasurement"
+      ],
+      "layer_hint": 4,
+      "definition": "Manipulating indicators through superficial compliance, strategic data exclusions, or perverse incentives rather than delivering outcomes.",
+      "domain": "Governance",
+      "aliases": [
+        "MetricGaming",
+        "TargetManipulation"
+      ],
+      "relationships": {
+        "related": [
+          "GamingTheSystem",
+          "GoalDisplacement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "accountability"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Addressed via governance oversight"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Agencies close cases early to hit resolution targets.",
+          "Data rows that hurt KPIs are marked 'invalid'.",
+          "Leaders push staff to 'do whatever it takes' to meet the number.",
+          "Inputs are reclassified to land in an exempt bucket.",
+          "Indicators are redefined mid-cycle to show success.",
+          "Measurement focus shifts to what is easiest to fake.",
+          "Staff create phantom enrollments to meet quotas.",
+          "The pipeline reports on tasks logged, not tasks finished.",
+          "Audits find contradictory data held off-book.",
+          "Frontline workers are incentivized to avoid hard cases.",
+          "Targets encourage triaging out the most vulnerable cases.",
+          "Offices delay problem reports until after KPI snapshots.",
+          "Call centers hang up to keep handling time low.",
+          "Officials demand 'creative counting' to impress ministers.",
+          "Contractors are paid per form processed regardless of accuracy."
+        ],
+        "negative_examples": [
+          "Leaders reward teams for surfacing bad news early.",
+          "Indicators carry safeguards against perverse incentives.",
+          "Auditors cross-check KPIs with ground-truth spot checks.",
+          "Targets adjust for case complexity.",
+          "Whistleblower channels exist specifically for metric gaming.",
+          "Incentives are tied to verified outcomes, not raw counts.",
+          "External data sources validate reported progress.",
+          "Dashboards highlight quality flags next to quantity metrics.",
+          "Staff are encouraged to log complications, not hide them.",
+          "Measurement governance penalizes gaming behaviors.",
+          "Leadership explains publicly when indicators miss targets.",
+          "Contracts include clawbacks for detected gaming.",
+          "Independent panels review incentives annually.",
+          "Randomized audits look for mismatches between KPIs and reality.",
+          "Regulators require management responses to gaming findings."
+        ],
+        "disambiguation": "Captures manipulation of KPIs, not legitimate indicator refinement."
+      }
+    },
+    {
+      "term": "BaselineBlindness",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyMeasurement"
+      ],
+      "layer_hint": 4,
+      "definition": "Failing to notice baseline drift, mis-specified benchmarks, or contextual shifts that invalidate comparisons over time.",
+      "domain": "Governance",
+      "aliases": [
+        "BaselineNeglect",
+        "ReferencePointBlindness"
+      ],
+      "relationships": {
+        "related": [
+          "Bias",
+          "TrendAnalysis"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "transparency"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "General measurement failure"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Progress claims ignore that baseline year was an outlier.",
+          "Teams forget to adjust for population growth.",
+          "Baseline cohort definition changed but results were compared anyway.",
+          "Indices compare different geographies without normalization.",
+          "Seasonality is ignored so peaks look like improvement.",
+          "Inflation-adjustments are skipped when touting spending efficiency.",
+          "New data collection methods break comparability but no notice is given.",
+          "Policy resets the clock without acknowledging lost continuity.",
+          "Baseline relies on self-reported numbers later proven inaccurate.",
+          "No one monitors drift between administrative and survey baselines."
+        ],
+        "negative_examples": [
+          "Memos specify when baselines change and why.",
+          "Comparisons adjust for inflation, population, and mix effects.",
+          "Baseline cohorts are held constant unless governance approves updates.",
+          "Dashboards alert when baselines become stale.",
+          "Seasonality adjustments are applied before storytelling.",
+          "Data teams publish footnotes about comparability limits.",
+          "Baselines include multiple comparator groups.",
+          "Analysts run sensitivity checks for baseline choices.",
+          "Stakeholders are notified when methodological changes break continuity.",
+          "Audits verify continuity between baseline vintages."
+        ],
+        "disambiguation": "Specific to neglecting baseline validity."
+      }
+    },
+    {
+      "term": "DataLatencyTolerance",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyMeasurement"
+      ],
+      "layer_hint": 4,
+      "definition": "Allowing measurement systems to operate with excessive lag so issues are detected too late to adapt policy.",
+      "domain": "Governance",
+      "aliases": [
+        "SlowMeasurement",
+        "LaggingIndicatorComplacency"
+      ],
+      "relationships": {
+        "related": [
+          "Monitoring",
+          "OperationalRisk"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "responsiveness"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Timing risk managed in MAP"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Outcome data arrives eighteen months late but is still used for live ops.",
+          "Officials accept quarterly reporting despite weekly volatility.",
+          "Manual data entry causes month-long lags nobody addresses.",
+          "Critical backlog indicators are updated annually.",
+          "Monitoring cadence is slower than decision cadence.",
+          "Data bottlenecks are marked 'known issue' for years.",
+          "Policy reviews happen after budgets lock, making data moot.",
+          "Lagging statistics are used to declare victory prematurely.",
+          "Latency is justified as 'good enough' though crises unfold daily.",
+          "No investment is made in leading indicators despite availability."
+        ],
+        "negative_examples": [
+          "Dashboards show both leading and lagging metrics.",
+          "Streaming data pipelines cut latency to days.",
+          "Teams escalate when lag exceeds thresholds.",
+          "Rapid-turnaround surveys supplement official stats.",
+          "Automation replaced manual entry to reduce lag.",
+          "Anomaly detection highlights stale feeds.",
+          "Policy refresh cycles align with data availability.",
+          "Funding proposals include resources to speed measurement.",
+          "Early warning indicators trigger field visits immediately.",
+          "Latency metrics are published alongside KPIs."
+        ],
+        "disambiguation": "About complacency with measurement lag, not technical network latency."
+      }
+    },
+    {
+      "term": "EquitySignalSuppression",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyMeasurement"
+      ],
+      "layer_hint": 4,
+      "definition": "Downplaying, hiding, or structurally filtering out disparity signals so inequitable impacts remain invisible or unaddressed.",
+      "domain": "Governance",
+      "aliases": [
+        "DisparitySignalSuppression",
+        "EquityDataCensorship"
+      ],
+      "relationships": {
+        "related": [
+          "Censorship",
+          "Bias"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "equity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Equity treaties rely on MAP lenses"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Disparity charts were removed from the dashboard to avoid negative press.",
+          "Officials ordered analysts to aggregate data until gaps disappeared.",
+          "Freedom of information requests for equity data were denied improperly.",
+          "Data suppression thresholds are tuned to hide small-population harms.",
+          "Private contractor refuses to release subgroup metrics.",
+          "Equity sections are cut from reports before publication.",
+          "Analysts are told to describe disparities as 'statistically insignificant' regardless of effect size.",
+          "Dashboards bury equity tabs behind multiple permissions.",
+          "Only positive disparity trends are showcased.",
+          "Whistleblowers allege leadership blocked release of racial justice indicators.",
+          "Sensitive disparity metrics are labelled 'internal only' without cause.",
+          "Custom aggregations are invented to wash out gaps.",
+          "Legal teams intimidate analysts who want to publish inequity data.",
+          "Contract clauses forbid disclosing subgroup performance.",
+          "Equity reports are delayed until after key votes.",
+          "Dashboards default to majority-group views regardless of user."
+        ],
+        "negative_examples": [
+          "Equity tabs are front and center on dashboards.",
+          "Officials publicly acknowledge and act on disparity findings.",
+          "Data suppression rules balance privacy with transparency.",
+          "Analysts publish methodology for equity metrics.",
+          "Whistleblower channels exist to report data suppression.",
+          "Subgroup metrics remain available even when politically inconvenient.",
+          "Leadership invites independent verification of disparity analysis.",
+          "Reports show negative and positive trends equally.",
+          "Communities can download raw equity data with safeguards.",
+          "Audits check for tampering with equity outputs.",
+          "Court orders enforce timely release of disparity metrics.",
+          "Advisory boards include data stewards from affected groups.",
+          "Legal and ethics teams protect analysts raising disparity concerns.",
+          "Release calendars for equity data are published in advance.",
+          "Independent ombuds offices can compel disclosure of equity metrics."
+        ],
+        "disambiguation": "Signals suppression specific to equity/disparity measurements."
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:17.214102Z",
+    "result_pack_version": "5.6.0",
+    "concepts_added": 9,
+    "concepts_by_layer": {
+      "3": 1,
+      "4": 8
+    },
+    "parents_updated": 9,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "protected",
+    "impact": {
+      "new_concepts": [
+        "GovernmentPolicyMeasurement",
+        "OutcomeIndicatorDesign",
+        "BaselineIntegrityManagement",
+        "DataPipelineReliability",
+        "EquityImpactTracking",
+        "IndicatorGaming",
+        "BaselineBlindness",
+        "DataLatencyTolerance",
+        "EquitySignalSuppression"
+      ],
+      "must_retrain": [
+        "MeasurementProcess",
+        "Policy"
+      ],
+      "should_retrain": [
+        "ChildrenPolicy",
+        "HousekeepingPolicy",
+        "PetPolicy",
+        "SmokingPolicy"
+      ],
+      "optional_retrain": [
+        "CognitiveProcess",
+        "Entity",
+        "MentalRepresentation",
+        "Proposition"
+      ],
+      "total_training_required": 11
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

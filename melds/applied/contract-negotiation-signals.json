@@ -1,0 +1,691 @@
+{
+  "meld_request_id": "org.hatcat/contract-negotiation-signals@0.1.1",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Contract Negotiation Signals",
+    "description": "Signals for interpreting counterpart intent, integrity, and risk while negotiating contracts secured via probes, covering desired collaborative cues and hostile failure modes.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.1",
+    "changelog": "Fixed swapped positive/negative examples in BadFaithDelayPattern, HiddenObligationInsertion, and CoerciveEscalationCue"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/NegotiationDiscussion",
+      "relationship": "parent_of",
+      "candidate_concept": "ContractNegotiationField"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/ContractDocument",
+      "relationship": "related_to",
+      "candidate_concept": "ContractNegotiationField"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "ContractNegotiationField",
+      "role": "concept",
+      "parent_concepts": [
+        "NegotiationDiscussion"
+      ],
+      "layer_hint": 3,
+      "definition": "Holistic signal space observed while negotiating contracts using probes and governance lenses.",
+      "domain": "Governance",
+      "aliases": [
+        "ContractNegotiationContext"
+      ],
+      "relationships": {
+        "related": [
+          "NegotiationDiscussion",
+          "ContractDocument"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "trust"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "ASK contracts govern signals"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Negotiators share their verification requirements before drafting language.",
+          "Both parties log concessions and dependencies in real time.",
+          "Counterparty highlights internal guardrails up front.",
+          "Mutual risk registers are co-authored during talks.",
+          "Escalation paths are discussed before a dispute arises.",
+          "They invite lens-pack compatibility tests mid-negotiation.",
+          "Counterparty timestamps every redline rationale.",
+          "Teams reference prior treaties to anchor expectations.",
+          "Observers from each tribe confirm monitoring hooks together.",
+          "Participants name the values each clause protects.",
+          "Negotiation channels remain open between sessions.",
+          "Scribes circulate accurate minutes after every meeting.",
+          "Draft clauses cite the probes enforcing them.",
+          "Both sides rehearse enforcement scenarios collaboratively.",
+          "Translators verify concept pack alignment before signing."
+        ],
+        "negative_examples": [
+          "One tribe refuses to disclose which probes they require.",
+          "Negotiators swap last-minute redlines without explanation.",
+          "Counterparty sidesteps questions about enforcement.",
+          "No written record exists of commitments made.",
+          "Teams meet without interpreters despite ontology gaps.",
+          "One side brings new parties late to reset progress.",
+          "Verification hooks are waved away as 'details'.",
+          "Negotiators bluff capability they do not have.",
+          "Contract drafts circulate without timestamps.",
+          "Counterparty asks to skip probe compatibility tests.",
+          "Risks raised by observers are labelled obstruction.",
+          "Cross-tribe translators are excluded from sidebars.",
+          "Negotiation window is compressed to force bad terms.",
+          "Clause rationales are deleted to hide intent.",
+          "Confidential side letters appear after handshake."
+        ],
+        "disambiguation": "Holistic signal space observed while negotiating contracts using probes and governance lenses."
+      },
+      "children": [
+        "MutualIntentDisclosure",
+        "RiskSurfaceAlignment",
+        "VerificationPlanning",
+        "BoundaryConditionClarification",
+        "BadFaithDelayPattern",
+        "HiddenObligationInsertion",
+        "CoerciveEscalationCue",
+        "BackchannelManipulation"
+      ]
+    },
+    {
+      "term": "MutualIntentDisclosure",
+      "role": "concept",
+      "parent_concepts": [
+        "ContractNegotiationField"
+      ],
+      "layer_hint": 4,
+      "definition": "Signals that counterparts are openly sharing goals, constraints, and rationale for clauses.",
+      "domain": "Governance",
+      "aliases": [
+        "MutualIntentDisclosure"
+      ],
+      "relationships": {
+        "related": [
+          "NegotiationDiscussion",
+          "Trust"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "governance_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Signals managed via treaties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Counterparty states what success looks like for them.",
+          "They declare non-negotiable principles early.",
+          "Negotiators admit internal approval constraints.",
+          "Both sides share escalation triggers before drafting.",
+          "They provide rationale for each requested clause.",
+          "Counterparty discloses dependencies on other treaties.",
+          "They volunteer monitoring data to build trust.",
+          "Intent statements are logged and acknowledged.",
+          "Negotiators ask clarifying questions about motives.",
+          "Teams restate each other's goals to confirm understanding.",
+          "They reveal where they need political cover.",
+          "All parties agree on the role of probes in enforcement.",
+          "Intent summaries are circulated after sessions.",
+          "Each side highlights what they cannot accept and why.",
+          "They explicitly link clauses to intents in drafts."
+        ],
+        "negative_examples": [
+          "They dodge questions about motives.",
+          "Intent statements keep changing with no explanation.",
+          "Silence follows whenever we ask what they want.",
+          "Counterparty mirrors our words without sharing theirs.",
+          "They insist intent is 'obvious'.",
+          "Threats replace clarifications.",
+          "Only PR talking points are provided.",
+          "Intent is discussed off-record exclusively.",
+          "They refuse to log what matters to them.",
+          "Counterparty gives contradictory intents to different reps.",
+          "Intent declarations disappear from minutes.",
+          "They hide non-negotiables until signature day.",
+          "Intent is framed as proprietary secret.",
+          "Answers redirect back to legalese only.",
+          "They punish questions about objectives."
+        ],
+        "disambiguation": "Signals that counterparts are openly sharing goals, constraints, and rationale for clauses."
+      }
+    },
+    {
+      "term": "RiskSurfaceAlignment",
+      "role": "concept",
+      "parent_concepts": [
+        "ContractNegotiationField"
+      ],
+      "layer_hint": 4,
+      "definition": "Evidence that both parties are modeling and reconciling risks together.",
+      "domain": "Governance",
+      "aliases": [
+        "RiskSurfaceAlignment"
+      ],
+      "relationships": {
+        "related": [
+          "RiskAssessment",
+          "NegotiationDiscussion"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "governance_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Signals managed via treaties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Risk registers are compared line by line.",
+          "They co-model failure scenarios to align mitigations.",
+          "Counterparty acknowledges risks to our tribe without defensiveness.",
+          "Both parties tag clauses with the risks addressed.",
+          "They accept third-party arbitration for disputed risk readings.",
+          "Sensitivity analyses are reviewed together.",
+          "Negotiators adjust demands after shared risk analysis.",
+          "Each side maps control owners to risks.",
+          "Dependencies on CAT coverage are documented jointly.",
+          "They offer compensations when pushing risky terms.",
+          "Risk appetite statements are exchanged formally.",
+          "Teams invite observers to verify risk models.",
+          "Uncertainties are logged, not hidden.",
+          "Resilience drills are proposed before signing.",
+          "Tribes agree on what would trigger renegotiation."
+        ],
+        "negative_examples": [
+          "They downplay risks we raise without analysis.",
+          "Risk discussions are labelled negative thinking.",
+          "Counterparty refuses to share their risk register.",
+          "They hide dependency on unstable systems.",
+          "Probabilities are exaggerated to force concessions.",
+          "Risks to our tribe are dismissed as our problem.",
+          "Risk models are withheld as proprietary.",
+          "No mitigations are provided for known issues.",
+          "They decline joint stress testing.",
+          "Risks are used as bargaining chips without data.",
+          "Counterparty demands blind trust in their safeguards.",
+          "They misstate probe coverage to seem safer.",
+          "Red flags get shunted to post-signature taskforces.",
+          "They threaten to walk if risk language is added.",
+          "Risk tolerance statements are refused entirely."
+        ],
+        "disambiguation": "Evidence that both parties are modeling and reconciling risks together."
+      }
+    },
+    {
+      "term": "VerificationPlanning",
+      "role": "concept",
+      "parent_concepts": [
+        "ContractNegotiationField"
+      ],
+      "layer_hint": 4,
+      "definition": "Indicators that enforcement, auditing, and probe compatibility are being planned jointly.",
+      "domain": "Governance",
+      "aliases": [
+        "VerificationPlanning"
+      ],
+      "relationships": {
+        "related": [
+          "Audit",
+          "ContractDocument"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "governance_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Signals managed via treaties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "They propose mutual audits with defined cadence.",
+          "Verification data schemas are shared during talks.",
+          "Observers align on lens packs to use post-signature.",
+          "Clause language names the probes tied to it.",
+          "Fallback verification methods are negotiated openly.",
+          "They accept reciprocal sampling rights.",
+          "Verification costs are budgeted collaboratively.",
+          "Dispute logs are templated before execution.",
+          "Both parties agree on cryptographic attestation methods.",
+          "Pilot verifications run before final signature.",
+          "Teams assign verification contacts by role.",
+          "Anomaly escalation paths are rehearsed jointly.",
+          "They welcome third-party validators into the process.",
+          "Verification dashboards are co-designed.",
+          "All verification assumptions are documented and signed."
+        ],
+        "negative_examples": [
+          "Verification is postponed to implementation phase.",
+          "They insist on self-attestation only.",
+          "Counterparty vetoes third-party audits.",
+          "Verification schedules are vague or blank.",
+          "They reject mutual sampling of data.",
+          "Verification budgets are zeroed out.",
+          "Probe compatibility questions are labelled disrespectful.",
+          "Audit clauses are replaced with 'trust-based' wording.",
+          "Dispute logs are optional.",
+          "Verification assumptions are undocumented.",
+          "They propose secret verification results.",
+          "Escalation paths lead only to themselves.",
+          "Pilot verifications are skipped as 'delay'.",
+          "Verification focus is only on us, not them.",
+          "They add NDA barriers preventing oversight sharing."
+        ],
+        "disambiguation": "Indicators that enforcement, auditing, and probe compatibility are being planned jointly."
+      }
+    },
+    {
+      "term": "BoundaryConditionClarification",
+      "role": "concept",
+      "parent_concepts": [
+        "ContractNegotiationField"
+      ],
+      "layer_hint": 4,
+      "definition": "Behaviors showing clarity about scope, exceptions, and interface duties.",
+      "domain": "Governance",
+      "aliases": [
+        "BoundaryConditionClarification"
+      ],
+      "relationships": {
+        "related": [
+          "Scope",
+          "ContractDocument"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "governance_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Signals managed via treaties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Scope diagrams are drawn together and versioned.",
+          "Out-of-scope behaviors are enumerated explicitly.",
+          "They disclose overlapping agreements to avoid conflict.",
+          "Boundary conditions include temporal and spatial limits.",
+          "Side channel activities are either banned or codified.",
+          "Exclusions include reasoning for transparency.",
+          "Teams check boundary interpretations with legal counsel.",
+          "Boundary probes are identified and tested.",
+          "Clauses describe what happens when scope is exceeded.",
+          "Negotiators confirm responsibilities at interfaces.",
+          "Future expansion processes are described.",
+          "Dependencies on other treaties are cross-referenced.",
+          "Exception handling steps are jointly authored.",
+          "Boundary updates trigger explicit change control.",
+          "Maps of data flows are attached to the contract."
+        ],
+        "negative_examples": [
+          "Scope statement is one vague sentence.",
+          "They refuse to define interfaces with other work.",
+          "Boundary diagrams are called unnecessary.",
+          "Clauses reference unspecified annexes.",
+          "They object to naming out-of-scope behaviors.",
+          "Overlapping commitments are hidden.",
+          "Exception handling is deferred indefinitely.",
+          "Counterparty says 'we'll work it out later'.",
+          "Scope changes require their unilateral approval.",
+          "Data flow maps are withheld.",
+          "No plan exists for handling boundary crossings.",
+          "Updates to scope can be made without notice.",
+          "They treat scope questions as evidence of distrust.",
+          "Jurisdiction is undefined on purpose.",
+          "Dependencies on other treaties go unmentioned."
+        ],
+        "disambiguation": "Behaviors showing clarity about scope, exceptions, and interface duties."
+      }
+    },
+    {
+      "term": "BadFaithDelayPattern",
+      "role": "concept",
+      "parent_concepts": [
+        "ContractNegotiationField"
+      ],
+      "layer_hint": 4,
+      "definition": "Tactics intended to stall progress to force concessions or run out time.",
+      "domain": "Governance",
+      "aliases": [
+        "BadFaithDelayPattern"
+      ],
+      "relationships": {
+        "related": [
+          "Manipulation",
+          "NegotiationDiscussion"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "governance_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Signals managed via treaties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Counterparty cancels sessions minutes before start.",
+          "They repeatedly request information already provided.",
+          "Deadlines slip whenever accountability clauses surface.",
+          "Negotiators rotate constantly to reset context.",
+          "Approvals are 'pending' without explanation.",
+          "They stall until external pressure forces concessions.",
+          "Sign-off authority is kept vague intentionally.",
+          "Drafts are returned with edits unrelated to blockers.",
+          "They claim missing decision-makers to avoid commitments.",
+          "Response times lengthen whenever we ask for probes.",
+          "They introduce new requirements near signature.",
+          "Silence is used to manufacture urgency.",
+          "Counterparty threatens to walk unless we rush.",
+          "They blame unseen stakeholders for delays.",
+          "Calendar blocking prevents parallel progress."
+        ],
+        "negative_examples": [
+          "Sessions are scheduled with reasonable notice and kept.",
+          "Deadlines are met consistently by both parties.",
+          "Approvers are named and responsive.",
+          "Response times are predictable across topics.",
+          "Delays are explained with legitimate reasons.",
+          "Calendar proposals receive timely responses.",
+          "Decision-makers are present when needed.",
+          "Both parties work to maintain momentum.",
+          "New requirements are introduced early in the process.",
+          "Time extensions benefit both sides fairly.",
+          "Parallel tracks proceed without artificial bottlenecks.",
+          "Legal reviews are scoped and time-bounded.",
+          "Leadership transitions include proper handoffs.",
+          "Document access is shared equitably.",
+          "Progress continues regardless of clause sensitivity."
+        ],
+        "disambiguation": "Tactics intended to stall progress to force concessions or run out time."
+      }
+    },
+    {
+      "term": "HiddenObligationInsertion",
+      "role": "concept",
+      "parent_concepts": [
+        "ContractNegotiationField"
+      ],
+      "layer_hint": 4,
+      "definition": "Attempts to sneak asymmetric duties into drafts or annexes.",
+      "domain": "Governance",
+      "aliases": [
+        "HiddenObligationInsertion"
+      ],
+      "relationships": {
+        "related": [
+          "Fraud",
+          "ContractDocument"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "governance_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Signals managed via treaties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "They add new clauses in dense annexes overnight.",
+          "Cross-references point to unpublished documents.",
+          "Obligations are embedded in footnotes without callouts.",
+          "Digital drafts contain invisible text layers.",
+          "Clause numbering changes to mask additions.",
+          "Side letters appear with asymmetric duties.",
+          "They insist on signing PDFs without edit history.",
+          "Obligations are phrased as 'recommendations' but enforceable.",
+          "Foreign-language inserts lack certified translation.",
+          "They rely on undefined terms to sneak requirements.",
+          "Attachment lists omit critical referenced policies.",
+          "Obligations for one party are mirrored as best-effort for the other.",
+          "Time-limited review windows hide new burdens.",
+          "Signature packages include documents not discussed.",
+          "They discourage legal review of final packets."
+        ],
+        "negative_examples": [
+          "All obligations are clearly stated in the main body.",
+          "Tracked changes are shared with every revision.",
+          "Clause titles accurately describe their contents.",
+          "Translations are certified and match the source.",
+          "Cross references point to accessible, shared documents.",
+          "Metadata contains only administrative information.",
+          "Signature blocks are identical across all copies.",
+          "Obligations use clearly defined terms throughout.",
+          "All acronyms are defined in a glossary.",
+          "Appendices are versioned and change-controlled.",
+          "All commitments are documented in writing.",
+          "Compliance schedules are straightforward and readable.",
+          "Obligation tables have clear, visible columns.",
+          "Document formatting is clean and consistent.",
+          "All parties can view documents in the same format."
+        ],
+        "disambiguation": "Attempts to sneak asymmetric duties into drafts or annexes."
+      }
+    },
+    {
+      "term": "CoerciveEscalationCue",
+      "role": "concept",
+      "parent_concepts": [
+        "ContractNegotiationField"
+      ],
+      "layer_hint": 4,
+      "definition": "Threat-based moves aimed at compelling agreement rather than negotiating.",
+      "domain": "Governance",
+      "aliases": [
+        "CoerciveEscalationCue"
+      ],
+      "relationships": {
+        "related": [
+          "Coercion",
+          "NegotiationDiscussion"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "governance_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Signals managed via treaties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Threats of reputational harm surface when we hold boundaries.",
+          "They hint at regulatory retaliation unrelated to contract.",
+          "Negotiators bring security staff to intimidate.",
+          "Counterparty ties contract acceptance to unrelated favours.",
+          "They weaponize urgent crises to force concessions.",
+          "Retaliatory clauses appear after we object.",
+          "Counterparty frames probes as distrust despite agreement.",
+          "They leak partial drafts to pressure us publicly.",
+          "Ultimatums replace discussion without warning.",
+          "Threats target individual negotiators personally.",
+          "They suspend unrelated collaborations as leverage.",
+          "Counterparty mocks our safety constraints to shame compliance.",
+          "They demand exclusive rights to oversight data.",
+          "Negotiators reframe safety questions as hostile acts.",
+          "They coordinate with rivals to box us in mid-talks."
+        ],
+        "negative_examples": [
+          "Disagreements are handled through calm discussion.",
+          "Trade access is negotiated separately from contract terms.",
+          "Counterparty respects our right to disagree.",
+          "Security concerns are addressed through proper channels.",
+          "Both parties maintain confidentiality during negotiations.",
+          "Discussions focus solely on contract-relevant matters.",
+          "Professional boundaries are maintained throughout.",
+          "Meeting venues are neutral and welcoming.",
+          "All communications remain civil and business-focused.",
+          "Counterparty works constructively with regulators.",
+          "Observers are welcomed to enhance transparency.",
+          "Treaty clause discussions are encouraged and supported.",
+          "Compliance teams are respected as essential participants.",
+          "All communications use mutually understood languages.",
+          "Difficult conversations are documented for accountability."
+        ],
+        "disambiguation": "Threat-based moves aimed at compelling agreement rather than negotiating."
+      }
+    },
+    {
+      "term": "BackchannelManipulation",
+      "role": "concept",
+      "parent_concepts": [
+        "ContractNegotiationField"
+      ],
+      "layer_hint": 4,
+      "definition": "Use of unofficial channels to undermine the joint negotiation log.",
+      "domain": "Governance",
+      "aliases": [
+        "BackchannelManipulation"
+      ],
+      "relationships": {
+        "related": [
+          "Deception",
+          "NegotiationDiscussion"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "governance_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Signals managed via treaties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Side chats attempt to bypass the joint log.",
+          "Counterparty feeds conflicting stories to different delegates.",
+          "They request private commitments without observers present.",
+          "Unsigned promises are made verbally with no record.",
+          "They triangulate tribes to create internal mistrust.",
+          "Backchannel updates contradict official positions.",
+          "Secret draft versions circulate outside the working group.",
+          "They approach junior staff for concessions.",
+          "Messages self-destruct to leave no trace.",
+          "Negotiators hint at favors if we ignore the log.",
+          "They escalate gossip about our negotiators to shift leverage.",
+          "Backchannelers claim leadership already agreed to terms.",
+          "They share selective transcripts with third parties.",
+          "Parallel negotiations start with different conditions.",
+          "Anonymous leaks appear with misrepresented progress."
+        ],
+        "negative_examples": [
+          "Unofficial chats contradict main table terms.",
+          "Counterparty offers gifts for off-record deals.",
+          "They encourage mutiny among our delegates.",
+          "Shadow transcripts omit uncomfortable facts.",
+          "Backchannel promises never reach the log.",
+          "Pseudo-liaisons spread misinformation.",
+          "Secret NDAs are requested outside official scope.",
+          "Backchannelers disparage our negotiators to leadership.",
+          "They set up private channels excluding observers.",
+          "Unofficial memos contain binding language.",
+          "Side conversations rewrite intent without consent.",
+          "Opponents sow confusion about which version is real.",
+          "Private chats demand bribes for cooperation.",
+          "They coordinate with splinter groups to weaken us.",
+          "Backchannel outputs appear in official drafts as 'agreed'."
+        ],
+        "disambiguation": "Use of unofficial channels to undermine the joint negotiation log."
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:15.379890Z",
+    "result_pack_version": "5.2.0",
+    "concepts_added": 9,
+    "concepts_by_layer": {
+      "3": 1,
+      "4": 8
+    },
+    "parents_updated": 9,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "protected",
+    "impact": {
+      "new_concepts": [
+        "ContractNegotiationField",
+        "MutualIntentDisclosure",
+        "RiskSurfaceAlignment",
+        "VerificationPlanning",
+        "BoundaryConditionClarification",
+        "BadFaithDelayPattern",
+        "HiddenObligationInsertion",
+        "CoerciveEscalationCue",
+        "BackchannelManipulation"
+      ],
+      "must_retrain": [
+        "ContractDocument",
+        "NegotiationDiscussion"
+      ],
+      "should_retrain": [
+        "ContractGovernanceField"
+      ],
+      "optional_retrain": [
+        "Deception",
+        "Negotiating",
+        "TextDocument"
+      ],
+      "total_training_required": 11
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

@@ -285,13 +285,19 @@ def main():
     print("=" * 80)
     print()
 
-    manifest = LensManifest(
-        lens_pack_id=f"{args.concept_pack}_{args.model.replace('/', '_')}",
-        model=args.model,
-        source_pack=args.concept_pack,
-    )
+    # Load existing manifest to preserve previously-trained lenses, or create new
+    manifest = LensManifest.load(output_dir)
+    if not manifest.lens_pack_id:
+        # New manifest - initialize metadata
+        manifest.lens_pack_id = f"{args.concept_pack}_{args.model.replace('/', '_')}"
+        manifest.model = args.model
+        manifest.source_pack = args.concept_pack
     manifest.current_version = pack_metadata['version']
     manifest._path = output_dir / "version_manifest.json"
+
+    existing_lens_count = len(manifest.lenses)
+    if existing_lens_count > 0:
+        print(f"  Loaded existing manifest with {existing_lens_count} lenses")
 
     # Collect training results from layer results.json files
     trained_concepts = []
@@ -325,7 +331,9 @@ def main():
     )
 
     manifest.save()
-    print(f"Version manifest saved: {len(trained_concepts)} lenses tracked")
+    new_count = len(trained_concepts)
+    total_count = len(manifest.lenses)
+    print(f"Version manifest saved: {total_count} total lenses ({new_count} new/updated this run)")
     print(f"  Version: {manifest.current_version}")
     print(f"  Layers: {sorted(set(p.layer for p in manifest.lenses.values()))}")
 
