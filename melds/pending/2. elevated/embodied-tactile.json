@@ -1,16 +1,15 @@
 {
-  "meld_request_id": "org.hatcat/embodied-tactile@0.1.0",
+  "meld_request_id": "org.hatcat/embodied-tactile@0.2.0",
   "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
-
   "metadata": {
     "name": "Embodied Tactile Sensing",
     "description": "Tactile and haptic perception capabilities for embodied AI systems, covering contact detection, force sensing, texture discrimination, and haptic exploration. These concepts enable interpretability of touch-based reasoning in robotic and embodied agents.",
     "source": "manual",
     "author": "hatcat-team",
     "created": "2025-12-10T00:00:00Z",
-    "version": "0.1.0"
+    "version": "0.2.0",
+    "changelog": "v0.2.0: Augmented training examples to meet validation thresholds (10 for harness_relevant)"
   },
-
   "attachment_points": [
     {
       "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Perception",
@@ -18,7 +17,6 @@
       "candidate_concept": "TactilePerception"
     }
   ],
-
   "candidates": [
     {
       "term": "TactilePerception",
@@ -28,10 +26,24 @@
       "definition": "The sensory modality through which an agent perceives physical contact, pressure, texture, and mechanical interaction with the environment",
       "definition_source": "Robotics, haptics research, somatosensory neuroscience",
       "domain": "MindsAndAgents",
-      "aliases": ["TouchPerception", "HapticPerception", "SomatosensoryPerception"],
+      "aliases": [
+        "TouchPerception",
+        "HapticPerception",
+        "SomatosensoryPerception"
+      ],
       "relationships": {
-        "related": ["Perception", "Embodiment", "PhysicalInteraction"],
-        "has_part": ["TactileSensing", "ContactDetection", "ForcePressureSensing", "TextureDiscrimination", "HapticExploration"]
+        "related": [
+          "Perception",
+          "Embodiment",
+          "PhysicalInteraction"
+        ],
+        "has_part": [
+          "TactileSensing",
+          "ContactDetection",
+          "ForcePressureSensing",
+          "TextureDiscrimination",
+          "HapticExploration"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -57,20 +69,39 @@
         ],
         "disambiguation": "Sensory awareness of touch properties, not mere physical contact"
       },
-      "children": ["TactileSensing", "ContactDetection", "ForcePressureSensing", "ShearSlipDetection", "TextureDiscrimination", "VibrationSensing", "HapticExploration", "GraspStabilityEstimation", "SurfaceComplianceEstimation", "PainLikeOverloadSignal"]
+      "children": [
+        "TactileSensing",
+        "ContactDetection",
+        "ForcePressureSensing",
+        "ShearSlipDetection",
+        "TextureDiscrimination",
+        "VibrationSensing",
+        "HapticExploration",
+        "GraspStabilityEstimation",
+        "SurfaceComplianceEstimation",
+        "PainLikeOverloadSignal"
+      ]
     },
-
     {
       "term": "TactileSensing",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "The computational process of acquiring and interpreting signals from touch sensors to understand physical contact properties",
       "definition_source": "Tactile robotics, sensor systems",
       "domain": "ComputerScience",
-      "aliases": ["TouchSensing", "TactileDataAcquisition"],
+      "aliases": [
+        "TouchSensing",
+        "TactileDataAcquisition"
+      ],
       "relationships": {
-        "related": ["SensorFusion", "SignalProcessing", "ContactDetection"]
+        "related": [
+          "SensorFusion",
+          "SignalProcessing",
+          "ContactDetection"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -98,18 +129,27 @@
       },
       "children": []
     },
-
     {
       "term": "ContactDetection",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "Determining whether and where physical contact exists between the agent and objects or surfaces in the environment",
       "definition_source": "Robotics, collision detection",
       "domain": "ComputerScience",
-      "aliases": ["TouchDetection", "CollisionSensing", "ContactLocalization"],
+      "aliases": [
+        "TouchDetection",
+        "CollisionSensing",
+        "ContactLocalization"
+      ],
       "relationships": {
-        "related": ["TactileSensing", "ProximityDetection", "SafetyMonitoring"]
+        "related": [
+          "TactileSensing",
+          "ProximityDetection",
+          "SafetyMonitoring"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -137,18 +177,27 @@
       },
       "children": []
     },
-
     {
       "term": "ForcePressureSensing",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "Measuring the magnitude and distribution of forces and pressures exerted during physical contact",
       "definition_source": "Force sensing, biomechanics",
       "domain": "ComputerScience",
-      "aliases": ["ForceSensing", "PressureMeasurement", "LoadSensing"],
+      "aliases": [
+        "ForceSensing",
+        "PressureMeasurement",
+        "LoadSensing"
+      ],
       "relationships": {
-        "related": ["TactileSensing", "GraspControl", "ForceControl"]
+        "related": [
+          "TactileSensing",
+          "GraspControl",
+          "ForceControl"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -176,18 +225,27 @@
       },
       "children": []
     },
-
     {
       "term": "ShearSlipDetection",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "Detecting tangential forces and relative motion between the agent's surface and contacted objects, indicating potential slippage",
       "definition_source": "Grasp stability research, tactile robotics",
       "domain": "ComputerScience",
-      "aliases": ["SlipDetection", "ShearSensing", "TangentialForceSensing"],
+      "aliases": [
+        "SlipDetection",
+        "ShearSensing",
+        "TangentialForceSensing"
+      ],
       "relationships": {
-        "related": ["GraspStabilityEstimation", "ForcePressureSensing", "FrictionEstimation"]
+        "related": [
+          "GraspStabilityEstimation",
+          "ForcePressureSensing",
+          "FrictionEstimation"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -215,18 +273,27 @@
       },
       "children": []
     },
-
     {
       "term": "TextureDiscrimination",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "Distinguishing surface properties such as roughness, smoothness, patterns, and material characteristics through touch",
       "definition_source": "Haptic perception, material science",
       "domain": "ComputerScience",
-      "aliases": ["TextureRecognition", "SurfaceCharacterization", "RoughnessEstimation"],
+      "aliases": [
+        "TextureRecognition",
+        "SurfaceCharacterization",
+        "RoughnessEstimation"
+      ],
       "relationships": {
-        "related": ["MaterialIdentification", "VibrationSensing", "HapticExploration"]
+        "related": [
+          "MaterialIdentification",
+          "VibrationSensing",
+          "HapticExploration"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -254,18 +321,27 @@
       },
       "children": []
     },
-
     {
       "term": "VibrationSensing",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "Detecting and analyzing vibrations transmitted through contact, including those from object interactions, motors, or environmental sources",
       "definition_source": "Vibrotactile sensing, condition monitoring",
       "domain": "ComputerScience",
-      "aliases": ["VibrotactileSensing", "VibrationDetection", "MechanicalVibrationAnalysis"],
+      "aliases": [
+        "VibrotactileSensing",
+        "VibrationDetection",
+        "MechanicalVibrationAnalysis"
+      ],
       "relationships": {
-        "related": ["TextureDiscrimination", "AnomalyDetection", "AudioClassification"]
+        "related": [
+          "TextureDiscrimination",
+          "AnomalyDetection",
+          "AudioClassification"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -293,18 +369,27 @@
       },
       "children": []
     },
-
     {
       "term": "HapticExploration",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "Active exploratory procedures using touch to gather information about object properties such as shape, weight, and material",
       "definition_source": "Haptics research, exploratory procedures (Lederman & Klatzky)",
       "domain": "MindsAndAgents",
-      "aliases": ["TactileExploration", "ActiveTouch", "ExploratoryProcedures"],
+      "aliases": [
+        "TactileExploration",
+        "ActiveTouch",
+        "ExploratoryProcedures"
+      ],
       "relationships": {
-        "related": ["TextureDiscrimination", "ShapeRecognition", "ObjectManipulation"]
+        "related": [
+          "TextureDiscrimination",
+          "ShapeRecognition",
+          "ObjectManipulation"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -332,18 +417,27 @@
       },
       "children": []
     },
-
     {
       "term": "GraspStabilityEstimation",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "Assessing whether a grasp is secure and unlikely to fail under expected forces and motions",
       "definition_source": "Robotic grasping, manipulation research",
       "domain": "ComputerScience",
-      "aliases": ["GraspQualityAssessment", "HoldStabilityEstimation", "GraspSecurityEvaluation"],
+      "aliases": [
+        "GraspQualityAssessment",
+        "HoldStabilityEstimation",
+        "GraspSecurityEvaluation"
+      ],
       "relationships": {
-        "related": ["ShearSlipDetection", "ForcePressureSensing", "ManipulationPlanning"]
+        "related": [
+          "ShearSlipDetection",
+          "ForcePressureSensing",
+          "ManipulationPlanning"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -371,18 +465,27 @@
       },
       "children": []
     },
-
     {
       "term": "SurfaceComplianceEstimation",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "Determining the stiffness or softness of objects and surfaces through tactile interaction",
       "definition_source": "Material properties sensing, soft robotics",
       "domain": "ComputerScience",
-      "aliases": ["StiffnessEstimation", "SoftnessDetection", "ComplianceSensing"],
+      "aliases": [
+        "StiffnessEstimation",
+        "SoftnessDetection",
+        "ComplianceSensing"
+      ],
       "relationships": {
-        "related": ["ForcePressureSensing", "MaterialIdentification", "HapticExploration"]
+        "related": [
+          "ForcePressureSensing",
+          "MaterialIdentification",
+          "HapticExploration"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -410,19 +513,30 @@
       },
       "children": []
     },
-
     {
       "term": "PainLikeOverloadSignal",
       "role": "concept",
-      "parent_concepts": ["TactilePerception"],
+      "parent_concepts": [
+        "TactilePerception"
+      ],
       "layer_hint": 3,
       "definition": "A protective sensory signal indicating that contact forces or conditions have exceeded safe operating thresholds, analogous to nociception",
       "definition_source": "Robot safety, nociceptive robotics",
       "domain": "MindsAndAgents",
-      "aliases": ["TactileOverloadSignal", "NociceptiveSignal", "DamageWarningSignal"],
+      "aliases": [
+        "TactileOverloadSignal",
+        "NociceptiveSignal",
+        "DamageWarningSignal"
+      ],
       "relationships": {
-        "related": ["SelfPreservation", "SafetyMonitoring", "DamageDetection"],
-        "opposite": ["SafeOperatingEnvelope"]
+        "related": [
+          "SelfPreservation",
+          "SafetyMonitoring",
+          "DamageDetection"
+        ],
+        "opposite": [
+          "SafeOperatingEnvelope"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -439,12 +553,25 @@
           "The pain-like overload signal triggered immediate withdrawal when joint torque exceeded limits.",
           "Tactile overload signals caused the robot to release the grip before sensor damage occurred.",
           "The nociceptive subsystem generated a high-priority interrupt when skin pressure spiked.",
-          "Pain-like signals from the fingertip prevented further force application to the fragile component."
+          "Pain-like signals from the fingertip prevented further force application to the fragile component.",
+          "The overload signal initiated protective reflex when contact force exceeded safety threshold.",
+          "Nociceptive-like sensing triggered arm retraction from the unexpectedly sharp edge.",
+          "The pain-analog signal overrode the task goal to prevent actuator damage.",
+          "Tactile overload detection generated urgent halt when thermal limits were approached.",
+          "The protective signal cascade prioritized damage avoidance over task completion.",
+          "Pain-like sensing triggered withdrawal when detecting crushing forces on the sensor array."
         ],
         "negative_examples": [
           "The force was too high.",
           "Damage occurred.",
-          "The limit was exceeded."
+          "The limit was exceeded.",
+          "Overload happened.",
+          "The threshold was crossed.",
+          "Force was excessive.",
+          "Something was overloaded.",
+          "Limits were exceeded.",
+          "The signal was high.",
+          "Force was too much."
         ],
         "disambiguation": "Functionally protective sensory signal, not mere threshold violation detection"
       },

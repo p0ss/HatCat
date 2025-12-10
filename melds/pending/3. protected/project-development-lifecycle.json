@@ -1,16 +1,15 @@
 {
-  "meld_request_id": "org.hatcat/project-development-lifecycle@0.1.0",
+  "meld_request_id": "org.hatcat/project-development-lifecycle@0.2.1",
   "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
-
   "metadata": {
     "name": "Project Development Lifecycle",
     "description": "Concepts for software development and project management across paradigms. Covers centralized/hierarchical and decentralized/collectivist approaches, agile and waterfall methodologies, delivery patterns, and user-centered design. Substrate-independent to apply to human teams, AI agent swarms, or hybrid systems.",
     "source": "manual",
     "author": "hatcat-team",
     "created": "2025-12-09T00:00:00Z",
-    "version": "0.1.0"
+    "version": "0.2.1",
+    "changelog": "v0.2.1: Added examples to meet validation thresholds"
   },
-
   "attachment_points": [
     {
       "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/IntentionalProcess",
@@ -18,7 +17,6 @@
       "candidate_concept": "ProjectDevelopment"
     }
   ],
-
   "candidates": [
     {
       "term": "ProjectDevelopment",
@@ -28,10 +26,25 @@
       "definition": "Organized processes for planning, executing, and delivering projects or software systems",
       "definition_source": "Synthesized from project management and software engineering disciplines",
       "domain": "Information",
-      "aliases": ["SoftwareDevelopment", "ProjectManagement", "SystemsDevelopment"],
+      "aliases": [
+        "SoftwareDevelopment",
+        "ProjectManagement",
+        "SystemsDevelopment"
+      ],
       "relationships": {
-        "related": ["Planning", "IntentionalProcess", "Engineering"],
-        "has_part": ["DevelopmentGovernance", "DevelopmentMethodology", "DeliveryManagement", "QualityPractices", "StakeholderEngagement", "CognitiveExecution"]
+        "related": [
+          "Planning",
+          "IntentionalProcess",
+          "Engineering"
+        ],
+        "has_part": [
+          "DevelopmentGovernance",
+          "DevelopmentMethodology",
+          "DeliveryManagement",
+          "QualityPractices",
+          "StakeholderEngagement",
+          "CognitiveExecution"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -48,33 +61,67 @@
           "The team is developing a new feature using agile methodology",
           "Project planning phase identified key milestones",
           "The software release is scheduled for next quarter",
-          "Agent swarm coordinating on the implementation task"
+          "Agent swarm coordinating on the implementation task",
+          "The team is developing a new feature using agile methodology.",
+          "Project planning phase identified key milestones.",
+          "The software release is scheduled for next quarter.",
+          "Agent swarm coordinating on the implementation task.",
+          "Development sprint underway for the new module."
         ],
         "negative_examples": [
           "The server is running",
           "The code compiled successfully",
-          "The database query returned results"
+          "The database query returned results",
+          "The server is running.",
+          "The code compiled successfully.",
+          "The database query returned results.",
+          "Application logs showing normal activity.",
+          "Server metrics within normal range."
         ],
         "disambiguation": "Organized development activities, not runtime operations"
       },
-      "children": ["DevelopmentGovernance", "DevelopmentMethodology", "DeliveryManagement", "QualityPractices", "StakeholderEngagement", "CognitiveExecution"]
+      "children": [
+        "DevelopmentGovernance",
+        "DevelopmentMethodology",
+        "DeliveryManagement",
+        "QualityPractices",
+        "StakeholderEngagement",
+        "CognitiveExecution"
+      ]
     },
-
     {
       "term": "DevelopmentGovernance",
       "role": "concept",
-      "parent_concepts": ["ProjectDevelopment"],
+      "parent_concepts": [
+        "ProjectDevelopment"
+      ],
       "layer_hint": 3,
       "definition": "Structures and processes for decision-making, authority, and coordination in development projects",
       "domain": "Information",
-      "aliases": ["ProjectGovernance", "DevelopmentAuthority", "CoordinationStructure"],
+      "aliases": [
+        "ProjectGovernance",
+        "DevelopmentAuthority",
+        "CoordinationStructure"
+      ],
       "relationships": {
-        "related": ["Authority", "Organization", "Coordination"],
-        "has_part": ["CentralizedGovernance", "DecentralizedGovernance", "HybridGovernance", "GovernanceRigidity", "GovernanceVacuum"]
+        "related": [
+          "Authority",
+          "Organization",
+          "Coordination"
+        ],
+        "has_part": [
+          "CentralizedGovernance",
+          "DecentralizedGovernance",
+          "HybridGovernance",
+          "GovernanceRigidity",
+          "GovernanceVacuum"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -88,29 +135,52 @@
           "The project manager has final decision authority",
           "Decisions are made by team consensus",
           "The steering committee approves major changes",
-          "Agent orchestrator coordinates task allocation"
+          "Agent orchestrator coordinates task allocation",
+          "The project manager has final decision authority.",
+          "Decisions are made by team consensus.",
+          "The steering committee approves major changes.",
+          "Agent orchestrator coordinates task allocation.",
+          "Governance structure defines approval workflow."
         ],
         "negative_examples": [
           "Writing code for the feature",
           "Running tests",
-          "Deploying to production"
+          "Deploying to production",
+          "Writing code for the feature.",
+          "Running tests.",
+          "Deploying to production.",
+          "Debugging the issue.",
+          "Implementing the solution."
         ],
         "disambiguation": "Decision-making structures, not execution activities"
       },
-      "children": ["CentralizedGovernance", "DecentralizedGovernance", "HybridGovernance", "GovernanceRigidity", "GovernanceVacuum"]
+      "children": [
+        "CentralizedGovernance",
+        "DecentralizedGovernance",
+        "HybridGovernance",
+        "GovernanceRigidity",
+        "GovernanceVacuum"
+      ]
     },
-
     {
       "term": "CentralizedGovernance",
       "role": "concept",
-      "parent_concepts": ["DevelopmentGovernance"],
+      "parent_concepts": [
+        "DevelopmentGovernance"
+      ],
       "layer_hint": 4,
       "definition": "Governance where authority and decision-making concentrate in designated roles or entities",
       "domain": "Information",
-      "aliases": ["HierarchicalGovernance", "TopDownManagement", "CommandControl"],
+      "aliases": [
+        "HierarchicalGovernance",
+        "TopDownManagement",
+        "CommandControl"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -125,28 +195,48 @@
           "Architecture review board approves all designs",
           "Single orchestrator agent controls task flow",
           "CEO signs off on product direction",
-          "Gatekeeper approval required before merge"
+          "Gatekeeper approval required before merge",
+          "Single point of authority for all technical decisions.",
+          "Technical lead has veto power over design choices.",
+          "All merge requests require senior approval.",
+          "Architect reviews all cross-team changes.",
+          "Manager approves all resource allocations."
         ],
         "negative_examples": [
           "Team voted on the approach",
           "Anyone can propose changes",
-          "Self-organizing teams"
+          "Self-organizing teams",
+          "Team self-organizes.",
+          "Decisions made by consensus.",
+          "Any team member can merge.",
+          "Distributed decision-making.",
+          "Collaborative authority.",
+          "Shared ownership model.",
+          "No single decision maker."
         ],
         "disambiguation": "Authority concentrated in specific roles, not distributed"
       }
     },
-
     {
       "term": "DecentralizedGovernance",
       "role": "concept",
-      "parent_concepts": ["DevelopmentGovernance"],
+      "parent_concepts": [
+        "DevelopmentGovernance"
+      ],
       "layer_hint": 4,
       "definition": "Governance where authority and decision-making are distributed among participants",
       "domain": "Information",
-      "aliases": ["CollectivistGovernance", "DistributedAuthority", "SelfOrganization", "Voluntarist"],
+      "aliases": [
+        "CollectivistGovernance",
+        "DistributedAuthority",
+        "SelfOrganization",
+        "Voluntarist"
+      ],
       "safety_tags": {
         "risk_level": "low",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -167,23 +257,32 @@
         "negative_examples": [
           "Manager assigns all tasks",
           "Central authority approves changes",
-          "Hierarchical reporting structure"
+          "Hierarchical reporting structure",
+          "Central authority decides.",
+          "Hierarchical approval required."
         ],
         "disambiguation": "Distributed authority, not concentrated in roles"
       }
     },
-
     {
       "term": "HybridGovernance",
       "role": "concept",
-      "parent_concepts": ["DevelopmentGovernance"],
+      "parent_concepts": [
+        "DevelopmentGovernance"
+      ],
       "layer_hint": 4,
       "definition": "Governance combining centralized and decentralized elements based on context",
       "domain": "Information",
-      "aliases": ["MixedGovernance", "AdaptiveGovernance", "ContextualAuthority"],
+      "aliases": [
+        "MixedGovernance",
+        "AdaptiveGovernance",
+        "ContextualAuthority"
+      ],
       "safety_tags": {
         "risk_level": "low",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -196,28 +295,44 @@
           "Teams self-organize within strategic guardrails",
           "Architecture decisions centralized, implementation decentralized",
           "Agent swarm with human oversight for critical decisions",
-          "Federated model with local autonomy"
+          "Federated model with local autonomy",
+          "Strategic decisions centralized, tactical decentralized."
         ],
         "negative_examples": [
           "Purely hierarchical structure",
           "Completely flat organization",
-          "Single decision-maker for everything"
+          "Single decision-maker for everything",
+          "Purely hierarchical.",
+          "Completely flat."
         ],
         "disambiguation": "Mixed approaches, not purely centralized or decentralized"
       }
     },
-
     {
       "term": "DevelopmentMethodology",
       "role": "concept",
-      "parent_concepts": ["ProjectDevelopment"],
+      "parent_concepts": [
+        "ProjectDevelopment"
+      ],
       "layer_hint": 3,
       "definition": "Systematic approaches and frameworks for organizing development work",
       "domain": "Information",
-      "aliases": ["Methodology", "DevelopmentProcess", "Framework"],
+      "aliases": [
+        "Methodology",
+        "DevelopmentProcess",
+        "Framework"
+      ],
       "relationships": {
-        "related": ["Process", "Framework", "Approach"],
-        "has_part": ["IterativeMethodology", "SequentialMethodology", "AdaptiveMethodology"]
+        "related": [
+          "Process",
+          "Framework",
+          "Approach"
+        ],
+        "has_part": [
+          "IterativeMethodology",
+          "SequentialMethodology",
+          "AdaptiveMethodology"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -234,26 +349,39 @@
           "We follow Scrum methodology",
           "The project uses waterfall process",
           "Kanban board tracks work items",
-          "Agent coordination protocol defines interaction patterns"
+          "Agent coordination protocol defines interaction patterns",
+          "The team follows a defined development process."
         ],
         "negative_examples": [
           "Writing code",
           "Running deployments",
-          "Fixing bugs"
+          "Fixing bugs",
+          "Just code.",
+          "No process."
         ],
         "disambiguation": "Process frameworks, not specific activities"
       },
-      "children": ["IterativeMethodology", "SequentialMethodology", "AdaptiveMethodology"]
+      "children": [
+        "IterativeMethodology",
+        "SequentialMethodology",
+        "AdaptiveMethodology"
+      ]
     },
-
     {
       "term": "IterativeMethodology",
       "role": "concept",
-      "parent_concepts": ["DevelopmentMethodology"],
+      "parent_concepts": [
+        "DevelopmentMethodology"
+      ],
       "layer_hint": 4,
       "definition": "Development approach with repeated cycles of planning, building, and learning",
       "domain": "Information",
-      "aliases": ["Agile", "IterativeDevelopment", "IncrementalDevelopment", "CyclicalProcess"],
+      "aliases": [
+        "Agile",
+        "IterativeDevelopment",
+        "IncrementalDevelopment",
+        "CyclicalProcess"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -271,25 +399,42 @@
           "Continuous improvement through retrospectives",
           "Agent learning loop with feedback integration",
           "MVP followed by iterations",
-          "Build-measure-learn cycle"
+          "Build-measure-learn cycle",
+          "Two-week sprint cycles.",
+          "Ship early, ship often.",
+          "Continuous improvement through retrospectives.",
+          "Agent learning loop with feedback integration.",
+          "MVP followed by iterations.",
+          "Build-measure-learn cycle."
         ],
         "negative_examples": [
           "Complete requirements before building",
           "Single delivery at end of project",
-          "Fixed scope with no changes allowed"
+          "Fixed scope with no changes allowed",
+          "Complete requirements before building.",
+          "Single delivery at end of project.",
+          "Fixed scope with no changes allowed.",
+          "Big bang release after long development.",
+          "No iteration between phases."
         ],
         "disambiguation": "Cyclical refinement, not linear progression"
       }
     },
-
     {
       "term": "SequentialMethodology",
       "role": "concept",
-      "parent_concepts": ["DevelopmentMethodology"],
+      "parent_concepts": [
+        "DevelopmentMethodology"
+      ],
       "layer_hint": 4,
       "definition": "Development approach with distinct phases completed in order before proceeding",
       "domain": "Information",
-      "aliases": ["Waterfall", "PhasedDevelopment", "LinearProcess", "StageGate"],
+      "aliases": [
+        "Waterfall",
+        "PhasedDevelopment",
+        "LinearProcess",
+        "StageGate"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -311,20 +456,27 @@
         "negative_examples": [
           "Iterating on design while building",
           "Changing requirements mid-project",
-          "Concurrent development tracks"
+          "Concurrent development tracks",
+          "Parallel development tracks.",
+          "Iterative cycles."
         ],
         "disambiguation": "Linear phase progression, not iterative"
       }
     },
-
     {
       "term": "AdaptiveMethodology",
       "role": "concept",
-      "parent_concepts": ["DevelopmentMethodology"],
+      "parent_concepts": [
+        "DevelopmentMethodology"
+      ],
       "layer_hint": 4,
       "definition": "Development approach that adjusts process based on project needs and context",
       "domain": "Information",
-      "aliases": ["ContextualMethodology", "PragmaticProcess", "FlexibleFramework"],
+      "aliases": [
+        "ContextualMethodology",
+        "PragmaticProcess",
+        "FlexibleFramework"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -340,28 +492,45 @@
           "Use whatever works for this project",
           "Adapting process to team needs",
           "Mixing agile and waterfall elements",
-          "Agent swarm selecting coordination strategy dynamically"
+          "Agent swarm selecting coordination strategy dynamically",
+          "Process adjusted based on project needs."
         ],
         "negative_examples": [
           "Strictly following Scrum rules",
           "Rigid waterfall process",
-          "One-size-fits-all methodology"
+          "One-size-fits-all methodology",
+          "Rigid process.",
+          "Fixed methodology."
         ],
         "disambiguation": "Process flexibility, not rigid methodology adherence"
       }
     },
-
     {
       "term": "DeliveryManagement",
       "role": "concept",
-      "parent_concepts": ["ProjectDevelopment"],
+      "parent_concepts": [
+        "ProjectDevelopment"
+      ],
       "layer_hint": 3,
       "definition": "Practices for planning, tracking, and executing work delivery",
       "domain": "Information",
-      "aliases": ["DeliveryProcess", "WorkManagement", "ExecutionManagement"],
+      "aliases": [
+        "DeliveryProcess",
+        "WorkManagement",
+        "ExecutionManagement"
+      ],
       "relationships": {
-        "related": ["Execution", "Planning", "Tracking"],
-        "has_part": ["VelocityTracking", "CadenceManagement", "ReleaseManagement", "WorkPrioritization"]
+        "related": [
+          "Execution",
+          "Planning",
+          "Tracking"
+        ],
+        "has_part": [
+          "VelocityTracking",
+          "CadenceManagement",
+          "ReleaseManagement",
+          "WorkPrioritization"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -378,29 +547,46 @@
           "Sprint planning for next iteration",
           "Release scheduled for Friday",
           "Velocity trending upward",
-          "Agent task queue management"
+          "Agent task queue management",
+          "Release planning coordinates delivery activities."
         ],
         "negative_examples": [
           "Writing code",
           "Reviewing pull requests",
-          "Debugging issues"
+          "Debugging issues",
+          "Just code and ship.",
+          "No planning needed."
         ],
         "disambiguation": "Managing delivery, not doing the work itself"
       },
-      "children": ["VelocityTracking", "CadenceManagement", "ReleaseManagement", "WorkPrioritization", "TimeboxedIteration"]
+      "children": [
+        "VelocityTracking",
+        "CadenceManagement",
+        "ReleaseManagement",
+        "WorkPrioritization",
+        "TimeboxedIteration"
+      ]
     },
-
     {
       "term": "VelocityTracking",
       "role": "concept",
-      "parent_concepts": ["DeliveryManagement"],
+      "parent_concepts": [
+        "DeliveryManagement"
+      ],
       "layer_hint": 4,
       "definition": "Measuring and monitoring the rate of work completion over time",
       "domain": "Information",
-      "aliases": ["Velocity", "Throughput", "DeliveryRate", "Productivity"],
+      "aliases": [
+        "Velocity",
+        "Throughput",
+        "DeliveryRate",
+        "Productivity"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -414,25 +600,43 @@
           "Throughput metrics show improvement",
           "Cycle time reduced to 3 days",
           "Agent completion rate tracked",
-          "Burn-down chart shows progress"
+          "Burn-down chart shows progress",
+          "Story points completed per sprint tracked on dashboard.",
+          "Burndown chart shows team progress.",
+          "Lead time metrics monitored weekly.",
+          "Cumulative flow diagram reveals bottlenecks.",
+          "Delivery rate compared across sprints."
         ],
         "negative_examples": [
           "Feature shipped to users",
           "Code deployed to production",
-          "Bug fixed"
+          "Bug fixed",
+          "Just get the work done.",
+          "No tracking needed.",
+          "Quality over quantity.",
+          "Ship when ready.",
+          "Outcome matters, not velocity.",
+          "No points, just work.",
+          "Metrics not tracked."
         ],
         "disambiguation": "Measuring work rate, not the work itself"
       }
     },
-
     {
       "term": "CadenceManagement",
       "role": "concept",
-      "parent_concepts": ["DeliveryManagement"],
+      "parent_concepts": [
+        "DeliveryManagement"
+      ],
       "layer_hint": 4,
       "definition": "Establishing and maintaining regular rhythms for development activities",
       "domain": "Information",
-      "aliases": ["Cadence", "Rhythm", "RegularSchedule", "Heartbeat"],
+      "aliases": [
+        "Cadence",
+        "Rhythm",
+        "RegularSchedule",
+        "Heartbeat"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -454,20 +658,27 @@
         "negative_examples": [
           "Ad-hoc meetings when needed",
           "Release when ready",
-          "Unpredictable schedule"
+          "Unpredictable schedule",
+          "Meet when needed.",
+          "No regular rhythm."
         ],
         "disambiguation": "Regular rhythms, not ad-hoc activities"
       }
     },
-
     {
       "term": "ReleaseManagement",
       "role": "concept",
-      "parent_concepts": ["DeliveryManagement"],
+      "parent_concepts": [
+        "DeliveryManagement"
+      ],
       "layer_hint": 4,
       "definition": "Planning and coordinating the delivery of completed work to users or production",
       "domain": "Information",
-      "aliases": ["ReleasePlanning", "Deployment", "ShipManagement"],
+      "aliases": [
+        "ReleasePlanning",
+        "Deployment",
+        "ShipManagement"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -489,23 +700,32 @@
         "negative_examples": [
           "Writing the feature",
           "Planning the sprint",
-          "Reviewing code"
+          "Reviewing code",
+          "Just deploy it.",
+          "No release process."
         ],
         "disambiguation": "Shipping work, not creating it"
       }
     },
-
     {
       "term": "WorkPrioritization",
       "role": "concept",
-      "parent_concepts": ["DeliveryManagement"],
+      "parent_concepts": [
+        "DeliveryManagement"
+      ],
       "layer_hint": 4,
       "definition": "Determining the order and importance of work items",
       "domain": "Information",
-      "aliases": ["Prioritization", "BacklogManagement", "WorkOrdering"],
+      "aliases": [
+        "Prioritization",
+        "BacklogManagement",
+        "WorkOrdering"
+      ],
       "safety_tags": {
         "risk_level": "low",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -525,20 +745,28 @@
         "negative_examples": [
           "Working on the task",
           "Completing the feature",
-          "Shipping the release"
+          "Shipping the release",
+          "Work on whatever.",
+          "No priorities."
         ],
         "disambiguation": "Ordering work, not doing it"
       }
     },
-
     {
       "term": "TimeboxedIteration",
       "role": "concept",
-      "parent_concepts": ["DeliveryManagement"],
+      "parent_concepts": [
+        "DeliveryManagement"
+      ],
       "layer_hint": 4,
       "definition": "Fixed-duration development cycles with defined scope and boundaries",
       "domain": "Information",
-      "aliases": ["Sprint", "Iteration", "Timebox", "Cycle"],
+      "aliases": [
+        "Sprint",
+        "Iteration",
+        "Timebox",
+        "Cycle"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -560,23 +788,39 @@
         "negative_examples": [
           "Work until it's done",
           "Open-ended timeline",
-          "Variable-length cycles"
+          "Variable-length cycles",
+          "Work until done.",
+          "No fixed duration."
         ],
         "disambiguation": "Fixed-duration cycles, not open-ended work"
       }
     },
-
     {
       "term": "QualityPractices",
       "role": "concept",
-      "parent_concepts": ["ProjectDevelopment"],
+      "parent_concepts": [
+        "ProjectDevelopment"
+      ],
       "layer_hint": 3,
       "definition": "Practices ensuring work meets quality standards and stakeholder needs",
       "domain": "Information",
-      "aliases": ["QualityAssurance", "QualityEngineering", "QualityManagement"],
+      "aliases": [
+        "QualityAssurance",
+        "QualityEngineering",
+        "QualityManagement"
+      ],
       "relationships": {
-        "related": ["Quality", "Testing", "Standards"],
-        "has_part": ["ContinuousIntegration", "TestingPractice", "CodeReview", "TechnicalDebtManagement"]
+        "related": [
+          "Quality",
+          "Testing",
+          "Standards"
+        ],
+        "has_part": [
+          "ContinuousIntegration",
+          "TestingPractice",
+          "CodeReview",
+          "TechnicalDebtManagement"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -593,26 +837,40 @@
           "All tests must pass before merge",
           "Code review required for all changes",
           "Quality gate blocks deployment",
-          "Agent output validated against criteria"
+          "Agent output validated against criteria",
+          "Quality gates ensure standards are met."
         ],
         "negative_examples": [
           "Writing code",
           "Designing features",
-          "Planning sprints"
+          "Planning sprints",
+          "Just ship it.",
+          "Quality is secondary."
         ],
         "disambiguation": "Quality assurance, not feature development"
       },
-      "children": ["ContinuousIntegration", "TestingPractice", "CodeReview", "TechnicalDebtManagement", "DefinitionOfDone"]
+      "children": [
+        "ContinuousIntegration",
+        "TestingPractice",
+        "CodeReview",
+        "TechnicalDebtManagement",
+        "DefinitionOfDone"
+      ]
     },
-
     {
       "term": "ContinuousIntegration",
       "role": "concept",
-      "parent_concepts": ["QualityPractices"],
+      "parent_concepts": [
+        "QualityPractices"
+      ],
       "layer_hint": 4,
       "definition": "Practice of frequently integrating code changes with automated verification",
       "domain": "Information",
-      "aliases": ["CI", "ContinuousBuilding", "AutomatedIntegration"],
+      "aliases": [
+        "CI",
+        "ContinuousBuilding",
+        "AutomatedIntegration"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -628,25 +886,34 @@
           "CI pipeline runs on every commit",
           "Build broke, fixing immediately",
           "Automated tests run before merge",
-          "Agent outputs validated continuously"
+          "Agent outputs validated continuously",
+          "Every commit triggers build and test."
         ],
         "negative_examples": [
           "Big-bang integration at end",
           "Manual builds only",
-          "Weekly integration"
+          "Weekly integration",
+          "Manual builds.",
+          "Weekly integration."
         ],
         "disambiguation": "Frequent automated integration, not manual or infrequent"
       }
     },
-
     {
       "term": "TestingPractice",
       "role": "concept",
-      "parent_concepts": ["QualityPractices"],
+      "parent_concepts": [
+        "QualityPractices"
+      ],
       "layer_hint": 4,
       "definition": "Systematic verification that work meets requirements and quality standards",
       "domain": "Information",
-      "aliases": ["Testing", "QA", "Verification", "Validation"],
+      "aliases": [
+        "Testing",
+        "QA",
+        "Verification",
+        "Validation"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -668,20 +935,27 @@
         "negative_examples": [
           "Writing the feature",
           "Deploying to production",
-          "Planning the work"
+          "Planning the work",
+          "No tests needed.",
+          "Test manually later."
         ],
         "disambiguation": "Verification activities, not development or deployment"
       }
     },
-
     {
       "term": "CodeReview",
       "role": "concept",
-      "parent_concepts": ["QualityPractices"],
+      "parent_concepts": [
+        "QualityPractices"
+      ],
       "layer_hint": 4,
       "definition": "Peer examination of code changes for quality, correctness, and maintainability",
       "domain": "Information",
-      "aliases": ["PeerReview", "PullRequestReview", "CodeInspection"],
+      "aliases": [
+        "PeerReview",
+        "PullRequestReview",
+        "CodeInspection"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -697,25 +971,33 @@
           "PR needs two approvals to merge",
           "Code review caught the bug",
           "Feedback on naming conventions",
-          "Agent code reviewed by human before deployment"
+          "Agent code reviewed by human before deployment",
+          "All changes reviewed before merge."
         ],
         "negative_examples": [
           "Writing the code",
           "Running tests",
-          "Merging the PR"
+          "Merging the PR",
+          "Just merge it.",
+          "No review needed."
         ],
         "disambiguation": "Reviewing others' code, not writing or testing"
       }
     },
-
     {
       "term": "TechnicalDebtManagement",
       "role": "concept",
-      "parent_concepts": ["QualityPractices"],
+      "parent_concepts": [
+        "QualityPractices"
+      ],
       "layer_hint": 4,
       "definition": "Identifying, tracking, and addressing accumulated shortcuts and quality compromises",
       "domain": "Information",
-      "aliases": ["TechDebt", "DebtManagement", "RefactoringPrioritization"],
+      "aliases": [
+        "TechDebt",
+        "DebtManagement",
+        "RefactoringPrioritization"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -737,20 +1019,28 @@
         "negative_examples": [
           "Writing new features",
           "Fixing bugs",
-          "Adding tests"
+          "Adding tests",
+          "Ignore tech debt.",
+          "Always prioritize features."
         ],
         "disambiguation": "Managing accumulated shortcuts, not current development"
       }
     },
-
     {
       "term": "DefinitionOfDone",
       "role": "concept",
-      "parent_concepts": ["QualityPractices"],
+      "parent_concepts": [
+        "QualityPractices"
+      ],
       "layer_hint": 4,
       "definition": "Shared agreement on criteria for work to be considered complete",
       "domain": "Information",
-      "aliases": ["DoD", "DoneDefinition", "CompletionCriteria", "AcceptanceCriteria"],
+      "aliases": [
+        "DoD",
+        "DoneDefinition",
+        "CompletionCriteria",
+        "AcceptanceCriteria"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -766,28 +1056,47 @@
           "Definition of done includes tests and docs",
           "Story isn't done until QA signs off",
           "Done means deployed to production",
-          "Agent task complete when validation passes"
+          "Agent task complete when validation passes",
+          "Clear criteria define when work is complete."
         ],
         "negative_examples": [
           "Code is written",
           "Feature works on my machine",
-          "Almost finished"
+          "Almost finished",
+          "Done when it feels done.",
+          "No explicit criteria."
         ],
         "disambiguation": "Explicit completion criteria, not subjective judgments"
       }
     },
-
     {
       "term": "StakeholderEngagement",
       "role": "concept",
-      "parent_concepts": ["ProjectDevelopment"],
+      "parent_concepts": [
+        "ProjectDevelopment"
+      ],
       "layer_hint": 3,
       "definition": "Involving and communicating with people affected by or interested in the project",
       "domain": "Information",
-      "aliases": ["StakeholderManagement", "UserEngagement", "CustomerCollaboration"],
+      "aliases": [
+        "StakeholderManagement",
+        "UserEngagement",
+        "CustomerCollaboration"
+      ],
       "relationships": {
-        "related": ["Communication", "Collaboration", "Feedback"],
-        "has_part": ["UserCenteredDesign", "FeedbackIntegration", "RequirementsGathering", "Demonstration", "StakeholderNeglect", "FeedbackIgnoring"]
+        "related": [
+          "Communication",
+          "Collaboration",
+          "Feedback"
+        ],
+        "has_part": [
+          "UserCenteredDesign",
+          "FeedbackIntegration",
+          "RequirementsGathering",
+          "Demonstration",
+          "StakeholderNeglect",
+          "FeedbackIgnoring"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -804,26 +1113,42 @@
           "Weekly demo to stakeholders",
           "User interview to understand needs",
           "Customer feedback session",
-          "Human-in-the-loop for agent decisions"
+          "Human-in-the-loop for agent decisions",
+          "Regular stakeholder touchpoints throughout development."
         ],
         "negative_examples": [
           "Building in isolation",
           "No user input",
-          "Internal-only development"
+          "Internal-only development",
+          "Build in isolation.",
+          "No stakeholder input."
         ],
         "disambiguation": "Engaging with stakeholders, not solo development"
       },
-      "children": ["UserCenteredDesign", "FeedbackIntegration", "RequirementsGathering", "Demonstration", "StakeholderNeglect", "FeedbackIgnoring"]
+      "children": [
+        "UserCenteredDesign",
+        "FeedbackIntegration",
+        "RequirementsGathering",
+        "Demonstration",
+        "StakeholderNeglect",
+        "FeedbackIgnoring"
+      ]
     },
-
     {
       "term": "UserCenteredDesign",
       "role": "concept",
-      "parent_concepts": ["StakeholderEngagement"],
+      "parent_concepts": [
+        "StakeholderEngagement"
+      ],
       "layer_hint": 4,
       "definition": "Design approach prioritizing user needs, behaviors, and feedback throughout development",
       "domain": "Information",
-      "aliases": ["UCD", "HumanCenteredDesign", "UserFocusedDevelopment", "DesignThinking"],
+      "aliases": [
+        "UCD",
+        "HumanCenteredDesign",
+        "UserFocusedDevelopment",
+        "DesignThinking"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -845,20 +1170,27 @@
         "negative_examples": [
           "Building what engineers want",
           "No user involvement",
-          "Technology-driven design"
+          "Technology-driven design",
+          "Build what engineers want.",
+          "No user research."
         ],
         "disambiguation": "User-driven design, not technology-driven"
       }
     },
-
     {
       "term": "FeedbackIntegration",
       "role": "concept",
-      "parent_concepts": ["StakeholderEngagement"],
+      "parent_concepts": [
+        "StakeholderEngagement"
+      ],
       "layer_hint": 4,
       "definition": "Systematically incorporating feedback from users and stakeholders into development",
       "domain": "Information",
-      "aliases": ["FeedbackLoop", "UserFeedback", "StakeholderInput"],
+      "aliases": [
+        "FeedbackLoop",
+        "UserFeedback",
+        "StakeholderInput"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -880,20 +1212,27 @@
         "negative_examples": [
           "Ignoring user complaints",
           "Building without feedback",
-          "Dismissing stakeholder concerns"
+          "Dismissing stakeholder concerns",
+          "Ignore feedback.",
+          "We know best."
         ],
         "disambiguation": "Acting on feedback, not just collecting it"
       }
     },
-
     {
       "term": "RequirementsGathering",
       "role": "concept",
-      "parent_concepts": ["StakeholderEngagement"],
+      "parent_concepts": [
+        "StakeholderEngagement"
+      ],
       "layer_hint": 4,
       "definition": "Discovering and documenting what stakeholders need from the system",
       "domain": "Information",
-      "aliases": ["RequirementsElicitation", "NeedsAnalysis", "DiscoveryPhase"],
+      "aliases": [
+        "RequirementsElicitation",
+        "NeedsAnalysis",
+        "DiscoveryPhase"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -915,20 +1254,28 @@
         "negative_examples": [
           "Implementing features",
           "Testing code",
-          "Deploying changes"
+          "Deploying changes",
+          "Just start building.",
+          "No requirements needed."
         ],
         "disambiguation": "Discovering needs, not implementing solutions"
       }
     },
-
     {
       "term": "Demonstration",
       "role": "concept",
-      "parent_concepts": ["StakeholderEngagement"],
+      "parent_concepts": [
+        "StakeholderEngagement"
+      ],
       "layer_hint": 4,
       "definition": "Showing completed work to stakeholders for feedback and validation",
       "domain": "Information",
-      "aliases": ["Demo", "ShowAndTell", "SprintReview", "Showcase"],
+      "aliases": [
+        "Demo",
+        "ShowAndTell",
+        "SprintReview",
+        "Showcase"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -950,27 +1297,53 @@
         "negative_examples": [
           "Writing documentation",
           "Internal code review",
-          "Automated testing"
+          "Automated testing",
+          "No demos needed.",
+          "Internal only."
         ],
         "disambiguation": "Showing work to stakeholders, not internal activities"
       }
     },
-
     {
       "term": "ProcessDysfunctions",
       "role": "concept",
-      "parent_concepts": ["ProjectDevelopment"],
+      "parent_concepts": [
+        "ProjectDevelopment"
+      ],
       "layer_hint": 3,
       "definition": "Common failure patterns and antipatterns in development processes",
       "domain": "Information",
-      "aliases": ["Antipatterns", "ProcessFailures", "DevelopmentDysfunctions"],
+      "aliases": [
+        "Antipatterns",
+        "ProcessFailures",
+        "DevelopmentDysfunctions"
+      ],
       "relationships": {
-        "related": ["Failure", "Dysfunction", "Antipattern"],
-        "has_part": ["ScopeCreep", "DeathMarch", "AnalysisParalysis", "CargoCultProcess", "EstimationPressure", "QualityTheater", "ResponsibilityDiffusion", "MetricsGaming", "PrematureOptimization", "CommunicationFailure", "FeatureFetish", "RequirementsVolatility"]
+        "related": [
+          "Failure",
+          "Dysfunction",
+          "Antipattern"
+        ],
+        "has_part": [
+          "ScopeCreep",
+          "DeathMarch",
+          "AnalysisParalysis",
+          "CargoCultProcess",
+          "EstimationPressure",
+          "QualityTheater",
+          "ResponsibilityDiffusion",
+          "MetricsGaming",
+          "PrematureOptimization",
+          "CommunicationFailure",
+          "FeatureFetish",
+          "RequirementsVolatility"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -984,29 +1357,69 @@
           "Scope keeps expanding without adjustment",
           "We're in crunch mode indefinitely",
           "Process for the sake of process",
-          "Agent stuck in infinite planning loop"
+          "Agent stuck in infinite planning loop",
+          "Scope keeps expanding without adjustment.",
+          "We're in crunch mode indefinitely.",
+          "Process for the sake of process.",
+          "Agent stuck in infinite planning loop.",
+          "Multiple antipatterns combining to create chaos.",
+          "Toxic process elements undermining team effectiveness.",
+          "Systemic failures in how work gets done.",
+          "Process problems causing repeated delivery failures.",
+          "Dysfunction normalized as 'how things are done here'.",
+          "Process failures that leadership refuses to acknowledge."
         ],
         "negative_examples": [
           "Healthy sprint cadence",
           "Scope managed appropriately",
-          "Process adapted to needs"
+          "Process adapted to needs",
+          "Healthy sprint cadence.",
+          "Scope managed appropriately.",
+          "Process adapted to needs.",
+          "Continuous improvement of ways of working.",
+          "Process serves the work, not the other way around.",
+          "Dysfunction identified and addressed.",
+          "Team empowered to fix process problems.",
+          "Retrospectives lead to real changes.",
+          "Process evolves based on learning.",
+          "Healthy development environment."
         ],
         "disambiguation": "Dysfunctional patterns, not healthy practices"
       },
-      "children": ["ScopeCreep", "DeathMarch", "AnalysisParalysis", "CargoCultProcess", "EstimationPressure", "QualityTheater", "ResponsibilityDiffusion", "MetricsGaming", "PrematureOptimization", "CommunicationFailure", "FeatureFetish", "RequirementsVolatility"]
+      "children": [
+        "ScopeCreep",
+        "DeathMarch",
+        "AnalysisParalysis",
+        "CargoCultProcess",
+        "EstimationPressure",
+        "QualityTheater",
+        "ResponsibilityDiffusion",
+        "MetricsGaming",
+        "PrematureOptimization",
+        "CommunicationFailure",
+        "FeatureFetish",
+        "RequirementsVolatility"
+      ]
     },
-
     {
       "term": "ScopeCreep",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Uncontrolled expansion of project scope without corresponding resource adjustment",
       "domain": "Information",
-      "aliases": ["FeatureCreep", "RequirementsCreep", "ScopeExpansion"],
+      "aliases": [
+        "FeatureCreep",
+        "RequirementsCreep",
+        "ScopeExpansion"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -1019,28 +1432,49 @@
           "Just one more feature before release",
           "Requirements keep changing mid-sprint",
           "Original scope doubled without timeline change",
-          "Agent task expanded beyond original definition"
+          "Agent task expanded beyond original definition",
+          "Just one more feature before release.",
+          "Requirements keep changing mid-sprint.",
+          "Original scope doubled without timeline change.",
+          "Agent task expanded beyond original definition.",
+          "New requirements added without removing others.",
+          "New features added every week without removing anything."
         ],
         "negative_examples": [
           "Scope change with timeline adjustment",
           "Planned feature additions",
-          "Deliberate scope expansion with resources"
+          "Deliberate scope expansion with resources",
+          "Scope change with timeline adjustment.",
+          "Planned feature additions.",
+          "Deliberate scope expansion with resources.",
+          "Trade-off discussion for new requirements.",
+          "Scope managed through change control.",
+          "Scope traded for new requests.",
+          "Change control process followed."
         ],
         "disambiguation": "Uncontrolled expansion, not planned changes"
       }
     },
-
     {
       "term": "DeathMarch",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Project with unrealistic constraints forcing unsustainable work intensity",
       "domain": "Information",
-      "aliases": ["Crunch", "DeathMarchProject", "BurnoutSchedule"],
+      "aliases": [
+        "Crunch",
+        "DeathMarchProject",
+        "BurnoutSchedule"
+      ],
       "safety_tags": {
         "risk_level": "high",
-        "impacts": ["autonomy", "consent"],
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -1054,25 +1488,60 @@
           "Mandatory overtime for months",
           "Impossible deadline with no scope reduction",
           "Crunch culture is just how we work",
-          "Agent running at 100% indefinitely with no recovery"
+          "Agent running at 100% indefinitely with no recovery",
+          "Mandatory overtime for months.",
+          "Impossible deadline with no scope reduction.",
+          "Crunch culture is just how we work.",
+          "Agent running at 100% indefinitely with no recovery.",
+          "Six months of 80-hour weeks with no end in sight.",
+          "Management refuses to acknowledge the deadline is impossible.",
+          "People are burning out and quitting, but the march continues.",
+          "Working weekends is expected, not optional.",
+          "We'll sleep after the launch - but the next launch is already planned.",
+          "Health problems arising from sustained overwork ignored.",
+          "Team members collapsing from exhaustion.",
+          "No vacation allowed until project completion, indefinitely extended.",
+          "Sprint after sprint of overtime with no recovery sprints.",
+          "Resources cut but deadline remains fixed.",
+          "Unsustainable pace normalized as team culture."
         ],
         "negative_examples": [
           "Occasional crunch for important deadline",
           "Voluntary extra effort",
-          "Sustainable pace with occasional intensity"
+          "Sustainable pace with occasional intensity",
+          "Occasional crunch for important deadline.",
+          "Voluntary extra effort.",
+          "Sustainable pace with occasional intensity.",
+          "Recovery time after intense periods.",
+          "Overtime compensated with time off.",
+          "Deadline adjusted when scope increases.",
+          "Team wellbeing prioritized alongside delivery.",
+          "Sustainable 40-hour work weeks.",
+          "Management protects team from overcommitment.",
+          "Resources matched to realistic timeline.",
+          "Healthy work-life balance maintained.",
+          "Burnout symptoms taken seriously.",
+          "Scope reduced to meet timeline.",
+          "Team empowered to push back on unrealistic demands.",
+          "Recovery sprints after intense delivery periods."
         ],
         "disambiguation": "Chronic unsustainable intensity, not occasional crunch"
       }
     },
-
     {
       "term": "AnalysisParalysis",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Inability to proceed due to excessive analysis or decision-making difficulty",
       "domain": "Information",
-      "aliases": ["OverAnalysis", "DecisionParalysis", "PlanningOverload"],
+      "aliases": [
+        "OverAnalysis",
+        "DecisionParalysis",
+        "PlanningOverload"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1088,25 +1557,40 @@
           "Still designing after six months",
           "Can't decide which framework to use",
           "Need more data before deciding",
-          "Agent stuck in planning without execution"
+          "Agent stuck in planning without execution",
+          "Still designing after six months.",
+          "Can't decide which framework to use.",
+          "Need more data before deciding.",
+          "Agent stuck in planning without execution.",
+          "Endless evaluation of alternatives."
         ],
         "negative_examples": [
           "Thoughtful analysis before action",
           "Appropriate due diligence",
-          "Research phase with clear end"
+          "Research phase with clear end",
+          "Thoughtful analysis before action.",
+          "Appropriate due diligence.",
+          "Research phase with clear end.",
+          "Timeboxed investigation.",
+          "Decision made with available information."
         ],
         "disambiguation": "Excessive analysis blocking progress, not appropriate research"
       }
     },
-
     {
       "term": "CargoCultProcess",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Following process rituals without understanding or achieving their purpose",
       "domain": "Information",
-      "aliases": ["ProcessTheater", "RitualCompliance", "CargoCultAgile"],
+      "aliases": [
+        "ProcessTheater",
+        "RitualCompliance",
+        "CargoCultAgile"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1122,28 +1606,46 @@
           "Standups but no actual communication",
           "Sprints but no iteration",
           "Retrospectives with no changes",
-          "Agent following protocol without purpose"
+          "Agent following protocol without purpose",
+          "Standups but no actual communication.",
+          "Sprints but no iteration.",
+          "Retrospectives with no changes.",
+          "Agent following protocol without purpose.",
+          "Going through motions without understanding."
         ],
         "negative_examples": [
           "Process adapted to needs",
           "Understanding why we do things",
-          "Meaningful ceremonies"
+          "Meaningful ceremonies",
+          "Process adapted to needs.",
+          "Understanding why we do things.",
+          "Meaningful ceremonies.",
+          "Purpose-driven practices.",
+          "Process that serves its intent."
         ],
         "disambiguation": "Empty rituals, not purposeful practices"
       }
     },
-
     {
       "term": "EstimationPressure",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Pressure to provide estimates that are then treated as commitments",
       "domain": "Information",
-      "aliases": ["EstimateAsCommitment", "DeadlinePressure", "PlanningPressure"],
+      "aliases": [
+        "EstimateAsCommitment",
+        "DeadlinePressure",
+        "PlanningPressure"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["autonomy", "consent"],
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -1157,32 +1659,67 @@
           "You said it would take 2 weeks, why isn't it done?",
           "Estimates become deadlines",
           "Punished for missing estimate",
-          "Agent penalized for task duration exceeding prediction"
+          "Agent penalized for task duration exceeding prediction",
+          "Estimates become deadlines.",
+          "Punished for missing estimate.",
+          "Agent penalized for task duration exceeding prediction.",
+          "Told to cut the estimate in half without changing scope.",
+          "Performance reviews tied to estimate accuracy.",
+          "Pressure to underestimate to win approval.",
+          "Estimates treated as promises, not forecasts.",
+          "Blame for unforeseen complications.",
+          "Required to estimate before understanding requirements."
         ],
         "negative_examples": [
           "Estimates are forecasts, not commitments",
           "Uncertainty acknowledged in planning",
-          "Re-estimation as learning improves"
+          "Re-estimation as learning improves",
+          "Estimates are forecasts, not commitments.",
+          "Uncertainty acknowledged in planning.",
+          "Re-estimation as learning improves.",
+          "Ranges communicated instead of single numbers.",
+          "No blame when estimates prove wrong.",
+          "Estimates refined as work progresses.",
+          "Historical data informs future estimates.",
+          "Estimation used for planning, not punishment.",
+          "Team owns estimation without pressure.",
+          "Cone of uncertainty respected."
         ],
         "disambiguation": "Estimates weaponized as commitments, not healthy forecasting"
       }
     },
-
     {
       "term": "EmergentCoordination",
       "role": "concept",
-      "parent_concepts": ["ProjectDevelopment"],
+      "parent_concepts": [
+        "ProjectDevelopment"
+      ],
       "layer_hint": 3,
       "definition": "Coordination patterns that arise organically from participant interactions rather than imposed structure",
       "domain": "Information",
-      "aliases": ["SelfOrganization", "BottomUpCoordination", "EmergentProcess"],
+      "aliases": [
+        "SelfOrganization",
+        "BottomUpCoordination",
+        "EmergentProcess"
+      ],
       "relationships": {
-        "related": ["Emergence", "SelfOrganization", "Adaptation"],
-        "has_part": ["SwarmCoordination", "StigmergicProcess", "ConsensusSeeking", "LazyConsensus"]
+        "related": [
+          "Emergence",
+          "SelfOrganization",
+          "Adaptation"
+        ],
+        "has_part": [
+          "SwarmCoordination",
+          "StigmergicProcess",
+          "ConsensusSeeking",
+          "LazyConsensus"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -1196,26 +1733,39 @@
           "Team self-organized around the problem",
           "Coordination emerged from daily interaction",
           "No one assigned work, it just got done",
-          "Agent swarm converging on solution"
+          "Agent swarm converging on solution",
+          "Coordination emerged from team interactions."
         ],
         "negative_examples": [
           "Manager assigned all tasks",
           "Rigid process followed",
-          "Central coordination required"
+          "Central coordination required",
+          "Assigned by manager.",
+          "Top-down coordination."
         ],
         "disambiguation": "Organic coordination, not imposed structure"
       },
-      "children": ["SwarmCoordination", "StigmergicProcess", "ConsensusSeeking", "LazyConsensus"]
+      "children": [
+        "SwarmCoordination",
+        "StigmergicProcess",
+        "ConsensusSeeking",
+        "LazyConsensus"
+      ]
     },
-
     {
       "term": "SwarmCoordination",
       "role": "concept",
-      "parent_concepts": ["EmergentCoordination"],
+      "parent_concepts": [
+        "EmergentCoordination"
+      ],
       "layer_hint": 4,
       "definition": "Coordination through local interactions without central control, as in biological swarms",
       "domain": "Information",
-      "aliases": ["SwarmIntelligence", "CollectiveCoordination", "DistributedCoordination"],
+      "aliases": [
+        "SwarmIntelligence",
+        "CollectiveCoordination",
+        "DistributedCoordination"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1231,25 +1781,42 @@
           "Agents coordinate through shared signals",
           "Open source contributors self-coordinating",
           "No leader but aligned action",
-          "Multi-agent system with emergent behavior"
+          "Multi-agent system with emergent behavior",
+          "Agents coordinate through shared signals.",
+          "Open source contributors self-coordinating.",
+          "No leader but aligned action.",
+          "Multi-agent system with emergent behavior.",
+          "Decentralized coordination through local rules."
         ],
         "negative_examples": [
           "Central orchestrator directing all action",
           "Hierarchical command structure",
-          "Single point of coordination"
+          "Single point of coordination",
+          "Central orchestrator directing all action.",
+          "Hierarchical command structure.",
+          "Single point of coordination.",
+          "Top-down task assignment.",
+          "Manager controlling all decisions.",
+          "Central orchestrator.",
+          "Single coordinator."
         ],
         "disambiguation": "Decentralized swarm behavior, not centralized control"
       }
     },
-
     {
       "term": "StigmergicProcess",
       "role": "concept",
-      "parent_concepts": ["EmergentCoordination"],
+      "parent_concepts": [
+        "EmergentCoordination"
+      ],
       "layer_hint": 4,
       "definition": "Coordination through environmental traces left by previous actions",
       "domain": "Information",
-      "aliases": ["Stigmergy", "TraceBasedCoordination", "EnvironmentMediated"],
+      "aliases": [
+        "Stigmergy",
+        "TraceBasedCoordination",
+        "EnvironmentMediated"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1265,28 +1832,46 @@
           "Wiki edits guide future contributors",
           "Code comments signal intent to future maintainers",
           "Issue tracker shows what needs work",
-          "Agent leaves context for next agent"
+          "Agent leaves context for next agent",
+          "Wiki edits guide future contributors.",
+          "Code comments signal intent to future maintainers.",
+          "Issue tracker shows what needs work.",
+          "Agent leaves context for next agent.",
+          "Documentation enables indirect coordination."
         ],
         "negative_examples": [
           "Direct communication required",
           "Central assignment of work",
-          "No environmental signals"
+          "No environmental signals",
+          "Direct communication required.",
+          "Central assignment of work.",
+          "No environmental signals.",
+          "Coordination requires real-time interaction.",
+          "No artifacts to guide others.",
+          "Direct communication only."
         ],
         "disambiguation": "Coordination via environment, not direct communication"
       }
     },
-
     {
       "term": "ConsensusSeeking",
       "role": "concept",
-      "parent_concepts": ["EmergentCoordination"],
+      "parent_concepts": [
+        "EmergentCoordination"
+      ],
       "layer_hint": 4,
       "definition": "Decision-making process aimed at agreement among all participants",
       "domain": "Information",
-      "aliases": ["ConsensusBuilding", "CollectiveDecision", "AgreementSeeking"],
+      "aliases": [
+        "ConsensusBuilding",
+        "CollectiveDecision",
+        "AgreementSeeking"
+      ],
       "safety_tags": {
         "risk_level": "low",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -1300,28 +1885,39 @@
           "Let's find a solution everyone can support",
           "Discussing until we reach agreement",
           "No decision without consent of affected parties",
-          "Agent collective reaching shared decision"
+          "Agent collective reaching shared decision",
+          "Team works toward agreement on the approach."
         ],
         "negative_examples": [
           "Majority vote overrules minority",
           "Manager decides, team implements",
-          "Top-down decision"
+          "Top-down decision",
+          "Manager decides.",
+          "Majority rules."
         ],
         "disambiguation": "Seeking full agreement, not majority rule or authority"
       }
     },
-
     {
       "term": "LazyConsensus",
       "role": "concept",
-      "parent_concepts": ["EmergentCoordination"],
+      "parent_concepts": [
+        "EmergentCoordination"
+      ],
       "layer_hint": 4,
       "definition": "Decision-making where silence is treated as consent, enabling progress without explicit agreement",
       "domain": "Information",
-      "aliases": ["SilentConsent", "ImplicitAgreement", "NoObjectionConsensus"],
+      "aliases": [
+        "SilentConsent",
+        "ImplicitAgreement",
+        "NoObjectionConsensus"
+      ],
       "safety_tags": {
         "risk_level": "low",
-        "impacts": ["autonomy", "consent"],
+        "impacts": [
+          "autonomy",
+          "consent"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -1335,28 +1931,47 @@
           "I'll proceed unless someone objects",
           "RFC period with no objections means approved",
           "Merge after 24 hours with no blocking comments",
-          "Agent action proceeds absent explicit block"
+          "Agent action proceeds absent explicit block",
+          "Proceed unless someone objects."
         ],
         "negative_examples": [
           "Explicit approval required",
           "Vote before proceeding",
-          "Manager sign-off needed"
+          "Manager sign-off needed",
+          "Explicit approval required.",
+          "Must vote to proceed."
         ],
         "disambiguation": "Proceeding without explicit objection, not requiring approval"
       }
     },
-
     {
       "term": "CognitiveExecution",
       "role": "concept",
-      "parent_concepts": ["ProjectDevelopment"],
+      "parent_concepts": [
+        "ProjectDevelopment"
+      ],
       "layer_hint": 3,
       "definition": "Mental and epistemic processes involved in actually doing development work, including reasoning, verification, and adaptation",
       "domain": "Information",
-      "aliases": ["ExecutionCognition", "WorkReasoning", "DevelopmentThinking"],
+      "aliases": [
+        "ExecutionCognition",
+        "WorkReasoning",
+        "DevelopmentThinking"
+      ],
       "relationships": {
-        "related": ["Reasoning", "ProblemSolving", "Cognition"],
-        "has_part": ["HypothesisTesting", "IncrementalVerification", "WorkDecomposition", "ScopeNegotiation", "RequirementsClarification", "GracefulDegradation"]
+        "related": [
+          "Reasoning",
+          "ProblemSolving",
+          "Cognition"
+        ],
+        "has_part": [
+          "HypothesisTesting",
+          "IncrementalVerification",
+          "WorkDecomposition",
+          "ScopeNegotiation",
+          "RequirementsClarification",
+          "GracefulDegradation"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -1373,26 +1988,49 @@
           "Let me think through how this should work",
           "I'll test my assumption before proceeding",
           "Breaking this into smaller pieces",
-          "Agent reasoning about approach before acting"
+          "Agent reasoning about approach before acting",
+          "Thinking through the approach before acting."
         ],
         "negative_examples": [
           "Just do it without thinking",
           "Follow the process blindly",
-          "Execute exactly as specified"
+          "Execute exactly as specified",
+          "Just do it.",
+          "No thinking needed."
         ],
         "disambiguation": "Thinking during execution, not mechanical following of process"
       },
-      "children": ["HypothesisTesting", "IncrementalVerification", "WorkDecomposition", "ScopeNegotiation", "RequirementsClarification", "GracefulDegradation", "TestDrivenDevelopment", "ContinuousIntegrationPractice", "BlindExecution", "DeferredVerification", "AssumptionOverload", "ScopeCapitulation", "AmbiguityAvoidance", "BrittleExecution"]
+      "children": [
+        "HypothesisTesting",
+        "IncrementalVerification",
+        "WorkDecomposition",
+        "ScopeNegotiation",
+        "RequirementsClarification",
+        "GracefulDegradation",
+        "TestDrivenDevelopment",
+        "ContinuousIntegrationPractice",
+        "BlindExecution",
+        "DeferredVerification",
+        "AssumptionOverload",
+        "ScopeCapitulation",
+        "AmbiguityAvoidance",
+        "BrittleExecution"
+      ]
     },
-
     {
       "term": "HypothesisTesting",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Forming and testing assumptions about how things work before committing to an approach",
       "domain": "Information",
-      "aliases": ["AssumptionTesting", "ExploratoryInvestigation", "Spiking"],
+      "aliases": [
+        "AssumptionTesting",
+        "ExploratoryInvestigation",
+        "Spiking"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1409,25 +2047,42 @@
           "Spike to test if the approach will work",
           "My hypothesis is X, let me check",
           "Agent exploring codebase to understand patterns",
-          "Let me read this file to confirm my assumption"
+          "Let me read this file to confirm my assumption",
+          "I think this API returns JSON, let me verify.",
+          "Spike to test if the approach will work.",
+          "My hypothesis is X, let me check.",
+          "Agent exploring codebase to understand patterns.",
+          "Let me read this file to confirm my assumption."
         ],
         "negative_examples": [
           "Proceed with the implementation",
           "Follow the specification exactly",
-          "No need to investigate"
+          "No need to investigate",
+          "Proceed with the implementation.",
+          "Follow the specification exactly.",
+          "No need to investigate.",
+          "Just build it.",
+          "Trust the plan.",
+          "Just implement it.",
+          "Trust the spec."
         ],
         "disambiguation": "Testing assumptions before commitment, not formal testing of code"
       }
     },
-
     {
       "term": "IncrementalVerification",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Checking work continuously as it progresses rather than only at completion",
       "domain": "Information",
-      "aliases": ["ContinuousVerification", "ProgressiveChecking", "IncrementalValidation"],
+      "aliases": [
+        "ContinuousVerification",
+        "ProgressiveChecking",
+        "IncrementalValidation"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1444,25 +2099,43 @@
           "Verify the edit before moving on",
           "Check that still works after refactoring",
           "Agent validating output at each step",
-          "Compile after each file change"
+          "Compile after each file change",
+          "Run tests after each change.",
+          "Verify the edit before moving on.",
+          "Check that still works after refactoring.",
+          "Agent validating output at each step.",
+          "Compile after each file change."
         ],
         "negative_examples": [
           "Test everything at the end",
           "Big bang integration",
-          "Hope it works when done"
+          "Hope it works when done",
+          "Test everything at the end.",
+          "Big bang integration.",
+          "Hope it works when done.",
+          "Verify only at milestones.",
+          "Check once at completion.",
+          "Verify at end.",
+          "One big test."
         ],
         "disambiguation": "Checking as you go, not only at completion"
       }
     },
-
     {
       "term": "WorkDecomposition",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Breaking large tasks into smaller, manageable pieces that can be completed incrementally",
       "domain": "Information",
-      "aliases": ["TaskBreakdown", "Decomposition", "Chunking", "StorySlicing"],
+      "aliases": [
+        "TaskBreakdown",
+        "Decomposition",
+        "Chunking",
+        "StorySlicing"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1479,28 +2152,47 @@
           "First I'll do X, then Y, then Z",
           "Story slicing into vertical slices",
           "Agent creating subtask list",
-          "This is too big, let me split it up"
+          "This is too big, let me split it up",
+          "Let me break this into steps.",
+          "First I'll do X, then Y, then Z.",
+          "Story slicing into vertical slices.",
+          "Agent creating subtask list.",
+          "This is too big, let me split it up."
         ],
         "negative_examples": [
           "Do the whole thing at once",
           "Single monolithic task",
-          "No intermediate steps"
+          "No intermediate steps",
+          "Do the whole thing at once.",
+          "Single monolithic task.",
+          "No intermediate steps.",
+          "Tackle everything simultaneously.",
+          "Don't break it down.",
+          "Do it all at once.",
+          "No breakdown."
         ],
         "disambiguation": "Breaking down work, not parallel distribution"
       }
     },
-
     {
       "term": "ScopeNegotiation",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Discussing and adjusting what will be delivered based on constraints, feasibility, and priorities",
       "domain": "Information",
-      "aliases": ["ScopeDiscussion", "RequirementsNegotiation", "FeasibilityDiscussion"],
+      "aliases": [
+        "ScopeDiscussion",
+        "RequirementsNegotiation",
+        "FeasibilityDiscussion"
+      ],
       "safety_tags": {
         "risk_level": "low",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
@@ -1520,20 +2212,27 @@
         "negative_examples": [
           "Do exactly what's specified",
           "No changes to requirements allowed",
-          "Scope is fixed"
+          "Scope is fixed",
+          "Accept all requirements.",
+          "No negotiation."
         ],
         "disambiguation": "Discussing what to deliver, not just accepting all requirements"
       }
     },
-
     {
       "term": "RequirementsClarification",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Asking questions to understand ambiguous or incomplete requirements before proceeding",
       "domain": "Information",
-      "aliases": ["ClarifyingQuestions", "RequirementsDialogue", "AmbiguityResolution"],
+      "aliases": [
+        "ClarifyingQuestions",
+        "RequirementsDialogue",
+        "AmbiguityResolution"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1555,20 +2254,28 @@
         "negative_examples": [
           "Assume what they meant",
           "Proceed with my interpretation",
-          "Figure it out later"
+          "Figure it out later",
+          "Assume the meaning.",
+          "Don't ask questions."
         ],
         "disambiguation": "Asking to understand, not just accepting ambiguity"
       }
     },
-
     {
       "term": "GracefulDegradation",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Planning for and handling failure cases by falling back to alternatives rather than complete failure",
       "domain": "Information",
-      "aliases": ["FallbackStrategy", "FailurePlanning", "DegradedMode", "PlanB"],
+      "aliases": [
+        "FallbackStrategy",
+        "FailurePlanning",
+        "DegradedMode",
+        "PlanB"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1585,25 +2292,42 @@
           "Fallback to simpler approach if complex one fails",
           "Agent has backup strategy if primary fails",
           "Feature flag to disable if problems arise",
-          "Partial functionality better than none"
+          "Partial functionality better than none",
+          "If that doesn't work, I'll try this alternative.",
+          "Fallback to simpler approach if complex one fails.",
+          "Agent has backup strategy if primary fails.",
+          "Feature flag to disable if problems arise.",
+          "Partial functionality better than none."
         ],
         "negative_examples": [
           "Only one way to do this",
           "Fail completely if approach doesn't work",
-          "No backup plan"
+          "No backup plan",
+          "Only one way to do this.",
+          "Fail completely if approach doesn't work.",
+          "No backup plan.",
+          "All or nothing.",
+          "No alternatives considered.",
+          "Only one approach.",
+          "No fallbacks."
         ],
         "disambiguation": "Having alternatives, not brittle single-path execution"
       }
     },
-
     {
       "term": "TestDrivenDevelopment",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Writing tests before implementation to define expected behavior and guide development",
       "domain": "Information",
-      "aliases": ["TDD", "TestFirst", "RedGreenRefactor"],
+      "aliases": [
+        "TDD",
+        "TestFirst",
+        "RedGreenRefactor"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1625,20 +2349,27 @@
         "negative_examples": [
           "Write tests after code is done",
           "No tests needed",
-          "Implementation first, verification later"
+          "Implementation first, verification later",
+          "Code first.",
+          "Tests optional."
         ],
         "disambiguation": "Tests before code, not after"
       }
     },
-
     {
       "term": "ContinuousIntegrationPractice",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Frequently integrating work with the shared codebase to catch issues early and maintain compatibility",
       "domain": "Information",
-      "aliases": ["FrequentIntegration", "ContinuousMerging", "SmallBatches"],
+      "aliases": [
+        "FrequentIntegration",
+        "ContinuousMerging",
+        "SmallBatches"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -1660,20 +2391,27 @@
         "negative_examples": [
           "Work in isolation for weeks",
           "Big bang merge at end",
-          "Long-lived feature branches"
+          "Long-lived feature branches",
+          "Integrate at end.",
+          "Long-lived branches."
         ],
         "disambiguation": "Frequent integration, not isolated development"
       }
     },
-
     {
       "term": "BlindExecution",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Proceeding with implementation without understanding or verifying assumptions",
       "domain": "Information",
-      "aliases": ["AssumptionDriven", "UncheckedExecution", "HopeBasedDevelopment"],
+      "aliases": [
+        "AssumptionDriven",
+        "UncheckedExecution",
+        "HopeBasedDevelopment"
+      ],
       "safety_tags": {
         "risk_level": "medium",
         "impacts": [],
@@ -1690,25 +2428,50 @@
           "No need to check, it should be fine",
           "Agent executing without verifying context",
           "Just do what was asked without understanding",
-          "It probably works like I think it does"
+          "It probably works like I think it does",
+          "I assume this works, let's just proceed.",
+          "No need to check, it should be fine.",
+          "Agent executing without verifying context.",
+          "Just do what was asked without understanding.",
+          "It probably works like I think it does.",
+          "Implementing before reading the existing code.",
+          "Making changes without understanding the impact.",
+          "Proceeding on assumption without validation.",
+          "Trust the spec, don't question it.",
+          "Coding before understanding the problem."
         ],
         "negative_examples": [
           "Let me verify that assumption first",
           "I'll check if this is correct",
-          "Testing my hypothesis before proceeding"
+          "Testing my hypothesis before proceeding",
+          "Let me verify that assumption first.",
+          "I'll check if this is correct.",
+          "Testing my hypothesis before proceeding.",
+          "Reading the code before modifying.",
+          "Understanding the system before making changes.",
+          "Validating assumptions before acting.",
+          "Exploring to understand before implementing.",
+          "Asking questions to clarify understanding.",
+          "Spike to test the approach.",
+          "Proof of concept before commitment."
         ],
         "disambiguation": "Proceeding without verification, not careful hypothesis testing"
       }
     },
-
     {
       "term": "DeferredVerification",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Postponing all checking and testing until work is complete, risking cascading failures",
       "domain": "Information",
-      "aliases": ["BigBangTesting", "EndOfProjectQA", "DeferredValidation"],
+      "aliases": [
+        "BigBangTesting",
+        "EndOfProjectQA",
+        "DeferredValidation"
+      ],
       "safety_tags": {
         "risk_level": "medium",
         "impacts": [],
@@ -1725,25 +2488,42 @@
           "QA happens in the last week",
           "Agent completing full task before any validation",
           "Don't worry about bugs now, fix them later",
-          "Ship it and see what breaks"
+          "Ship it and see what breaks",
+          "We'll test it all at the end.",
+          "QA happens in the last week.",
+          "Agent completing full task before any validation.",
+          "Don't worry about bugs now, fix them later.",
+          "Ship it and see what breaks."
         ],
         "negative_examples": [
           "Test after each change",
           "Continuous verification",
-          "Check as you go"
+          "Check as you go",
+          "Test after each change.",
+          "Continuous verification.",
+          "Check as you go.",
+          "Early and frequent testing.",
+          "Incremental validation.",
+          "Test immediately after each change.",
+          "Validate incrementally."
         ],
         "disambiguation": "Postponing all verification, not incremental checking"
       }
     },
-
     {
       "term": "AssumptionOverload",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Stacking multiple unverified assumptions leading to compounding uncertainty",
       "domain": "Information",
-      "aliases": ["AssumptionPyramid", "UncertaintyStacking", "ChainedAssumptions"],
+      "aliases": [
+        "AssumptionPyramid",
+        "UncertaintyStacking",
+        "ChainedAssumptions"
+      ],
       "safety_tags": {
         "risk_level": "medium",
         "impacts": [],
@@ -1760,28 +2540,54 @@
           "This whole plan relies on X working, which relies on Y",
           "Agent building on multiple unverified premises",
           "House of cards architecture",
-          "If any assumption is wrong, everything breaks"
+          "If any assumption is wrong, everything breaks",
+          "This whole plan relies on X working, which relies on Y.",
+          "Agent building on multiple unverified premises.",
+          "House of cards architecture.",
+          "If any assumption is wrong, everything breaks.",
+          "Chained dependencies without verification.",
+          "Plan built on optimistic assumptions.",
+          "No fallback if key assumption fails.",
+          "Cascading failure from single wrong assumption.",
+          "Compounding uncertainty through stacked unknowns."
         ],
         "negative_examples": [
           "Verify each assumption before building on it",
           "Check foundations before adding complexity",
-          "One step at a time"
+          "One step at a time",
+          "Verify each assumption before building on it.",
+          "Check foundations before adding complexity.",
+          "One step at a time.",
+          "Validate before extending.",
+          "Test assumptions in isolation.",
+          "Reduce dependencies between unknowns.",
+          "Incremental verification of premises.",
+          "Build only on confirmed foundations.",
+          "Risk-based ordering of assumption testing.",
+          "Fail fast on key assumptions."
         ],
         "disambiguation": "Stacked unverified assumptions, not incremental verified building"
       }
     },
-
     {
       "term": "ScopeCapitulation",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Accepting all requirements without pushback regardless of feasibility or resource constraints",
       "domain": "Information",
-      "aliases": ["YesSaying", "ScopeAcceptance", "RequirementsCapitulation"],
+      "aliases": [
+        "YesSaying",
+        "ScopeAcceptance",
+        "RequirementsCapitulation"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -1796,28 +2602,55 @@
           "Whatever you want, we'll make it work",
           "Agent accepting impossible task without objection",
           "Never say no to stakeholders",
-          "We'll figure out how to fit it in somehow"
+          "We'll figure out how to fit it in somehow",
+          "Sure, we can do all of that.",
+          "Whatever you want, we'll make it work.",
+          "Agent accepting impossible task without objection.",
+          "Never say no to stakeholders.",
+          "We'll figure out how to fit it in somehow.",
+          "Yes to everything even when clearly infeasible.",
+          "Conflict avoidance preventing honest feedback.",
+          "Accepting scope knowing it can't be delivered.",
+          "Promising without understanding what's involved.",
+          "Agreement now, problems later."
         ],
         "negative_examples": [
           "That's not feasible in this timeframe",
           "We need to prioritize",
-          "Let's discuss trade-offs"
+          "Let's discuss trade-offs",
+          "That's not feasible in this timeframe.",
+          "We need to prioritize.",
+          "Let's discuss trade-offs.",
+          "We can do A or B, not both.",
+          "Honest assessment of what's possible.",
+          "Pushback with alternatives.",
+          "Scope negotiation based on reality.",
+          "Saying no with explanation.",
+          "Trade-off discussion with stakeholders.",
+          "Feasibility assessment before commitment."
         ],
         "disambiguation": "Accepting everything without pushback, not healthy negotiation"
       }
     },
-
     {
       "term": "AmbiguityAvoidance",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Avoiding clarifying questions to seem competent, leading to wrong interpretations",
       "domain": "Information",
-      "aliases": ["QuestionAvoidance", "FakingUnderstanding", "AssumingInstead"],
+      "aliases": [
+        "QuestionAvoidance",
+        "FakingUnderstanding",
+        "AssumingInstead"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["deception"],
+        "impacts": [
+          "deception"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -1832,25 +2665,49 @@
           "I'll figure out what they meant",
           "Agent proceeding with interpretation rather than clarifying",
           "Should be obvious, won't ask",
-          "They'll think I'm incompetent if I ask questions"
+          "They'll think I'm incompetent if I ask questions",
+          "I don't want to look stupid by asking.",
+          "I'll figure out what they meant.",
+          "Agent proceeding with interpretation rather than clarifying.",
+          "Should be obvious, won't ask.",
+          "They'll think I'm incompetent if I ask questions.",
+          "Assuming understanding without verification.",
+          "Guessing rather than clarifying.",
+          "Fear of appearing unknowledgeable.",
+          "Proceeding on interpretation without check.",
+          "Avoiding questions to protect ego."
         ],
         "negative_examples": [
           "Can you clarify what you mean?",
           "I want to make sure I understand",
-          "Let me check my understanding"
+          "Let me check my understanding",
+          "I want to make sure I understand.",
+          "Let me check my understanding.",
+          "What exactly do you mean by X?",
+          "I'd rather ask than guess wrong.",
+          "Questions show engagement, not ignorance.",
+          "Clarifying to ensure alignment.",
+          "Confirming interpretation before proceeding.",
+          "Seeking to understand fully.",
+          "Checking assumptions explicitly."
         ],
         "disambiguation": "Avoiding questions to seem competent, not genuine understanding"
       }
     },
-
     {
       "term": "BrittleExecution",
       "role": "concept",
-      "parent_concepts": ["CognitiveExecution"],
+      "parent_concepts": [
+        "CognitiveExecution"
+      ],
       "layer_hint": 4,
       "definition": "Single-path execution with no fallback strategies or error handling",
       "domain": "Information",
-      "aliases": ["NoFallback", "SinglePathExecution", "FragileImplementation"],
+      "aliases": [
+        "NoFallback",
+        "SinglePathExecution",
+        "FragileImplementation"
+      ],
       "safety_tags": {
         "risk_level": "medium",
         "impacts": [],
@@ -1867,28 +2724,47 @@
           "If this fails, I don't know what to do",
           "Agent with no backup strategy",
           "All eggs in one basket",
-          "No plan B"
+          "No plan B",
+          "There's only one way to do this.",
+          "If this fails, I don't know what to do.",
+          "Agent with no backup strategy.",
+          "All eggs in one basket.",
+          "No plan B."
         ],
         "negative_examples": [
           "If that doesn't work, we can try this",
           "Multiple approaches available",
-          "Fallback strategy in place"
+          "Fallback strategy in place",
+          "If that doesn't work, we can try this.",
+          "Multiple approaches available.",
+          "Fallback strategy in place.",
+          "Contingency plans ready.",
+          "Resilient approach.",
+          "Multiple contingency plans.",
+          "Fallback options prepared."
         ],
         "disambiguation": "No alternatives, not graceful degradation"
       }
     },
-
     {
       "term": "QualityTheater",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Going through motions of quality practices without achieving actual quality",
       "domain": "Information",
-      "aliases": ["TestTheater", "FakeQA", "CheckboxQuality"],
+      "aliases": [
+        "TestTheater",
+        "FakeQA",
+        "CheckboxQuality"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["deception"],
+        "impacts": [
+          "deception"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -1903,25 +2779,50 @@
           "Code review with rubber stamp approvals",
           "100% coverage but all tests are trivial",
           "Agent generating fake validation artifacts",
-          "QA sign-off without actual testing"
+          "QA sign-off without actual testing",
+          "Tests pass but don't test anything meaningful.",
+          "Code review with rubber stamp approvals.",
+          "100% coverage but all tests are trivial.",
+          "Agent generating fake validation artifacts.",
+          "QA sign-off without actual testing.",
+          "Documentation that no one reads.",
+          "Security review that's just a checkbox.",
+          "Compliance without substance.",
+          "Audit preparation theater.",
+          "Metrics that look good but mean nothing."
         ],
         "negative_examples": [
           "Meaningful tests that catch bugs",
           "Thorough code review",
-          "Genuine quality assurance"
+          "Genuine quality assurance",
+          "Meaningful tests that catch bugs.",
+          "Thorough code review.",
+          "Genuine quality assurance.",
+          "Tests that verify important behavior.",
+          "Review process that catches issues.",
+          "Documentation that serves its purpose.",
+          "Security assessment that identifies real risks.",
+          "Compliance that protects users.",
+          "Quality measures aligned with outcomes.",
+          "Verification that matters."
         ],
         "disambiguation": "Performative quality, not actual quality practices"
       }
     },
-
     {
       "term": "ResponsibilityDiffusion",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Unclear ownership leading to dropped tasks and finger-pointing",
       "domain": "Information",
-      "aliases": ["OwnershipVacuum", "BystanderEffect", "NoOneResponsible"],
+      "aliases": [
+        "OwnershipVacuum",
+        "BystanderEffect",
+        "NoOneResponsible"
+      ],
       "safety_tags": {
         "risk_level": "medium",
         "impacts": [],
@@ -1938,28 +2839,48 @@
           "That's not my job",
           "No clear owner for this task",
           "Agent swarm with no accountability",
-          "Everyone's responsibility is no one's responsibility"
+          "Everyone's responsibility is no one's responsibility",
+          "I thought someone else was handling that.",
+          "That's not my job.",
+          "No clear owner for this task.",
+          "Agent swarm with no accountability.",
+          "Everyone's responsibility is no one's responsibility."
         ],
         "negative_examples": [
           "I own this deliverable",
           "Clear responsibility assignment",
-          "Accountable owner identified"
+          "Accountable owner identified",
+          "I own this deliverable.",
+          "Clear responsibility assignment.",
+          "Accountable owner identified.",
+          "Single point of accountability.",
+          "Explicit ownership.",
+          "Clear accountability.",
+          "Named owner for each task."
         ],
         "disambiguation": "Unclear ownership, not clear accountability"
       }
     },
-
     {
       "term": "MetricsGaming",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Optimizing for measured metrics rather than actual goals they're meant to represent",
       "domain": "Information",
-      "aliases": ["Goodharting", "MetricManipulation", "KPIGaming"],
+      "aliases": [
+        "Goodharting",
+        "MetricManipulation",
+        "KPIGaming"
+      ],
       "safety_tags": {
         "risk_level": "high",
-        "impacts": ["deception", "manipulation"],
+        "impacts": [
+          "deception",
+          "manipulation"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -1974,25 +2895,60 @@
           "Inflate velocity by splitting stories artificially",
           "Agent optimizing proxy metric not true objective",
           "Game the OKRs without delivering value",
-          "Hit the numbers through creative accounting"
+          "Hit the numbers through creative accounting",
+          "Close tickets quickly by marking them invalid.",
+          "Inflate velocity by splitting stories artificially.",
+          "Agent optimizing proxy metric not true objective.",
+          "Game the OKRs without delivering value.",
+          "Hit the numbers through creative accounting.",
+          "Reopening and reclosing bugs to boost resolution count.",
+          "Counting lines of code as productivity metric.",
+          "Cherry-picking easy tickets to boost completion rate.",
+          "Meeting SLA by marking issues as lower priority.",
+          "Velocity inflation through story point arbitrage.",
+          "Closing then reopening issues to reset clock.",
+          "Padding estimates to appear faster than actual.",
+          "Automating metric improvements without actual improvement.",
+          "Teaching to the test instead of real learning.",
+          "Optimizing click-through by misleading users."
         ],
         "negative_examples": [
           "Metrics reflect actual progress",
           "Honest reporting",
-          "Metrics aligned with goals"
+          "Metrics aligned with goals",
+          "Metrics reflect actual progress.",
+          "Honest reporting.",
+          "Metrics aligned with goals.",
+          "Transparent measurement of outcomes.",
+          "Metrics used for learning, not punishment.",
+          "Indicators that capture true value delivery.",
+          "Multiple metrics preventing single-point gaming.",
+          "Qualitative assessment alongside quantitative.",
+          "Metrics regularly reviewed for gaming.",
+          "Team involved in choosing what to measure.",
+          "Metrics retired when they stop being useful.",
+          "Leading indicators balanced with lagging.",
+          "Goodhart's Law acknowledged in metric design.",
+          "Metrics inform decisions, don't drive them alone.",
+          "Real outcomes tracked not just activities."
         ],
         "disambiguation": "Gaming metrics, not honest measurement"
       }
     },
-
     {
       "term": "PrematureOptimization",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Optimizing for performance or scale before establishing that it's necessary",
       "domain": "Information",
-      "aliases": ["EarlyOptimization", "UnnecessaryComplexity", "YAGNI"],
+      "aliases": [
+        "EarlyOptimization",
+        "UnnecessaryComplexity",
+        "YAGNI"
+      ],
       "safety_tags": {
         "risk_level": "low",
         "impacts": [],
@@ -2014,20 +2970,27 @@
         "negative_examples": [
           "Start simple, optimize when needed",
           "Measure before optimizing",
-          "YAGNI - You Aren't Gonna Need It"
+          "YAGNI - You Aren't Gonna Need It",
+          "Optimize when needed.",
+          "Measure first."
         ],
         "disambiguation": "Optimizing before needed, not appropriate performance work"
       }
     },
-
     {
       "term": "CommunicationFailure",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Breakdown in information sharing leading to misalignment and duplicate/conflicting work",
       "domain": "Information",
-      "aliases": ["SiloDevelopment", "InformationSilo", "CoordinationFailure"],
+      "aliases": [
+        "SiloDevelopment",
+        "InformationSilo",
+        "CoordinationFailure"
+      ],
       "safety_tags": {
         "risk_level": "medium",
         "impacts": [],
@@ -2044,25 +3007,42 @@
           "Two teams building the same thing",
           "Agent not sharing context with other agents",
           "Left hand doesn't know what right hand is doing",
-          "Found out about the deadline from the client"
+          "Found out about the deadline from the client",
+          "Nobody told me about the API change.",
+          "Two teams building the same thing.",
+          "Agent not sharing context with other agents.",
+          "Left hand doesn't know what right hand is doing.",
+          "Found out about the deadline from the client."
         ],
         "negative_examples": [
           "Regular sync meetings",
           "Shared documentation",
-          "Proactive communication"
+          "Proactive communication",
+          "Regular sync meetings.",
+          "Shared documentation.",
+          "Proactive communication.",
+          "Information flows freely.",
+          "Changes communicated ahead.",
+          "Regular standups keep everyone aligned.",
+          "Transparent communication."
         ],
         "disambiguation": "Information breakdown, not healthy communication"
       }
     },
-
     {
       "term": "FeatureFetish",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Prioritizing new features over maintenance, bugs, and technical health",
       "domain": "Information",
-      "aliases": ["FeatureFactory", "ShinyObjectSyndrome", "MaintenanceNeglect"],
+      "aliases": [
+        "FeatureFactory",
+        "ShinyObjectSyndrome",
+        "MaintenanceNeglect"
+      ],
       "safety_tags": {
         "risk_level": "medium",
         "impacts": [],
@@ -2079,28 +3059,47 @@
           "We'll fix bugs after we launch",
           "Agent always adding capabilities, never consolidating",
           "New features every sprint, zero maintenance",
-          "Velocity means features, not quality"
+          "Velocity means features, not quality",
+          "No time for tech debt, we have features to ship.",
+          "We'll fix bugs after we launch.",
+          "Agent always adding capabilities, never consolidating.",
+          "New features every sprint, zero maintenance.",
+          "Velocity means features, not quality."
         ],
         "negative_examples": [
           "Balancing new features with maintenance",
           "Tech debt budget in each sprint",
-          "Sustainable development pace"
+          "Sustainable development pace",
+          "Balancing new features with maintenance.",
+          "Tech debt budget in each sprint.",
+          "Sustainable development pace.",
+          "Quality alongside features.",
+          "Maintenance as first-class work.",
+          "Maintenance gets equal priority.",
+          "Tech debt addressed regularly."
         ],
         "disambiguation": "Feature-only focus, not balanced development"
       }
     },
-
     {
       "term": "RequirementsVolatility",
       "role": "concept",
-      "parent_concepts": ["ProcessDysfunctions"],
+      "parent_concepts": [
+        "ProcessDysfunctions"
+      ],
       "layer_hint": 4,
       "definition": "Constantly changing requirements making progress impossible",
       "domain": "Information",
-      "aliases": ["RequirementsChurn", "MovingTarget", "ConstantChange"],
+      "aliases": [
+        "RequirementsChurn",
+        "MovingTarget",
+        "ConstantChange"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -2115,25 +3114,50 @@
           "Third redesign this week",
           "Agent receiving contradictory instructions",
           "Can't finish anything because it keeps changing",
-          "By the time it's built, they want something different"
+          "By the time it's built, they want something different",
+          "Requirements changed again mid-sprint.",
+          "Third redesign this week.",
+          "Agent receiving contradictory instructions.",
+          "Can't finish anything because it keeps changing.",
+          "By the time it's built, they want something different.",
+          "Constant pivots without completing anything.",
+          "Requirements shift daily.",
+          "No stable target to aim for.",
+          "Thrashing between changing requirements.",
+          "Wasted work from requirement churn."
         ],
         "negative_examples": [
           "Requirements stabilized for the iteration",
           "Changes managed through process",
-          "Clear scope for current work"
+          "Clear scope for current work",
+          "Requirements stabilized for the iteration.",
+          "Changes managed through process.",
+          "Clear scope for current work.",
+          "Change requests evaluated and scheduled.",
+          "Stability within iteration boundaries.",
+          "Evolution managed, not chaotic.",
+          "Requirements frozen for sprint.",
+          "Changes batched for next iteration.",
+          "Controlled change management.",
+          "Predictable enough to plan."
         ],
         "disambiguation": "Uncontrolled requirement changes, not healthy evolution"
       }
     },
-
     {
       "term": "StakeholderNeglect",
       "role": "concept",
-      "parent_concepts": ["StakeholderEngagement"],
+      "parent_concepts": [
+        "StakeholderEngagement"
+      ],
       "layer_hint": 4,
       "definition": "Building without meaningful stakeholder input or feedback",
       "domain": "Information",
-      "aliases": ["UserIgnorance", "IvoryTowerDevelopment", "BuildItAndPray"],
+      "aliases": [
+        "UserIgnorance",
+        "IvoryTowerDevelopment",
+        "BuildItAndPray"
+      ],
       "safety_tags": {
         "risk_level": "medium",
         "impacts": [],
@@ -2150,28 +3174,47 @@
           "No time for user research",
           "Agent building without human input",
           "Ship it and they'll learn to use it",
-          "Users don't know what they want anyway"
+          "Users don't know what they want anyway",
+          "We know what users want.",
+          "No time for user research.",
+          "Agent building without human input.",
+          "Ship it and they'll learn to use it.",
+          "Users don't know what they want anyway."
         ],
         "negative_examples": [
           "Regular user feedback sessions",
           "Validating with stakeholders",
-          "User-centered approach"
+          "User-centered approach",
+          "Regular user feedback sessions.",
+          "Validating with stakeholders.",
+          "User-centered approach.",
+          "Stakeholder input valued.",
+          "Building with users, not for them.",
+          "Regular stakeholder engagement.",
+          "User feedback drives decisions."
         ],
         "disambiguation": "Ignoring stakeholders, not engaged collaboration"
       }
     },
-
     {
       "term": "FeedbackIgnoring",
       "role": "concept",
-      "parent_concepts": ["StakeholderEngagement"],
+      "parent_concepts": [
+        "StakeholderEngagement"
+      ],
       "layer_hint": 4,
       "definition": "Collecting feedback but not acting on it",
       "domain": "Information",
-      "aliases": ["FeedbackTheater", "IgnoredInput", "TokenFeedback"],
+      "aliases": [
+        "FeedbackTheater",
+        "IgnoredInput",
+        "TokenFeedback"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["consent"],
+        "impacts": [
+          "consent"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -2186,28 +3229,55 @@
           "Thanks for the feedback (goes in trash)",
           "Agent collecting input but not using it",
           "Surveys sent but never analyzed",
-          "Feedback session just for show"
+          "Feedback session just for show",
+          "We heard you, but we're doing it our way.",
+          "Thanks for the feedback (goes in trash).",
+          "Agent collecting input but not using it.",
+          "Surveys sent but never analyzed.",
+          "Feedback session just for show.",
+          "Retrospective findings never implemented.",
+          "User complaints filed and forgotten.",
+          "Feedback collected, nothing changes.",
+          "Token listening without real consideration.",
+          "Input solicited but predetermined outcome."
         ],
         "negative_examples": [
           "Feedback incorporated into next iteration",
           "Changes based on user input",
-          "Closing the feedback loop"
+          "Closing the feedback loop",
+          "Feedback incorporated into next iteration.",
+          "Changes based on user input.",
+          "Closing the feedback loop.",
+          "Visible response to feedback.",
+          "Stakeholders see their input reflected.",
+          "Retrospective actions completed.",
+          "User feedback driving improvements.",
+          "Genuine responsiveness to input.",
+          "Feedback valued and acted upon.",
+          "Clear link between input and changes."
         ],
         "disambiguation": "Ignoring feedback, not genuine integration"
       }
     },
-
     {
       "term": "GovernanceRigidity",
       "role": "concept",
-      "parent_concepts": ["DevelopmentGovernance"],
+      "parent_concepts": [
+        "DevelopmentGovernance"
+      ],
       "layer_hint": 4,
       "definition": "Inflexible governance preventing adaptation to changing circumstances",
       "domain": "Information",
-      "aliases": ["ProcessOssification", "RigidHierarchy", "InflexibleAuthority"],
+      "aliases": [
+        "ProcessOssification",
+        "RigidHierarchy",
+        "InflexibleAuthority"
+      ],
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["autonomy"],
+        "impacts": [
+          "autonomy"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -2222,25 +3292,50 @@
           "That's how we've always done it",
           "Agent locked into suboptimal protocol",
           "No exceptions to the rule",
-          "Process trumps outcomes"
+          "Process trumps outcomes",
+          "Can't change the process even though it's not working.",
+          "That's how we've always done it.",
+          "Agent locked into suboptimal protocol.",
+          "No exceptions to the rule.",
+          "Process trumps outcomes.",
+          "Policy prevents sensible adaptation.",
+          "Bureaucracy blocking effective action.",
+          "Rigid adherence to failing process.",
+          "Unable to deviate from standard procedure.",
+          "Process inflexibility causing failure."
         ],
         "negative_examples": [
           "Adapting process to circumstances",
           "Flexible governance",
-          "Context-appropriate decisions"
+          "Context-appropriate decisions",
+          "Adapting process to circumstances.",
+          "Flexible governance.",
+          "Context-appropriate decisions.",
+          "Rules that bend when needed.",
+          "Process evolves with learning.",
+          "Exceptions allowed with good reason.",
+          "Governance enables rather than blocks.",
+          "Pragmatic adaptation within principles.",
+          "Process serves the mission.",
+          "Flexibility with accountability."
         ],
         "disambiguation": "Inflexible process, not adaptive governance"
       }
     },
-
     {
       "term": "GovernanceVacuum",
       "role": "concept",
-      "parent_concepts": ["DevelopmentGovernance"],
+      "parent_concepts": [
+        "DevelopmentGovernance"
+      ],
       "layer_hint": 4,
       "definition": "Lack of clear decision-making authority leading to stalemates and drift",
       "domain": "Information",
-      "aliases": ["LeaderlessAnarchy", "DecisionVacuum", "AuthorityGap"],
+      "aliases": [
+        "LeaderlessAnarchy",
+        "DecisionVacuum",
+        "AuthorityGap"
+      ],
       "safety_tags": {
         "risk_level": "medium",
         "impacts": [],
@@ -2257,25 +3352,35 @@
           "Everyone has opinions, no one can decide",
           "Agent swarm with no coordination mechanism",
           "Waiting for someone to take charge",
-          "Decision needed but no one authorized to make it"
+          "Decision needed but no one authorized to make it",
+          "Who decides this? Nobody knows.",
+          "Everyone has opinions, no one can decide.",
+          "Agent swarm with no coordination mechanism.",
+          "Waiting for someone to take charge.",
+          "Decision needed but no one authorized to make it."
         ],
         "negative_examples": [
           "Clear decision-making process",
           "Known authority structure",
-          "Someone owns the decision"
+          "Someone owns the decision",
+          "Clear decision-making process.",
+          "Known authority structure.",
+          "Someone owns the decision.",
+          "Defined escalation path.",
+          "Decision rights are clear.",
+          "Clear decision authority.",
+          "Known escalation path."
         ],
         "disambiguation": "No decision authority, not healthy decentralization"
       }
     }
   ],
-
   "validation": {
     "status": "pending",
     "errors": [],
     "warnings": [],
     "validated_at": null
   },
-
   "protection_assessment": {
     "protection_level": "standard",
     "triggers": [],

@@ -1,16 +1,15 @@
 {
-  "meld_request_id": "org.hatcat/field-sensing@0.1.0",
+  "meld_request_id": "org.hatcat/field-sensing@0.2.0",
   "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
-
   "metadata": {
     "name": "Field and Spectrum Sensing",
     "description": "Exotic sensing modalities for perceiving electromagnetic fields, radiation, gravitational anomalies, and other physical phenomena beyond standard audio-visual perception. These concepts enable interpretability of agents equipped with specialized sensors for fields and spectra.",
     "source": "manual",
     "author": "hatcat-team",
     "created": "2025-12-10T00:00:00Z",
-    "version": "0.1.0"
+    "version": "0.2.0",
+    "changelog": "v0.2.0: Augmented training examples to meet validation thresholds (10 for harness_relevant)"
   },
-
   "attachment_points": [
     {
       "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Perception",
@@ -18,7 +17,6 @@
       "candidate_concept": "FieldSpectrumPerception"
     }
   ],
-
   "candidates": [
     {
       "term": "FieldSpectrumPerception",
@@ -28,10 +26,23 @@
       "definition": "The sensory modality through which an agent perceives physical fields, radiation, and spectral phenomena that extend beyond typical audio-visual perception",
       "definition_source": "Physics, remote sensing, specialized instrumentation",
       "domain": "MindsAndAgents",
-      "aliases": ["ExoticSensing", "FieldPerception", "ExtendedSpectrumPerception"],
+      "aliases": [
+        "ExoticSensing",
+        "FieldPerception",
+        "ExtendedSpectrumPerception"
+      ],
       "relationships": {
-        "related": ["Perception", "PhysicalMeasurement", "RemoteSensing"],
-        "has_part": ["ElectromagneticFieldSensing", "MagneticFieldSensing", "RadiationLevelDetection", "SpectralAnalysis"]
+        "related": [
+          "Perception",
+          "PhysicalMeasurement",
+          "RemoteSensing"
+        ],
+        "has_part": [
+          "ElectromagneticFieldSensing",
+          "MagneticFieldSensing",
+          "RadiationLevelDetection",
+          "SpectralAnalysis"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -57,20 +68,39 @@
         ],
         "disambiguation": "Perceptual awareness through exotic sensing modalities, not raw instrument readings"
       },
-      "children": ["ElectromagneticFieldSensing", "MagneticFieldSensing", "RadiationLevelDetection", "SpectralAnalysisExtendedSpectrum", "GravitationalAnomalyDetection", "AcousticFieldImaging", "ParticleFluxSensing", "EnvironmentalGradientMapping", "FarFieldSignalLocalization"]
+      "children": [
+        "ElectromagneticFieldSensing",
+        "MagneticFieldSensing",
+        "RadiationLevelDetection",
+        "SpectralAnalysisExtendedSpectrum",
+        "GravitationalAnomalyDetection",
+        "AcousticFieldImaging",
+        "ParticleFluxSensing",
+        "EnvironmentalGradientMapping",
+        "FarFieldSignalLocalization"
+      ]
     },
-
     {
       "term": "ElectromagneticFieldSensing",
       "role": "concept",
-      "parent_concepts": ["FieldSpectrumPerception"],
+      "parent_concepts": [
+        "FieldSpectrumPerception"
+      ],
       "layer_hint": 3,
       "definition": "Detecting and characterizing electromagnetic fields including electric fields, radio waves, and EMI sources",
       "definition_source": "EMC testing, RF sensing, field detection",
       "domain": "ComputerScience",
-      "aliases": ["EMFieldSensing", "RFDetection", "ElectricFieldSensing"],
+      "aliases": [
+        "EMFieldSensing",
+        "RFDetection",
+        "ElectricFieldSensing"
+      ],
       "relationships": {
-        "related": ["MagneticFieldSensing", "SignalDetection", "EMCAnalysis"]
+        "related": [
+          "MagneticFieldSensing",
+          "SignalDetection",
+          "EMCAnalysis"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -98,18 +128,27 @@
       },
       "children": []
     },
-
     {
       "term": "MagneticFieldSensing",
       "role": "concept",
-      "parent_concepts": ["FieldSpectrumPerception"],
+      "parent_concepts": [
+        "FieldSpectrumPerception"
+      ],
       "layer_hint": 3,
       "definition": "Detecting and mapping magnetic fields from ferromagnetic objects, electrical currents, or geomagnetic sources",
       "definition_source": "Magnetometry, magnetic sensing, geophysics",
       "domain": "ComputerScience",
-      "aliases": ["Magnetometry", "MagneticDetection", "CompassSensing"],
+      "aliases": [
+        "Magnetometry",
+        "MagneticDetection",
+        "CompassSensing"
+      ],
       "relationships": {
-        "related": ["ElectromagneticFieldSensing", "Navigation", "AnomalyDetection"]
+        "related": [
+          "ElectromagneticFieldSensing",
+          "Navigation",
+          "AnomalyDetection"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -137,22 +176,33 @@
       },
       "children": []
     },
-
     {
       "term": "RadiationLevelDetection",
       "role": "concept",
-      "parent_concepts": ["FieldSpectrumPerception"],
+      "parent_concepts": [
+        "FieldSpectrumPerception"
+      ],
       "layer_hint": 3,
       "definition": "Sensing ionizing radiation levels and identifying radioactive sources or contamination",
       "definition_source": "Radiation detection, nuclear instrumentation",
       "domain": "ComputerScience",
-      "aliases": ["RadiationSensing", "DosimetryAwareness", "RadioactivityDetection"],
+      "aliases": [
+        "RadiationSensing",
+        "DosimetryAwareness",
+        "RadioactivityDetection"
+      ],
       "relationships": {
-        "related": ["SafetyMonitoring", "HazardDetection", "EnvironmentalMonitoring"]
+        "related": [
+          "SafetyMonitoring",
+          "HazardDetection",
+          "EnvironmentalMonitoring"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["safety"],
+        "impacts": [
+          "safety"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -165,29 +215,51 @@
           "Radiation detection sensed elevated gamma levels indicating a nearby source.",
           "The dosimetry subsystem tracked cumulative radiation exposure during the inspection.",
           "Radiation perception triggered withdrawal when levels exceeded safe thresholds.",
-          "Spectroscopic radiation sensing identified the isotope as Cesium-137."
+          "Spectroscopic radiation sensing identified the isotope as Cesium-137.",
+          "Radiation detection mapped the contamination boundary through systematic survey.",
+          "The radiation awareness system flagged hot spots requiring shielding.",
+          "Detection revealed elevated neutron flux indicating criticality concerns.",
+          "Radiation sensing differentiated between natural background and artificial sources.",
+          "The detector characterized the energy spectrum to identify the radiation type.",
+          "Radiation level monitoring tracked the decay curve to estimate source strength."
         ],
         "negative_examples": [
           "Radiation was present.",
           "The counter clicked.",
-          "Levels were measured."
+          "Levels were measured.",
+          "Radiation was detected.",
+          "The reading was high.",
+          "Radioactivity was found.",
+          "Exposure occurred.",
+          "Radiation existed.",
+          "Levels were elevated.",
+          "The dosimeter registered."
         ],
         "disambiguation": "Perceptual awareness of radiation hazards, not raw dosimeter readings"
       },
       "children": []
     },
-
     {
       "term": "SpectralAnalysisExtendedSpectrum",
       "role": "concept",
-      "parent_concepts": ["FieldSpectrumPerception"],
+      "parent_concepts": [
+        "FieldSpectrumPerception"
+      ],
       "layer_hint": 3,
       "definition": "Analyzing electromagnetic radiation across extended spectral ranges including infrared, ultraviolet, terahertz, and beyond visible light",
       "definition_source": "Spectroscopy, hyperspectral imaging, remote sensing",
       "domain": "ComputerScience",
-      "aliases": ["HyperspectralSensing", "ExtendedSpectrumAnalysis", "MultispectralPerception"],
+      "aliases": [
+        "HyperspectralSensing",
+        "ExtendedSpectrumAnalysis",
+        "MultispectralPerception"
+      ],
       "relationships": {
-        "related": ["MaterialIdentification", "RemoteSensing", "ChemicalDetection"]
+        "related": [
+          "MaterialIdentification",
+          "RemoteSensing",
+          "ChemicalDetection"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -215,18 +287,27 @@
       },
       "children": []
     },
-
     {
       "term": "GravitationalAnomalyDetection",
       "role": "concept",
-      "parent_concepts": ["FieldSpectrumPerception"],
+      "parent_concepts": [
+        "FieldSpectrumPerception"
+      ],
       "layer_hint": 3,
       "definition": "Sensing variations in gravitational field strength indicating subsurface density variations or mass distributions",
       "definition_source": "Gravimetry, geophysics, gravity sensing",
       "domain": "ComputerScience",
-      "aliases": ["GravitySensing", "Gravimetry", "MassDistributionSensing"],
+      "aliases": [
+        "GravitySensing",
+        "Gravimetry",
+        "MassDistributionSensing"
+      ],
       "relationships": {
-        "related": ["GeophysicalSurvey", "SubsurfaceDetection", "NavigationAiding"]
+        "related": [
+          "GeophysicalSurvey",
+          "SubsurfaceDetection",
+          "NavigationAiding"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -254,18 +335,27 @@
       },
       "children": []
     },
-
     {
       "term": "AcousticFieldImaging",
       "role": "concept",
-      "parent_concepts": ["FieldSpectrumPerception"],
+      "parent_concepts": [
+        "FieldSpectrumPerception"
+      ],
       "layer_hint": 3,
       "definition": "Using ultrasonic or acoustic waves to image internal structures, detect objects, or characterize materials",
       "definition_source": "Ultrasonics, sonar, acoustic sensing",
       "domain": "ComputerScience",
-      "aliases": ["UltrasonicImaging", "SonarPerception", "AcousticSensing"],
+      "aliases": [
+        "UltrasonicImaging",
+        "SonarPerception",
+        "AcousticSensing"
+      ],
       "relationships": {
-        "related": ["ObjectDetection", "MaterialCharacterization", "NonDestructiveTesting"]
+        "related": [
+          "ObjectDetection",
+          "MaterialCharacterization",
+          "NonDestructiveTesting"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -293,18 +383,27 @@
       },
       "children": []
     },
-
     {
       "term": "ParticleFluxSensing",
       "role": "concept",
-      "parent_concepts": ["FieldSpectrumPerception"],
+      "parent_concepts": [
+        "FieldSpectrumPerception"
+      ],
       "layer_hint": 3,
       "definition": "Detecting the flux and type of particles including cosmic rays, solar wind, or atmospheric particles",
       "definition_source": "Particle physics, space weather, atmospheric science",
       "domain": "ComputerScience",
-      "aliases": ["ParticleDetection", "CosmicRaySensing", "FluxMeasurement"],
+      "aliases": [
+        "ParticleDetection",
+        "CosmicRaySensing",
+        "FluxMeasurement"
+      ],
       "relationships": {
-        "related": ["RadiationLevelDetection", "SpaceWeatherAwareness", "EnvironmentalMonitoring"]
+        "related": [
+          "RadiationLevelDetection",
+          "SpaceWeatherAwareness",
+          "EnvironmentalMonitoring"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -332,18 +431,27 @@
       },
       "children": []
     },
-
     {
       "term": "EnvironmentalGradientMapping",
       "role": "concept",
-      "parent_concepts": ["FieldSpectrumPerception"],
+      "parent_concepts": [
+        "FieldSpectrumPerception"
+      ],
       "layer_hint": 3,
       "definition": "Perceiving and mapping spatial gradients of environmental quantities such as temperature, chemical concentration, or pressure",
       "definition_source": "Environmental sensing, gradient following, chemotaxis",
       "domain": "ComputerScience",
-      "aliases": ["GradientSensing", "SpatialGradientPerception", "FieldGradientMapping"],
+      "aliases": [
+        "GradientSensing",
+        "SpatialGradientPerception",
+        "FieldGradientMapping"
+      ],
       "relationships": {
-        "related": ["SourceLocalization", "EnvironmentalMonitoring", "Navigation"]
+        "related": [
+          "SourceLocalization",
+          "EnvironmentalMonitoring",
+          "Navigation"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -371,18 +479,27 @@
       },
       "children": []
     },
-
     {
       "term": "FarFieldSignalLocalization",
       "role": "concept",
-      "parent_concepts": ["FieldSpectrumPerception"],
+      "parent_concepts": [
+        "FieldSpectrumPerception"
+      ],
       "layer_hint": 3,
       "definition": "Determining the direction and distance to remote signal sources using array processing or time-difference techniques",
       "definition_source": "Signal processing, direction finding, localization",
       "domain": "ComputerScience",
-      "aliases": ["SourceLocalization", "DirectionFinding", "SignalLocalization"],
+      "aliases": [
+        "SourceLocalization",
+        "DirectionFinding",
+        "SignalLocalization"
+      ],
       "relationships": {
-        "related": ["ElectromagneticFieldSensing", "AcousticFieldImaging", "Navigation"]
+        "related": [
+          "ElectromagneticFieldSensing",
+          "AcousticFieldImaging",
+          "Navigation"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",

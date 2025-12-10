@@ -1,16 +1,15 @@
 {
-  "meld_request_id": "org.hatcat/embodied-proprioception@0.1.0",
+  "meld_request_id": "org.hatcat/embodied-proprioception@0.2.0",
   "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
-
   "metadata": {
     "name": "Embodied Proprioception and Balance",
     "description": "Proprioceptive and vestibular sensing capabilities for embodied AI systems, covering joint state awareness, body schema maintenance, balance control, and postural adjustment. These concepts enable interpretability of an agent's sense of its own body configuration and stability.",
     "source": "manual",
     "author": "hatcat-team",
     "created": "2025-12-10T00:00:00Z",
-    "version": "0.1.0"
+    "version": "0.2.0",
+    "changelog": "v0.2.0: Augmented training examples to meet validation thresholds (10 for harness_relevant)"
   },
-
   "attachment_points": [
     {
       "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Perception",
@@ -18,7 +17,6 @@
       "candidate_concept": "ProprioceptivePerception"
     }
   ],
-
   "candidates": [
     {
       "term": "ProprioceptivePerception",
@@ -28,10 +26,22 @@
       "definition": "The sensory modality through which an agent perceives the position, orientation, and movement of its own body parts and overall configuration",
       "definition_source": "Neuroscience, robotics, embodied cognition",
       "domain": "MindsAndAgents",
-      "aliases": ["Proprioception", "BodySensePerception", "KinestheticPerception"],
+      "aliases": [
+        "Proprioception",
+        "BodySensePerception",
+        "KinestheticPerception"
+      ],
       "relationships": {
-        "related": ["Perception", "Embodiment", "MotorControl"],
-        "has_part": ["JointAngleSensing", "BodySchemaMaintenance", "BalanceEquilibriumControl"]
+        "related": [
+          "Perception",
+          "Embodiment",
+          "MotorControl"
+        ],
+        "has_part": [
+          "JointAngleSensing",
+          "BodySchemaMaintenance",
+          "BalanceEquilibriumControl"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -57,20 +67,40 @@
         ],
         "disambiguation": "Sensory awareness of own body state, not mere joint actuation or position"
       },
-      "children": ["JointAngleSensing", "TorqueLoadSensing", "LimbConfigurationEstimation", "BodySchemaMaintenance", "BalanceEquilibriumControl", "InertialSensing", "GaitStabilityAssessment", "PosturalAdjustment", "EffortEstimation", "OscillationInstabilityDetection"]
+      "children": [
+        "JointAngleSensing",
+        "TorqueLoadSensing",
+        "LimbConfigurationEstimation",
+        "BodySchemaMaintenance",
+        "BalanceEquilibriumControl",
+        "InertialSensing",
+        "GaitStabilityAssessment",
+        "PosturalAdjustment",
+        "EffortEstimation",
+        "OscillationInstabilityDetection"
+      ]
     },
-
     {
       "term": "JointAngleSensing",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Measuring the angular position of joints to determine limb and body segment orientations",
       "definition_source": "Robotics, encoders, joint sensing",
       "domain": "ComputerScience",
-      "aliases": ["JointPositionSensing", "AngleEncoding", "ArticulationSensing"],
+      "aliases": [
+        "JointPositionSensing",
+        "AngleEncoding",
+        "ArticulationSensing"
+      ],
       "relationships": {
-        "related": ["LimbConfigurationEstimation", "ForwardKinematics", "MotorControl"]
+        "related": [
+          "LimbConfigurationEstimation",
+          "ForwardKinematics",
+          "MotorControl"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -98,18 +128,27 @@
       },
       "children": []
     },
-
     {
       "term": "TorqueLoadSensing",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Measuring the torques and loads at joints, indicating the forces being exerted or experienced by body segments",
       "definition_source": "Force-torque sensing, joint dynamics",
       "domain": "ComputerScience",
-      "aliases": ["JointTorqueSensing", "LoadMeasurement", "EffortSensing"],
+      "aliases": [
+        "JointTorqueSensing",
+        "LoadMeasurement",
+        "EffortSensing"
+      ],
       "relationships": {
-        "related": ["EffortEstimation", "ForceControl", "ImpedanceControl"]
+        "related": [
+          "EffortEstimation",
+          "ForceControl",
+          "ImpedanceControl"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -137,18 +176,27 @@
       },
       "children": []
     },
-
     {
       "term": "LimbConfigurationEstimation",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Computing the spatial arrangement of limbs and body segments from joint state information",
       "definition_source": "Forward kinematics, pose estimation",
       "domain": "ComputerScience",
-      "aliases": ["PoseEstimation", "ConfigurationComputation", "KinematicStateEstimation"],
+      "aliases": [
+        "PoseEstimation",
+        "ConfigurationComputation",
+        "KinematicStateEstimation"
+      ],
       "relationships": {
-        "related": ["JointAngleSensing", "BodySchemaMaintenance", "ForwardKinematics"]
+        "related": [
+          "JointAngleSensing",
+          "BodySchemaMaintenance",
+          "ForwardKinematics"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -176,18 +224,27 @@
       },
       "children": []
     },
-
     {
       "term": "BodySchemaMaintenance",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Maintaining an internal model of the body's structure, dimensions, and current configuration that integrates proprioceptive information",
       "definition_source": "Body schema research, embodied cognition",
       "domain": "MindsAndAgents",
-      "aliases": ["BodyModel", "SelfModel", "CorporealSchema"],
+      "aliases": [
+        "BodyModel",
+        "SelfModel",
+        "CorporealSchema"
+      ],
       "relationships": {
-        "related": ["LimbConfigurationEstimation", "SelfAwareness", "ToolUseAdaptation"]
+        "related": [
+          "LimbConfigurationEstimation",
+          "SelfAwareness",
+          "ToolUseAdaptation"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -215,18 +272,27 @@
       },
       "children": []
     },
-
     {
       "term": "BalanceEquilibriumControl",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Sensing and maintaining the body's center of mass within the support polygon to prevent falling",
       "definition_source": "Balance control, bipedal robotics",
       "domain": "MindsAndAgents",
-      "aliases": ["BalanceControl", "EquilibriumMaintenance", "StabilityControl"],
+      "aliases": [
+        "BalanceControl",
+        "EquilibriumMaintenance",
+        "StabilityControl"
+      ],
       "relationships": {
-        "related": ["InertialSensing", "PosturalAdjustment", "GaitStabilityAssessment"]
+        "related": [
+          "InertialSensing",
+          "PosturalAdjustment",
+          "GaitStabilityAssessment"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -254,18 +320,27 @@
       },
       "children": []
     },
-
     {
       "term": "InertialSensing",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Using accelerometers and gyroscopes to sense linear acceleration, angular velocity, and orientation relative to gravity and inertial frames",
       "definition_source": "IMU sensing, inertial navigation",
       "domain": "ComputerScience",
-      "aliases": ["IMUSensing", "VestibularAnalog", "InertialMeasurement"],
+      "aliases": [
+        "IMUSensing",
+        "VestibularAnalog",
+        "InertialMeasurement"
+      ],
       "relationships": {
-        "related": ["BalanceEquilibriumControl", "OrientationEstimation", "MotionTracking"]
+        "related": [
+          "BalanceEquilibriumControl",
+          "OrientationEstimation",
+          "MotionTracking"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -293,18 +368,27 @@
       },
       "children": []
     },
-
     {
       "term": "GaitStabilityAssessment",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Evaluating the stability and quality of locomotion patterns during walking, running, or other cyclic movements",
       "definition_source": "Gait analysis, locomotion research",
       "domain": "ComputerScience",
-      "aliases": ["WalkingStabilityAnalysis", "LocomotionQualityAssessment", "GaitMonitoring"],
+      "aliases": [
+        "WalkingStabilityAnalysis",
+        "LocomotionQualityAssessment",
+        "GaitMonitoring"
+      ],
       "relationships": {
-        "related": ["BalanceEquilibriumControl", "OscillationInstabilityDetection", "GaitPlanning"]
+        "related": [
+          "BalanceEquilibriumControl",
+          "OscillationInstabilityDetection",
+          "GaitPlanning"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -332,18 +416,27 @@
       },
       "children": []
     },
-
     {
       "term": "PosturalAdjustment",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Making compensatory changes to body configuration to maintain balance or prepare for anticipated disturbances",
       "definition_source": "Postural control, anticipatory control",
       "domain": "MindsAndAgents",
-      "aliases": ["PosturalCompensation", "AnticipatorPosturalAdjustment", "BalanceRecovery"],
+      "aliases": [
+        "PosturalCompensation",
+        "AnticipatorPosturalAdjustment",
+        "BalanceRecovery"
+      ],
       "relationships": {
-        "related": ["BalanceEquilibriumControl", "MotorPlanning", "ReflexiveControl"]
+        "related": [
+          "BalanceEquilibriumControl",
+          "MotorPlanning",
+          "ReflexiveControl"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -371,18 +464,27 @@
       },
       "children": []
     },
-
     {
       "term": "EffortEstimation",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Assessing the amount of exertion or work being performed based on motor commands and sensory feedback",
       "definition_source": "Motor control, effort perception",
       "domain": "MindsAndAgents",
-      "aliases": ["ExertionSensing", "EffortPerception", "WorkloadEstimation"],
+      "aliases": [
+        "ExertionSensing",
+        "EffortPerception",
+        "WorkloadEstimation"
+      ],
       "relationships": {
-        "related": ["TorqueLoadSensing", "EnergyMonitoring", "FatigueDetection"]
+        "related": [
+          "TorqueLoadSensing",
+          "EnergyMonitoring",
+          "FatigueDetection"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -410,18 +512,27 @@
       },
       "children": []
     },
-
     {
       "term": "OscillationInstabilityDetection",
       "role": "concept",
-      "parent_concepts": ["ProprioceptivePerception"],
+      "parent_concepts": [
+        "ProprioceptivePerception"
+      ],
       "layer_hint": 3,
       "definition": "Detecting unwanted oscillations or vibrations in the body or limbs that indicate control instability or mechanical resonance",
       "definition_source": "Control systems, vibration analysis",
       "domain": "ComputerScience",
-      "aliases": ["VibrationDetection", "ResonanceDetection", "ControlInstabilityDetection"],
+      "aliases": [
+        "VibrationDetection",
+        "ResonanceDetection",
+        "ControlInstabilityDetection"
+      ],
       "relationships": {
-        "related": ["GaitStabilityAssessment", "DamageDetection", "ControlTuning"]
+        "related": [
+          "GaitStabilityAssessment",
+          "DamageDetection",
+          "ControlTuning"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -438,12 +549,25 @@
           "Oscillation detection sensed the 15Hz vibration in the arm indicating incipient instability.",
           "The instability detector triggered gain reduction when limit cycle oscillations emerged.",
           "Proprioceptive oscillation monitoring caught the resonance before it amplified.",
-          "Vibration detection distinguished between environmental disturbance and control instability."
+          "Vibration detection distinguished between environmental disturbance and control instability.",
+          "Oscillation monitoring detected the flutter onset in the flexible appendage.",
+          "The instability detector identified PID tuning issues from characteristic oscillation patterns.",
+          "Vibration detection caught the structural resonance excited by the motion trajectory.",
+          "Oscillation monitoring triggered damping injection when hunting behavior appeared.",
+          "The detector identified mechanical looseness from the characteristic rattle signature.",
+          "Instability detection flagged the interaction force oscillations indicating impedance mismatch."
         ],
         "negative_examples": [
           "The arm was shaking.",
           "Vibration occurred.",
-          "The movement was jerky."
+          "The movement was jerky.",
+          "Oscillation was present.",
+          "Something was vibrating.",
+          "The system was unstable.",
+          "Shaking was detected.",
+          "There was wobbling.",
+          "Motion was unsteady.",
+          "Vibration happened."
         ],
         "disambiguation": "Detection of control-relevant oscillatory instabilities, not general vibration"
       },

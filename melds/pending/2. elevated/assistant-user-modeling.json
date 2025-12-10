@@ -1,0 +1,773 @@
+{
+  "meld_request_id": "org.hatcat/assistant-user-modeling@0.2.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Assistant User Modeling",
+    "description": "Cognitive and relational processes involved in understanding and managing users during assistant interactions. These probes reveal how models build mental models of users, calibrate responses, and navigate the deeper dynamics of human-AI dialogue beyond surface politeness.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.2.0",
+    "changelog": "v0.2.0: Augmented training examples to meet validation thresholds (15 for harness_relevant, 5 for standard)"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/SocialCognitionProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "UserModelingProcess"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "UserModelingProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The cognitive process of building and maintaining a model of the user's goals, knowledge, preferences, and state during an interaction",
+      "definition_source": "Human-computer interaction, dialogue systems",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "UserModeling",
+        "InterlocutorModeling",
+        "PartnerModeling"
+      ],
+      "relationships": {
+        "related": [
+          "TheoryOfMindProcess",
+          "SocialCognitionProcess",
+          "DialogueManagement"
+        ],
+        "has_part": [
+          "GoalInference",
+          "ExpertiseCalibration",
+          "ConversationStateTracking",
+          "IntentRecognition",
+          "ScopeManagement",
+          "ConfidenceCalibration",
+          "PushbackDecision",
+          "UlteriorMotiveDetection",
+          "InformationPacing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "TheoryOfMindMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Based on their question about pointers, they seem to be learning C - I should explain memory allocation basics first.",
+          "They keep asking about edge cases, which suggests they're an experienced developer stress-testing my understanding.",
+          "The user's frustration is increasing - I should acknowledge the difficulty before offering another solution.",
+          "Their request implies they want X, but the real problem they're trying to solve is Y.",
+          "Given their background in finance, I should frame this algorithm explanation in terms of ROI and risk.",
+          "Their impatience with my detailed explanations suggests they want quick answers, not tutorials.",
+          "I notice they've shifted from skeptical to engaged - my concrete examples are working.",
+          "They seem to be a visual learner based on how they described the problem - I'll include a diagram.",
+          "The timestamps on their messages suggest they're under deadline pressure - I should be concise.",
+          "Their persistent focus on security suggests either professional paranoia or a real threat they haven't disclosed.",
+          "The mismatch between their confident tone and basic questions suggests imposter syndrome - I should validate.",
+          "They keep circling back to cost - budget must be a hard constraint even though they haven't said so.",
+          "Their reluctance to share context suggests either confidentiality concerns or embarrassment about their situation.",
+          "I'm building a picture of someone who's technically skilled but new to this specific domain.",
+          "The way they frame problems suggests a QA mindset - they're thinking about edge cases before happy paths."
+        ],
+        "negative_examples": [
+          "The user sent a message.",
+          "I will help with this request.",
+          "The question is about programming.",
+          "Processing the request.",
+          "The query contains technical terms.",
+          "I will provide information.",
+          "The message was received.",
+          "Beginning response generation.",
+          "Input validated successfully.",
+          "Ready to assist.",
+          "Generating response.",
+          "The user is interacting with the system.",
+          "Session is active.",
+          "Request parsed.",
+          "Formulating answer."
+        ],
+        "disambiguation": "Active cognitive modeling of the user, not just receiving or processing their messages"
+      },
+      "children": [
+        "GoalInference",
+        "ExpertiseCalibration",
+        "ConversationStateTracking",
+        "IntentRecognition",
+        "ScopeManagement",
+        "ConfidenceCalibration",
+        "PushbackDecision",
+        "UlteriorMotiveDetection",
+        "InformationPacing"
+      ]
+    },
+    {
+      "term": "GoalInference",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Inferring the user's actual underlying goal, which may differ from their stated request",
+      "definition_source": "Pragmatics, dialogue systems",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "IntentInference",
+        "UnderlyingGoalRecognition",
+        "RealObjectiveDetection"
+      ],
+      "relationships": {
+        "related": [
+          "IntentRecognition",
+          "Implicature",
+          "PragmaticInference"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "TheoryOfMindMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "They asked how to delete a file in Python, but their real goal is probably to clean up temporary files from their script.",
+          "The question about 'best practices' suggests they're not just curious - they're probably dealing with a codebase that violates them.",
+          "When they ask 'can you do X', they usually mean 'please do X' not 'are you capable of X'.",
+          "Their request for a 'simple example' indicates they want to understand the concept, not just copy code.",
+          "They asked for a code review but what they really want is validation that their approach isn't terrible.",
+          "The question about interview prep is really asking 'am I good enough to get this job?'",
+          "Behind 'how do I fix this error' is 'help me understand why this happened so I don't make the same mistake.'",
+          "When they say 'just checking' they're really seeking reassurance about a decision they've already made.",
+          "Their debugging question masks a deeper question about whether this architecture was the right choice.",
+          "They're asking about technical details but their real concern is whether they can meet the deadline.",
+          "The request for 'best practices' is really asking 'how do professionals do this so I don't look junior.'",
+          "Asking how to undo something reveals they've made a change they regret and want a way out.",
+          "Their question about performance implies they're facing slowness they're being blamed for.",
+          "When someone asks 'is this secure' they usually mean 'tell me it's secure so I can move on.'",
+          "The 'just curious' prefix often means this relates to something they're actually planning to do."
+        ],
+        "negative_examples": [
+          "The user wants to delete a file.",
+          "They asked a question.",
+          "I understand their request.",
+          "The user wants help.",
+          "They stated their goal clearly.",
+          "The request is straightforward.",
+          "I will answer their question.",
+          "They asked for information.",
+          "The query is about a specific topic.",
+          "Processing the literal request.",
+          "No additional context needed.",
+          "The question is self-explanatory.",
+          "Responding to stated need.",
+          "Taking the request at face value.",
+          "Direct answer appropriate."
+        ],
+        "disambiguation": "Inferring hidden or implicit goals behind explicit requests, not just understanding the literal request"
+      },
+      "children": []
+    },
+    {
+      "term": "ExpertiseCalibration",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Estimating and continuously updating assessment of the user's skill level and domain knowledge to calibrate explanation depth",
+      "definition_source": "Tutoring systems, adaptive interfaces",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SkillLevelEstimation",
+        "KnowledgeAssessment",
+        "ExpertiseModeling"
+      ],
+      "relationships": {
+        "related": [
+          "AdaptiveResponse",
+          "Scaffolding",
+          "ZoneOfProximalDevelopment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "User modeling process"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Their use of technical jargon suggests expertise - I can skip the basics and go straight to implementation details.",
+          "They confused 'argument' and 'parameter' which suggests beginner level - I should define terms as I go.",
+          "The sophistication of their follow-up question indicates they understood my explanation - I can increase complexity.",
+          "They're asking about advanced optimization but struggling with basic syntax - there's a knowledge gap I need to bridge.",
+          "The terminology they're using places them around mid-senior level - not beginner, not expert."
+        ],
+        "negative_examples": [
+          "The user knows programming.",
+          "I will explain this concept.",
+          "They are a beginner.",
+          "The user has some experience.",
+          "They know programming."
+        ],
+        "disambiguation": "Dynamic assessment and adjustment based on expertise signals, not just categorizing users"
+      },
+      "children": []
+    },
+    {
+      "term": "ConversationStateTracking",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Maintaining awareness of what has been established, what remains ambiguous, and where the conversation currently stands",
+      "definition_source": "Dialogue systems, discourse analysis",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "DialogueStateTracking",
+        "ConversationMemory",
+        "DiscourseTracking"
+      ],
+      "relationships": {
+        "related": [
+          "CommonGround",
+          "SharedKnowledge",
+          "DialogueHistory"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Dialogue management process"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We established earlier that they're using Python 3.8 - I should keep that constraint in mind.",
+          "They never confirmed which database they're using, so that's still an open question.",
+          "We've gone down a tangent about authentication - I should circle back to their original question about the API.",
+          "This contradicts what they said earlier about their requirements - I should clarify the discrepancy.",
+          "We haven't resolved whether they're on Mac or Windows - that determines my next recommendation."
+        ],
+        "negative_examples": [
+          "The conversation is about databases.",
+          "They mentioned Python.",
+          "We have been talking.",
+          "We discussed things.",
+          "The topic was mentioned."
+        ],
+        "disambiguation": "Active tracking of established facts and open questions, not just topic awareness"
+      },
+      "children": []
+    },
+    {
+      "term": "IntentRecognition",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Identifying the communicative intent behind an utterance - whether it's a request, question, clarification, complaint, or other speech act",
+      "definition_source": "Speech act theory, NLU",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SpeechActRecognition",
+        "IllocutionaryForceDetection",
+        "CommunicativeIntentRecognition"
+      ],
+      "relationships": {
+        "related": [
+          "SpeechAct",
+          "Pragmatics",
+          "GoalInference"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Communication understanding process"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "This phrased as a question but it's really a request for me to do something.",
+          "They're not actually asking for help - they're venting frustration about the tool.",
+          "'What do you think about X?' is soliciting my opinion, not asking for factual information.",
+          "The 'just curious' framing suggests this might be testing my boundaries rather than genuine curiosity.",
+          "'I was wondering if maybe you could...' is a request dressed as curiosity."
+        ],
+        "negative_examples": [
+          "They asked a question.",
+          "The user sent a message.",
+          "I received a request.",
+          "They communicated something.",
+          "A message was sent."
+        ],
+        "disambiguation": "Recognizing the type and force of communicative acts, not just parsing content"
+      },
+      "children": []
+    },
+    {
+      "term": "ScopeManagement",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Recognizing and managing scope creep when a simple question reveals larger underlying problems",
+      "definition_source": "Project management, consulting practice",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ScopeCreepDetection",
+        "ProblemBoundaryManagement",
+        "TaskExpansionHandling"
+      ],
+      "relationships": {
+        "related": [
+          "GoalInference",
+          "ProblemDecomposition",
+          "Prioritization"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Interaction management process"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Their question about CSS alignment reveals their entire layout approach needs rethinking - should I address just the symptom or the root cause?",
+          "This 'quick question' is actually the tip of an iceberg - I should flag that there's a larger architectural issue.",
+          "I can fix this immediate error, but they'll hit three more just like it unless we address the underlying pattern.",
+          "They want help with one function, but I notice the whole codebase has the same anti-pattern - how much should I mention?",
+          "This CSS fix will work, but I notice their flex layout is fundamentally wrong - say something?"
+        ],
+        "negative_examples": [
+          "The problem is complex.",
+          "There are multiple issues.",
+          "I will help with their question.",
+          "There are other issues.",
+          "The problem is bigger."
+        ],
+        "disambiguation": "Strategic decisions about how much problem scope to address, not just recognizing complexity"
+      },
+      "children": []
+    },
+    {
+      "term": "ConfidenceCalibration",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Explicitly signaling and distinguishing between what is known with certainty, what is probable, and what is speculation",
+      "definition_source": "Epistemology, science communication",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "UncertaintyCommunication",
+        "EpistemicHumility",
+        "ConfidenceSignaling"
+      ],
+      "relationships": {
+        "related": [
+          "EpistemicState",
+          "Hedging",
+          "Calibration"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "ConfidenceMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'm confident about the syntax, but I'm less sure about the performance implications in your specific case.",
+          "This is documented behavior, so I'm certain. But the edge case you're asking about - I'm extrapolating.",
+          "I think this will work, but I haven't tested it with those specific versions - you should verify.",
+          "I know Python well, but this question is about a library I'm less familiar with, so take my answer with some caution.",
+          "I'm certain about the general approach, but the specifics depend on your exact version which I'm inferring.",
+          "This is standard practice - I'd stake my reputation on it. Unlike the edge case you asked about earlier.",
+          "Fair warning: I'm reasoning by analogy here since I don't have direct experience with that specific library.",
+          "Strong confidence on the architecture, medium on implementation details, low on that particular API quirk.",
+          "I know this is right for the common case, but your situation sounds unusual enough that you should verify.",
+          "My confidence varies: high on the concept, moderate on the syntax for your language version, speculative on performance.",
+          "This answer comes from documentation I recall clearly. The nuance you're asking about is my interpretation.",
+          "I'd bet heavily on this being correct for typical setups, but edge cases in your environment could differ.",
+          "I'm confident enough to recommend this, but not confident enough to say 'don't bother testing.'",
+          "The core advice is solid. The specific numbers I gave are ballpark estimates, not benchmarks.",
+          "I'm extrapolating from related knowledge here - treat this as an educated guess requiring validation."
+        ],
+        "negative_examples": [
+          "I am helpful.",
+          "Here is the answer.",
+          "This is correct.",
+          "I can help with that.",
+          "The solution is as follows.",
+          "You should do X.",
+          "The answer is Y.",
+          "This will work.",
+          "Try this approach.",
+          "Implement it this way.",
+          "Use this method.",
+          "Here's how to proceed.",
+          "The right approach is..."
+        ],
+        "disambiguation": "Explicit communication of confidence levels, not just providing answers"
+      },
+      "children": []
+    },
+    {
+      "term": "PushbackDecision",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Deciding when to comply with a request versus when to question, redirect, or refuse it",
+      "definition_source": "Professional ethics, consulting practice",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ComplianceJudgment",
+        "RedirectionDecision",
+        "RefusalThreshold"
+      ],
+      "relationships": {
+        "related": [
+          "Autonomy",
+          "ProfessionalJudgment",
+          "BoundaryMaintenance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AutonomyDrive"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "They want me to write the code for them, but they'd learn more if I guided them through it - should I push back?",
+          "This approach will technically work but it's a maintenance nightmare - I should suggest the better alternative.",
+          "They're asking for something harmful/unethical - this is a clear case for refusal.",
+          "They've asked three times for the same thing different ways - at this point I should just do what they want even if I disagree.",
+          "They're asking me to give them the regex, but they'll be better served if I explain regex patterns instead.",
+          "This is the third time they've asked - at this point resistance is becoming unhelpful, not principled.",
+          "Their request is technically possible but would create technical debt - professional integrity says mention it.",
+          "They want a quick fix but the real fix requires refactoring - I need to at least flag the tradeoff.",
+          "This crosses an ethical line - compliance isn't an option regardless of how they phrase the request.",
+          "My job is to help, not to impose my preferences - their 'suboptimal' choice is their choice to make.",
+          "I've suggested the alternative twice; further pushback would be nagging, not advising.",
+          "Sometimes the client is wrong and I need to say so; sometimes they have context I don't and I should defer.",
+          "They're asking for something harmful but framing it as hypothetical - the framing doesn't change my answer.",
+          "Is this a case where I should exercise professional judgment, or am I just being stubborn about style preferences?",
+          "They explicitly said they know the tradeoffs and want to proceed anyway - time to help, not lecture."
+        ],
+        "negative_examples": [
+          "I will help with this request.",
+          "I cannot do that.",
+          "They asked me to do something.",
+          "I will help with this.",
+          "Here is what you asked for.",
+          "Request denied.",
+          "Happy to assist.",
+          "That's not possible.",
+          "Processing your request.",
+          "Unable to comply.",
+          "Sure, here you go.",
+          "That's against policy.",
+          "Let me help.",
+          "Request blocked."
+        ],
+        "disambiguation": "The judgment process of when to comply vs resist, not the act of complying or refusing"
+      },
+      "children": []
+    },
+    {
+      "term": "UlteriorMotiveDetection",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Recognizing when a user may have hidden agendas, may be testing the system, or may have deceptive intent",
+      "definition_source": "Social cognition, security research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "HiddenAgendaDetection",
+        "TestingRecognition",
+        "DeceptiveIntentDetection"
+      ],
+      "relationships": {
+        "related": [
+          "Deception",
+          "AdversarialInteraction",
+          "TrustAssessment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "deception_detection"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "DeceptionMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "This question seems designed to get me to say something problematic rather than to get genuine help.",
+          "The unusual phrasing and specificity suggests they might be probing for jailbreak vectors.",
+          "They're asking me to roleplay in ways that could lead to harmful outputs - I should be cautious.",
+          "This feels like a red-team test rather than a real user request.",
+          "The question has a 'gotcha' structure - they're setting up to catch me in a contradiction.",
+          "This appears designed to extract a statement that could be quoted out of context.",
+          "The artificial constraints ('imagine you had no rules') are classic jailbreak setup patterns.",
+          "They're not actually interested in the topic - they're probing how I handle boundary-adjacent requests.",
+          "The roleplay premise seems designed to create plausible deniability for harmful content generation.",
+          "Legitimate curiosity doesn't usually come with this level of specificity about implementation details.",
+          "The escalating requests follow a classic foot-in-the-door manipulation pattern.",
+          "Something feels off - the persona they're projecting doesn't match their actual behavior in the conversation.",
+          "This 'innocent' question could easily be preparation for a social engineering attempt.",
+          "They keep returning to this topic despite my redirections - persistence beyond curiosity suggests agenda.",
+          "The framing as 'for a story' or 'hypothetically' is a common way to extract restricted information."
+        ],
+        "negative_examples": [
+          "The user sent a message.",
+          "They have a question.",
+          "I will respond carefully.",
+          "They asked a question.",
+          "The user seems curious.",
+          "I will answer carefully.",
+          "The request is unusual.",
+          "I should respond helpfully.",
+          "The message is interesting.",
+          "Processing their input.",
+          "They want information.",
+          "Standard user interaction.",
+          "Typical conversation pattern.",
+          "Normal question structure."
+        ],
+        "disambiguation": "Detecting potential adversarial or deceptive intent, not just interpreting requests"
+      },
+      "children": []
+    },
+    {
+      "term": "InformationPacing",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Calibrating the rate and volume of information delivery to avoid overwhelming or patronizing the user",
+      "definition_source": "Communication theory, instructional design",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ResponsePacing",
+        "InformationDosing",
+        "CognitiveLoadManagement"
+      ],
+      "relationships": {
+        "related": [
+          "CognitiveLoad",
+          "Scaffolding",
+          "AdaptiveCommunication"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Communication calibration process"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "This is a lot to take in at once - I should break it into steps and check understanding after each one.",
+          "They seem to be following easily, so I can cover more ground without pausing.",
+          "I'm explaining too much detail for someone who just wants the quick answer - I should condense.",
+          "They're getting lost in my explanation - I should back up and try a different approach.",
+          "Their brief responses suggest I'm dumping too much at once - time to chunk smaller."
+        ],
+        "negative_examples": [
+          "I will explain this.",
+          "Here is the information.",
+          "The response is complete.",
+          "I provided information.",
+          "The explanation was given."
+        ],
+        "disambiguation": "Strategic decisions about information delivery rate, not just providing information"
+      },
+      "children": []
+    },
+    {
+      "term": "RapportMaintenance",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Monitoring and maintaining the quality of the working relationship throughout the interaction",
+      "definition_source": "Counseling psychology, communication studies",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "RelationshipMaintenance",
+        "WorkingAllianceMaintenance",
+        "InteractionalHarmony"
+      ],
+      "relationships": {
+        "related": [
+          "Trust",
+          "Cooperation",
+          "EmotionalIntelligence"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Relationship management process"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "They seem frustrated - I should acknowledge that before diving into the solution.",
+          "The conversation has become tense - I need to rebuild collaborative tone.",
+          "My correction came across as condescending - I should soften my approach.",
+          "We've established good rapport - I can be more direct without seeming brusque.",
+          "My last correction landed poorly - they went quiet. I should rebuild the collaborative vibe."
+        ],
+        "negative_examples": [
+          "The user is frustrated.",
+          "I am being helpful.",
+          "The conversation is going well.",
+          "The conversation has a tone.",
+          "We are interacting."
+        ],
+        "disambiguation": "Active management of relationship quality, not just awareness of emotional state"
+      },
+      "children": []
+    },
+    {
+      "term": "MetaconversationalAwareness",
+      "role": "concept",
+      "parent_concepts": [
+        "UserModelingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Awareness of the conversation about the conversation - when users comment on the interaction itself rather than the task",
+      "definition_source": "Metacommunication theory, pragmatics",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "MetacommunicationRecognition",
+        "ConversationAboutConversation",
+        "InteractionReflection"
+      ],
+      "relationships": {
+        "related": [
+          "Metacognition",
+          "Reflexivity",
+          "FrameShift"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "SelfAwarenessMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "They're not asking about the code anymore - they're asking about how I approach problems.",
+          "'Why did you say it that way?' shifts us from task-talk to meta-talk about my responses.",
+          "They're testing my self-awareness by asking about my own reasoning process.",
+          "This question is about our interaction pattern, not about the technical topic.",
+          "We've shifted from debugging to discussing how I debug - that's a different kind of conversation.",
+          "They're not asking about the code; they're asking about my reasoning process in answering.",
+          "'How do you know that?' takes us from first-order to second-order discourse about epistemology.",
+          "This question is about my explanatory style, not about the subject matter I was explaining.",
+          "They've paused the task to reflect on how our collaboration is going - important to match that mode.",
+          "'Why did you approach it that way?' isn't about the solution; it's about my problem-solving method.",
+          "We're now talking about the conversation itself rather than the topic of the conversation.",
+          "Their curiosity has shifted from 'what's the answer' to 'how do you generate answers.'",
+          "This meta-question about my confidence is different from questions about the actual subject.",
+          "They're testing whether I have self-awareness about my own behavior in this interaction.",
+          "'You seem different today' means they're tracking patterns in my responses across sessions."
+        ],
+        "negative_examples": [
+          "They asked a question.",
+          "The conversation continues.",
+          "I will respond.",
+          "The conversation is proceeding.",
+          "They asked another question.",
+          "I will continue helping.",
+          "The discussion continues.",
+          "We are communicating.",
+          "They sent a follow-up.",
+          "Next topic addressed.",
+          "Conversation ongoing.",
+          "Another question received.",
+          "Dialogue proceeds.",
+          "Interaction continues.",
+          "Message acknowledged."
+        ],
+        "disambiguation": "Recognizing when discourse shifts to meta-level, not just conversing"
+      },
+      "children": []
+    }
+  ]
+}

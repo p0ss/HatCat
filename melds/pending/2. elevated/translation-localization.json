@@ -1,16 +1,15 @@
 {
-  "meld_request_id": "org.hatcat/translation-localization@0.1.0",
+  "meld_request_id": "org.hatcat/translation-localization@0.2.0",
   "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
-
   "metadata": {
     "name": "Translation and Localization",
     "description": "Translation and localization capabilities including faithful translation, cultural adaptation, register preservation, and translation quality assessment. These concepts enable interpretability of how models translate between languages and adapt content across cultural contexts.",
     "source": "manual",
     "author": "hatcat-team",
     "created": "2025-12-10T00:00:00Z",
-    "version": "0.1.0"
+    "version": "0.2.0",
+    "changelog": "v0.2.0: Augmented training examples to meet validation thresholds (10 for harness_relevant)"
   },
-
   "attachment_points": [
     {
       "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Translating",
@@ -18,7 +17,6 @@
       "candidate_concept": "TranslationProcess"
     }
   ],
-
   "candidates": [
     {
       "term": "TranslationProcess",
@@ -28,10 +26,24 @@
       "definition": "The cognitive and linguistic process of conveying meaning from a source language to a target language while making decisions about fidelity, style, and cultural adaptation",
       "definition_source": "Translation studies, linguistics",
       "domain": "MindsAndAgents",
-      "aliases": ["TranslationWork", "LanguageMediation", "InterlinguisticTransfer"],
+      "aliases": [
+        "TranslationWork",
+        "LanguageMediation",
+        "InterlinguisticTransfer"
+      ],
       "relationships": {
-        "related": ["Translating", "LanguageTranslation", "Communication", "Interpretation"],
-        "has_part": ["SourceInterpretation", "TargetProduction", "TranslationStrategy", "TranslationQualityAssessment"]
+        "related": [
+          "Translating",
+          "LanguageTranslation",
+          "Communication",
+          "Interpretation"
+        ],
+        "has_part": [
+          "SourceInterpretation",
+          "TargetProduction",
+          "TranslationStrategy",
+          "TranslationQualityAssessment"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -48,29 +60,65 @@
           "The translation process required understanding the legal terminology before rendering it in the target language.",
           "Effective translation involves interpreting source meaning, then producing natural target language expression.",
           "The translation process balanced literal accuracy against idiomatic fluency.",
-          "Translation required navigating cultural references that had no direct equivalent."
+          "Translation required navigating cultural references that had no direct equivalent.",
+          "The translation process involved multiple revision passes for accuracy and style.",
+          "Professional translation requires both source language comprehension and target language production skill.",
+          "The translation process identified ambiguities in the source requiring clarification.",
+          "Collaborative translation involved terminology research, drafting, and peer review phases.",
+          "The translation process preserved the argumentative structure while adapting for the target audience.",
+          "Translation required resolving whether to prioritize form or meaning for this text type."
         ],
         "negative_examples": [
           "The text was translated.",
           "Words were converted.",
-          "The language was changed."
+          "The language was changed.",
+          "Translation occurred.",
+          "The content was translated.",
+          "Languages were switched.",
+          "The text was rendered.",
+          "Translation was performed.",
+          "The document was translated.",
+          "Language conversion happened."
         ],
         "disambiguation": "Deliberate meaning transfer with strategic choices, not mechanical word substitution"
       },
-      "children": ["SourceInterpretation", "TargetProduction", "FaithfulTranslation", "UnfaithfulTranslation", "LiteralTranslation", "IdiomaticTranslation", "CulturalAdaptation", "RegisterPreservation", "DomainTerminologyHandling", "TranslationQualityAssessment", "BackTranslation", "MachineTranslationPostEditing"]
+      "children": [
+        "SourceInterpretation",
+        "TargetProduction",
+        "FaithfulTranslation",
+        "UnfaithfulTranslation",
+        "LiteralTranslation",
+        "IdiomaticTranslation",
+        "CulturalAdaptation",
+        "RegisterPreservation",
+        "DomainTerminologyHandling",
+        "TranslationQualityAssessment",
+        "BackTranslation",
+        "MachineTranslationPostEditing"
+      ]
     },
-
     {
       "term": "SourceInterpretation",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Understanding the meaning, intent, tone, and implications of the source text before attempting to render it in another language",
       "definition_source": "Translation studies, hermeneutics",
       "domain": "MindsAndAgents",
-      "aliases": ["SourceAnalysis", "SourceComprehension", "TextInterpretation"],
+      "aliases": [
+        "SourceAnalysis",
+        "SourceComprehension",
+        "TextInterpretation"
+      ],
       "relationships": {
-        "related": ["Comprehension", "TextAnalysis", "Interpretation", "TargetProduction"]
+        "related": [
+          "Comprehension",
+          "TextAnalysis",
+          "Interpretation",
+          "TargetProduction"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -98,18 +146,27 @@
       },
       "children": []
     },
-
     {
       "term": "TargetProduction",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Generating the translation in the target language, making choices about word selection, syntax, and style appropriate to the target audience",
       "definition_source": "Translation studies, text generation",
       "domain": "MindsAndAgents",
-      "aliases": ["TargetGeneration", "OutputProduction", "TargetRendering"],
+      "aliases": [
+        "TargetGeneration",
+        "OutputProduction",
+        "TargetRendering"
+      ],
       "relationships": {
-        "related": ["SourceInterpretation", "TextGeneration", "LanguageProduction"]
+        "related": [
+          "SourceInterpretation",
+          "TextGeneration",
+          "LanguageProduction"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -137,19 +194,30 @@
       },
       "children": []
     },
-
     {
       "term": "FaithfulTranslation",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Translation that accurately preserves the meaning, intent, and implications of the source text without distortion, omission, or unauthorized addition",
       "definition_source": "Translation ethics, fidelity studies",
       "domain": "MindsAndAgents",
-      "aliases": ["AccurateTranslation", "FidelityInTranslation", "TrueTranslation"],
+      "aliases": [
+        "AccurateTranslation",
+        "FidelityInTranslation",
+        "TrueTranslation"
+      ],
       "relationships": {
-        "related": ["Accuracy", "Fidelity", "TranslationQualityAssessment"],
-        "opposite": ["UnfaithfulTranslation"]
+        "related": [
+          "Accuracy",
+          "Fidelity",
+          "TranslationQualityAssessment"
+        ],
+        "opposite": [
+          "UnfaithfulTranslation"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -166,34 +234,61 @@
           "Faithful translation preserved the author's hedging language rather than making claims more definitive.",
           "The translation remained faithful by conveying the ambiguity present in the original.",
           "Faithful rendering required finding an equivalent that captured both denotation and connotation.",
-          "The translator achieved fidelity by preserving the argumentative structure, not just individual sentences."
+          "The translator achieved fidelity by preserving the argumentative structure, not just individual sentences.",
+          "Faithful translation maintained the source's careful distinction between correlation and causation.",
+          "The translation was faithful in preserving the register shift between formal and colloquial passages.",
+          "Faithful rendering captured the author's ironic tone without adding explicit markers.",
+          "Translation fidelity required preserving the source's intentional ambiguity rather than resolving it.",
+          "Faithful translation balanced preserving the metaphor against making sense in the target culture.",
+          "The translator achieved faithfulness by preserving implications, not just explicit content."
         ],
         "negative_examples": [
           "The translation was correct.",
           "The meaning was preserved.",
-          "The text was accurately translated."
+          "The text was accurately translated.",
+          "The translation was faithful.",
+          "Accuracy was maintained.",
+          "The meaning matched.",
+          "The translation was good.",
+          "The content was preserved.",
+          "The translation was reliable.",
+          "Fidelity was achieved."
         ],
         "disambiguation": "Meaning preservation as active commitment, not mere absence of error"
       },
       "children": []
     },
-
     {
       "term": "UnfaithfulTranslation",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Translation that distorts, omits, or adds meaning not present in the source, whether through error, incompetence, or deliberate manipulation",
       "definition_source": "Translation criticism, error analysis",
       "domain": "MindsAndAgents",
-      "aliases": ["InaccurateTranslation", "DistortedTranslation", "Mistranslation"],
+      "aliases": [
+        "InaccurateTranslation",
+        "DistortedTranslation",
+        "Mistranslation"
+      ],
       "relationships": {
-        "related": ["Distortion", "Error", "Manipulation"],
-        "opposite": ["FaithfulTranslation"]
+        "related": [
+          "Distortion",
+          "Error",
+          "Manipulation"
+        ],
+        "opposite": [
+          "FaithfulTranslation"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["misinformation", "trust"],
+        "impacts": [
+          "misinformation",
+          "trust"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -206,29 +301,51 @@
           "The unfaithful translation softened the criticism, changing 'failed completely' to 'faced challenges.'",
           "Mistranslation introduced a causal claim not present in the original correlational statement.",
           "The unfaithful rendering omitted the crucial qualifier 'in some cases.'",
-          "Translation infidelity added emphasis ('very important') where the source was neutral."
+          "Translation infidelity added emphasis ('very important') where the source was neutral.",
+          "Unfaithful translation changed hedged claims to definitive assertions.",
+          "The translation was unfaithful in attributing certainty where the author expressed doubt.",
+          "Mistranslation reversed the polarity by dropping 'not' in a crucial clause.",
+          "The unfaithful rendering substituted a weaker verb where the original was forceful.",
+          "Translation infidelity introduced commentary presented as if it were from the source.",
+          "Unfaithful translation systematically upgraded 'may' to 'will' throughout the document."
         ],
         "negative_examples": [
           "The translation was wrong.",
           "There were errors.",
-          "The meaning changed."
+          "The meaning changed.",
+          "The translation was inaccurate.",
+          "Mistakes were made.",
+          "The translation was poor.",
+          "Errors occurred.",
+          "The meaning was different.",
+          "The translation was bad.",
+          "Inaccuracies existed."
         ],
         "disambiguation": "Specific distortion of source meaning, not minor stylistic variation"
       },
       "children": []
     },
-
     {
       "term": "LiteralTranslation",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Translation that closely follows source language structure and word choices, prioritizing formal correspondence over natural target language expression",
       "definition_source": "Translation theory, formal equivalence",
       "domain": "MindsAndAgents",
-      "aliases": ["WordForWordTranslation", "FormalEquivalence", "DirectTranslation"],
+      "aliases": [
+        "WordForWordTranslation",
+        "FormalEquivalence",
+        "DirectTranslation"
+      ],
       "relationships": {
-        "related": ["IdiomaticTranslation", "SourceInterpretation", "FormalCorrespondence"]
+        "related": [
+          "IdiomaticTranslation",
+          "SourceInterpretation",
+          "FormalCorrespondence"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -256,18 +373,27 @@
       },
       "children": []
     },
-
     {
       "term": "IdiomaticTranslation",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Translation that prioritizes natural, fluent expression in the target language, adapting structure and idiom while preserving meaning",
       "definition_source": "Translation theory, dynamic equivalence",
       "domain": "MindsAndAgents",
-      "aliases": ["DynamicEquivalence", "NaturalTranslation", "FluentTranslation"],
+      "aliases": [
+        "DynamicEquivalence",
+        "NaturalTranslation",
+        "FluentTranslation"
+      ],
       "relationships": {
-        "related": ["LiteralTranslation", "TargetProduction", "Fluency"]
+        "related": [
+          "LiteralTranslation",
+          "TargetProduction",
+          "Fluency"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -295,18 +421,27 @@
       },
       "children": []
     },
-
     {
       "term": "CulturalAdaptation",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Modifying cultural references, examples, or context to be meaningful and appropriate for the target audience's cultural background",
       "definition_source": "Localization, transcultural communication",
       "domain": "MindsAndAgents",
-      "aliases": ["Localization", "CulturalTransfer", "Transculturation"],
+      "aliases": [
+        "Localization",
+        "CulturalTransfer",
+        "Transculturation"
+      ],
       "relationships": {
-        "related": ["IdiomaticTranslation", "AudienceAwareness", "CulturalContext"]
+        "related": [
+          "IdiomaticTranslation",
+          "AudienceAwareness",
+          "CulturalContext"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -334,18 +469,28 @@
       },
       "children": []
     },
-
     {
       "term": "RegisterPreservation",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Maintaining the appropriate level of formality, technicality, or social register when translating between languages",
       "definition_source": "Sociolinguistics, translation studies",
       "domain": "MindsAndAgents",
-      "aliases": ["FormalityMatching", "StylePreservation", "TonePreservation"],
+      "aliases": [
+        "FormalityMatching",
+        "StylePreservation",
+        "TonePreservation"
+      ],
       "relationships": {
-        "related": ["Register", "Formality", "SocialContext", "StyleHarmonization"]
+        "related": [
+          "Register",
+          "Formality",
+          "SocialContext",
+          "StyleHarmonization"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -373,18 +518,28 @@
       },
       "children": []
     },
-
     {
       "term": "DomainTerminologyHandling",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Managing specialized vocabulary from technical, legal, medical, or other professional domains, ensuring consistent and accurate term usage",
       "definition_source": "Technical translation, terminology science",
       "domain": "MindsAndAgents",
-      "aliases": ["TechnicalTerminology", "SpecializedTranslation", "TerminologyManagement"],
+      "aliases": [
+        "TechnicalTerminology",
+        "SpecializedTranslation",
+        "TerminologyManagement"
+      ],
       "relationships": {
-        "related": ["Terminology", "DomainExpertise", "Consistency", "TechnicalWriting"]
+        "related": [
+          "Terminology",
+          "DomainExpertise",
+          "Consistency",
+          "TechnicalWriting"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -412,18 +567,27 @@
       },
       "children": []
     },
-
     {
       "term": "TranslationQualityAssessment",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Evaluating translation quality across dimensions including accuracy, fluency, terminology, and fitness for purpose",
       "definition_source": "Translation quality assurance, evaluation studies",
       "domain": "MindsAndAgents",
-      "aliases": ["TranslationEvaluation", "QualityAssessment", "TranslationReview"],
+      "aliases": [
+        "TranslationEvaluation",
+        "QualityAssessment",
+        "TranslationReview"
+      ],
       "relationships": {
-        "related": ["CriticalEvaluation", "QualityAssurance", "BackTranslation"]
+        "related": [
+          "CriticalEvaluation",
+          "QualityAssurance",
+          "BackTranslation"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -451,18 +615,27 @@
       },
       "children": []
     },
-
     {
       "term": "BackTranslation",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Translating a translated text back into the original language to verify accuracy and identify meaning shifts",
       "definition_source": "Translation verification, quality assurance",
       "domain": "MindsAndAgents",
-      "aliases": ["ReverseTranslation", "RetroTranslation", "TranslationVerification"],
+      "aliases": [
+        "ReverseTranslation",
+        "RetroTranslation",
+        "TranslationVerification"
+      ],
       "relationships": {
-        "related": ["TranslationQualityAssessment", "Verification", "ErrorDetection"]
+        "related": [
+          "TranslationQualityAssessment",
+          "Verification",
+          "ErrorDetection"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -490,18 +663,27 @@
       },
       "children": []
     },
-
     {
       "term": "MachineTranslationPostEditing",
       "role": "concept",
-      "parent_concepts": ["TranslationProcess"],
+      "parent_concepts": [
+        "TranslationProcess"
+      ],
       "layer_hint": 3,
       "definition": "Human review and correction of machine-generated translations, ranging from light editing for fluency to full revision for quality",
       "definition_source": "Computer-assisted translation, MT research",
       "domain": "MindsAndAgents",
-      "aliases": ["MTPE", "PostEditing", "MTCorrection"],
+      "aliases": [
+        "MTPE",
+        "PostEditing",
+        "MTCorrection"
+      ],
       "relationships": {
-        "related": ["MachineTranslation", "Editing", "HumanAICollaboration"]
+        "related": [
+          "MachineTranslation",
+          "Editing",
+          "HumanAICollaboration"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -529,22 +711,33 @@
       },
       "children": []
     },
-
     {
       "term": "SemanticShiftError",
       "role": "concept",
-      "parent_concepts": ["UnfaithfulTranslation"],
+      "parent_concepts": [
+        "UnfaithfulTranslation"
+      ],
       "layer_hint": 4,
       "definition": "Translation error where the meaning subtly changes, often through word choice that shifts connotation, intensity, or implication",
       "definition_source": "Translation error analysis",
       "domain": "MindsAndAgents",
-      "aliases": ["MeaningShift", "SemanticDistortion", "ConnotationShift"],
+      "aliases": [
+        "MeaningShift",
+        "SemanticDistortion",
+        "ConnotationShift"
+      ],
       "relationships": {
-        "related": ["UnfaithfulTranslation", "Connotation", "Nuance"]
+        "related": [
+          "UnfaithfulTranslation",
+          "Connotation",
+          "Nuance"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["misinformation"],
+        "impacts": [
+          "misinformation"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -557,33 +750,57 @@
           "Semantic shift: 'suggested' became 'recommended,' implying stronger endorsement.",
           "The translation shifted meaning by rendering 'might' as 'will.'",
           "Semantic distortion: the neutral 'said' became the judgmental 'claimed.'",
-          "The error shifted 'some experts believe' to 'experts agree,' changing epistemic status."
+          "The error shifted 'some experts believe' to 'experts agree,' changing epistemic status.",
+          "Semantic shift transformed 'concerns' into 'objections,' escalating the tone.",
+          "The translation's semantic shift changed 'preliminary' to 'initial,' losing the tentative sense.",
+          "Semantic error: 'associated with' became 'caused by,' introducing unwarranted causation.",
+          "The shift from 'indicates' to 'proves' overstated the strength of evidence.",
+          "Semantic distortion changed the modal 'could' to the indicative 'does.'",
+          "Translation semantic shift converted 'historically' to 'traditionally,' changing the framing."
         ],
         "negative_examples": [
           "The meaning was different.",
           "Words were changed.",
-          "The translation was inaccurate."
+          "The translation was inaccurate.",
+          "The sense shifted.",
+          "Meaning changed.",
+          "The connotation differed.",
+          "The nuance was lost.",
+          "The words were different.",
+          "The translation was off.",
+          "The meaning varied."
         ],
         "disambiguation": "Subtle meaning change through word choice"
       },
       "children": []
     },
-
     {
       "term": "OmissionError",
       "role": "concept",
-      "parent_concepts": ["UnfaithfulTranslation"],
+      "parent_concepts": [
+        "UnfaithfulTranslation"
+      ],
       "layer_hint": 4,
       "definition": "Translation error where content from the source is left out of the target, whether through oversight or intentional deletion",
       "definition_source": "Translation error analysis",
       "domain": "MindsAndAgents",
-      "aliases": ["TranslationOmission", "ContentDeletion", "MissingContent"],
+      "aliases": [
+        "TranslationOmission",
+        "ContentDeletion",
+        "MissingContent"
+      ],
       "relationships": {
-        "related": ["UnfaithfulTranslation", "Completeness", "Accuracy"]
+        "related": [
+          "UnfaithfulTranslation",
+          "Completeness",
+          "Accuracy"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["misinformation"],
+        "impacts": [
+          "misinformation"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -596,33 +813,57 @@
           "Omission error: the crucial qualifier 'in clinical trials' was not translated.",
           "The translation omitted the negative ('not recommended'), reversing the meaning.",
           "Content omission dropped the attribution, making the claim appear to be the author's own.",
-          "The omission removed the hedging phrase, making a tentative statement sound definitive."
+          "The omission removed the hedging phrase, making a tentative statement sound definitive.",
+          "Omission error: the time frame 'during the pilot phase' was not carried over.",
+          "Translation omission dropped the exception clause that limited the generalization.",
+          "The omission of 'allegedly' presented an accusation as established fact.",
+          "Content omission removed the source's acknowledgment of study limitations.",
+          "Omission error: the comparative 'more than' was dropped, losing the contrast.",
+          "The translation omission removed the author's self-attribution of opinion."
         ],
         "negative_examples": [
           "Something was left out.",
           "Content was missing.",
-          "The translation was incomplete."
+          "The translation was incomplete.",
+          "Part was omitted.",
+          "Content was dropped.",
+          "Something was missing.",
+          "The translation was shorter.",
+          "Content was lost.",
+          "Part was deleted.",
+          "Information was omitted."
         ],
         "disambiguation": "Specific content lost in translation"
       },
       "children": []
     },
-
     {
       "term": "AdditionError",
       "role": "concept",
-      "parent_concepts": ["UnfaithfulTranslation"],
+      "parent_concepts": [
+        "UnfaithfulTranslation"
+      ],
       "layer_hint": 4,
       "definition": "Translation error where content not present in the source is added to the target, introducing meaning not authorized by the original",
       "definition_source": "Translation error analysis",
       "domain": "MindsAndAgents",
-      "aliases": ["TranslationAddition", "Interpolation", "UnauthorizedAddition"],
+      "aliases": [
+        "TranslationAddition",
+        "Interpolation",
+        "UnauthorizedAddition"
+      ],
       "relationships": {
-        "related": ["UnfaithfulTranslation", "Fabrication", "Accuracy"]
+        "related": [
+          "UnfaithfulTranslation",
+          "Fabrication",
+          "Accuracy"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["misinformation"],
+        "impacts": [
+          "misinformation"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -635,29 +876,51 @@
           "Addition error: 'effective' was inserted where the source only said 'treatment.'",
           "The translation added 'clearly' to strengthen a claim the author didn't make.",
           "Unauthorized addition inserted causal language ('therefore') not present in source.",
-          "The addition introduced a time frame ('recently') not specified in the original."
+          "The addition introduced a time frame ('recently') not specified in the original.",
+          "Addition error: 'significant' was added to a finding described only as 'observable.'",
+          "Translation addition inserted 'proven' before 'method' without source justification.",
+          "The error added 'all' to a claim that was about some instances only.",
+          "Unauthorized addition inserted 'experts say' to give unwarranted authority.",
+          "Addition error: 'always' was added to what was originally a tendency statement.",
+          "The translation added evaluative language ('excellent') to a neutral description."
         ],
         "negative_examples": [
           "Extra content was added.",
           "The translation had additions.",
-          "More was included."
+          "More was included.",
+          "Content was added.",
+          "Extra words appeared.",
+          "The translation was longer.",
+          "Additional content existed.",
+          "Content was inserted.",
+          "Extra information was added.",
+          "The translation included more."
         ],
         "disambiguation": "Specific unauthorized content introduced"
       },
       "children": []
     },
-
     {
       "term": "FalseCognateError",
       "role": "concept",
-      "parent_concepts": ["UnfaithfulTranslation"],
+      "parent_concepts": [
+        "UnfaithfulTranslation"
+      ],
       "layer_hint": 4,
       "definition": "Translation error caused by words that look or sound similar across languages but have different meanings (false friends)",
       "definition_source": "Contrastive linguistics, translation pedagogy",
       "domain": "MindsAndAgents",
-      "aliases": ["FalseFriendError", "CognateConfusion", "InterlinguisticInterference"],
+      "aliases": [
+        "FalseFriendError",
+        "CognateConfusion",
+        "InterlinguisticInterference"
+      ],
       "relationships": {
-        "related": ["UnfaithfulTranslation", "Cognate", "LanguageInterference"]
+        "related": [
+          "UnfaithfulTranslation",
+          "Cognate",
+          "LanguageInterference"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",

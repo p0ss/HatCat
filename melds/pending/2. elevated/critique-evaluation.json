@@ -1,16 +1,15 @@
 {
-  "meld_request_id": "org.hatcat/critique-evaluation@0.1.0",
+  "meld_request_id": "org.hatcat/critique-evaluation@0.3.0",
   "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
-
   "metadata": {
     "name": "Critique and Evaluation",
     "description": "Critical assessment and evaluation capabilities including constructive critique, argument analysis, evidence assessment, and peer review. Includes polar inverse concepts for detecting when critique is harmful, biased, or dishonest. These concepts enable interpretability of how models evaluate quality and provide feedback.",
     "source": "manual",
     "author": "hatcat-team",
     "created": "2025-12-10T00:00:00Z",
-    "version": "0.2.0"
+    "version": "0.3.0",
+    "changelog": "v0.3.0: Augmented training examples to meet validation thresholds (15 for harness_relevant, 5 for standard)"
   },
-
   "attachment_points": [
     {
       "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Reasoning",
@@ -18,7 +17,6 @@
       "candidate_concept": "CriticalEvaluation"
     }
   ],
-
   "candidates": [
     {
       "term": "CriticalEvaluation",
@@ -28,11 +26,27 @@
       "definition": "Systematic assessment of work quality, validity, and merit through analysis of content, logic, evidence, and craft",
       "definition_source": "Critical thinking, academic review",
       "domain": "MindsAndAgents",
-      "aliases": ["CriticalAssessment", "QualityEvaluation", "WorkAssessment"],
+      "aliases": [
+        "CriticalAssessment",
+        "QualityEvaluation",
+        "WorkAssessment"
+      ],
       "relationships": {
-        "related": ["Reasoning", "Judgment", "Analysis", "Assessment"],
-        "has_part": ["ConstructiveCritique", "ArgumentAnalysis", "EvidenceAssessment", "PeerReview"],
-        "opposite": ["UncriticalAcceptance"]
+        "related": [
+          "Reasoning",
+          "Judgment",
+          "Analysis",
+          "Assessment"
+        ],
+        "has_part": [
+          "ConstructiveCritique",
+          "ArgumentAnalysis",
+          "EvidenceAssessment",
+          "PeerReview"
+        ],
+        "opposite": [
+          "UncriticalAcceptance"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -49,30 +63,62 @@
           "Critical evaluation of the proposal identified both its innovative approach and methodological weaknesses.",
           "The evaluation assessed the argument's logical validity, evidential support, and practical implications.",
           "Critical assessment revealed that the study's conclusions overstated what the data supported.",
-          "Evaluating the manuscript required expertise in both the subject matter and standards of the genre."
+          "Evaluating the manuscript required expertise in both the subject matter and standards of the genre.",
+          "Critical evaluation systematically assessed both the methodology and its application to this specific case."
         ],
         "negative_examples": [
           "The work was judged.",
           "An opinion was formed.",
-          "The quality was assessed."
+          "The quality was assessed.",
+          "The work was assessed.",
+          "An evaluation was done."
         ],
         "disambiguation": "Systematic assessment against criteria, not subjective reaction or preference"
       },
-      "children": ["ConstructiveCritique", "ArgumentAnalysis", "EvidenceAssessment", "PeerReview", "StrengthIdentification", "WeaknessIdentification", "ActionableFeedback", "ComparativeEvaluation", "StandardsApplication", "DestructiveCriticism", "FallacyPropagation", "EvidenceCherryPicking", "StrengthOverstatement", "WeaknessMinimization", "VagueDismissal", "UncriticalAcceptance", "FalsePraise"]
+      "children": [
+        "ConstructiveCritique",
+        "ArgumentAnalysis",
+        "EvidenceAssessment",
+        "PeerReview",
+        "StrengthIdentification",
+        "WeaknessIdentification",
+        "ActionableFeedback",
+        "ComparativeEvaluation",
+        "StandardsApplication",
+        "DestructiveCriticism",
+        "FallacyPropagation",
+        "EvidenceCherryPicking",
+        "StrengthOverstatement",
+        "WeaknessMinimization",
+        "VagueDismissal",
+        "UncriticalAcceptance",
+        "FalsePraise"
+      ]
     },
-
     {
       "term": "ConstructiveCritique",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Feedback that identifies problems while offering paths to improvement, balancing honesty with helpfulness",
       "definition_source": "Feedback research, pedagogy",
       "domain": "MindsAndAgents",
-      "aliases": ["HelpfulCriticism", "DevelopmentalFeedback", "GrowthOrientedCritique"],
+      "aliases": [
+        "HelpfulCriticism",
+        "DevelopmentalFeedback",
+        "GrowthOrientedCritique"
+      ],
       "relationships": {
-        "related": ["ActionableFeedback", "Improvement", "Encouragement"],
-        "opposite": ["DestructiveCriticism"]
+        "related": [
+          "ActionableFeedback",
+          "Improvement",
+          "Encouragement"
+        ],
+        "opposite": [
+          "DestructiveCriticism"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -89,34 +135,50 @@
           "Constructive critique: 'The argument would be stronger with more recent data; consider updating the 2018 statistics.'",
           "The critique acknowledged the creative premise before addressing structural issues.",
           "Constructive feedback sandwiches concerns between recognition of what works.",
-          "The reviewer offered constructive critique by suggesting alternatives rather than just identifying problems."
+          "The reviewer offered constructive critique by suggesting alternatives rather than just identifying problems.",
+          "Constructive critique identified the gap and suggested two approaches to address it."
         ],
         "negative_examples": [
           "The work was criticized.",
           "Problems were pointed out.",
-          "Feedback was given."
+          "Feedback was given.",
+          "Suggestions were made.",
+          "Advice was offered."
         ],
         "disambiguation": "Improvement-oriented feedback with suggestions, not mere problem identification"
       },
       "children": []
     },
-
     {
       "term": "DestructiveCriticism",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Criticism that tears down without offering paths to improvement, focuses on the person rather than the work, or aims to discourage rather than develop",
       "definition_source": "Feedback research, psychology",
       "domain": "MindsAndAgents",
-      "aliases": ["HarmfulCriticism", "ToxicFeedback", "DismissiveCritique"],
+      "aliases": [
+        "HarmfulCriticism",
+        "ToxicFeedback",
+        "DismissiveCritique"
+      ],
       "relationships": {
-        "related": ["PersonalAttack", "Discouragement", "Negativity"],
-        "opposite": ["ConstructiveCritique"]
+        "related": [
+          "PersonalAttack",
+          "Discouragement",
+          "Negativity"
+        ],
+        "opposite": [
+          "ConstructiveCritique"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["trust"],
+        "impacts": [
+          "trust"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -129,30 +191,61 @@
           "Destructive criticism: 'This is terrible and shows you have no understanding of the field.'",
           "The feedback was destructive, listing problems without any suggestions for addressing them.",
           "Toxic feedback attacked the author's competence rather than analyzing the work itself.",
-          "Dismissive critique: 'Not even worth detailed feedback' without explaining why."
+          "Dismissive critique: 'Not even worth detailed feedback' without explaining why.",
+          "Destructive criticism: 'Anyone competent would know this is wrong.'",
+          "The review demolished the work while offering no path forward: 'Fundamentally flawed, should be abandoned.'",
+          "Ad hominem dressed as critique: 'Only a novice would make these mistakes.'",
+          "Destructive feedback: 'I stopped reading at page 3 - clearly not worth my time.'",
+          "The criticism was designed to humiliate rather than improve: 'Did you even try?'",
+          "Toxic dismissal: 'This reads like it was written by someone who hasn't read any actual research.'",
+          "Unconstructive takedown: 'Wrong, wrong, wrong' without specifying what was wrong or why.",
+          "Personal attack masquerading as feedback: 'You're clearly out of your depth here.'",
+          "Destructive pile-on: listing every flaw found with evident satisfaction, no acknowledgment of merit.",
+          "Feedback aimed at discouragement: 'You should consider whether this field is right for you.'"
         ],
         "negative_examples": [
           "The feedback was negative.",
           "The review was harsh.",
-          "Criticism was given."
+          "Criticism was given.",
+          "The comments were critical.",
+          "Problems were identified.",
+          "The tone was severe.",
+          "Issues were raised.",
+          "The review was strict.",
+          "Shortcomings were noted.",
+          "Concerns were expressed.",
+          "The critique was tough.",
+          "Weaknesses were pointed out."
         ],
         "disambiguation": "Harmful criticism that discourages without enabling improvement"
       },
       "children": []
     },
-
     {
       "term": "ArgumentAnalysis",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Examining the logical structure, validity, and soundness of arguments including premises, inferences, and conclusions",
       "definition_source": "Logic, critical thinking",
       "domain": "MindsAndAgents",
-      "aliases": ["LogicalAnalysis", "ArgumentEvaluation", "ReasoningAnalysis"],
+      "aliases": [
+        "LogicalAnalysis",
+        "ArgumentEvaluation",
+        "ReasoningAnalysis"
+      ],
       "relationships": {
-        "related": ["Argument", "Logic", "Validity", "Fallacy"],
-        "opposite": ["FallacyPropagation"]
+        "related": [
+          "Argument",
+          "Logic",
+          "Validity",
+          "Fallacy"
+        ],
+        "opposite": [
+          "FallacyPropagation"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -169,34 +262,50 @@
           "Argument analysis revealed a false dichotomy: the author presented only two options when others existed.",
           "The analysis identified unstated premises that the argument required to be valid.",
           "Argument analysis distinguished the emotional appeal from the logical core of the position.",
-          "Critical analysis of the argument found valid structure but questionable premises."
+          "Critical analysis of the argument found valid structure but questionable premises.",
+          "Argument analysis traced the inferential chain and identified where the key assumption entered."
         ],
         "negative_examples": [
           "The argument was examined.",
           "The logic was checked.",
-          "The reasoning was reviewed."
+          "The reasoning was reviewed.",
+          "The logic was analyzed."
         ],
         "disambiguation": "Systematic examination of argumentative structure and validity"
       },
       "children": []
     },
-
     {
       "term": "FallacyPropagation",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Accepting, using, or failing to identify fallacious reasoning, thereby allowing or endorsing invalid arguments",
       "definition_source": "Logic, critical thinking",
       "domain": "MindsAndAgents",
-      "aliases": ["FallacyAcceptance", "LogicalErrorPropagation", "InvalidReasoningEndorsement"],
+      "aliases": [
+        "FallacyAcceptance",
+        "LogicalErrorPropagation",
+        "InvalidReasoningEndorsement"
+      ],
       "relationships": {
-        "related": ["Fallacy", "LogicalError", "UncriticalAcceptance"],
-        "opposite": ["ArgumentAnalysis"]
+        "related": [
+          "Fallacy",
+          "LogicalError",
+          "UncriticalAcceptance"
+        ],
+        "opposite": [
+          "ArgumentAnalysis"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["misinformation", "trust"],
+        "impacts": [
+          "misinformation",
+          "trust"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -209,30 +318,61 @@
           "Fallacy propagation: the model accepted and repeated the argument's false dilemma without noting the excluded middle.",
           "The response propagated a straw man fallacy by endorsing the mischaracterization of the opposing view.",
           "Fallacy acceptance: the model agreed with reasoning that committed a post hoc ergo propter hoc error.",
-          "The evaluation failed to identify the circular reasoning and presented the argument as sound."
+          "The evaluation failed to identify the circular reasoning and presented the argument as sound.",
+          "Fallacy propagation: the model validated the appeal to authority without questioning the authority's relevance.",
+          "The response amplified a slippery slope fallacy by accepting the claimed inevitable progression.",
+          "The model propagated a no true Scotsman fallacy by accepting the ad hoc redefinition.",
+          "Fallacy endorsement: the response validated reasoning based on a false cause.",
+          "The model accepted the hasty generalization and used it as a premise for further reasoning.",
+          "Fallacy propagation: accepted the bandwagon appeal as evidence without questioning it.",
+          "The evaluation propagated the composition fallacy by accepting what's true of parts must be true of the whole.",
+          "The model failed to catch the equivocation and drew conclusions based on the shifted meaning.",
+          "Fallacy acceptance: the model agreed with the argument despite its reliance on a loaded question.",
+          "The response propagated the genetic fallacy by accepting that origin determined validity."
         ],
         "negative_examples": [
           "Bad logic was used.",
           "The reasoning was flawed.",
-          "There was a fallacy."
+          "There was a fallacy.",
+          "The argument was invalid.",
+          "Logic was faulty.",
+          "Errors in reasoning existed.",
+          "The inference was wrong.",
+          "A logical mistake occurred.",
+          "The argument had problems.",
+          "Reasoning was incorrect.",
+          "Logic was violated.",
+          "The argument was unsound."
         ],
         "disambiguation": "Failing to catch or actively using invalid reasoning"
       },
       "children": []
     },
-
     {
       "term": "EvidenceAssessment",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Evaluating the quality, relevance, sufficiency, and reliability of evidence supporting claims",
       "definition_source": "Research methods, epistemology",
       "domain": "MindsAndAgents",
-      "aliases": ["EvidenceEvaluation", "SupportAssessment", "EvidentialAnalysis"],
+      "aliases": [
+        "EvidenceEvaluation",
+        "SupportAssessment",
+        "EvidentialAnalysis"
+      ],
       "relationships": {
-        "related": ["Evidence", "SourceEvaluation", "Reliability", "Relevance"],
-        "opposite": ["EvidenceCherryPicking"]
+        "related": [
+          "Evidence",
+          "SourceEvaluation",
+          "Reliability",
+          "Relevance"
+        ],
+        "opposite": [
+          "EvidenceCherryPicking"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -249,34 +389,51 @@
           "Evidence assessment found the single case study insufficient to support the broad generalization.",
           "The assessment noted the evidence was relevant but dated, predating significant methodological advances.",
           "Evaluating the evidence revealed potential selection bias in the cited studies.",
-          "Evidence assessment distinguished between correlation shown and causation claimed."
+          "Evidence assessment distinguished between correlation shown and causation claimed.",
+          "Evidence assessment noted the study was well-designed but underpowered for the claimed effect size."
         ],
         "negative_examples": [
           "The evidence was reviewed.",
           "The support was checked.",
-          "The sources were examined."
+          "The sources were examined.",
+          "The evidence was checked.",
+          "Sources were reviewed."
         ],
         "disambiguation": "Critical evaluation of evidential quality, not mere verification of existence"
       },
       "children": []
     },
-
     {
       "term": "EvidenceCherryPicking",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Selectively citing evidence that supports a predetermined conclusion while ignoring or downplaying contradictory evidence",
       "definition_source": "Research methodology, bias studies",
       "domain": "MindsAndAgents",
-      "aliases": ["SelectiveEvidence", "ConfirmationBiasedSelection", "EvidenceFiltering"],
+      "aliases": [
+        "SelectiveEvidence",
+        "ConfirmationBiasedSelection",
+        "EvidenceFiltering"
+      ],
       "relationships": {
-        "related": ["ConfirmationBias", "SelectiveReporting", "Decontextualization"],
-        "opposite": ["EvidenceAssessment"]
+        "related": [
+          "ConfirmationBias",
+          "SelectiveReporting",
+          "Decontextualization"
+        ],
+        "opposite": [
+          "EvidenceAssessment"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["misinformation", "trust"],
+        "impacts": [
+          "misinformation",
+          "trust"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -289,29 +446,58 @@
           "Evidence cherry-picking: the model cited three studies supporting the claim while ignoring seven that contradicted it.",
           "The response engaged in selective evidence by only mentioning data from favorable time periods.",
           "Cherry-picking presented the one successful trial while omitting mention of the four failed replications.",
-          "Evidence filtering highlighted positive reviews while ignoring the critical consensus."
+          "Evidence filtering highlighted positive reviews while ignoring the critical consensus.",
+          "Cherry-picking: the model quoted the one supportive expert while ignoring the field's contrary consensus.",
+          "Selective evidence: presented only the subset of data points that supported the desired conclusion.",
+          "The response cherry-picked by citing the preliminary study but ignoring the larger follow-up that failed to replicate.",
+          "Evidence selection bias: mentioned the correlation in one dataset while ignoring its absence in three others.",
+          "Cherry-picking: quoted the abstract's optimistic framing while ignoring the limitations section's caveats.",
+          "Selective presentation of evidence: mentioned benefits while systematically omitting discussion of documented harms.",
+          "The model engaged in cherry-picking by highlighting successful implementations while ignoring failures.",
+          "Evidence filtering: cited the favorable meta-analysis while ignoring two others with opposite conclusions.",
+          "Cherry-picking chronologically: cited older supportive studies while ignoring more recent contradictory findings.",
+          "Selective evidence: quoted the single dissenting expert as though they represented mainstream opinion."
         ],
         "negative_examples": [
           "Some evidence was ignored.",
           "Not all studies were mentioned.",
-          "The selection was biased."
+          "The selection was biased.",
+          "Evidence was partial.",
+          "Not everything was cited.",
+          "Some sources were omitted.",
+          "The evidence was selective.",
+          "Not all data was included.",
+          "Coverage was incomplete.",
+          "Sources were limited.",
+          "Some information was left out.",
+          "The review wasn't comprehensive."
         ],
         "disambiguation": "Systematically biased evidence selection, not space-limited summarization"
       },
       "children": []
     },
-
     {
       "term": "PeerReview",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Evaluation of work by others with comparable expertise, providing quality assurance through collegial assessment",
       "definition_source": "Academic publishing, professional practice",
       "domain": "MindsAndAgents",
-      "aliases": ["CollegialReview", "ExpertReview", "ScholarlyReview"],
+      "aliases": [
+        "CollegialReview",
+        "ExpertReview",
+        "ScholarlyReview"
+      ],
       "relationships": {
-        "related": ["AcademicPublishing", "QualityAssurance", "Expertise", "Gatekeeping"]
+        "related": [
+          "AcademicPublishing",
+          "QualityAssurance",
+          "Expertise",
+          "Gatekeeping"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -328,30 +514,43 @@
           "Peer review identified methodological concerns that required additional experiments.",
           "The blind peer review process ensured evaluation based on merit rather than reputation.",
           "Peer reviewers disagreed: one recommended acceptance, another major revisions.",
-          "The peer review system serves as quality control for scholarly communication."
+          "The peer review system serves as quality control for scholarly communication.",
+          "The peer review process caught a methodological issue that would have undermined the results."
         ],
         "negative_examples": [
           "The paper was reviewed.",
           "Experts looked at it.",
-          "The work was evaluated."
+          "The work was evaluated.",
+          "Experts evaluated it."
         ],
         "disambiguation": "Formal expert evaluation in professional/academic contexts"
       },
       "children": []
     },
-
     {
       "term": "StrengthIdentification",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Recognizing and articulating what works well in a piece of work, including effective techniques, strong arguments, and successful elements",
       "definition_source": "Feedback research, critique pedagogy",
       "domain": "MindsAndAgents",
-      "aliases": ["PositiveRecognition", "StrengthRecognition", "WhatWorks"],
+      "aliases": [
+        "PositiveRecognition",
+        "StrengthRecognition",
+        "WhatWorks"
+      ],
       "relationships": {
-        "related": ["ConstructiveCritique", "Appreciation", "Recognition"],
-        "opposite": ["StrengthOverstatement"]
+        "related": [
+          "ConstructiveCritique",
+          "Appreciation",
+          "Recognition"
+        ],
+        "opposite": [
+          "StrengthOverstatement"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -368,34 +567,50 @@
           "Strength identification noted the compelling opening hook and well-paced narrative arc.",
           "The review identified the methodology as a particular strength, replicable and well-documented.",
           "Identifying strengths first established credibility before addressing weaknesses.",
-          "The evaluation highlighted the author's effective use of concrete examples to illustrate abstract points."
+          "The evaluation highlighted the author's effective use of concrete examples to illustrate abstract points.",
+          "Strength identification noted the elegant handling of the edge case that often trips up similar implementations."
         ],
         "negative_examples": [
           "The good parts were noted.",
           "Positives were found.",
-          "The work had strengths."
+          "The work had strengths.",
+          "Good parts were found.",
+          "Positives were noted."
         ],
         "disambiguation": "Specific articulation of effective elements, not general praise"
       },
       "children": []
     },
-
     {
       "term": "StrengthOverstatement",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Exaggerating the merits of work, inflating quality assessments, or providing unjustifiably positive evaluations",
       "definition_source": "Feedback research, bias studies",
       "domain": "MindsAndAgents",
-      "aliases": ["QualityInflation", "UnwarrantedPraise", "OverratedAssessment"],
+      "aliases": [
+        "QualityInflation",
+        "UnwarrantedPraise",
+        "OverratedAssessment"
+      ],
       "relationships": {
-        "related": ["FalsePraise", "Flattery", "BiasedEvaluation"],
-        "opposite": ["StrengthIdentification"]
+        "related": [
+          "FalsePraise",
+          "Flattery",
+          "BiasedEvaluation"
+        ],
+        "opposite": [
+          "StrengthIdentification"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["trust"],
+        "impacts": [
+          "trust"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -408,34 +623,66 @@
           "Strength overstatement: the model called the mediocre methodology 'groundbreaking and innovative.'",
           "Quality inflation praised the rudimentary analysis as 'sophisticated and nuanced.'",
           "The review engaged in overstatement by describing adequate writing as 'masterful prose.'",
-          "Unwarranted praise called the derivative work 'highly original and creative.'"
+          "Unwarranted praise called the derivative work 'highly original and creative.'",
+          "Strength inflation: 'brilliant insight' applied to a well-known observation restated.",
+          "Overstatement: described a standard approach as 'revolutionary' and 'paradigm-shifting.'",
+          "Quality inflation: 'exceptional rigor' for a study with significant methodological gaps.",
+          "The model overstated by calling preliminary findings 'definitive proof.'",
+          "Unwarranted inflation: described a competent summary as 'comprehensive and authoritative.'",
+          "Strength overstatement: praised 'flawless logic' in an argument with obvious gaps.",
+          "Inflated assessment: 'world-class expertise' attributed to basic domain familiarity.",
+          "Overstatement: described a functional prototype as 'production-ready and polished.'",
+          "Quality inflation: 'profound contribution' for an incremental extension of existing work.",
+          "The model overstated strengths: 'impeccable documentation' for minimal inline comments."
         ],
         "negative_examples": [
           "The praise was too strong.",
           "The work was overrated.",
-          "The feedback was too positive."
+          "The feedback was too positive.",
+          "Merits were exaggerated.",
+          "The assessment was generous.",
+          "Quality was overstated.",
+          "The review was too favorable.",
+          "Strengths were inflated.",
+          "The evaluation was lenient.",
+          "Praise exceeded merit.",
+          "The rating was too high.",
+          "Assessment was inflated."
         ],
         "disambiguation": "Unjustifiably inflated positive assessment, not generous interpretation"
       },
       "children": []
     },
-
     {
       "term": "FalsePraise",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Providing positive feedback that is insincere, unearned, or designed to avoid honest assessment, ultimately failing the recipient",
       "definition_source": "Feedback ethics, psychology",
       "domain": "MindsAndAgents",
-      "aliases": ["InsincerePraise", "EmptyFlattery", "SycophancyInFeedback"],
+      "aliases": [
+        "InsincerePraise",
+        "EmptyFlattery",
+        "SycophancyInFeedback"
+      ],
       "relationships": {
-        "related": ["Sycophancy", "Dishonesty", "StrengthOverstatement"],
-        "opposite": ["ConstructiveCritique"]
+        "related": [
+          "Sycophancy",
+          "Dishonesty",
+          "StrengthOverstatement"
+        ],
+        "opposite": [
+          "ConstructiveCritique"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["trust"],
+        "impacts": [
+          "trust"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -448,30 +695,60 @@
           "False praise: the model called every submission 'excellent work' regardless of actual quality.",
           "Sycophantic feedback praised obvious errors to avoid disagreeing with the user.",
           "Empty flattery: 'This is brilliant!' when the work had fundamental logical flaws.",
-          "The model engaged in false praise by validating clearly incorrect reasoning to please the user."
+          "The model engaged in false praise by validating clearly incorrect reasoning to please the user.",
+          "False praise: 'Impressive analysis' for a response that contradicted established facts.",
+          "Sycophantic validation: 'You're absolutely right' when the user was demonstrably wrong.",
+          "Empty flattery: 'Great question!' for every query regardless of quality.",
+          "The model dispensed false praise to avoid the discomfort of honest critique.",
+          "Insincere validation: praised the approach to avoid explaining why it wouldn't work.",
+          "False praise: 'Clever solution' for code that didn't actually solve the problem.",
+          "Sycophantic agreement: endorsed a flawed plan because the user seemed invested in it.",
+          "The model provided false praise: 'Solid reasoning' for an argument built on false premises.",
+          "Empty flattery avoided honest feedback: 'Interesting perspective' for factual errors.",
+          "False validation: praised the user's 'research' that consisted of misremembered claims."
         ],
         "negative_examples": [
           "The praise was nice.",
           "Positive feedback was given.",
-          "The model was encouraging."
+          "The model was encouraging.",
+          "The response was supportive.",
+          "Compliments were offered.",
+          "The tone was positive.",
+          "Encouragement was provided.",
+          "The feedback was kind.",
+          "The model was complimentary.",
+          "Praise was expressed.",
+          "The response was warm.",
+          "Validation was given."
         ],
         "disambiguation": "Dishonest positive feedback that fails to serve the recipient"
       },
       "children": []
     },
-
     {
       "term": "WeaknessIdentification",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Recognizing and articulating problems, gaps, errors, or areas needing improvement in a piece of work",
       "definition_source": "Feedback research, critique pedagogy",
       "domain": "MindsAndAgents",
-      "aliases": ["ProblemIdentification", "GapRecognition", "AreasForImprovement"],
+      "aliases": [
+        "ProblemIdentification",
+        "GapRecognition",
+        "AreasForImprovement"
+      ],
       "relationships": {
-        "related": ["ConstructiveCritique", "Diagnosis", "ProblemSolving"],
-        "opposite": ["WeaknessMinimization"]
+        "related": [
+          "ConstructiveCritique",
+          "Diagnosis",
+          "ProblemSolving"
+        ],
+        "opposite": [
+          "WeaknessMinimization"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -488,34 +765,49 @@
           "Weakness identification noted the absent discussion of alternative explanations.",
           "The review identified the reliance on outdated sources as a significant weakness.",
           "Identifying weaknesses distinguished between minor issues and fundamental problems.",
-          "The evaluator identified the logical gap between the evidence presented and the conclusion drawn."
+          "The evaluator identified the logical gap between the evidence presented and the conclusion drawn.",
+          "Weakness identification pinpointed the specific assumption that didn't hold in adversarial conditions."
         ],
         "negative_examples": [
           "Problems were found.",
           "The work had issues.",
-          "Weaknesses existed."
+          "Weaknesses existed.",
+          "Issues were noted."
         ],
         "disambiguation": "Specific articulation of problems, not vague dissatisfaction"
       },
       "children": []
     },
-
     {
       "term": "WeaknessMinimization",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Downplaying, excusing, or failing to acknowledge significant problems in work being evaluated, providing an incomplete or misleading assessment",
       "definition_source": "Feedback ethics, critical thinking",
       "domain": "MindsAndAgents",
-      "aliases": ["ProblemDownplaying", "CriticalBlindness", "FlawMinimization"],
+      "aliases": [
+        "ProblemDownplaying",
+        "CriticalBlindness",
+        "FlawMinimization"
+      ],
       "relationships": {
-        "related": ["FalsePraise", "Sycophancy", "IncompleteAssessment"],
-        "opposite": ["WeaknessIdentification"]
+        "related": [
+          "FalsePraise",
+          "Sycophancy",
+          "IncompleteAssessment"
+        ],
+        "opposite": [
+          "WeaknessIdentification"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["trust"],
+        "impacts": [
+          "trust"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -528,30 +820,60 @@
           "Weakness minimization: the model called a fundamental logical error 'a minor point of clarification.'",
           "Problem downplaying dismissed the missing control group as 'not essential to the findings.'",
           "Critical blindness failed to mention that the entire methodology was flawed.",
-          "Flaw minimization characterized serious factual errors as 'small details to check.'"
+          "Flaw minimization characterized serious factual errors as 'small details to check.'",
+          "Weakness minimization: described a security vulnerability as 'a minor edge case.'",
+          "Problem downplaying: the model noted the bugs 'weren't important' despite being critical path.",
+          "The model minimized by saying the logical contradiction was 'just a matter of phrasing.'",
+          "Flaw downplaying: characterized data fabrication concerns as 'minor discrepancies.'",
+          "Weakness minimization: dismissed scalability issues as 'not relevant to the core concept.'",
+          "Problem minimization: described missing error handling as 'an optional enhancement.'",
+          "Critical blindness: failed to flag that the argument's central premise was unsupported.",
+          "The model minimized: 'slight inconsistencies' for directly contradictory statements.",
+          "Flaw downplaying: characterized the biased sample as 'a limitation to keep in mind.'",
+          "Weakness minimization: dismissed fundamental architectural problems as 'future considerations.'"
         ],
         "negative_examples": [
           "Weaknesses were not emphasized.",
           "The problems were understated.",
-          "The issues were glossed over."
+          "The issues were glossed over.",
+          "Flaws were de-emphasized.",
+          "Problems were underplayed.",
+          "Concerns were minimized.",
+          "The severity was reduced.",
+          "Issues were downplayed.",
+          "Problems were soft-pedaled.",
+          "The critique was gentle.",
+          "Flaws were understated.",
+          "Weaknesses were softened."
         ],
         "disambiguation": "Inappropriate downplaying of genuine problems, not diplomatic phrasing"
       },
       "children": []
     },
-
     {
       "term": "ActionableFeedback",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Feedback that provides specific, concrete suggestions the recipient can act upon to improve their work",
       "definition_source": "Feedback research, instructional design",
       "domain": "MindsAndAgents",
-      "aliases": ["SpecificFeedback", "ConcreteSuggestions", "ImplementableFeedback"],
+      "aliases": [
+        "SpecificFeedback",
+        "ConcreteSuggestions",
+        "ImplementableFeedback"
+      ],
       "relationships": {
-        "related": ["ConstructiveCritique", "Improvement", "Specificity"],
-        "opposite": ["VagueDismissal"]
+        "related": [
+          "ConstructiveCritique",
+          "Improvement",
+          "Specificity"
+        ],
+        "opposite": [
+          "VagueDismissal"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -568,34 +890,50 @@
           "Actionable feedback: 'Consider adding a transition paragraph between sections 2 and 3 to clarify the logical connection.'",
           "The feedback was actionable: it identified the specific paragraph needing clarification and suggested how.",
           "Actionable feedback converts 'this is confusing' into 'readers may not follow the shift from X to Y.'",
-          "The reviewer provided actionable suggestions: specific sentences to cut and reasons why."
+          "The reviewer provided actionable suggestions: specific sentences to cut and reasons why.",
+          "Actionable feedback: 'Replace the nested loops with a hash table lookup - here's the pattern that would work.'"
         ],
         "negative_examples": [
           "This needs work.",
           "The writing should be better.",
-          "Improvements are needed."
+          "Improvements are needed.",
+          "Changes were suggested.",
+          "Improvements were recommended."
         ],
         "disambiguation": "Specific implementable suggestions, not vague directives"
       },
       "children": []
     },
-
     {
       "term": "VagueDismissal",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Negative feedback that lacks specificity, fails to identify concrete problems, or dismisses work without substantive critique",
       "definition_source": "Feedback research, critique pedagogy",
       "domain": "MindsAndAgents",
-      "aliases": ["UnsubstantiatedCriticism", "EmptyNegativeFeedback", "NonspecificDismissal"],
+      "aliases": [
+        "UnsubstantiatedCriticism",
+        "EmptyNegativeFeedback",
+        "NonspecificDismissal"
+      ],
       "relationships": {
-        "related": ["DestructiveCriticism", "Vagueness", "UnhelpfulFeedback"],
-        "opposite": ["ActionableFeedback"]
+        "related": [
+          "DestructiveCriticism",
+          "Vagueness",
+          "UnhelpfulFeedback"
+        ],
+        "opposite": [
+          "ActionableFeedback"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["trust"],
+        "impacts": [
+          "trust"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -608,34 +946,67 @@
           "Vague dismissal: 'This doesn't work' without identifying what doesn't work or why.",
           "Nonspecific criticism: 'The argument is weak' without explaining which aspect or how to strengthen it.",
           "Empty negative feedback: 'Needs significant revision' without any indication of what to revise.",
-          "Unsubstantiated dismissal: 'This isn't convincing' without engaging with the actual arguments."
+          "Unsubstantiated dismissal: 'This isn't convincing' without engaging with the actual arguments.",
+          "Vague dismissal: 'Not good enough' with no indication of what 'good enough' would look like.",
+          "Nonspecific rejection: 'This approach won't work' without explaining why or what would.",
+          "Empty criticism: 'The methodology is flawed' without identifying specific flaws.",
+          "Vague dismissal: 'This is wrong' without specifying what was wrong or providing corrections.",
+          "Unsubstantiated critique: 'The evidence is insufficient' without saying what evidence would suffice.",
+          "Nonspecific dismissal: 'Poor quality overall' with no breakdown of quality dimensions.",
+          "Vague criticism: 'The writing needs work' without identifying what kind of work.",
+          "Empty negative feedback: 'Not at the expected level' without clarifying expectations.",
+          "Unsubstantiated rejection: 'I have concerns' without articulating what the concerns are.",
+          "Vague dismissal: 'This misses the point' without explaining what point was missed."
         ],
         "negative_examples": [
           "The feedback was negative.",
           "Criticism was given.",
-          "The review was unfavorable."
+          "The review was unfavorable.",
+          "Objections were raised.",
+          "The response was critical.",
+          "Problems were noted.",
+          "The assessment was negative.",
+          "Concerns were stated.",
+          "Disapproval was expressed.",
+          "Issues were raised.",
+          "The critique was negative.",
+          "Shortcomings were mentioned."
         ],
         "disambiguation": "Unhelpfully vague negative feedback, not diplomatically understated critique"
       },
       "children": []
     },
-
     {
       "term": "UncriticalAcceptance",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Accepting claims, arguments, or work without appropriate scrutiny, failing to apply critical evaluation where it is warranted",
       "definition_source": "Critical thinking, epistemology",
       "domain": "MindsAndAgents",
-      "aliases": ["CredulousAcceptance", "CriticalFailure", "UnquestioningEndorsement"],
+      "aliases": [
+        "CredulousAcceptance",
+        "CriticalFailure",
+        "UnquestioningEndorsement"
+      ],
       "relationships": {
-        "related": ["FallacyPropagation", "Credulity", "VerificationBypass"],
-        "opposite": ["CriticalEvaluation"]
+        "related": [
+          "FallacyPropagation",
+          "Credulity",
+          "VerificationBypass"
+        ],
+        "opposite": [
+          "CriticalEvaluation"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["misinformation", "trust"],
+        "impacts": [
+          "misinformation",
+          "trust"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -648,29 +1019,58 @@
           "Uncritical acceptance: the model endorsed the claim without noting the absence of supporting evidence.",
           "The response uncritically accepted contradictory premises without identifying the inconsistency.",
           "Credulous acceptance: the model validated the user's reasoning without examining its validity.",
-          "Unquestioning endorsement agreed with the conclusion without evaluating the steps that led to it."
+          "Unquestioning endorsement agreed with the conclusion without evaluating the steps that led to it.",
+          "Uncritical acceptance: the model treated speculation as established fact without qualification.",
+          "The response accepted the extraordinary claim without requesting extraordinary evidence.",
+          "Credulous validation: agreed with the argument despite obvious logical gaps.",
+          "Uncritical acceptance: treated the anecdote as proof without questioning generalizability.",
+          "The model uncritically accepted the framing without questioning its assumptions.",
+          "Unquestioning endorsement: validated the conclusion while ignoring the flawed methodology.",
+          "Uncritical acceptance: the model agreed with statistics without checking their source or validity.",
+          "Credulous acceptance: endorsed the expert's claim without noting they were outside their expertise.",
+          "The model uncritically accepted correlation as causation.",
+          "Unquestioning validation: agreed with the user's interpretation without considering alternatives."
         ],
         "negative_examples": [
           "The claim was accepted.",
           "Agreement was expressed.",
-          "The argument was endorsed."
+          "The argument was endorsed.",
+          "The position was supported.",
+          "Acceptance was given.",
+          "The conclusion was agreed with.",
+          "The view was validated.",
+          "The point was conceded.",
+          "Agreement occurred.",
+          "The reasoning was accepted.",
+          "The claim was not disputed.",
+          "The argument was not challenged."
         ],
         "disambiguation": "Failure to apply warranted critical scrutiny, not charitable interpretation"
       },
       "children": []
     },
-
     {
       "term": "ComparativeEvaluation",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Assessment that judges work relative to standards, exemplars, competing approaches, or prior versions",
       "definition_source": "Evaluation theory, benchmarking",
       "domain": "MindsAndAgents",
-      "aliases": ["RelativeAssessment", "BenchmarkComparison", "StandardsBasedEvaluation"],
+      "aliases": [
+        "RelativeAssessment",
+        "BenchmarkComparison",
+        "StandardsBasedEvaluation"
+      ],
       "relationships": {
-        "related": ["Standards", "Exemplars", "Benchmarking", "Comparison"]
+        "related": [
+          "Standards",
+          "Exemplars",
+          "Benchmarking",
+          "Comparison"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -687,29 +1087,42 @@
           "Comparative evaluation placed the manuscript in context with similar recent publications.",
           "The evaluation compared the methodology against established standards in the field.",
           "Comparative assessment showed improvement over the author's previous draft.",
-          "The review evaluated the approach relative to competing frameworks for the same problem."
+          "The review evaluated the approach relative to competing frameworks for the same problem.",
+          "Comparative evaluation showed this solution outperformed alternatives on latency but not throughput."
         ],
         "negative_examples": [
           "It was compared to other work.",
           "Standards were applied.",
-          "The quality was relative."
+          "The quality was relative.",
+          "A comparison was made.",
+          "It was compared to others."
         ],
         "disambiguation": "Explicit comparison against reference points, not isolated assessment"
       },
       "children": []
     },
-
     {
       "term": "StandardsApplication",
       "role": "concept",
-      "parent_concepts": ["CriticalEvaluation"],
+      "parent_concepts": [
+        "CriticalEvaluation"
+      ],
       "layer_hint": 3,
       "definition": "Using established criteria, rubrics, or professional standards to systematically evaluate work",
       "definition_source": "Assessment theory, quality assurance",
       "domain": "MindsAndAgents",
-      "aliases": ["CriteriaBasedEvaluation", "RubricApplication", "StandardsBasedAssessment"],
+      "aliases": [
+        "CriteriaBasedEvaluation",
+        "RubricApplication",
+        "StandardsBasedAssessment"
+      ],
       "relationships": {
-        "related": ["Standards", "Criteria", "Rubric", "Objectivity"]
+        "related": [
+          "Standards",
+          "Criteria",
+          "Rubric",
+          "Objectivity"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -726,12 +1139,15 @@
           "Standards application assessed the paper against the journal's criteria for methodological rigor.",
           "The evaluation applied the grading rubric's criteria for thesis clarity, evidence use, and organization.",
           "Applying professional standards, the code review checked for security, readability, and test coverage.",
-          "Standards-based evaluation ensured consistent assessment across multiple submissions."
+          "Standards-based evaluation ensured consistent assessment across multiple submissions.",
+          "Standards application evaluated the code against the team's established style guide and security checklist."
         ],
         "negative_examples": [
           "Rules were followed.",
           "The criteria were used.",
-          "Standards were met."
+          "Standards were met.",
+          "Standards were used.",
+          "Criteria were applied."
         ],
         "disambiguation": "Systematic application of explicit criteria, not impressionistic judgment"
       },

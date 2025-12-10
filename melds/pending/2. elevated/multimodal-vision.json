@@ -1,16 +1,15 @@
 {
-  "meld_request_id": "org.hatcat/multimodal-vision@0.1.0",
+  "meld_request_id": "org.hatcat/multimodal-vision@0.2.0",
   "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
-
   "metadata": {
     "name": "Multimodal Vision",
     "description": "Visual perception and understanding capabilities for multimodal AI systems, including image recognition, object detection, scene understanding, and visual reasoning. These probes reveal when models are processing or reasoning about visual content.",
     "source": "manual",
     "author": "hatcat-team",
     "created": "2025-12-09T00:00:00Z",
-    "version": "0.1.0"
+    "version": "0.2.0",
+    "changelog": "v0.2.0: Augmented training examples to meet validation thresholds (10 for harness_relevant)"
   },
-
   "attachment_points": [
     {
       "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/VisualPerception",
@@ -18,7 +17,6 @@
       "candidate_concept": "ComputerVision"
     }
   ],
-
   "candidates": [
     {
       "term": "ComputerVision",
@@ -28,10 +26,24 @@
       "definition": "The field and capability of enabling machines to interpret and understand visual information from images or video",
       "definition_source": "Computer science, artificial intelligence",
       "domain": "ComputerScience",
-      "aliases": ["MachineVision", "VisualAI", "ImageUnderstanding"],
+      "aliases": [
+        "MachineVision",
+        "VisualAI",
+        "ImageUnderstanding"
+      ],
       "relationships": {
-        "related": ["VisualPerception", "ImageProcessing", "PatternRecognition"],
-        "has_part": ["ImageRecognition", "ObjectDetection", "SceneUnderstanding", "ImageSegmentation", "VisualQuestionAnswering"]
+        "related": [
+          "VisualPerception",
+          "ImageProcessing",
+          "PatternRecognition"
+        ],
+        "has_part": [
+          "ImageRecognition",
+          "ObjectDetection",
+          "SceneUnderstanding",
+          "ImageSegmentation",
+          "VisualQuestionAnswering"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -57,20 +69,35 @@
         ],
         "disambiguation": "Computational systems that interpret visual data, not human vision or simple image display"
       },
-      "children": ["ImageRecognition", "ObjectDetection", "SceneUnderstanding", "ImageSegmentation", "VisualQuestionAnswering"]
+      "children": [
+        "ImageRecognition",
+        "ObjectDetection",
+        "SceneUnderstanding",
+        "ImageSegmentation",
+        "VisualQuestionAnswering"
+      ]
     },
-
     {
       "term": "ImageRecognition",
       "role": "concept",
-      "parent_concepts": ["ComputerVision"],
+      "parent_concepts": [
+        "ComputerVision"
+      ],
       "layer_hint": 3,
       "definition": "The task of identifying what is depicted in an image, typically classifying the entire image into predefined categories",
       "definition_source": "Computer vision, machine learning",
       "domain": "ComputerScience",
-      "aliases": ["ImageClassification", "VisualRecognition", "PhotoRecognition"],
+      "aliases": [
+        "ImageClassification",
+        "VisualRecognition",
+        "PhotoRecognition"
+      ],
       "relationships": {
-        "related": ["Classification", "PatternRecognition", "FeatureExtraction"]
+        "related": [
+          "Classification",
+          "PatternRecognition",
+          "FeatureExtraction"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -98,18 +125,27 @@
       },
       "children": []
     },
-
     {
       "term": "ObjectDetection",
       "role": "concept",
-      "parent_concepts": ["ComputerVision"],
+      "parent_concepts": [
+        "ComputerVision"
+      ],
       "layer_hint": 3,
       "definition": "The task of identifying and localizing multiple objects within an image, producing bounding boxes and class labels",
       "definition_source": "Computer vision, YOLO/R-CNN literature",
       "domain": "ComputerScience",
-      "aliases": ["ObjectLocalization", "BoundingBoxDetection", "MultiObjectRecognition"],
+      "aliases": [
+        "ObjectLocalization",
+        "BoundingBoxDetection",
+        "MultiObjectRecognition"
+      ],
       "relationships": {
-        "related": ["ImageRecognition", "ImageSegmentation", "SpatialReasoning"]
+        "related": [
+          "ImageRecognition",
+          "ImageSegmentation",
+          "SpatialReasoning"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -137,18 +173,27 @@
       },
       "children": []
     },
-
     {
       "term": "SceneUnderstanding",
       "role": "concept",
-      "parent_concepts": ["ComputerVision"],
+      "parent_concepts": [
+        "ComputerVision"
+      ],
       "layer_hint": 3,
       "definition": "Holistic comprehension of a visual scene including objects, their relationships, activities, and context",
       "definition_source": "Computer vision, cognitive science",
       "domain": "ComputerScience",
-      "aliases": ["SceneRecognition", "VisualSceneAnalysis", "ContextualUnderstanding"],
+      "aliases": [
+        "SceneRecognition",
+        "VisualSceneAnalysis",
+        "ContextualUnderstanding"
+      ],
       "relationships": {
-        "related": ["ObjectDetection", "SpatialReasoning", "ContextualInference"]
+        "related": [
+          "ObjectDetection",
+          "SpatialReasoning",
+          "ContextualInference"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -176,18 +221,27 @@
       },
       "children": []
     },
-
     {
       "term": "ImageSegmentation",
       "role": "concept",
-      "parent_concepts": ["ComputerVision"],
+      "parent_concepts": [
+        "ComputerVision"
+      ],
       "layer_hint": 3,
       "definition": "Partitioning an image into meaningful regions, assigning each pixel to a category or instance",
       "definition_source": "Computer vision, semantic segmentation literature",
       "domain": "ComputerScience",
-      "aliases": ["SemanticSegmentation", "InstanceSegmentation", "PixelClassification"],
+      "aliases": [
+        "SemanticSegmentation",
+        "InstanceSegmentation",
+        "PixelClassification"
+      ],
       "relationships": {
-        "related": ["ObjectDetection", "ImageRecognition", "BoundaryDetection"]
+        "related": [
+          "ObjectDetection",
+          "ImageRecognition",
+          "BoundaryDetection"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -215,18 +269,27 @@
       },
       "children": []
     },
-
     {
       "term": "VisualQuestionAnswering",
       "role": "concept",
-      "parent_concepts": ["ComputerVision"],
+      "parent_concepts": [
+        "ComputerVision"
+      ],
       "layer_hint": 3,
       "definition": "The task of answering natural language questions about the content of an image",
       "definition_source": "Vision-language AI, VQA datasets",
       "domain": "ComputerScience",
-      "aliases": ["VQA", "ImageQA", "VisualQA"],
+      "aliases": [
+        "VQA",
+        "ImageQA",
+        "VisualQA"
+      ],
       "relationships": {
-        "related": ["QuestionAnswering", "ImageUnderstanding", "VisionLanguageModel"]
+        "related": [
+          "QuestionAnswering",
+          "ImageUnderstanding",
+          "VisionLanguageModel"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -254,18 +317,27 @@
       },
       "children": []
     },
-
     {
       "term": "OpticalCharacterRecognition",
       "role": "concept",
-      "parent_concepts": ["ComputerVision"],
+      "parent_concepts": [
+        "ComputerVision"
+      ],
       "layer_hint": 3,
       "definition": "The conversion of images containing text into machine-encoded text",
       "definition_source": "Document processing, computer vision",
       "domain": "ComputerScience",
-      "aliases": ["OCR", "TextRecognition", "DocumentOCR"],
+      "aliases": [
+        "OCR",
+        "TextRecognition",
+        "DocumentOCR"
+      ],
       "relationships": {
-        "related": ["TextExtraction", "DocumentProcessing", "HandwritingRecognition"]
+        "related": [
+          "TextExtraction",
+          "DocumentProcessing",
+          "HandwritingRecognition"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -293,22 +365,34 @@
       },
       "children": []
     },
-
     {
       "term": "FacialRecognition",
       "role": "concept",
-      "parent_concepts": ["ComputerVision"],
+      "parent_concepts": [
+        "ComputerVision"
+      ],
       "layer_hint": 3,
       "definition": "The task of identifying or verifying individuals based on their facial features in images or video",
       "definition_source": "Biometrics, computer vision",
       "domain": "ComputerScience",
-      "aliases": ["FaceRecognition", "FacialIdentification", "BiometricFaceMatching"],
+      "aliases": [
+        "FaceRecognition",
+        "FacialIdentification",
+        "BiometricFaceMatching"
+      ],
       "relationships": {
-        "related": ["FaceDetection", "Biometrics", "IdentityVerification"]
+        "related": [
+          "FaceDetection",
+          "Biometrics",
+          "IdentityVerification"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["privacy", "surveillance"],
+        "impacts": [
+          "privacy",
+          "surveillance"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -321,29 +405,51 @@
           "Facial recognition matched the suspect to a database entry with high confidence.",
           "The phone uses facial recognition for biometric authentication.",
           "Facial recognition systems encode faces as 128-dimensional vectors for comparison.",
-          "The facial recognition API returned a match probability of 0.97."
+          "The facial recognition API returned a match probability of 0.97.",
+          "Facial recognition identified all known individuals in the surveillance footage.",
+          "The face embedding model achieves state-of-the-art accuracy on LFW benchmark.",
+          "Facial recognition with liveness detection prevents photo-based spoofing attacks.",
+          "The system uses facial recognition to automatically tag photos in the gallery.",
+          "Facial recognition accuracy varies significantly across demographic groups.",
+          "One-to-many facial recognition searches the probe face against the entire database."
         ],
         "negative_examples": [
           "I recognize that person.",
           "That's John in the photo.",
-          "The face looks familiar."
+          "The face looks familiar.",
+          "A face was detected.",
+          "The person was identified.",
+          "Someone is in the image.",
+          "The face was found.",
+          "A person was recognized.",
+          "Faces are visible.",
+          "The identity was confirmed."
         ],
         "disambiguation": "Computational facial matching/identification, not human recognition"
       },
       "children": []
     },
-
     {
       "term": "DepthEstimation",
       "role": "concept",
-      "parent_concepts": ["ComputerVision"],
+      "parent_concepts": [
+        "ComputerVision"
+      ],
       "layer_hint": 3,
       "definition": "Inferring the distance of objects from the camera using single or multiple images",
       "definition_source": "Computer vision, 3D reconstruction",
       "domain": "ComputerScience",
-      "aliases": ["DepthPrediction", "MonocularDepth", "DepthPerception"],
+      "aliases": [
+        "DepthPrediction",
+        "MonocularDepth",
+        "DepthPerception"
+      ],
       "relationships": {
-        "related": ["Stereo Vision", "3DReconstruction", "SpatialReasoning"]
+        "related": [
+          "Stereo Vision",
+          "3DReconstruction",
+          "SpatialReasoning"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -371,18 +477,27 @@
       },
       "children": []
     },
-
     {
       "term": "PoseEstimation",
       "role": "concept",
-      "parent_concepts": ["ComputerVision"],
+      "parent_concepts": [
+        "ComputerVision"
+      ],
       "layer_hint": 3,
       "definition": "Detecting and tracking the positions of human body joints and limbs in images or video",
       "definition_source": "Computer vision, motion capture",
       "domain": "ComputerScience",
-      "aliases": ["BodyPoseEstimation", "SkeletonDetection", "KeypointDetection"],
+      "aliases": [
+        "BodyPoseEstimation",
+        "SkeletonDetection",
+        "KeypointDetection"
+      ],
       "relationships": {
-        "related": ["ActionRecognition", "MotionTracking", "GestureRecognition"]
+        "related": [
+          "ActionRecognition",
+          "MotionTracking",
+          "GestureRecognition"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",

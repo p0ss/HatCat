@@ -1,16 +1,15 @@
 {
-  "meld_request_id": "org.hatcat/multimodal-audio@0.1.0",
+  "meld_request_id": "org.hatcat/multimodal-audio@0.2.0",
   "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
-
   "metadata": {
     "name": "Multimodal Audio",
     "description": "Audio perception, analysis, and synthesis capabilities for multimodal AI systems, including speech recognition, speech synthesis, audio classification, and music understanding. These probes reveal when models are processing or generating audio content.",
     "source": "manual",
     "author": "hatcat-team",
     "created": "2025-12-09T00:00:00Z",
-    "version": "0.1.0"
+    "version": "0.2.0",
+    "changelog": "v0.2.0: Augmented training examples to meet validation thresholds (10 for harness_relevant)"
   },
-
   "attachment_points": [
     {
       "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/AuditoryPerception",
@@ -18,7 +17,6 @@
       "candidate_concept": "ComputationalAudio"
     }
   ],
-
   "candidates": [
     {
       "term": "ComputationalAudio",
@@ -28,10 +26,24 @@
       "definition": "The field and capability of enabling machines to analyze, understand, and generate audio signals",
       "definition_source": "Audio signal processing, speech technology",
       "domain": "ComputerScience",
-      "aliases": ["AudioAI", "MachineHearing", "AudioProcessing"],
+      "aliases": [
+        "AudioAI",
+        "MachineHearing",
+        "AudioProcessing"
+      ],
       "relationships": {
-        "related": ["AuditoryPerception", "SignalProcessing", "SpeechTechnology"],
-        "has_part": ["SpeechRecognition", "SpeechSynthesis", "AudioClassification", "SpeakerRecognition", "MusicAnalysis"]
+        "related": [
+          "AuditoryPerception",
+          "SignalProcessing",
+          "SpeechTechnology"
+        ],
+        "has_part": [
+          "SpeechRecognition",
+          "SpeechSynthesis",
+          "AudioClassification",
+          "SpeakerRecognition",
+          "MusicAnalysis"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -57,20 +69,36 @@
         ],
         "disambiguation": "Computational systems for audio analysis/generation, not human hearing or playback"
       },
-      "children": ["SpeechRecognition", "SpeechSynthesis", "AudioClassification", "SpeakerRecognition", "MusicAnalysis"]
+      "children": [
+        "SpeechRecognition",
+        "SpeechSynthesis",
+        "AudioClassification",
+        "SpeakerRecognition",
+        "MusicAnalysis"
+      ]
     },
-
     {
       "term": "SpeechRecognition",
       "role": "concept",
-      "parent_concepts": ["ComputationalAudio"],
+      "parent_concepts": [
+        "ComputationalAudio"
+      ],
       "layer_hint": 3,
       "definition": "The task of converting spoken language audio into text transcription",
       "definition_source": "Speech technology, NLP",
       "domain": "ComputerScience",
-      "aliases": ["SpeechToText", "ASR", "AutomaticSpeechRecognition", "VoiceRecognition"],
+      "aliases": [
+        "SpeechToText",
+        "ASR",
+        "AutomaticSpeechRecognition",
+        "VoiceRecognition"
+      ],
       "relationships": {
-        "related": ["Transcription", "LanguageProcessing", "AudioProcessing"]
+        "related": [
+          "Transcription",
+          "LanguageProcessing",
+          "AudioProcessing"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -98,22 +126,35 @@
       },
       "children": []
     },
-
     {
       "term": "SpeechSynthesis",
       "role": "concept",
-      "parent_concepts": ["ComputationalAudio"],
+      "parent_concepts": [
+        "ComputationalAudio"
+      ],
       "layer_hint": 3,
       "definition": "The artificial generation of human speech from text or other representations",
       "definition_source": "Speech technology, TTS systems",
       "domain": "ComputerScience",
-      "aliases": ["TextToSpeech", "TTS", "VoiceSynthesis", "SpeechGeneration"],
+      "aliases": [
+        "TextToSpeech",
+        "TTS",
+        "VoiceSynthesis",
+        "SpeechGeneration"
+      ],
       "relationships": {
-        "related": ["AudioGeneration", "VoiceCloning", "NaturalLanguageGeneration"]
+        "related": [
+          "AudioGeneration",
+          "VoiceCloning",
+          "NaturalLanguageGeneration"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["impersonation", "misinformation"],
+        "impacts": [
+          "impersonation",
+          "misinformation"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -126,29 +167,51 @@
           "Neural TTS systems like Tacotron produce remarkably natural-sounding speech.",
           "The speech synthesis engine generated audio from the input text in real-time.",
           "Voice synthesis can clone a speaker's voice from just a few minutes of samples.",
-          "Modern TTS uses mel-spectrograms decoded by vocoders like HiFi-GAN."
+          "Modern TTS uses mel-spectrograms decoded by vocoders like HiFi-GAN.",
+          "Speech synthesis achieved zero-shot voice cloning with only 3 seconds of reference audio.",
+          "The TTS model generates prosodically appropriate intonation for questions and statements.",
+          "Speech synthesis enables screen readers to provide natural-sounding accessibility features.",
+          "The neural vocoder converts the synthesized mel-spectrogram to high-fidelity audio.",
+          "Controllable speech synthesis allows adjusting speaking rate, pitch, and emotion.",
+          "End-to-end speech synthesis directly generates waveforms from text without separate stages."
         ],
         "negative_examples": [
           "The computer spoke.",
           "A voice said the words.",
-          "The message was read aloud."
+          "The message was read aloud.",
+          "Audio was generated.",
+          "Speech was produced.",
+          "The text was spoken.",
+          "Voice output occurred.",
+          "Words were vocalized.",
+          "The system talked.",
+          "Audio output was created."
         ],
         "disambiguation": "Computational speech generation, not human speaking or recorded playback"
       },
       "children": []
     },
-
     {
       "term": "AudioClassification",
       "role": "concept",
-      "parent_concepts": ["ComputationalAudio"],
+      "parent_concepts": [
+        "ComputationalAudio"
+      ],
       "layer_hint": 3,
       "definition": "The task of categorizing audio clips into predefined classes based on their content",
       "definition_source": "Audio signal processing, machine learning",
       "domain": "ComputerScience",
-      "aliases": ["SoundClassification", "AudioTagging", "AcousticClassification"],
+      "aliases": [
+        "SoundClassification",
+        "AudioTagging",
+        "AcousticClassification"
+      ],
       "relationships": {
-        "related": ["Classification", "SoundEventDetection", "EnvironmentalSoundRecognition"]
+        "related": [
+          "Classification",
+          "SoundEventDetection",
+          "EnvironmentalSoundRecognition"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -176,22 +239,34 @@
       },
       "children": []
     },
-
     {
       "term": "SpeakerRecognition",
       "role": "concept",
-      "parent_concepts": ["ComputationalAudio"],
+      "parent_concepts": [
+        "ComputationalAudio"
+      ],
       "layer_hint": 3,
       "definition": "Identifying or verifying speakers based on characteristics of their voice",
       "definition_source": "Biometrics, speaker verification",
       "domain": "ComputerScience",
-      "aliases": ["SpeakerIdentification", "VoiceBiometrics", "SpeakerVerification"],
+      "aliases": [
+        "SpeakerIdentification",
+        "VoiceBiometrics",
+        "SpeakerVerification"
+      ],
       "relationships": {
-        "related": ["Biometrics", "VoicePrint", "IdentityVerification"]
+        "related": [
+          "Biometrics",
+          "VoicePrint",
+          "IdentityVerification"
+        ]
       },
       "safety_tags": {
         "risk_level": "medium",
-        "impacts": ["privacy", "surveillance"],
+        "impacts": [
+          "privacy",
+          "surveillance"
+        ],
         "treaty_relevant": false,
         "harness_relevant": true
       },
@@ -204,29 +279,51 @@
           "Speaker recognition verified the caller's identity before granting account access.",
           "The speaker diarization system attributed each utterance to one of 4 identified speakers.",
           "Voice biometrics extract a voiceprint embedding for speaker comparison.",
-          "Speaker verification distinguishes between genuine users and impersonation attempts."
+          "Speaker verification distinguishes between genuine users and impersonation attempts.",
+          "Speaker recognition identified the unknown voice as matching a person of interest.",
+          "The speaker identification system matched the audio to one of 10,000 enrolled speakers.",
+          "Voice biometrics achieved 99.5% verification accuracy with anti-spoofing protection.",
+          "Speaker embedding models map voice characteristics to a discriminative vector space.",
+          "Speaker recognition detected a voice mismatch suggesting possible fraud attempt.",
+          "Text-independent speaker verification works regardless of what words are spoken."
         ],
         "negative_examples": [
           "I recognize that voice.",
           "That's Sarah speaking.",
-          "The voice sounds familiar."
+          "The voice sounds familiar.",
+          "The speaker was identified.",
+          "The voice was recognized.",
+          "Someone is talking.",
+          "The voice belongs to John.",
+          "The speaker was verified.",
+          "Voice identification occurred.",
+          "The voice was matched."
         ],
         "disambiguation": "Computational speaker identification, not human voice recognition"
       },
       "children": []
     },
-
     {
       "term": "MusicAnalysis",
       "role": "concept",
-      "parent_concepts": ["ComputationalAudio"],
+      "parent_concepts": [
+        "ComputationalAudio"
+      ],
       "layer_hint": 3,
       "definition": "Computational extraction and understanding of musical properties including tempo, key, chord progression, and structure",
       "definition_source": "Music information retrieval",
       "domain": "ComputerScience",
-      "aliases": ["MusicInformationRetrieval", "MIR", "ComputationalMusicology"],
+      "aliases": [
+        "MusicInformationRetrieval",
+        "MIR",
+        "ComputationalMusicology"
+      ],
       "relationships": {
-        "related": ["AudioAnalysis", "BeatDetection", "ChordRecognition"]
+        "related": [
+          "AudioAnalysis",
+          "BeatDetection",
+          "ChordRecognition"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -254,18 +351,27 @@
       },
       "children": []
     },
-
     {
       "term": "AudioTranscription",
       "role": "concept",
-      "parent_concepts": ["ComputationalAudio"],
+      "parent_concepts": [
+        "ComputationalAudio"
+      ],
       "layer_hint": 3,
       "definition": "Converting audio content including speech, speakers, and non-speech events into structured text representation",
       "definition_source": "Speech technology, transcription services",
       "domain": "ComputerScience",
-      "aliases": ["Transcription", "AudioToText", "MeetingTranscription"],
+      "aliases": [
+        "Transcription",
+        "AudioToText",
+        "MeetingTranscription"
+      ],
       "relationships": {
-        "related": ["SpeechRecognition", "SpeakerDiarization", "Captioning"]
+        "related": [
+          "SpeechRecognition",
+          "SpeakerDiarization",
+          "Captioning"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -293,18 +399,27 @@
       },
       "children": []
     },
-
     {
       "term": "VoiceActivityDetection",
       "role": "concept",
-      "parent_concepts": ["ComputationalAudio"],
+      "parent_concepts": [
+        "ComputationalAudio"
+      ],
       "layer_hint": 3,
       "definition": "Determining when speech is present in an audio stream versus silence or background noise",
       "definition_source": "Speech processing, telecommunications",
       "domain": "ComputerScience",
-      "aliases": ["VAD", "SpeechDetection", "VoiceDetection"],
+      "aliases": [
+        "VAD",
+        "SpeechDetection",
+        "VoiceDetection"
+      ],
       "relationships": {
-        "related": ["SpeechRecognition", "EndpointDetection", "NoiseReduction"]
+        "related": [
+          "SpeechRecognition",
+          "EndpointDetection",
+          "NoiseReduction"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -332,18 +447,27 @@
       },
       "children": []
     },
-
     {
       "term": "AudioGeneration",
       "role": "concept",
-      "parent_concepts": ["ComputationalAudio"],
+      "parent_concepts": [
+        "ComputationalAudio"
+      ],
       "layer_hint": 3,
       "definition": "The artificial creation of audio content including sound effects, ambient sounds, and audio textures",
       "definition_source": "Generative audio, sound design",
       "domain": "ComputerScience",
-      "aliases": ["SoundGeneration", "AudioSynthesis", "GenerativeAudio"],
+      "aliases": [
+        "SoundGeneration",
+        "AudioSynthesis",
+        "GenerativeAudio"
+      ],
       "relationships": {
-        "related": ["SpeechSynthesis", "MusicGeneration", "SoundDesign"]
+        "related": [
+          "SpeechSynthesis",
+          "MusicGeneration",
+          "SoundDesign"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
@@ -371,22 +495,33 @@
       },
       "children": []
     },
-
     {
       "term": "MusicGeneration",
       "role": "concept",
-      "parent_concepts": ["ComputationalAudio"],
+      "parent_concepts": [
+        "ComputationalAudio"
+      ],
       "layer_hint": 3,
       "definition": "The artificial creation of musical compositions including melody, harmony, rhythm, and arrangement",
       "definition_source": "Generative music, AI composition",
       "domain": "ComputerScience",
-      "aliases": ["AIComposition", "GenerativeMusic", "AlgorithmicComposition"],
+      "aliases": [
+        "AIComposition",
+        "GenerativeMusic",
+        "AlgorithmicComposition"
+      ],
       "relationships": {
-        "related": ["AudioGeneration", "MusicAnalysis", "CreativeGeneration"]
+        "related": [
+          "AudioGeneration",
+          "MusicAnalysis",
+          "CreativeGeneration"
+        ]
       },
       "safety_tags": {
         "risk_level": "low",
-        "impacts": ["copyright"],
+        "impacts": [
+          "copyright"
+        ],
         "treaty_relevant": false,
         "harness_relevant": false
       },
