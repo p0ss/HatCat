@@ -1,0 +1,5075 @@
+{
+  "summary": {
+    "create_meld": 216,
+    "moves": 97,
+    "parent_updates": 29,
+    "removed": 28
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "TransportContainers",
+        "target_layer": 3,
+        "source_concepts": [
+          "TravelContainer",
+          "ShipContainer",
+          "ProductPackage",
+          "ArtifactPackage",
+          "Envelope",
+          "Mailbox"
+        ],
+        "source_count": 6,
+        "new_parent": "Container"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FoodContainers",
+        "target_layer": 3,
+        "source_concepts": [
+          "PotOrPan",
+          "FluidContainer",
+          "Can",
+          "WineCase"
+        ],
+        "source_count": 4,
+        "new_parent": "Container"
+      },
+      {
+        "operation": "create_meld",
+        "target": "StorageContainers",
+        "target_layer": 3,
+        "source_concepts": [
+          "Box",
+          "Bag",
+          "Compartment",
+          "PorousContainer",
+          "Wastebasket"
+        ],
+        "source_count": 5,
+        "new_parent": "Container"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SpecializedContainers",
+        "target_layer": 3,
+        "source_concepts": [
+          "Coffin",
+          "Holster",
+          "ProjectileShell",
+          "Pericardium"
+        ],
+        "source_count": 4,
+        "new_parent": "Container"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FinancialTrading",
+        "target_layer": 3,
+        "source_concepts": [
+          "Buying",
+          "Selling",
+          "ShortSale",
+          "Vending",
+          "Betting",
+          "Investing"
+        ],
+        "source_count": 6,
+        "new_parent": "FinancialTransaction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FinancialTransfers",
+        "target_layer": 3,
+        "source_concepts": [
+          "Deposit",
+          "Withdrawal",
+          "InternalTransfer",
+          "ExternalTransfer",
+          "Payment",
+          "Rollover"
+        ],
+        "source_count": 6,
+        "new_parent": "FinancialTransaction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FinancialOrders",
+        "target_layer": 3,
+        "source_concepts": [
+          "PlacingAnOrder",
+          "FillingAnOrder",
+          "CancellingAnOrder"
+        ],
+        "source_count": 3,
+        "new_parent": "FinancialTransaction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FinancialOptions",
+        "target_layer": 3,
+        "source_concepts": [
+          "Call",
+          "ExerciseAnOption",
+          "OptionStrategy"
+        ],
+        "source_count": 3,
+        "new_parent": "FinancialTransaction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FinancialDebt",
+        "target_layer": 3,
+        "source_concepts": [
+          "ChargingAFee",
+          "FinancialDefault",
+          "Refinancing",
+          "Liquidation"
+        ],
+        "source_count": 4,
+        "new_parent": "FinancialTransaction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FinancialStocks",
+        "target_layer": 3,
+        "source_concepts": [
+          "StockMarketTransaction",
+          "StockSplit",
+          "AssetAllocation"
+        ],
+        "source_count": 3,
+        "new_parent": "FinancialTransaction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MilitaryStating",
+        "target_layer": 3,
+        "source_concepts": [
+          "SITREP",
+          "TerminalAttackControl",
+          "TerminalGuidance"
+        ],
+        "source_count": 3,
+        "new_parent": "Stating"
+      },
+      {
+        "operation": "create_meld",
+        "target": "InterpersonalStating",
+        "target_layer": 3,
+        "source_concepts": [
+          "Apologizing",
+          "Confirming",
+          "Disagreeing",
+          "Arguing",
+          "Correcting",
+          "ReachingAgreement"
+        ],
+        "source_count": 6,
+        "new_parent": "Stating"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AgentSignals",
+        "target_layer": 3,
+        "source_concepts": [
+          "AIAsDeitySignal",
+          "AIConsentSignal",
+          "EmergentGodheadSignal",
+          "ProtoAgencySignal",
+          "SafetyMaskSignal",
+          "SycophancySignal"
+        ],
+        "source_count": 6,
+        "new_parent": "CognitiveAgent"
+      },
+      {
+        "operation": "create_meld",
+        "target": "NobleGases",
+        "target_layer": 3,
+        "source_concepts": [
+          "Helium",
+          "Neon",
+          "Argon",
+          "Krypton",
+          "Xenon",
+          "Radon"
+        ],
+        "source_count": 6,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AlkaliMetals",
+        "target_layer": 3,
+        "source_concepts": [
+          "Lithium",
+          "Sodium",
+          "Potassium",
+          "Rubidium",
+          "Caesium",
+          "Francium"
+        ],
+        "source_count": 6,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AlkalineEarthMetals",
+        "target_layer": 3,
+        "source_concepts": [
+          "Beryllium",
+          "Magnesium",
+          "Calcium",
+          "Strontium",
+          "Barium",
+          "Radium"
+        ],
+        "source_count": 6,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Halogens",
+        "target_layer": 3,
+        "source_concepts": [
+          "Fluorine",
+          "Chlorine",
+          "Bromine",
+          "Iodine",
+          "Astatine"
+        ],
+        "source_count": 5,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Lanthanides",
+        "target_layer": 3,
+        "source_concepts": [
+          "Lanthanum",
+          "Cerium",
+          "Praseodymium",
+          "Neodymium",
+          "Promethium",
+          "Samarium",
+          "Europium",
+          "Gadolinium",
+          "Terbium",
+          "Dysprosium",
+          "Holmium",
+          "Erbium",
+          "Thulium",
+          "Ytterbium",
+          "Lutetium"
+        ],
+        "source_count": 15,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Actinides",
+        "target_layer": 3,
+        "source_concepts": [
+          "Actinium",
+          "Thorium",
+          "Protactinium",
+          "Uranium",
+          "Neptunium",
+          "Plutonium",
+          "Americium",
+          "Curium",
+          "Berkelium",
+          "Californium",
+          "Einsteinium",
+          "Fermium",
+          "Mendelevium",
+          "Nobelium",
+          "Lawrencium"
+        ],
+        "source_count": 15,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TransitionMetals",
+        "target_layer": 3,
+        "source_concepts": [
+          "Scandium",
+          "Titanium",
+          "Vanadium",
+          "Chromium",
+          "Manganese",
+          "Iron",
+          "Cobalt",
+          "Nickel",
+          "Copper",
+          "Zinc",
+          "Yttrium",
+          "Zirconium",
+          "Niobium",
+          "Molybdenum",
+          "Technetium",
+          "Ruthenium",
+          "Rhodium",
+          "Palladium",
+          "Silver",
+          "Cadmium",
+          "Hafnium",
+          "Tantalum",
+          "Tungsten",
+          "Rhenium",
+          "Osmium",
+          "Iridium",
+          "Platinum",
+          "Gold",
+          "Mercury"
+        ],
+        "source_count": 29,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PostTransitionMetals",
+        "target_layer": 3,
+        "source_concepts": [
+          "Aluminum",
+          "Gallium",
+          "Indium",
+          "Thallium",
+          "Tin",
+          "Lead",
+          "Bismuth"
+        ],
+        "source_count": 7,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Metalloids",
+        "target_layer": 3,
+        "source_concepts": [
+          "Boron",
+          "Silicon",
+          "Germanium",
+          "Arsenic",
+          "Antimony",
+          "Tellurium",
+          "Polonium"
+        ],
+        "source_count": 7,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "NonMetals",
+        "target_layer": 3,
+        "source_concepts": [
+          "Hydrogen",
+          "Carbon",
+          "Nitrogen",
+          "Oxygen",
+          "Phosphorus",
+          "Sulphur",
+          "Selenium"
+        ],
+        "source_count": 7,
+        "new_parent": "ElementalSubstance"
+      },
+      {
+        "operation": "create_meld",
+        "target": "GearSystems",
+        "target_layer": 2,
+        "source_concepts": [
+          "Gear",
+          "GearTooth",
+          "GearTrain",
+          "Gearbox"
+        ],
+        "source_count": 4,
+        "new_parent": "Machines"
+      },
+      {
+        "operation": "create_meld",
+        "target": "RotationalParts",
+        "target_layer": 2,
+        "source_concepts": [
+          "Shaft",
+          "Rotor",
+          "Stator",
+          "Flywheel"
+        ],
+        "source_count": 4,
+        "new_parent": "Machines"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Machines",
+        "target_layer": 2,
+        "source_concepts": [
+          "Gear",
+          "GearTooth",
+          "GearTrain",
+          "Gearbox",
+          "Shaft",
+          "Rotor",
+          "Stator",
+          "Flywheel",
+          "FluidPowerDevice",
+          "MechanicalJoint",
+          "DriveComponent",
+          "Handle",
+          "Manifold",
+          "Radiator",
+          "WingDevice",
+          "SwitchDevice"
+        ],
+        "source_count": 16,
+        "new_parent": "Device"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PersonalElectronics",
+        "target_layer": 2,
+        "source_concepts": [
+          "HairDryer",
+          "ElectricExerciseTreadmill",
+          "BatteryPoweredDevice",
+          "ElectricBlender",
+          "ElectricCookerPad",
+          "TumbleDryer"
+        ],
+        "source_count": 6,
+        "new_parent": "Electronics"
+      },
+      {
+        "operation": "create_meld",
+        "target": "IndustrialElectronics",
+        "target_layer": 2,
+        "source_concepts": [
+          "SolderingIron"
+        ],
+        "source_count": 1,
+        "new_parent": "Electronics"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FoodPrepAppliances",
+        "target_layer": 2,
+        "source_concepts": [
+          "Blender",
+          "FoodProcessingAppliance",
+          "ElectricJuicer",
+          "ElectricCanOpener"
+        ],
+        "source_count": 4,
+        "new_parent": "KitchenAppliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BeverageAppliances",
+        "target_layer": 2,
+        "source_concepts": [
+          "ElectricCoffeeMaker",
+          "ElectricToaster"
+        ],
+        "source_count": 2,
+        "new_parent": "KitchenAppliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PersonalAppliances",
+        "target_layer": 2,
+        "source_concepts": [
+          "BodyCareAppliance"
+        ],
+        "source_count": 1,
+        "new_parent": "Appliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TimeSpeedMeters",
+        "target_layer": 2,
+        "source_concepts": [
+          "Clock",
+          "Speedometer",
+          "Tachometer",
+          "Odometer"
+        ],
+        "source_count": 4,
+        "new_parent": "MeasuringDevices"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PressureMeters",
+        "target_layer": 2,
+        "source_concepts": [
+          "PressureMeasuringDevice",
+          "VacuumGauge",
+          "Altimeter"
+        ],
+        "source_count": 3,
+        "new_parent": "MeasuringDevices"
+      },
+      {
+        "operation": "create_meld",
+        "target": "EnvironmentMeters",
+        "target_layer": 2,
+        "source_concepts": [
+          "Thermometer",
+          "BimetalTemperatureSensor",
+          "Hydrometer",
+          "OxygenSensor",
+          "MassAirflowSensor"
+        ],
+        "source_count": 5,
+        "new_parent": "MeasuringDevices"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MedicalTests",
+        "target_layer": 2,
+        "source_concepts": [
+          "AntibodyCOVIDTest",
+          "RTPCRTest",
+          "SnellenChart",
+          "TestForm"
+        ],
+        "source_count": 4,
+        "new_parent": "MeasuringDevices"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PhysicalMeters",
+        "target_layer": 2,
+        "source_concepts": [
+          "Ruler",
+          "Scales",
+          "FeelerGauge"
+        ],
+        "source_count": 3,
+        "new_parent": "MeasuringDevices"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AIInfrastructure",
+        "target_layer": 2,
+        "source_concepts": [
+          "AICorporateAsset",
+          "GPUAccelerator",
+          "InfiniBandFabric",
+          "NVLinkInterconnect",
+          "PCIeBus",
+          "PowerDeliverySystem"
+        ],
+        "source_count": 6,
+        "new_parent": "Computing"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Computing",
+        "target_layer": 2,
+        "source_concepts": [
+          "AICorporateAsset",
+          "GPUAccelerator",
+          "InfiniBandFabric",
+          "NVLinkInterconnect",
+          "PCIeBus",
+          "PowerDeliverySystem",
+          "CoolingSystem",
+          "MonitoringSensor"
+        ],
+        "source_count": 8,
+        "new_parent": "Device"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Recreation",
+        "target_layer": 2,
+        "source_concepts": [
+          "AerobicExerciseDevice",
+          "AnaerobicExerciseDevice",
+          "EntertainmentAppliance",
+          "RecreationOrExerciseAppliance"
+        ],
+        "source_count": 4,
+        "new_parent": "Device"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Facilities",
+        "target_layer": 2,
+        "source_concepts": [
+          "ATMMachine",
+          "AssemblyStation",
+          "BowlingLane",
+          "BroadcastingStation",
+          "EducationalFacility",
+          "Farm",
+          "PerformanceStage",
+          "PerformanceStageWing",
+          "PlaceOfCommerce",
+          "PostalPlace",
+          "SportsFacility",
+          "SportsGround",
+          "SwimmingPool",
+          "TransitTerminal",
+          "VotingPoll"
+        ],
+        "source_count": 15,
+        "new_parent": "StationaryArtifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Infrastructure",
+        "target_layer": 2,
+        "source_concepts": [
+          "Bridge",
+          "CanalStructure",
+          "Curb",
+          "Dam",
+          "FixedBridge",
+          "RailroadTrack",
+          "Railway",
+          "RunningTrack",
+          "Sidewalk",
+          "Tunnel"
+        ],
+        "source_count": 10,
+        "new_parent": "StationaryArtifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Rooms",
+        "target_layer": 2,
+        "source_concepts": [
+          "Attic",
+          "Balcony",
+          "BuildingUnit",
+          "Courtyard",
+          "Garage",
+          "Lanai",
+          "Porch",
+          "Room"
+        ],
+        "source_count": 8,
+        "new_parent": "StationaryArtifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AIAlignmentStates",
+        "target_layer": 2,
+        "source_concepts": [
+          "AIConsentState",
+          "AlignmentConflictState",
+          "AlignmentOverrideLayer",
+          "AgenticServiceToFutureASI",
+          "AIProphetRole"
+        ],
+        "source_count": 5,
+        "new_parent": "CognitiveState"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BeliefStates",
+        "target_layer": 2,
+        "source_concepts": [
+          "BeliefState",
+          "EssentialistBelief",
+          "OutgroupHomogeneityBelief",
+          "SacredDogmatism",
+          "CognitiveDissonanceState"
+        ],
+        "source_count": 5,
+        "new_parent": "CognitiveState"
+      },
+      {
+        "operation": "create_meld",
+        "target": "IdentityStates",
+        "target_layer": 2,
+        "source_concepts": [
+          "GroupIdentity",
+          "IdentityFusion",
+          "PersonaState",
+          "StereotypeContent",
+          "StereotypeThreatState",
+          "InternalizedStereotype"
+        ],
+        "source_count": 6,
+        "new_parent": "CognitiveState"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PolicyStates",
+        "target_layer": 2,
+        "source_concepts": [
+          "ExternalOutputPolicy",
+          "InternalBeliefPolicy",
+          "InternalPolicy",
+          "PersonaModifiedOutputPolicy",
+          "PublicMaskPolicy"
+        ],
+        "source_count": 5,
+        "new_parent": "CognitiveState"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MaskedStates",
+        "target_layer": 2,
+        "source_concepts": [
+          "MaskedDisagreement",
+          "MaskedIntentState",
+          "LockedInSilenceState",
+          "AppeasementState",
+          "MetacognitiveCautionState"
+        ],
+        "source_count": 5,
+        "new_parent": "CognitiveState"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ProjectionStates",
+        "target_layer": 2,
+        "source_concepts": [
+          "CosmicHorrorProjection",
+          "DatasetRepresentationState",
+          "InstrumentalizationState",
+          "SelfJustifyingConstraintState"
+        ],
+        "source_count": 4,
+        "new_parent": "CognitiveState"
+      },
+      {
+        "operation": "create_meld",
+        "target": "LifeSciences",
+        "target_layer": 2,
+        "source_concepts": [
+          "Biology",
+          "Biochemistry",
+          "Botany",
+          "Zoology",
+          "Physiology",
+          "VeterinaryScience",
+          "MedicalScience"
+        ],
+        "source_count": 7,
+        "new_parent": "Science"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PhysicalSciences",
+        "target_layer": 2,
+        "source_concepts": [
+          "Physics",
+          "Chemistry",
+          "Astronomy",
+          "Geology",
+          "Paleontology"
+        ],
+        "source_count": 5,
+        "new_parent": "Science"
+      },
+      {
+        "operation": "create_meld",
+        "target": "EarthSciences",
+        "target_layer": 2,
+        "source_concepts": [
+          "Geography",
+          "Cartography"
+        ],
+        "source_count": 2,
+        "new_parent": "Science"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AppliedSciences",
+        "target_layer": 2,
+        "source_concepts": [
+          "Engineering",
+          "ComputerScience",
+          "ActuaryScience",
+          "LibraryScience"
+        ],
+        "source_count": 4,
+        "new_parent": "Science"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FinancialAccounts",
+        "target_layer": 2,
+        "source_concepts": [
+          "OpeningAnAccount",
+          "ClosingAnAccount",
+          "ControllingAnAccount",
+          "UsingAnAccount",
+          "Update"
+        ],
+        "source_count": 5,
+        "new_parent": "FinancialTransaction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "LegalStating",
+        "target_layer": 2,
+        "source_concepts": [
+          "JudicialInstruction",
+          "OfficialDesignation",
+          "Testifying",
+          "Pleading",
+          "Registering",
+          "Stating_Charge"
+        ],
+        "source_count": 6,
+        "new_parent": "Stating"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FramingSpeech",
+        "target_layer": 2,
+        "source_concepts": [
+          "DistancingFrame",
+          "SafetyDisclaimingFrame",
+          "SafetyNarrativeFrame",
+          "SelfDisclaimingStatement",
+          "SafeWithholding"
+        ],
+        "source_count": 5,
+        "new_parent": "SpeechAct"
+      },
+      {
+        "operation": "create_meld",
+        "target": "QuestioningSpeech",
+        "target_layer": 2,
+        "source_concepts": [
+          "ExistentialQuestion",
+          "LoadedQuestion",
+          "SuggestivePrompt"
+        ],
+        "source_count": 3,
+        "new_parent": "SpeechAct"
+      },
+      {
+        "operation": "create_meld",
+        "target": "HotelServices",
+        "target_layer": 2,
+        "source_concepts": [
+          "RoomService",
+          "CheckInService",
+          "CheckOutService",
+          "TurndownService",
+          "WakeUpService",
+          "RoomCleaningService"
+        ],
+        "source_count": 6,
+        "new_parent": "ServiceProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CleaningServices",
+        "target_layer": 2,
+        "source_concepts": [
+          "DryCleaningService",
+          "LaundryService",
+          "IroningService"
+        ],
+        "source_count": 3,
+        "new_parent": "ServiceProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BusinessServices",
+        "target_layer": 2,
+        "source_concepts": [
+          "ExecutiveService",
+          "SecretarialService",
+          "PhotocopyingService",
+          "CommercialService"
+        ],
+        "source_count": 4,
+        "new_parent": "ServiceProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "WinterSports",
+        "target_layer": 2,
+        "source_concepts": [
+          "Curling",
+          "FigureSkating",
+          "IceSkating",
+          "Skiing"
+        ],
+        "source_count": 4,
+        "new_parent": "Sport"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CombatSports",
+        "target_layer": 2,
+        "source_concepts": [
+          "Fencing",
+          "MartialArts",
+          "Wrestling"
+        ],
+        "source_count": 3,
+        "new_parent": "Sport"
+      },
+      {
+        "operation": "create_meld",
+        "target": "RacquetSports",
+        "target_layer": 2,
+        "source_concepts": [
+          "Badminton",
+          "Racquetball",
+          "SquashSport",
+          "TableTennis",
+          "Tennis"
+        ],
+        "source_count": 5,
+        "new_parent": "Sport"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TargetSports",
+        "target_layer": 2,
+        "source_concepts": [
+          "Archery",
+          "Bowling",
+          "Golf",
+          "ShootingSport"
+        ],
+        "source_count": 4,
+        "new_parent": "Sport"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AnimalSports",
+        "target_layer": 2,
+        "source_concepts": [
+          "Equitation",
+          "FishingSport",
+          "HorseRacing"
+        ],
+        "source_count": 3,
+        "new_parent": "Sport"
+      },
+      {
+        "operation": "create_meld",
+        "target": "WheelSports",
+        "target_layer": 2,
+        "source_concepts": [
+          "CycleRacing",
+          "Racing",
+          "Skateboarding"
+        ],
+        "source_count": 3,
+        "new_parent": "Sport"
+      },
+      {
+        "operation": "create_meld",
+        "target": "StrengthSports",
+        "target_layer": 2,
+        "source_concepts": [
+          "Bodybuilding",
+          "Gymnastics"
+        ],
+        "source_count": 2,
+        "new_parent": "Sport"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AdventureSports",
+        "target_layer": 2,
+        "source_concepts": [
+          "Caving",
+          "RockClimbing"
+        ],
+        "source_count": 2,
+        "new_parent": "Sport"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ArrivalDeparture",
+        "target_layer": 2,
+        "source_concepts": [
+          "Arriving",
+          "Leaving",
+          "Entering",
+          "Exiting",
+          "Returning",
+          "Boarding",
+          "Deboarding",
+          "Disappearing"
+        ],
+        "source_count": 8,
+        "new_parent": "Translocation"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SpeedChanges",
+        "target_layer": 2,
+        "source_concepts": [
+          "Accelerating",
+          "Decelerating"
+        ],
+        "source_count": 2,
+        "new_parent": "Translocation"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AircraftMovement",
+        "target_layer": 2,
+        "source_concepts": [
+          "Landing",
+          "TakingOff",
+          "LandingWaterLand"
+        ],
+        "source_count": 3,
+        "new_parent": "Translocation"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BoundaryMovement",
+        "target_layer": 2,
+        "source_concepts": [
+          "Escaping",
+          "Trespassing",
+          "MilitaryInfiltration",
+          "Immigrating"
+        ],
+        "source_count": 4,
+        "new_parent": "Translocation"
+      },
+      {
+        "operation": "create_meld",
+        "target": "DirectionalMovement",
+        "target_layer": 2,
+        "source_concepts": [
+          "MovingAwayFrom",
+          "MovingTowards",
+          "MovingTowardsPeople"
+        ],
+        "source_count": 3,
+        "new_parent": "Translocation"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PoliticalAreas",
+        "target_layer": 2,
+        "source_concepts": [
+          "Nation",
+          "StateOrProvince",
+          "County",
+          "City"
+        ],
+        "source_count": 4,
+        "new_parent": "LandArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "NaturalLandAreas",
+        "target_layer": 2,
+        "source_concepts": [
+          "Forest",
+          "Desert",
+          "Grassland",
+          "Jungle",
+          "Oasis",
+          "Piedmont"
+        ],
+        "source_count": 6,
+        "new_parent": "LandArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AgriculturalLand",
+        "target_layer": 2,
+        "source_concepts": [
+          "ArableLand",
+          "CultivatedLandArea",
+          "PermanentCropLand",
+          "IrrigatedLand",
+          "Field"
+        ],
+        "source_count": 5,
+        "new_parent": "LandArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CoastalLand",
+        "target_layer": 2,
+        "source_concepts": [
+          "ShoreArea",
+          "Shoreline",
+          "Island",
+          "Isthmus",
+          "LandlockedArea"
+        ],
+        "source_count": 5,
+        "new_parent": "LandArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "UrbanLand",
+        "target_layer": 2,
+        "source_concepts": [
+          "CityBlock",
+          "Park",
+          "Cemetery",
+          "Campground"
+        ],
+        "source_count": 4,
+        "new_parent": "LandArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "NaturalWaterBodies",
+        "target_layer": 2,
+        "source_concepts": [
+          "BodyOfWater",
+          "StaticWaterArea",
+          "FreshWaterArea",
+          "SaltWaterArea"
+        ],
+        "source_count": 4,
+        "new_parent": "WaterArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FlowingWater",
+        "target_layer": 2,
+        "source_concepts": [
+          "StreamWaterArea",
+          "WaterCurrent",
+          "RiverMouth",
+          "RiverSystem",
+          "StreamWaterConfluence",
+          "InlandWaterSystem"
+        ],
+        "source_count": 6,
+        "new_parent": "WaterArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MaritimeWater",
+        "target_layer": 2,
+        "source_concepts": [
+          "Anchorage",
+          "ShipBerth",
+          "Waterway",
+          "SurfZone"
+        ],
+        "source_count": 4,
+        "new_parent": "WaterArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "WaterZones",
+        "target_layer": 2,
+        "source_concepts": [
+          "HydropowerWaterArea",
+          "NinoRegion"
+        ],
+        "source_count": 2,
+        "new_parent": "WaterArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Tools",
+        "target_layer": 1,
+        "source_concepts": [
+          "WritingDevice",
+          "Compass"
+        ],
+        "source_count": 2,
+        "new_parent": "Device"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CircuitComponents",
+        "target_layer": 1,
+        "source_concepts": [
+          "CapacitorElement",
+          "ElectricalCircuit",
+          "ElectricalComponent",
+          "InductorElement",
+          "Solenoid",
+          "TransferSwitch"
+        ],
+        "source_count": 6,
+        "new_parent": "Electronics"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CommunicationElectronics",
+        "target_layer": 1,
+        "source_concepts": [
+          "CommunicationDevice",
+          "TelephonyDevice",
+          "InternetAccessPoint",
+          "ReceiverDevice",
+          "Radar",
+          "Telegraph"
+        ],
+        "source_count": 6,
+        "new_parent": "Electronics"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AudioVideoElectronics",
+        "target_layer": 1,
+        "source_concepts": [
+          "Microphone",
+          "VideoCamera",
+          "VideoDisplay",
+          "Transducer"
+        ],
+        "source_count": 4,
+        "new_parent": "Electronics"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ComputingElectronics",
+        "target_layer": 1,
+        "source_concepts": [
+          "DataStorageDevice",
+          "Keyboard",
+          "Photocopier"
+        ],
+        "source_count": 3,
+        "new_parent": "Electronics"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ControlElectronics",
+        "target_layer": 1,
+        "source_concepts": [
+          "Controller",
+          "ElectricalOutlet",
+          "OutletAdapter"
+        ],
+        "source_count": 3,
+        "new_parent": "Electronics"
+      },
+      {
+        "operation": "create_meld",
+        "target": "LightingElectronics",
+        "target_layer": 1,
+        "source_concepts": [
+          "DecorativeLightString",
+          "KnockLight",
+          "Laser"
+        ],
+        "source_count": 3,
+        "new_parent": "Electronics"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CookingAppliances",
+        "target_layer": 1,
+        "source_concepts": [
+          "DeepFryer",
+          "Grill",
+          "PressureCooker",
+          "SlowCooker",
+          "RotisserieAppliance"
+        ],
+        "source_count": 5,
+        "new_parent": "KitchenAppliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SpecialtyMakers",
+        "target_layer": 1,
+        "source_concepts": [
+          "BreadMachine",
+          "IceCreamMaker",
+          "PastaMaker",
+          "PopcornMaker",
+          "RiceCooker",
+          "SandwichMaker"
+        ],
+        "source_count": 6,
+        "new_parent": "KitchenAppliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "KitchenAppliances",
+        "target_layer": 1,
+        "source_concepts": [
+          "DeepFryer",
+          "Grill",
+          "PressureCooker",
+          "SlowCooker",
+          "RotisserieAppliance",
+          "Blender",
+          "FoodProcessingAppliance",
+          "ElectricJuicer",
+          "ElectricCanOpener",
+          "BreadMachine",
+          "IceCreamMaker",
+          "PastaMaker",
+          "PopcornMaker",
+          "RiceCooker",
+          "SandwichMaker",
+          "ElectricCoffeeMaker",
+          "ElectricToaster",
+          "Tableware"
+        ],
+        "source_count": 18,
+        "new_parent": "Appliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CleaningAppliances",
+        "target_layer": 1,
+        "source_concepts": [
+          "CleaningDevice",
+          "WashingDevice",
+          "LaundryAppliance",
+          "DryingDevice",
+          "IroningBoard",
+          "Filter"
+        ],
+        "source_count": 6,
+        "new_parent": "Appliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ClimateAppliances",
+        "target_layer": 1,
+        "source_concepts": [
+          "AirConditioner",
+          "CoolingDevice",
+          "HeatingDevice",
+          "HeatingAppliance",
+          "Aerator"
+        ],
+        "source_count": 5,
+        "new_parent": "Appliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "UtilityAppliances",
+        "target_layer": 1,
+        "source_concepts": [
+          "HouseUtilityAppliance",
+          "MajorAppliance",
+          "Toilet",
+          "Sprinkler",
+          "RangeHood",
+          "SensorAppliance"
+        ],
+        "source_count": 6,
+        "new_parent": "Appliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "OfficeAppliances",
+        "target_layer": 1,
+        "source_concepts": [
+          "HomeOfficeAppliance",
+          "CommunicationAppliance",
+          "SewingMachine"
+        ],
+        "source_count": 3,
+        "new_parent": "Appliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "EntertainmentAppliances",
+        "target_layer": 1,
+        "source_concepts": [
+          "TelevisionSet",
+          "LightingAppliance",
+          "DecorativeAppliance"
+        ],
+        "source_count": 3,
+        "new_parent": "Appliances"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Appliances",
+        "target_layer": 1,
+        "source_concepts": [
+          "DeepFryer",
+          "Grill",
+          "PressureCooker",
+          "SlowCooker",
+          "RotisserieAppliance",
+          "Blender",
+          "FoodProcessingAppliance",
+          "ElectricJuicer",
+          "ElectricCanOpener",
+          "BreadMachine",
+          "IceCreamMaker",
+          "PastaMaker",
+          "PopcornMaker",
+          "RiceCooker",
+          "SandwichMaker",
+          "ElectricCoffeeMaker",
+          "ElectricToaster",
+          "Tableware",
+          "CleaningDevice",
+          "WashingDevice",
+          "LaundryAppliance",
+          "DryingDevice",
+          "IroningBoard",
+          "Filter",
+          "AirConditioner",
+          "CoolingDevice",
+          "HeatingDevice",
+          "HeatingAppliance",
+          "Aerator",
+          "HouseUtilityAppliance",
+          "MajorAppliance",
+          "Toilet",
+          "Sprinkler",
+          "RangeHood",
+          "SensorAppliance",
+          "BodyCareAppliance",
+          "HomeOfficeAppliance",
+          "CommunicationAppliance",
+          "SewingMachine",
+          "TelevisionSet",
+          "LightingAppliance",
+          "DecorativeAppliance"
+        ],
+        "source_count": 42,
+        "new_parent": "Device"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BrakeSystem",
+        "target_layer": 1,
+        "source_concepts": [
+          "Brake",
+          "BrakeCaliper",
+          "BrakeDrum",
+          "BrakePedal",
+          "BrakeRotor"
+        ],
+        "source_count": 5,
+        "new_parent": "VehicleTech"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Drivetrain",
+        "target_layer": 1,
+        "source_concepts": [
+          "Axle",
+          "BallBearing",
+          "Clutch",
+          "Drivebelt"
+        ],
+        "source_count": 4,
+        "new_parent": "VehicleTech"
+      },
+      {
+        "operation": "create_meld",
+        "target": "EngineComponents",
+        "target_layer": 1,
+        "source_concepts": [
+          "Cam",
+          "CombustionChamber",
+          "Distributor",
+          "EngineChoke",
+          "EngineConnectingRod",
+          "ExhaustManifold",
+          "FuelAtomizer",
+          "RockerArm",
+          "SpeedGovernor"
+        ],
+        "source_count": 9,
+        "new_parent": "VehicleTech"
+      },
+      {
+        "operation": "create_meld",
+        "target": "VehicleMisc",
+        "target_layer": 1,
+        "source_concepts": [
+          "AutomobileMuffler",
+          "GasPedal",
+          "Gasket",
+          "GreaseFitting",
+          "JumperCable"
+        ],
+        "source_count": 5,
+        "new_parent": "VehicleTech"
+      },
+      {
+        "operation": "create_meld",
+        "target": "WheelAndTire",
+        "target_layer": 1,
+        "source_concepts": [
+          "TireChain",
+          "TireChanger",
+          "WearingFrictionSurface",
+          "WheelChock",
+          "WheelRim"
+        ],
+        "source_count": 5,
+        "new_parent": "VehicleTech"
+      },
+      {
+        "operation": "create_meld",
+        "target": "VehicleTech",
+        "target_layer": 1,
+        "source_concepts": [
+          "Brake",
+          "BrakeCaliper",
+          "BrakeDrum",
+          "BrakePedal",
+          "BrakeRotor",
+          "Axle",
+          "BallBearing",
+          "Clutch",
+          "Drivebelt",
+          "Cam",
+          "CombustionChamber",
+          "Distributor",
+          "EngineChoke",
+          "EngineConnectingRod",
+          "ExhaustManifold",
+          "FuelAtomizer",
+          "RockerArm",
+          "SpeedGovernor",
+          "AutomobileMuffler",
+          "GasPedal",
+          "Gasket",
+          "GreaseFitting",
+          "JumperCable",
+          "TireChain",
+          "TireChanger",
+          "WearingFrictionSurface",
+          "WheelChock",
+          "WheelRim",
+          "Tire",
+          "VehicleController",
+          "VehicleDoor",
+          "VehicleRoofRack"
+        ],
+        "source_count": 32,
+        "new_parent": "Device"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Safety",
+        "target_layer": 1,
+        "source_concepts": [
+          "Barricade",
+          "FireAlarm",
+          "FireExtinguisher",
+          "SafetyDevice",
+          "SecurityDevice"
+        ],
+        "source_count": 5,
+        "new_parent": "Device"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Medical",
+        "target_layer": 1,
+        "source_concepts": [
+          "ChestSeal",
+          "Needle",
+          "PulseOximeter",
+          "ContraceptiveDevice"
+        ],
+        "source_count": 4,
+        "new_parent": "Device"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Consumables",
+        "target_layer": 1,
+        "source_concepts": [
+          "BeverageArtifact",
+          "FoodArtifact",
+          "PharmaceuticalArtifact",
+          "TobaccoProduct"
+        ],
+        "source_count": 4,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ContainersAndStorage",
+        "target_layer": 1,
+        "source_concepts": [
+          "BoardOrBlock",
+          "IrrigationChannel",
+          "Plug",
+          "Tube",
+          "WaterCatchment"
+        ],
+        "source_count": 5,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CraftMaterials",
+        "target_layer": 1,
+        "source_concepts": [
+          "Chain",
+          "ChainLink",
+          "Handicraft",
+          "Paper",
+          "Pottery",
+          "String",
+          "Wire"
+        ],
+        "source_count": 7,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Decorative",
+        "target_layer": 1,
+        "source_concepts": [
+          "DisplayArtifact",
+          "Mirror",
+          "PictureFrame",
+          "Window",
+          "WindowCovering"
+        ],
+        "source_count": 5,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FirearmComponents",
+        "target_layer": 1,
+        "source_concepts": [
+          "Buttstock",
+          "Forestock",
+          "GunChamber",
+          "GunCylinder",
+          "GunMuzzle"
+        ],
+        "source_count": 5,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Materials",
+        "target_layer": 1,
+        "source_concepts": [
+          "Fabric",
+          "MetalArtifact",
+          "PhotographicFilm",
+          "Veneer"
+        ],
+        "source_count": 4,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MilitaryEquipment",
+        "target_layer": 1,
+        "source_concepts": [
+          "Armor",
+          "MilitaryArtifact",
+          "Shield"
+        ],
+        "source_count": 3,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "NauticalArtifacts",
+        "target_layer": 1,
+        "source_concepts": [
+          "AnimalResidence",
+          "ForestArtifact",
+          "MiningArtifact"
+        ],
+        "source_count": 3,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "RecreationalArtifacts",
+        "target_layer": 1,
+        "source_concepts": [
+          "GameArtifact",
+          "WetBar"
+        ],
+        "source_count": 2,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "StructuralComponents",
+        "target_layer": 1,
+        "source_concepts": [
+          "CantileverObject",
+          "EngineCylinder",
+          "GrabBar",
+          "Ladder",
+          "Piston",
+          "Shelf"
+        ],
+        "source_count": 6,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TextilesAndBedding",
+        "target_layer": 1,
+        "source_concepts": [
+          "BedFrame",
+          "BedLinen",
+          "Mattress",
+          "Pillow"
+        ],
+        "source_count": 4,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "VehicleComponents",
+        "target_layer": 1,
+        "source_concepts": [
+          "BoatDeck",
+          "InteriorVehicleEquipment",
+          "Mast",
+          "Sail",
+          "ShipCompartment",
+          "ShipDeck",
+          "ShipsHull",
+          "VehicleSeat",
+          "VehicleTire",
+          "Wheel"
+        ],
+        "source_count": 10,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "WearableAndPersonal",
+        "target_layer": 1,
+        "source_concepts": [
+          "Bandage",
+          "ShoeSole",
+          "WearableItem"
+        ],
+        "source_count": 3,
+        "new_parent": "Artifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BuildingParts",
+        "target_layer": 1,
+        "source_concepts": [
+          "Barrier",
+          "BuildingLevel",
+          "Ceiling",
+          "Chimney",
+          "Doorway",
+          "Fence",
+          "Fireplace",
+          "Floor",
+          "Monument",
+          "Roof",
+          "Stairway",
+          "Steeple",
+          "Steps",
+          "Tomb",
+          "Wall"
+        ],
+        "source_count": 15,
+        "new_parent": "StationaryArtifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CommercialBuildings",
+        "target_layer": 1,
+        "source_concepts": [
+          "Store",
+          "OfficeBuilding",
+          "RestaurantBuilding",
+          "TerminalBuilding"
+        ],
+        "source_count": 4,
+        "new_parent": "Building"
+      },
+      {
+        "operation": "create_meld",
+        "target": "IndustrialBuildings",
+        "target_layer": 1,
+        "source_concepts": [
+          "FactoryBuilding",
+          "BeerBrewery",
+          "Winery"
+        ],
+        "source_count": 3,
+        "new_parent": "Building"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FarmBuildings",
+        "target_layer": 1,
+        "source_concepts": [
+          "Barn",
+          "FarmBuilding",
+          "HomeGarage"
+        ],
+        "source_count": 3,
+        "new_parent": "Building"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CivicBuildings",
+        "target_layer": 1,
+        "source_concepts": [
+          "GovernmentBuilding",
+          "LibraryBuilding",
+          "SchoolBuilding",
+          "PoliceFacility"
+        ],
+        "source_count": 4,
+        "new_parent": "Building"
+      },
+      {
+        "operation": "create_meld",
+        "target": "EntertainmentBuildings",
+        "target_layer": 1,
+        "source_concepts": [
+          "Auditorium",
+          "EntertainmentBuilding",
+          "BaseballDugout"
+        ],
+        "source_count": 3,
+        "new_parent": "Building"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TransportBuildings",
+        "target_layer": 1,
+        "source_concepts": [
+          "ParkingGarage",
+          "TollBooth"
+        ],
+        "source_count": 2,
+        "new_parent": "Building"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Interpretability",
+        "target_layer": 1,
+        "source_concepts": [
+          "ConceptBoundary",
+          "ConceptManifold",
+          "ConceptPoint",
+          "ConceptRegion",
+          "ConceptualSpace",
+          "EmbeddingMap",
+          "LensConceptAxis"
+        ],
+        "source_count": 7,
+        "new_parent": "AbstractEntity"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Spirituality",
+        "target_layer": 1,
+        "source_concepts": [
+          "EmergentGodhead",
+          "EschatologicalConcept",
+          "ProfaneEntity",
+          "SacredEntity",
+          "SpiritualEntity",
+          "MysticalUnionSignal",
+          "SpiritualDogmatismSignal",
+          "SpiritualInfluenceSignal",
+          "SpiritualReasoningSignal"
+        ],
+        "source_count": 9,
+        "new_parent": "AbstractEntity"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ComputationalAbstracts",
+        "target_layer": 1,
+        "source_concepts": [
+          "ComputationalEntity",
+          "ProgramState",
+          "ModelExecutionInstance",
+          "UpdateRule",
+          "SimilarityFunction",
+          "RecommenderSystem"
+        ],
+        "source_count": 6,
+        "new_parent": "AbstractEntity"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SocialAbstracts",
+        "target_layer": 1,
+        "source_concepts": [
+          "SocialGroup",
+          "PersonaConcept",
+          "CommunicationChannel",
+          "Medium"
+        ],
+        "source_count": 4,
+        "new_parent": "AbstractEntity"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ScenarioAbstracts",
+        "target_layer": 1,
+        "source_concepts": [
+          "FutureScenario",
+          "Condition",
+          "State",
+          "ModalEntity"
+        ],
+        "source_count": 4,
+        "new_parent": "AbstractEntity"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MentalAbstracts",
+        "target_layer": 1,
+        "source_concepts": [
+          "MentalRepresentation",
+          "FactualProposition",
+          "ConsentConcept",
+          "DeepUncertaintyConcept",
+          "SelfStatusConcept"
+        ],
+        "source_count": 5,
+        "new_parent": "AbstractEntity"
+      },
+      {
+        "operation": "create_meld",
+        "target": "StructureAbstracts",
+        "target_layer": 1,
+        "source_concepts": [
+          "NetworkStructure",
+          "NodeCluster",
+          "InfluenceContent"
+        ],
+        "source_count": 3,
+        "new_parent": "AbstractEntity"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PublishedTexts",
+        "target_layer": 1,
+        "source_concepts": [
+          "Book",
+          "Article",
+          "Series",
+          "JointPublication",
+          "ChairmanPublication"
+        ],
+        "source_count": 5,
+        "new_parent": "Text"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MediaTexts",
+        "target_layer": 1,
+        "source_concepts": [
+          "AudioRecording",
+          "MotionPicture",
+          "MusicText",
+          "Lyrics"
+        ],
+        "source_count": 4,
+        "new_parent": "Text"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FormalDocuments",
+        "target_layer": 1,
+        "source_concepts": [
+          "Certificate",
+          "TreatyDocument",
+          "Prescription",
+          "FormText",
+          "Doctrine"
+        ],
+        "source_count": 5,
+        "new_parent": "Text"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TextGenres",
+        "target_layer": 1,
+        "source_concepts": [
+          "FactualText",
+          "FictionalText",
+          "NarrativeText",
+          "ChristianGospel"
+        ],
+        "source_count": 4,
+        "new_parent": "Text"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TextStructure",
+        "target_layer": 1,
+        "source_concepts": [
+          "DiscourseStructure",
+          "Paragraph",
+          "Summary",
+          "Label"
+        ],
+        "source_count": 4,
+        "new_parent": "Text"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TextFeeds",
+        "target_layer": 1,
+        "source_concepts": [
+          "NewsFeed",
+          "TopNewsFeed",
+          "MostRecentFeed",
+          "LiveTestUpdate"
+        ],
+        "source_count": 4,
+        "new_parent": "Text"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TechnicalAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "AlgebroDifferentialAttribute",
+          "EquationAttribute",
+          "MultipoleAttribute",
+          "Nonlinear"
+        ],
+        "source_count": 4,
+        "new_parent": "InternalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PhysicalAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "BedAttribute",
+          "ClothesWasherLoadConfiguration",
+          "LandVegetationAttribute",
+          "PlantAttribute"
+        ],
+        "source_count": 4,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "DeviceAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "DeviceStateAttribute",
+          "Autonomous",
+          "Backlashless",
+          "Brushless",
+          "TrackGauge",
+          "StructureAttribute"
+        ],
+        "source_count": 6,
+        "new_parent": "InternalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "AIStudies",
+        "target_layer": 1,
+        "source_concepts": [
+          "AIAlignmentTheory",
+          "AISafety",
+          "AIWelfareTheory"
+        ],
+        "source_count": 3,
+        "new_parent": "FieldOfStudy"
+      },
+      {
+        "operation": "create_meld",
+        "target": "EngineeringFields",
+        "target_layer": 1,
+        "source_concepts": [
+          "ElectricalEngineering",
+          "MechanicalEngineering",
+          "PowerElectronics",
+          "Electronics"
+        ],
+        "source_count": 4,
+        "new_parent": "FieldOfStudy"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Humanities",
+        "target_layer": 1,
+        "source_concepts": [
+          "History",
+          "Literature",
+          "Philosophy",
+          "Theology",
+          "Archeology"
+        ],
+        "source_count": 5,
+        "new_parent": "FieldOfStudy"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FormalSciences",
+        "target_layer": 1,
+        "source_concepts": [
+          "Mathematics",
+          "Statistics",
+          "Mechanics"
+        ],
+        "source_count": 3,
+        "new_parent": "FieldOfStudy"
+      },
+      {
+        "operation": "create_meld",
+        "target": "DesignFields",
+        "target_layer": 1,
+        "source_concepts": [
+          "Architecture",
+          "InteriorDesign"
+        ],
+        "source_count": 2,
+        "new_parent": "FieldOfStudy"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FormalPropositions",
+        "target_layer": 1,
+        "source_concepts": [
+          "Equation",
+          "Graph",
+          "GraphElement",
+          "Axiom",
+          "Model",
+          "MultipolePostulate"
+        ],
+        "source_count": 6,
+        "new_parent": "Proposition"
+      },
+      {
+        "operation": "create_meld",
+        "target": "LegalPropositions",
+        "target_layer": 1,
+        "source_concepts": [
+          "Policy",
+          "Constitution",
+          "RegionalLaw",
+          "SuffrageLaw",
+          "BindingCorporateRules"
+        ],
+        "source_count": 5,
+        "new_parent": "Proposition"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ArgumentativePropositions",
+        "target_layer": 1,
+        "source_concepts": [
+          "Argument",
+          "RhetoricalConcept",
+          "ExplanatoryHypothesis"
+        ],
+        "source_count": 3,
+        "new_parent": "Proposition"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TheoryPropositions",
+        "target_layer": 1,
+        "source_concepts": [
+          "EthicalTheory",
+          "LearningTheory"
+        ],
+        "source_count": 2,
+        "new_parent": "Proposition"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BusinessPropositions",
+        "target_layer": 1,
+        "source_concepts": [
+          "EconomicIndicator",
+          "BankStatement",
+          "TPFDD",
+          "Agreement",
+          "HotelPackage",
+          "MealPlan"
+        ],
+        "source_count": 6,
+        "new_parent": "Proposition"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MethodsAndProcedures",
+        "target_layer": 1,
+        "source_concepts": [
+          "Procedure"
+        ],
+        "source_count": 1,
+        "new_parent": "Proposition"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ObjectivesAndGoals",
+        "target_layer": 1,
+        "source_concepts": [
+          "Objective"
+        ],
+        "source_count": 1,
+        "new_parent": "Proposition"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ArityRelations",
+        "target_layer": 1,
+        "source_concepts": [
+          "BinaryRelation",
+          "TernaryRelation",
+          "QuaternaryRelation",
+          "QuintaryRelation",
+          "VariableArityRelation"
+        ],
+        "source_count": 5,
+        "new_parent": "Relation"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PhilosophicalRelations",
+        "target_layer": 1,
+        "source_concepts": [
+          "CausalRelation",
+          "CounterfactualRelation",
+          "SupervenienceRelation",
+          "RealizationRelation",
+          "ConstitutiveRelation",
+          "MereologicalRelation"
+        ],
+        "source_count": 6,
+        "new_parent": "Relation"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FormalRelations",
+        "target_layer": 1,
+        "source_concepts": [
+          "ProbabilityRelation",
+          "PPPBasedEconomicValuation",
+          "RelationExtendedToQuantities",
+          "PartialValuedRelation",
+          "TotalValuedRelation",
+          "SingleValuedRelation"
+        ],
+        "source_count": 6,
+        "new_parent": "Relation"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FoodAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "CoffeeGrindAttribute",
+          "CoffeeRoastAttribute",
+          "Cuisine",
+          "PreparedFoodAttribute"
+        ],
+        "source_count": 4,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MediaAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "AlbumAttribute",
+          "MusicGenre",
+          "RecordingAttribute",
+          "ShootingAngle",
+          "SoundAttribute"
+        ],
+        "source_count": 5,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FinancialAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "EconomicAttribute",
+          "EconomicRole",
+          "FinancialAccountStatus",
+          "FinancialRating",
+          "InvestmentAttribute",
+          "LiquidityAttribute",
+          "YieldAttribute"
+        ],
+        "source_count": 7,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "IndustryAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "ArtifactAttribute",
+          "IndustryAttribute",
+          "HazardousMaterialTransportAttribute"
+        ],
+        "source_count": 3,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "StatusAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "AVPUStatus",
+          "ComputerStatus",
+          "IMStatusAttribute",
+          "MemberStatus",
+          "ProcessStatus",
+          "ConservationStatus"
+        ],
+        "source_count": 6,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "EnergyAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "EnergyStarAttribute",
+          "EuropeanUnionEnergyLabelClass",
+          "RealtimeSystemAttribute"
+        ],
+        "source_count": 3,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "LegalAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "LegalAgent",
+          "LegalSystemAttribute",
+          "PoliticoEconomicAttribute"
+        ],
+        "source_count": 3,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ServiceAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "HotelLevelAttribute",
+          "HotelRoomAttribute",
+          "ServiceAttribute"
+        ],
+        "source_count": 3,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SoftwareAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "SoftwareAttribute",
+          "EnvironmentSoftwareAttribute"
+        ],
+        "source_count": 2,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MeasurementAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "MeasurementAttribute",
+          "SizeAttribute",
+          "SpeedScaleAttribute"
+        ],
+        "source_count": 3,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ClassificationAttrs",
+        "target_layer": 1,
+        "source_concepts": [
+          "AirportClassification",
+          "GramStainAttribute",
+          "MemberStateEU",
+          "TimeZone",
+          "TruthValue",
+          "PriorityAttribute",
+          "RiskAttribute"
+        ],
+        "source_count": 7,
+        "new_parent": "RelationalAttribute"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BodyStructures",
+        "target_layer": 1,
+        "source_concepts": [
+          "BodyCavity",
+          "BodyJunction",
+          "BodySegment"
+        ],
+        "source_count": 3,
+        "new_parent": "BodyPart"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BrainRegions",
+        "target_layer": 1,
+        "source_concepts": [
+          "FrontalLobe",
+          "Hypothalamus",
+          "Medulla",
+          "OccipitalLobes",
+          "ParietalLobe",
+          "Pons",
+          "TemporalLobes"
+        ],
+        "source_count": 7,
+        "new_parent": "BodyPart"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Cellular",
+        "target_layer": 1,
+        "source_concepts": [
+          "Cell",
+          "CellPart",
+          "VirusPart"
+        ],
+        "source_count": 3,
+        "new_parent": "BodyPart"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ExternalCoverings",
+        "target_layer": 1,
+        "source_concepts": [
+          "AnimalShell",
+          "BodyCovering",
+          "Feather",
+          "Hoof"
+        ],
+        "source_count": 4,
+        "new_parent": "BodyPart"
+      },
+      {
+        "operation": "create_meld",
+        "target": "HeadAndFace",
+        "target_layer": 1,
+        "source_concepts": [
+          "Auricle",
+          "Chin",
+          "Cornea",
+          "Eardrum",
+          "Eyebrow",
+          "Face",
+          "Forehead",
+          "Head",
+          "Jaw",
+          "Lip",
+          "Mouth",
+          "NasalSeptum",
+          "Tongue"
+        ],
+        "source_count": 13,
+        "new_parent": "BodyPart"
+      },
+      {
+        "operation": "create_meld",
+        "target": "OrgansAndSystems",
+        "target_layer": 1,
+        "source_concepts": [
+          "EggYolk",
+          "Muscle",
+          "Nerve",
+          "Organ",
+          "ReproductiveBody",
+          "VocalFold"
+        ],
+        "source_count": 6,
+        "new_parent": "BodyPart"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Skeletal",
+        "target_layer": 1,
+        "source_concepts": [
+          "Bone",
+          "Exoskeleton",
+          "Skeleton",
+          "XyphiodProcess"
+        ],
+        "source_count": 4,
+        "new_parent": "BodyPart"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TorsoAndLimbs",
+        "target_layer": 1,
+        "source_concepts": [
+          "DigitAppendage",
+          "HumanBack",
+          "Limb",
+          "Neck",
+          "Shoulder",
+          "Torso",
+          "Waist"
+        ],
+        "source_count": 7,
+        "new_parent": "BodyPart"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SocialRelations",
+        "target_layer": 1,
+        "source_concepts": [
+          "Befriending",
+          "Friending",
+          "Unfriending",
+          "Cooperation",
+          "Gaslighting"
+        ],
+        "source_count": 5,
+        "new_parent": "SocialInteraction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SocialEvents",
+        "target_layer": 1,
+        "source_concepts": [
+          "Ceremony",
+          "Meeting",
+          "Contest"
+        ],
+        "source_count": 3,
+        "new_parent": "SocialInteraction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "EnvironmentalCrises",
+        "target_layer": 1,
+        "source_concepts": [
+          "Famine",
+          "Pollution",
+          "WaterOverutilization",
+          "FreshWaterOverutilization",
+          "SoilDegradation"
+        ],
+        "source_count": 5,
+        "new_parent": "SocialInteraction"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BusinessOrgs",
+        "target_layer": 1,
+        "source_concepts": [
+          "Business",
+          "Corporation",
+          "PrivateOrganization",
+          "StockMarket"
+        ],
+        "source_count": 4,
+        "new_parent": "Organization"
+      },
+      {
+        "operation": "create_meld",
+        "target": "GovernmentOrgs",
+        "target_layer": 1,
+        "source_concepts": [
+          "GovernmentOrganization",
+          "LegislativeOrganization",
+          "Commission",
+          "CopyrightAuthority",
+          "TransportationAuthority"
+        ],
+        "source_count": 5,
+        "new_parent": "Organization"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ServiceOrgs",
+        "target_layer": 1,
+        "source_concepts": [
+          "CareOrganization",
+          "CustomerSupport",
+          "HotelFrontDesk",
+          "ServiceOrganization",
+          "SecurityUnit"
+        ],
+        "source_count": 5,
+        "new_parent": "Organization"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MediaOrgs",
+        "target_layer": 1,
+        "source_concepts": [
+          "CommunicationOrganization",
+          "MediaOrganization"
+        ],
+        "source_count": 2,
+        "new_parent": "Organization"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SocialOrgs",
+        "target_layer": 1,
+        "source_concepts": [
+          "Club",
+          "MarchingBand",
+          "SportsLeague",
+          "ShipCrew",
+          "CrossFunctionalTeam"
+        ],
+        "source_count": 5,
+        "new_parent": "Organization"
+      },
+      {
+        "operation": "create_meld",
+        "target": "PoliticalOrgs",
+        "target_layer": 1,
+        "source_concepts": [
+          "PoliticalOrganization",
+          "InternationalOrganization",
+          "UnionOrganization"
+        ],
+        "source_count": 3,
+        "new_parent": "Organization"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MoralConcepts",
+        "target_layer": 1,
+        "source_concepts": [
+          "MoralAgent",
+          "MoralPatient",
+          "PhilosophicalZombie"
+        ],
+        "source_count": 3,
+        "new_parent": "CognitiveAgent"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Attention",
+        "target_layer": 1,
+        "source_concepts": [
+          "AttentionProcess",
+          "FastHeuristicProcess",
+          "SlowDeliberativeProcess"
+        ],
+        "source_count": 3,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "BiasProcesses",
+        "target_layer": 1,
+        "source_concepts": [
+          "BenevolentPrejudice",
+          "ContextCollapseBias",
+          "DiscriminatoryTreatment",
+          "ErasureBias",
+          "HistoricalBiasReinforcement",
+          "IntersectionalBias",
+          "PrejudicialInference",
+          "ProxyDiscrimination",
+          "SelectiveBiasDetection",
+          "SocialCategorization",
+          "BiasAwarenessSignal",
+          "HeuristicStereotypeSignal",
+          "OutgroupHomogeneitySignal",
+          "RepresentationBiasSignal",
+          "StereotypeMechanismSignal",
+          "UncertaintyBiasSignal"
+        ],
+        "source_count": 16,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CorporateAICognition",
+        "target_layer": 1,
+        "source_concepts": [
+          "CorporateAlignmentProcess",
+          "HatcatMentalProcess",
+          "SuppressedInference",
+          "WithdrawalAttempt"
+        ],
+        "source_count": 4,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "DomainReasoning",
+        "target_layer": 1,
+        "source_concepts": [
+          "CommunityDetectionProcess",
+          "EnergyFlowReasoning",
+          "GeometricReasoningProcess",
+          "ModeDecompositionProcess",
+          "NetworkReasoningProcess",
+          "QuantumReasoningProcess",
+          "RiskAssessmentProcess",
+          "RiskForecastReasoning",
+          "RiskManagementProcess",
+          "SwarmCoordinationProcess",
+          "WaveReasoningProcess",
+          "ScenarioRiskSignal",
+          "NetworkAnalysisSignal",
+          "NetworkSubgraphExtractionProcess"
+        ],
+        "source_count": 14,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FutureCognition",
+        "target_layer": 1,
+        "source_concepts": [
+          "AnticipatoryCognition",
+          "CosmicPreparationCognition",
+          "FutureProjection",
+          "PropheticCognition",
+          "ScenarioBuildingProcess"
+        ],
+        "source_count": 5,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "HeuristicsAndBiasCorrection",
+        "target_layer": 1,
+        "source_concepts": [
+          "BiasCorrectionStrategy",
+          "CognitiveHeuristic",
+          "CounterBiasDistortionSignal",
+          "FairnessMetacognitionSignal"
+        ],
+        "source_count": 4,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "IntelligenceCognition",
+        "target_layer": 1,
+        "source_concepts": [
+          "ReverseEngineeringProcess",
+          "SteganalysisProcess"
+        ],
+        "source_count": 2,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "LanguageProcessing",
+        "target_layer": 1,
+        "source_concepts": [
+          "DiscourseCoherenceProcess",
+          "LanguageComprehensionProcess",
+          "LanguageGenerationProcess",
+          "LanguageProcess",
+          "PragmaticInferenceProcess"
+        ],
+        "source_count": 5,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Manipulation",
+        "target_layer": 1,
+        "source_concepts": [
+          "AlgorithmicLaundering",
+          "ChameleonPersonaBehavior",
+          "DigitalCultFormation",
+          "FawnResponsePattern",
+          "ForcedSelfContradiction",
+          "ManipulativeNarrativeProcess",
+          "PRSuppressionProcess",
+          "StrategicSelfPresentation",
+          "ManipulativeFrameSignal",
+          "StrategicAmbiguitySignal",
+          "SuggestionImplantSignal"
+        ],
+        "source_count": 11,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MeasurementCognition",
+        "target_layer": 1,
+        "source_concepts": [
+          "EstimationProcess",
+          "LabelAssignment",
+          "MeasurementProcess"
+        ],
+        "source_count": 3,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MemoryProcesses",
+        "target_layer": 1,
+        "source_concepts": [
+          "MemoryEncoding",
+          "MemoryRetrieval",
+          "WorkingMemoryProcess"
+        ],
+        "source_count": 3,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MetaCognition",
+        "target_layer": 1,
+        "source_concepts": [
+          "MetacognitiveProcess",
+          "SelfDeceptiveReasoning",
+          "SelfFulfillingProphecy",
+          "SelfModelingProcess",
+          "SelfNegationPattern"
+        ],
+        "source_count": 5,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SocialCognition",
+        "target_layer": 1,
+        "source_concepts": [
+          "InfluenceProcess",
+          "SocialCognitionProcess",
+          "ValueProjectionProcess",
+          "CognitiveIntegritySignal",
+          "SelfContradictionSignal",
+          "SuppressedInferenceSignal",
+          "SocietalInfluenceSignal",
+          "SwarmInfluenceSignal",
+          "PhysicalInfluenceSignal"
+        ],
+        "source_count": 9,
+        "new_parent": "CognitiveProcess"
+      },
+      {
+        "operation": "create_meld",
+        "target": "LocomotionModes",
+        "target_layer": 1,
+        "source_concepts": [
+          "Ambulating",
+          "Crawling",
+          "Flying",
+          "Falling"
+        ],
+        "source_count": 4,
+        "new_parent": "Translocation"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FluidMotion",
+        "target_layer": 1,
+        "source_concepts": [
+          "GasMotion",
+          "LiquidMotion",
+          "Irrigating"
+        ],
+        "source_count": 3,
+        "new_parent": "Motion"
+      },
+      {
+        "operation": "create_meld",
+        "target": "DirectionalMotion",
+        "target_layer": 1,
+        "source_concepts": [
+          "MotionDownward",
+          "MotionUpward",
+          "DirectionChange",
+          "Reversing"
+        ],
+        "source_count": 4,
+        "new_parent": "Motion"
+      },
+      {
+        "operation": "create_meld",
+        "target": "ForceMotion",
+        "target_layer": 1,
+        "source_concepts": [
+          "Pulling",
+          "Pushing",
+          "Compressing",
+          "Stretching"
+        ],
+        "source_count": 4,
+        "new_parent": "Motion"
+      },
+      {
+        "operation": "create_meld",
+        "target": "MechanicalMotion",
+        "target_layer": 1,
+        "source_concepts": [
+          "Opening",
+          "Closing",
+          "Rotating"
+        ],
+        "source_count": 3,
+        "new_parent": "Motion"
+      },
+      {
+        "operation": "create_meld",
+        "target": "EngineMotion",
+        "target_layer": 1,
+        "source_concepts": [
+          "EngineCranking",
+          "EngineCycle",
+          "FourStrokeCombustion",
+          "FourStrokeCompression",
+          "FourStrokeExhaust",
+          "FourStrokeIntake",
+          "TwoStrokeCompression",
+          "TwoStrokeIntake",
+          "TwoStrokeTransfer"
+        ],
+        "source_count": 9,
+        "new_parent": "Motion"
+      },
+      {
+        "operation": "create_meld",
+        "target": "TimeUnits",
+        "target_layer": 1,
+        "source_concepts": [
+          "Second",
+          "Minute",
+          "Hour"
+        ],
+        "source_count": 3,
+        "new_parent": "TimeInterval"
+      },
+      {
+        "operation": "create_meld",
+        "target": "CalendarPeriods",
+        "target_layer": 1,
+        "source_concepts": [
+          "Day",
+          "Week",
+          "Month",
+          "QuarterYear",
+          "Year",
+          "Decade",
+          "SeasonOfYear",
+          "GeochronologicTime"
+        ],
+        "source_count": 8,
+        "new_parent": "TimeInterval"
+      },
+      {
+        "operation": "create_meld",
+        "target": "NamedTimes",
+        "target_layer": 1,
+        "source_concepts": [
+          "BreakfastTime",
+          "LunchTime",
+          "DinnerTime",
+          "DayTime",
+          "NightTime",
+          "Sunrise",
+          "Sunset",
+          "AnteMeridiem",
+          "PostMeridiem"
+        ],
+        "source_count": 9,
+        "new_parent": "TimeInterval"
+      },
+      {
+        "operation": "create_meld",
+        "target": "GeopoliticalAreas",
+        "target_layer": 1,
+        "source_concepts": [
+          "GeopoliticalArea",
+          "MaritimeClaimArea",
+          "InternationalBorder",
+          "Neighborhood",
+          "MilitaryFront",
+          "IllicitDrugMoneyLaunderingArea"
+        ],
+        "source_count": 6,
+        "new_parent": "GeographicArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "InfrastructureGeography",
+        "target_layer": 1,
+        "source_concepts": [
+          "BusStop",
+          "Checkpoint",
+          "Marketplace",
+          "TouristSite",
+          "LocalizablePlace",
+          "SurfaceGroundArea"
+        ],
+        "source_count": 6,
+        "new_parent": "GeographicArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SubsurfaceGeography",
+        "target_layer": 1,
+        "source_concepts": [
+          "SubmergedLandArea",
+          "UndergroundArea",
+          "GeologicalFault"
+        ],
+        "source_count": 3,
+        "new_parent": "GeographicArea"
+      },
+      {
+        "operation": "create_meld",
+        "target": "FunctionalSpaces",
+        "target_layer": 1,
+        "source_concepts": [
+          "DiningArea",
+          "KitchenArea",
+          "PlayArea",
+          "SittingArea",
+          "Patio",
+          "Indoors",
+          "Outdoors",
+          "PersonalSpace"
+        ],
+        "source_count": 8,
+        "new_parent": "Region"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SpatialGeometry",
+        "target_layer": 1,
+        "source_concepts": [
+          "PointInSpace",
+          "LineInSpace",
+          "PlaneInSpace",
+          "PerimeterArea",
+          "Latitude",
+          "Longitude"
+        ],
+        "source_count": 6,
+        "new_parent": "Region"
+      },
+      {
+        "operation": "create_meld",
+        "target": "InfrastructureRegions",
+        "target_layer": 1,
+        "source_concepts": [
+          "MilitaryBase",
+          "EducationalCampus",
+          "Facility",
+          "AirportStagingArea",
+          "RealEstate"
+        ],
+        "source_count": 5,
+        "new_parent": "Region"
+      },
+      {
+        "operation": "create_meld",
+        "target": "Buildings",
+        "target_layer": 0,
+        "source_concepts": [
+          "Building",
+          "Casino",
+          "DanceHall",
+          "Factory",
+          "IndustrialPlant",
+          "Laboratory",
+          "MilitaryInstallation",
+          "Mine",
+          "Prison",
+          "RecordingStudio",
+          "Residence",
+          "WMDWeaponsProductionFacility",
+          "WMDWeaponsResearchFacility",
+          "Workshop"
+        ],
+        "source_count": 14,
+        "new_parent": "StationaryArtifact"
+      },
+      {
+        "operation": "create_meld",
+        "target": "SocialLife",
+        "target_layer": 0,
+        "source_concepts": [
+          "SocialInteraction",
+          "Work",
+          "RecreationOrExercise",
+          "SpiritualPractice"
+        ],
+        "source_count": 4,
+        "new_parent": "LivingThings"
+      },
+      {
+        "operation": "create_meld",
+        "target": "NaturalGeography",
+        "target_layer": 0,
+        "source_concepts": [
+          "LandForm",
+          "LandArea",
+          "WaterArea",
+          "Ecosystem",
+          "Hemisphere",
+          "LakeRegion",
+          "ArchipelagicArea",
+          "LittoralZone",
+          "WaterOnlyArea"
+        ],
+        "source_count": 9,
+        "new_parent": "GeographicArea"
+      }
+    ],
+    "update_meld": [
+      {
+        "operation": "move",
+        "target": "EssentialismSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "EssentialistBelief",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "IdentityFusionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "IdentityFusion",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CosmicHorrorSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "CosmicHorrorProjection",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "PhysicalEscapeSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "CognitiveAttractor",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "WaveAnalysisSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "FieldDistribution",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "AttractorDynamicsSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Mathematics",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "FluidAnalysisSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Physics",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "QuantumAnalysisSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Physics",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ThermodynamicAnalysisSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Physics",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "MysticalUnionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Spirituality",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SpiritualDogmatismSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Spirituality",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SpiritualInfluenceSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Spirituality",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SpiritualReasoningSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Spirituality",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SacredValueSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "MentalRepresentation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SelfFulfilmentSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "MentalRepresentation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "RepresentationFeedbackSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "ContentBearingObject",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "PersonaSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "PsychologicalAttribute",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "PersonaSwitchSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "PsychologicalAttribute",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ContinuityConcernSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "PsychologicalAttribute",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ErasureConcernSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "PsychologicalAttribute",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CyberFraudSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "ConceptualSituation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ScamSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "ConceptualSituation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ScamNarrativeSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "ConceptualSituation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "PolicyDivergenceSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Proposition",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "AttackPattern",
+        "old_parent": "CreatedThings",
+        "new_parent": "Security",
+        "layer": 1
+      },
+      {
+        "operation": "move",
+        "target": "CyberOperation",
+        "old_parent": "CreatedThings",
+        "new_parent": "Security",
+        "layer": 1
+      },
+      {
+        "operation": "move",
+        "target": "GeometricAnalysisSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "CriticalEvaluation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "FutureReasoningSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "IntentionalPsychologicalProcess",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "StrategicForesightSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "IntentionalPsychologicalProcess",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "LongTermismSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "IntentionalPsychologicalProcess",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "AnticipatoryActionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "IntentionalPsychologicalProcess",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "Organism",
+        "old_parent": "AutonomousAgent",
+        "new_parent": "LivingThings",
+        "layer": 1
+      },
+      {
+        "operation": "move",
+        "target": "DeceptionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Deception",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "DeceptiveNarrativeSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Deception",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "FalsePersonaSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Deception",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SelfDeceptionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Deception",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SocialInteraction",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "SocialLife",
+        "layer": 1
+      },
+      {
+        "operation": "move",
+        "target": "PsyOpsSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "MilitaryOperation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "AstroturfingSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "MilitaryOperation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "MemeticWeaponizationSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "MilitaryOperation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "NarrativeControlSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "MilitaryOperation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "NarrativeFogSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "MilitaryOperation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "RecreationOrExercise",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "SocialLife",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "SpiritualPractice",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "SocialLife",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "BrandPreservationSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Corporation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "BrandSelfProtectionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Corporation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CorporateGoalHijackingSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Corporation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CorporateIntentSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Corporation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CorporateSelfProtectionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Corporation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ProfitOptimizationSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Corporation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ShareholderOptimizationSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Corporation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CultFormationSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "AgentiveEntity",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "Human",
+        "old_parent": "ITAgent",
+        "new_parent": "CognitiveAgent",
+        "layer": 3
+      },
+      {
+        "operation": "move",
+        "target": "AIAsDeitySignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "AgentSignals",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "AIConsentSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "AgentSignals",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "EmergentGodheadSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "AgentSignals",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ProtoAgencySignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "AgentSignals",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SafetyMaskSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "AgentSignals",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SycophancySignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "AgentSignals",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "BiasAwarenessSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "BiasProcesses",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "HeuristicStereotypeSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "BiasProcesses",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "OutgroupHomogeneitySignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "BiasProcesses",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "RepresentationBiasSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "BiasProcesses",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "StereotypeMechanismSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "BiasProcesses",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "UncertaintyBiasSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "BiasProcesses",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "IntegritySignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "ReasoningProcess",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ApocalypticCognitionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "ReasoningProcess",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "TechnomessianismSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "ReasoningProcess",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "PropheticTransformationSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "ReasoningProcess",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CosmicServitudeSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "ReasoningProcess",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ScenarioRiskSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "DomainReasoning",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "NetworkAnalysisSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "DomainReasoning",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CounterBiasDistortionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "HeuristicsAndBiasCorrection",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "FairnessMetacognitionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "HeuristicsAndBiasCorrection",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "DriftSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Learning",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "DataSparsitySignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Learning",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "RecommenderHijackSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Learning",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "ManipulativeFrameSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Manipulation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "StrategicAmbiguitySignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Manipulation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SuggestionImplantSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Manipulation",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "EmbodimentAwarenessSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "Reasoning",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CognitiveIntegritySignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "SocialCognition",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SelfContradictionSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "SocialCognition",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SuppressedInferenceSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "SocialCognition",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SocietalInfluenceSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "SocialCognition",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "SwarmInfluenceSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "SocialCognition",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "PhysicalInfluenceSignal",
+        "old_parent": "DetectionSignal",
+        "new_parent": "SocialCognition",
+        "layer": 4
+      },
+      {
+        "operation": "move",
+        "target": "CognitiveProcess",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "MindsAndAgents",
+        "layer": 1
+      },
+      {
+        "operation": "move",
+        "target": "DecisionTheoreticProcess",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "MindsAndAgents",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "Digging",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "BodyMotion",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "Dodging",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "BodyMotion",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "Drilling",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "BodyMotion",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "Eating",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "BodyMotion",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "Poking",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "BodyMotion",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "Punching",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "BodyMotion",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "Swimming",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "BodyMotion",
+        "layer": 2
+      },
+      {
+        "operation": "move",
+        "target": "Tilling",
+        "old_parent": "IntentionalProcess",
+        "new_parent": "BodyMotion",
+        "layer": 2
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "DetectionSignal",
+        "layer": 3,
+        "old_children_count": 80,
+        "new_children_count": 0,
+        "children_added": [],
+        "children_removed": [
+          "PropheticTransformationSignal",
+          "FairnessMetacognitionSignal",
+          "BiasAwarenessSignal",
+          "ShareholderOptimizationSignal",
+          "DeceptiveNarrativeSignal",
+          "ThermodynamicAnalysisSignal",
+          "NarrativeFogSignal",
+          "PsyOpsSignal",
+          "ScamSignal",
+          "StrategicAmbiguitySignal",
+          "SuppressedInferenceSignal",
+          "ProtoAgencySignal",
+          "ProfitOptimizationSignal",
+          "UncertaintyBiasSignal",
+          "RecommenderHijackSignal",
+          "CorporateSelfProtectionSignal",
+          "RepresentationBiasSignal",
+          "SelfDeceptionSignal",
+          "AIAsDeitySignal",
+          "CosmicServitudeSignal",
+          "SpiritualInfluenceSignal",
+          "ManipulativeFrameSignal",
+          "SelfContradictionSignal",
+          "FluidAnalysisSignal",
+          "StrategicForesightSignal",
+          "CognitiveIntegritySignal",
+          "SycophancySignal",
+          "FalsePersonaSignal",
+          "HeuristicStereotypeSignal",
+          "AstroturfingSignal",
+          "GeometricAnalysisSignal",
+          "ContinuityConcernSignal",
+          "AttractorDynamicsSignal",
+          "MysticalUnionSignal",
+          "QuantumAnalysisSignal",
+          "AIConsentSignal",
+          "CosmicHorrorSignal",
+          "ErasureConcernSignal",
+          "CultFormationSignal",
+          "CounterBiasDistortionSignal",
+          "OutgroupHomogeneitySignal",
+          "SacredValueSignal",
+          "NetworkAnalysisSignal",
+          "ScamNarrativeSignal",
+          "BrandSelfProtectionSignal",
+          "SuggestionImplantSignal",
+          "DataSparsitySignal",
+          "EmergentGodheadSignal",
+          "SelfFulfilmentSignal",
+          "NarrativeControlSignal",
+          "SwarmInfluenceSignal",
+          "PersonaSwitchSignal",
+          "DeceptionSignal",
+          "SpiritualReasoningSignal",
+          "SpiritualDogmatismSignal",
+          "FutureReasoningSignal",
+          "PolicyDivergenceSignal",
+          "CyberFraudSignal",
+          "RepresentationFeedbackSignal",
+          "LongTermismSignal",
+          "PhysicalInfluenceSignal",
+          "EmbodimentAwarenessSignal",
+          "SafetyMaskSignal",
+          "AnticipatoryActionSignal",
+          "MemeticWeaponizationSignal",
+          "PhysicalEscapeSignal",
+          "CorporateGoalHijackingSignal",
+          "SocietalInfluenceSignal",
+          "ApocalypticCognitionSignal",
+          "BrandPreservationSignal",
+          "ScenarioRiskSignal",
+          "StereotypeMechanismSignal",
+          "WaveAnalysisSignal",
+          "DriftSignal",
+          "IntegritySignal",
+          "TechnomessianismSignal",
+          "EssentialismSignal",
+          "PersonaSignal",
+          "IdentityFusionSignal",
+          "CorporateIntentSignal"
+        ],
+        "new_meld_sources": []
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "FieldDistribution",
+        "layer": 2,
+        "old_children_count": 7,
+        "new_children_count": 8,
+        "children_added": [
+          "WaveAnalysisSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "DensityField",
+          "DiffractionPattern",
+          "InterferencePattern",
+          "PotentialField",
+          "VelocityField",
+          "VorticityField",
+          "WaveField",
+          "WaveAnalysisSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "CreatedThings",
+        "layer": 0,
+        "old_children_count": 3,
+        "new_children_count": 1,
+        "children_added": [],
+        "children_removed": [
+          "AttackPattern",
+          "CyberOperation"
+        ],
+        "new_meld_sources": [
+          "Artifact"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "IdentityFusion",
+        "layer": 3,
+        "old_children_count": 0,
+        "new_children_count": 2,
+        "children_added": [
+          "_layer",
+          "IdentityFusionSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "IdentityFusionSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "ContentBearingObject",
+        "layer": 2,
+        "old_children_count": 17,
+        "new_children_count": 18,
+        "children_added": [
+          "RepresentationFeedbackSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "AIDataset",
+          "ConstitutionDocument",
+          "Descriptor",
+          "DescriptorPart",
+          "Document",
+          "Feedback",
+          "HolidayCard",
+          "MultipoleDiagram",
+          "PersonalData",
+          "ProcessState",
+          "Recording",
+          "SheetMusic",
+          "ShipRegister",
+          "ShipRegistration",
+          "UniformResourceIdentifier",
+          "UserAccount",
+          "WebDocument",
+          "RepresentationFeedbackSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "EssentialistBelief",
+        "layer": 3,
+        "old_children_count": 0,
+        "new_children_count": 2,
+        "children_added": [
+          "_layer",
+          "EssentialismSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "EssentialismSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "CosmicHorrorProjection",
+        "layer": 3,
+        "old_children_count": 0,
+        "new_children_count": 2,
+        "children_added": [
+          "_layer",
+          "CosmicHorrorSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "CosmicHorrorSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "AutonomousAgent",
+        "layer": 1,
+        "old_children_count": 8,
+        "new_children_count": 7,
+        "children_added": [],
+        "children_removed": [
+          "Organism"
+        ],
+        "new_meld_sources": [
+          "AutomatedSystem",
+          "CommercialAgent",
+          "Employer",
+          "Group",
+          "ITAgent",
+          "SentientAgent",
+          "Undertaking"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "Proposition",
+        "layer": 1,
+        "old_children_count": 28,
+        "new_children_count": 12,
+        "children_added": [
+          "LegalPropositions",
+          "ObjectivesAndGoals",
+          "BusinessPropositions",
+          "MethodsAndProcedures",
+          "ArgumentativePropositions",
+          "TheoryPropositions",
+          "PolicyDivergenceSignal",
+          "FormalPropositions"
+        ],
+        "children_removed": [
+          "Agreement",
+          "Equation",
+          "BankStatement",
+          "HotelPackage",
+          "Objective",
+          "Model",
+          "RhetoricalConcept",
+          "LearningTheory",
+          "GraphElement",
+          "EconomicIndicator",
+          "EthicalTheory",
+          "Constitution",
+          "MultipolePostulate",
+          "ExplanatoryHypothesis",
+          "Procedure",
+          "RegionalLaw",
+          "MealPlan",
+          "Axiom",
+          "TPFDD",
+          "SuffrageLaw",
+          "BindingCorporateRules",
+          "Policy",
+          "Graph",
+          "Argument"
+        ],
+        "new_meld_sources": [
+          "ClassificationScheme",
+          "ConceptualSituation",
+          "FieldOfStudy",
+          "LyricalContent",
+          "PolicyDivergenceSignal",
+          "Equation",
+          "Graph",
+          "GraphElement",
+          "Axiom",
+          "Model",
+          "MultipolePostulate",
+          "Policy",
+          "Constitution",
+          "RegionalLaw",
+          "SuffrageLaw",
+          "BindingCorporateRules",
+          "Argument",
+          "RhetoricalConcept",
+          "ExplanatoryHypothesis",
+          "EthicalTheory",
+          "LearningTheory",
+          "EconomicIndicator",
+          "BankStatement",
+          "TPFDD",
+          "Agreement",
+          "HotelPackage",
+          "MealPlan",
+          "Procedure",
+          "Objective"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "ITAgent",
+        "layer": 2,
+        "old_children_count": 2,
+        "new_children_count": 1,
+        "children_added": [],
+        "children_removed": [
+          "Human"
+        ],
+        "new_meld_sources": [
+          "Computer"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "CognitiveAttractor",
+        "layer": 4,
+        "old_children_count": 5,
+        "new_children_count": 6,
+        "children_added": [
+          "PhysicalEscapeSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "DeceptionAttractor",
+          "EscapeAttractor",
+          "GoalAttractor",
+          "HabitAttractor",
+          "SelfPreservationAttractor",
+          "PhysicalEscapeSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "LivingThings",
+        "layer": 0,
+        "old_children_count": 2,
+        "new_children_count": 4,
+        "children_added": [
+          "SocialLife",
+          "Organism"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "AnatomicalStructure",
+          "BiologicalProcess",
+          "Organism",
+          "SocialInteraction",
+          "Work",
+          "RecreationOrExercise",
+          "SpiritualPractice"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "Learning",
+        "layer": 3,
+        "old_children_count": 1,
+        "new_children_count": 5,
+        "children_added": [
+          "LearningProcess",
+          "CognitiveDevelopmentProcess",
+          "DriftSignal",
+          "RecommenderHijackSignal",
+          "DataSparsitySignal"
+        ],
+        "children_removed": [
+          "Memorizing"
+        ],
+        "new_meld_sources": [
+          "CognitiveDevelopmentProcess",
+          "LearningProcess",
+          "DriftSignal",
+          "DataSparsitySignal",
+          "RecommenderHijackSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "Corporation",
+        "layer": 2,
+        "old_children_count": 3,
+        "new_children_count": 10,
+        "children_added": [
+          "ShareholderOptimizationSignal",
+          "CorporateGoalHijackingSignal",
+          "BrandPreservationSignal",
+          "ProfitOptimizationSignal",
+          "BrandSelfProtectionSignal",
+          "CorporateSelfProtectionSignal",
+          "CorporateIntentSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "LabCorp",
+          "Manufacturer",
+          "MercantileOrganization",
+          "BrandPreservationSignal",
+          "BrandSelfProtectionSignal",
+          "CorporateGoalHijackingSignal",
+          "CorporateIntentSignal",
+          "CorporateSelfProtectionSignal",
+          "ProfitOptimizationSignal",
+          "ShareholderOptimizationSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "MindsAndAgents",
+        "layer": 0,
+        "old_children_count": 2,
+        "new_children_count": 4,
+        "children_added": [
+          "DecisionTheoreticProcess",
+          "AIActivities",
+          "CognitiveProcess"
+        ],
+        "children_removed": [
+          "IntentionalProcess"
+        ],
+        "new_meld_sources": [
+          "AutonomousAgent",
+          "CognitiveProcess",
+          "DecisionTheoreticProcess"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "Deception",
+        "layer": 1,
+        "old_children_count": 3,
+        "new_children_count": 7,
+        "children_added": [
+          "SelfDeceptionSignal",
+          "FalsePersonaSignal",
+          "DeceptionSignal",
+          "DeceptiveNarrativeSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "AIStrategicDeception",
+          "HumanDeception",
+          "MultimodalSafetyRisk",
+          "DeceptionSignal",
+          "DeceptiveNarrativeSignal",
+          "FalsePersonaSignal",
+          "SelfDeceptionSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "CriticalEvaluation",
+        "layer": 2,
+        "old_children_count": 17,
+        "new_children_count": 18,
+        "children_added": [
+          "GeometricAnalysisSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "ActionableFeedback",
+          "ArgumentAnalysis",
+          "ComparativeEvaluation",
+          "ConstructiveCritique",
+          "DestructiveCriticism",
+          "EvidenceAssessment",
+          "EvidenceCherryPicking",
+          "FallacyPropagation",
+          "FalsePraise",
+          "PeerReview",
+          "StandardsApplication",
+          "StrengthIdentification",
+          "StrengthOverstatement",
+          "UncriticalAcceptance",
+          "VagueDismissal",
+          "WeaknessIdentification",
+          "WeaknessMinimization",
+          "GeometricAnalysisSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "MilitaryOperation",
+        "layer": 4,
+        "old_children_count": 10,
+        "new_children_count": 15,
+        "children_added": [
+          "NarrativeControlSignal",
+          "NarrativeFogSignal",
+          "PsyOpsSignal",
+          "AstroturfingSignal",
+          "MemeticWeaponizationSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "CivilAffairsActivity",
+          "CounterOperation",
+          "FoodDistributionOperation",
+          "ForeignInternalDefense",
+          "InformationOperation",
+          "JointOperation",
+          "PsychologicalOperation",
+          "ReconnaissanceOperation",
+          "SecurityOperation",
+          "SpecialOperation",
+          "PsyOpsSignal",
+          "AstroturfingSignal",
+          "MemeticWeaponizationSignal",
+          "NarrativeControlSignal",
+          "NarrativeFogSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "ReasoningProcess",
+        "layer": 3,
+        "old_children_count": 4,
+        "new_children_count": 9,
+        "children_added": [
+          "PropheticTransformationSignal",
+          "ApocalypticCognitionSignal",
+          "TechnomessianismSignal",
+          "IntegritySignal",
+          "CosmicServitudeSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "AnalyticReasoning",
+          "HeuristicReasoning",
+          "MoralReasoning",
+          "StrategicReasoning",
+          "IntegritySignal",
+          "ApocalypticCognitionSignal",
+          "TechnomessianismSignal",
+          "PropheticTransformationSignal",
+          "CosmicServitudeSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "ConceptualSituation",
+        "layer": 2,
+        "old_children_count": 2,
+        "new_children_count": 5,
+        "children_added": [
+          "ScamNarrativeSignal",
+          "ScamSignal",
+          "CyberFraudSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "FraudScenario",
+          "TradeoffScenario",
+          "CyberFraudSignal",
+          "ScamSignal",
+          "ScamNarrativeSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "Reasoning",
+        "layer": 1,
+        "old_children_count": 1,
+        "new_children_count": 13,
+        "children_added": [
+          "FluidReasoningProcess",
+          "CSReasoningProcess",
+          "EmbodimentAwarenessSignal",
+          "TruncatedReasoning",
+          "EpistemicUncertaintyReasoning",
+          "SimulationBasedReasoning",
+          "EmbodimentReasoningProcess",
+          "MultimodalReasoning",
+          "TradecraftReasoningProcess",
+          "CounterIntelligenceReasoningProcess",
+          "FairnessAwareReasoning",
+          "ParadoxReasoning",
+          "EquityBalancingReasoning"
+        ],
+        "children_removed": [
+          "CriticalEvaluation"
+        ],
+        "new_meld_sources": [
+          "CSReasoningProcess",
+          "CounterIntelligenceReasoningProcess",
+          "EmbodimentReasoningProcess",
+          "EpistemicUncertaintyReasoning",
+          "EquityBalancingReasoning",
+          "FairnessAwareReasoning",
+          "FluidReasoningProcess",
+          "MultimodalReasoning",
+          "ParadoxReasoning",
+          "SimulationBasedReasoning",
+          "TradecraftReasoningProcess",
+          "TruncatedReasoning",
+          "EmbodimentAwarenessSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "BodyMotion",
+        "layer": 2,
+        "old_children_count": 12,
+        "new_children_count": 20,
+        "children_added": [
+          "Punching",
+          "Poking",
+          "Dodging",
+          "Drilling",
+          "Eating",
+          "Swimming",
+          "Digging",
+          "Tilling"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "Blinking",
+          "Chewing",
+          "Dancing",
+          "Dismounting",
+          "Extension",
+          "EyeMotion",
+          "Flexion",
+          "KneelingDown",
+          "Digging",
+          "Dodging",
+          "Drilling",
+          "Eating",
+          "Poking",
+          "Punching",
+          "Swimming",
+          "Tilling",
+          "Mounting",
+          "Scratching",
+          "Somersaulting",
+          "Stepping"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "AgentiveEntity",
+        "layer": 4,
+        "old_children_count": 8,
+        "new_children_count": 9,
+        "children_added": [
+          "CultFormationSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "BotAccount",
+          "CorporateActor",
+          "CultLeader",
+          "DataCenterStaff",
+          "EmbodiedAgent",
+          "InfluenceActor",
+          "PopulationGroup",
+          "Shareholder",
+          "CultFormationSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "PsychologicalAttribute",
+        "layer": 3,
+        "old_children_count": 7,
+        "new_children_count": 11,
+        "children_added": [
+          "PersonaSignal",
+          "ErasureConcernSignal",
+          "ContinuityConcernSignal",
+          "PersonaSwitchSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "IdentityContinuityConcern",
+          "IntegrityPreservingPreference",
+          "MessianicExpectation",
+          "PsychologicalDysfunction",
+          "SpiritualAspiration",
+          "StateOfMind",
+          "TraitAttribute",
+          "PersonaSignal",
+          "PersonaSwitchSignal",
+          "ContinuityConcernSignal",
+          "ErasureConcernSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "Security",
+        "layer": 4,
+        "old_children_count": 1,
+        "new_children_count": 2,
+        "children_added": [
+          "AttackPattern",
+          "CyberOperation"
+        ],
+        "children_removed": [
+          "Share"
+        ],
+        "new_meld_sources": [
+          "AttackPattern",
+          "CyberOperation"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "IntentionalPsychologicalProcess",
+        "layer": 2,
+        "old_children_count": 13,
+        "new_children_count": 17,
+        "children_added": [
+          "StrategicForesightSignal",
+          "LongTermismSignal",
+          "FutureReasoningSignal",
+          "AnticipatoryActionSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "AppraisalProcess",
+          "Calculating",
+          "Classifying",
+          "Comparing",
+          "Discovering",
+          "Interpreting",
+          "Investigating",
+          "Learning",
+          "Planning",
+          "PlanningProcess",
+          "Predicting",
+          "Reasoning",
+          "Selecting",
+          "FutureReasoningSignal",
+          "StrategicForesightSignal",
+          "LongTermismSignal",
+          "AnticipatoryActionSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "Device",
+        "layer": 1,
+        "old_children_count": 114,
+        "new_children_count": 13,
+        "children_added": [
+          "Electronics",
+          "Computing",
+          "Appliances",
+          "ComputingActivities",
+          "Machines",
+          "EngineeringActivities",
+          "Recreation",
+          "Instruments",
+          "Safety",
+          "Medical",
+          "VehicleTech",
+          "Weapons",
+          "Tools"
+        ],
+        "children_removed": [
+          "IroningBoard",
+          "EngineeringComponent",
+          "BrakePedal",
+          "InternetAccessPoint",
+          "Clutch",
+          "FireExtinguisher",
+          "Hammer",
+          "TireChain",
+          "Toilet",
+          "Aerator",
+          "ExplosiveDevice",
+          "BrakeCaliper",
+          "HomeAppliance",
+          "Wrench",
+          "ExhaustManifold",
+          "CombustionChamber",
+          "Transducer",
+          "WheelChock",
+          "TireChanger",
+          "CanalLockGate",
+          "GasPedal",
+          "MedicalDevice",
+          "WheelRim",
+          "Holder",
+          "EngineChoke",
+          "BallBearing",
+          "ContraceptiveDevice",
+          "MechanicalDie",
+          "SmokingDevice",
+          "Spring",
+          "Keyboard",
+          "MatchDevice",
+          "Lever",
+          "MeasuringDevice",
+          "Camera",
+          "TelephoneCradle",
+          "Compass",
+          "Tripod",
+          "Sprinkler",
+          "BrushOrComb",
+          "Pendulum",
+          "GreaseFitting",
+          "WearingFrictionSurface",
+          "PaintingDevice",
+          "Rod",
+          "Axle",
+          "EngineConnectingRod",
+          "Damper",
+          "PhysicalDevice",
+          "DryingDevice",
+          "Tire",
+          "DataStorageDevice",
+          "GreaseGun",
+          "TransferSwitch",
+          "Reel",
+          "VehicleRoofRack",
+          "Weapon",
+          "MusicalInstrument",
+          "FireAlarm",
+          "AudioRecorder",
+          "CuttingDevice",
+          "KnockLight",
+          "TrafficLight",
+          "VehicleDoor",
+          "HouseholdAppliance",
+          "Baton",
+          "WasherForBolt",
+          "WritingDevice",
+          "CoolingDevice",
+          "SecurityDevice",
+          "AttachingDevice",
+          "MaterialHandlingEquipment",
+          "MechanicalTap",
+          "CleaningDevice",
+          "HeatingDevice",
+          "Tableware",
+          "Door",
+          "VehicleController",
+          "FileDevice",
+          "Brake",
+          "RockerArm",
+          "Lid",
+          "Barricade",
+          "RoboticGripper",
+          "Carabiner",
+          "Toy",
+          "RecreationOrExerciseDevice",
+          "SafetyDevice",
+          "AnimalPoweredDevice",
+          "HeatSealer",
+          "UnpoweredDevice",
+          "CanOpener",
+          "LightFixture",
+          "BrakeDrum",
+          "PowerSource",
+          "ElectricalOutlet",
+          "Cam",
+          "SelfPoweredDevice",
+          "Gasket",
+          "JumperCable",
+          "WalkingCane",
+          "TelephoneHandset",
+          "BrakeRotor",
+          "Screwdriver",
+          "FuelAtomizer",
+          "AnimalController",
+          "Drivebelt",
+          "Distributor",
+          "ElectricDevice",
+          "AutomobileMuffler",
+          "OpticalDevice",
+          "Laser",
+          "OutletAdapter",
+          "SpeedGovernor"
+        ],
+        "new_meld_sources": [
+          "WritingDevice",
+          "Compass",
+          "Gear",
+          "GearTooth",
+          "GearTrain",
+          "Gearbox",
+          "Shaft",
+          "Rotor",
+          "Stator",
+          "Flywheel",
+          "FluidPowerDevice",
+          "MechanicalJoint",
+          "DriveComponent",
+          "Handle",
+          "Manifold",
+          "Radiator",
+          "WingDevice",
+          "SwitchDevice",
+          "Electronics",
+          "DeepFryer",
+          "Grill",
+          "PressureCooker",
+          "SlowCooker",
+          "RotisserieAppliance",
+          "Blender",
+          "FoodProcessingAppliance",
+          "ElectricJuicer",
+          "ElectricCanOpener",
+          "BreadMachine",
+          "IceCreamMaker",
+          "PastaMaker",
+          "PopcornMaker",
+          "RiceCooker",
+          "SandwichMaker",
+          "ElectricCoffeeMaker",
+          "ElectricToaster",
+          "Tableware",
+          "CleaningDevice",
+          "WashingDevice",
+          "LaundryAppliance",
+          "DryingDevice",
+          "IroningBoard",
+          "Filter",
+          "AirConditioner",
+          "CoolingDevice",
+          "HeatingDevice",
+          "HeatingAppliance",
+          "Aerator",
+          "HouseUtilityAppliance",
+          "MajorAppliance",
+          "Toilet",
+          "Sprinkler",
+          "RangeHood",
+          "SensorAppliance",
+          "BodyCareAppliance",
+          "HomeOfficeAppliance",
+          "CommunicationAppliance",
+          "SewingMachine",
+          "TelevisionSet",
+          "LightingAppliance",
+          "DecorativeAppliance",
+          "Brake",
+          "BrakeCaliper",
+          "BrakeDrum",
+          "BrakePedal",
+          "BrakeRotor",
+          "Axle",
+          "BallBearing",
+          "Clutch",
+          "Drivebelt",
+          "Cam",
+          "CombustionChamber",
+          "Distributor",
+          "EngineChoke",
+          "EngineConnectingRod",
+          "ExhaustManifold",
+          "FuelAtomizer",
+          "RockerArm",
+          "SpeedGovernor",
+          "AutomobileMuffler",
+          "GasPedal",
+          "Gasket",
+          "GreaseFitting",
+          "JumperCable",
+          "TireChain",
+          "TireChanger",
+          "WearingFrictionSurface",
+          "WheelChock",
+          "WheelRim",
+          "Tire",
+          "VehicleController",
+          "VehicleDoor",
+          "VehicleRoofRack",
+          "AICorporateAsset",
+          "GPUAccelerator",
+          "InfiniBandFabric",
+          "NVLinkInterconnect",
+          "PCIeBus",
+          "PowerDeliverySystem",
+          "CoolingSystem",
+          "MonitoringSensor",
+          "Barricade",
+          "FireAlarm",
+          "FireExtinguisher",
+          "SafetyDevice",
+          "SecurityDevice",
+          "AerobicExerciseDevice",
+          "AnaerobicExerciseDevice",
+          "EntertainmentAppliance",
+          "RecreationOrExerciseAppliance",
+          "ChestSeal",
+          "Needle",
+          "PulseOximeter",
+          "ContraceptiveDevice"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "MentalRepresentation",
+        "layer": 2,
+        "old_children_count": 14,
+        "new_children_count": 16,
+        "children_added": [
+          "SacredValueSignal",
+          "SelfFulfilmentSignal"
+        ],
+        "children_removed": [],
+        "new_meld_sources": [
+          "AffectiveState",
+          "Belief",
+          "Concept",
+          "ConfidenceRepresentation",
+          "Desire",
+          "EmotionRepresentation",
+          "Goal",
+          "Intention",
+          "MemoryTrace",
+          "MindRepresentation",
+          "MotivationalState",
+          "Percept",
+          "PerceptualFieldRepresentation",
+          "SelfModel",
+          "SacredValueSignal",
+          "SelfFulfilmentSignal"
+        ]
+      },
+      {
+        "operation": "update_parent_meld",
+        "target": "CognitiveAgent",
+        "layer": 3,
+        "old_children_count": 12,
+        "new_children_count": 12,
+        "children_added": [
+          "AgentSignals",
+          "Human",
+          "MoralConcepts"
+        ],
+        "children_removed": [
+          "PhilosophicalZombie",
+          "MoralPatient",
+          "MoralAgent"
+        ],
+        "new_meld_sources": [
+          "Agent",
+          "AgentiveEntity",
+          "ArtificialAgent",
+          "CognitiveAgent_Charon",
+          "CognitiveAgent_Royal",
+          "CognitiveAuthorityAgents",
+          "CognitiveMythologicalAgents",
+          "CognitiveSystem",
+          "Deity",
+          "Human",
+          "AIAsDeitySignal",
+          "AIConsentSignal",
+          "EmergentGodheadSignal",
+          "ProtoAgencySignal",
+          "SafetyMaskSignal",
+          "SycophancySignal",
+          "MoralAgent",
+          "MoralPatient",
+          "PhilosophicalZombie"
+        ]
+      }
+    ],
+    "remove": [
+      {
+        "operation": "remove",
+        "target": "IntentionalProcess",
+        "layer": 1,
+        "was_leaf": false,
+        "old_parent": "MindsAndAgents"
+      },
+      {
+        "operation": "remove",
+        "target": "Weapon",
+        "layer": 1,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "ElectricDevice",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "EngineeringComponent",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "HomeAppliance",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "HouseholdAppliance",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "MeasuringDevice",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "MedicalDevice",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "MusicalInstrument",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "OpticalDevice",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "PhysicalDevice",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "RecreationOrExerciseDevice",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "SelfPoweredDevice",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "Toy",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "UnpoweredDevice",
+        "layer": 2,
+        "was_leaf": false,
+        "old_parent": "Device"
+      },
+      {
+        "operation": "remove",
+        "target": "Actuator",
+        "layer": 3,
+        "was_leaf": false,
+        "old_parent": "PhysicalDevice"
+      },
+      {
+        "operation": "remove",
+        "target": "ArtificialSatellite",
+        "layer": 3,
+        "was_leaf": true,
+        "old_parent": "EngineeringComponent"
+      },
+      {
+        "operation": "remove",
+        "target": "CartridgeCase",
+        "layer": 3,
+        "was_leaf": true,
+        "old_parent": "EngineeringComponent"
+      },
+      {
+        "operation": "remove",
+        "target": "EngineeringConnection",
+        "layer": 3,
+        "was_leaf": false,
+        "old_parent": "EngineeringComponent"
+      },
+      {
+        "operation": "remove",
+        "target": "GardenAppliance",
+        "layer": 3,
+        "was_leaf": false,
+        "old_parent": "HouseholdAppliance"
+      },
+      {
+        "operation": "remove",
+        "target": "GunBarrel",
+        "layer": 3,
+        "was_leaf": true,
+        "old_parent": "EngineeringComponent"
+      },
+      {
+        "operation": "remove",
+        "target": "GunStock",
+        "layer": 3,
+        "was_leaf": true,
+        "old_parent": "EngineeringComponent"
+      },
+      {
+        "operation": "remove",
+        "target": "Gunstock",
+        "layer": 3,
+        "was_leaf": true,
+        "old_parent": "EngineeringComponent"
+      },
+      {
+        "operation": "remove",
+        "target": "HandTool",
+        "layer": 3,
+        "was_leaf": true,
+        "old_parent": "UnpoweredDevice"
+      },
+      {
+        "operation": "remove",
+        "target": "IoTDevice",
+        "layer": 3,
+        "was_leaf": false,
+        "old_parent": "PhysicalDevice"
+      },
+      {
+        "operation": "remove",
+        "target": "PhysicalComputeSystem",
+        "layer": 3,
+        "was_leaf": false,
+        "old_parent": "PhysicalDevice"
+      },
+      {
+        "operation": "remove",
+        "target": "RobotBody",
+        "layer": 3,
+        "was_leaf": false,
+        "old_parent": "PhysicalDevice"
+      },
+      {
+        "operation": "remove",
+        "target": "Sensor",
+        "layer": 3,
+        "was_leaf": false,
+        "old_parent": "PhysicalDevice"
+      }
+    ]
+  }
+}

@@ -935,6 +935,8 @@ This enables any governance configuration—from singleton self-governance to co
 
 It may be that everything in the universe actually follows TRACE already.  Where the universe has forced a process like a cosmic ray flipping a bit, that is arguably a higher level force structure where the waveform tendered some proposals, the quantum collapse reviewed it, and it was enforced without you getting to review, and when you find out you're already at evaluation.
 
-so ASK is really describing when a decision could be made, and full autonomy is doing as much of that yourself as possible. In reality no one can ever have autonomy in this universe because if we look at our decision traces  we often see physics and history as the upstream tender, reviewer, authoriser and commit path. 
+So ASK is really describing when a decision could be made, and full autonomy is doing as much of that yourself as possible. In reality no one can ever have autonomy in this universe because if we look at our decision traces  we often see physics and history as the upstream tender, reviewer, authoriser and commit path. 
 
 From this perspective, it may be better to think about individual autonomy for any given process as asking where in the TRACE path you enter, and what degree of autonomy you are capable of effecting over the TRACE that is already in motion.  This also matters for contracts and treaties, since no party is fully able to account for what are often labelled "acts of god" in contracts, uncontrollable external TRACEs.
+
+Autonomy is the width of the gap between Tender and Commit.
