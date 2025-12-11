@@ -1044,6 +1044,18 @@ We add a few conceptual operations on top of the earlier ones:
     * or mark qualifications as expired.
   * Status changes should be linked to Incidents and/or EvidenceRecords where possible.
 
+### 6.4.4 Governed Operations via TRACE
+
+All state-changing ASK operations—qualification grants/revocations, treaty formation/amendment, incident resolution—follow the **TRACE Protocol** (Tender → Review → Authorise → Commit → Evaluate).
+
+TRACE provides:
+- **Auditable workflow** with records at each stage
+- **Role accreditation** via Qualifications
+- **Fractal application** from self-governance to inter-tribal coordination
+- **Inherited constraints** from higher governance levels
+
+See `ASK/ASK_TRACE.md` for the full specification.
+
 ---
 
 ## 6.5 How this Changes the Story

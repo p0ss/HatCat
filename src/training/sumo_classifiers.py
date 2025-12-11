@@ -598,6 +598,7 @@ def train_sumo_classifiers(
     run_sibling_refinement: bool = False,
     sibling_refine_epochs: int = 20,
     sibling_refine_prompts: int = 15,
+    only_concepts: set = None,
 ) -> List[Dict]:
     """
     High-level entry point for training multiple layers.

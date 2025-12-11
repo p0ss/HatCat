@@ -760,6 +760,81 @@
       "definition": "&%ACPowerSource refers to an alternating\ncurrent &%PowerSource"
     },
     {
+      "sumo_term": "Actinides",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Radioactive metallic elements with atomic numbers 89-103, including uranium and transuranics",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Radioactive metallic elements with atomic numbers 89-103, including uranium and transuranics",
+      "relationships": {
+        "related": [
+          "Lanthanides",
+          "TransitionMetals",
+          "AlkaliMetals",
+          "NobleGases",
+          "Halogens"
+        ],
+        "has_part": [
+          "Actinium",
+          "Thorium",
+          "Protactinium",
+          "Uranium",
+          "Neptunium",
+          "Plutonium",
+          "Americium",
+          "Curium",
+          "Berkelium",
+          "Californium",
+          "Einsteinium",
+          "Fermium",
+          "Mendelevium",
+          "Nobelium",
+          "Lawrencium"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The uranium fuel rods were carefully handled due to their radioactive properties",
+          "Plutonium-239 is used in nuclear weapons and reactor fuel",
+          "Thorium reactors offer a safer alternative to conventional nuclear power",
+          "Americium-241 is commonly found in household smoke detectors",
+          "The neptunium isotope was produced artificially in the particle accelerator",
+          "Curium samples require special containment due to their intense radioactivity"
+        ],
+        "negative_examples": [
+          "The radon gas accumulated in the basement over time",
+          "Cesium-137 contamination spread after the nuclear accident",
+          "The technetium isotope is widely used in medical imaging",
+          "Polonium poisoning was suspected in the assassination case",
+          "Radium paint made the watch dials glow in the dark",
+          "The tritium exit signs provided emergency lighting"
+        ],
+        "disambiguation": "Not to be confused with: Lanthanides, TransitionMetals, AlkaliMetals, NobleGases, Halogens"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460461Z",
+        "pack_version": "7.6.17"
+      }
+    },
+    {
       "sumo_term": "ActionableFeedback",
       "layer": 3,
       "domain": "MindsAndAgents",
@@ -4348,6 +4423,137 @@
       "category_children": [],
       "child_count": 0,
       "sumo_definition": "A control layer that modifies or blocks outputs that conflict\n   with external alignment or safety requirements."
+    },
+    {
+      "sumo_term": "AlkaliMetals",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "highly reactive metallic elements in Group 1 of the periodic table that form alkaline solutions when combined with water",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "highly reactive metallic elements in Group 1 of the periodic table that form alkaline solutions when combined with water",
+      "relationships": {
+        "related": [
+          "AlkalineEarthMetals",
+          "TransitionMetals",
+          "NobleGases",
+          "Halogens",
+          "Metalloids"
+        ],
+        "has_part": [
+          "Lithium",
+          "Sodium",
+          "Potassium",
+          "Rubidium",
+          "Caesium",
+          "Francium"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The sodium in salt water makes it highly conductive to electricity.",
+          "Lithium batteries are prized for their light weight and high energy density.",
+          "Potassium is essential for proper muscle and nerve function in the human body.",
+          "The laboratory stored rubidium under oil to prevent violent reactions with air.",
+          "Cesium atomic clocks are used as the international standard for measuring time.",
+          "Francium is so radioactive that it decays almost immediately after formation."
+        ],
+        "negative_examples": [
+          "Magnesium burns with a bright white flame when ignited in air.",
+          "Aluminum foil is commonly used for wrapping food and cooking.",
+          "Iron rusts when exposed to oxygen and moisture over time.",
+          "Copper wires conduct electricity efficiently in electrical systems.",
+          "Gold maintains its lustrous appearance without tarnishing over centuries.",
+          "The zinc coating protects the steel from corrosion in galvanized metal."
+        ],
+        "disambiguation": "Not to be confused with: AlkalineEarthMetals, TransitionMetals, NobleGases, Halogens, Metalloids"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460447Z",
+        "pack_version": "7.6.17"
+      }
+    },
+    {
+      "sumo_term": "AlkalineEarthMetals",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Group 2 metallic elements with two valence electrons that form divalent cations and basic oxides",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Group 2 metallic elements with two valence electrons that form divalent cations and basic oxides",
+      "relationships": {
+        "related": [
+          "AlkaliMetals",
+          "TransitionMetals",
+          "NobleGases",
+          "Halogens"
+        ],
+        "has_part": [
+          "Beryllium",
+          "Magnesium",
+          "Calcium",
+          "Strontium",
+          "Barium",
+          "Radium"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The calcium in milk helps strengthen bones and teeth.",
+          "Magnesium supplements can help reduce muscle cramps after exercise.",
+          "Barium sulfate is used as a contrast agent in medical X-rays.",
+          "The brilliant white flame indicates the presence of magnesium in the firework.",
+          "Strontium gives red fireworks their distinctive crimson color.",
+          "Radium was once used to make glow-in-the-dark watch dials before its dangers were known."
+        ],
+        "negative_examples": [
+          "Sodium chloride dissolves easily in water to form table salt.",
+          "The aluminum foil wrapped around the leftover pizza.",
+          "Iron oxide causes the reddish-brown rust on old cars.",
+          "Copper pipes are commonly used in residential plumbing systems.",
+          "The gold necklace gleamed in the jewelry store window.",
+          "Carbon dioxide emissions contribute to climate change."
+        ],
+        "disambiguation": "Not to be confused with: AlkaliMetals, TransitionMetals, NobleGases, Halogens"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460451Z",
+        "pack_version": "7.6.17"
+      }
     },
     {
       "sumo_term": "Alkaloid",
@@ -21865,11 +22071,12 @@
         "Deity",
         "Human",
         "MoralAgent",
+        "MoralConcepts",
         "MoralPatient",
         "Organization",
         "PhilosophicalZombie"
       ],
-      "child_count": 14,
+      "child_count": 15,
       "sumo_definition": "A &%CognitiveAgent is\nan &%AutonomousAgent that has the ability to reason, deliberate, make plans, and\nexperience emotions.  Although &%Human is a subclass of\n&%CognitiveAgent, there may be instances of &%CognitiveAgent which are\nnot also instances of &%Human.  For example, &%Primates, dolphins,\nwhales, and some extraterrestrials (if they exist) might be considered\n&%CognitiveAgents.",
       "synset_count": 50,
       "synsets": [
@@ -26074,6 +26281,7 @@
         "Compartment",
         "Envelope",
         "FluidContainer",
+        "FoodContainers",
         "Freezer",
         "Holster",
         "Mailbox",
@@ -26085,11 +26293,14 @@
         "ProjectileShell",
         "RefrigerationAppliance",
         "ShipContainer",
+        "SpecializedContainers",
+        "StorageContainers",
+        "TransportContainers",
         "TravelContainer",
         "Wastebasket",
         "WineCase"
       ],
-      "child_count": 24,
+      "child_count": 28,
       "sumo_definition": "Any &%Holder whose purpose is to contain\nsomething else.  Note that &%Container is more specific in meaning\nthan &%Holder, because a &%Container must have a &%HoleRegion that is at\nleast partially filled by the thing contained.",
       "synset_count": 50,
       "synsets": [
@@ -38737,7 +38948,10 @@
         "PureSubstance"
       ],
       "category_children": [
+        "Actinides",
         "Actinium",
+        "AlkaliMetals",
+        "AlkalineEarthMetals",
         "Aluminum",
         "Americium",
         "Antimony",
@@ -38774,6 +38988,7 @@
         "Germanium",
         "Gold",
         "Hafnium",
+        "Halogens",
         "Helium",
         "Holmium",
         "Hydrogen",
@@ -38782,6 +38997,7 @@
         "Iridium",
         "Iron",
         "Krypton",
+        "Lanthanides",
         "Lanthanum",
         "Lawrencium",
         "Lead",
@@ -38793,6 +39009,7 @@
         "Mendelevium",
         "Mercury",
         "Metal",
+        "Metalloids",
         "Molybdenum",
         "Neodymium",
         "Neon",
@@ -38801,6 +39018,8 @@
         "Niobium",
         "Nitrogen",
         "Nobelium",
+        "NobleGases",
+        "NonMetals",
         "Osmium",
         "Oxygen",
         "Palladium",
@@ -38808,6 +39027,7 @@
         "Platinum",
         "Plutonium",
         "Polonium",
+        "PostTransitionMetals",
         "Potassium",
         "Praseodymium",
         "Promethium",
@@ -38836,6 +39056,7 @@
         "Thulium",
         "Tin",
         "Titanium",
+        "TransitionMetals",
         "Tungsten",
         "Unnildecium",
         "Unnilhexium",
@@ -38851,7 +39072,7 @@
         "Zinc",
         "Zirconium"
       ],
-      "child_count": 113,
+      "child_count": 123,
       "sumo_definition": "The &%Class of &%PureSubstances that\ncannot be separated into two or more &%Substances by ordinary chemical\n(or physical) means. This excludes nuclear reactions. &%ElementalSubstances\nare composed of only one kind of atom. Examples: Iron (Fe), copper (Cu),\nand oxygen (O_2).  &%ElementalSubstances are the simplest &%PureSubstances.",
       "synset_count": 50,
       "synsets": [
@@ -45313,6 +45534,70 @@
       "definition": "The class &%FinancialCompany\nincludes, as subclasses, &%FinancialBank, &%CreditUnion and &%SavingsAndLoan."
     },
     {
+      "sumo_term": "FinancialDebt",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "FinancialTransaction"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Financial obligations, liabilities, and debt-related transactions including fees, defaults, restructuring, and liquidation.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Financial obligations, liabilities, and debt-related transactions including fees, defaults, restructuring, and liquidation.",
+      "relationships": {
+        "related": [
+          "StockTrading",
+          "CorporateMergers",
+          "BankingServices",
+          "InvestmentManagement",
+          "CurrencyExchange"
+        ],
+        "has_part": [
+          "ChargingAFee",
+          "FinancialDefault",
+          "Refinancing",
+          "Liquidation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The company defaulted on its corporate bonds last quarter.",
+          "They're refinancing their mortgage to get a lower interest rate.",
+          "The bank charged a $25 overdraft fee on my account.",
+          "The startup had to liquidate its assets to pay creditors.",
+          "She missed three consecutive loan payments and faces foreclosure.",
+          "The credit card company is restructuring my payment plan."
+        ],
+        "negative_examples": [
+          "I bought 100 shares of Apple stock this morning.",
+          "The merger between the two companies was announced today.",
+          "She deposited her paycheck into her savings account.",
+          "The dividend payment will be issued next month.",
+          "He sold his cryptocurrency holdings for a profit.",
+          "The company issued new bonds to raise capital."
+        ],
+        "disambiguation": "Not to be confused with: StockTrading, CorporateMergers, BankingServices, InvestmentManagement, CurrencyExchange"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.652143Z",
+        "pack_version": "7.6.19"
+      }
+    },
+    {
       "sumo_term": "FinancialInstrument",
       "layer": 3,
       "domain": "Information",
@@ -45445,6 +45730,131 @@
       ]
     },
     {
+      "sumo_term": "FinancialOptions",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "FinancialTransaction"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Trading activities involving option contracts that give the right to buy or sell assets at specified prices.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Trading activities involving option contracts that give the right to buy or sell assets at specified prices.",
+      "relationships": {
+        "related": [
+          "StockTrading",
+          "BondTransaction",
+          "CommodityTrading",
+          "ForexTransaction",
+          "IPOActivity"
+        ],
+        "has_part": [
+          "Call",
+          "ExerciseAnOption",
+          "OptionStrategy"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The investor exercised her call options to purchase 100 shares at the strike price.",
+          "He implemented a covered call strategy to generate additional income from his stock holdings.",
+          "She decided to exercise her put options before expiration to lock in profits.",
+          "The trader used a butterfly spread strategy combining multiple option contracts.",
+          "After the stock price rose above $50, he exercised his call options immediately.",
+          "The portfolio manager employed a protective put strategy to hedge against market downturns."
+        ],
+        "negative_examples": [
+          "The company issued new shares through a public stock offering.",
+          "She bought 200 shares of Microsoft on the open market.",
+          "The bond trader purchased $10,000 in corporate bonds at par value.",
+          "He sold his entire position in Apple stock for a capital gain.",
+          "The mutual fund manager rebalanced the portfolio by selling tech stocks.",
+          "They completed the merger by exchanging shares at the agreed ratio."
+        ],
+        "disambiguation": "Not to be confused with: StockTrading, BondTransaction, CommodityTrading, ForexTransaction, IPOActivity"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.652140Z",
+        "pack_version": "7.6.19"
+      }
+    },
+    {
+      "sumo_term": "FinancialOrders",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "FinancialTransaction"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Instructions to buy, sell, or cancel transactions in financial markets or securities trading",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Instructions to buy, sell, or cancel transactions in financial markets or securities trading",
+      "relationships": {
+        "related": [
+          "PaymentProcessing",
+          "AccountTransfers",
+          "LoanTransactions",
+          "DividendPayments"
+        ],
+        "has_part": [
+          "PlacingAnOrder",
+          "FillingAnOrder",
+          "CancellingAnOrder"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The trader placed a buy order for 100 shares of Apple stock",
+          "Her broker filled the sell order at the market price",
+          "He cancelled his pending order before the market closed",
+          "The limit order was executed when the stock hit $50",
+          "She modified her stop-loss order to protect her gains",
+          "The day trader's order was partially filled during morning volatility"
+        ],
+        "negative_examples": [
+          "The company completed its merger with the competitor",
+          "He transferred money from his checking to savings account",
+          "She received her quarterly dividend payment",
+          "The bank approved his mortgage loan application",
+          "They split the restaurant bill three ways",
+          "The insurance claim was processed successfully"
+        ],
+        "disambiguation": "Not to be confused with: PaymentProcessing, AccountTransfers, LoanTransactions, DividendPayments"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.652137Z",
+        "pack_version": "7.6.19"
+      }
+    },
+    {
       "sumo_term": "FinancialSectorAttribute",
       "layer": 3,
       "domain": "Information",
@@ -45468,6 +45878,198 @@
       ],
       "pos": "adjective",
       "definition": "&%FinancialSectorAttribute is\na class of &%Attributes that are used to indicate which financial sectors\nare most important in the economy of a &%Nation or &%GeopoliticalArea."
+    },
+    {
+      "sumo_term": "FinancialStocks",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "FinancialTransaction"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Financial activities and transactions involving corporate stock ownership, trading, or portfolio management.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Financial activities and transactions involving corporate stock ownership, trading, or portfolio management.",
+      "relationships": {
+        "related": [
+          "BondTransactions",
+          "CurrencyExchange",
+          "BankingServices",
+          "InsuranceTransactions"
+        ],
+        "has_part": [
+          "StockMarketTransaction",
+          "StockSplit",
+          "AssetAllocation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Apple's stock split gave shareholders twice as many shares at half the price.",
+          "The investment advisor recommended allocating 60% of the portfolio to stocks and 40% to bonds.",
+          "Tesla's stock price surged after the quarterly earnings report exceeded expectations.",
+          "She decided to diversify her investments by buying stocks in different sectors.",
+          "The company announced a 2-for-1 stock split to make shares more accessible to retail investors.",
+          "His asset allocation strategy focuses heavily on growth stocks and emerging markets."
+        ],
+        "negative_examples": [
+          "The bank approved her mortgage application for the new house purchase.",
+          "He paid for groceries using his credit card at the checkout.",
+          "The company issued bonds to raise capital for expansion.",
+          "She withdrew cash from the ATM to pay for parking.",
+          "The insurance claim was processed within two business days.",
+          "He transferred money from checking to savings to earn higher interest."
+        ],
+        "disambiguation": "Not to be confused with: BondTransactions, CurrencyExchange, BankingServices, InsuranceTransactions"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.652147Z",
+        "pack_version": "7.6.19"
+      }
+    },
+    {
+      "sumo_term": "FinancialTrading",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "FinancialTransaction"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "active market participation through buying, selling, or speculating with financial instruments or assets",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "active market participation through buying, selling, or speculating with financial instruments or assets",
+      "relationships": {
+        "related": [
+          "FinancialTransfer",
+          "Payment",
+          "Lending",
+          "InsuranceTransaction"
+        ],
+        "has_part": [
+          "Buying",
+          "Selling",
+          "ShortSale",
+          "Vending",
+          "Betting",
+          "Investing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "She bought 100 shares of Apple stock this morning",
+          "The trader sold his Bitcoin holdings before the market closed",
+          "He made a short sale on Tesla stock, betting the price would fall",
+          "The vending machine accepted payment for the snacks",
+          "They invested their savings in a diversified portfolio",
+          "She placed a bet on the horse race at 5-to-1 odds"
+        ],
+        "negative_examples": [
+          "The bank processed his loan application",
+          "She transferred money to her savings account",
+          "The company paid dividends to shareholders",
+          "He deposited his paycheck into checking",
+          "They received an insurance payout for the accident",
+          "The mortgage payment was automatically deducted"
+        ],
+        "disambiguation": "Not to be confused with: FinancialTransfer, Payment, Lending, InsuranceTransaction"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.652125Z",
+        "pack_version": "7.6.19"
+      }
+    },
+    {
+      "sumo_term": "FinancialTransfers",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "FinancialTransaction"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Movement of money between accounts, institutions, or parties without buying/selling securities",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Movement of money between accounts, institutions, or parties without buying/selling securities",
+      "relationships": {
+        "related": [
+          "SecurityTrading",
+          "LoanTransaction",
+          "InsuranceClaim",
+          "BankingFees"
+        ],
+        "has_part": [
+          "Deposit",
+          "Withdrawal",
+          "InternalTransfer",
+          "ExternalTransfer",
+          "Payment",
+          "Rollover"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I deposited my paycheck into my savings account this morning",
+          "She withdrew $200 from the ATM for grocery shopping",
+          "The company transferred funds from checking to their investment account",
+          "He sent a wire transfer to his daughter studying abroad",
+          "They rolled over their 401k to a new employer's plan",
+          "The automatic payment for utilities was processed today"
+        ],
+        "negative_examples": [
+          "She bought 100 shares of Apple stock through her broker",
+          "The company issued new bonds to raise capital",
+          "He sold his cryptocurrency holdings for a profit",
+          "The bank charged a $5 service fee for account maintenance",
+          "They applied for a mortgage loan to buy a house",
+          "The insurance company paid out a claim after the accident"
+        ],
+        "disambiguation": "Not to be confused with: SecurityTrading, LoanTransaction, InsuranceClaim, BankingFees"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.652133Z",
+        "pack_version": "7.6.19"
+      }
     },
     {
       "sumo_term": "Finger",
@@ -46423,6 +47025,69 @@
       ],
       "pos": "noun",
       "definition": "A &%SmallKichenAppliance designed for mixing, making puree or  emulsion from food ingredient."
+    },
+    {
+      "sumo_term": "FoodContainers",
+      "layer": 3,
+      "domain": "CreatedThings",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "Container"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Vessels designed to hold, store, or prepare food and beverages",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Vessels designed to hold, store, or prepare food and beverages",
+      "relationships": {
+        "related": [
+          "StorageContainer",
+          "ShippingContainer",
+          "Toolbox",
+          "Luggage"
+        ],
+        "has_part": [
+          "PotOrPan",
+          "FluidContainer",
+          "Can",
+          "WineCase"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "She poured the soup into a large pot to heat it up",
+          "The wine was stored in cases in the cellar",
+          "He opened a can of soda with his lunch",
+          "The sauce pan contained the simmering marinara",
+          "Beer cans were stacked in the refrigerator",
+          "The chef used a double boiler to melt the chocolate"
+        ],
+        "negative_examples": [
+          "She stored documents in a filing cabinet",
+          "The shipping container held electronics from overseas",
+          "He packed his clothes in a suitcase for the trip",
+          "The toolbox contained screwdrivers and hammers",
+          "Books were arranged in the bookcase",
+          "The jewelry box held her grandmother's rings"
+        ],
+        "disambiguation": "Not to be confused with: StorageContainer, ShippingContainer, Toolbox, Luggage"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/container-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.176676Z",
+        "pack_version": "7.6.14"
+      }
     },
     {
       "sumo_term": "FoodMixer",
@@ -53082,6 +53747,70 @@
       "lexname": "noun.state"
     },
     {
+      "sumo_term": "Halogens",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Group 17 elements that are highly reactive nonmetals forming salts with metals",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Group 17 elements that are highly reactive nonmetals forming salts with metals",
+      "relationships": {
+        "related": [
+          "NobleGases",
+          "AlkaliMetals",
+          "TransitionMetals",
+          "Metalloids"
+        ],
+        "has_part": [
+          "Fluorine",
+          "Chlorine",
+          "Bromine",
+          "Iodine",
+          "Astatine"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The swimming pool was treated with chlorine to kill bacteria",
+          "Fluoride toothpaste helps prevent tooth decay",
+          "Bromine is extracted from seawater for industrial use",
+          "Iodine solution was applied to disinfect the wound",
+          "Table salt contains sodium and chlorine atoms",
+          "Fluorine compounds are used in refrigeration systems"
+        ],
+        "negative_examples": [
+          "Oxygen gas is essential for breathing",
+          "Nitrogen makes up most of the atmosphere",
+          "Hydrogen is the lightest element",
+          "Sulfur forms yellow crystals",
+          "Carbon forms the basis of organic compounds",
+          "Phosphorus glows in the dark"
+        ],
+        "disambiguation": "Not to be confused with: NobleGases, AlkaliMetals, TransitionMetals, Metalloids"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460455Z",
+        "pack_version": "7.6.17"
+      }
+    },
+    {
       "sumo_term": "Hamster",
       "layer": 3,
       "domain": "LivingThings",
@@ -59460,6 +60189,71 @@
       "definition": "&%InternationalAgreement is the\nsubclass of &%Agreements which are made by and between &%Nations."
     },
     {
+      "sumo_term": "InterpersonalStating",
+      "layer": 3,
+      "domain": "CreatedThings",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "Stating"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Verbal expressions that directly engage with others' positions, opinions, or actions in social interaction",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Verbal expressions that directly engage with others' positions, opinions, or actions in social interaction",
+      "relationships": {
+        "related": [
+          "Announcing",
+          "Declaring",
+          "Explaining",
+          "Describing"
+        ],
+        "has_part": [
+          "Apologizing",
+          "Confirming",
+          "Disagreeing",
+          "Arguing",
+          "Correcting",
+          "ReachingAgreement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'm sorry for interrupting you during the meeting.",
+          "Yes, I can confirm that the project deadline is Friday.",
+          "I disagree with your assessment of the situation.",
+          "We argued about the best route to take to the airport.",
+          "Actually, the meeting is at 3 PM, not 2 PM as you mentioned.",
+          "After hours of negotiation, we finally reached an agreement on the contract terms."
+        ],
+        "negative_examples": [
+          "The weather forecast predicts rain tomorrow.",
+          "She announced her resignation to the entire company.",
+          "The report states that sales increased by 15% this quarter.",
+          "He declared his intention to run for mayor.",
+          "The professor explained the theory of relativity to the class.",
+          "I'm thinking about changing careers next year."
+        ],
+        "disambiguation": "Not to be confused with: Announcing, Declaring, Explaining, Describing"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/stating-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:05.283122Z",
+        "pack_version": "7.6.38"
+      }
+    },
+    {
       "sumo_term": "Interpretation",
       "layer": 3,
       "domain": "MindsAndAgents",
@@ -62571,6 +63365,81 @@
         "interpret",
         "render"
       ]
+    },
+    {
+      "sumo_term": "Lanthanides",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "rare earth metallic elements with atomic numbers 57-71, typically soft and reactive with similar chemical properties",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "rare earth metallic elements with atomic numbers 57-71, typically soft and reactive with similar chemical properties",
+      "relationships": {
+        "related": [
+          "Actinides",
+          "TransitionMetals",
+          "AlkaliMetals",
+          "NobleGases",
+          "Halogens"
+        ],
+        "has_part": [
+          "Lanthanum",
+          "Cerium",
+          "Praseodymium",
+          "Neodymium",
+          "Promethium",
+          "Samarium",
+          "Europium",
+          "Gadolinium",
+          "Terbium",
+          "Dysprosium",
+          "Holmium",
+          "Erbium",
+          "Thulium",
+          "Ytterbium",
+          "Lutetium"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The neodymium magnets in the hard drive are incredibly strong",
+          "Cerium oxide is used as a polishing compound for glass",
+          "The europium in the phosphor gives the screen its red color",
+          "Samarium-cobalt magnets work well at high temperatures",
+          "Gadolinium contrast agents help improve MRI image quality",
+          "Terbium is essential for the green phosphors in fluorescent lights"
+        ],
+        "negative_examples": [
+          "Scandium and yttrium are also rare earth elements but not lanthanides",
+          "Actinium is radioactive but belongs to the actinide series instead",
+          "Hafnium has similar properties but is a transition metal",
+          "Thorium is found in rare earth ores but is an actinide",
+          "Zirconium often occurs with rare earths but is not a lanthanide",
+          "Titanium dioxide is used in similar applications but is not a rare earth"
+        ],
+        "disambiguation": "Not to be confused with: Actinides, TransitionMetals, AlkaliMetals, NobleGases, Halogens"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460458Z",
+        "pack_version": "7.6.17"
+      }
     },
     {
       "sumo_term": "LargeSignage",
@@ -68568,6 +69437,72 @@
       "lexname": "noun.substance"
     },
     {
+      "sumo_term": "Metalloids",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Elements with properties intermediate between metals and nonmetals, often used as semiconductors",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Elements with properties intermediate between metals and nonmetals, often used as semiconductors",
+      "relationships": {
+        "related": [
+          "Metals",
+          "Nonmetals",
+          "NobleGases",
+          "Halogens"
+        ],
+        "has_part": [
+          "Boron",
+          "Silicon",
+          "Germanium",
+          "Arsenic",
+          "Antimony",
+          "Tellurium",
+          "Polonium"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Silicon wafers are essential components in computer chips and solar panels",
+          "Arsenic contamination in groundwater poses serious health risks to communities",
+          "Germanium's semiconductor properties make it valuable for fiber optic systems",
+          "Boron compounds are used in glass manufacturing and as flame retardants",
+          "Antimony alloys improve the hardness of lead in car batteries",
+          "Tellurium gives rubber its distinctive properties when used as an additive"
+        ],
+        "negative_examples": [
+          "Iron ore contains high concentrations of metallic elements",
+          "Oxygen makes up about 21% of Earth's atmosphere",
+          "Gold jewelry retains its luster due to the metal's resistance to tarnishing",
+          "Chlorine gas was used as a chemical weapon in World War I",
+          "Carbon forms the backbone of all organic molecules",
+          "Helium balloons float because the gas is lighter than air"
+        ],
+        "disambiguation": "Not to be confused with: Metals, Nonmetals, NobleGases, Halogens"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460486Z",
+        "pack_version": "7.6.17"
+      }
+    },
+    {
       "sumo_term": "Metaphor",
       "layer": 3,
       "domain": "Information",
@@ -69439,6 +70374,68 @@
       "pos": "v",
       "definition": "adopt for military use",
       "lexname": "verb.change"
+    },
+    {
+      "sumo_term": "MilitaryStating",
+      "layer": 3,
+      "domain": "CreatedThings",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "Stating"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Military communication that reports tactical status, target locations, or operational conditions",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Military communication that reports tactical status, target locations, or operational conditions",
+      "relationships": {
+        "related": [
+          "MilitaryCommanding",
+          "MilitaryAnnouncing",
+          "PolicyStating",
+          "OfficialDeclaration"
+        ],
+        "has_part": [
+          "SITREP",
+          "TerminalAttackControl",
+          "TerminalGuidance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The forward observer radioed the coordinates of the enemy position to artillery command",
+          "Charlie Company submitted their hourly situation report detailing troop movements and casualty status",
+          "The pilot confirmed target acquisition and provided laser designation for the incoming missile",
+          "Ground control transmitted updated enemy positions to the strike team via encrypted channels",
+          "The reconnaissance unit reported hostile vehicle locations using GPS coordinates",
+          "Command received a detailed briefing on ammunition levels and equipment readiness from all units"
+        ],
+        "negative_examples": [
+          "The general gave an inspiring speech to boost morale before the mission",
+          "The sergeant issued direct orders for the platoon to advance at dawn",
+          "Military personnel discussed strategy during the planning meeting",
+          "The officer announced new regulations regarding leave policies",
+          "Soldiers shared personal stories during their break between patrols",
+          "The commander declared victory after the successful operation"
+        ],
+        "disambiguation": "Not to be confused with: MilitaryCommanding, MilitaryAnnouncing, PolicyStating, OfficialDeclaration"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/stating-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:05.283113Z",
+        "pack_version": "7.6.38"
+      }
     },
     {
       "sumo_term": "MilitarySupportVehicle",
@@ -74785,6 +75782,71 @@
       "definition": "&%NinoRegion is a class of predefined regions located\nin the tropical &%PacificOcean where their &%seaSurfaceTemperature are moniotred to track the onset at\nvarious phases of the &%ElNinoSouthernOscillation. The numbers of the Ni\u00f1o 1,2,3, and 4 regions \ncorrespond with the labels assigned to ship tracks that crossed these regions.  Data from these \ntracks enabled the historic records of El Ni\u00f1o to be carried back in time to 1949. [US National \nScience Foundation, National Center For Atomspheric Research]"
     },
     {
+      "sumo_term": "NobleGases",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Chemically inert gaseous elements that rarely react with other substances under normal conditions",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Chemically inert gaseous elements that rarely react with other substances under normal conditions",
+      "relationships": {
+        "related": [
+          "ReactiveGases",
+          "Metals",
+          "Nonmetals",
+          "Halogens"
+        ],
+        "has_part": [
+          "Helium",
+          "Neon",
+          "Argon",
+          "Krypton",
+          "Xenon",
+          "Radon"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The helium balloon floated away because helium is lighter than air",
+          "Neon signs glow brightly when electricity passes through the gas",
+          "Argon is used to fill light bulbs to prevent the filament from oxidizing",
+          "Krypton gas is used in high-performance camera flash bulbs",
+          "Xenon headlights provide brighter illumination than halogen bulbs",
+          "Radon gas can accumulate in basements and pose health risks"
+        ],
+        "negative_examples": [
+          "Oxygen is essential for combustion and breathing",
+          "Nitrogen makes up most of the atmosphere but forms many compounds",
+          "Hydrogen gas is highly reactive and explosive",
+          "Chlorine gas is toxic and highly reactive with metals",
+          "Carbon dioxide dissolves in water to form carbonic acid",
+          "Ammonia gas readily dissolves in water forming a basic solution"
+        ],
+        "disambiguation": "Not to be confused with: ReactiveGases, Metals, Nonmetals, Halogens"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460438Z",
+        "pack_version": "7.6.17"
+      }
+    },
+    {
       "sumo_term": "Nodding",
       "layer": 3,
       "domain": "MindsAndAgents",
@@ -74927,6 +75989,72 @@
       "pos": "n",
       "definition": "an equation in which the highest power of an unknown quantity is a square",
       "lexname": "noun.communication"
+    },
+    {
+      "sumo_term": "NonMetals",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Chemical elements that typically lack metallic properties like conductivity and luster, often forming covalent bonds and existing as gases or brittle solids.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Chemical elements that typically lack metallic properties like conductivity and luster, often forming covalent bonds and existing as gases or brittle solids.",
+      "relationships": {
+        "related": [
+          "Metals",
+          "Metalloids",
+          "AlkaliMetals",
+          "TransitionMetals"
+        ],
+        "has_part": [
+          "Hydrogen",
+          "Carbon",
+          "Nitrogen",
+          "Oxygen",
+          "Phosphorus",
+          "Sulphur",
+          "Selenium"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The nitrogen in the air we breathe makes up most of our atmosphere.",
+          "Oxygen is essential for combustion and cellular respiration.",
+          "Carbon forms the backbone of all organic molecules in living things.",
+          "Phosphorus is a key component in DNA and energy storage molecules.",
+          "Sulfur gives rotten eggs their distinctive smell when it forms hydrogen sulfide.",
+          "Selenium is used in photocells because its conductivity changes with light."
+        ],
+        "negative_examples": [
+          "Iron rusts when exposed to moisture and oxygen over time.",
+          "The copper wiring conducts electricity throughout the building efficiently.",
+          "Gold maintains its lustrous appearance even after centuries of exposure.",
+          "Aluminum foil reflects heat and light due to its metallic surface.",
+          "The steel beam provides structural support due to its strength.",
+          "Silver jewelry tarnishes when exposed to sulfur compounds in air."
+        ],
+        "disambiguation": "Not to be confused with: Metals, Metalloids, AlkaliMetals, TransitionMetals"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460490Z",
+        "pack_version": "7.6.17"
+      }
     },
     {
       "sumo_term": "NonNullSet",
@@ -84059,6 +85187,73 @@
       ],
       "pos": "verb",
       "definition": "&%Posting is a &%Process for creating\n&%DigitalPosts."
+    },
+    {
+      "sumo_term": "PostTransitionMetals",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Metallic elements located between transition metals and metalloids on the periodic table, typically soft and having lower melting points",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Metallic elements located between transition metals and metalloids on the periodic table, typically soft and having lower melting points",
+      "relationships": {
+        "related": [
+          "TransitionMetals",
+          "AlkaliMetals",
+          "NobleGases",
+          "Halogens",
+          "Metalloids"
+        ],
+        "has_part": [
+          "Aluminum",
+          "Gallium",
+          "Indium",
+          "Thallium",
+          "Tin",
+          "Lead",
+          "Bismuth"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The aluminum foil crinkled as she wrapped the leftover pizza",
+          "Lead pipes in old houses can contaminate drinking water",
+          "Tin cans are commonly used for food storage and preservation",
+          "Bismuth crystals form beautiful rainbow-colored geometric patterns",
+          "Gallium metal melts when held in your hand due to body heat",
+          "Indium is used in touchscreen displays for its conductive properties"
+        ],
+        "negative_examples": [
+          "Iron rusts when exposed to moisture and oxygen over time",
+          "Copper wire conducts electricity efficiently in electrical systems",
+          "Silicon chips power modern computers and electronic devices",
+          "Gold jewelry maintains its shine without tarnishing or corroding",
+          "Carbon forms the backbone of all organic molecules",
+          "Chlorine gas was used as a chemical weapon in World War I"
+        ],
+        "disambiguation": "Not to be confused with: TransitionMetals, AlkaliMetals, NobleGases, Halogens, Metalloids"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460467Z",
+        "pack_version": "7.6.17"
+      }
     },
     {
       "sumo_term": "PostulateOfContinuity",
@@ -100768,6 +101963,69 @@
       "lexname": "verb.cognition"
     },
     {
+      "sumo_term": "SpecializedContainers",
+      "layer": 3,
+      "domain": "CreatedThings",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "Container"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Containers designed for specific protective, storage, or functional purposes beyond general containment",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Containers designed for specific protective, storage, or functional purposes beyond general containment",
+      "relationships": {
+        "related": [
+          "StorageContainer",
+          "TransportContainer",
+          "ServingContainer",
+          "GeneralContainer"
+        ],
+        "has_part": [
+          "Coffin",
+          "Holster",
+          "ProjectileShell",
+          "Pericardium"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The soldier drew his pistol from its leather holster",
+          "The funeral director closed the mahogany coffin gently",
+          "Artillery shells exploded overhead during the bombardment",
+          "The surgeon carefully examined the inflamed pericardium around the heart",
+          "She kept her revolver secure in a shoulder holster",
+          "The cemetery workers lowered the wooden casket into the ground"
+        ],
+        "negative_examples": [
+          "She put groceries in a plastic shopping bag",
+          "The books were stored in cardboard boxes",
+          "He drank water from a metal bottle",
+          "The jewelry was kept in a wooden chest",
+          "Food was served in ceramic bowls",
+          "The tools were organized in a metal toolbox"
+        ],
+        "disambiguation": "Not to be confused with: StorageContainer, TransportContainer, ServingContainer, GeneralContainer"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/container-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.176684Z",
+        "pack_version": "7.6.14"
+      }
+    },
+    {
       "sumo_term": "SpecializedGarden",
       "layer": 3,
       "domain": "PhysicalWorld",
@@ -102251,7 +103509,10 @@
         "Correcting",
         "DeclarativeStatement",
         "Disagreeing",
+        "InterpersonalStating",
         "JudicialInstruction",
+        "LegalStating",
+        "MilitaryStating",
         "Misdiagnosing",
         "Notifying",
         "OfficialDesignation",
@@ -102266,7 +103527,7 @@
         "TerminalGuidance",
         "Testifying"
       ],
-      "child_count": 21,
+      "child_count": 24,
       "sumo_definition": "Instances of this &%Class commit the &%agent to\nsome truth.For example, John claimed that the moon is made of green cheese.",
       "synset_count": 50,
       "synsets": [
@@ -103511,6 +104772,70 @@
       "pos": "n",
       "definition": "a protective drip that is made of stone",
       "lexname": "noun.artifact"
+    },
+    {
+      "sumo_term": "StorageContainers",
+      "layer": 3,
+      "domain": "CreatedThings",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "Container"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "A receptacle designed to hold, organize, or temporarily contain objects or materials.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "A receptacle designed to hold, organize, or temporarily contain objects or materials.",
+      "relationships": {
+        "related": [
+          "DrinkingVessel",
+          "CookingContainer",
+          "TransportContainer",
+          "DisplayCase"
+        ],
+        "has_part": [
+          "Box",
+          "Bag",
+          "Compartment",
+          "PorousContainer",
+          "Wastebasket"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "She packed her lunch in a small plastic container.",
+          "The storage compartment under the seat held emergency supplies.",
+          "He threw the crumpled paper into the wastebasket by his desk.",
+          "The mesh bag allowed air to circulate through the produce.",
+          "Books were organized in labeled boxes in the attic.",
+          "The toolbox compartment kept screws separate from nails."
+        ],
+        "negative_examples": [
+          "The water pipe carried fresh water to the house.",
+          "She drank coffee from her favorite ceramic mug.",
+          "The freight train transported goods across the country.",
+          "He cooked pasta in a large stainless steel pot.",
+          "The bottle of wine was opened for dinner.",
+          "She served soup in elegant porcelain bowls."
+        ],
+        "disambiguation": "Not to be confused with: DrinkingVessel, CookingContainer, TransportContainer, DisplayCase"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/container-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.176681Z",
+        "pack_version": "7.6.14"
+      }
     },
     {
       "sumo_term": "Storm",
@@ -112465,6 +113790,94 @@
       }
     },
     {
+      "sumo_term": "TransitionMetals",
+      "layer": 3,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "ElementalSubstance"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Metallic elements with partially filled d-orbitals that exhibit variable oxidation states and form colored compounds.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Metallic elements with partially filled d-orbitals that exhibit variable oxidation states and form colored compounds.",
+      "relationships": {
+        "related": [
+          "AlkaliMetals",
+          "NobleGases",
+          "Halogens",
+          "AlkalineEarthMetals"
+        ],
+        "has_part": [
+          "Scandium",
+          "Titanium",
+          "Vanadium",
+          "Chromium",
+          "Manganese",
+          "Iron",
+          "Cobalt",
+          "Nickel",
+          "Copper",
+          "Zinc",
+          "Yttrium",
+          "Zirconium",
+          "Niobium",
+          "Molybdenum",
+          "Technetium",
+          "Ruthenium",
+          "Rhodium",
+          "Palladium",
+          "Silver",
+          "Cadmium",
+          "Hafnium",
+          "Tantalum",
+          "Tungsten",
+          "Rhenium",
+          "Osmium",
+          "Iridium",
+          "Platinum",
+          "Gold",
+          "Mercury"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The steel beam contains iron and chromium for strength and corrosion resistance.",
+          "Copper wiring conducts electricity efficiently throughout the building.",
+          "The catalyst uses platinum to speed up the chemical reaction.",
+          "Titanium implants are biocompatible and lightweight for medical use.",
+          "Nickel plating gives the surface a shiny, protective coating.",
+          "Manganese is added to steel to improve its hardness and durability."
+        ],
+        "negative_examples": [
+          "Aluminum foil wraps the sandwich to keep it fresh.",
+          "The sodium chloride dissolved completely in water.",
+          "Carbon forms the backbone of all organic molecules.",
+          "Helium gas filled the birthday balloons.",
+          "Silicon chips power modern electronic devices.",
+          "Sulfur crystals formed yellow deposits near the volcano."
+        ],
+        "disambiguation": "Not to be confused with: AlkaliMetals, NobleGases, Halogens, AlkalineEarthMetals"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/elementalsubstance-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.460464Z",
+        "pack_version": "7.6.17"
+      }
+    },
+    {
       "sumo_term": "TransitiveRelation",
       "layer": 3,
       "domain": "Information",
@@ -113009,6 +114422,71 @@
       "pos": "n",
       "definition": "the commercial enterprise of moving goods and materials",
       "lexname": "noun.act"
+    },
+    {
+      "sumo_term": "TransportContainers",
+      "layer": 3,
+      "domain": "CreatedThings",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "Container"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Containers designed to hold, protect, and transport items from one location to another.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Containers designed to hold, protect, and transport items from one location to another.",
+      "relationships": {
+        "related": [
+          "StorageContainer",
+          "FoodContainer",
+          "LiquidContainer",
+          "WasteContainer"
+        ],
+        "has_part": [
+          "TravelContainer",
+          "ShipContainer",
+          "ProductPackage",
+          "ArtifactPackage",
+          "Envelope",
+          "Mailbox"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "She packed her clothes into the suitcase for the trip.",
+          "The shipping container was loaded onto the cargo ship.",
+          "I sealed the envelope and dropped it in the mailbox.",
+          "The package arrived damaged during shipping.",
+          "Workers unloaded boxes from the freight container.",
+          "Mail carriers collect letters from residential mailboxes daily."
+        ],
+        "negative_examples": [
+          "She stored leftovers in a plastic food container.",
+          "The water bottle kept his drink cold all day.",
+          "He planted flowers in a ceramic pot.",
+          "The trash can was overflowing with garbage.",
+          "She organized her jewelry in a small wooden box.",
+          "The storage bin held winter clothes in the attic."
+        ],
+        "disambiguation": "Not to be confused with: StorageContainer, FoodContainer, LiquidContainer, WasteContainer"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/container-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.176666Z",
+        "pack_version": "7.6.14"
+      }
     },
     {
       "sumo_term": "TrapOrCage",
@@ -122573,8 +124051,8 @@
     }
   ],
   "summary": {
-    "total_concepts": 3205,
-    "last_modified": "2025-12-10T20:54:20.203383Z",
-    "pack_version": "7.6.6"
+    "total_concepts": 3227,
+    "last_modified": "2025-12-11T21:04:05.299627Z",
+    "pack_version": "7.6.38"
   }
 }

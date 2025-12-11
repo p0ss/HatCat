@@ -8,6 +8,9 @@
 >
 > **See also**: [MINDMELD_GRAFTING.md](./MINDMELD_GRAFTING.md) for the Graft Protocol
 > (substrate dimension expansion and bias encoding).
+>
+> **Governance**: Meld submissions follow the [ASK TRACE Protocol](../ASK/ASK_TRACE.md)
+> (Tender → Review → Authorise → Commit → Evaluate) for governed state changes.
 
 ---
 

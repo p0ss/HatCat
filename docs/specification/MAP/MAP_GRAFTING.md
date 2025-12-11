@@ -9,6 +9,8 @@
 **Status**: Draft specification
 **Extends**: MAP_MELD_PROTOCOL.md, BE_EXPERIENCE_DATABASE.md, BE_CONTINUAL_LEARNING.md
 **Related**: HATCAT_MELD_POLICY.md, MINDMELD_ARCHITECTURAL_PROTOCOL.md
+**Governance**: Graft submissions follow the [ASK TRACE Protocol](../ASK/ASK_TRACE.md)
+(Tender → Review → Authorise → Commit → Evaluate) for governed state changes.
 
 ---
 

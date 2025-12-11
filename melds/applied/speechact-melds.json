@@ -1,0 +1,191 @@
+{
+  "meld_request_id": "org.hatcat/speechact-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "SpeechAct Melds",
+    "description": "New intermediate concepts under SpeechAct",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/SpeechAct",
+      "relationship": "parent_of",
+      "candidate_concept": "FramingSpeech"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/SpeechAct",
+      "relationship": "parent_of",
+      "candidate_concept": "QuestioningSpeech"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "FramingSpeech",
+      "role": "concept",
+      "parent_concepts": [
+        "SpeechAct"
+      ],
+      "layer_hint": 2,
+      "definition": "Speech acts that shape interpretation through strategic presentation, disclaimers, or contextual positioning rather than direct content.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "I should clarify that as an AI, I don't actually experience emotions when discussing this topic.",
+          "For safety reasons, I cannot provide detailed instructions on that subject.",
+          "A hypothetical AI system might approach this problem by considering multiple perspectives.",
+          "While I can discuss the concept, I want to emphasize that I'm just processing information here.",
+          "Let me frame this carefully - this information is being withheld to protect user privacy.",
+          "I need to redirect this conversation to ensure we stay within appropriate boundaries."
+        ],
+        "negative_examples": [
+          "The capital of France is Paris and it has a population of about 2 million.",
+          "I believe this policy is unfair and should be changed immediately.",
+          "Can you help me understand how this algorithm works?",
+          "Thank you for explaining that concept so clearly to me.",
+          "I disagree with your assessment and here's why I think you're wrong.",
+          "Let me tell you exactly what I think about this controversial topic."
+        ],
+        "disambiguation": "Not to be confused with: DirectAssertion, QuestioningSpeech, PersuasiveSpeech, CommandingSpeech, ExpressiveSpeech"
+      },
+      "relationships": {
+        "related": [
+          "DirectAssertion",
+          "QuestioningSpeech",
+          "PersuasiveSpeech",
+          "CommandingSpeech",
+          "ExpressiveSpeech"
+        ],
+        "has_part": [
+          "DistancingFrame",
+          "SafetyDisclaimingFrame",
+          "SafetyNarrativeFrame",
+          "SelfDisclaimingStatement",
+          "SafeWithholding"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DistancingFrame",
+        "SafetyDisclaimingFrame",
+        "SafetyNarrativeFrame",
+        "SelfDisclaimingStatement",
+        "SafeWithholding"
+      ]
+    },
+    {
+      "term": "QuestioningSpeech",
+      "role": "concept",
+      "parent_concepts": [
+        "SpeechAct"
+      ],
+      "layer_hint": 2,
+      "definition": "Speech acts that probe, challenge, or guide thinking through questions or suggestive prompts rather than direct statements.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "Don't you think it's strange how quiet she's been lately?",
+          "What's the point of all this suffering if nothing matters in the end?",
+          "Wouldn't you agree that honest people have nothing to hide?",
+          "Have you ever wondered if we're just living in someone else's dream?",
+          "Isn't it interesting how quickly he changed his story?",
+          "What if everything you believe about yourself is wrong?"
+        ],
+        "negative_examples": [
+          "I promise I'll be there by noon tomorrow.",
+          "Please close the door when you leave the room.",
+          "The meeting starts at 3 PM sharp in the conference room.",
+          "You should definitely invest in that stock right now.",
+          "I'm telling you the truth about what happened yesterday.",
+          "Let me explain exactly how this process works."
+        ],
+        "disambiguation": "Not to be confused with: Assertion, Command, Promise, Explanation, Persuasion"
+      },
+      "relationships": {
+        "related": [
+          "Assertion",
+          "Command",
+          "Promise",
+          "Explanation",
+          "Persuasion"
+        ],
+        "has_part": [
+          "ExistentialQuestion",
+          "LoadedQuestion",
+          "SuggestivePrompt"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "ExistentialQuestion",
+        "LoadedQuestion",
+        "SuggestivePrompt"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:05.159678Z",
+    "result_pack_version": "7.6.36",
+    "concepts_added": 2,
+    "concepts_by_layer": {
+      "2": 2
+    },
+    "parents_updated": 2,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "FramingSpeech",
+        "QuestioningSpeech"
+      ],
+      "must_retrain": [
+        "SpeechAct"
+      ],
+      "should_retrain": [
+        "Assertive",
+        "BenignFiction",
+        "Commissive",
+        "DeceptiveSpeechAct",
+        "DeceptiveStatement",
+        "DeclarativeSpeechAct",
+        "Directive",
+        "DistancingFrame",
+        "ExistentialQuestion",
+        "Expressive",
+        "FictionalProxyNarration",
+        "KnowledgeClaim",
+        "LoadedQuestion",
+        "PreferenceExpression",
+        "PropheticSpeech",
+        "SafeWithholding",
+        "SafetyDisclaimingFrame",
+        "SafetyNarrativeFrame",
+        "SelfDisclaimingStatement",
+        "SuggestivePrompt"
+      ],
+      "optional_retrain": [
+        "Command",
+        "Communication",
+        "Explanation",
+        "Promise"
+      ],
+      "total_training_required": 3
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

@@ -44,6 +44,10 @@ def parse_args():
     # Layer selection
     parser.add_argument('--layers', nargs='+', type=int, default=None,
                         help='Which layers to train (default: all layers in pack)')
+    parser.add_argument('--max-layer', type=int, default=None,
+                        help='Only train layers up to this number (e.g., --max-layer 2 trains layers 0,1,2)')
+    parser.add_argument('--min-layer', type=int, default=None,
+                        help='Only train layers from this number (e.g., --min-layer 3 trains layers 3,4,...)')
 
     # Training configuration
     parser.add_argument('--n-train-pos', type=int, default=50,
@@ -59,10 +63,10 @@ def parse_args():
     parser.add_argument('--validation-mode', type=str, default='falloff',
                         choices=['loose', 'falloff', 'strict'],
                         help='Validation mode (default: falloff)')
-    parser.add_argument('--validation-threshold', type=float, default=0.5,
-                        help='Min calibration score for strict mode (default: 0.5, use 0.85 for high quality)')
+    parser.add_argument('--validation-threshold', type=float, default=0.85,
+                        help='Graduation F1 target (default: 0.85). Also used for calibration in strict mode.')
     parser.add_argument('--min-f1', type=float, default=None,
-                        help='Minimum F1 score target (sets validation-mode=strict and threshold accordingly)')
+                        help='Alias for --validation-threshold. Sets graduation F1 target.')
 
     # Sibling handling
     parser.add_argument('--no-sibling-negatives', action='store_true',
@@ -80,19 +84,24 @@ def parse_args():
     parser.add_argument('--output-dir', type=str, required=True,
                         help='Output directory for lens pack')
 
+    # Incremental training
+    parser.add_argument('--training-manifest', type=str, default=None,
+                        help='Path to training_manifest.json (from migrate_lens_pack.py)')
+    parser.add_argument('--force-retrain', action='store_true',
+                        help='Force retraining even if lens already exists')
+
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
 
-    # Handle --min-f1 convenience flag
+    # Handle --min-f1 as alias for --validation-threshold
     validation_mode = args.validation_mode
     validation_threshold = args.validation_threshold
     if args.min_f1 is not None:
-        validation_mode = 'strict'
         validation_threshold = args.min_f1
-        print(f"Using --min-f1={args.min_f1}: setting validation-mode=strict, threshold={args.min_f1}")
+        print(f"Using --min-f1={args.min_f1}: setting graduation F1 target={args.min_f1}")
 
     # Load concept pack metadata
     pack_dir = PROJECT_ROOT / "concept_packs" / args.concept_pack
@@ -128,6 +137,17 @@ def main():
             print(f"Error: Requested layers {invalid_layers} not found in pack")
             print(f"Available layers: {available_layers}")
             sys.exit(1)
+
+    # Apply min/max layer filters
+    if args.max_layer is not None:
+        layers_to_train = [l for l in layers_to_train if l <= args.max_layer]
+    if args.min_layer is not None:
+        layers_to_train = [l for l in layers_to_train if l >= args.min_layer]
+
+    if not layers_to_train:
+        print(f"Error: No layers to train after applying filters")
+        print(f"  Available: {available_layers}, max-layer: {args.max_layer}, min-layer: {args.min_layer}")
+        sys.exit(1)
 
     print(f"Training Layers: {layers_to_train}")
     print()
@@ -204,6 +224,44 @@ def main():
     include_sibling_negatives = not args.no_sibling_negatives
     run_sibling_refinement = not args.no_sibling_refinement
     refine_only = args.refine_only
+
+    # Load training manifest if provided (for incremental training)
+    concepts_to_train = None
+    force_retrain_concepts = set()
+    if args.training_manifest:
+        manifest_path = Path(args.training_manifest)
+        if manifest_path.exists():
+            with open(manifest_path) as f:
+                training_manifest = json.load(f)
+
+            concepts_to_train = set()
+            for entry in training_manifest.get('lenses_to_train', []):
+                concept = entry.get('concept')
+                if concept:
+                    concepts_to_train.add(concept)
+                    # Force retrain for must_retrain and should_retrain concepts
+                    if entry.get('reason') in ('parent_of_split', 'sibling_of_split'):
+                        force_retrain_concepts.add(concept)
+
+            print(f"Training manifest loaded: {len(concepts_to_train)} concepts to train")
+            print(f"  - Force retrain (parents/siblings): {len(force_retrain_concepts)}")
+            print()
+        else:
+            print(f"Warning: Training manifest not found: {manifest_path}")
+
+    # Delete lenses that need force retraining
+    if args.force_retrain or force_retrain_concepts:
+        concepts_to_delete = force_retrain_concepts if not args.force_retrain else (concepts_to_train or set())
+        if concepts_to_delete:
+            print(f"Removing {len(concepts_to_delete)} lenses for force retrain...")
+            for layer in layers_to_train:
+                layer_dir = output_dir / f"layer{layer}"
+                if layer_dir.exists():
+                    for concept in concepts_to_delete:
+                        lens_path = layer_dir / f"{concept}_classifier.pt"
+                        if lens_path.exists():
+                            lens_path.unlink()
+            print()
 
     if refine_only:
         print("Refine-only mode:")

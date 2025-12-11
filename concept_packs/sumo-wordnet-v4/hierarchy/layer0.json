@@ -2,28 +2,77 @@
   "layer": 0,
   "concepts": [
     {
-      "sumo_term": "MindsAndAgents",
+      "sumo_term": "Buildings",
       "layer": 0,
-      "domain": "MindsAndAgents",
+      "domain": "CreatedThings",
       "is_category_lens": true,
       "is_pseudo_sumo": true,
-      "category_children": [
-        "Agent",
-        "AlignmentProcess",
-        "ArtificialAgent",
-        "AutonomousAgent",
-        "Believing",
-        "CognitiveProcess",
-        "Communication",
-        "Deception",
-        "IntentionalProcess",
-        "Organization",
-        "Perception",
-        "Reasoning",
-        "SocialInteraction"
+      "parent_concepts": [
+        "StationaryArtifact"
       ],
-      "definition": "Knowledge domain encompassing cognition, agency, social structures, communication, and mental processes",
-      "concept_count": 1472
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Permanent structures designed for human occupancy, work, or specific activities.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Permanent structures designed for human occupancy, work, or specific activities.",
+      "relationships": {
+        "related": [
+          "Infrastructure",
+          "Monument",
+          "Vehicle",
+          "Equipment"
+        ],
+        "has_part": [
+          "Building",
+          "Casino",
+          "DanceHall",
+          "Factory",
+          "IndustrialPlant",
+          "Laboratory",
+          "MilitaryInstallation",
+          "Mine",
+          "Prison",
+          "RecordingStudio",
+          "Residence",
+          "WMDWeaponsProductionFacility",
+          "WMDWeaponsResearchFacility",
+          "Workshop"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The new office building downtown has thirty floors.",
+          "They converted the old factory into luxury apartments.",
+          "The casino was packed with tourists trying their luck.",
+          "Scientists worked late in the research laboratory.",
+          "The dance hall echoed with music from the 1940s band.",
+          "Security was tight around the military installation."
+        ],
+        "negative_examples": [
+          "The bridge spans the entire river valley.",
+          "We parked under the concrete overpass during the storm.",
+          "The ancient statue stood in the center of the plaza.",
+          "The submarine docked at the naval pier.",
+          "Construction crews erected scaffolding around the monument.",
+          "The oil rig operated twenty miles offshore."
+        ],
+        "disambiguation": "Not to be confused with: Infrastructure, Monument, Vehicle, Equipment"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/stationaryartifact-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:05.416431Z",
+        "pack_version": "7.6.39"
+      }
     },
     {
       "sumo_term": "CreatedThings",
@@ -52,44 +101,6 @@
       "concept_count": 1890
     },
     {
-      "sumo_term": "PhysicalWorld",
-      "layer": 0,
-      "domain": "PhysicalWorld",
-      "is_category_lens": true,
-      "is_pseudo_sumo": true,
-      "category_children": [
-        "ConstantQuantity",
-        "FieldOfStudy",
-        "GeographicArea",
-        "Motion",
-        "PhysicalQuantity",
-        "Quantity",
-        "Region",
-        "Substance",
-        "TimeInterval"
-      ],
-      "definition": "Knowledge domain encompassing matter, energy, forces, physical quantities, and natural phenomena",
-      "concept_count": 1477
-    },
-    {
-      "sumo_term": "LivingThings",
-      "layer": 0,
-      "domain": "LivingThings",
-      "is_category_lens": true,
-      "is_pseudo_sumo": true,
-      "category_children": [
-        "AnatomicalStructure",
-        "Animal",
-        "BiologicalProcess",
-        "BodyPart",
-        "Ecosystem",
-        "Organism",
-        "Plant"
-      ],
-      "definition": "Knowledge domain encompassing organisms, biological processes, ecosystems, and life",
-      "concept_count": 1074
-    },
-    {
       "sumo_term": "Information",
       "layer": 0,
       "domain": "Information",
@@ -111,19 +122,207 @@
       ],
       "definition": "Knowledge domain encompassing data, representations, propositions, relations, and abstract entities",
       "concept_count": 1351
+    },
+    {
+      "sumo_term": "LivingThings",
+      "layer": 0,
+      "domain": "LivingThings",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "category_children": [
+        "AnatomicalStructure",
+        "Animal",
+        "BiologicalProcess",
+        "BodyPart",
+        "Ecosystem",
+        "Organism",
+        "Plant",
+        "SocialLife"
+      ],
+      "definition": "Knowledge domain encompassing organisms, biological processes, ecosystems, and life",
+      "concept_count": 1074,
+      "child_count": 8
+    },
+    {
+      "sumo_term": "MindsAndAgents",
+      "layer": 0,
+      "domain": "MindsAndAgents",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "category_children": [
+        "Agent",
+        "AlignmentProcess",
+        "ArtificialAgent",
+        "AutonomousAgent",
+        "Believing",
+        "CognitiveProcess",
+        "Communication",
+        "Deception",
+        "IntentionalProcess",
+        "Organization",
+        "Perception",
+        "Reasoning",
+        "SocialInteraction"
+      ],
+      "definition": "Knowledge domain encompassing cognition, agency, social structures, communication, and mental processes",
+      "concept_count": 1472
+    },
+    {
+      "sumo_term": "NaturalGeography",
+      "layer": 0,
+      "domain": "PhysicalWorld",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "GeographicArea"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Geographic areas formed by natural processes rather than human activity, including landforms, water bodies, and ecosystems.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Geographic areas formed by natural processes rather than human activity, including landforms, water bodies, and ecosystems.",
+      "relationships": {
+        "related": [
+          "UrbanArea",
+          "PoliticalTerritory",
+          "AdministrativeRegion",
+          "EconomicZone",
+          "CulturalRegion"
+        ],
+        "has_part": [
+          "LandForm",
+          "LandArea",
+          "WaterArea",
+          "Ecosystem",
+          "Hemisphere",
+          "LakeRegion",
+          "ArchipelagicArea",
+          "LittoralZone",
+          "WaterOnlyArea"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The Amazon rainforest ecosystem spans across nine countries in South America.",
+          "The Great Lakes region contains the largest group of freshwater lakes in the world.",
+          "The Pacific Ocean covers about one-third of the Earth's surface.",
+          "The Sahara Desert is the largest hot desert in the world.",
+          "The Rocky Mountains stretch from Canada to New Mexico.",
+          "The coral reefs of the Caribbean form a diverse marine ecosystem."
+        ],
+        "negative_examples": [
+          "The state of California has a population of nearly 40 million people.",
+          "The downtown business district contains many skyscrapers.",
+          "The subway system connects all five boroughs of the city.",
+          "The agricultural zone produces wheat and corn for export.",
+          "The industrial park houses several manufacturing facilities.",
+          "The residential neighborhood has tree-lined streets and parks."
+        ],
+        "disambiguation": "Not to be confused with: UrbanArea, PoliticalTerritory, AdministrativeRegion, EconomicZone, CulturalRegion"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/geographicarea-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:03.832208Z",
+        "pack_version": "7.6.20"
+      }
+    },
+    {
+      "sumo_term": "PhysicalWorld",
+      "layer": 0,
+      "domain": "PhysicalWorld",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "category_children": [
+        "ConstantQuantity",
+        "FieldOfStudy",
+        "GeographicArea",
+        "Motion",
+        "PhysicalQuantity",
+        "Quantity",
+        "Region",
+        "Substance",
+        "TimeInterval"
+      ],
+      "definition": "Knowledge domain encompassing matter, energy, forces, physical quantities, and natural phenomena",
+      "concept_count": 1477
+    },
+    {
+      "sumo_term": "SocialLife",
+      "layer": 0,
+      "domain": "CreatedThings",
+      "is_category_lens": true,
+      "is_pseudo_sumo": true,
+      "parent_concepts": [
+        "LivingThings"
+      ],
+      "category_children": [],
+      "child_count": 0,
+      "sumo_definition": "Human activities and behaviors involving interaction, work, recreation, and spiritual practices within society.",
+      "synset_count": 0,
+      "synsets": [],
+      "canonical_synset": "",
+      "lemmas": [],
+      "pos": "noun",
+      "definition": "Human activities and behaviors involving interaction, work, recreation, and spiritual practices within society.",
+      "relationships": {
+        "related": [
+          "BiologicalProcesses",
+          "AnimalBehavior",
+          "PlantLife",
+          "HealthAndMedicine"
+        ],
+        "has_part": [
+          "SocialInteraction",
+          "Work",
+          "RecreationOrExercise",
+          "SpiritualPractice"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "She joined a book club to meet new people in her neighborhood.",
+          "The team worked together to complete the project on deadline.",
+          "They went hiking as a family bonding activity on weekends.",
+          "The community gathered at the temple for evening prayers.",
+          "He volunteered at the local food bank every Saturday morning.",
+          "The children played soccer together in the park after school."
+        ],
+        "negative_examples": [
+          "The plant grew taller in the sunlight each day.",
+          "Her heart rate increased during the medical examination.",
+          "The bacteria multiplied rapidly in the petri dish.",
+          "The lion hunted alone across the savanna at dawn.",
+          "Photosynthesis converts carbon dioxide into oxygen in leaves.",
+          "The injured bird's wing healed naturally over several weeks."
+        ],
+        "disambiguation": "Not to be confused with: BiologicalProcesses, AnimalBehavior, PlantLife, HealthAndMedicine"
+      },
+      "meld_source": {
+        "meld_id": "org.hatcat/misc-melds@0.1.0",
+        "applied_at": "2025-12-11T21:04:04.304294Z",
+        "pack_version": "7.6.26"
+      }
     }
   ],
   "summary": {
-    "layer": 0,
-    "total_concepts": 5,
-    "domain_distribution": {
-      "MindsAndAgents": 1,
-      "CreatedThings": 1,
-      "PhysicalWorld": 1,
-      "LivingThings": 1,
-      "Information": 1
-    },
-    "with_wordnet": 0,
-    "with_definition": 5
+    "total_concepts": 8,
+    "last_modified": "2025-12-11T21:04:05.416802Z",
+    "pack_version": "7.6.39"
   }
 }

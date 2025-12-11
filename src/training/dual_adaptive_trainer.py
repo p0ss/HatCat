@@ -30,7 +30,7 @@ class DualAdaptiveTrainer:
         max_iterations: int = 50,
 
         # Activation lens config
-        activation_target_accuracy: float = 0.95,
+        activation_target_accuracy: float = None,  # Graduation F1 - defaults to validation_threshold
         activation_initial_samples: int = 40,  # Start with 40 samples (2 errors = 95%)
         activation_first_increment: int = 40,  # Add 40 more if initial fails (80 total)
         activation_subsequent_increment: int = 40,  # Add 40 more for each subsequent cycle (120, 160, ...)
@@ -51,7 +51,7 @@ class DualAdaptiveTrainer:
         # Validation config
         validate_lenses: bool = True,
         validation_mode: str = 'falloff',  # 'loose', 'falloff', or 'strict'
-        validation_threshold: float = 0.5,  # Calibration score for quality grading (advisory)
+        validation_threshold: float = 0.85,  # Graduation F1 target (also used for calibration in strict mode)
         validation_layer_idx: int = 15,  # Model layer for validation activations
 
         # Tiered validation thresholds (progressive strictness for 'falloff' mode)
@@ -67,10 +67,11 @@ class DualAdaptiveTrainer:
         """
         Args:
             max_iterations: Safety limit on adaptive cycles
-            activation_target_accuracy: Graduation threshold for activation lenses
-            activation_initial_samples: Initial sample count (default 10 - quick win for simple concepts)
-            activation_first_increment: Samples added on first failure (default 20 - reaches LLN at 30 total)
-            activation_subsequent_increment: Samples added per subsequent failure (default 30)
+            activation_target_accuracy: Graduation F1 threshold for activation lenses.
+                                       Defaults to validation_threshold if not specified.
+            activation_initial_samples: Initial sample count (default 40)
+            activation_first_increment: Samples added on first failure (default 40)
+            activation_subsequent_increment: Samples added per subsequent failure (default 40)
             activation_max_samples: Max samples for activation
             text_target_accuracy: Graduation threshold for text lenses (typically lower than activation)
             text_initial_samples: Initial sample count for text lenses
@@ -85,7 +86,8 @@ class DualAdaptiveTrainer:
                 - 'loose': Validate and grade but never block (advisory only)
                 - 'falloff': Tiered blocking - strict early, relaxed later (default)
                 - 'strict': Always block on validation failure until max_iterations
-            validation_threshold: Calibration score threshold for strict mode (default 0.5)
+            validation_threshold: Graduation F1 target (default 0.85). Also controls calibration
+                                 in strict mode. Set via --min-f1 command line option.
             validation_layer_idx: Model layer to extract activations from for validation
             validation_tier1_iterations: Max iterations for strict tier (A-grade, falloff mode)
             validation_tier2_iterations: Max iterations for high tier (B+-grade, falloff mode)
@@ -96,7 +98,9 @@ class DualAdaptiveTrainer:
         """
         self.max_iterations = max_iterations
 
-        self.activation_target_accuracy = activation_target_accuracy
+        # Link graduation F1 to validation_threshold if not explicitly set
+        self.validation_threshold = validation_threshold
+        self.activation_target_accuracy = activation_target_accuracy if activation_target_accuracy is not None else validation_threshold
         self.activation_initial_samples = activation_initial_samples
         self.activation_first_increment = activation_first_increment
         self.activation_subsequent_increment = activation_subsequent_increment
@@ -114,7 +118,6 @@ class DualAdaptiveTrainer:
 
         self.validate_lenses = validate_lenses
         self.validation_mode = validation_mode
-        self.validation_threshold = validation_threshold
         self.validation_layer_idx = validation_layer_idx
         self.validation_tier1_iterations = validation_tier1_iterations
         self.validation_tier2_iterations = validation_tier2_iterations

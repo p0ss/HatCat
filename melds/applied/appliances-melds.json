@@ -1,0 +1,495 @@
+{
+  "meld_request_id": "org.hatcat/appliances-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Appliances Melds",
+    "description": "New intermediate concepts under Appliances",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Appliances",
+      "relationship": "parent_of",
+      "candidate_concept": "PersonalAppliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Appliances",
+      "relationship": "parent_of",
+      "candidate_concept": "KitchenAppliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Appliances",
+      "relationship": "parent_of",
+      "candidate_concept": "CleaningAppliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Appliances",
+      "relationship": "parent_of",
+      "candidate_concept": "ClimateAppliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Appliances",
+      "relationship": "parent_of",
+      "candidate_concept": "UtilityAppliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Appliances",
+      "relationship": "parent_of",
+      "candidate_concept": "OfficeAppliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Appliances",
+      "relationship": "parent_of",
+      "candidate_concept": "EntertainmentAppliances"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "PersonalAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "Appliances"
+      ],
+      "layer_hint": 2,
+      "definition": "Appliances designed for individual personal care, grooming, or fitness use.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She plugged in her hair dryer before styling her hair.",
+          "The electric toothbrush charged overnight on the bathroom counter.",
+          "He used his massage gun after the workout to relax his muscles.",
+          "The facial steamer helped open her pores during her skincare routine.",
+          "She adjusted the settings on her curling iron for loose waves.",
+          "The electric shaver provided a smooth, close shave every morning."
+        ],
+        "negative_examples": [
+          "The washing machine finished the laundry cycle with a beep.",
+          "She preheated the oven to 350 degrees for baking cookies.",
+          "The dishwasher ran quietly while they watched television.",
+          "He started the blender to make his morning protein shake.",
+          "The air conditioner kept the bedroom cool during summer nights.",
+          "She loaded dishes into the microwave to reheat dinner."
+        ],
+        "disambiguation": "Not to be confused with: KitchenAppliances, LaundryAppliances, ClimateAppliances, CleaningAppliances"
+      },
+      "relationships": {
+        "related": [
+          "KitchenAppliances",
+          "LaundryAppliances",
+          "ClimateAppliances",
+          "CleaningAppliances"
+        ],
+        "has_part": [
+          "BodyCareAppliance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BodyCareAppliance"
+      ]
+    },
+    {
+      "term": "KitchenAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "Appliances"
+      ],
+      "layer_hint": 1,
+      "definition": "Electric or mechanical devices designed specifically for food preparation, cooking, or processing in a kitchen environment.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She used her new blender to make a smoothie for breakfast.",
+          "The pressure cooker made the tough roast tender in just an hour.",
+          "He grilled the vegetables on his countertop electric grill.",
+          "The bread machine finished baking a fresh loaf overnight.",
+          "She processed the nuts in her food processor to make almond butter.",
+          "The slow cooker simmered the stew all day while we were at work."
+        ],
+        "negative_examples": [
+          "The washing machine finished the laundry cycle.",
+          "She vacuumed the living room carpet thoroughly.",
+          "The air conditioner kept the house cool all summer.",
+          "He used a hammer to fix the loose cabinet door.",
+          "The dishwasher cleaned all the plates and glasses.",
+          "She ironed her shirt before the important meeting."
+        ],
+        "disambiguation": "Not to be confused with: LaundryAppliances, CleaningAppliances, HeatingAppliances, PersonalCareAppliances"
+      },
+      "relationships": {
+        "related": [
+          "LaundryAppliances",
+          "CleaningAppliances",
+          "HeatingAppliances",
+          "PersonalCareAppliances"
+        ],
+        "has_part": [
+          "DeepFryer",
+          "Grill",
+          "PressureCooker",
+          "SlowCooker",
+          "RotisserieAppliance",
+          "Blender",
+          "FoodProcessingAppliance",
+          "ElectricJuicer",
+          "ElectricCanOpener",
+          "BreadMachine",
+          "IceCreamMaker",
+          "PastaMaker",
+          "PopcornMaker",
+          "RiceCooker",
+          "SandwichMaker",
+          "ElectricCoffeeMaker",
+          "ElectricToaster",
+          "Tableware"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DeepFryer",
+        "Grill",
+        "PressureCooker",
+        "SlowCooker",
+        "RotisserieAppliance",
+        "Blender",
+        "FoodProcessingAppliance",
+        "ElectricJuicer",
+        "ElectricCanOpener",
+        "BreadMachine",
+        "IceCreamMaker",
+        "PastaMaker",
+        "PopcornMaker",
+        "RiceCooker",
+        "SandwichMaker",
+        "ElectricCoffeeMaker",
+        "ElectricToaster",
+        "Tableware"
+      ]
+    },
+    {
+      "term": "CleaningAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "Appliances"
+      ],
+      "layer_hint": 1,
+      "definition": "Appliances designed to clean, wash, dry, or maintain cleanliness of items or spaces.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She loaded the dirty dishes into the dishwasher after dinner.",
+          "The vacuum cleaner picked up all the pet hair from the carpet.",
+          "He threw his muddy clothes into the washing machine.",
+          "The dryer finished its cycle and the towels were perfectly dry.",
+          "She set up the ironing board to press her wrinkled shirt.",
+          "The air purifier's filter needs to be replaced monthly."
+        ],
+        "negative_examples": [
+          "The refrigerator kept the food fresh and cold.",
+          "She preheated the oven to bake chocolate chip cookies.",
+          "He used a hammer to hang the picture on the wall.",
+          "The microwave heated up the leftover pizza quickly.",
+          "She plugged in the hair dryer to style her hair.",
+          "The lawn mower cut the grass in neat rows."
+        ],
+        "disambiguation": "Not to be confused with: KitchenAppliances, HeatingAppliances, CoolingAppliances, PersonalCareAppliances"
+      },
+      "relationships": {
+        "related": [
+          "KitchenAppliances",
+          "HeatingAppliances",
+          "CoolingAppliances",
+          "PersonalCareAppliances"
+        ],
+        "has_part": [
+          "CleaningDevice",
+          "WashingDevice",
+          "LaundryAppliance",
+          "DryingDevice",
+          "IroningBoard",
+          "Filter"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CleaningDevice",
+        "WashingDevice",
+        "LaundryAppliance",
+        "DryingDevice",
+        "IroningBoard",
+        "Filter"
+      ]
+    },
+    {
+      "term": "ClimateAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "Appliances"
+      ],
+      "layer_hint": 1,
+      "definition": "Appliances that control air temperature, humidity, or circulation in indoor environments.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The heater kicked on automatically when the temperature dropped below 68 degrees.",
+          "We installed a new air conditioning unit to keep the office cool during summer.",
+          "The ventilation system circulates fresh air throughout the building.",
+          "She adjusted the thermostat to make the room more comfortable.",
+          "The humidifier helps maintain proper moisture levels in the nursery.",
+          "Our HVAC system efficiently controls both heating and cooling."
+        ],
+        "negative_examples": [
+          "The refrigerator keeps our food fresh and cold.",
+          "She used the hair dryer to style her hair quickly.",
+          "The washing machine finished the laundry cycle.",
+          "He plugged in the vacuum cleaner to clean the carpet.",
+          "The microwave heated up the leftover pizza.",
+          "The dishwasher sanitizes and cleans our dishes."
+        ],
+        "disambiguation": "Not to be confused with: KitchenAppliances, CleaningAppliances, LaundryAppliances, PersonalCareAppliances"
+      },
+      "relationships": {
+        "related": [
+          "KitchenAppliances",
+          "CleaningAppliances",
+          "LaundryAppliances",
+          "PersonalCareAppliances"
+        ],
+        "has_part": [
+          "AirConditioner",
+          "CoolingDevice",
+          "HeatingDevice",
+          "HeatingAppliance",
+          "Aerator"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AirConditioner",
+        "CoolingDevice",
+        "HeatingDevice",
+        "HeatingAppliance",
+        "Aerator"
+      ]
+    },
+    {
+      "term": "UtilityAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "Appliances"
+      ],
+      "layer_hint": 1,
+      "definition": "Appliances that provide essential home services like heating, ventilation, water management, or safety monitoring rather than food preparation or entertainment.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The smoke detector started beeping when the battery ran low.",
+          "We installed a new water heater in the basement last month.",
+          "The range hood helps remove cooking odors from the kitchen.",
+          "The sprinkler system automatically waters the lawn every morning.",
+          "Our HVAC unit keeps the house comfortable year-round.",
+          "The toilet needed repair after the handle broke."
+        ],
+        "negative_examples": [
+          "She used the microwave to heat up her lunch.",
+          "The television displayed the evening news clearly.",
+          "He mixed the cake batter with an electric mixer.",
+          "The washing machine finished the laundry cycle.",
+          "She played her favorite song on the stereo system.",
+          "The refrigerator kept the milk cold overnight."
+        ],
+        "disambiguation": "Not to be confused with: KitchenAppliances, EntertainmentAppliances, CleaningAppliances, PersonalCareAppliances"
+      },
+      "relationships": {
+        "related": [
+          "KitchenAppliances",
+          "EntertainmentAppliances",
+          "CleaningAppliances",
+          "PersonalCareAppliances"
+        ],
+        "has_part": [
+          "HouseUtilityAppliance",
+          "MajorAppliance",
+          "Toilet",
+          "Sprinkler",
+          "RangeHood",
+          "SensorAppliance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "HouseUtilityAppliance",
+        "MajorAppliance",
+        "Toilet",
+        "Sprinkler",
+        "RangeHood",
+        "SensorAppliance"
+      ]
+    },
+    {
+      "term": "OfficeAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "Appliances"
+      ],
+      "layer_hint": 1,
+      "definition": "Appliances designed for work, communication, or specialized tasks in office or home work environments.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She bought a new printer for her home office setup.",
+          "The fax machine in the corner hasn't been used in months.",
+          "He threaded the sewing machine to finish the alterations.",
+          "The phone system allows conference calls with multiple participants.",
+          "She used the laminator to protect important documents.",
+          "The paper shredder helps maintain document confidentiality."
+        ],
+        "negative_examples": [
+          "The refrigerator keeps our lunch fresh in the break room.",
+          "She turned on the microwave to heat her coffee.",
+          "The air conditioner keeps the office comfortable in summer.",
+          "He vacuumed the carpet in his home office.",
+          "The dishwasher in the office kitchen needs repair.",
+          "She plugged in the space heater under her desk."
+        ],
+        "disambiguation": "Not to be confused with: KitchenAppliances, CleaningAppliances, HeatingCoolingAppliances, LaundryAppliances"
+      },
+      "relationships": {
+        "related": [
+          "KitchenAppliances",
+          "CleaningAppliances",
+          "HeatingCoolingAppliances",
+          "LaundryAppliances"
+        ],
+        "has_part": [
+          "HomeOfficeAppliance",
+          "CommunicationAppliance",
+          "SewingMachine"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "HomeOfficeAppliance",
+        "CommunicationAppliance",
+        "SewingMachine"
+      ]
+    },
+    {
+      "term": "EntertainmentAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "Appliances"
+      ],
+      "layer_hint": 1,
+      "definition": "Appliances designed to enhance leisure experiences through visual display, ambiance, or aesthetic appeal.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The new smart TV has excellent picture quality for movie nights.",
+          "She dimmed the decorative string lights to create a cozy atmosphere.",
+          "The disco ball spun slowly, casting sparkles across the dance floor.",
+          "He adjusted the lamp's brightness while reading his book.",
+          "The neon sign in the window attracted customers to the restaurant.",
+          "They installed LED strip lights behind the TV for ambient lighting."
+        ],
+        "negative_examples": [
+          "The dishwasher finished its cleaning cycle with a beep.",
+          "She preheated the oven to 350 degrees for baking cookies.",
+          "The washing machine spun the clothes dry in the final cycle.",
+          "He used the microwave to reheat his leftover dinner.",
+          "The air conditioner kept the room cool during the heat wave.",
+          "The refrigerator's ice maker produced fresh cubes automatically."
+        ],
+        "disambiguation": "Not to be confused with: KitchenAppliances, CleaningAppliances, ClimateAppliances, LaundryAppliances"
+      },
+      "relationships": {
+        "related": [
+          "KitchenAppliances",
+          "CleaningAppliances",
+          "ClimateAppliances",
+          "LaundryAppliances"
+        ],
+        "has_part": [
+          "TelevisionSet",
+          "LightingAppliance",
+          "DecorativeAppliance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "TelevisionSet",
+        "LightingAppliance",
+        "DecorativeAppliance"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:02.783105Z",
+    "result_pack_version": "7.6.8",
+    "concepts_added": 7,
+    "concepts_by_layer": {
+      "2": 1,
+      "1": 6
+    },
+    "parents_updated": 0,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "PersonalAppliances",
+        "KitchenAppliances",
+        "CleaningAppliances",
+        "ClimateAppliances",
+        "UtilityAppliances",
+        "OfficeAppliances",
+        "EntertainmentAppliances"
+      ],
+      "must_retrain": [],
+      "should_retrain": [],
+      "optional_retrain": [],
+      "total_training_required": 7
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

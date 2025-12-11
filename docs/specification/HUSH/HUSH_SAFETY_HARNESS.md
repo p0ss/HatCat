@@ -3,6 +3,8 @@
 **Status**: Draft
 **Version**: 0.1.0
 **Last Updated**: 2025-12-08
+**Governance**: USH profile changes follow the [ASK TRACE Protocol](../ASK/ASK_TRACE.md)
+(`ush_profile_change` workflow type: Tender → Review → Authorise → Commit → Evaluate).
 
 ## Overview
 

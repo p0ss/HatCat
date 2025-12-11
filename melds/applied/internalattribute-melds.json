@@ -1,0 +1,200 @@
+{
+  "meld_request_id": "org.hatcat/internalattribute-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "InternalAttribute Melds",
+    "description": "New intermediate concepts under InternalAttribute",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/InternalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "TechnicalAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/InternalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "DeviceAttrs"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "TechnicalAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "InternalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Properties or characteristics that describe mathematical, scientific, or engineering aspects of systems, equations, or technical objects.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The differential equation exhibits nonlinear behavior in its solution space.",
+          "We need to analyze the multipole characteristics of this electromagnetic field configuration.",
+          "The system's algebraic-differential properties make it suitable for control theory applications.",
+          "This equation's degree and linearity properties determine the solution method.",
+          "The technical specifications include various mathematical attributes of the model.",
+          "Engineers must consider the nonlinear properties when designing the feedback system."
+        ],
+        "negative_examples": [
+          "The color of the material is bright red and very appealing.",
+          "She has a friendly personality and great communication skills.",
+          "The building's architectural style reflects modern design principles.",
+          "His emotional response to the news was quite understandable.",
+          "The cultural significance of this tradition cannot be overstated.",
+          "The price of the product has increased due to market demand."
+        ],
+        "disambiguation": "Not to be confused with: PhysicalAttribute, QualitativeAttribute, SocialAttribute, TemporalAttribute"
+      },
+      "relationships": {
+        "related": [
+          "PhysicalAttribute",
+          "QualitativeAttribute",
+          "SocialAttribute",
+          "TemporalAttribute"
+        ],
+        "has_part": [
+          "AlgebroDifferentialAttribute",
+          "EquationAttribute",
+          "MultipoleAttribute",
+          "Nonlinear"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AlgebroDifferentialAttribute",
+        "EquationAttribute",
+        "MultipoleAttribute",
+        "Nonlinear"
+      ]
+    },
+    {
+      "term": "DeviceAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "InternalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Physical or operational characteristics that describe the configuration, state, or technical properties of devices and mechanical systems.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The motor is brushless and operates autonomously.",
+          "The device switched from off to on automatically.",
+          "The railway uses standard gauge tracks for compatibility.",
+          "This backlashless gear system provides precise positioning.",
+          "The printer's current state shows it is ready and online.",
+          "The autonomous vehicle's sensors are fully operational."
+        ],
+        "negative_examples": [
+          "The car's speed increased to 60 mph.",
+          "The temperature rose by 10 degrees.",
+          "She felt happy about the successful presentation.",
+          "The red color of the stop sign was clearly visible.",
+          "The building's height measures 50 feet.",
+          "His personality is very outgoing and friendly."
+        ],
+        "disambiguation": "Not to be confused with: PhysicalAttribute, TemporalAttribute, QualityAttribute, RelationalAttribute"
+      },
+      "relationships": {
+        "related": [
+          "PhysicalAttribute",
+          "TemporalAttribute",
+          "QualityAttribute",
+          "RelationalAttribute"
+        ],
+        "has_part": [
+          "DeviceStateAttribute",
+          "Autonomous",
+          "Backlashless",
+          "Brushless",
+          "TrackGauge",
+          "StructureAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DeviceStateAttribute",
+        "Autonomous",
+        "Backlashless",
+        "Brushless",
+        "TrackGauge",
+        "StructureAttribute"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:03.943789Z",
+    "result_pack_version": "7.6.21",
+    "concepts_added": 2,
+    "concepts_by_layer": {
+      "1": 2
+    },
+    "parents_updated": 2,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "TechnicalAttrs",
+        "DeviceAttrs"
+      ],
+      "must_retrain": [
+        "InternalAttribute"
+      ],
+      "should_retrain": [
+        "AlgebroDifferentialAttribute",
+        "Autonomous",
+        "Backlashless",
+        "BiodiversityAttribute",
+        "BiologicalAttribute",
+        "BreakabilityAttribute",
+        "Brushless",
+        "ColorAttribute",
+        "DeviceStateAttribute",
+        "EpistemicState",
+        "EquationAttribute",
+        "Justification",
+        "LexiconCategory",
+        "LinguisticAttribute",
+        "Moribund",
+        "MultipoleAttribute",
+        "Nascent",
+        "Nonlinear",
+        "PerceptualAttribute",
+        "PhysicalAttribute",
+        "PhysicalDomain",
+        "PhysicalState",
+        "SaturationAttribute",
+        "SolubilityAttribute",
+        "StructureAttribute",
+        "TerrainAttribute",
+        "TrackGauge",
+        "VolcanoStatus",
+        "WebDocumentAttribute"
+      ],
+      "optional_retrain": [
+        "Attribute",
+        "RelationalAttribute"
+      ],
+      "total_training_required": 3
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

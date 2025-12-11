@@ -1,0 +1,349 @@
+{
+  "meld_request_id": "org.hatcat/measuringdevices-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "MeasuringDevices Melds",
+    "description": "New intermediate concepts under MeasuringDevices",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/MeasuringDevices",
+      "relationship": "parent_of",
+      "candidate_concept": "TimeSpeedMeters"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/MeasuringDevices",
+      "relationship": "parent_of",
+      "candidate_concept": "PressureMeters"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/MeasuringDevices",
+      "relationship": "parent_of",
+      "candidate_concept": "EnvironmentMeters"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/MeasuringDevices",
+      "relationship": "parent_of",
+      "candidate_concept": "MedicalTests"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/MeasuringDevices",
+      "relationship": "parent_of",
+      "candidate_concept": "PhysicalMeters"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "TimeSpeedMeters",
+      "role": "concept",
+      "parent_concepts": [
+        "MeasuringDevices"
+      ],
+      "layer_hint": 2,
+      "definition": "Measuring devices that display temporal or motion-related quantities like time, speed, distance, or rotational rate.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The dashboard clock showed it was nearly midnight.",
+          "She glanced at the speedometer to check she wasn't exceeding the limit.",
+          "The mechanic watched the tachometer to monitor engine RPMs.",
+          "After the road trip, the odometer read 50,000 miles.",
+          "The pilot checked both the airspeed indicator and the flight timer.",
+          "His watch displayed the exact time while the car's speedometer showed 65 mph."
+        ],
+        "negative_examples": [
+          "The thermometer showed the temperature was rising.",
+          "She used a ruler to measure the length of the table.",
+          "The pressure gauge indicated the tire needed more air.",
+          "He weighed himself on the bathroom scale.",
+          "The voltmeter displayed the electrical current reading.",
+          "The fuel gauge showed the tank was nearly empty."
+        ],
+        "disambiguation": "Not to be confused with: Thermometer, Scale, PressureGauge, Ruler"
+      },
+      "relationships": {
+        "related": [
+          "Thermometer",
+          "Scale",
+          "PressureGauge",
+          "Ruler"
+        ],
+        "has_part": [
+          "Clock",
+          "Speedometer",
+          "Tachometer",
+          "Odometer"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Clock",
+        "Speedometer",
+        "Tachometer",
+        "Odometer"
+      ]
+    },
+    {
+      "term": "PressureMeters",
+      "role": "concept",
+      "parent_concepts": [
+        "MeasuringDevices"
+      ],
+      "layer_hint": 2,
+      "definition": "Instruments that measure atmospheric pressure, vacuum levels, or pressure-related altitude changes.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The pilot checked the altimeter before takeoff to verify the aircraft's altitude.",
+          "The barometer reading indicated a drop in atmospheric pressure, suggesting incoming weather.",
+          "The vacuum gauge showed the system had achieved the required negative pressure level.",
+          "Weather forecasters rely on pressure measurements to predict storm systems.",
+          "The mountaineer's altimeter displayed their current elevation above sea level.",
+          "Laboratory technicians monitored the vacuum chamber using a specialized pressure gauge."
+        ],
+        "negative_examples": [
+          "The thermometer showed the temperature had dropped to freezing.",
+          "She used a ruler to measure the length of the table.",
+          "The speedometer indicated the car was traveling at 65 mph.",
+          "The scale showed he had lost five pounds this month.",
+          "The voltmeter measured the electrical current flowing through the circuit.",
+          "The compass pointed north to help them navigate through the forest."
+        ],
+        "disambiguation": "Not to be confused with: Thermometers, Speedometers, WeighingScales, ElectricalMeters"
+      },
+      "relationships": {
+        "related": [
+          "Thermometers",
+          "Speedometers",
+          "WeighingScales",
+          "ElectricalMeters"
+        ],
+        "has_part": [
+          "PressureMeasuringDevice",
+          "VacuumGauge",
+          "Altimeter"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "PressureMeasuringDevice",
+        "VacuumGauge",
+        "Altimeter"
+      ]
+    },
+    {
+      "term": "EnvironmentMeters",
+      "role": "concept",
+      "parent_concepts": [
+        "MeasuringDevices"
+      ],
+      "layer_hint": 2,
+      "definition": "Instruments that measure physical or chemical properties of the surrounding environment or atmospheric conditions.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The thermometer showed the room temperature had dropped to 65 degrees.",
+          "The car's oxygen sensor detected a lean fuel mixture in the exhaust.",
+          "We used a hydrometer to test the specific gravity of the battery acid.",
+          "The mass airflow sensor measures how much air enters the engine.",
+          "The bimetallic strip in the thermostat curled as the temperature changed.",
+          "Environmental monitoring stations use various sensors to track air quality."
+        ],
+        "negative_examples": [
+          "The scale showed she had lost five pounds this week.",
+          "The speedometer indicated we were traveling at 55 mph.",
+          "He used a ruler to measure the length of the board.",
+          "The pressure gauge on the tire read 32 PSI.",
+          "The voltmeter displayed the battery's electrical output.",
+          "The GPS device calculated our exact coordinates."
+        ],
+        "disambiguation": "Not to be confused with: WeightScales, SpeedMeters, PressureGauges, ElectricalMeters, DistanceMeasuringTools"
+      },
+      "relationships": {
+        "related": [
+          "WeightScales",
+          "SpeedMeters",
+          "PressureGauges",
+          "ElectricalMeters",
+          "DistanceMeasuringTools"
+        ],
+        "has_part": [
+          "Thermometer",
+          "BimetalTemperatureSensor",
+          "Hydrometer",
+          "OxygenSensor",
+          "MassAirflowSensor"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Thermometer",
+        "BimetalTemperatureSensor",
+        "Hydrometer",
+        "OxygenSensor",
+        "MassAirflowSensor"
+      ]
+    },
+    {
+      "term": "MedicalTests",
+      "role": "concept",
+      "parent_concepts": [
+        "MeasuringDevices"
+      ],
+      "layer_hint": 2,
+      "definition": "Diagnostic procedures or tools used to assess health conditions, detect diseases, or evaluate bodily functions.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The doctor ordered a blood test to check for diabetes.",
+          "She failed the eye exam and needed new glasses.",
+          "The COVID-19 rapid test came back negative.",
+          "The PCR test confirmed the presence of the virus.",
+          "He had to take a vision test to renew his driver's license.",
+          "The antibody test showed she had been exposed to the disease."
+        ],
+        "negative_examples": [
+          "The thermometer showed his temperature was normal.",
+          "She used a scale to weigh herself every morning.",
+          "The pH meter indicated the water was too acidic.",
+          "He checked his blood pressure with the cuff monitor.",
+          "The teacher graded the math quiz yesterday.",
+          "The driving test required parallel parking skills."
+        ],
+        "disambiguation": "Not to be confused with: Thermometers, Scales, Gauges, Meters, Rulers"
+      },
+      "relationships": {
+        "related": [
+          "Thermometers",
+          "Scales",
+          "Gauges",
+          "Meters",
+          "Rulers"
+        ],
+        "has_part": [
+          "AntibodyCOVIDTest",
+          "RTPCRTest",
+          "SnellenChart",
+          "TestForm"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AntibodyCOVIDTest",
+        "RTPCRTest",
+        "SnellenChart",
+        "TestForm"
+      ]
+    },
+    {
+      "term": "PhysicalMeters",
+      "role": "concept",
+      "parent_concepts": [
+        "MeasuringDevices"
+      ],
+      "layer_hint": 2,
+      "definition": "Physical instruments that directly measure dimensions, weight, or gaps through contact or mechanical comparison.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She used a ruler to measure the length of the wooden board.",
+          "The kitchen scale showed that the flour weighed exactly two pounds.",
+          "The mechanic inserted feeler gauges to check the spark plug gap.",
+          "He placed the metal strip on the bathroom scale to weigh it.",
+          "The carpenter's measuring stick indicated the beam was twelve feet long.",
+          "Using calipers, she measured the thickness of the copper wire."
+        ],
+        "negative_examples": [
+          "The digital thermometer displayed the room temperature as 72 degrees.",
+          "She checked her blood pressure using the electronic monitor.",
+          "The GPS device calculated their exact coordinates on the map.",
+          "The speedometer showed the car was traveling at 65 mph.",
+          "He used a stopwatch to time the runner's lap around the track.",
+          "The voltmeter indicated the battery had sufficient charge."
+        ],
+        "disambiguation": "Not to be confused with: DigitalSensors, Thermometers, Timers, ElectricalMeters, Gauges"
+      },
+      "relationships": {
+        "related": [
+          "DigitalSensors",
+          "Thermometers",
+          "Timers",
+          "ElectricalMeters",
+          "Gauges"
+        ],
+        "has_part": [
+          "Ruler",
+          "Scales",
+          "FeelerGauge"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Ruler",
+        "Scales",
+        "FeelerGauge"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:04.273675Z",
+    "result_pack_version": "7.6.25",
+    "concepts_added": 5,
+    "concepts_by_layer": {
+      "2": 5
+    },
+    "parents_updated": 0,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "TimeSpeedMeters",
+        "PressureMeters",
+        "EnvironmentMeters",
+        "MedicalTests",
+        "PhysicalMeters"
+      ],
+      "must_retrain": [],
+      "should_retrain": [],
+      "optional_retrain": [
+        "Ruler",
+        "Scales",
+        "Thermometer"
+      ],
+      "total_training_required": 5
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

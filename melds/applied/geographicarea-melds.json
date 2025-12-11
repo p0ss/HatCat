@@ -1,0 +1,335 @@
+{
+  "meld_request_id": "org.hatcat/geographicarea-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "GeographicArea Melds",
+    "description": "New intermediate concepts under GeographicArea",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/GeographicArea",
+      "relationship": "parent_of",
+      "candidate_concept": "GeopoliticalAreas"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/GeographicArea",
+      "relationship": "parent_of",
+      "candidate_concept": "InfrastructureGeography"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/GeographicArea",
+      "relationship": "parent_of",
+      "candidate_concept": "SubsurfaceGeography"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/GeographicArea",
+      "relationship": "parent_of",
+      "candidate_concept": "NaturalGeography"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "GeopoliticalAreas",
+      "role": "concept",
+      "parent_concepts": [
+        "GeographicArea"
+      ],
+      "layer_hint": 1,
+      "definition": "Geographic regions defined by political authority, control, or territorial claims rather than natural features.",
+      "domain": "PhysicalWorld",
+      "training_hints": {
+        "positive_examples": [
+          "The disputed territory along the border remains contested by both nations.",
+          "Maritime patrols monitor the exclusive economic zone for illegal fishing.",
+          "The military established a secure perimeter around the conflict zone.",
+          "Residents organized a neighborhood watch program for their district.",
+          "Financial investigators tracked money laundering activities across the region.",
+          "Border guards inspect all vehicles crossing the international checkpoint."
+        ],
+        "negative_examples": [
+          "The mountain range creates a natural barrier between the valleys.",
+          "Salmon migrate upstream through this river system every spring.",
+          "The forest ecosystem supports diverse wildlife populations.",
+          "Geologists study the volcanic activity in this geological formation.",
+          "The desert climate makes agriculture challenging in this area.",
+          "Ocean currents influence weather patterns across the Pacific basin."
+        ],
+        "disambiguation": "Not to be confused with: NaturalGeographicFeature, EcologicalRegion, ClimateZone, GeologicalFormation, WaterBody"
+      },
+      "relationships": {
+        "related": [
+          "NaturalGeographicFeature",
+          "EcologicalRegion",
+          "ClimateZone",
+          "GeologicalFormation",
+          "WaterBody"
+        ],
+        "has_part": [
+          "GeopoliticalArea",
+          "MaritimeClaimArea",
+          "InternationalBorder",
+          "Neighborhood",
+          "MilitaryFront",
+          "IllicitDrugMoneyLaunderingArea"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "GeopoliticalArea",
+        "MaritimeClaimArea",
+        "InternationalBorder",
+        "Neighborhood",
+        "MilitaryFront",
+        "IllicitDrugMoneyLaunderingArea"
+      ]
+    },
+    {
+      "term": "InfrastructureGeography",
+      "role": "concept",
+      "parent_concepts": [
+        "GeographicArea"
+      ],
+      "layer_hint": 1,
+      "definition": "Geographic locations with built or designated human infrastructure for specific purposes",
+      "domain": "PhysicalWorld",
+      "training_hints": {
+        "positive_examples": [
+          "The bus stop on Fifth Avenue was crowded with commuters.",
+          "Border guards inspected passports at the checkpoint.",
+          "Vendors sold spices and textiles in the bustling marketplace.",
+          "The ancient castle attracts thousands of tourists each year.",
+          "The park became her favorite spot to read and relax.",
+          "Construction crews worked on the paved area near the building."
+        ],
+        "negative_examples": [
+          "The mountain range stretched across three states.",
+          "Fish swam in the clear lake water.",
+          "Dense forest covered the hillside.",
+          "The river flowed through the valley.",
+          "Sand dunes shifted in the desert wind.",
+          "Coral reefs thrived in the tropical waters."
+        ],
+        "disambiguation": "Not to be confused with: NaturalLandscape, WaterBody, ClimateZone, PoliticalTerritory, EcologicalRegion"
+      },
+      "relationships": {
+        "related": [
+          "NaturalLandscape",
+          "WaterBody",
+          "ClimateZone",
+          "PoliticalTerritory",
+          "EcologicalRegion"
+        ],
+        "has_part": [
+          "BusStop",
+          "Checkpoint",
+          "Marketplace",
+          "TouristSite",
+          "LocalizablePlace",
+          "SurfaceGroundArea"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BusStop",
+        "Checkpoint",
+        "Marketplace",
+        "TouristSite",
+        "LocalizablePlace",
+        "SurfaceGroundArea"
+      ]
+    },
+    {
+      "term": "SubsurfaceGeography",
+      "role": "concept",
+      "parent_concepts": [
+        "GeographicArea"
+      ],
+      "layer_hint": 1,
+      "definition": "Geographic areas located beneath the earth's surface or underwater.",
+      "domain": "PhysicalWorld",
+      "training_hints": {
+        "positive_examples": [
+          "The underwater canyon extends for miles along the ocean floor.",
+          "Miners discovered a vast underground cavern system beneath the mountain.",
+          "The earthquake occurred along the San Andreas fault line.",
+          "Submarine plateaus form important feeding grounds for marine life.",
+          "The tunnel runs through underground rock formations.",
+          "Coral reefs grow on submerged continental shelves."
+        ],
+        "negative_examples": [
+          "The mountain peak rises above the clouds.",
+          "Coastal plains stretch inland from the shoreline.",
+          "The forest canopy blocks sunlight from reaching the ground.",
+          "Desert dunes shift with the prevailing winds.",
+          "The river valley carved through the landscape over millennia.",
+          "Grasslands cover the rolling hills of the prairie."
+        ],
+        "disambiguation": "Not to be confused with: SurfaceTopography, AtmosphericRegion, CoastalArea, MountainousRegion, PlainArea"
+      },
+      "relationships": {
+        "related": [
+          "SurfaceTopography",
+          "AtmosphericRegion",
+          "CoastalArea",
+          "MountainousRegion",
+          "PlainArea"
+        ],
+        "has_part": [
+          "SubmergedLandArea",
+          "UndergroundArea",
+          "GeologicalFault"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "SubmergedLandArea",
+        "UndergroundArea",
+        "GeologicalFault"
+      ]
+    },
+    {
+      "term": "NaturalGeography",
+      "role": "concept",
+      "parent_concepts": [
+        "GeographicArea"
+      ],
+      "layer_hint": 0,
+      "definition": "Geographic areas formed by natural processes rather than human activity, including landforms, water bodies, and ecosystems.",
+      "domain": "PhysicalWorld",
+      "training_hints": {
+        "positive_examples": [
+          "The Amazon rainforest ecosystem spans across nine countries in South America.",
+          "The Great Lakes region contains the largest group of freshwater lakes in the world.",
+          "The Pacific Ocean covers about one-third of the Earth's surface.",
+          "The Sahara Desert is the largest hot desert in the world.",
+          "The Rocky Mountains stretch from Canada to New Mexico.",
+          "The coral reefs of the Caribbean form a diverse marine ecosystem."
+        ],
+        "negative_examples": [
+          "The state of California has a population of nearly 40 million people.",
+          "The downtown business district contains many skyscrapers.",
+          "The subway system connects all five boroughs of the city.",
+          "The agricultural zone produces wheat and corn for export.",
+          "The industrial park houses several manufacturing facilities.",
+          "The residential neighborhood has tree-lined streets and parks."
+        ],
+        "disambiguation": "Not to be confused with: UrbanArea, PoliticalTerritory, AdministrativeRegion, EconomicZone, CulturalRegion"
+      },
+      "relationships": {
+        "related": [
+          "UrbanArea",
+          "PoliticalTerritory",
+          "AdministrativeRegion",
+          "EconomicZone",
+          "CulturalRegion"
+        ],
+        "has_part": [
+          "LandForm",
+          "LandArea",
+          "WaterArea",
+          "Ecosystem",
+          "Hemisphere",
+          "LakeRegion",
+          "ArchipelagicArea",
+          "LittoralZone",
+          "WaterOnlyArea"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "LandForm",
+        "LandArea",
+        "WaterArea",
+        "Ecosystem",
+        "Hemisphere",
+        "LakeRegion",
+        "ArchipelagicArea",
+        "LittoralZone",
+        "WaterOnlyArea"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:03.875199Z",
+    "result_pack_version": "7.6.20",
+    "concepts_added": 4,
+    "concepts_by_layer": {
+      "1": 3,
+      "0": 1
+    },
+    "parents_updated": 4,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "GeopoliticalAreas",
+        "InfrastructureGeography",
+        "SubsurfaceGeography",
+        "NaturalGeography"
+      ],
+      "must_retrain": [
+        "GeographicArea"
+      ],
+      "should_retrain": [
+        "ArchipelagicArea",
+        "BusStop",
+        "Cave",
+        "Checkpoint",
+        "Ecosystem",
+        "GeologicalFault",
+        "GeopoliticalArea",
+        "Hemisphere",
+        "IllicitDrugMoneyLaunderingArea",
+        "InternationalBorder",
+        "LakeRegion",
+        "LandArea",
+        "LandForm",
+        "LittoralZone",
+        "LocalizablePlace",
+        "MaritimeClaimArea",
+        "Marketplace",
+        "MilitaryFront",
+        "Neighborhood",
+        "SubmergedLandArea",
+        "SurfaceGroundArea",
+        "TouristSite",
+        "UndergroundArea",
+        "WaterArea",
+        "WaterOnlyArea"
+      ],
+      "optional_retrain": [
+        "AtmosphericRegion",
+        "Region"
+      ],
+      "total_training_required": 5
+    },
+    "errors": [],
+    "warnings": []
+  }
+}
