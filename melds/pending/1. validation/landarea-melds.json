@@ -1,0 +1,331 @@
+{
+  "meld_request_id": "org.hatcat/landarea-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "LandArea Melds",
+    "description": "New intermediate concepts under LandArea",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/LandArea",
+      "relationship": "parent_of",
+      "candidate_concept": "PoliticalAreas"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/LandArea",
+      "relationship": "parent_of",
+      "candidate_concept": "NaturalLandAreas"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/LandArea",
+      "relationship": "parent_of",
+      "candidate_concept": "AgriculturalLand"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/LandArea",
+      "relationship": "parent_of",
+      "candidate_concept": "CoastalLand"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/LandArea",
+      "relationship": "parent_of",
+      "candidate_concept": "UrbanLand"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "PoliticalAreas",
+      "role": "concept",
+      "parent_concepts": [
+        "LandArea"
+      ],
+      "layer_hint": 2,
+      "definition": "Geographic regions defined by governmental boundaries and administrative control.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The mayor announced new policies for the entire city.",
+          "Federal regulations apply to all states in the nation.",
+          "County officials voted on the local tax proposal.",
+          "The province implemented stricter environmental laws.",
+          "Municipal boundaries were redrawn after the census.",
+          "State governments coordinate with federal agencies."
+        ],
+        "negative_examples": [
+          "The forest ecosystem spans multiple watersheds.",
+          "Climate zones vary significantly across the continent.",
+          "The mountain range extends for hundreds of miles.",
+          "Ocean currents affect coastal weather patterns.",
+          "The neighborhood association organized a block party.",
+          "Corporate districts house the city's major businesses."
+        ],
+        "disambiguation": "Not to be confused with: NaturalLandforms, GeographicRegions, EcosystemAreas, ClimateZones"
+      },
+      "relationships": {
+        "related": [
+          "NaturalLandforms",
+          "GeographicRegions",
+          "EcosystemAreas",
+          "ClimateZones"
+        ],
+        "has_part": [
+          "Nation",
+          "StateOrProvince",
+          "County",
+          "City"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Nation",
+        "StateOrProvince",
+        "County",
+        "City"
+      ]
+    },
+    {
+      "term": "NaturalLandAreas",
+      "role": "concept",
+      "parent_concepts": [
+        "LandArea"
+      ],
+      "layer_hint": 2,
+      "definition": "Land formations shaped by natural processes without human development or cultivation.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The Amazon rainforest spans across multiple countries in South America.",
+          "Sahara desert temperatures can reach extreme highs during the day.",
+          "Prairie grasslands stretch endlessly across the Great Plains.",
+          "Dense jungle vegetation made exploration nearly impossible.",
+          "The oasis provided fresh water for weary desert travelers.",
+          "Rolling hills of the piedmont region offer scenic mountain views."
+        ],
+        "negative_examples": [
+          "The city park has well-maintained walking paths and benches.",
+          "Farmers planted corn across hundreds of acres of farmland.",
+          "The highway cuts straight through the valley between mountains.",
+          "Suburban neighborhoods filled the former wheat fields.",
+          "Golf courses require constant irrigation and landscaping maintenance.",
+          "The mining operation stripped away the topsoil completely."
+        ],
+        "disambiguation": "Not to be confused with: UrbanAreas, AgriculturalLand, DevelopedProperty, TransportationRoutes"
+      },
+      "relationships": {
+        "related": [
+          "UrbanAreas",
+          "AgriculturalLand",
+          "DevelopedProperty",
+          "TransportationRoutes"
+        ],
+        "has_part": [
+          "Forest",
+          "Desert",
+          "Grassland",
+          "Jungle",
+          "Oasis",
+          "Piedmont"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Forest",
+        "Desert",
+        "Grassland",
+        "Jungle",
+        "Oasis",
+        "Piedmont"
+      ]
+    },
+    {
+      "term": "AgriculturalLand",
+      "role": "concept",
+      "parent_concepts": [
+        "LandArea"
+      ],
+      "layer_hint": 2,
+      "definition": "Land used for growing crops or farming activities",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The farmer planted wheat across 200 acres of fertile farmland",
+          "Irrigation systems watered the vegetable fields during the drought",
+          "The orchard produced apples and pears on terraced hillsides",
+          "Rice paddies stretched across the valley floor",
+          "The vineyard covered the gentle slopes with rows of grapevines",
+          "Corn grew tall in the cultivated fields behind the barn"
+        ],
+        "negative_examples": [
+          "Cattle grazed peacefully in the open pasture",
+          "The hiking trail wound through the forest preserve",
+          "Wild flowers bloomed in the untouched meadow",
+          "The parking lot was paved with asphalt",
+          "Residential houses lined the suburban street",
+          "The golf course had perfectly manicured grass"
+        ],
+        "disambiguation": "Not to be confused with: Pasture, Forest, UrbanLand, Wilderness, RecreationalLand"
+      },
+      "relationships": {
+        "related": [
+          "Pasture",
+          "Forest",
+          "UrbanLand",
+          "Wilderness",
+          "RecreationalLand"
+        ],
+        "has_part": [
+          "ArableLand",
+          "CultivatedLandArea",
+          "PermanentCropLand",
+          "IrrigatedLand",
+          "Field"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "ArableLand",
+        "CultivatedLandArea",
+        "PermanentCropLand",
+        "IrrigatedLand",
+        "Field"
+      ]
+    },
+    {
+      "term": "CoastalLand",
+      "role": "concept",
+      "parent_concepts": [
+        "LandArea"
+      ],
+      "layer_hint": 2,
+      "definition": "Land areas defined by their relationship to water bodies, including boundaries, connections, and proximity to seas or lakes.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The rocky shoreline stretched for miles along the Atlantic coast.",
+          "Sicily is a large island in the Mediterranean Sea.",
+          "The narrow isthmus connects the two peninsulas across the bay.",
+          "We walked along the sandy beach at sunset.",
+          "Switzerland is completely landlocked by surrounding countries.",
+          "The harbor sits where the land meets the ocean."
+        ],
+        "negative_examples": [
+          "The mountain peak towered above the valley floor.",
+          "Highway 101 runs through the central plains.",
+          "The forest trail wound through dense woodland.",
+          "Desert sands stretched endlessly in all directions.",
+          "The river carved a deep canyon through solid rock.",
+          "Urban sprawl covered the fertile farmland."
+        ],
+        "disambiguation": "Not to be confused with: MountainArea, DesertRegion, ForestLand, UrbanArea"
+      },
+      "relationships": {
+        "related": [
+          "MountainArea",
+          "DesertRegion",
+          "ForestLand",
+          "UrbanArea"
+        ],
+        "has_part": [
+          "ShoreArea",
+          "Shoreline",
+          "Island",
+          "Isthmus",
+          "LandlockedArea"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "ShoreArea",
+        "Shoreline",
+        "Island",
+        "Isthmus",
+        "LandlockedArea"
+      ]
+    },
+    {
+      "term": "UrbanLand",
+      "role": "concept",
+      "parent_concepts": [
+        "LandArea"
+      ],
+      "layer_hint": 2,
+      "definition": "Designated land areas within or near settlements that serve specific community functions or activities.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The new park downtown will include playgrounds and walking trails.",
+          "They're building condominiums on the old city block near Main Street.",
+          "The cemetery on Oak Avenue has beautiful old oak trees throughout.",
+          "We reserved a spot at the campground just outside the city limits.",
+          "The municipal planning committee approved the new recreational area.",
+          "Families gathered at the community space for the summer festival."
+        ],
+        "negative_examples": [
+          "The farmer planted corn across his entire agricultural field.",
+          "Wild deer roam freely through the untouched forest preserve.",
+          "The construction crew cleared the vacant lot for the new shopping center.",
+          "Hikers explored the remote wilderness area in the mountains.",
+          "The industrial complex spans several acres near the highway.",
+          "Ocean waves crashed against the rocky shoreline."
+        ],
+        "disambiguation": "Not to be confused with: WildLand, AgriculturalLand, IndustrialLand, WaterFront"
+      },
+      "relationships": {
+        "related": [
+          "WildLand",
+          "AgriculturalLand",
+          "IndustrialLand",
+          "WaterFront"
+        ],
+        "has_part": [
+          "CityBlock",
+          "Park",
+          "Cemetery",
+          "Campground"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CityBlock",
+        "Park",
+        "Cemetery",
+        "Campground"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

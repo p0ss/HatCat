@@ -1,0 +1,268 @@
+{
+  "meld_request_id": "org.hatcat/science-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Science Melds",
+    "description": "New intermediate concepts under Science",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Science",
+      "relationship": "parent_of",
+      "candidate_concept": "LifeSciences"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Science",
+      "relationship": "parent_of",
+      "candidate_concept": "PhysicalSciences"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Science",
+      "relationship": "parent_of",
+      "candidate_concept": "EarthSciences"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Science",
+      "relationship": "parent_of",
+      "candidate_concept": "AppliedSciences"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "LifeSciences",
+      "role": "concept",
+      "parent_concepts": [
+        "Science"
+      ],
+      "layer_hint": 2,
+      "definition": "Scientific disciplines that study living organisms, their processes, and their interactions with the environment.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The biology professor explained how photosynthesis converts sunlight into energy.",
+          "Veterinarians need extensive training in animal physiology and disease treatment.",
+          "Medical researchers are studying the biochemical pathways involved in cancer.",
+          "The botany field trip focused on identifying native plant species.",
+          "Zoologists observed the mating behaviors of various bird species.",
+          "Physiological studies revealed how the heart responds to exercise."
+        ],
+        "negative_examples": [
+          "The physicist calculated the trajectory of the satellite using quantum mechanics.",
+          "Chemical engineers optimized the industrial synthesis of polymers.",
+          "Geologists analyzed rock formations to understand Earth's history.",
+          "The computer scientist developed new algorithms for machine learning.",
+          "Astronomers discovered a new exoplanet in a distant solar system.",
+          "Environmental engineers designed systems to reduce industrial pollution."
+        ],
+        "disambiguation": "Not to be confused with: PhysicalSciences, Chemistry, Engineering, ComputerScience, Mathematics"
+      },
+      "relationships": {
+        "related": [
+          "PhysicalSciences",
+          "Chemistry",
+          "Engineering",
+          "ComputerScience",
+          "Mathematics"
+        ],
+        "has_part": [
+          "Biology",
+          "Biochemistry",
+          "Botany",
+          "Zoology",
+          "Physiology",
+          "VeterinaryScience",
+          "MedicalScience"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Biology",
+        "Biochemistry",
+        "Botany",
+        "Zoology",
+        "Physiology",
+        "VeterinaryScience",
+        "MedicalScience"
+      ]
+    },
+    {
+      "term": "PhysicalSciences",
+      "role": "concept",
+      "parent_concepts": [
+        "Science"
+      ],
+      "layer_hint": 2,
+      "definition": "Sciences that study the physical world, matter, energy, and natural phenomena through observation and experimentation.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The physics lab measured the acceleration of falling objects.",
+          "Chemical reactions produce new compounds with different properties.",
+          "Astronomers discovered a new exoplanet orbiting a distant star.",
+          "Geologists found evidence of ancient volcanic activity in the rock layers.",
+          "Paleontologists uncovered dinosaur fossils from the Cretaceous period.",
+          "The research combined chemistry and physics to develop new materials."
+        ],
+        "negative_examples": [
+          "Psychologists studied human behavior in social situations.",
+          "The biologist examined cell division under the microscope.",
+          "Medical researchers tested a new treatment for diabetes.",
+          "Computer scientists developed an improved machine learning algorithm.",
+          "Economists analyzed the impact of inflation on consumer spending.",
+          "Anthropologists studied ancient cultural practices and traditions."
+        ],
+        "disambiguation": "Not to be confused with: LifeSciences, SocialSciences, ComputerScience, Mathematics"
+      },
+      "relationships": {
+        "related": [
+          "LifeSciences",
+          "SocialSciences",
+          "ComputerScience",
+          "Mathematics"
+        ],
+        "has_part": [
+          "Physics",
+          "Chemistry",
+          "Astronomy",
+          "Geology",
+          "Paleontology"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Physics",
+        "Chemistry",
+        "Astronomy",
+        "Geology",
+        "Paleontology"
+      ]
+    },
+    {
+      "term": "EarthSciences",
+      "role": "concept",
+      "parent_concepts": [
+        "Science"
+      ],
+      "layer_hint": 2,
+      "definition": "Scientific study of Earth's physical features, processes, and spatial relationships.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The geologist studied rock formations to understand the region's geological history.",
+          "Researchers mapped the watershed to track water flow patterns across the landscape.",
+          "The survey team used GPS coordinates to create detailed topographic maps of the mountain range.",
+          "Scientists analyzed soil composition to determine agricultural suitability in different climate zones.",
+          "The expedition collected data on elevation changes and terrain features for coastal mapping.",
+          "Cartographers updated navigation charts based on new satellite imagery of the coastline."
+        ],
+        "negative_examples": [
+          "The marine biologist studied coral reef ecosystems and fish populations.",
+          "Astronomers discovered a new exoplanet orbiting a distant star.",
+          "The chemist analyzed molecular structures in the laboratory experiment.",
+          "Physicists measured particle interactions in the accelerator facility.",
+          "Botanists classified plant species in the rainforest canopy research.",
+          "The meteorologist predicted tomorrow's weather using atmospheric models."
+        ],
+        "disambiguation": "Not to be confused with: Biology, Physics, Chemistry, Astronomy, Medicine"
+      },
+      "relationships": {
+        "related": [
+          "Biology",
+          "Physics",
+          "Chemistry",
+          "Astronomy",
+          "Medicine"
+        ],
+        "has_part": [
+          "Geography",
+          "Cartography"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Geography",
+        "Cartography"
+      ]
+    },
+    {
+      "term": "AppliedSciences",
+      "role": "concept",
+      "parent_concepts": [
+        "Science"
+      ],
+      "layer_hint": 2,
+      "definition": "Scientific disciplines that apply theoretical knowledge to solve practical problems in industry, technology, and society.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The engineering team designed a new bridge using structural analysis principles.",
+          "Computer scientists developed an algorithm to optimize delivery routes.",
+          "The actuary calculated insurance premiums based on statistical risk models.",
+          "Library science professionals organized digital archives using information management systems.",
+          "Software engineers applied machine learning techniques to improve search results.",
+          "The civil engineer used geological data to design earthquake-resistant buildings."
+        ],
+        "negative_examples": [
+          "The physicist discovered a new particle in the laboratory experiment.",
+          "Marine biologists studied coral reef ecosystems in their natural habitat.",
+          "The chemist analyzed the molecular structure of organic compounds.",
+          "Astronomers observed distant galaxies through the space telescope.",
+          "Botanists classified new plant species found in the rainforest.",
+          "The mathematician proved a new theorem about prime numbers."
+        ],
+        "disambiguation": "Not to be confused with: PureSciences, NaturalSciences, TheoreticalSciences, ExperimentalSciences"
+      },
+      "relationships": {
+        "related": [
+          "PureSciences",
+          "NaturalSciences",
+          "TheoreticalSciences",
+          "ExperimentalSciences"
+        ],
+        "has_part": [
+          "Engineering",
+          "ComputerScience",
+          "ActuaryScience",
+          "LibraryScience"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Engineering",
+        "ComputerScience",
+        "ActuaryScience",
+        "LibraryScience"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

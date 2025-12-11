@@ -1,0 +1,388 @@
+{
+  "meld_request_id": "org.hatcat/text-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Text Melds",
+    "description": "New intermediate concepts under Text",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Text",
+      "relationship": "parent_of",
+      "candidate_concept": "PublishedTexts"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Text",
+      "relationship": "parent_of",
+      "candidate_concept": "MediaTexts"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Text",
+      "relationship": "parent_of",
+      "candidate_concept": "FormalDocuments"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Text",
+      "relationship": "parent_of",
+      "candidate_concept": "TextGenres"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Text",
+      "relationship": "parent_of",
+      "candidate_concept": "TextStructure"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Text",
+      "relationship": "parent_of",
+      "candidate_concept": "TextFeeds"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "PublishedTexts",
+      "role": "concept",
+      "parent_concepts": [
+        "Text"
+      ],
+      "layer_hint": 1,
+      "definition": "Formal written works that have been officially released or distributed through established publishing channels.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "The novel was published by Random House last year.",
+          "She cited several academic articles in her research paper.",
+          "The military manual contains official joint doctrine procedures.",
+          "This encyclopedia series covers world history comprehensively.",
+          "The Chairman's publication outlined new strategic guidelines.",
+          "The magazine article discussed climate change impacts."
+        ],
+        "negative_examples": [
+          "He wrote a quick email to his colleague.",
+          "She jotted down notes in her personal diary.",
+          "The draft manuscript sits unfinished on his desk.",
+          "They exchanged text messages about dinner plans.",
+          "The handwritten letter was never sent.",
+          "His blog post was just a rough outline."
+        ],
+        "disambiguation": "Not to be confused with: PersonalWriting, CommunicationMessages, DraftDocuments, InformalText"
+      },
+      "relationships": {
+        "related": [
+          "PersonalWriting",
+          "CommunicationMessages",
+          "DraftDocuments",
+          "InformalText"
+        ],
+        "has_part": [
+          "Book",
+          "Article",
+          "Series",
+          "JointPublication",
+          "ChairmanPublication"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Book",
+        "Article",
+        "Series",
+        "JointPublication",
+        "ChairmanPublication"
+      ]
+    },
+    {
+      "term": "MediaTexts",
+      "role": "concept",
+      "parent_concepts": [
+        "Text"
+      ],
+      "layer_hint": 1,
+      "definition": "Text content created for or associated with audio-visual media formats like recordings, films, and music.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "The movie script contained detailed dialogue for each scene.",
+          "She wrote beautiful lyrics for the new pop song.",
+          "The documentary's narration text was carefully crafted.",
+          "The album liner notes included all the song lyrics.",
+          "The film's subtitle file contained translations in multiple languages.",
+          "The podcast transcript captured every word of the interview."
+        ],
+        "negative_examples": [
+          "The novel was published in hardcover last year.",
+          "She wrote a research paper on climate change.",
+          "The newspaper article covered local politics.",
+          "He sent a text message to his friend.",
+          "The instruction manual explained how to use the device.",
+          "The legal contract required careful review."
+        ],
+        "disambiguation": "Not to be confused with: LiteraryText, TechnicalDocumentation, NewsText, AcademicText"
+      },
+      "relationships": {
+        "related": [
+          "LiteraryText",
+          "TechnicalDocumentation",
+          "NewsText",
+          "AcademicText"
+        ],
+        "has_part": [
+          "AudioRecording",
+          "MotionPicture",
+          "MusicText",
+          "Lyrics"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AudioRecording",
+        "MotionPicture",
+        "MusicText",
+        "Lyrics"
+      ]
+    },
+    {
+      "term": "FormalDocuments",
+      "role": "concept",
+      "parent_concepts": [
+        "Text"
+      ],
+      "layer_hint": 1,
+      "definition": "Official texts with legal, institutional, or procedural authority that require specific formatting and serve formal purposes.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "The marriage certificate was signed by both parties and the officiant.",
+          "The peace treaty between the two nations was ratified by both parliaments.",
+          "The doctor wrote a prescription for antibiotics to treat the infection.",
+          "Please fill out this tax form completely before submitting it to the IRS.",
+          "The military doctrine clearly outlines rules of engagement for peacekeeping missions.",
+          "The birth certificate serves as official proof of citizenship."
+        ],
+        "negative_examples": [
+          "She wrote a heartfelt letter to her grandmother about her travels.",
+          "The newspaper article discussed the recent political developments.",
+          "He sent a casual email to his colleague about the meeting time.",
+          "The novel's opening chapter captivated readers with its vivid imagery.",
+          "The shopping list included milk, bread, and fresh vegetables.",
+          "Her diary entry reflected on the day's meaningful conversations."
+        ],
+        "disambiguation": "Not to be confused with: Literature, Correspondence, News, Instructions, Reference"
+      },
+      "relationships": {
+        "related": [
+          "Literature",
+          "Correspondence",
+          "News",
+          "Instructions",
+          "Reference"
+        ],
+        "has_part": [
+          "Certificate",
+          "TreatyDocument",
+          "Prescription",
+          "FormText",
+          "Doctrine"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Certificate",
+        "TreatyDocument",
+        "Prescription",
+        "FormText",
+        "Doctrine"
+      ]
+    },
+    {
+      "term": "TextGenres",
+      "role": "concept",
+      "parent_concepts": [
+        "Text"
+      ],
+      "layer_hint": 1,
+      "definition": "Categories or types of written works distinguished by their style, content, or purpose",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "This book falls into the mystery genre with its detective storyline",
+          "She prefers reading romance novels over science fiction",
+          "The documentary represents factual reporting rather than entertainment",
+          "Biblical gospels constitute a unique genre of religious literature",
+          "Poetry and prose are two different literary forms",
+          "Historical accounts differ from mythological narratives in their approach"
+        ],
+        "negative_examples": [
+          "The book was written in English rather than French",
+          "This text uses a 12-point font size",
+          "The manuscript contains 300 pages of content",
+          "The document was printed on high-quality paper",
+          "She read the text aloud to the audience",
+          "The author's writing style is very engaging"
+        ],
+        "disambiguation": "Not to be confused with: TextFormat, TextLength, TextLanguage, TextStyle, TextMedium"
+      },
+      "relationships": {
+        "related": [
+          "TextFormat",
+          "TextLength",
+          "TextLanguage",
+          "TextStyle",
+          "TextMedium"
+        ],
+        "has_part": [
+          "FactualText",
+          "FictionalText",
+          "NarrativeText",
+          "ChristianGospel"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "FactualText",
+        "FictionalText",
+        "NarrativeText",
+        "ChristianGospel"
+      ]
+    },
+    {
+      "term": "TextStructure",
+      "role": "concept",
+      "parent_concepts": [
+        "Text"
+      ],
+      "layer_hint": 1,
+      "definition": "The organizational elements and formatting components that give shape and hierarchy to written content.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "The essay was well-organized with clear paragraphs and smooth transitions between ideas.",
+          "This document uses headings and bullet points to structure the information effectively.",
+          "The abstract provides a concise summary of the research findings.",
+          "Each section label helps readers navigate through the technical manual.",
+          "The outline shows how the main arguments flow from introduction to conclusion.",
+          "File names should include descriptive labels like .pdf or .docx extensions."
+        ],
+        "negative_examples": [
+          "The author's writing style was eloquent and persuasive throughout.",
+          "This novel contains several interesting characters and plot twists.",
+          "The vocabulary used in this text is quite advanced and technical.",
+          "The font size and color scheme make this document easy to read.",
+          "The paper explores fascinating themes about human nature.",
+          "This book was published by Oxford University Press in 2023."
+        ],
+        "disambiguation": "Not to be confused with: TextContent, TextStyle, TextGenre, TextQuality"
+      },
+      "relationships": {
+        "related": [
+          "TextContent",
+          "TextStyle",
+          "TextGenre",
+          "TextQuality"
+        ],
+        "has_part": [
+          "DiscourseStructure",
+          "Paragraph",
+          "Summary",
+          "Label"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DiscourseStructure",
+        "Paragraph",
+        "Summary",
+        "Label"
+      ]
+    },
+    {
+      "term": "TextFeeds",
+      "role": "concept",
+      "parent_concepts": [
+        "Text"
+      ],
+      "layer_hint": 1,
+      "definition": "Streams of textual content that are automatically updated and organized for users to consume in sequence.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "I scrolled through my Twitter timeline to see the latest posts from people I follow.",
+          "The RSS feed automatically updates with new blog articles from my favorite websites.",
+          "She checked her Instagram feed to see what her friends had been posting today.",
+          "The live blog provided continuous updates about the breaking news story.",
+          "My LinkedIn feed shows professional updates and articles from my network.",
+          "The forum's recent posts feed helps me stay current with ongoing discussions."
+        ],
+        "negative_examples": [
+          "I read the entire newspaper from front to back this morning.",
+          "She wrote a detailed blog post about her vacation experiences.",
+          "The book contained fascinating stories about ancient civilizations.",
+          "He sent me a long email explaining the project requirements.",
+          "The magazine article discussed climate change in great detail.",
+          "I printed out the research paper to read it more carefully."
+        ],
+        "disambiguation": "Not to be confused with: StaticText, DocumentText, MessageText, ArticleText"
+      },
+      "relationships": {
+        "related": [
+          "StaticText",
+          "DocumentText",
+          "MessageText",
+          "ArticleText"
+        ],
+        "has_part": [
+          "NewsFeed",
+          "TopNewsFeed",
+          "MostRecentFeed",
+          "LiveTestUpdate"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "NewsFeed",
+        "TopNewsFeed",
+        "MostRecentFeed",
+        "LiveTestUpdate"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

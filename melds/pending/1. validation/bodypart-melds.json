@@ -1,0 +1,536 @@
+{
+  "meld_request_id": "org.hatcat/bodypart-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "BodyPart Melds",
+    "description": "New intermediate concepts under BodyPart",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/BodyPart",
+      "relationship": "parent_of",
+      "candidate_concept": "BodyStructures"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/BodyPart",
+      "relationship": "parent_of",
+      "candidate_concept": "BrainRegions"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/BodyPart",
+      "relationship": "parent_of",
+      "candidate_concept": "Cellular"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/BodyPart",
+      "relationship": "parent_of",
+      "candidate_concept": "ExternalCoverings"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/BodyPart",
+      "relationship": "parent_of",
+      "candidate_concept": "HeadAndFace"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/BodyPart",
+      "relationship": "parent_of",
+      "candidate_concept": "OrgansAndSystems"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/BodyPart",
+      "relationship": "parent_of",
+      "candidate_concept": "Skeletal"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/BodyPart",
+      "relationship": "parent_of",
+      "candidate_concept": "TorsoAndLimbs"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "BodyStructures",
+      "role": "concept",
+      "parent_concepts": [
+        "BodyPart"
+      ],
+      "layer_hint": 1,
+      "definition": "Anatomical formations that are distinct structural components or divisions within an organism's body.",
+      "domain": "LivingThings",
+      "training_hints": {
+        "positive_examples": [
+          "The thoracic cavity houses the heart and lungs.",
+          "The elbow joint allows the arm to bend and extend.",
+          "Each segment of the insect's abdomen can move independently.",
+          "The orbital socket protects the eye from injury.",
+          "The ankle joint connects the leg to the foot.",
+          "The vertebral segments make up the spine's structure."
+        ],
+        "negative_examples": [
+          "The skin covers the entire surface of the body.",
+          "Blood flows through the circulatory system.",
+          "The liver produces bile for digestion.",
+          "Muscles contract to create movement.",
+          "Nerve impulses travel to the brain.",
+          "The heart pumps blood throughout the body."
+        ],
+        "disambiguation": "Not to be confused with: BodyTissue, BodySystem, BodyFluid, BodySurface"
+      },
+      "relationships": {
+        "related": [
+          "BodyTissue",
+          "BodySystem",
+          "BodyFluid",
+          "BodySurface"
+        ],
+        "has_part": [
+          "BodyCavity",
+          "BodyJunction",
+          "BodySegment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BodyCavity",
+        "BodyJunction",
+        "BodySegment"
+      ]
+    },
+    {
+      "term": "BrainRegions",
+      "role": "concept",
+      "parent_concepts": [
+        "BodyPart"
+      ],
+      "layer_hint": 1,
+      "definition": "Anatomical divisions of the brain with distinct functions and locations within the cranium.",
+      "domain": "LivingThings",
+      "training_hints": {
+        "positive_examples": [
+          "The MRI scan showed damage to the frontal lobe affecting decision-making abilities.",
+          "Researchers found increased activity in the temporal lobes during memory recall tasks.",
+          "The stroke patient had lesions in the parietal lobe causing spatial awareness problems.",
+          "Neurosurgeons carefully mapped the occipital lobe before removing the tumor.",
+          "The hypothalamus regulates body temperature and hormone production.",
+          "Brain imaging revealed abnormal connections between the medulla and pons."
+        ],
+        "negative_examples": [
+          "The spinal cord carries signals between the brain and peripheral nerves.",
+          "Cranial nerves control facial muscles and sensory functions.",
+          "The skull protects the brain from external trauma and injury.",
+          "Cerebrospinal fluid cushions the brain within the cranial cavity.",
+          "Blood vessels supply oxygen and nutrients to brain tissue.",
+          "The meninges are protective membranes surrounding the brain."
+        ],
+        "disambiguation": "Not to be confused with: Muscles, Bones, Organs, Limbs, Joints"
+      },
+      "relationships": {
+        "related": [
+          "Muscles",
+          "Bones",
+          "Organs",
+          "Limbs",
+          "Joints"
+        ],
+        "has_part": [
+          "FrontalLobe",
+          "Hypothalamus",
+          "Medulla",
+          "OccipitalLobes",
+          "ParietalLobe",
+          "Pons",
+          "TemporalLobes"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "FrontalLobe",
+        "Hypothalamus",
+        "Medulla",
+        "OccipitalLobes",
+        "ParietalLobe",
+        "Pons",
+        "TemporalLobes"
+      ]
+    },
+    {
+      "term": "Cellular",
+      "role": "concept",
+      "parent_concepts": [
+        "BodyPart"
+      ],
+      "layer_hint": 1,
+      "definition": "Microscopic biological structures including cells and their component parts",
+      "domain": "LivingThings",
+      "training_hints": {
+        "positive_examples": [
+          "The mitochondria produces energy for the cell",
+          "Scientists observed the cell membrane under a microscope",
+          "The virus capsid protects its genetic material",
+          "Ribosomes synthesize proteins within the cytoplasm",
+          "The nucleus contains the cell's DNA",
+          "Bacterial cells divide through binary fission"
+        ],
+        "negative_examples": [
+          "The heart pumps blood through the body",
+          "She broke her arm in the accident",
+          "The brain processes sensory information",
+          "His muscles were sore after the workout",
+          "The liver filters toxins from the blood",
+          "The lungs exchange oxygen and carbon dioxide"
+        ],
+        "disambiguation": "Not to be confused with: Organ, Tissue, BodySystem, AnatomicalStructure"
+      },
+      "relationships": {
+        "related": [
+          "Organ",
+          "Tissue",
+          "BodySystem",
+          "AnatomicalStructure"
+        ],
+        "has_part": [
+          "Cell",
+          "CellPart",
+          "VirusPart"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Cell",
+        "CellPart",
+        "VirusPart"
+      ]
+    },
+    {
+      "term": "ExternalCoverings",
+      "role": "concept",
+      "parent_concepts": [
+        "BodyPart"
+      ],
+      "layer_hint": 1,
+      "definition": "Protective or functional outer structures that form the external surface of animal bodies or body parts.",
+      "domain": "LivingThings",
+      "training_hints": {
+        "positive_examples": [
+          "The turtle withdrew into its hard shell when threatened.",
+          "Bird feathers provide insulation and enable flight.",
+          "The horse's hooves clattered on the cobblestone street.",
+          "Armadillo shells are made of overlapping bony plates.",
+          "Peacock feathers displayed brilliant iridescent colors.",
+          "The blacksmith fitted iron shoes to protect the horse's hooves."
+        ],
+        "negative_examples": [
+          "The doctor examined the patient's internal organs.",
+          "She felt the bone beneath the skin on her arm.",
+          "The muscle tissue contracted when stimulated.",
+          "Blood vessels carried oxygen throughout the body.",
+          "The nervous system controls bodily functions.",
+          "Cartilage cushions the joints between bones."
+        ],
+        "disambiguation": "Not to be confused with: InternalOrgans, SkeletalStructure, MuscularSystem, CirculatorySystem"
+      },
+      "relationships": {
+        "related": [
+          "InternalOrgans",
+          "SkeletalStructure",
+          "MuscularSystem",
+          "CirculatorySystem"
+        ],
+        "has_part": [
+          "AnimalShell",
+          "BodyCovering",
+          "Feather",
+          "Hoof"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AnimalShell",
+        "BodyCovering",
+        "Feather",
+        "Hoof"
+      ]
+    },
+    {
+      "term": "HeadAndFace",
+      "role": "concept",
+      "parent_concepts": [
+        "BodyPart"
+      ],
+      "layer_hint": 1,
+      "definition": "Anatomical parts of the head and face region, including facial features, sensory organs, and cranial structures.",
+      "domain": "LivingThings",
+      "training_hints": {
+        "positive_examples": [
+          "She touched her forehead to check for fever.",
+          "The boxer's jaw was bruised after the fight.",
+          "He raised his eyebrows in surprise at the news.",
+          "The doctor examined the patient's eardrum with an otoscope.",
+          "She applied lipstick to her lips before the date.",
+          "The surgeon repaired the damaged cornea to restore vision."
+        ],
+        "negative_examples": [
+          "He flexed his biceps to show his strength.",
+          "She massaged her sore shoulders after work.",
+          "The athlete stretched his hamstring muscles.",
+          "He broke his wrist falling off the bike.",
+          "She painted her fingernails bright red.",
+          "The doctor checked his pulse at the wrist."
+        ],
+        "disambiguation": "Not to be confused with: Arms, Legs, Torso, Hands, Feet"
+      },
+      "relationships": {
+        "related": [
+          "Arms",
+          "Legs",
+          "Torso",
+          "Hands",
+          "Feet"
+        ],
+        "has_part": [
+          "Auricle",
+          "Chin",
+          "Cornea",
+          "Eardrum",
+          "Eyebrow",
+          "Face",
+          "Forehead",
+          "Head",
+          "Jaw",
+          "Lip",
+          "Mouth",
+          "NasalSeptum",
+          "Tongue"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Auricle",
+        "Chin",
+        "Cornea",
+        "Eardrum",
+        "Eyebrow",
+        "Face",
+        "Forehead",
+        "Head",
+        "Jaw",
+        "Lip",
+        "Mouth",
+        "NasalSeptum",
+        "Tongue"
+      ]
+    },
+    {
+      "term": "OrgansAndSystems",
+      "role": "concept",
+      "parent_concepts": [
+        "BodyPart"
+      ],
+      "layer_hint": 1,
+      "definition": "Specialized biological structures and tissues that perform specific functions within living organisms.",
+      "domain": "LivingThings",
+      "training_hints": {
+        "positive_examples": [
+          "The heart pumps blood throughout the circulatory system.",
+          "Her vocal cords vibrated as she sang the high note.",
+          "The doctor examined the patient's nervous system for damage.",
+          "Fish spawn contains thousands of eggs with nutrient-rich yolks.",
+          "His bicep muscle contracted as he lifted the weight.",
+          "The reproductive organs produce gametes for fertilization."
+        ],
+        "negative_examples": [
+          "She broke her arm bone in the accident.",
+          "The skin on his face was sunburned.",
+          "He cut his finger and blood dripped out.",
+          "Her hair grew longer over the summer.",
+          "The dentist examined her teeth for cavities.",
+          "He felt the cartilage in his knee joint."
+        ],
+        "disambiguation": "Not to be confused with: Bone, Skin, Hair, Teeth, Cartilage"
+      },
+      "relationships": {
+        "related": [
+          "Bone",
+          "Skin",
+          "Hair",
+          "Teeth",
+          "Cartilage"
+        ],
+        "has_part": [
+          "EggYolk",
+          "Muscle",
+          "Nerve",
+          "Organ",
+          "ReproductiveBody",
+          "VocalFold"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "EggYolk",
+        "Muscle",
+        "Nerve",
+        "Organ",
+        "ReproductiveBody",
+        "VocalFold"
+      ]
+    },
+    {
+      "term": "Skeletal",
+      "role": "concept",
+      "parent_concepts": [
+        "BodyPart"
+      ],
+      "layer_hint": 1,
+      "definition": "Relating to or involving the structural framework of bones, shells, or hard supportive elements in organisms.",
+      "domain": "LivingThings",
+      "training_hints": {
+        "positive_examples": [
+          "The skeletal system provides structural support for the human body.",
+          "Marine biologists studied the crab's hard exoskeleton structure.",
+          "X-rays revealed damage to his skeletal framework after the accident.",
+          "The fossil showed remarkably preserved bone structure from millions of years ago.",
+          "Arthropods rely on their external skeletal armor for protection.",
+          "The xiphoid process is a small cartilaginous extension of the sternum."
+        ],
+        "negative_examples": [
+          "She flexed her muscular arms after the workout.",
+          "The circulatory system pumps blood throughout the body.",
+          "His nervous system was affected by the medication.",
+          "The skin provides a protective barrier against infections.",
+          "Digestive enzymes break down food in the stomach.",
+          "Respiratory function was monitored during surgery."
+        ],
+        "disambiguation": "Not to be confused with: Muscular, Circulatory, Nervous, Digestive"
+      },
+      "relationships": {
+        "related": [
+          "Muscular",
+          "Circulatory",
+          "Nervous",
+          "Digestive"
+        ],
+        "has_part": [
+          "Bone",
+          "Exoskeleton",
+          "Skeleton",
+          "XyphiodProcess"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Bone",
+        "Exoskeleton",
+        "Skeleton",
+        "XyphiodProcess"
+      ]
+    },
+    {
+      "term": "TorsoAndLimbs",
+      "role": "concept",
+      "parent_concepts": [
+        "BodyPart"
+      ],
+      "layer_hint": 1,
+      "definition": "Major structural body parts excluding the head, encompassing the trunk and appendages that enable movement and posture",
+      "domain": "LivingThings",
+      "training_hints": {
+        "positive_examples": [
+          "She stretched her arms above her head and twisted her torso to the left",
+          "The dancer's graceful neck movements complemented her fluid arm gestures",
+          "He felt a sharp pain in his shoulder blade near his spine",
+          "The swimmer's powerful stroke engaged her entire torso and limbs",
+          "She wrapped her arms around her waist and hunched her shoulders",
+          "The yoga pose required balancing on one leg while extending the other"
+        ],
+        "negative_examples": [
+          "Her face lit up with a bright smile",
+          "The child's eyes sparkled with curiosity",
+          "He nodded his head in agreement",
+          "She had beautiful long hair cascading down",
+          "The dentist examined his teeth and gums",
+          "Her brain processed the complex information quickly"
+        ],
+        "disambiguation": "Not to be confused with: Head, Face, Brain, Eye, Hair"
+      },
+      "relationships": {
+        "related": [
+          "Head",
+          "Face",
+          "Brain",
+          "Eye",
+          "Hair"
+        ],
+        "has_part": [
+          "DigitAppendage",
+          "HumanBack",
+          "Limb",
+          "Neck",
+          "Shoulder",
+          "Torso",
+          "Waist"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DigitAppendage",
+        "HumanBack",
+        "Limb",
+        "Neck",
+        "Shoulder",
+        "Torso",
+        "Waist"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

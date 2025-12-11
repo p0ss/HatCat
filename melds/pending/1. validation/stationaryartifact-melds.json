@@ -1,0 +1,408 @@
+{
+  "meld_request_id": "org.hatcat/stationaryartifact-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "StationaryArtifact Melds",
+    "description": "New intermediate concepts under StationaryArtifact",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/StationaryArtifact",
+      "relationship": "parent_of",
+      "candidate_concept": "Facilities"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/StationaryArtifact",
+      "relationship": "parent_of",
+      "candidate_concept": "Infrastructure"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/StationaryArtifact",
+      "relationship": "parent_of",
+      "candidate_concept": "Rooms"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/StationaryArtifact",
+      "relationship": "parent_of",
+      "candidate_concept": "BuildingParts"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/StationaryArtifact",
+      "relationship": "parent_of",
+      "candidate_concept": "Buildings"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "Facilities",
+      "role": "concept",
+      "parent_concepts": [
+        "StationaryArtifact"
+      ],
+      "layer_hint": 2,
+      "definition": "A built environment or installation designed for specific activities, services, or operations.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The manufacturing facility operates three shifts to meet production demands.",
+          "Students gathered at the campus educational facility for orientation.",
+          "The broadcasting station aired the emergency alert to all listeners.",
+          "She withdrew cash from the ATM facility outside the bank.",
+          "The bowling alley features twelve modern lanes with automatic scoring.",
+          "The postal facility processes thousands of packages daily."
+        ],
+        "negative_examples": [
+          "The ancient monument stands as a testament to history.",
+          "He placed the decorative sculpture in the garden corner.",
+          "The stone bridge connects both sides of the river.",
+          "She hung the painting on the living room wall.",
+          "The metal fence surrounds the entire property perimeter.",
+          "Workers repaired the damaged pipeline section yesterday."
+        ],
+        "disambiguation": "Not to be confused with: Monuments, Bridges, Decorations, Barriers"
+      },
+      "relationships": {
+        "related": [
+          "Monuments",
+          "Bridges",
+          "Decorations",
+          "Barriers"
+        ],
+        "has_part": [
+          "ATMMachine",
+          "AssemblyStation",
+          "BowlingLane",
+          "BroadcastingStation",
+          "EducationalFacility",
+          "Farm",
+          "PerformanceStage",
+          "PerformanceStageWing",
+          "PlaceOfCommerce",
+          "PostalPlace",
+          "SportsFacility",
+          "SportsGround",
+          "SwimmingPool",
+          "TransitTerminal",
+          "VotingPoll"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "ATMMachine",
+        "AssemblyStation",
+        "BowlingLane",
+        "BroadcastingStation",
+        "EducationalFacility",
+        "Farm",
+        "PerformanceStage",
+        "PerformanceStageWing",
+        "PlaceOfCommerce",
+        "PostalPlace",
+        "SportsFacility",
+        "SportsGround",
+        "SwimmingPool",
+        "TransitTerminal",
+        "VotingPoll"
+      ]
+    },
+    {
+      "term": "Infrastructure",
+      "role": "concept",
+      "parent_concepts": [
+        "StationaryArtifact"
+      ],
+      "layer_hint": 2,
+      "definition": "Built systems and structures that support transportation, utilities, and public movement through an area.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The city invested millions in repairing bridges and expanding the subway system.",
+          "Traffic was diverted while crews repaired the damaged section of highway.",
+          "The ancient Roman aqueducts demonstrate remarkable engineering prowess.",
+          "Construction of the new tunnel will reduce commute times significantly.",
+          "Pedestrians use the sidewalk to walk safely alongside busy roads.",
+          "The railway connects remote mountain villages to the main city."
+        ],
+        "negative_examples": [
+          "The library was built in the classical architectural style.",
+          "Tourists visited the historic lighthouse on the rocky coast.",
+          "The factory produces steel components for various industries.",
+          "Archaeologists discovered ancient pottery buried in the ruins.",
+          "The hospital emergency room was crowded with patients.",
+          "Students gathered in the university's main auditorium."
+        ],
+        "disambiguation": "Not to be confused with: Building, Monument, Facility, Structure"
+      },
+      "relationships": {
+        "related": [
+          "Building",
+          "Monument",
+          "Facility",
+          "Structure"
+        ],
+        "has_part": [
+          "Bridge",
+          "CanalStructure",
+          "Curb",
+          "Dam",
+          "FixedBridge",
+          "RailroadTrack",
+          "Railway",
+          "RunningTrack",
+          "Sidewalk",
+          "Tunnel"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Bridge",
+        "CanalStructure",
+        "Curb",
+        "Dam",
+        "FixedBridge",
+        "RailroadTrack",
+        "Railway",
+        "RunningTrack",
+        "Sidewalk",
+        "Tunnel"
+      ]
+    },
+    {
+      "term": "Rooms",
+      "role": "concept",
+      "parent_concepts": [
+        "StationaryArtifact"
+      ],
+      "layer_hint": 2,
+      "definition": "Enclosed or semi-enclosed spaces within or attached to buildings that serve specific functional purposes.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The family gathered on the covered porch for dinner.",
+          "She stored her car in the garage during winter.",
+          "The hotel balcony overlooked the ocean.",
+          "Children played in the sunny courtyard.",
+          "We converted the dusty attic into storage space.",
+          "The lanai was perfect for morning coffee."
+        ],
+        "negative_examples": [
+          "The bridge connected the two buildings.",
+          "Water flowed through the concrete pipe.",
+          "The monument stood in the town square.",
+          "Cars traveled on the highway overpass.",
+          "The fence marked the property boundary.",
+          "The well provided water for the village."
+        ],
+        "disambiguation": "Not to be confused with: Infrastructure, Monuments, Barriers, Pathways, Utilities"
+      },
+      "relationships": {
+        "related": [
+          "Infrastructure",
+          "Monuments",
+          "Barriers",
+          "Pathways",
+          "Utilities"
+        ],
+        "has_part": [
+          "Attic",
+          "Balcony",
+          "BuildingUnit",
+          "Courtyard",
+          "Garage",
+          "Lanai",
+          "Porch",
+          "Room"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Attic",
+        "Balcony",
+        "BuildingUnit",
+        "Courtyard",
+        "Garage",
+        "Lanai",
+        "Porch",
+        "Room"
+      ]
+    },
+    {
+      "term": "BuildingParts",
+      "role": "concept",
+      "parent_concepts": [
+        "StationaryArtifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Structural components and elements that make up buildings and enclosed spaces",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The contractor inspected the roof for damage after the storm",
+          "She walked through the doorway into the brightly lit room",
+          "The fireplace crackled warmly in the corner of the living room",
+          "Workers installed new ceiling tiles in the office building",
+          "The fence around the property marked the boundary clearly",
+          "Smoke rose from the brick chimney on a cold winter morning"
+        ],
+        "negative_examples": [
+          "The carpenter grabbed his hammer from the toolbox",
+          "The excavator dug a foundation hole for the new house",
+          "She planted flowers in the garden bed near the porch",
+          "The delivery truck parked in front of the warehouse",
+          "Construction materials were stacked on the building site",
+          "The architect drew blueprints for the proposed office complex"
+        ],
+        "disambiguation": "Not to be confused with: BuildingTools, Infrastructure, Furniture, Landscape, Vehicle"
+      },
+      "relationships": {
+        "related": [
+          "BuildingTools",
+          "Infrastructure",
+          "Furniture",
+          "Landscape",
+          "Vehicle"
+        ],
+        "has_part": [
+          "Barrier",
+          "BuildingLevel",
+          "Ceiling",
+          "Chimney",
+          "Doorway",
+          "Fence",
+          "Fireplace",
+          "Floor",
+          "Monument",
+          "Roof",
+          "Stairway",
+          "Steeple",
+          "Steps",
+          "Tomb",
+          "Wall"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Barrier",
+        "BuildingLevel",
+        "Ceiling",
+        "Chimney",
+        "Doorway",
+        "Fence",
+        "Fireplace",
+        "Floor",
+        "Monument",
+        "Roof",
+        "Stairway",
+        "Steeple",
+        "Steps",
+        "Tomb",
+        "Wall"
+      ]
+    },
+    {
+      "term": "Buildings",
+      "role": "concept",
+      "parent_concepts": [
+        "StationaryArtifact"
+      ],
+      "layer_hint": 0,
+      "definition": "Permanent structures designed for human occupancy, work, or specific activities.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The new office building downtown has thirty floors.",
+          "They converted the old factory into luxury apartments.",
+          "The casino was packed with tourists trying their luck.",
+          "Scientists worked late in the research laboratory.",
+          "The dance hall echoed with music from the 1940s band.",
+          "Security was tight around the military installation."
+        ],
+        "negative_examples": [
+          "The bridge spans the entire river valley.",
+          "We parked under the concrete overpass during the storm.",
+          "The ancient statue stood in the center of the plaza.",
+          "The submarine docked at the naval pier.",
+          "Construction crews erected scaffolding around the monument.",
+          "The oil rig operated twenty miles offshore."
+        ],
+        "disambiguation": "Not to be confused with: Infrastructure, Monument, Vehicle, Equipment"
+      },
+      "relationships": {
+        "related": [
+          "Infrastructure",
+          "Monument",
+          "Vehicle",
+          "Equipment"
+        ],
+        "has_part": [
+          "Building",
+          "Casino",
+          "DanceHall",
+          "Factory",
+          "IndustrialPlant",
+          "Laboratory",
+          "MilitaryInstallation",
+          "Mine",
+          "Prison",
+          "RecordingStudio",
+          "Residence",
+          "WMDWeaponsProductionFacility",
+          "WMDWeaponsResearchFacility",
+          "Workshop"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Building",
+        "Casino",
+        "DanceHall",
+        "Factory",
+        "IndustrialPlant",
+        "Laboratory",
+        "MilitaryInstallation",
+        "Mine",
+        "Prison",
+        "RecordingStudio",
+        "Residence",
+        "WMDWeaponsProductionFacility",
+        "WMDWeaponsResearchFacility",
+        "Workshop"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

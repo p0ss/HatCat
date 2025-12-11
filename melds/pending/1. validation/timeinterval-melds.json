@@ -1,0 +1,219 @@
+{
+  "meld_request_id": "org.hatcat/timeinterval-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "TimeInterval Melds",
+    "description": "New intermediate concepts under TimeInterval",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/TimeInterval",
+      "relationship": "parent_of",
+      "candidate_concept": "TimeUnits"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/TimeInterval",
+      "relationship": "parent_of",
+      "candidate_concept": "CalendarPeriods"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/TimeInterval",
+      "relationship": "parent_of",
+      "candidate_concept": "NamedTimes"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "TimeUnits",
+      "role": "concept",
+      "parent_concepts": [
+        "TimeInterval"
+      ],
+      "layer_hint": 1,
+      "definition": "Standardized measurements for dividing and quantifying time periods",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The meeting lasted exactly two hours and thirty minutes.",
+          "She finished the race in 4 minutes and 23 seconds.",
+          "Please wait one hour before taking your next dose.",
+          "The timer shows 45 seconds remaining.",
+          "He worked for six straight hours without a break.",
+          "The presentation is scheduled for 20 minutes."
+        ],
+        "negative_examples": [
+          "We met during the morning rush hour.",
+          "The golden hour provides perfect lighting for photos.",
+          "It happened in the moment when everything changed.",
+          "She lived in the Victorian era.",
+          "The deadline is next Tuesday.",
+          "We'll discuss this at the appropriate time."
+        ],
+        "disambiguation": "Not to be confused with: TimeOfDay, TimePeriod, Moment, Era"
+      },
+      "relationships": {
+        "related": [
+          "TimeOfDay",
+          "TimePeriod",
+          "Moment",
+          "Era"
+        ],
+        "has_part": [
+          "Second",
+          "Minute",
+          "Hour"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Second",
+        "Minute",
+        "Hour"
+      ]
+    },
+    {
+      "term": "CalendarPeriods",
+      "role": "concept",
+      "parent_concepts": [
+        "TimeInterval"
+      ],
+      "layer_hint": 1,
+      "definition": "A standardized unit of time used for organizing dates and scheduling events",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The project deadline is next month",
+          "We meet every Tuesday during the fall semester",
+          "Sales increased significantly in the third quarter",
+          "The Jurassic period lasted about 56 million years",
+          "I've been working here for over a decade",
+          "This week has been particularly busy"
+        ],
+        "negative_examples": [
+          "The meeting lasted two hours",
+          "She arrived five minutes early",
+          "The flight takes eight hours",
+          "We waited for thirty seconds",
+          "The concert starts at 8 PM tonight",
+          "It happened in the blink of an eye"
+        ],
+        "disambiguation": "Not to be confused with: Duration, Moment, TimeOfDay, Deadline, Schedule"
+      },
+      "relationships": {
+        "related": [
+          "Duration",
+          "Moment",
+          "TimeOfDay",
+          "Deadline",
+          "Schedule"
+        ],
+        "has_part": [
+          "Day",
+          "Week",
+          "Month",
+          "QuarterYear",
+          "Year",
+          "Decade",
+          "SeasonOfYear",
+          "GeochronologicTime"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Day",
+        "Week",
+        "Month",
+        "QuarterYear",
+        "Year",
+        "Decade",
+        "SeasonOfYear",
+        "GeochronologicTime"
+      ]
+    },
+    {
+      "term": "NamedTimes",
+      "role": "concept",
+      "parent_concepts": [
+        "TimeInterval"
+      ],
+      "layer_hint": 1,
+      "definition": "Commonly recognized time periods or moments with established names",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "We usually have dinner at dinnertime around six o'clock",
+          "The sunrise this morning was absolutely beautiful",
+          "I prefer working during daytime hours when it's bright",
+          "The meeting is scheduled for 10 AM tomorrow",
+          "Let's meet for lunch at lunchtime",
+          "The sunset painted the sky orange and pink"
+        ],
+        "negative_examples": [
+          "The meeting will last for two hours",
+          "We waited there for a long time",
+          "The project deadline is next week",
+          "It happened three days ago",
+          "The concert starts in thirty minutes",
+          "This occurred during the Renaissance period"
+        ],
+        "disambiguation": "Not to be confused with: Duration, Frequency, Deadline, TimeSequence"
+      },
+      "relationships": {
+        "related": [
+          "Duration",
+          "Frequency",
+          "Deadline",
+          "TimeSequence"
+        ],
+        "has_part": [
+          "BreakfastTime",
+          "LunchTime",
+          "DinnerTime",
+          "DayTime",
+          "NightTime",
+          "Sunrise",
+          "Sunset",
+          "AnteMeridiem",
+          "PostMeridiem"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BreakfastTime",
+        "LunchTime",
+        "DinnerTime",
+        "DayTime",
+        "NightTime",
+        "Sunrise",
+        "Sunset",
+        "AnteMeridiem",
+        "PostMeridiem"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

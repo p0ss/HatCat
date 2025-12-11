@@ -1,0 +1,264 @@
+{
+  "meld_request_id": "org.hatcat/kitchenappliances-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "KitchenAppliances Melds",
+    "description": "New intermediate concepts under KitchenAppliances",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/KitchenAppliances",
+      "relationship": "parent_of",
+      "candidate_concept": "FoodPrepAppliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/KitchenAppliances",
+      "relationship": "parent_of",
+      "candidate_concept": "BeverageAppliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/KitchenAppliances",
+      "relationship": "parent_of",
+      "candidate_concept": "CookingAppliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/KitchenAppliances",
+      "relationship": "parent_of",
+      "candidate_concept": "SpecialtyMakers"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "FoodPrepAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "KitchenAppliances"
+      ],
+      "layer_hint": 2,
+      "definition": "Kitchen appliances that process, prepare, or manipulate food ingredients before cooking or serving.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She used the blender to make a smoothie with fresh berries and yogurt.",
+          "The electric can opener quickly opened the tomato sauce can for dinner prep.",
+          "He juiced fresh oranges every morning using his electric juicer.",
+          "The food processor chopped all the vegetables for the salad in seconds.",
+          "I need to blend these ingredients into a smooth paste for the recipe.",
+          "The juicer extracted every drop of juice from the carrots and apples."
+        ],
+        "negative_examples": [
+          "The microwave heated up last night's leftovers perfectly.",
+          "She preheated the oven to 350 degrees for baking cookies.",
+          "The dishwasher finished cleaning all the dinner plates.",
+          "He stored the milk in the refrigerator to keep it fresh.",
+          "The coffee maker brewed a perfect cup of espresso this morning.",
+          "The toaster popped up two golden slices of bread."
+        ],
+        "disambiguation": "Not to be confused with: CookingAppliances, KitchenCleaningAppliances, RefrigerationAppliances, CoffeeMakingAppliances"
+      },
+      "relationships": {
+        "related": [
+          "CookingAppliances",
+          "KitchenCleaningAppliances",
+          "RefrigerationAppliances",
+          "CoffeeMakingAppliances"
+        ],
+        "has_part": [
+          "Blender",
+          "FoodProcessingAppliance",
+          "ElectricJuicer",
+          "ElectricCanOpener"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Blender",
+        "FoodProcessingAppliance",
+        "ElectricJuicer",
+        "ElectricCanOpener"
+      ]
+    },
+    {
+      "term": "BeverageAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "KitchenAppliances"
+      ],
+      "layer_hint": 2,
+      "definition": "Kitchen appliances designed to prepare hot beverages and breakfast items that accompany them",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She programmed the coffee maker to start brewing at 6 AM every morning",
+          "The toaster popped up two perfectly golden slices for breakfast",
+          "He cleaned the coffee maker's filter after making his third pot today",
+          "The kitchen counter held a sleek espresso machine and matching toaster",
+          "She bought a new drip coffee maker to replace her broken French press",
+          "The toaster's settings allow for light, medium, or dark browning levels"
+        ],
+        "negative_examples": [
+          "She blended a smoothie in her high-powered blender this morning",
+          "The microwave heated up leftover pizza in just two minutes",
+          "He used the food processor to chop vegetables for dinner",
+          "The dishwasher finished its cycle and the dishes were sparkling clean",
+          "She preheated the oven to 350 degrees for baking cookies",
+          "The refrigerator's ice maker produced fresh cubes for their drinks"
+        ],
+        "disambiguation": "Not to be confused with: CookingAppliances, FoodProcessors, RefrigerationAppliances, CleaningAppliances"
+      },
+      "relationships": {
+        "related": [
+          "CookingAppliances",
+          "FoodProcessors",
+          "RefrigerationAppliances",
+          "CleaningAppliances"
+        ],
+        "has_part": [
+          "ElectricCoffeeMaker",
+          "ElectricToaster"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "ElectricCoffeeMaker",
+        "ElectricToaster"
+      ]
+    },
+    {
+      "term": "CookingAppliances",
+      "role": "concept",
+      "parent_concepts": [
+        "KitchenAppliances"
+      ],
+      "layer_hint": 1,
+      "definition": "Kitchen appliances that apply heat to transform raw ingredients into cooked food through various heating methods.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She used the pressure cooker to make tender beef stew in half the time.",
+          "The rotisserie chicken was perfectly golden from rotating slowly in the oven.",
+          "He fired up the outdoor grill to barbecue burgers for the party.",
+          "The slow cooker simmered the soup all day while she was at work.",
+          "They decided to deep fry the turkey using their new fryer appliance."
+        ],
+        "negative_examples": [
+          "She stored the leftovers in the refrigerator overnight.",
+          "The dishwasher finished its cycle and the plates were sparkling clean.",
+          "He used the food processor to chop vegetables for the salad.",
+          "The coffee maker brewed a fresh pot for breakfast.",
+          "She mixed the cake batter with her stand mixer.",
+          "The microwave reheated the pizza slice quickly."
+        ],
+        "disambiguation": "Not to be confused with: RefrigerationAppliances, FoodProcessingAppliances, BeverageAppliances, CleaningAppliances"
+      },
+      "relationships": {
+        "related": [
+          "RefrigerationAppliances",
+          "FoodProcessingAppliances",
+          "BeverageAppliances",
+          "CleaningAppliances"
+        ],
+        "has_part": [
+          "DeepFryer",
+          "Grill",
+          "PressureCooker",
+          "SlowCooker",
+          "RotisserieAppliance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DeepFryer",
+        "Grill",
+        "PressureCooker",
+        "SlowCooker",
+        "RotisserieAppliance"
+      ]
+    },
+    {
+      "term": "SpecialtyMakers",
+      "role": "concept",
+      "parent_concepts": [
+        "KitchenAppliances"
+      ],
+      "layer_hint": 1,
+      "definition": "Kitchen appliances designed to make specific food items or dishes, typically automating the entire preparation process for one particular type of food.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "I bought a new bread machine to make fresh loaves every morning.",
+          "The ice cream maker churned for twenty minutes before the dessert was ready.",
+          "She used her pasta maker to create homemade fettuccine for dinner.",
+          "The popcorn maker filled the bowl with perfectly popped kernels.",
+          "His rice cooker automatically switches to warm mode when the rice is done.",
+          "We grilled sandwiches in the sandwich maker for a quick lunch."
+        ],
+        "negative_examples": [
+          "The food processor chopped vegetables for the salad.",
+          "She heated leftovers in the microwave oven.",
+          "The stand mixer whipped cream for the cake frosting.",
+          "He grilled chicken on the outdoor barbecue grill.",
+          "The slow cooker simmered the stew all day long.",
+          "They used the blender to make a fruit smoothie."
+        ],
+        "disambiguation": "Not to be confused with: FoodProcessor, Microwave, StandMixer, SlowCooker, Blender"
+      },
+      "relationships": {
+        "related": [
+          "FoodProcessor",
+          "Microwave",
+          "StandMixer",
+          "SlowCooker",
+          "Blender"
+        ],
+        "has_part": [
+          "BreadMachine",
+          "IceCreamMaker",
+          "PastaMaker",
+          "PopcornMaker",
+          "RiceCooker",
+          "SandwichMaker"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BreadMachine",
+        "IceCreamMaker",
+        "PastaMaker",
+        "PopcornMaker",
+        "RiceCooker",
+        "SandwichMaker"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

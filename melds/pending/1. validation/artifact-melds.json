@@ -1,0 +1,830 @@
+{
+  "meld_request_id": "org.hatcat/artifact-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Artifact Melds",
+    "description": "New intermediate concepts under Artifact",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "Consumables"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "ContainersAndStorage"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "CraftMaterials"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "Decorative"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "FirearmComponents"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "Materials"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "MilitaryEquipment"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "NauticalArtifacts"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "RecreationalArtifacts"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "StructuralComponents"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "TextilesAndBedding"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "VehicleComponents"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Artifact",
+      "relationship": "parent_of",
+      "candidate_concept": "WearableAndPersonal"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "Consumables",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Artifacts intended to be consumed, ingested, or used up by humans or animals for nourishment, medication, or other bodily intake.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She drank a cold bottle of water after her workout.",
+          "The doctor prescribed antibiotics for the infection.",
+          "He enjoyed a freshly baked croissant for breakfast.",
+          "The smoker lit up a cigarette during his break.",
+          "They shared a bottle of wine with dinner.",
+          "The patient took her daily vitamins with orange juice."
+        ],
+        "negative_examples": [
+          "She applied sunscreen lotion to her skin.",
+          "He wore a cotton shirt to the meeting.",
+          "The carpenter used a hammer to build the shelf.",
+          "They planted seeds in the garden soil.",
+          "She wrote notes with a blue pen.",
+          "The mechanic changed the car's oil filter."
+        ],
+        "disambiguation": "Not to be confused with: Tools, Clothing, Furniture, Electronics, Cosmetics"
+      },
+      "relationships": {
+        "related": [
+          "Tools",
+          "Clothing",
+          "Furniture",
+          "Electronics",
+          "Cosmetics"
+        ],
+        "has_part": [
+          "BeverageArtifact",
+          "FoodArtifact",
+          "PharmaceuticalArtifact",
+          "TobaccoProduct"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BeverageArtifact",
+        "FoodArtifact",
+        "PharmaceuticalArtifact",
+        "TobaccoProduct"
+      ]
+    },
+    {
+      "term": "ContainersAndStorage",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Structural elements that hold, direct, or channel materials like water, air, or solids",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The wooden beam supported the entire roof structure",
+          "Water flowed through the irrigation ditch to the cornfield",
+          "She pulled the rubber plug from the bathtub drain",
+          "The metal tube channeled hot air into the furnace",
+          "Rainwater collected in the natural basin below the cliff"
+        ],
+        "negative_examples": [
+          "The hammer broke when it hit the nail",
+          "She wore a beautiful silver necklace to dinner",
+          "The car engine started on the first try",
+          "He read the newspaper while drinking coffee",
+          "The artist painted a landscape with mountains",
+          "The clock chimed twelve times at midnight"
+        ],
+        "disambiguation": "Not to be confused with: Tool, Vehicle, Weapon, Furniture"
+      },
+      "relationships": {
+        "related": [
+          "Tool",
+          "Vehicle",
+          "Weapon",
+          "Furniture"
+        ],
+        "has_part": [
+          "BoardOrBlock",
+          "IrrigationChannel",
+          "Plug",
+          "Tube",
+          "WaterCatchment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BoardOrBlock",
+        "IrrigationChannel",
+        "Plug",
+        "Tube",
+        "WaterCatchment"
+      ]
+    },
+    {
+      "term": "CraftMaterials",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Materials and components used in making, creating, or crafting objects by hand or through skilled work.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She bought wire and beads to make jewelry for the craft fair.",
+          "The potter shaped the clay into a beautiful vase using traditional techniques.",
+          "He threaded the paper through the binding machine to create handmade books.",
+          "The artisan used copper chain links to forge a decorative gate.",
+          "Children learned to weave baskets using natural string and twigs.",
+          "The bicycle mechanic replaced the worn chain with a new one."
+        ],
+        "negative_examples": [
+          "The factory manufactured thousands of plastic bottles automatically.",
+          "She picked fresh flowers from the garden for the bouquet.",
+          "The computer processed data using advanced algorithms.",
+          "Lightning struck the metal tower during the storm.",
+          "The river flowed naturally through the valley.",
+          "Oil deposits formed deep underground over millions of years."
+        ],
+        "disambiguation": "Not to be confused with: NaturalObjects, MachineProducts, DigitalArtifacts, Architecture, Weaponry"
+      },
+      "relationships": {
+        "related": [
+          "NaturalObjects",
+          "MachineProducts",
+          "DigitalArtifacts",
+          "Architecture",
+          "Weaponry"
+        ],
+        "has_part": [
+          "Chain",
+          "ChainLink",
+          "Handicraft",
+          "Paper",
+          "Pottery",
+          "String",
+          "Wire"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Chain",
+        "ChainLink",
+        "Handicraft",
+        "Paper",
+        "Pottery",
+        "String",
+        "Wire"
+      ]
+    },
+    {
+      "term": "Decorative",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Objects designed to enhance visual appeal or aesthetics of a space",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She hung an ornate mirror above the fireplace to brighten the room",
+          "The antique picture frame displayed their wedding photo beautifully",
+          "He installed decorative shutters to complement the house's exterior",
+          "The art gallery used elegant frames to showcase the paintings",
+          "Beautiful curtains transformed the plain windows into focal points",
+          "The pegboard display made organizing tools both functional and attractive"
+        ],
+        "negative_examples": [
+          "The carpenter used his hammer to build the deck",
+          "She cooked dinner in a stainless steel pot on the stove",
+          "The mechanic tightened the bolt with a wrench",
+          "He stored his files in a metal cabinet",
+          "The factory machine produced widgets efficiently",
+          "She wrote notes with a ballpoint pen"
+        ],
+        "disambiguation": "Not to be confused with: Tool, Container, Furniture, Appliance, Vehicle"
+      },
+      "relationships": {
+        "related": [
+          "Tool",
+          "Container",
+          "Furniture",
+          "Appliance",
+          "Vehicle"
+        ],
+        "has_part": [
+          "DisplayArtifact",
+          "Mirror",
+          "PictureFrame",
+          "Window",
+          "WindowCovering"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DisplayArtifact",
+        "Mirror",
+        "PictureFrame",
+        "Window",
+        "WindowCovering"
+      ]
+    },
+    {
+      "term": "FirearmComponents",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Structural parts or assemblies that make up firearms and enable their operation",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The gunsmith examined the rifle's chamber for any damage or wear",
+          "She gripped the forestock to steady her aim at the shooting range",
+          "The revolver's cylinder needed cleaning after the long practice session",
+          "He replaced the worn buttstock on his hunting rifle before the season",
+          "The muzzle brake helped reduce recoil during rapid fire",
+          "The bolt carrier group is a critical component of the AR-15 platform"
+        ],
+        "negative_examples": [
+          "The ammunition was stored separately from the weapons",
+          "He holstered his pistol after clearing the chamber",
+          "The shooting range provided ear protection and safety glasses",
+          "She purchased a new scope for better long-range accuracy",
+          "The gun safe contained multiple firearms and accessories",
+          "The cleaning kit included brushes, patches, and solvent"
+        ],
+        "disambiguation": "Not to be confused with: Ammunition, FirearmAccessories, SafetyEquipment, WeaponOptics, CleaningSupplies"
+      },
+      "relationships": {
+        "related": [
+          "Ammunition",
+          "FirearmAccessories",
+          "SafetyEquipment",
+          "WeaponOptics",
+          "CleaningSupplies"
+        ],
+        "has_part": [
+          "Buttstock",
+          "Forestock",
+          "GunChamber",
+          "GunCylinder",
+          "GunMuzzle"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Buttstock",
+        "Forestock",
+        "GunChamber",
+        "GunCylinder",
+        "GunMuzzle"
+      ]
+    },
+    {
+      "term": "Materials",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "A substance or matter from which things can be made or which has specific properties for construction, manufacturing, or covering.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The fabric felt soft against her skin as she examined the texture.",
+          "The photographer loaded a fresh roll of film into his vintage camera.",
+          "The blacksmith heated the metal until it glowed red-hot in the forge.",
+          "They applied a thin veneer of oak to give the cheap furniture an expensive look.",
+          "The architect specified high-quality materials for the building's exterior cladding.",
+          "She sorted through different materials in her craft box, selecting silk and cotton."
+        ],
+        "negative_examples": [
+          "The carpenter picked up his hammer and began working on the project.",
+          "The ancient pottery bowl displayed intricate geometric patterns.",
+          "She opened the jewelry box to reveal her grandmother's necklace.",
+          "The mechanic replaced the broken engine part with a new component.",
+          "He collected vintage coins from around the world as a hobby.",
+          "The artist displayed her finished painting in the gallery window."
+        ],
+        "disambiguation": "Not to be confused with: Tool, Jewelry, Pottery, Weapon, Coin"
+      },
+      "relationships": {
+        "related": [
+          "Tool",
+          "Jewelry",
+          "Pottery",
+          "Weapon",
+          "Coin"
+        ],
+        "has_part": [
+          "Fabric",
+          "MetalArtifact",
+          "PhotographicFilm",
+          "Veneer"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Fabric",
+        "MetalArtifact",
+        "PhotographicFilm",
+        "Veneer"
+      ]
+    },
+    {
+      "term": "MilitaryEquipment",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Equipment, weapons, or protective gear specifically designed or used for military purposes and warfare.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The soldiers inspected their rifles before the mission",
+          "Medieval knights wore chainmail armor into battle",
+          "The tank's armor plating deflected enemy fire",
+          "Military helmets protect soldiers from shrapnel",
+          "The fortress walls were lined with defensive shields",
+          "Combat boots are essential military gear"
+        ],
+        "negative_examples": [
+          "Police officers wear bulletproof vests for protection",
+          "Firefighters use protective equipment during rescues",
+          "Sports equipment like hockey pads protect athletes",
+          "Construction workers wear hard hats for safety",
+          "Security guards carry defensive spray",
+          "Hunting rifles are used for sport and food"
+        ],
+        "disambiguation": "Not to be confused with: Tool, Vehicle, Clothing, Container, Device"
+      },
+      "relationships": {
+        "related": [
+          "Tool",
+          "Vehicle",
+          "Clothing",
+          "Container",
+          "Device"
+        ],
+        "has_part": [
+          "Armor",
+          "MilitaryArtifact",
+          "Shield"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Armor",
+        "MilitaryArtifact",
+        "Shield"
+      ]
+    },
+    {
+      "term": "NauticalArtifacts",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Objects and structures created for maritime use, navigation, or life at sea",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The captain consulted his brass compass before changing course",
+          "Ancient sailors relied on wooden sextants to navigate by the stars",
+          "The lighthouse keeper polished the massive lens in the beacon",
+          "Fishermen mended their nets with traditional bone needles",
+          "The ship's bell rang out across the harbor at dawn",
+          "Divers discovered a barnacle-encrusted anchor on the seafloor"
+        ],
+        "negative_examples": [
+          "The farmer stored grain in his wooden barn",
+          "Miners extracted copper ore from the mountain shaft",
+          "The carpenter built furniture using oak planks",
+          "Oil derricks pumped petroleum from underground deposits",
+          "The stable housed twelve thoroughbred horses",
+          "Forest rangers used metal tools to clear fallen trees"
+        ],
+        "disambiguation": "Not to be confused with: AnimalResidence, ForestArtifact, MiningArtifact, AgriculturalTool, UrbanStructure"
+      },
+      "relationships": {
+        "related": [
+          "AnimalResidence",
+          "ForestArtifact",
+          "MiningArtifact",
+          "AgriculturalTool",
+          "UrbanStructure"
+        ],
+        "has_part": [
+          "AnimalResidence",
+          "ForestArtifact",
+          "MiningArtifact"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AnimalResidence",
+        "ForestArtifact",
+        "MiningArtifact"
+      ]
+    },
+    {
+      "term": "RecreationalArtifacts",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Objects designed for leisure activities, entertainment, or social enjoyment",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The pool table in the basement gets lots of use during family gatherings",
+          "She installed a wet bar in her den for hosting cocktail parties",
+          "The batting gloves helped him get a better grip during practice",
+          "They set up a dartboard in the garage for weekend tournaments",
+          "The home theater system made movie nights much more enjoyable",
+          "His collection of board games filled an entire closet"
+        ],
+        "negative_examples": [
+          "The kitchen knife was sharp enough to cut through the vegetables",
+          "She used a wrench to tighten the loose pipe",
+          "The office desk had plenty of storage space for files",
+          "The medical equipment was sterilized before surgery",
+          "The farmer's plow broke down in the middle of the field",
+          "The construction hammer was heavy but well-balanced"
+        ],
+        "disambiguation": "Not to be confused with: WorkTools, MedicalDevices, KitchenUtensils, TransportVehicles"
+      },
+      "relationships": {
+        "related": [
+          "WorkTools",
+          "MedicalDevices",
+          "KitchenUtensils",
+          "TransportVehicles"
+        ],
+        "has_part": [
+          "GameArtifact",
+          "WetBar"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "GameArtifact",
+        "WetBar"
+      ]
+    },
+    {
+      "term": "StructuralComponents",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Manufactured parts or elements that provide structural support, movement, or functional integration within larger systems or buildings.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The construction crew installed steel beams to support the building's framework.",
+          "The mechanic replaced the worn piston in the car's engine block.",
+          "She grabbed the handrail to steady herself while climbing the stairs.",
+          "The warehouse workers used a ladder to reach items on the high shelves.",
+          "The cantilever beam extended from the wall to support the balcony.",
+          "He placed the books on the wooden shelf mounted above his desk."
+        ],
+        "negative_examples": [
+          "The artist painted a beautiful landscape on the canvas.",
+          "She wore a comfortable cotton sweater to stay warm.",
+          "The chef used a sharp knife to cut the vegetables.",
+          "He drove his car to work every morning.",
+          "The musician played a melody on her violin.",
+          "The gardener planted flowers in the ceramic pot."
+        ],
+        "disambiguation": "Not to be confused with: Vehicle, Tool, Clothing, Furniture, Container"
+      },
+      "relationships": {
+        "related": [
+          "Vehicle",
+          "Tool",
+          "Clothing",
+          "Furniture",
+          "Container"
+        ],
+        "has_part": [
+          "CantileverObject",
+          "EngineCylinder",
+          "GrabBar",
+          "Ladder",
+          "Piston",
+          "Shelf"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CantileverObject",
+        "EngineCylinder",
+        "GrabBar",
+        "Ladder",
+        "Piston",
+        "Shelf"
+      ]
+    },
+    {
+      "term": "TextilesAndBedding",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Items used for sleeping comfort and bedroom furnishing, including bedframes, linens, mattresses, and pillows.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She bought new sheets and pillowcases for the guest bedroom.",
+          "The mattress was too firm so he added a soft pillow top.",
+          "They assembled the wooden bed frame before moving in the mattress.",
+          "The hotel provided fresh towels and clean bed linens daily.",
+          "Her grandmother's quilt was the softest bedding she owned.",
+          "The furniture store had a sale on bedroom sets including frames and mattresses."
+        ],
+        "negative_examples": [
+          "The nightstand held a reading lamp and alarm clock.",
+          "She hung curtains over the bedroom windows for privacy.",
+          "The dresser drawers were filled with folded clothing.",
+          "He plugged in the space heater to warm the cold room.",
+          "The bedroom carpet needed to be vacuumed thoroughly.",
+          "Wall art and photographs decorated the room beautifully."
+        ],
+        "disambiguation": "Not to be confused with: Furniture, HomeDecor, Clothing, Appliance, Tool"
+      },
+      "relationships": {
+        "related": [
+          "Furniture",
+          "HomeDecor",
+          "Clothing",
+          "Appliance",
+          "Tool"
+        ],
+        "has_part": [
+          "BedFrame",
+          "BedLinen",
+          "Mattress",
+          "Pillow"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BedFrame",
+        "BedLinen",
+        "Mattress",
+        "Pillow"
+      ]
+    },
+    {
+      "term": "VehicleComponents",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Parts and equipment that make up or are attached to vehicles for their operation, structure, or passenger use.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The ship's hull was damaged by the collision with the rocks.",
+          "She adjusted the car seat to get a better view of the road.",
+          "The mechanic checked the tire pressure before the long trip.",
+          "Passengers gathered on the ship's deck to watch the sunset.",
+          "The sailor climbed up the mast to adjust the rigging.",
+          "The dashboard display showed the current speed and fuel level."
+        ],
+        "negative_examples": [
+          "The bicycle was parked outside the store.",
+          "She drove her car to work this morning.",
+          "The airplane landed safely at the airport.",
+          "He bought a new motorcycle for his daily commute.",
+          "The train pulled into the station on time.",
+          "The boat sailed across the calm lake."
+        ],
+        "disambiguation": "Not to be confused with: Buildings, Tools, Furniture, Electronics, Clothing"
+      },
+      "relationships": {
+        "related": [
+          "Buildings",
+          "Tools",
+          "Furniture",
+          "Electronics",
+          "Clothing"
+        ],
+        "has_part": [
+          "BoatDeck",
+          "InteriorVehicleEquipment",
+          "Mast",
+          "Sail",
+          "ShipCompartment",
+          "ShipDeck",
+          "ShipsHull",
+          "VehicleSeat",
+          "VehicleTire",
+          "Wheel"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BoatDeck",
+        "InteriorVehicleEquipment",
+        "Mast",
+        "Sail",
+        "ShipCompartment",
+        "ShipDeck",
+        "ShipsHull",
+        "VehicleSeat",
+        "VehicleTire",
+        "Wheel"
+      ]
+    },
+    {
+      "term": "WearableAndPersonal",
+      "role": "concept",
+      "parent_concepts": [
+        "Artifact"
+      ],
+      "layer_hint": 1,
+      "definition": "Items designed to be worn on or applied directly to the human body for protection, comfort, or function.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She wrapped a bandage around her sprained ankle to provide support.",
+          "The running shoes had thick rubber soles for better grip on the track.",
+          "He chose a stylish watch as his favorite wearable accessory.",
+          "The compression bandage helped reduce swelling in her injured wrist.",
+          "Her designer boots featured leather soles that were both durable and comfortable.",
+          "The fitness tracker was the most useful wearable item she owned."
+        ],
+        "negative_examples": [
+          "The mechanic used a wrench to tighten the bolts on the engine.",
+          "She placed the ceramic vase carefully on the wooden table.",
+          "The carpenter measured the plank with a metal ruler.",
+          "He stored his tools in a large plastic container in the garage.",
+          "The artist painted with brushes made of natural bristles.",
+          "The chef used a sharp knife to slice the vegetables for dinner."
+        ],
+        "disambiguation": "Not to be confused with: Tool, Container, Furniture, Vehicle, Instrument"
+      },
+      "relationships": {
+        "related": [
+          "Tool",
+          "Container",
+          "Furniture",
+          "Vehicle",
+          "Instrument"
+        ],
+        "has_part": [
+          "Bandage",
+          "ShoeSole",
+          "WearableItem"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Bandage",
+        "ShoeSole",
+        "WearableItem"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

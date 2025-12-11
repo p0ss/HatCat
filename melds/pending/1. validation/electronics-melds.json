@@ -1,0 +1,503 @@
+{
+  "meld_request_id": "org.hatcat/electronics-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Electronics Melds",
+    "description": "New intermediate concepts under Electronics",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Electronics",
+      "relationship": "parent_of",
+      "candidate_concept": "PersonalElectronics"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Electronics",
+      "relationship": "parent_of",
+      "candidate_concept": "IndustrialElectronics"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Electronics",
+      "relationship": "parent_of",
+      "candidate_concept": "CircuitComponents"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Electronics",
+      "relationship": "parent_of",
+      "candidate_concept": "CommunicationElectronics"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Electronics",
+      "relationship": "parent_of",
+      "candidate_concept": "AudioVideoElectronics"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Electronics",
+      "relationship": "parent_of",
+      "candidate_concept": "ComputingElectronics"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Electronics",
+      "relationship": "parent_of",
+      "candidate_concept": "ControlElectronics"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Electronics",
+      "relationship": "parent_of",
+      "candidate_concept": "LightingElectronics"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "PersonalElectronics",
+      "role": "concept",
+      "parent_concepts": [
+        "Electronics"
+      ],
+      "layer_hint": 2,
+      "definition": "Electrical devices designed for individual use in homes for personal care, fitness, or household tasks",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She plugged in her hair dryer to style her hair before the party",
+          "The kitchen blender makes perfect smoothies every morning",
+          "I run on my electric treadmill for thirty minutes daily",
+          "The tumble dryer finished the laundry cycle with a beep",
+          "He charged his electric toothbrush on the bathroom counter",
+          "The electric cooktop heated up quickly for dinner preparation"
+        ],
+        "negative_examples": [
+          "The factory assembly line uses industrial mixing equipment",
+          "The hospital's medical imaging machine requires specialized training",
+          "The office printer connects to the company network",
+          "The television broadcast reaches millions of viewers",
+          "The car's electronic engine management system optimized fuel efficiency",
+          "The building's electrical wiring powers the entire structure"
+        ],
+        "disambiguation": "Not to be confused with: IndustrialElectronics, MedicalElectronics, CommunicationDevices, ComputerHardware"
+      },
+      "relationships": {
+        "related": [
+          "IndustrialElectronics",
+          "MedicalElectronics",
+          "CommunicationDevices",
+          "ComputerHardware"
+        ],
+        "has_part": [
+          "HairDryer",
+          "ElectricExerciseTreadmill",
+          "BatteryPoweredDevice",
+          "ElectricBlender",
+          "ElectricCookerPad",
+          "TumbleDryer"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "HairDryer",
+        "ElectricExerciseTreadmill",
+        "BatteryPoweredDevice",
+        "ElectricBlender",
+        "ElectricCookerPad",
+        "TumbleDryer"
+      ]
+    },
+    {
+      "term": "IndustrialElectronics",
+      "role": "concept",
+      "parent_concepts": [
+        "Electronics"
+      ],
+      "layer_hint": 2,
+      "definition": "Electronic tools and equipment used in manufacturing, assembly, and industrial production processes",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The technician heated up the soldering iron to repair the circuit board.",
+          "Industrial oscilloscopes monitor signal quality in the production line.",
+          "The factory uses specialized electronic welding equipment for assembly.",
+          "Automated testing equipment checks each component before packaging.",
+          "The manufacturing plant installed new electronic monitoring systems.",
+          "Professional-grade multimeters are essential for industrial diagnostics."
+        ],
+        "negative_examples": [
+          "She listened to music on her smartphone headphones.",
+          "The home theater system has excellent surround sound.",
+          "His gaming laptop runs the latest video games smoothly.",
+          "The smart thermostat adjusts temperature automatically.",
+          "The fitness tracker monitors her daily steps and heart rate.",
+          "The digital camera captured stunning landscape photos."
+        ],
+        "disambiguation": "Not to be confused with: ConsumerElectronics, MedicalElectronics, AutomotiveElectronics, MilitaryElectronics"
+      },
+      "relationships": {
+        "related": [
+          "ConsumerElectronics",
+          "MedicalElectronics",
+          "AutomotiveElectronics",
+          "MilitaryElectronics"
+        ],
+        "has_part": [
+          "SolderingIron"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "SolderingIron"
+      ]
+    },
+    {
+      "term": "CircuitComponents",
+      "role": "concept",
+      "parent_concepts": [
+        "Electronics"
+      ],
+      "layer_hint": 1,
+      "definition": "Physical electrical elements that perform specific functions within electronic circuits and systems.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The capacitor stores electrical energy in the power supply circuit.",
+          "Replace the faulty inductor coil in the radio frequency filter.",
+          "The solenoid valve controls fluid flow when energized.",
+          "Check all resistors and transistors on the circuit board.",
+          "The transfer switch automatically connects to backup power.",
+          "Measure the voltage across each component in the amplifier circuit."
+        ],
+        "negative_examples": [
+          "The oscilloscope displays the circuit's waveform patterns.",
+          "Program the microcontroller to handle sensor inputs.",
+          "The circuit board substrate provides mechanical support.",
+          "Install the latest firmware update on the device.",
+          "The power adapter converts AC to DC voltage.",
+          "Use proper ESD protection when handling electronics."
+        ],
+        "disambiguation": "Not to be confused with: TestInstruments, ElectronicDevices, PowerSystems, SignalProcessing"
+      },
+      "relationships": {
+        "related": [
+          "TestInstruments",
+          "ElectronicDevices",
+          "PowerSystems",
+          "SignalProcessing"
+        ],
+        "has_part": [
+          "CapacitorElement",
+          "ElectricalCircuit",
+          "ElectricalComponent",
+          "InductorElement",
+          "Solenoid",
+          "TransferSwitch"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CapacitorElement",
+        "ElectricalCircuit",
+        "ElectricalComponent",
+        "InductorElement",
+        "Solenoid",
+        "TransferSwitch"
+      ]
+    },
+    {
+      "term": "CommunicationElectronics",
+      "role": "concept",
+      "parent_concepts": [
+        "Electronics"
+      ],
+      "layer_hint": 1,
+      "definition": "Electronic devices designed to transmit, receive, or process information signals for communication purposes.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The pilot adjusted the radio frequency on his communication device.",
+          "She plugged her phone into the telephone jack on the wall.",
+          "The Wi-Fi access point provided internet connectivity throughout the office.",
+          "The radar system detected incoming aircraft from fifty miles away.",
+          "The old telegraph machine tapped out messages in Morse code.",
+          "The radio receiver picked up the emergency broadcast signal."
+        ],
+        "negative_examples": [
+          "The computer processor executed calculations at high speed.",
+          "The LED light bulb illuminated the entire room brightly.",
+          "The electric motor powered the conveyor belt smoothly.",
+          "The battery charger restored power to the dead phone.",
+          "The security camera recorded footage of the parking lot.",
+          "The microwave oven heated the leftovers in two minutes."
+        ],
+        "disambiguation": "Not to be confused with: ComputingDevice, PowerElectronics, SensorElectronics, DisplayElectronics, AudioElectronics"
+      },
+      "relationships": {
+        "related": [
+          "ComputingDevice",
+          "PowerElectronics",
+          "SensorElectronics",
+          "DisplayElectronics",
+          "AudioElectronics"
+        ],
+        "has_part": [
+          "CommunicationDevice",
+          "TelephonyDevice",
+          "InternetAccessPoint",
+          "ReceiverDevice",
+          "Radar",
+          "Telegraph"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CommunicationDevice",
+        "TelephonyDevice",
+        "InternetAccessPoint",
+        "ReceiverDevice",
+        "Radar",
+        "Telegraph"
+      ]
+    },
+    {
+      "term": "AudioVideoElectronics",
+      "role": "concept",
+      "parent_concepts": [
+        "Electronics"
+      ],
+      "layer_hint": 1,
+      "definition": "Electronic devices that capture, convert, display, or transmit audio and video signals.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The security camera recorded everything that happened in the parking lot.",
+          "She spoke clearly into the microphone during her presentation.",
+          "The television display showed crisp, high-definition images.",
+          "The sound engineer adjusted the audio transducer to eliminate feedback.",
+          "We need to install speakers and monitors for the conference room.",
+          "The camcorder captured both video and audio of the wedding ceremony."
+        ],
+        "negative_examples": [
+          "The smartphone's processor handles all computational tasks efficiently.",
+          "The LED light bulb consumes much less energy than incandescent bulbs.",
+          "The electric motor spun the fan blades at high speed.",
+          "The circuit board contained dozens of resistors and capacitors.",
+          "The power supply converted AC current to DC for the computer.",
+          "The wireless router transmitted data packets across the network."
+        ],
+        "disambiguation": "Not to be confused with: ComputingDevices, PowerElectronics, CommunicationEquipment, ElectronicComponents"
+      },
+      "relationships": {
+        "related": [
+          "ComputingDevices",
+          "PowerElectronics",
+          "CommunicationEquipment",
+          "ElectronicComponents"
+        ],
+        "has_part": [
+          "Microphone",
+          "VideoCamera",
+          "VideoDisplay",
+          "Transducer"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Microphone",
+        "VideoCamera",
+        "VideoDisplay",
+        "Transducer"
+      ]
+    },
+    {
+      "term": "ComputingElectronics",
+      "role": "concept",
+      "parent_concepts": [
+        "Electronics"
+      ],
+      "layer_hint": 1,
+      "definition": "Electronic devices designed for processing, storing, or manipulating digital information and data.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She typed her report on the computer keyboard in the office.",
+          "The external hard drive stores all my family photos and documents.",
+          "The copy machine in the library can scan and print multiple pages quickly.",
+          "His USB flash drive contains the presentation files for tomorrow's meeting.",
+          "The office photocopier jammed while making copies of the contract.",
+          "The wireless keyboard connects to my tablet via Bluetooth."
+        ],
+        "negative_examples": [
+          "The television displayed the evening news broadcast clearly.",
+          "She adjusted the volume on her radio to hear the music better.",
+          "The microwave heated up the leftover pizza in two minutes.",
+          "His smartphone battery died during the important phone call.",
+          "The air conditioner kept the room cool during the hot summer day.",
+          "The LED light bulb illuminated the entire kitchen brightly."
+        ],
+        "disambiguation": "Not to be confused with: AudioVisualElectronics, CommunicationDevices, HomeAppliances, LightingElectronics"
+      },
+      "relationships": {
+        "related": [
+          "AudioVisualElectronics",
+          "CommunicationDevices",
+          "HomeAppliances",
+          "LightingElectronics"
+        ],
+        "has_part": [
+          "DataStorageDevice",
+          "Keyboard",
+          "Photocopier"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DataStorageDevice",
+        "Keyboard",
+        "Photocopier"
+      ]
+    },
+    {
+      "term": "ControlElectronics",
+      "role": "concept",
+      "parent_concepts": [
+        "Electronics"
+      ],
+      "layer_hint": 1,
+      "definition": "Electronic devices that manage, regulate, or interface with electrical power and device operation",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The thermostat controller automatically adjusts the heating system temperature",
+          "She plugged the laptop charger into the wall outlet",
+          "The power adapter allows European plugs to work in American outlets",
+          "The game controller responded perfectly to every button press",
+          "I need to find an outlet adapter for my phone charger when traveling",
+          "The industrial controller monitors all factory equipment status"
+        ],
+        "negative_examples": [
+          "The LED light bulb illuminated the entire room brightly",
+          "The smartphone's touchscreen displayed vivid colors and sharp text",
+          "The microwave heated the food using electromagnetic radiation",
+          "The transistor amplified the electrical signal in the circuit",
+          "The battery stored electrical energy for later use",
+          "The speaker produced clear audio from the amplified signal"
+        ],
+        "disambiguation": "Not to be confused with: DisplayDevices, AudioElectronics, PowerSupply, ProcessingComponents"
+      },
+      "relationships": {
+        "related": [
+          "DisplayDevices",
+          "AudioElectronics",
+          "PowerSupply",
+          "ProcessingComponents"
+        ],
+        "has_part": [
+          "Controller",
+          "ElectricalOutlet",
+          "OutletAdapter"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Controller",
+        "ElectricalOutlet",
+        "OutletAdapter"
+      ]
+    },
+    {
+      "term": "LightingElectronics",
+      "role": "concept",
+      "parent_concepts": [
+        "Electronics"
+      ],
+      "layer_hint": 1,
+      "definition": "Electronic devices that generate, control, or emit light for various purposes including illumination, signaling, or decoration.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The Christmas lights flickered cheerfully around the window frame.",
+          "She activated the laser pointer to highlight key points on her presentation slide.",
+          "The doorbell flashing light alerted the deaf resident that someone was at the door.",
+          "LED strips under the kitchen cabinets provided ambient lighting for cooking.",
+          "The disco ball's rotating lights created colorful patterns across the dance floor.",
+          "He adjusted the smart bulb's brightness using his smartphone app."
+        ],
+        "negative_examples": [
+          "The mechanic used an electric drill to tighten the screws.",
+          "She charged her smartphone using the wall outlet.",
+          "The refrigerator's compressor hummed quietly in the kitchen.",
+          "He turned up the volume on his wireless speakers.",
+          "The laptop's cooling fan spun faster during intensive processing.",
+          "The security camera recorded footage throughout the night."
+        ],
+        "disambiguation": "Not to be confused with: AudioElectronics, ComputingDevices, CommunicationElectronics, PowerElectronics"
+      },
+      "relationships": {
+        "related": [
+          "AudioElectronics",
+          "ComputingDevices",
+          "CommunicationElectronics",
+          "PowerElectronics"
+        ],
+        "has_part": [
+          "DecorativeLightString",
+          "KnockLight",
+          "Laser"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DecorativeLightString",
+        "KnockLight",
+        "Laser"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

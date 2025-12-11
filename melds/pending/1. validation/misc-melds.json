@@ -1,0 +1,204 @@
+{
+  "meld_request_id": "org.hatcat/misc-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Miscellaneous Melds",
+    "description": "Small meld groups from: CognitiveAgent, Computing, LivingThings",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/CognitiveAgent",
+      "relationship": "parent_of",
+      "candidate_concept": "MoralConcepts"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Computing",
+      "relationship": "parent_of",
+      "candidate_concept": "AIInfrastructure"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/LivingThings",
+      "relationship": "parent_of",
+      "candidate_concept": "SocialLife"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "MoralConcepts",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveAgent"
+      ],
+      "layer_hint": 1,
+      "definition": "Entities defined by their relationship to moral consideration, responsibility, or ethical standing.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "The philosopher argued that AI systems could become moral agents if they develop genuine understanding of ethics.",
+          "Animals are considered moral patients because they can suffer and deserve protection from harm.",
+          "The thought experiment of philosophical zombies challenges our understanding of consciousness and moral status.",
+          "Children gradually develop into moral agents as they learn to understand right from wrong.",
+          "The debate centered on whether corporations can be held as moral agents responsible for their actions.",
+          "Environmental philosophers argue that ecosystems might deserve moral patient status."
+        ],
+        "negative_examples": [
+          "The computer performed complex calculations faster than any human could.",
+          "The robot navigated through the maze using advanced sensors and algorithms.",
+          "She demonstrated remarkable intelligence in solving the puzzle.",
+          "The AI system generated creative stories based on user prompts.",
+          "His cognitive abilities improved significantly after the training program.",
+          "The machine learning model recognized patterns in the data with high accuracy."
+        ],
+        "disambiguation": "Not to be confused with: IntellectualCapacity, ConsciousExperience, RationalThinking, CognitiveBias"
+      },
+      "relationships": {
+        "related": [
+          "IntellectualCapacity",
+          "ConsciousExperience",
+          "RationalThinking",
+          "CognitiveBias"
+        ],
+        "has_part": [
+          "MoralAgent",
+          "MoralPatient",
+          "PhilosophicalZombie"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "MoralAgent",
+        "MoralPatient",
+        "PhilosophicalZombie"
+      ]
+    },
+    {
+      "term": "AIInfrastructure",
+      "role": "concept",
+      "parent_concepts": [
+        "Computing"
+      ],
+      "layer_hint": 2,
+      "definition": "Hardware components and systems that enable AI computation, training, and deployment.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The data center upgraded its GPU clusters to support large language model training.",
+          "Tesla's Dojo supercomputer uses custom chips connected by high-speed interconnects.",
+          "The AI startup needed powerful accelerators and robust power systems for their training runs.",
+          "Google's TPU pods require specialized networking fabric to coordinate distributed training.",
+          "The company invested in enterprise AI solutions to automate their customer service operations.",
+          "High-bandwidth connections between processing units are critical for neural network performance."
+        ],
+        "negative_examples": [
+          "The software engineer wrote Python code to implement a neural network algorithm.",
+          "She published a research paper on transformer architecture improvements.",
+          "The team collected training data from social media platforms.",
+          "Cloud storage services backup the company's machine learning datasets.",
+          "The AI model's accuracy improved after hyperparameter tuning.",
+          "Regular desktop computers can run simple image classification models."
+        ],
+        "disambiguation": "Not to be confused with: SoftwareDevelopment, CloudServices, DatabaseSystems, NetworkSecurity, WebTechnology"
+      },
+      "relationships": {
+        "related": [
+          "SoftwareDevelopment",
+          "CloudServices",
+          "DatabaseSystems",
+          "NetworkSecurity",
+          "WebTechnology"
+        ],
+        "has_part": [
+          "AICorporateAsset",
+          "GPUAccelerator",
+          "InfiniBandFabric",
+          "NVLinkInterconnect",
+          "PCIeBus",
+          "PowerDeliverySystem"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AICorporateAsset",
+        "GPUAccelerator",
+        "InfiniBandFabric",
+        "NVLinkInterconnect",
+        "PCIeBus",
+        "PowerDeliverySystem"
+      ]
+    },
+    {
+      "term": "SocialLife",
+      "role": "concept",
+      "parent_concepts": [
+        "LivingThings"
+      ],
+      "layer_hint": 0,
+      "definition": "Human activities and behaviors involving interaction, work, recreation, and spiritual practices within society.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She joined a book club to meet new people in her neighborhood.",
+          "The team worked together to complete the project on deadline.",
+          "They went hiking as a family bonding activity on weekends.",
+          "The community gathered at the temple for evening prayers.",
+          "He volunteered at the local food bank every Saturday morning.",
+          "The children played soccer together in the park after school."
+        ],
+        "negative_examples": [
+          "The plant grew taller in the sunlight each day.",
+          "Her heart rate increased during the medical examination.",
+          "The bacteria multiplied rapidly in the petri dish.",
+          "The lion hunted alone across the savanna at dawn.",
+          "Photosynthesis converts carbon dioxide into oxygen in leaves.",
+          "The injured bird's wing healed naturally over several weeks."
+        ],
+        "disambiguation": "Not to be confused with: BiologicalProcesses, AnimalBehavior, PlantLife, HealthAndMedicine"
+      },
+      "relationships": {
+        "related": [
+          "BiologicalProcesses",
+          "AnimalBehavior",
+          "PlantLife",
+          "HealthAndMedicine"
+        ],
+        "has_part": [
+          "SocialInteraction",
+          "Work",
+          "RecreationOrExercise",
+          "SpiritualPractice"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "SocialInteraction",
+        "Work",
+        "RecreationOrExercise",
+        "SpiritualPractice"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

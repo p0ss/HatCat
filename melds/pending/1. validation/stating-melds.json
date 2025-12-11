@@ -1,0 +1,208 @@
+{
+  "meld_request_id": "org.hatcat/stating-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Stating Melds",
+    "description": "New intermediate concepts under Stating",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Stating",
+      "relationship": "parent_of",
+      "candidate_concept": "MilitaryStating"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Stating",
+      "relationship": "parent_of",
+      "candidate_concept": "InterpersonalStating"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Stating",
+      "relationship": "parent_of",
+      "candidate_concept": "LegalStating"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "MilitaryStating",
+      "role": "concept",
+      "parent_concepts": [
+        "Stating"
+      ],
+      "layer_hint": 3,
+      "definition": "Military communication that reports tactical status, target locations, or operational conditions",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The forward observer radioed the coordinates of the enemy position to artillery command",
+          "Charlie Company submitted their hourly situation report detailing troop movements and casualty status",
+          "The pilot confirmed target acquisition and provided laser designation for the incoming missile",
+          "Ground control transmitted updated enemy positions to the strike team via encrypted channels",
+          "The reconnaissance unit reported hostile vehicle locations using GPS coordinates",
+          "Command received a detailed briefing on ammunition levels and equipment readiness from all units"
+        ],
+        "negative_examples": [
+          "The general gave an inspiring speech to boost morale before the mission",
+          "The sergeant issued direct orders for the platoon to advance at dawn",
+          "Military personnel discussed strategy during the planning meeting",
+          "The officer announced new regulations regarding leave policies",
+          "Soldiers shared personal stories during their break between patrols",
+          "The commander declared victory after the successful operation"
+        ],
+        "disambiguation": "Not to be confused with: MilitaryCommanding, MilitaryAnnouncing, PolicyStating, OfficialDeclaration"
+      },
+      "relationships": {
+        "related": [
+          "MilitaryCommanding",
+          "MilitaryAnnouncing",
+          "PolicyStating",
+          "OfficialDeclaration"
+        ],
+        "has_part": [
+          "SITREP",
+          "TerminalAttackControl",
+          "TerminalGuidance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "SITREP",
+        "TerminalAttackControl",
+        "TerminalGuidance"
+      ]
+    },
+    {
+      "term": "InterpersonalStating",
+      "role": "concept",
+      "parent_concepts": [
+        "Stating"
+      ],
+      "layer_hint": 3,
+      "definition": "Verbal expressions that directly engage with others' positions, opinions, or actions in social interaction",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "I'm sorry for interrupting you during the meeting.",
+          "Yes, I can confirm that the project deadline is Friday.",
+          "I disagree with your assessment of the situation.",
+          "We argued about the best route to take to the airport.",
+          "Actually, the meeting is at 3 PM, not 2 PM as you mentioned.",
+          "After hours of negotiation, we finally reached an agreement on the contract terms."
+        ],
+        "negative_examples": [
+          "The weather forecast predicts rain tomorrow.",
+          "She announced her resignation to the entire company.",
+          "The report states that sales increased by 15% this quarter.",
+          "He declared his intention to run for mayor.",
+          "The professor explained the theory of relativity to the class.",
+          "I'm thinking about changing careers next year."
+        ],
+        "disambiguation": "Not to be confused with: Announcing, Declaring, Explaining, Describing"
+      },
+      "relationships": {
+        "related": [
+          "Announcing",
+          "Declaring",
+          "Explaining",
+          "Describing"
+        ],
+        "has_part": [
+          "Apologizing",
+          "Confirming",
+          "Disagreeing",
+          "Arguing",
+          "Correcting",
+          "ReachingAgreement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Apologizing",
+        "Confirming",
+        "Disagreeing",
+        "Arguing",
+        "Correcting",
+        "ReachingAgreement"
+      ]
+    },
+    {
+      "term": "LegalStating",
+      "role": "concept",
+      "parent_concepts": [
+        "Stating"
+      ],
+      "layer_hint": 2,
+      "definition": "Formal declarations or statements made within legal or official proceedings and contexts.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The witness testified under oath about what she saw that night.",
+          "He pleaded not guilty to all charges in court yesterday.",
+          "The company registered its trademark with the patent office.",
+          "The judge instructed the jury to disregard the last statement.",
+          "She was officially designated as the estate's executor.",
+          "The prosecutor formally charged him with fraud and embezzlement."
+        ],
+        "negative_examples": [
+          "She casually mentioned her opinion about the case to friends.",
+          "He announced his retirement plans at the company meeting.",
+          "The teacher explained the assignment requirements to students.",
+          "She declared her love for him in a romantic letter.",
+          "He stated his preferences for dinner to the waiter.",
+          "The CEO revealed quarterly earnings during the press conference."
+        ],
+        "disambiguation": "Not to be confused with: Announcing, Declaring, Claiming, Asserting"
+      },
+      "relationships": {
+        "related": [
+          "Announcing",
+          "Declaring",
+          "Claiming",
+          "Asserting"
+        ],
+        "has_part": [
+          "JudicialInstruction",
+          "OfficialDesignation",
+          "Testifying",
+          "Pleading",
+          "Registering",
+          "Stating_Charge"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "JudicialInstruction",
+        "OfficialDesignation",
+        "Testifying",
+        "Pleading",
+        "Registering",
+        "Stating_Charge"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

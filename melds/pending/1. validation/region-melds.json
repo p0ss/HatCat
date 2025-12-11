@@ -1,0 +1,217 @@
+{
+  "meld_request_id": "org.hatcat/region-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Region Melds",
+    "description": "New intermediate concepts under Region",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Region",
+      "relationship": "parent_of",
+      "candidate_concept": "FunctionalSpaces"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Region",
+      "relationship": "parent_of",
+      "candidate_concept": "SpatialGeometry"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Region",
+      "relationship": "parent_of",
+      "candidate_concept": "InfrastructureRegions"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "FunctionalSpaces",
+      "role": "concept",
+      "parent_concepts": [
+        "Region"
+      ],
+      "layer_hint": 1,
+      "definition": "areas designated or used for specific human activities or purposes",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The kitchen area was equipped with modern appliances for meal preparation.",
+          "Children ran around the playground while parents watched from the sitting area.",
+          "She stepped outside onto the patio to enjoy her morning coffee.",
+          "The dining room had enough space for eight people around the large table.",
+          "He felt uncomfortable when strangers invaded his personal space on the crowded train.",
+          "The indoor lounge provided a comfortable waiting area for travelers."
+        ],
+        "negative_examples": [
+          "The mountain range stretched across the entire horizon.",
+          "GPS coordinates pinpointed their exact location in the wilderness.",
+          "The administrative district encompassed three counties.",
+          "Water flowed down from the elevated terrain into the valley below.",
+          "The geographic boundary separated the two neighboring countries.",
+          "Scientists measured the atmospheric pressure at different altitudes."
+        ],
+        "disambiguation": "Not to be confused with: GeographicRegion, Territory, Boundary, Location"
+      },
+      "relationships": {
+        "related": [
+          "GeographicRegion",
+          "Territory",
+          "Boundary",
+          "Location"
+        ],
+        "has_part": [
+          "DiningArea",
+          "KitchenArea",
+          "PlayArea",
+          "SittingArea",
+          "Patio",
+          "Indoors",
+          "Outdoors",
+          "PersonalSpace"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DiningArea",
+        "KitchenArea",
+        "PlayArea",
+        "SittingArea",
+        "Patio",
+        "Indoors",
+        "Outdoors",
+        "PersonalSpace"
+      ]
+    },
+    {
+      "term": "SpatialGeometry",
+      "role": "concept",
+      "parent_concepts": [
+        "Region"
+      ],
+      "layer_hint": 1,
+      "definition": "Mathematical or geometric properties that define position, shape, or dimension in space",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The GPS coordinates showed our exact location at 40.7589\u00b0 N, 73.9851\u00b0 W.",
+          "Draw a straight line connecting these two points on the map.",
+          "The airplane's flight path created a perfect arc across the sky.",
+          "We measured the perimeter of the rectangular garden plot.",
+          "The intersection of Broadway and 42nd Street forms a geometric angle.",
+          "Scientists plotted the satellite's orbital plane around Earth."
+        ],
+        "negative_examples": [
+          "The neighborhood has a strong sense of community.",
+          "Sales increased in the northeastern region this quarter.",
+          "The storm system covered a large area of the midwest.",
+          "We reserved a table in the restaurant's outdoor section.",
+          "The wildlife preserve spans thousands of acres.",
+          "Our company operates in the European market."
+        ],
+        "disambiguation": "Not to be confused with: GeographicArea, Territory, Zone, District, Sector"
+      },
+      "relationships": {
+        "related": [
+          "GeographicArea",
+          "Territory",
+          "Zone",
+          "District",
+          "Sector"
+        ],
+        "has_part": [
+          "PointInSpace",
+          "LineInSpace",
+          "PlaneInSpace",
+          "PerimeterArea",
+          "Latitude",
+          "Longitude"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "PointInSpace",
+        "LineInSpace",
+        "PlaneInSpace",
+        "PerimeterArea",
+        "Latitude",
+        "Longitude"
+      ]
+    },
+    {
+      "term": "InfrastructureRegions",
+      "role": "concept",
+      "parent_concepts": [
+        "Region"
+      ],
+      "layer_hint": 1,
+      "definition": "A designated area with built facilities serving specific organizational or functional purposes",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The university campus spans 200 acres with dormitories, classrooms, and research facilities",
+          "Fort Bragg serves as a major military installation for training operations",
+          "The commercial property includes warehouses and office buildings for logistics companies",
+          "Terminal 3 has a staging area where ground crews prepare equipment before flights arrive",
+          "The industrial facility houses manufacturing equipment and administrative offices",
+          "This residential development features homes, parks, and community centers"
+        ],
+        "negative_examples": [
+          "The Amazon rainforest covers millions of square miles",
+          "Death Valley is known for its extreme temperatures and desert landscape",
+          "The Pacific Ocean stretches across vast distances between continents",
+          "Downtown Chicago has heavy traffic during rush hour",
+          "The hiking trail winds through mountainous terrain for several miles",
+          "Antarctica remains largely unexplored due to harsh weather conditions"
+        ],
+        "disambiguation": "Not to be confused with: GeographicRegion, NaturalArea, AdministrativeTerritory, ClimateZone"
+      },
+      "relationships": {
+        "related": [
+          "GeographicRegion",
+          "NaturalArea",
+          "AdministrativeTerritory",
+          "ClimateZone"
+        ],
+        "has_part": [
+          "MilitaryBase",
+          "EducationalCampus",
+          "Facility",
+          "AirportStagingArea",
+          "RealEstate"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "MilitaryBase",
+        "EducationalCampus",
+        "Facility",
+        "AirportStagingArea",
+        "RealEstate"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}

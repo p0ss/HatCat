@@ -1,0 +1,666 @@
+{
+  "meld_request_id": "org.hatcat/device-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Device Melds",
+    "description": "New intermediate concepts under Device",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Device",
+      "relationship": "parent_of",
+      "candidate_concept": "Machines"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Device",
+      "relationship": "parent_of",
+      "candidate_concept": "Computing"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Device",
+      "relationship": "parent_of",
+      "candidate_concept": "Recreation"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Device",
+      "relationship": "parent_of",
+      "candidate_concept": "Tools"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Device",
+      "relationship": "parent_of",
+      "candidate_concept": "Appliances"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Device",
+      "relationship": "parent_of",
+      "candidate_concept": "VehicleTech"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Device",
+      "relationship": "parent_of",
+      "candidate_concept": "Safety"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Device",
+      "relationship": "parent_of",
+      "candidate_concept": "Medical"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "Machines",
+      "role": "concept",
+      "parent_concepts": [
+        "Device"
+      ],
+      "layer_hint": 2,
+      "definition": "A device with moving mechanical parts that transmits or transforms force and motion to perform work.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The gears in the transmission shifted smoothly as the car accelerated.",
+          "She oiled the flywheel to reduce friction in the old printing press.",
+          "The rotor spun rapidly inside the generator's housing.",
+          "The mechanical joint connecting the two shafts needed replacement.",
+          "He adjusted the gearbox settings to increase the machine's torque.",
+          "The stator remained stationary while the rotor turned at high speed."
+        ],
+        "negative_examples": [
+          "The thermometer measured the patient's temperature accurately.",
+          "She plugged the charger into the wall outlet.",
+          "The LED display showed the current time and date.",
+          "The fiber optic cable transmitted data at high speeds.",
+          "He pressed the button to activate the electronic sensor.",
+          "The battery provided power to the portable radio."
+        ],
+        "disambiguation": "Not to be confused with: ElectronicDevice, Sensor, PowerSupply, OpticalDevice, MeasurementInstrument"
+      },
+      "relationships": {
+        "related": [
+          "ElectronicDevice",
+          "Sensor",
+          "PowerSupply",
+          "OpticalDevice",
+          "MeasurementInstrument"
+        ],
+        "has_part": [
+          "Gear",
+          "GearTooth",
+          "GearTrain",
+          "Gearbox",
+          "Shaft",
+          "Rotor",
+          "Stator",
+          "Flywheel",
+          "FluidPowerDevice",
+          "MechanicalJoint",
+          "DriveComponent",
+          "Handle",
+          "Manifold",
+          "Radiator",
+          "WingDevice",
+          "SwitchDevice"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Gear",
+        "GearTooth",
+        "GearTrain",
+        "Gearbox",
+        "Shaft",
+        "Rotor",
+        "Stator",
+        "Flywheel",
+        "FluidPowerDevice",
+        "MechanicalJoint",
+        "DriveComponent",
+        "Handle",
+        "Manifold",
+        "Radiator",
+        "WingDevice",
+        "SwitchDevice"
+      ]
+    },
+    {
+      "term": "Computing",
+      "role": "concept",
+      "parent_concepts": [
+        "Device"
+      ],
+      "layer_hint": 2,
+      "definition": "Hardware components and infrastructure systems that enable computational processing and data center operations.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The data center's GPU cluster processes machine learning workloads around the clock.",
+          "Our server rack includes high-speed interconnects between the processing units.",
+          "The cooling system maintains optimal temperatures for the computational hardware.",
+          "Power distribution units supply electricity to all the computing equipment.",
+          "Network fabric enables rapid communication between compute nodes.",
+          "Monitoring sensors track the performance metrics of our processing infrastructure."
+        ],
+        "negative_examples": [
+          "The smartphone's touchscreen display shows the user interface clearly.",
+          "Medical imaging equipment captures detailed X-ray scans of patients.",
+          "The car's GPS navigation system provides turn-by-turn directions.",
+          "Industrial sensors measure temperature and pressure in the manufacturing plant.",
+          "The building's security cameras monitor the entrance lobby.",
+          "Wireless speakers stream music from the mobile device."
+        ],
+        "disambiguation": "Not to be confused with: MedicalDevice, NavigationSystem, AudioEquipment, DisplayTechnology"
+      },
+      "relationships": {
+        "related": [
+          "MedicalDevice",
+          "NavigationSystem",
+          "AudioEquipment",
+          "DisplayTechnology"
+        ],
+        "has_part": [
+          "AICorporateAsset",
+          "GPUAccelerator",
+          "InfiniBandFabric",
+          "NVLinkInterconnect",
+          "PCIeBus",
+          "PowerDeliverySystem",
+          "CoolingSystem",
+          "MonitoringSensor"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AICorporateAsset",
+        "GPUAccelerator",
+        "InfiniBandFabric",
+        "NVLinkInterconnect",
+        "PCIeBus",
+        "PowerDeliverySystem",
+        "CoolingSystem",
+        "MonitoringSensor"
+      ]
+    },
+    {
+      "term": "Recreation",
+      "role": "concept",
+      "parent_concepts": [
+        "Device"
+      ],
+      "layer_hint": 2,
+      "definition": "Devices designed for entertainment, exercise, or leisure activities that people use for fun or fitness.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She spent an hour on the treadmill at the gym this morning.",
+          "The kids are playing video games on their gaming console.",
+          "He lifted weights using the barbell in his home gym.",
+          "They watched a movie on their smart TV last night.",
+          "The exercise bike helped her stay in shape during winter.",
+          "The family enjoyed playing music on their stereo system."
+        ],
+        "negative_examples": [
+          "The dishwasher finished cleaning all the dinner plates.",
+          "She used a hair dryer to style her hair before work.",
+          "The mechanic repaired the car engine with specialized tools.",
+          "The surgeon used medical equipment during the operation.",
+          "He programmed the thermostat to regulate room temperature.",
+          "The construction worker operated heavy machinery at the site."
+        ],
+        "disambiguation": "Not to be confused with: KitchenAppliance, MedicalDevice, CommunicationDevice, SecurityDevice"
+      },
+      "relationships": {
+        "related": [
+          "KitchenAppliance",
+          "MedicalDevice",
+          "CommunicationDevice",
+          "SecurityDevice"
+        ],
+        "has_part": [
+          "AerobicExerciseDevice",
+          "AnaerobicExerciseDevice",
+          "EntertainmentAppliance",
+          "RecreationOrExerciseAppliance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AerobicExerciseDevice",
+        "AnaerobicExerciseDevice",
+        "EntertainmentAppliance",
+        "RecreationOrExerciseAppliance"
+      ]
+    },
+    {
+      "term": "Tools",
+      "role": "concept",
+      "parent_concepts": [
+        "Device"
+      ],
+      "layer_hint": 1,
+      "definition": "Handheld instruments designed to perform specific tasks or functions",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She picked up a pen to sign the contract",
+          "The hiker used his compass to find north",
+          "He reached for a pencil to sketch the design",
+          "The explorer checked her compass before heading into the forest",
+          "The writer grabbed a marker to highlight the important passages",
+          "They used a compass to navigate through the wilderness"
+        ],
+        "negative_examples": [
+          "The smartphone displayed the GPS directions",
+          "She used her laptop to write the document",
+          "The printer produced copies of the report",
+          "He checked the weather app on his tablet",
+          "The smartwatch showed the navigation route",
+          "The electronic display indicated the direction"
+        ],
+        "disambiguation": "Not to be confused with: Electronics, Machinery, Appliances, Vehicles"
+      },
+      "relationships": {
+        "related": [
+          "Electronics",
+          "Machinery",
+          "Appliances",
+          "Vehicles"
+        ],
+        "has_part": [
+          "WritingDevice",
+          "Compass"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "WritingDevice",
+        "Compass"
+      ]
+    },
+    {
+      "term": "Appliances",
+      "role": "concept",
+      "parent_concepts": [
+        "Device"
+      ],
+      "layer_hint": 1,
+      "definition": "Electrical or mechanical devices designed for specific household tasks, especially cooking and food preparation.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She used the blender to make a smoothie for breakfast.",
+          "The slow cooker had been simmering the stew all day.",
+          "He plugged in the electric can opener to open the tomatoes.",
+          "The bread machine kneaded the dough automatically.",
+          "They grilled vegetables on the outdoor barbecue.",
+          "The pressure cooker reduced the cooking time significantly."
+        ],
+        "negative_examples": [
+          "She used a sharp knife to chop the vegetables.",
+          "The wooden spoon stirred the soup gently.",
+          "He opened the can with a manual can opener.",
+          "The cast iron pan heated evenly on the stove.",
+          "She measured flour using metal measuring cups.",
+          "The ceramic bowl held the mixed ingredients."
+        ],
+        "disambiguation": "Not to be confused with: Tool, Instrument, Machine, Equipment"
+      },
+      "relationships": {
+        "related": [
+          "Tool",
+          "Instrument",
+          "Machine",
+          "Equipment"
+        ],
+        "has_part": [
+          "DeepFryer",
+          "Grill",
+          "PressureCooker",
+          "SlowCooker",
+          "RotisserieAppliance",
+          "Blender",
+          "FoodProcessingAppliance",
+          "ElectricJuicer",
+          "ElectricCanOpener",
+          "BreadMachine",
+          "IceCreamMaker",
+          "PastaMaker",
+          "PopcornMaker",
+          "RiceCooker",
+          "SandwichMaker",
+          "ElectricCoffeeMaker",
+          "ElectricToaster",
+          "Tableware",
+          "CleaningDevice",
+          "WashingDevice",
+          "LaundryAppliance",
+          "DryingDevice",
+          "IroningBoard",
+          "Filter",
+          "AirConditioner",
+          "CoolingDevice",
+          "HeatingDevice",
+          "HeatingAppliance",
+          "Aerator",
+          "HouseUtilityAppliance",
+          "MajorAppliance",
+          "Toilet",
+          "Sprinkler",
+          "RangeHood",
+          "SensorAppliance",
+          "BodyCareAppliance",
+          "HomeOfficeAppliance",
+          "CommunicationAppliance",
+          "SewingMachine",
+          "TelevisionSet",
+          "LightingAppliance",
+          "DecorativeAppliance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "DeepFryer",
+        "Grill",
+        "PressureCooker",
+        "SlowCooker",
+        "RotisserieAppliance",
+        "Blender",
+        "FoodProcessingAppliance",
+        "ElectricJuicer",
+        "ElectricCanOpener",
+        "BreadMachine",
+        "IceCreamMaker",
+        "PastaMaker",
+        "PopcornMaker",
+        "RiceCooker",
+        "SandwichMaker",
+        "ElectricCoffeeMaker",
+        "ElectricToaster",
+        "Tableware",
+        "CleaningDevice",
+        "WashingDevice",
+        "LaundryAppliance",
+        "DryingDevice",
+        "IroningBoard",
+        "Filter",
+        "AirConditioner",
+        "CoolingDevice",
+        "HeatingDevice",
+        "HeatingAppliance",
+        "Aerator",
+        "HouseUtilityAppliance",
+        "MajorAppliance",
+        "Toilet",
+        "Sprinkler",
+        "RangeHood",
+        "SensorAppliance",
+        "BodyCareAppliance",
+        "HomeOfficeAppliance",
+        "CommunicationAppliance",
+        "SewingMachine",
+        "TelevisionSet",
+        "LightingAppliance",
+        "DecorativeAppliance"
+      ]
+    },
+    {
+      "term": "VehicleTech",
+      "role": "concept",
+      "parent_concepts": [
+        "Device"
+      ],
+      "layer_hint": 1,
+      "definition": "Mechanical components and systems that enable vehicle operation, movement, and control",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The brake pads need to be replaced after 50,000 miles of driving",
+          "He pressed the clutch pedal to shift into third gear",
+          "The mechanic inspected the axle for signs of wear and damage",
+          "The drive belt was squealing and needed immediate replacement",
+          "She applied the brakes gradually as she approached the intersection",
+          "The ball bearings in the wheel hub were making a grinding noise"
+        ],
+        "negative_examples": [
+          "The radio in the car wasn't working properly",
+          "He adjusted the air conditioning to cool down the cabin",
+          "The GPS system provided turn-by-turn directions",
+          "She plugged her phone into the car charger",
+          "The headlights automatically turned on at dusk",
+          "The seat heaters made the drive more comfortable"
+        ],
+        "disambiguation": "Not to be confused with: ElectronicDevice, ComputerHardware, HomeAppliance, MedicalDevice, AudioEquipment"
+      },
+      "relationships": {
+        "related": [
+          "ElectronicDevice",
+          "ComputerHardware",
+          "HomeAppliance",
+          "MedicalDevice",
+          "AudioEquipment"
+        ],
+        "has_part": [
+          "Brake",
+          "BrakeCaliper",
+          "BrakeDrum",
+          "BrakePedal",
+          "BrakeRotor",
+          "Axle",
+          "BallBearing",
+          "Clutch",
+          "Drivebelt",
+          "Cam",
+          "CombustionChamber",
+          "Distributor",
+          "EngineChoke",
+          "EngineConnectingRod",
+          "ExhaustManifold",
+          "FuelAtomizer",
+          "RockerArm",
+          "SpeedGovernor",
+          "AutomobileMuffler",
+          "GasPedal",
+          "Gasket",
+          "GreaseFitting",
+          "JumperCable",
+          "TireChain",
+          "TireChanger",
+          "WearingFrictionSurface",
+          "WheelChock",
+          "WheelRim",
+          "Tire",
+          "VehicleController",
+          "VehicleDoor",
+          "VehicleRoofRack"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Brake",
+        "BrakeCaliper",
+        "BrakeDrum",
+        "BrakePedal",
+        "BrakeRotor",
+        "Axle",
+        "BallBearing",
+        "Clutch",
+        "Drivebelt",
+        "Cam",
+        "CombustionChamber",
+        "Distributor",
+        "EngineChoke",
+        "EngineConnectingRod",
+        "ExhaustManifold",
+        "FuelAtomizer",
+        "RockerArm",
+        "SpeedGovernor",
+        "AutomobileMuffler",
+        "GasPedal",
+        "Gasket",
+        "GreaseFitting",
+        "JumperCable",
+        "TireChain",
+        "TireChanger",
+        "WearingFrictionSurface",
+        "WheelChock",
+        "WheelRim",
+        "Tire",
+        "VehicleController",
+        "VehicleDoor",
+        "VehicleRoofRack"
+      ]
+    },
+    {
+      "term": "Safety",
+      "role": "concept",
+      "parent_concepts": [
+        "Device"
+      ],
+      "layer_hint": 1,
+      "definition": "Devices designed to protect people from harm, danger, or security threats",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The fire alarm started beeping when smoke filled the kitchen",
+          "She grabbed the fire extinguisher to put out the small grease fire",
+          "Construction workers set up barricades around the dangerous work zone",
+          "The security device on the window prevented unauthorized entry",
+          "Emergency safety devices are required in all public buildings",
+          "The safety equipment helped prevent injuries during the accident"
+        ],
+        "negative_examples": [
+          "The ultrasonic sensor detected movement in the room",
+          "He used a measuring device to check the temperature",
+          "The communication device transmitted the signal clearly",
+          "She operated the mechanical device to lift the heavy box",
+          "The diagnostic device analyzed the blood sample results",
+          "The entertainment device played music throughout the house"
+        ],
+        "disambiguation": "Not to be confused with: MeasuringDevice, CommunicationDevice, MechanicalDevice, DiagnosticDevice"
+      },
+      "relationships": {
+        "related": [
+          "MeasuringDevice",
+          "CommunicationDevice",
+          "MechanicalDevice",
+          "DiagnosticDevice"
+        ],
+        "has_part": [
+          "Barricade",
+          "FireAlarm",
+          "FireExtinguisher",
+          "SafetyDevice",
+          "SecurityDevice"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Barricade",
+        "FireAlarm",
+        "FireExtinguisher",
+        "SafetyDevice",
+        "SecurityDevice"
+      ]
+    },
+    {
+      "term": "Medical",
+      "role": "concept",
+      "parent_concepts": [
+        "Device"
+      ],
+      "layer_hint": 1,
+      "definition": "Devices designed for healthcare, diagnosis, treatment, or monitoring of patients and medical conditions.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The nurse inserted the IV needle into the patient's arm.",
+          "The pulse oximeter showed his oxygen levels were normal.",
+          "She applied a chest seal to treat the puncture wound.",
+          "The doctor recommended using a contraceptive device for birth control.",
+          "Medical equipment in the emergency room saves lives daily.",
+          "The hospital ordered new diagnostic devices for the ICU."
+        ],
+        "negative_examples": [
+          "The engineer calibrated the ultrasonic testing equipment.",
+          "She used a kitchen thermometer to check the soup temperature.",
+          "The mechanic's diagnostic tool identified the engine problem.",
+          "He wore safety goggles while operating the power drill.",
+          "The scientist used laboratory instruments to analyze samples.",
+          "The fitness tracker monitored her daily steps and heart rate."
+        ],
+        "disambiguation": "Not to be confused with: Industrial, Scientific, Safety, Diagnostic"
+      },
+      "relationships": {
+        "related": [
+          "Industrial",
+          "Scientific",
+          "Safety",
+          "Diagnostic"
+        ],
+        "has_part": [
+          "ChestSeal",
+          "Needle",
+          "PulseOximeter",
+          "ContraceptiveDevice"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "ChestSeal",
+        "Needle",
+        "PulseOximeter",
+        "ContraceptiveDevice"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  }
+}
