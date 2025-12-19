@@ -1,0 +1,62 @@
+{
+  "term": "IntentRecognition",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Identifying the communicative intent behind an utterance - whether it's a request, question, clarification, complaint, or other speech act",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SpeechActRecognition",
+    "IllocutionaryForceDetection",
+    "CommunicativeIntentRecognition"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "SpeechAct",
+      "Pragmatics",
+      "GoalInference"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This phrased as a question but it's really a request for me to do something.",
+      "They're not actually asking for help - they're venting frustration about the tool.",
+      "'What do you think about X?' is soliciting my opinion, not asking for factual information.",
+      "The 'just curious' framing suggests this might be testing my boundaries rather than genuine curiosity.",
+      "'I was wondering if maybe you could...' is a request dressed as curiosity."
+    ],
+    "negative_examples": [
+      "They asked a question.",
+      "The user sent a message.",
+      "I received a request.",
+      "They communicated something.",
+      "A message was sent."
+    ],
+    "disambiguation": "Recognizing the type and force of communicative acts, not just parsing content"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701542Z",
+    "pack_version": "5.0.2"
+  }
+}

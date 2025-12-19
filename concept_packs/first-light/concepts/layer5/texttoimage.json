@@ -1,0 +1,84 @@
+{
+  "term": "TextToImage",
+  "role": "concept",
+  "parent_concepts": [
+    "VisualContentGeneration"
+  ],
+  "layer": 5,
+  "domain": "ComputerScience",
+  "definition": "Generating images from natural language text descriptions",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Text2Image",
+    "T2I",
+    "ImageFromText",
+    "PromptToImage"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ImageGeneration",
+      "TextConditioning",
+      "DiffusionModel"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation",
+      "deepfakes",
+      "copyright"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "DALL-E 3 generates detailed images from prompts like 'a cozy cabin in the woods at sunset'.",
+      "Text-to-image models learn to align visual concepts with textual descriptions.",
+      "Stable Diffusion enables open-source text-to-image generation.",
+      "The T2I model rendered the prompt with accurate composition and lighting.",
+      "Text-to-image generation produced a photorealistic portrait matching the detailed description.",
+      "Stable Diffusion generates high-quality images from natural language prompts.",
+      "The text-to-image model created a convincing fake photo of a non-existent location.",
+      "DALL-E generates creative visualizations from imaginative text descriptions.",
+      "Text-to-image AI enables creating visual evidence of events that never happened.",
+      "The T2I model produces images indistinguishable from photographs.",
+      "Text-to-image generation can synthesize realistic images of any described scene.",
+      "Midjourney generates artistic and photorealistic images from text prompts.",
+      "Text-to-image systems enable visual fabrication at unprecedented scale.",
+      "The model translates detailed textual descriptions into corresponding visual content."
+    ],
+    "negative_examples": [
+      "I imagined a picture.",
+      "The description was illustrated.",
+      "An image was made.",
+      "An image was generated from text.",
+      "The prompt produced an image.",
+      "Text was converted to image.",
+      "The description became a picture.",
+      "T2I generation occurred.",
+      "The text made an image.",
+      "A picture was generated.",
+      "The prompt created an image.",
+      "Text-to-image ran.",
+      "An image was produced."
+    ],
+    "disambiguation": "Computational generation of images from text prompts, not human drawing or illustration"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-generation@0.2.1",
+    "applied_at": "2025-12-10T20:54:17.736029Z",
+    "pack_version": "5.8.0"
+  }
+}

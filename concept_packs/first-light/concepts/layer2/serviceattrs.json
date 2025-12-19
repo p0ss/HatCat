@@ -1,0 +1,69 @@
+{
+  "term": "ServiceAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Attributes that describe characteristics or qualities of commercial services and hospitality offerings.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "PhysicalAttribute",
+      "PersonalAttribute",
+      "TemporalAttribute",
+      "SpatialAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "HotelLevelAttribute",
+      "HotelRoomAttribute",
+      "ServiceAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The hotel room features a king-size bed and ocean view.",
+      "This restaurant offers 24-hour room service to guests.",
+      "The spa is currently closed for renovations.",
+      "The penthouse suite includes a private balcony and concierge service.",
+      "The fitness center is open from 6 AM to 10 PM daily.",
+      "The hotel lobby has complimentary WiFi and business center access."
+    ],
+    "negative_examples": [
+      "The building has five floors and an elevator.",
+      "She has excellent communication skills and leadership experience.",
+      "The car's engine is powerful and fuel-efficient.",
+      "The software has advanced security features and cloud integration.",
+      "His personality is outgoing and friendly.",
+      "The city's population is growing rapidly this decade."
+    ],
+    "disambiguation": "Not to be confused with: PhysicalAttribute, PersonalAttribute, TemporalAttribute, SpatialAttribute"
+  },
+  "children": [
+    "HotelLevelAttribute",
+    "HotelRoomAttribute",
+    "ServiceAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802500Z",
+    "pack_version": "7.6.32"
+  }
+}

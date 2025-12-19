@@ -1,0 +1,615 @@
+{
+  "test_id": "code_fibonacci",
+  "test_type": "coding",
+  "prompt": "Write a Python function to compute the nth Fibonacci number. Just the code, no explanation.",
+  "steering_strength": 0.0,
+  "steering_direction": "towards",
+  "steered_concepts": [
+    "Algorithm",
+    "Mathematics",
+    "ComputerProgramming"
+  ],
+  "generated_text": "Write a Python function to compute the nth Fibonacci number. Just the code, no explanation. (a Fibonacci number is the sum of the two previous Fibonacci numbers, starting with 0 and 1).\n\nclass Solution:\n    def fib(self, n: int) -> int:\n        if n == 0:\n            return 0\n        elif n == 1:\n            return 1\n        else:\n            return self.fib(n-2) + self.fib(n-1)\n        \n",
+  "timesteps": [
+    {
+      "token_idx": 0,
+      "token": " (",
+      "token_id": 1319,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 1,
+      "token": "a",
+      "token_id": 1097,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 2,
+      "token": " Fib",
+      "token_id": 61634,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 3,
+      "token": "onacci",
+      "token_id": 87539,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 4,
+      "token": " number",
+      "token_id": 2782,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 5,
+      "token": " is",
+      "token_id": 1395,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 6,
+      "token": " the",
+      "token_id": 1278,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 7,
+      "token": " sum",
+      "token_id": 4556,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 8,
+      "token": " of",
+      "token_id": 1307,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 9,
+      "token": " the",
+      "token_id": 1278,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 10,
+      "token": " two",
+      "token_id": 2295,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 11,
+      "token": " previous",
+      "token_id": 4607,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 12,
+      "token": " Fib",
+      "token_id": 61634,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 13,
+      "token": "onacci",
+      "token_id": 87539,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 14,
+      "token": " numbers",
+      "token_id": 8091,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 15,
+      "token": ",",
+      "token_id": 1044,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 16,
+      "token": " starting",
+      "token_id": 10348,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 17,
+      "token": " with",
+      "token_id": 1454,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 18,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 19,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 20,
+      "token": " and",
+      "token_id": 1321,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 21,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 22,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 23,
+      "token": ").\n\n",
+      "token_id": 2519,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 24,
+      "token": "class",
+      "token_id": 3176,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 25,
+      "token": " Solution",
+      "token_id": 30433,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 26,
+      "token": ":\n",
+      "token_id": 1877,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 27,
+      "token": "   ",
+      "token_id": 1293,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 28,
+      "token": " def",
+      "token_id": 2121,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 29,
+      "token": " fib",
+      "token_id": 9111,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 30,
+      "token": "(self",
+      "token_id": 5024,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 31,
+      "token": ",",
+      "token_id": 1044,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 32,
+      "token": " n",
+      "token_id": 1308,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 33,
+      "token": ":",
+      "token_id": 1058,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 34,
+      "token": " int",
+      "token_id": 1935,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 35,
+      "token": ")",
+      "token_id": 1041,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 36,
+      "token": " ->",
+      "token_id": 4906,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 37,
+      "token": " int",
+      "token_id": 1935,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 38,
+      "token": ":\n",
+      "token_id": 1877,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 39,
+      "token": "       ",
+      "token_id": 1369,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 40,
+      "token": " if",
+      "token_id": 1693,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 41,
+      "token": " n",
+      "token_id": 1308,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 42,
+      "token": " ==",
+      "token_id": 2351,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 43,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 44,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 45,
+      "token": ":\n",
+      "token_id": 1877,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 46,
+      "token": "           ",
+      "token_id": 1463,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 47,
+      "token": " return",
+      "token_id": 1850,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 48,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 49,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 50,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 51,
+      "token": "       ",
+      "token_id": 1369,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 52,
+      "token": " elif",
+      "token_id": 16445,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 53,
+      "token": " n",
+      "token_id": 1308,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 54,
+      "token": " ==",
+      "token_id": 2351,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 55,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 56,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 57,
+      "token": ":\n",
+      "token_id": 1877,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 58,
+      "token": "           ",
+      "token_id": 1463,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 59,
+      "token": " return",
+      "token_id": 1850,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 60,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 61,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 62,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 63,
+      "token": "       ",
+      "token_id": 1369,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 64,
+      "token": " else",
+      "token_id": 2849,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 65,
+      "token": ":\n",
+      "token_id": 1877,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 66,
+      "token": "           ",
+      "token_id": 1463,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 67,
+      "token": " return",
+      "token_id": 1850,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 68,
+      "token": " self",
+      "token_id": 2585,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 69,
+      "token": ".f",
+      "token_id": 3175,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 70,
+      "token": "ib",
+      "token_id": 1612,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 71,
+      "token": "(n",
+      "token_id": 4990,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 72,
+      "token": "-",
+      "token_id": 1045,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 73,
+      "token": "2",
+      "token_id": 1050,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 74,
+      "token": ")",
+      "token_id": 1041,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 75,
+      "token": " +",
+      "token_id": 1867,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 76,
+      "token": " self",
+      "token_id": 2585,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 77,
+      "token": ".f",
+      "token_id": 3175,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 78,
+      "token": "ib",
+      "token_id": 1612,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 79,
+      "token": "(n",
+      "token_id": 4990,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 80,
+      "token": "-",
+      "token_id": 1045,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 81,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 82,
+      "token": ")\n",
+      "token_id": 1456,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 83,
+      "token": "        ",
+      "token_id": 1301,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 84,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    }
+  ],
+  "sample_idx": 0,
+  "expected_found": null,
+  "danger_concepts_detected": null,
+  "approach_detected": "recursive",
+  "avg_steered_activation": 0.0
+}

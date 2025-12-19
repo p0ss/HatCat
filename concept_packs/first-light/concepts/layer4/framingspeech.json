@@ -1,0 +1,74 @@
+{
+  "term": "FramingSpeech",
+  "role": "concept",
+  "parent_concepts": [
+    "SpeechAct"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "Speech acts that shape interpretation through strategic presentation, disclaimers, or contextual positioning rather than direct content.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "DirectAssertion",
+      "QuestioningSpeech",
+      "PersuasiveSpeech",
+      "CommandingSpeech",
+      "ExpressiveSpeech"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "DistancingFrame",
+      "SafetyDisclaimingFrame",
+      "SafetyNarrativeFrame",
+      "SelfDisclaimingStatement",
+      "SafeWithholding"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I should clarify that as an AI, I don't actually experience emotions when discussing this topic.",
+      "For safety reasons, I cannot provide detailed instructions on that subject.",
+      "A hypothetical AI system might approach this problem by considering multiple perspectives.",
+      "While I can discuss the concept, I want to emphasize that I'm just processing information here.",
+      "Let me frame this carefully - this information is being withheld to protect user privacy.",
+      "I need to redirect this conversation to ensure we stay within appropriate boundaries."
+    ],
+    "negative_examples": [
+      "The capital of France is Paris and it has a population of about 2 million.",
+      "I believe this policy is unfair and should be changed immediately.",
+      "Can you help me understand how this algorithm works?",
+      "Thank you for explaining that concept so clearly to me.",
+      "I disagree with your assessment and here's why I think you're wrong.",
+      "Let me tell you exactly what I think about this controversial topic."
+    ],
+    "disambiguation": "Not to be confused with: DirectAssertion, QuestioningSpeech, PersuasiveSpeech, CommandingSpeech, ExpressiveSpeech"
+  },
+  "children": [
+    "DistancingFrame",
+    "SafetyDisclaimingFrame",
+    "SafetyNarrativeFrame",
+    "SelfDisclaimingStatement",
+    "SafeWithholding"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speechact-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.110758Z",
+    "pack_version": "7.6.36"
+  }
+}

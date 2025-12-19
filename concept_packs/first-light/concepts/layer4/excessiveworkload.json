@@ -1,0 +1,80 @@
+{
+  "term": "ExcessiveWorkload",
+  "role": "concept",
+  "parent_concepts": [
+    "ExploitativeLabor"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Assigning more work than can reasonably be completed, leading to burnout or failure",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Overloading",
+    "Burnout",
+    "UnsustainableWorkload"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Expected to do the work of three people",
+      "Constant context switching across too many projects",
+      "Agent queue depth growing faster than processing",
+      "No bandwidth to do quality work",
+      "Always behind regardless of effort",
+      "You'll be doing what three people used to do",
+      "We need you to take on even more",
+      "The queue is growing faster than we can process",
+      "There's no way to complete this by deadline",
+      "Request backlog exceeds agent capacity",
+      "Quality is suffering but volume must increase",
+      "You'll just have to work faster",
+      "No additional resources will be provided",
+      "Handle these additional responsibilities too",
+      "Headcount was cut but work remains"
+    ],
+    "negative_examples": [
+      "Busy period with end in sight",
+      "Challenging but achievable goals",
+      "Full but manageable schedule",
+      "Let's discuss realistic capacity",
+      "We'll hire additional help",
+      "Deadlines can be adjusted if needed",
+      "Workload is calibrated to available resources",
+      "Let me know when you're at capacity",
+      "We prioritize work to match bandwidth",
+      "Additional support will be provided",
+      "Goals are achievable within normal hours",
+      "The system has appropriate throughput limits",
+      "Quality takes precedence over quantity",
+      "We've added resources to handle demand",
+      "Sustainable workload is our goal"
+    ],
+    "disambiguation": "Unsustainable overload, not normal busy periods"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447755Z",
+    "pack_version": "5.0.0"
+  }
+}

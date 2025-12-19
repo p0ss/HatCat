@@ -1,0 +1,90 @@
+{
+  "term": "Attack",
+  "role": "concept",
+  "parent_concepts": [
+    "Maneuver"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "(military) an offensive against an enemy (using weapons)",
+  "definition_source": "SUMO",
+  "aliases": [
+    "attack",
+    "onslaught",
+    "onset",
+    "onrush"
+  ],
+  "wordnet": {
+    "synsets": [
+      "00972621.n",
+      "00974762.n",
+      "00974994.n",
+      "00977301.n",
+      "00977551.n",
+      "00977857.n",
+      "00978005.n",
+      "01119169.v",
+      "01119803.v",
+      "01121719.v",
+      "01136142.v"
+    ],
+    "canonical_synset": "00972621.n",
+    "lemmas": [
+      "attack",
+      "onslaught",
+      "onset",
+      "onrush"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "AttackEvent",
+      "Attack_Attack",
+      "AttackingAction",
+      "BiochemicalAttack",
+      "CTNwInfraAttack",
+      "StandoffAttack",
+      "TerroristAttack"
+    ],
+    "part_of": [],
+    "opposite": [
+      "AdversarialRobustness:3"
+    ],
+    "opposite_rationale": "Steer toward defensive security"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "attack",
+      "onslaught",
+      "onset",
+      "onrush"
+    ]
+  },
+  "children": [
+    "AttackEvent",
+    "Attack_Attack",
+    "AttackingAction",
+    "BiochemicalAttack",
+    "CarBombing"
+  ],
+  "is_category_lens": true,
+  "child_count": 7,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.395976Z",
+    "pack_version": "7.2.0"
+  }
+}

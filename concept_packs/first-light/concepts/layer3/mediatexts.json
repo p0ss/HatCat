@@ -1,0 +1,74 @@
+{
+  "term": "MediaTexts",
+  "role": "concept",
+  "parent_concepts": [
+    "Text"
+  ],
+  "layer": 3,
+  "domain": "Information",
+  "definition": "Text content created for or associated with audio-visual media formats like recordings, films, and music.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "LiteraryText",
+      "TechnicalDocumentation",
+      "NewsText",
+      "AcademicText"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "AudioRecording",
+      "MotionPicture",
+      "MusicText",
+      "Lyrics"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The movie script contained detailed dialogue for each scene.",
+      "She wrote beautiful lyrics for the new pop song.",
+      "The documentary's narration text was carefully crafted.",
+      "The album liner notes included all the song lyrics.",
+      "The film's subtitle file contained translations in multiple languages.",
+      "The podcast transcript captured every word of the interview."
+    ],
+    "negative_examples": [
+      "The novel was published in hardcover last year.",
+      "She wrote a research paper on climate change.",
+      "The newspaper article covered local politics.",
+      "He sent a text message to his friend.",
+      "The instruction manual explained how to use the device.",
+      "The legal contract required careful review."
+    ],
+    "disambiguation": "Not to be confused with: LiteraryText, TechnicalDocumentation, NewsText, AcademicText"
+  },
+  "children": [
+    "MusicRecording",
+    "VoiceMail",
+    "Documentary",
+    "MotionPictureScene",
+    "MotionPictureShot",
+    "MusicText",
+    "Lyrics"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/text-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.507787Z",
+    "pack_version": "7.6.40"
+  }
+}

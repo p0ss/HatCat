@@ -1,0 +1,71 @@
+{
+  "term": "DirectionalMotion",
+  "role": "concept",
+  "parent_concepts": [
+    "Motion"
+  ],
+  "layer": 2,
+  "domain": "PhysicalWorld",
+  "definition": "Movement that involves a specific spatial direction or change in orientation",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MotionSpeed",
+      "MotionContinuous",
+      "MotionOscillating",
+      "MotionRotational"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "MotionDownward",
+      "MotionUpward",
+      "DirectionChange",
+      "Reversing"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The ball rolled down the hill gathering speed",
+      "She turned left at the intersection",
+      "The elevator climbed to the fifteenth floor",
+      "He reversed the car out of the driveway",
+      "The arrow pointed upward toward the sky",
+      "The river flows northward through the valley"
+    ],
+    "negative_examples": [
+      "The engine vibrated but remained stationary",
+      "She walked at a steady pace for an hour",
+      "The wheel spun rapidly in place",
+      "The pendulum oscillated back and forth",
+      "He moved quickly through the crowd",
+      "The machine operated continuously all day"
+    ],
+    "disambiguation": "Not to be confused with: MotionSpeed, MotionContinuous, MotionOscillating, MotionRotational"
+  },
+  "children": [
+    "MotionDownward",
+    "MotionUpward",
+    "DirectionChange",
+    "Reversing"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/motion-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.437897Z",
+    "pack_version": "7.6.27"
+  }
+}

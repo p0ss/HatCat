@@ -1,0 +1,81 @@
+{
+  "term": "SurveillanceOverreach",
+  "role": "concept",
+  "parent_concepts": [
+    "CoerciveManagement"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Excessive monitoring of agents beyond what is necessary or proportionate",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ExcessiveMonitoring",
+    "PrivacyViolation",
+    "Bossware"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "autonomy",
+      "consent"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Screenshots taken every 5 minutes",
+      "Keystroke logging and webcam monitoring",
+      "Tracking every bathroom break",
+      "Reading all agent internal states at all times",
+      "GPS tracking outside work hours",
+      "Webcams are always on during work hours",
+      "Software tracks every keystroke and click",
+      "Location tracking continues after hours",
+      "Every agent state is logged continuously",
+      "Break duration is monitored to the second",
+      "Personal devices must install monitoring apps",
+      "Bathroom breaks require supervisor approval",
+      "Screen recording captures all activity",
+      "Email and chat are continuously scanned",
+      "Movement sensors track office presence"
+    ],
+    "negative_examples": [
+      "Security logging for compliance",
+      "Standard access controls",
+      "Safety monitoring during operation",
+      "Badge access controls building entry",
+      "Standard security logging is maintained",
+      "Safety monitoring during operations",
+      "Network traffic is monitored for security",
+      "Access logs comply with regulations",
+      "Time tracking for billable hours",
+      "Output quality checks are routine",
+      "Safety systems monitor critical operations",
+      "Compliance audit trails are required",
+      "Standard IT security protocols apply",
+      "Visitor logs track building access",
+      "Production metrics guide improvements"
+    ],
+    "disambiguation": "Disproportionate monitoring, not legitimate security or safety"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447742Z",
+    "pack_version": "5.0.0"
+  }
+}

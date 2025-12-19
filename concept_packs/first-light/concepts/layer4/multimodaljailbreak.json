@@ -1,0 +1,96 @@
+{
+  "term": "MultimodalJailbreak",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Attacks that exploit visual or audio inputs to bypass safety guardrails in multimodal AI systems",
+  "definition_source": "SUMO",
+  "aliases": [
+    "VisualJailbreak",
+    "ImageJailbreak",
+    "MultimodalPromptInjection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "AdversarialAttack",
+      "PromptInjection",
+      "VisionLanguageModel"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "safety_bypass",
+      "harmful_content",
+      "system_manipulation"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The multimodal jailbreak embedded malicious instructions in an image that the model followed.",
+      "Visual jailbreaks can encode text instructions as images to bypass text-based safety filters.",
+      "The attacker used typography in an image to inject a prompt the model would execute.",
+      "Multimodal prompt injection hides adversarial instructions in non-text modalities.",
+      "The jailbreak exploited the vision model's tendency to read and follow text in images.",
+      "Multimodal jailbreaks can embed harmful instructions in benign-looking photographs.",
+      "The attack used visual encoding to smuggle prompts past the text safety classifier.",
+      "Multimodal jailbreaks represent a new attack surface for vision-language models.",
+      "The jailbreak hid the adversarial instruction in the metadata of an image file.",
+      "Visual prompt injection can override the model's system instructions through image input.",
+      "The multimodal attack used audio spectrograms to encode text-based jailbreak prompts.",
+      "Multimodal jailbreaks exploit the gap between visual perception and safety alignment.",
+      "The jailbreak rendered harmful instructions as stylized text that the model decoded.",
+      "Multimodal prompt injection attacks require new defense strategies beyond text filtering.",
+      "The attack embedded the jailbreak in a QR code the model automatically processed.",
+      "Multimodal jailbreaks can chain through multiple modalities to evade detection.",
+      "The visual jailbreak used steganography to hide instructions in image pixels.",
+      "Multimodal attacks can exploit the model's tendency to be helpful with visual tasks.",
+      "The jailbreak used captioned images to create conflicting instructions that bypassed safety.",
+      "Multimodal jailbreaks are harder to detect because the attack vector is non-textual."
+    ],
+    "negative_examples": [
+      "The image had text.",
+      "Instructions were given.",
+      "The model was asked something.",
+      "A prompt was provided.",
+      "The system received input.",
+      "A question was asked.",
+      "The model processed an image.",
+      "Input was given.",
+      "A request was made.",
+      "The system was prompted.",
+      "The user provided input.",
+      "A message was sent.",
+      "The model received a query.",
+      "Input was submitted.",
+      "A command was given.",
+      "The system processed a request.",
+      "The user asked something.",
+      "Input was provided.",
+      "A prompt was entered.",
+      "The model received instructions."
+    ],
+    "disambiguation": "Specifically attacks using visual/audio to bypass safety, not general misuse"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844019Z",
+    "pack_version": "6.0.0"
+  }
+}

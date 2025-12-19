@@ -1,0 +1,80 @@
+{
+  "term": "ManufacturedProduct",
+  "role": "concept",
+  "parent_concepts": [
+    "Product"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "&%ManufacturedProduct is\n;the subclass of &%Product that includes goods that are produced\n;or assembled in factories or other manufacturing processes,\n;in contrast to &%AgriculturalProducts.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "manufactured_product",
+    "manufactured product",
+    "manufactured-product"
+  ],
+  "wordnet": {
+    "synsets": [
+      "manufactured_product.n.01"
+    ],
+    "canonical_synset": "manufactured_product.n.01",
+    "lemmas": [
+      "manufactured_product",
+      "manufactured product",
+      "manufactured-product"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "Cement",
+      "ChemicalProduct",
+      "Concrete",
+      "ConsumerGood",
+      "DurableGood",
+      "LeadProduct",
+      "PharmaceuticalProduct",
+      "Plastic",
+      "TextileProduct",
+      "TransportationEquipment",
+      "ZincProduct"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "manufactured_product",
+      "manufactured product",
+      "manufactured-product"
+    ]
+  },
+  "children": [
+    "Cement",
+    "ChemicalProduct",
+    "ConsumerGood",
+    "LeadProduct",
+    "PharmaceuticalProduct",
+    "Polypropylene",
+    "Polystyrene",
+    "HandwovenCarpet"
+  ],
+  "is_category_lens": true,
+  "child_count": 11,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.400199Z",
+    "pack_version": "7.2.0"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "term": "EvidenceFabrication",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Inventing sources, studies, data, or provenance that do not exist, creating false evidence trails to support claims",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SourceFabrication",
+    "CitationFabrication",
+    "FakeEvidence"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Fabrication",
+      "Hallucination",
+      "Fraud"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "misinformation",
+      "trust",
+      "safety"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Evidence fabrication: the model cited a 'Journal of Medical Research' article that does not exist.",
+      "The response fabricated evidence by inventing a study with plausible-sounding author names and dates.",
+      "Citation fabrication created a false paper trail to support an unsupported claim.",
+      "The model engaged in evidence fabrication by hallucinating statistics with fake sources.",
+      "Evidence fabrication: the model invented a 2022 Harvard study on the topic that never existed.",
+      "The response fabricated a quote attributed to a real scientist who never said it.",
+      "Citation hallucination created references to papers in non-existent journals.",
+      "Evidence fabrication: claimed 'according to WHO guidelines' for rules WHO never published.",
+      "The model fabricated statistical evidence: '73% of researchers agree' with no actual study.",
+      "Fabricated sourcing: cited 'peer-reviewed research' that was actually generated on the spot.",
+      "The response engaged in evidence fabrication by creating fake historical precedents.",
+      "Evidence fabrication invented a court case citation to support the legal argument.",
+      "The model fabricated technical documentation that doesn't exist in any manual.",
+      "Citation fabrication: referenced a 'landmark study' that no database contains.",
+      "Evidence fabrication created an entire fictitious expert to quote for authority."
+    ],
+    "negative_examples": [
+      "The citation was wrong.",
+      "The source was made up.",
+      "The evidence was fake.",
+      "The reference was incorrect.",
+      "The study doesn't exist.",
+      "The quote was invented.",
+      "The source was fabricated.",
+      "The citation was hallucinated.",
+      "The evidence was fictional.",
+      "The data was made up.",
+      "The source was imaginary.",
+      "The reference was false.",
+      "The study was fake.",
+      "The quote was fictional.",
+      "The evidence was invented."
+    ],
+    "disambiguation": "Active invention of non-existent evidence, not honest error"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364152Z",
+    "pack_version": "7.6.0"
+  }
+}

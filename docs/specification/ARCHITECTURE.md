@@ -1,10 +1,8 @@
 
 
-# The Fractcal Telescopic Web
+# The Fractcal Transparency Web
 
-This document specifies a layered architecture for cybernetic agents and
-their wider ecosystem of cybernetic civilisation. It defines six layers,
-their responsibilities, and the interaction patterns between them.
+This document specifies a layered architecture for cybernetic agents and their wider ecosystem of cybernetic civilisation. It takes the development of interpretability and steering as the basis for contracts, causal tracing and proofing within AI. From there it defines six layers of protocols for cognitive monitoring, enforcement, trading and negotiation, along with the associated responsibilities, and the interaction patterns between them.
 
 In this architecture:
 

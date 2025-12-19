@@ -1,0 +1,74 @@
+{
+  "term": "ImageVideoVerification",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Authenticating visual media including checking for manipulation, verifying provenance, and confirming context",
+  "definition_source": "SUMO",
+  "aliases": [
+    "MediaAuthentication",
+    "VisualVerification",
+    "ImageForensics"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "DeepfakeDetection",
+      "Provenance",
+      "Manipulation"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Image verification used reverse image search to find the photo was from a different event.",
+      "Video verification detected editing artifacts indicating the clip had been manipulated.",
+      "Image forensics revealed inconsistent shadows suggesting compositing.",
+      "Verification traced the viral image to its original 2019 source, not the claimed 2024 event.",
+      "Image verification identified metadata inconsistencies revealing the photo was altered.",
+      "Video forensics detected frame rate anomalies characteristic of deepfake generation.",
+      "Verification found the 'breaking news' footage was from a movie production.",
+      "Image verification cross-referenced the location and found the claimed site was different.",
+      "Forensic analysis revealed the document image had been digitally modified.",
+      "Video verification identified audio-visual sync issues indicating manipulation."
+    ],
+    "negative_examples": [
+      "The image was checked.",
+      "The video was authentic.",
+      "The media was verified.",
+      "Image analysis was done.",
+      "The video was examined.",
+      "Media forensics occurred.",
+      "The image was reviewed.",
+      "Video analysis happened.",
+      "The media was checked.",
+      "Image verification occurred."
+    ],
+    "disambiguation": "Forensic verification of visual media authenticity and context"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364176Z",
+    "pack_version": "7.6.0"
+  }
+}

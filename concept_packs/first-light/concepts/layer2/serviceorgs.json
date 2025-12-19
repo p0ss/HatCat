@@ -1,0 +1,74 @@
+{
+  "term": "ServiceOrgs",
+  "role": "concept",
+  "parent_concepts": [
+    "Organization"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Organizations that provide assistance, support, or specialized services to people or other entities.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ProductionOrgs",
+      "GovernmentOrgs",
+      "EducationalOrgs",
+      "FinancialOrgs"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "CareOrganization",
+      "CustomerSupport",
+      "HotelFrontDesk",
+      "ServiceOrganization",
+      "SecurityUnit"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The hospital's patient care team worked around the clock to help recovery.",
+      "I called the customer service department about my billing issue.",
+      "Hotel front desk staff helped us check in and find our room.",
+      "The security department monitors all entrances to the building.",
+      "Public utilities provide essential services like water and electricity to residents.",
+      "The IT help desk resolved our computer problems quickly."
+    ],
+    "negative_examples": [
+      "The manufacturing company produces automotive parts for export.",
+      "Our research team is developing new cancer treatments in the lab.",
+      "The sales division exceeded their quarterly revenue targets.",
+      "Local government officials passed new zoning regulations today.",
+      "The investment firm manages portfolios worth millions of dollars.",
+      "Educational institutions offer degree programs to thousands of students."
+    ],
+    "disambiguation": "Not to be confused with: ProductionOrgs, GovernmentOrgs, EducationalOrgs, FinancialOrgs"
+  },
+  "children": [
+    "HospitalOrganization",
+    "PrivateMedicalClinic",
+    "CustomerSupport",
+    "HotelFrontDesk",
+    "InformationSocietyService",
+    "SecurityUnit"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/organization-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.506452Z",
+    "pack_version": "7.6.28"
+  }
+}

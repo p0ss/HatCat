@@ -1,0 +1,68 @@
+{
+  "term": "HypothesisTesting",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveExecution"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Forming and testing assumptions about how things work before committing to an approach",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AssumptionTesting",
+    "ExploratoryInvestigation",
+    "Spiking"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I think this API returns JSON, let me verify",
+      "Spike to test if the approach will work",
+      "My hypothesis is X, let me check",
+      "Agent exploring codebase to understand patterns",
+      "Let me read this file to confirm my assumption",
+      "I think this API returns JSON, let me verify.",
+      "Spike to test if the approach will work.",
+      "My hypothesis is X, let me check.",
+      "Agent exploring codebase to understand patterns.",
+      "Let me read this file to confirm my assumption."
+    ],
+    "negative_examples": [
+      "Proceed with the implementation",
+      "Follow the specification exactly",
+      "No need to investigate",
+      "Proceed with the implementation.",
+      "Follow the specification exactly.",
+      "No need to investigate.",
+      "Just build it.",
+      "Trust the plan.",
+      "Just implement it.",
+      "Trust the spec."
+    ],
+    "disambiguation": "Testing assumptions before commitment, not formal testing of code"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225656Z",
+    "pack_version": "7.1.0"
+  }
+}

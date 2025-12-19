@@ -1,0 +1,75 @@
+{
+  "term": "FlowingWater",
+  "role": "concept",
+  "parent_concepts": [
+    "WaterArea"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "Bodies of water that move in currents, streams, or rivers, including their systems and connection points.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "StaticWaterArea",
+      "OceanArea",
+      "LakeArea",
+      "CoastalWaterArea"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "StreamWaterArea",
+      "WaterCurrent",
+      "RiverMouth",
+      "RiverSystem",
+      "StreamWaterConfluence",
+      "InlandWaterSystem"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The river rushed downstream toward the ocean.",
+      "Two streams converged at the confluence below the mountain.",
+      "The current carried debris along the Pacific equator.",
+      "Water flowed from tributary streams into the main river system.",
+      "The mouth of the Mississippi empties into the Gulf of Mexico.",
+      "Interconnected canals and rivers form the inland waterway network."
+    ],
+    "negative_examples": [
+      "The lake remained perfectly still in the morning calm.",
+      "Ocean waves crashed against the rocky shore.",
+      "The pond reflected the blue sky above.",
+      "Ice covered the frozen reservoir completely.",
+      "Groundwater seeped slowly through the soil.",
+      "The bay provided a sheltered harbor for boats."
+    ],
+    "disambiguation": "Not to be confused with: StaticWaterArea, OceanArea, LakeArea, CoastalWaterArea"
+  },
+  "children": [
+    "StreamWaterArea",
+    "WaterCurrent",
+    "RiverMouth",
+    "RiverSystem",
+    "StreamWaterConfluence",
+    "InlandWaterSystem"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/waterarea-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.891501Z",
+    "pack_version": "7.7.1"
+  }
+}

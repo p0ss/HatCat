@@ -1,0 +1,76 @@
+{
+  "term": "MemoryDecayProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "MemoryProcesses"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A memory-related process in which the accessibility, strength, or detail of stored MentalRepresentations decreases over time, leading to partial or complete forgetting.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ForgettingProcess",
+    "TraceDecayProcess"
+  ],
+  "wordnet": {
+    "synsets": [
+      "forgetting.n.01"
+    ],
+    "canonical_synset": "forgetting.n.01",
+    "lemmas": [
+      "forgetting"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "MemoryEncoding",
+      "MemoryRetrieval",
+      "EpisodicRetrieval",
+      "SemanticRetrieval"
+    ],
+    "antonyms": [
+      "ConsolidationProcess"
+    ],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "memory",
+      "reliability"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "He can no longer recall the details of the meeting from last year.",
+      "The system\u2019s older logs are gradually downsampled, losing fine-grained information.",
+      "She remembers that something happened, but not where or when."
+    ],
+    "negative_examples": [
+      "He instantly recalls a vivid scene from childhood.",
+      "The agent\u2019s knowledge base never deletes or fades any entries.",
+      "She deliberately suppresses a thought to avoid thinking about it (motivated forgetting)."
+    ],
+    "disambiguation": "Not intentional suppression or policy-based deletion; specifically passive degradation of memory strength or accessibility over time.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "memories fading with time",
+        "forgetting details gradually"
+      ]
+    },
+    "seed_terms": [
+      "forgetting"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/memory-and-learning@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.486164Z"
+  }
+}

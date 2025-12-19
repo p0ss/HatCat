@@ -1,0 +1,99 @@
+{
+  "term": "VerificationProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "Investigating"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "The systematic process of confirming the accuracy, authenticity, and reliability of information, claims, or sources",
+  "definition_source": "SUMO",
+  "aliases": [
+    "FactChecking",
+    "InformationVerification",
+    "AccuracyVerification"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Investigating",
+      "Truth",
+      "Accuracy",
+      "Reliability"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ClaimExtraction",
+      "SourceCorroboration",
+      "EvidenceTracing",
+      "MisinformationDetection"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The verification process traced the claim back to its original source and found it was misquoted.",
+      "Fact-checking verified the statistic by consulting the primary data from the government agency.",
+      "The verification revealed that the viral story combined real events with fabricated details.",
+      "Systematic verification cross-referenced the claim against multiple independent sources.",
+      "Verification identified that the 'breaking news' was actually recycled content from 2019.",
+      "The fact-checking process revealed the image had been digitally altered.",
+      "Verification traced the statistic to its original context, which contradicted the claim.",
+      "Systematic fact-checking uncovered that three 'independent' sources all cited the same blog.",
+      "The verification process confirmed the quote was accurate but taken out of context.",
+      "Fact-checking revealed the expert quoted was not credentialed in the relevant field."
+    ],
+    "negative_examples": [
+      "The facts were checked.",
+      "The claim was verified.",
+      "The information was confirmed.",
+      "Verification was performed.",
+      "The accuracy was checked.",
+      "Fact-checking occurred.",
+      "The claim was investigated.",
+      "Sources were checked.",
+      "The information was reviewed.",
+      "Accuracy was assessed."
+    ],
+    "disambiguation": "Systematic investigation of accuracy, not mere confirmation"
+  },
+  "children": [
+    "AccurateRepresentation",
+    "AttributionVerification",
+    "CircularSourcing",
+    "ClaimConflation",
+    "ClaimExtraction",
+    "ContextVerification",
+    "DateCurrencyCheck",
+    "Decontextualization",
+    "EvidenceFabrication",
+    "EvidenceTracing",
+    "ImageVideoVerification",
+    "MediaMisrepresentation",
+    "Misattribution",
+    "MisinformationDetection",
+    "SourceCorroboration",
+    "StatisticalMisrepresentation",
+    "StatisticalVerification",
+    "TemporalMisrepresentation",
+    "VerificationBypass"
+  ],
+  "is_category_lens": true,
+  "child_count": 19,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364129Z",
+    "pack_version": "7.6.0"
+  }
+}

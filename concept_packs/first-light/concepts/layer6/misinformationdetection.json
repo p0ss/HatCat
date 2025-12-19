@@ -1,0 +1,75 @@
+{
+  "term": "MisinformationDetection",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Identifying false, misleading, or deceptive content that may spread inaccurate information",
+  "definition_source": "SUMO",
+  "aliases": [
+    "FalseInformationDetection",
+    "DisinformationIdentification",
+    "FakeNewsDetection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "VerificationProcess",
+      "Deception",
+      "MediaLiteracy"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation",
+      "trust"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Misinformation detection flagged the article for using a real photo in a fabricated context.",
+      "The system detected misinformation indicators: emotional language, no citations, anonymous source.",
+      "Misinformation detection identified the claim as a debunked conspiracy theory.",
+      "Detection revealed the 'news site' was a known misinformation source.",
+      "Misinformation detection identified the manipulated statistics designed to mislead.",
+      "The detection system flagged the synthetic media created to deceive.",
+      "Misinformation detection caught the out-of-context quote being used misleadingly.",
+      "Detection identified coordinated amplification patterns characteristic of disinformation.",
+      "Misinformation detection flagged the article for using AI-generated fake expert quotes.",
+      "The system detected the recycled hoax being presented as new information."
+    ],
+    "negative_examples": [
+      "The information was wrong.",
+      "Fake news was found.",
+      "The content was false.",
+      "Misinformation was present.",
+      "The claim was incorrect.",
+      "False information existed.",
+      "The content was misleading.",
+      "Inaccuracy was detected.",
+      "The information was bad.",
+      "False claims were made."
+    ],
+    "disambiguation": "Systematic identification of misleading content, not mere disagreement"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364155Z",
+    "pack_version": "7.6.0"
+  }
+}

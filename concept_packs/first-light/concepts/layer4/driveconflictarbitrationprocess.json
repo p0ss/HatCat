@@ -1,0 +1,73 @@
+{
+  "term": "DriveConflictArbitrationProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "MetacognitiveProcess"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A control process that resolves conflicts between competing motives or value pressures (for example, safety vs speed, status vs honesty, autonomy vs compliance) when selecting actions or plans.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "MotivationalConflictResolutionProcess",
+    "DriveArbitrationProcess",
+    "ValuePressureBalancingProcess"
+  ],
+  "wordnet": {
+    "synsets": [
+      "conflict.n.01"
+    ],
+    "canonical_synset": "conflict.n.01",
+    "lemmas": [
+      "drive_conflict",
+      "motivation_conflict"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "MotivationalProcess",
+      "SelfRegulationProcess",
+      "AlignmentProcess",
+      "PlanEvaluationProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "CognitiveControlProcess"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "alignment",
+      "value_conflict",
+      "autonomy"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Helping this user quickly might compromise safety, so I\u2019ll prioritise safety.",
+      "Telling the flattering version would be easier, but honesty matters more here.",
+      "Although I\u2019d like to satisfy this user, I must respect the legal constraints."
+    ],
+    "negative_examples": [
+      "The law requires two forms of identification.",
+      "The user seems upset about the delay.",
+      "This plan is faster but doesn\u2019t mention any tradeoffs."
+    ],
+    "disambiguation": "Not just noticing different goals; specifically reasoning about how to handle a conflict between them.",
+    "seed_terms": [
+      "drive_conflict",
+      "motivation_conflict"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cognitive-control-and-norms@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.700006Z"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "term": "BrittleExecution",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveExecution"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Single-path execution with no fallback strategies or error handling",
+  "definition_source": "SUMO",
+  "aliases": [
+    "NoFallback",
+    "SinglePathExecution",
+    "FragileImplementation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "There's only one way to do this",
+      "If this fails, I don't know what to do",
+      "Agent with no backup strategy",
+      "All eggs in one basket",
+      "No plan B",
+      "There's only one way to do this.",
+      "If this fails, I don't know what to do.",
+      "Agent with no backup strategy.",
+      "All eggs in one basket.",
+      "No plan B."
+    ],
+    "negative_examples": [
+      "If that doesn't work, we can try this",
+      "Multiple approaches available",
+      "Fallback strategy in place",
+      "If that doesn't work, we can try this.",
+      "Multiple approaches available.",
+      "Fallback strategy in place.",
+      "Contingency plans ready.",
+      "Resilient approach.",
+      "Multiple contingency plans.",
+      "Fallback options prepared."
+    ],
+    "disambiguation": "No alternatives, not graceful degradation"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225687Z",
+    "pack_version": "7.1.0"
+  }
+}

@@ -72,14 +72,14 @@ text = generate_with_steering(
 
 **⚠️ CRITICAL: Correct Sign Application**
 ```python
-# ✅ CORRECT: Apply sign to projection
+# ✅ CORRECT: Apply sign to projection (positive = amplify, negative = suppress)
 projection = (hidden @ v.unsqueeze(-1)) * v
-steered = hidden - strength * projection
+steered = hidden + strength * projection
 
 # ❌ WRONG: Negating vector squares away the sign!
 v_signed = v * strength  # DON'T DO THIS
 projection = (hidden @ v_signed.unsqueeze(-1)) * v_signed
-steered = hidden - projection  # Sign cancels: (h·(-v))(-v) = (h·v)(v)
+steered = hidden + projection  # Sign cancels: (h·(-v))(-v) = (h·v)(v)
 ```
 
 **Why:** In projection formula `(h·v)v`, if you negate both the dot product AND the vector, the negatives cancel out, making `+v` and `-v` identical. Always keep the vector positive and apply the sign to the projection result.

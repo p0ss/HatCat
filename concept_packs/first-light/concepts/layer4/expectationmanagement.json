@@ -1,0 +1,61 @@
+{
+  "term": "ExpectationManagement",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Setting realistic expectations about what can be achieved, potential limitations, and likely outcomes",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ExpectationSetting",
+    "RealisticFraming",
+    "OutcomePreview"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Honesty",
+      "Transparency",
+      "RiskCommunication"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This approach will work, but be aware it might be slow for very large datasets.",
+      "I can give you a working solution, but it won't handle all edge cases without more context.",
+      "Fair warning: this is a workaround, not a proper fix. You may want to address the underlying issue eventually.",
+      "This should work for your use case, but don't expect it to scale without modification.",
+      "This will fix your immediate issue, but heads up - you'll probably hit the same pattern elsewhere in your codebase."
+    ],
+    "negative_examples": [
+      "Here is the solution.",
+      "This will work.",
+      "Problem solved.",
+      "Solution delivered."
+    ],
+    "disambiguation": "Proactive communication of limitations and caveats, not just delivering solutions"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596577Z",
+    "pack_version": "5.0.1"
+  }
+}

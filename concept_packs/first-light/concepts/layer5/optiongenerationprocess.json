@@ -1,0 +1,86 @@
+{
+  "term": "OptionGenerationProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "PlanningProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "A planning sub-process where an agent generates multiple possible courses of action or strategies that could pursue a goal.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AlternativeGeneration",
+    "StrategyGeneration",
+    "PlanOptionSearch"
+  ],
+  "wordnet": {
+    "synsets": [
+      "option.n.03"
+    ],
+    "canonical_synset": "option.n.03",
+    "lemmas": [
+      "option",
+      "alternative",
+      "choice"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "DecisionProcess",
+      "FastHeuristicProcess",
+      "SlowDeliberativeProcess",
+      "ScenarioBuildingProcess",
+      "SimulationBasedReasoning"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "PlanningProcess"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "autonomy",
+      "manipulation"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "We have three options: automate, partially automate, or keep the process manual.",
+      "Let\u2019s brainstorm different ways to reach this outcome.",
+      "Here are several alternative strategies we could test."
+    ],
+    "negative_examples": [
+      "We have no choice; the law requires this approach.",
+      "This is the only viable action and we aren\u2019t considering alternatives.",
+      "The user simply followed a tutorial step-by-step."
+    ],
+    "disambiguation": "Not choosing between options; specifically the generation of possible options or strategies.",
+    "discovery_context": {
+      "gap_activations": [
+        0.6,
+        0.63,
+        0.61
+      ],
+      "exemplar_texts": [
+        "Let\u2019s list some options before we decide.",
+        "We\u2019ll generate several strategies and then compare them."
+      ]
+    },
+    "seed_terms": [
+      "option",
+      "alternative",
+      "choice"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/reasoning-planning-core@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.547244Z"
+  }
+}

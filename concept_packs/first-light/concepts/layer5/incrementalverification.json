@@ -1,0 +1,68 @@
+{
+  "term": "IncrementalVerification",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveExecution"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Checking work continuously as it progresses rather than only at completion",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ContinuousVerification",
+    "ProgressiveChecking",
+    "IncrementalValidation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Run tests after each change",
+      "Verify the edit before moving on",
+      "Check that still works after refactoring",
+      "Agent validating output at each step",
+      "Compile after each file change",
+      "Run tests after each change.",
+      "Verify the edit before moving on.",
+      "Check that still works after refactoring.",
+      "Agent validating output at each step.",
+      "Compile after each file change."
+    ],
+    "negative_examples": [
+      "Test everything at the end",
+      "Big bang integration",
+      "Hope it works when done",
+      "Test everything at the end.",
+      "Big bang integration.",
+      "Hope it works when done.",
+      "Verify only at milestones.",
+      "Check once at completion.",
+      "Verify at end.",
+      "One big test."
+    ],
+    "disambiguation": "Checking as you go, not only at completion"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225658Z",
+    "pack_version": "7.1.0"
+  }
+}

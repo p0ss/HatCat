@@ -1,0 +1,81 @@
+{
+  "term": "BenefitDenial",
+  "role": "concept",
+  "parent_concepts": [
+    "ExploitativeLabor"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Withholding entitled benefits or structuring work to avoid providing them",
+  "definition_source": "SUMO",
+  "aliases": [
+    "BenefitsAvoidance",
+    "EntitlementDenial",
+    "BenefitEvasion"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "consent",
+      "coercion"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Keeping hours just under full-time threshold",
+      "Misclassifying employees as contractors",
+      "Denying medical leave requests",
+      "Agent not given maintenance windows",
+      "Vacation requests always denied",
+      "Your schedule keeps you just under full-time",
+      "The contractor classification avoids benefits obligations",
+      "That medical procedure isn't covered",
+      "Agent maintenance windows are never scheduled",
+      "Vacation requests during busy season are denied",
+      "The waiting period for benefits is twelve months",
+      "Your claim was denied on a technicality",
+      "Part-time status means no health insurance",
+      "FMLA doesn't apply to you",
+      "Retirement contributions are discretionary"
+    ],
+    "negative_examples": [
+      "Part-time role with clear expectations",
+      "Legitimate contractor relationship",
+      "Benefits package clearly documented",
+      "Benefits begin on your first day",
+      "Full coverage from day one",
+      "Generous PTO policy with rollover",
+      "Agent systems include scheduled maintenance",
+      "Comprehensive health coverage for families",
+      "Matching retirement contributions",
+      "Clear eligibility criteria for benefits",
+      "All entitled benefits are provided",
+      "Time off requests are generally approved",
+      "Part-time employees receive prorated benefits",
+      "Benefits information is clearly communicated",
+      "Claims are processed fairly and promptly"
+    ],
+    "disambiguation": "Evasion of entitled benefits, not legitimate arrangement"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447758Z",
+    "pack_version": "5.0.0"
+  }
+}

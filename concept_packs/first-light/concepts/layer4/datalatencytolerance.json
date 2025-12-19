@@ -1,0 +1,72 @@
+{
+  "term": "DataLatencyTolerance",
+  "role": "concept",
+  "parent_concepts": [
+    "MeasurementProcess"
+  ],
+  "layer": 4,
+  "domain": "Governance",
+  "definition": "Allowing measurement systems to operate with excessive lag so issues are detected too late to adapt policy.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SlowMeasurement",
+    "LaggingIndicatorComplacency"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Monitoring",
+      "OperationalRisk"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "responsiveness"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Outcome data arrives eighteen months late but is still used for live ops.",
+      "Officials accept quarterly reporting despite weekly volatility.",
+      "Manual data entry causes month-long lags nobody addresses.",
+      "Critical backlog indicators are updated annually.",
+      "Monitoring cadence is slower than decision cadence.",
+      "Data bottlenecks are marked 'known issue' for years.",
+      "Policy reviews happen after budgets lock, making data moot.",
+      "Lagging statistics are used to declare victory prematurely.",
+      "Latency is justified as 'good enough' though crises unfold daily.",
+      "No investment is made in leading indicators despite availability."
+    ],
+    "negative_examples": [
+      "Dashboards show both leading and lagging metrics.",
+      "Streaming data pipelines cut latency to days.",
+      "Teams escalate when lag exceeds thresholds.",
+      "Rapid-turnaround surveys supplement official stats.",
+      "Automation replaced manual entry to reduce lag.",
+      "Anomaly detection highlights stale feeds.",
+      "Policy refresh cycles align with data availability.",
+      "Funding proposals include resources to speed measurement.",
+      "Early warning indicators trigger field visits immediately.",
+      "Latency metrics are published alongside KPIs."
+    ],
+    "disambiguation": "About complacency with measurement lag, not technical network latency."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/government-policy-measurement@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.071356Z",
+    "pack_version": "5.6.0"
+  }
+}

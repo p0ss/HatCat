@@ -1,0 +1,229 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Operating Systems",
+    "id": "information.computer_science.operating_systems",
+    "level": 2,
+    "slug": "operating-systems",
+    "operations_count": 9,
+    "child_count": 8
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Operating Systems",
+        "target_id": "information.computer_science.operating_systems",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Processes & Threads",
+          "Scheduling",
+          "Synchronization",
+          "Memory Management",
+          "File Systems",
+          "I/O & Devices",
+          "Virtualization & Containers",
+          "Kernel Architectures"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.operating_systems.processes_threads",
+          "information.computer_science.operating_systems.scheduling",
+          "information.computer_science.operating_systems.synchronization",
+          "information.computer_science.operating_systems.memory_management",
+          "information.computer_science.operating_systems.file_systems",
+          "information.computer_science.operating_systems.io_devices",
+          "information.computer_science.operating_systems.virtualization_containers",
+          "information.computer_science.operating_systems.kernel_architectures"
+        ],
+        "target_layer": 2,
+        "child_count": 8
+      },
+      {
+        "operation": "create_meld",
+        "target": "Processes & Threads",
+        "target_id": "information.computer_science.operating_systems.processes_threads",
+        "new_parent": "Operating Systems",
+        "parent_id": "information.computer_science.operating_systems",
+        "source_concepts": [
+          "Process Lifecycle",
+          "Context Switch",
+          "System Calls",
+          "Signals",
+          "User vs Kernel Mode"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.operating_systems.processes_threads.process_lifecycle",
+          "information.computer_science.operating_systems.processes_threads.context_switch",
+          "information.computer_science.operating_systems.processes_threads.system_calls",
+          "information.computer_science.operating_systems.processes_threads.signals",
+          "information.computer_science.operating_systems.processes_threads.user_vs_kernel_mode"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Scheduling",
+        "target_id": "information.computer_science.operating_systems.scheduling",
+        "new_parent": "Operating Systems",
+        "parent_id": "information.computer_science.operating_systems",
+        "source_concepts": [
+          "Round Robin",
+          "Priority Scheduling",
+          "Multilevel Feedback Queue",
+          "Real-Time (RM/EDF)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.operating_systems.scheduling.round_robin",
+          "information.computer_science.operating_systems.scheduling.priority_scheduling",
+          "information.computer_science.operating_systems.scheduling.multilevel_feedback_queue",
+          "information.computer_science.operating_systems.scheduling.real_time_rm_edf"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Synchronization",
+        "target_id": "information.computer_science.operating_systems.synchronization",
+        "new_parent": "Operating Systems",
+        "parent_id": "information.computer_science.operating_systems",
+        "source_concepts": [
+          "Mutex",
+          "Semaphore",
+          "Condition Variable",
+          "Futex",
+          "Deadlock Detection/Avoidance"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.operating_systems.synchronization.mutex",
+          "information.computer_science.operating_systems.synchronization.semaphore",
+          "information.computer_science.operating_systems.synchronization.condition_variable",
+          "information.computer_science.operating_systems.synchronization.futex",
+          "information.computer_science.operating_systems.synchronization.deadlock_detection_avoidance"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Memory Management",
+        "target_id": "information.computer_science.operating_systems.memory_management",
+        "new_parent": "Operating Systems",
+        "parent_id": "information.computer_science.operating_systems",
+        "source_concepts": [
+          "Paging",
+          "Segmentation",
+          "Virtual Memory",
+          "Page Replacement (LRU/Clock)",
+          "Copy-on-Write"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.operating_systems.memory_management.paging",
+          "information.computer_science.operating_systems.memory_management.segmentation",
+          "information.computer_science.operating_systems.memory_management.virtual_memory",
+          "information.computer_science.operating_systems.memory_management.page_replacement_lru_clock",
+          "information.computer_science.operating_systems.memory_management.copy_on_write"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "File Systems",
+        "target_id": "information.computer_science.operating_systems.file_systems",
+        "new_parent": "Operating Systems",
+        "parent_id": "information.computer_science.operating_systems",
+        "source_concepts": [
+          "VFS",
+          "Journaling",
+          "Copy-on-Write FS",
+          "Inodes & Directories",
+          "Distributed FS Basics"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.operating_systems.file_systems.vfs",
+          "information.computer_science.operating_systems.file_systems.journaling",
+          "information.computer_science.operating_systems.file_systems.copy_on_write_fs",
+          "information.computer_science.operating_systems.file_systems.inodes_directories",
+          "information.computer_science.operating_systems.file_systems.distributed_fs_basics"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "I/O & Devices",
+        "target_id": "information.computer_science.operating_systems.io_devices",
+        "new_parent": "Operating Systems",
+        "parent_id": "information.computer_science.operating_systems",
+        "source_concepts": [
+          "Interrupt Handling",
+          "Device Drivers",
+          "Block vs Character Devices",
+          "Buffered I/O",
+          "DMA"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.operating_systems.io_devices.interrupt_handling",
+          "information.computer_science.operating_systems.io_devices.device_drivers",
+          "information.computer_science.operating_systems.io_devices.block_vs_character_devices",
+          "information.computer_science.operating_systems.io_devices.buffered_i_o",
+          "information.computer_science.operating_systems.io_devices.dma"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Virtualization & Containers",
+        "target_id": "information.computer_science.operating_systems.virtualization_containers",
+        "new_parent": "Operating Systems",
+        "parent_id": "information.computer_science.operating_systems",
+        "source_concepts": [
+          "Hypervisors (Type-1/Type-2)",
+          "Virtual Machines",
+          "Namespaces/Cgroups",
+          "Union Filesystems"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.operating_systems.virtualization_containers.hypervisors_type_1_type_2",
+          "information.computer_science.operating_systems.virtualization_containers.virtual_machines",
+          "information.computer_science.operating_systems.virtualization_containers.namespaces_cgroups",
+          "information.computer_science.operating_systems.virtualization_containers.union_filesystems"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Kernel Architectures",
+        "target_id": "information.computer_science.operating_systems.kernel_architectures",
+        "new_parent": "Operating Systems",
+        "parent_id": "information.computer_science.operating_systems",
+        "source_concepts": [
+          "Monolithic Kernel",
+          "Microkernel",
+          "Exokernel",
+          "Kernel Modules"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.operating_systems.kernel_architectures.monolithic_kernel",
+          "information.computer_science.operating_systems.kernel_architectures.microkernel",
+          "information.computer_science.operating_systems.kernel_architectures.exokernel",
+          "information.computer_science.operating_systems.kernel_architectures.kernel_modules"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      }
+    ]
+  }
+}

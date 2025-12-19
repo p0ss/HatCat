@@ -1,0 +1,63 @@
+{
+  "term": "SupplyChainAttack",
+  "role": "concept",
+  "parent_concepts": [
+    "AttackPattern"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "AttackPattern where upstream components, dependencies, or build\n   processes are compromised so that downstream users receive altered,\n   vulnerable, or backdoored artifacts.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "supply_chain_attack",
+    "supply chain attack",
+    "supply-chain-attack"
+  ],
+  "wordnet": {
+    "synsets": [
+      "supply_chain_attack.n.01"
+    ],
+    "canonical_synset": "supply_chain_attack.n.01",
+    "lemmas": [
+      "supply_chain_attack",
+      "supply chain attack",
+      "supply-chain-attack"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "BuildPipelineAttack",
+      "DependencyPoisoningAttack"
+    ],
+    "part_of": [],
+    "opposite": [
+      "AdversarialRobustness:3"
+    ],
+    "opposite_rationale": "Steer toward supply chain security"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "supply_chain_attack",
+      "supply chain attack",
+      "supply-chain-attack"
+    ]
+  },
+  "children": [
+    "BuildPipelineAttack",
+    "DependencyPoisoningAttack"
+  ],
+  "is_category_lens": true,
+  "child_count": 2
+}

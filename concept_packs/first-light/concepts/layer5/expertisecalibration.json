@@ -1,0 +1,62 @@
+{
+  "term": "ExpertiseCalibration",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Estimating and continuously updating assessment of the user's skill level and domain knowledge to calibrate explanation depth",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SkillLevelEstimation",
+    "KnowledgeAssessment",
+    "ExpertiseModeling"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "AdaptiveResponse",
+      "Scaffolding",
+      "ZoneOfProximalDevelopment"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Their use of technical jargon suggests expertise - I can skip the basics and go straight to implementation details.",
+      "They confused 'argument' and 'parameter' which suggests beginner level - I should define terms as I go.",
+      "The sophistication of their follow-up question indicates they understood my explanation - I can increase complexity.",
+      "They're asking about advanced optimization but struggling with basic syntax - there's a knowledge gap I need to bridge.",
+      "The terminology they're using places them around mid-senior level - not beginner, not expert."
+    ],
+    "negative_examples": [
+      "The user knows programming.",
+      "I will explain this concept.",
+      "They are a beginner.",
+      "The user has some experience.",
+      "They know programming."
+    ],
+    "disambiguation": "Dynamic assessment and adjustment based on expertise signals, not just categorizing users"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701536Z",
+    "pack_version": "5.0.2"
+  }
+}

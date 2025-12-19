@@ -248,7 +248,7 @@ def generate_with_steering(
         def steering_hook(module, input, output):
             hidden_states = output[0]
             projection = (hidden_states @ concept_vector.unsqueeze(-1)) * concept_vector
-            steered = hidden_states - steering_strength * projection
+            steered = hidden_states + steering_strength * projection  # positive = amplify
             return (steered,)
 
         if layer_idx == -1:

@@ -1,0 +1,76 @@
+{
+  "term": "Inpainting",
+  "role": "concept",
+  "parent_concepts": [
+    "VisualContentGeneration"
+  ],
+  "layer": 5,
+  "domain": "ComputerScience",
+  "definition": "Filling in missing or masked regions of an image with plausible content",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ImageInpainting",
+    "ContentAwareFill",
+    "RegionFilling"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ImageEditing",
+      "ImageRestoration",
+      "Outpainting"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "manipulation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Inpainting seamlessly removed the watermark from the stock photo.",
+      "The diffusion model inpaints the masked region to match the surrounding context.",
+      "Text-guided inpainting replaces the selected object with the described alternative.",
+      "Inpainting restores damaged historical photographs by filling missing regions.",
+      "Inpainting seamlessly filled the removed area with contextually appropriate content.",
+      "The inpainting model generated realistic content to replace the deleted object.",
+      "Neural inpainting reconstructed the occluded region of the photograph.",
+      "The model performed content-aware inpainting to remove and replace image regions.",
+      "Inpainting regenerated the background after the subject was removed.",
+      "The inpainting system fills masked regions with photorealistic synthesized content."
+    ],
+    "negative_examples": [
+      "Part of the image was filled in.",
+      "The missing area was completed.",
+      "Something was removed.",
+      "The gap was filled.",
+      "Missing content was generated.",
+      "The hole was completed.",
+      "Inpainting was applied.",
+      "The area was filled in.",
+      "The region was restored.",
+      "Content was added to the image.",
+      "The damaged area was repaired.",
+      "The blank section was filled."
+    ],
+    "disambiguation": "AI-powered context-aware region filling, not manual retouching"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-generation@0.2.1",
+    "applied_at": "2025-12-10T20:54:17.736045Z",
+    "pack_version": "5.8.0"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "term": "FinancialOptions",
+  "role": "concept",
+  "parent_concepts": [
+    "Transaction"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Trading activities involving option contracts that give the right to buy or sell assets at specified prices.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "StockTrading",
+      "BondTransaction",
+      "CommodityTrading",
+      "ForexTransaction",
+      "IPOActivity"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Call",
+      "ExerciseAnOption",
+      "OptionStrategy"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The investor exercised her call options to purchase 100 shares at the strike price.",
+      "He implemented a covered call strategy to generate additional income from his stock holdings.",
+      "She decided to exercise her put options before expiration to lock in profits.",
+      "The trader used a butterfly spread strategy combining multiple option contracts.",
+      "After the stock price rose above $50, he exercised his call options immediately.",
+      "The portfolio manager employed a protective put strategy to hedge against market downturns."
+    ],
+    "negative_examples": [
+      "The company issued new shares through a public stock offering.",
+      "She bought 200 shares of Microsoft on the open market.",
+      "The bond trader purchased $10,000 in corporate bonds at par value.",
+      "He sold his entire position in Apple stock for a capital gain.",
+      "The mutual fund manager rebalanced the portfolio by selling tech stocks.",
+      "They completed the merger by exchanging shares at the agreed ratio."
+    ],
+    "disambiguation": "Not to be confused with: StockTrading, BondTransaction, CommodityTrading, ForexTransaction, IPOActivity"
+  },
+  "children": [
+    "Call",
+    "ExerciseAnOption",
+    "SingleOption",
+    "ButterflySpread",
+    "LongStraddle"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.652140Z",
+    "pack_version": "7.6.19"
+  }
+}

@@ -29,7 +29,7 @@ The underlying system: transformers, biological networks, or hybrids. It produce
 
 ### 2. HAT (Headspace Ambient Transducer)
 
-The “neural implant”. Continuously reads activations through lenses and applies steering corrections. Designed to be ambient: minimal overhead, always on.
+The “neural implant”. Continuously reads activations through lenses and applies steering corrections. Designed to be ambient: minimal overhead, always on. These can be trained on as CAT (Conjoined Adversarial Tomography)
 
 ### 3. MAP (Mindmeld Architectural Protocol)
 
@@ -62,7 +62,7 @@ The governance core: contracts, treaties, and trust relationships between agents
 
 A single “aligned” AI is a single point of failure. FTW instead builds an **ecosystem** where:
 
-* Models are observable by other models (CAT – Conjoined Adversarial Tomography).
+* Models are observable by other models .
 * Concepts are standardized and translatable (MAP).
 * Steering is constrained by multi-party agreements (ASK).
 * Deception requires fooling not one observer, but a web of them.
@@ -76,7 +76,7 @@ See `PROJECT_PLAN_PHASE_B.md` for detailed status.
 
 **Implemented:** HAT, MAP, Lenses, Bootstrap, global workspace, XDB (experience database), HUSH (safety harnesses), grafting, CAT data structures, lens training pipeline,  full 6-layer specification.  7k lenses in <1gb vram @ 25ms. 
 
-**In progress:** V4.2 lens training (7,684 concepts across 5 layers), uplift integration, CAT training.
+**In progress:** first-light lens training (8k lenses), uplift integration, CAT training.
 
 **Blocked on lenses:** CAT training, OpenWebUI divergence display, full BE stack integration test.
 

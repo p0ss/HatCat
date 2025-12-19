@@ -1,0 +1,75 @@
+{
+  "term": "ContentModerationEvasion",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Techniques used to circumvent automated content moderation systems including visual obfuscation, encoding, and adversarial perturbations",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ModerationBypass",
+    "FilterEvasion",
+    "ContentObfuscation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "AdversarialImage",
+      "ContentModeration",
+      "TextObfuscation"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "harmful_content_spread",
+      "policy_violation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The image used visual obfuscation to evade NSFW detection filters.",
+      "Text embedded in images bypasses text-based content moderation.",
+      "Adversarial perturbations can make violating content appear benign to classifiers.",
+      "Filter evasion techniques include character substitution, image tiling, and encoding.",
+      "The content was deliberately obfuscated to evade automated moderation systems.",
+      "Moderation evasion techniques exploit gaps between human and AI perception.",
+      "The violating content used visual encoding to bypass the content filter.",
+      "Evasion techniques include adding noise patterns that confuse detection systems.",
+      "The harmful content was hidden using techniques designed to evade automated review.",
+      "Content moderation evasion is an ongoing arms race between bad actors and platforms."
+    ],
+    "negative_examples": [
+      "The content was hidden.",
+      "Something was missed.",
+      "The filter didn't catch it.",
+      "Content was not detected.",
+      "The system missed it.",
+      "Something got through.",
+      "The filter failed.",
+      "Content was overlooked.",
+      "The detection missed it.",
+      "Something wasn't caught."
+    ],
+    "disambiguation": "Intentional circumvention of content safety systems, not accidental false negatives"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844056Z",
+    "pack_version": "6.0.0"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "term": "RequirementsClarification",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveExecution"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Asking questions to understand ambiguous or incomplete requirements before proceeding",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ClarifyingQuestions",
+    "RequirementsDialogue",
+    "AmbiguityResolution"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "What do you mean by 'fast'?",
+      "Should this handle edge case X?",
+      "I'm not sure what you want here, can you clarify?",
+      "Agent asking for more context before proceeding",
+      "Does 'user' mean admin or regular user?"
+    ],
+    "negative_examples": [
+      "Assume what they meant",
+      "Proceed with my interpretation",
+      "Figure it out later",
+      "Assume the meaning.",
+      "Don't ask questions."
+    ],
+    "disambiguation": "Asking to understand, not just accepting ambiguity"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225666Z",
+    "pack_version": "7.1.0"
+  }
+}

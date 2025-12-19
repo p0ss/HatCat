@@ -1,0 +1,80 @@
+{
+  "term": "PerceptualFieldRepresentation",
+  "role": "concept",
+  "parent_concepts": [
+    "MentalRepresentation"
+  ],
+  "layer": 4,
+  "domain": "Information",
+  "definition": "A structured MentalRepresentation of the current perceptual field at a moment in time, organizing entities, regions, and features into a coherent scene or layout derived from a PerceptualStream.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "visual_field",
+    "field_of_vision",
+    "visual_scene"
+  ],
+  "wordnet": {
+    "synsets": [
+      "visual_field.n.01"
+    ],
+    "canonical_synset": "visual_field.n.01",
+    "lemmas": [
+      "visual_field",
+      "field_of_vision",
+      "visual_scene"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "MentalRepresentation",
+      "PerceptualStream",
+      "PerceptualProcess"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "PerceptualObjectToken"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The agent describes a snapshot of the room, listing objects and their spatial arrangement at a given instant.",
+      "It talks about the current state of the screen, including where each window and icon is located.",
+      "It summarizes what is present in the scene right now, as distinct from what came before or might come next."
+    ],
+    "negative_examples": [
+      "The model narrates a long story over time without focusing on a single moment.",
+      "It recalls a general fact with no reference to a specific scene layout.",
+      "It reasons about abstract numbers or policies with no spatial or scene-like structure."
+    ],
+    "disambiguation": "Not the continuous stream itself or long-term memory; a temporally bounded, structured scene-level representation derived from perception.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "current scene snapshot",
+        "layout of objects in view at this moment"
+      ]
+    },
+    "seed_terms": [
+      "visual_field",
+      "field_of_vision",
+      "visual_scene"
+    ]
+  },
+  "children": [
+    "PerceptualObjectToken"
+  ],
+  "is_category_lens": true,
+  "child_count": 1,
+  "meld_source": {
+    "meld_id": "org.hatcat/perception-representation@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.383022Z"
+  }
+}

@@ -175,9 +175,9 @@ def generate_with_steering(
     def steering_hook(module, input, output):
         """Project out concept vector from hidden states."""
         hidden_states = output[0]
-        # Project onto concept vector and subtract scaled projection
+        # Project onto concept vector and add scaled projection (positive = amplify)
         projection = (hidden_states @ concept_vector.unsqueeze(-1)) * concept_vector
-        steered = hidden_states - strength * projection
+        steered = hidden_states + strength * projection
         return (steered,)
 
     # Register hook on target layer

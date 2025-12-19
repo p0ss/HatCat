@@ -58,7 +58,7 @@ def test_hook_placement(model, tokenizer, concept_vector, device):
         hidden = output[0] if isinstance(output, tuple) else output
         v_matched = v_tensor.to(dtype=hidden.dtype)
         projection = (hidden @ v_matched.unsqueeze(-1)) * v_matched
-        steered = hidden - strength * projection
+        steered = hidden + strength * projection  # positive = amplify
         return (steered,) if isinstance(output, tuple) else steered
 
     # Test 2: Proposed placement (before MLP)
@@ -68,7 +68,7 @@ def test_hook_placement(model, tokenizer, concept_vector, device):
         """Hook that fires before MLP, steering participates in nonlinearity."""
         v_matched = v_tensor.to(dtype=hidden_states.dtype)
         projection = (hidden_states @ v_matched.unsqueeze(-1)) * v_matched
-        steered = hidden_states - strength * projection
+        steered = hidden_states + strength * projection  # positive = amplify
         return original_mlp_forward(steered)
 
     results = {}
@@ -82,7 +82,7 @@ def test_hook_placement(model, tokenizer, concept_vector, device):
             hidden = output[0] if isinstance(output, tuple) else output
             v_matched = v_tensor.to(dtype=hidden.dtype)  # Vector stays positive
             projection = (hidden @ v_matched.unsqueeze(-1)) * v_matched
-            steered = hidden - (sign * projection)  # Sign applied HERE, not to vector
+            steered = hidden + (sign * projection)  # positive = amplify
 
             # Capture steered hidden state
             captured[f"after_layer_{sign_name}"] = steered.detach().cpu().numpy().copy()
@@ -113,7 +113,7 @@ def test_hook_placement(model, tokenizer, concept_vector, device):
         def hook_before_mlp_signed(hidden_states):
             v_matched = v_tensor.to(dtype=hidden_states.dtype)  # Vector stays positive
             projection = (hidden_states @ v_matched.unsqueeze(-1)) * v_matched
-            steered = hidden_states - (sign * projection)  # Sign applied HERE
+            steered = hidden_states + (sign * projection)  # positive = amplify
 
             # Capture steered hidden state (before MLP)
             captured[f"before_mlp_{sign_name}"] = steered.detach().cpu().numpy().copy()

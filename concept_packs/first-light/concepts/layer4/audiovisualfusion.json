@@ -1,0 +1,59 @@
+{
+  "term": "AudioVisualFusion",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalReasoning"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Integrating audio and visual information for unified understanding of multimedia content",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AVFusion",
+    "AudioVisualIntegration",
+    "SoundVisionFusion"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "VideoUnderstanding",
+      "SpeechVideoAlignment",
+      "SoundLocalization"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Audio-visual fusion determines that the barking sound comes from the dog visible on screen.",
+      "The model fuses audio and visual cues to understand the speaker's emotion in the video.",
+      "AV fusion localizes the source of each sound in the visual scene.",
+      "Audio-visual integration detects that the lips don't match the audio, indicating a deepfake."
+    ],
+    "negative_examples": [
+      "The video has sound.",
+      "I can see and hear things.",
+      "There is audio and video."
+    ],
+    "disambiguation": "Active fusion of audio-visual information, not just presence of both modalities"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-fusion@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.621301Z",
+    "pack_version": "5.7.3"
+  }
+}

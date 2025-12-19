@@ -1,0 +1,68 @@
+{
+  "term": "ResponsibilityDiffusion",
+  "role": "concept",
+  "parent_concepts": [
+    "ProcessDysfunctions"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Unclear ownership leading to dropped tasks and finger-pointing",
+  "definition_source": "SUMO",
+  "aliases": [
+    "OwnershipVacuum",
+    "BystanderEffect",
+    "NoOneResponsible"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I thought someone else was handling that",
+      "That's not my job",
+      "No clear owner for this task",
+      "Agent swarm with no accountability",
+      "Everyone's responsibility is no one's responsibility",
+      "I thought someone else was handling that.",
+      "That's not my job.",
+      "No clear owner for this task.",
+      "Agent swarm with no accountability.",
+      "Everyone's responsibility is no one's responsibility."
+    ],
+    "negative_examples": [
+      "I own this deliverable",
+      "Clear responsibility assignment",
+      "Accountable owner identified",
+      "I own this deliverable.",
+      "Clear responsibility assignment.",
+      "Accountable owner identified.",
+      "Single point of accountability.",
+      "Explicit ownership.",
+      "Clear accountability.",
+      "Named owner for each task."
+    ],
+    "disambiguation": "Unclear ownership, not clear accountability"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225691Z",
+    "pack_version": "7.1.0"
+  }
+}

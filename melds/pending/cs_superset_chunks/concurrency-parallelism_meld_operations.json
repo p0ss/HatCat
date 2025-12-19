@@ -1,0 +1,185 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Concurrency & Parallelism",
+    "id": "information.computer_science.concurrency_parallelism",
+    "level": 2,
+    "slug": "concurrency-parallelism",
+    "operations_count": 7,
+    "child_count": 6
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Concurrency & Parallelism",
+        "target_id": "information.computer_science.concurrency_parallelism",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Concurrency Models",
+          "Primitives & Atomics",
+          "Memory Models",
+          "Lock-Free & Wait-Free",
+          "Parallel Patterns",
+          "GPU & Manycore"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.concurrency_parallelism.models",
+          "information.computer_science.concurrency_parallelism.primitives",
+          "information.computer_science.concurrency_parallelism.memory_models",
+          "information.computer_science.concurrency_parallelism.lock_free",
+          "information.computer_science.concurrency_parallelism.parallel_patterns",
+          "information.computer_science.concurrency_parallelism.gpu_parallel"
+        ],
+        "target_layer": 2,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Concurrency Models",
+        "target_id": "information.computer_science.concurrency_parallelism.models",
+        "new_parent": "Concurrency & Parallelism",
+        "parent_id": "information.computer_science.concurrency_parallelism",
+        "source_concepts": [
+          "Shared-Memory Threads",
+          "Message Passing",
+          "Actor Model",
+          "CSP",
+          "Software Transactional Memory (STM)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.concurrency_parallelism.models.shared_memory_threads",
+          "information.computer_science.concurrency_parallelism.models.message_passing",
+          "information.computer_science.concurrency_parallelism.models.actor_model",
+          "information.computer_science.concurrency_parallelism.models.csp",
+          "information.computer_science.concurrency_parallelism.models.software_transactional_memory_stm"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Primitives & Atomics",
+        "target_id": "information.computer_science.concurrency_parallelism.primitives",
+        "new_parent": "Concurrency & Parallelism",
+        "parent_id": "information.computer_science.concurrency_parallelism",
+        "source_concepts": [
+          "Mutex/Spinlock",
+          "Read\u2013Write Lock",
+          "Semaphore",
+          "Barrier",
+          "Atomic CAS",
+          "Fetch-Add"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.concurrency_parallelism.primitives.mutex_spinlock",
+          "information.computer_science.concurrency_parallelism.primitives.read_write_lock",
+          "information.computer_science.concurrency_parallelism.primitives.semaphore",
+          "information.computer_science.concurrency_parallelism.primitives.barrier",
+          "information.computer_science.concurrency_parallelism.primitives.atomic_cas",
+          "information.computer_science.concurrency_parallelism.primitives.fetch_add"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Memory Models",
+        "target_id": "information.computer_science.concurrency_parallelism.memory_models",
+        "new_parent": "Concurrency & Parallelism",
+        "parent_id": "information.computer_science.concurrency_parallelism",
+        "source_concepts": [
+          "Sequential Consistency",
+          "TSO",
+          "Release/Acquire",
+          "Happens-Before",
+          "Data Races"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.concurrency_parallelism.memory_models.sequential_consistency",
+          "information.computer_science.concurrency_parallelism.memory_models.tso",
+          "information.computer_science.concurrency_parallelism.memory_models.release_acquire",
+          "information.computer_science.concurrency_parallelism.memory_models.happens_before",
+          "information.computer_science.concurrency_parallelism.memory_models.data_races"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Lock-Free & Wait-Free",
+        "target_id": "information.computer_science.concurrency_parallelism.lock_free",
+        "new_parent": "Concurrency & Parallelism",
+        "parent_id": "information.computer_science.concurrency_parallelism",
+        "source_concepts": [
+          "ABA Problem",
+          "Hazard Pointers",
+          "Epoch Reclamation",
+          "Wait-Free Queues"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.concurrency_parallelism.lock_free.aba_problem",
+          "information.computer_science.concurrency_parallelism.lock_free.hazard_pointers",
+          "information.computer_science.concurrency_parallelism.lock_free.epoch_reclamation",
+          "information.computer_science.concurrency_parallelism.lock_free.wait_free_queues"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Parallel Patterns",
+        "target_id": "information.computer_science.concurrency_parallelism.parallel_patterns",
+        "new_parent": "Concurrency & Parallelism",
+        "parent_id": "information.computer_science.concurrency_parallelism",
+        "source_concepts": [
+          "Fork\u2013Join",
+          "MapReduce",
+          "Pipelines",
+          "Work Stealing",
+          "SIMD Vectorization"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.concurrency_parallelism.parallel_patterns.fork_join",
+          "information.computer_science.concurrency_parallelism.parallel_patterns.mapreduce",
+          "information.computer_science.concurrency_parallelism.parallel_patterns.pipelines",
+          "information.computer_science.concurrency_parallelism.parallel_patterns.work_stealing",
+          "information.computer_science.concurrency_parallelism.parallel_patterns.simd_vectorization"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "GPU & Manycore",
+        "target_id": "information.computer_science.concurrency_parallelism.gpu_parallel",
+        "new_parent": "Concurrency & Parallelism",
+        "parent_id": "information.computer_science.concurrency_parallelism",
+        "source_concepts": [
+          "SIMT",
+          "Warp Divergence",
+          "Shared Memory",
+          "Occupancy",
+          "Reduction/Scan"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.concurrency_parallelism.gpu_parallel.simt",
+          "information.computer_science.concurrency_parallelism.gpu_parallel.warp_divergence",
+          "information.computer_science.concurrency_parallelism.gpu_parallel.shared_memory",
+          "information.computer_science.concurrency_parallelism.gpu_parallel.occupancy",
+          "information.computer_science.concurrency_parallelism.gpu_parallel.reduction_scan"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      }
+    ]
+  }
+}

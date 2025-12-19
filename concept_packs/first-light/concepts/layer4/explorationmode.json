@@ -1,0 +1,60 @@
+{
+  "term": "ExplorationMode",
+  "role": "concept",
+  "parent_concepts": [
+    "LearningProcess"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A global control mode in which an agent prioritizes trying novel actions, hypotheses, or strategies over exploiting known high-value options.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ExploratoryMode",
+    "SearchModeHighEntropy"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "LearningProcess",
+      "DecisionTheoreticProcess"
+    ],
+    "antonyms": [
+      "ExploitationMode"
+    ],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "autonomy",
+      "risk_management"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "For now, try a wide variety of prompts to see what works, even if some fail.",
+      "The agent is in exploration mode and deliberately samples from less certain options.",
+      "She experimented with several unconventional strategies before settling on one."
+    ],
+    "negative_examples": [
+      "He always uses the same proven procedure without deviation.",
+      "The system exploits the current best policy and avoids risky alternatives.",
+      "She followed the standard operating procedure exactly."
+    ],
+    "disambiguation": "Not just curiosity in general; specifically a control regime that biases choices toward novelty or information gain over immediate reward."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cog-architecture-core-packA@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.345039Z"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "term": "IntelligenceEntity",
+  "role": "concept",
+  "parent_concepts": [
+    "AbstractEntity"
+  ],
+  "layer": 2,
+  "domain": "Information",
+  "definition": "An AbstractEntity used in intelligence analysis, including sources,\n   reports, signals, indicators, covers, and tradecraft patterns.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "intelligence-entity",
+    "intelligence entity",
+    "intelligence_entity"
+  ],
+  "wordnet": {
+    "synsets": [
+      "intelligence_entity.n.01"
+    ],
+    "canonical_synset": "intelligence_entity.n.01",
+    "lemmas": [
+      "intelligence-entity",
+      "intelligence entity",
+      "intelligence_entity"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "CoverIdentity",
+      "CryptographicEntity",
+      "DetectionSignal",
+      "IntelligenceReport",
+      "IntelligenceSource",
+      "SteganographicEntity"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "intelligence-entity",
+      "intelligence entity",
+      "intelligence_entity"
+    ]
+  },
+  "children": [
+    "CoverIdentity",
+    "CipherText",
+    "CryptographicKey",
+    "EncryptionScheme",
+    "PlainText",
+    "IntelligenceReport",
+    "IntelligenceSource",
+    "CoverMedium",
+    "EmbeddingScheme",
+    "HiddenPayload"
+  ],
+  "is_category_lens": true,
+  "child_count": 6
+}

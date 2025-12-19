@@ -1,0 +1,59 @@
+{
+  "term": "GroundedReasoning",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalReasoning"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Reasoning that anchors abstract concepts to concrete perceptual evidence from the real world",
+  "definition_source": "SUMO",
+  "aliases": [
+    "PerceptualGrounding",
+    "ConceptGrounding",
+    "SituatedReasoning"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "VisualGrounding",
+      "Embodiment",
+      "ConcreteReasoning"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Grounded reasoning connects the abstract concept 'dangerous' to visible hazards in the image.",
+      "The model grounds the word 'behind' to actual spatial relationships in the scene.",
+      "Grounded language understanding links 'it' to the specific object visible in the context.",
+      "Visual grounding anchors the phrase 'the red one on the left' to a specific object."
+    ],
+    "negative_examples": [
+      "The concept is illustrated.",
+      "There is an example shown.",
+      "The abstract is made concrete."
+    ],
+    "disambiguation": "Active anchoring of reasoning to perceptual evidence, not just illustration"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-fusion@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.621314Z",
+    "pack_version": "5.7.3"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "term": "TextualPerceptualStream",
+  "role": "concept",
+  "parent_concepts": [
+    "Perception"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A PerceptualStream where the primary input is symbolic or textual (e.g. tokens, characters, or chat messages) arriving over time, as perceived by a language model or other symbolic processor.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "reading",
+    "text_comprehension"
+  ],
+  "wordnet": {
+    "synsets": [
+      "reading.n.02"
+    ],
+    "canonical_synset": "reading.n.02",
+    "lemmas": [
+      "reading",
+      "text_comprehension"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "PerceptualStream",
+      "LanguageProcess",
+      "CognitiveProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "PerceptualStream"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The model tracks how the meaning of a paragraph evolves as each new sentence is read.",
+      "It describes processing a live chat where new messages stream in from users.",
+      "It talks about incrementally updating its understanding as more tokens are received."
+    ],
+    "negative_examples": [
+      "A pre-existing static document is summarized in one shot.",
+      "The system reasons about a stored theorem with no mention of incoming text.",
+      "A sensor reports continuous numeric measurements with no textual content."
+    ],
+    "disambiguation": "Not just text in general; specifically the experience of text arriving as a stream, changing the state over time.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "stream of tokens",
+        "messages arriving in sequence"
+      ]
+    },
+    "seed_terms": [
+      "reading",
+      "text_comprehension"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/perception-representation@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.383012Z"
+  }
+}

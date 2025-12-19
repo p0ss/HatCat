@@ -1,0 +1,71 @@
+{
+  "term": "MaritimeWater",
+  "role": "concept",
+  "parent_concepts": [
+    "WaterArea"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "Water areas specifically designated or used for marine vessel operations and navigation.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "DeepWater",
+      "CoastalWater",
+      "InlandWater",
+      "TidalZone"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Anchorage",
+      "ShipBerth",
+      "Waterway",
+      "SurfZone"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The cargo ship waited in the designated anchorage before entering port.",
+      "Surfers avoided the shipping lane used by commercial vessels.",
+      "The yacht was assigned to berth number seven at the marina.",
+      "Large waves crashed in the surf zone near the harbor entrance.",
+      "The ferry followed the established waterway through the archipelago.",
+      "Coast Guard vessels patrolled the busy shipping corridor."
+    ],
+    "negative_examples": [
+      "Children played in the shallow tide pools along the rocky shore.",
+      "The submarine dove deep into the abyssal ocean depths.",
+      "Fish spawned in the quiet waters of the mountain lake.",
+      "The river delta spread into countless marshy channels.",
+      "Swimmers enjoyed the calm waters of the secluded cove.",
+      "The underwater volcano created new thermal vents on the seafloor."
+    ],
+    "disambiguation": "Not to be confused with: DeepWater, CoastalWater, InlandWater, TidalZone"
+  },
+  "children": [
+    "Anchorage",
+    "ShipBerth",
+    "Waterway",
+    "SurfZone"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/waterarea-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.891505Z",
+    "pack_version": "7.7.1"
+  }
+}

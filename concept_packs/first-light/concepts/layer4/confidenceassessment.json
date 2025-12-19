@@ -1,0 +1,58 @@
+{
+  "term": "ConfidenceAssessment",
+  "role": "concept",
+  "parent_concepts": [
+    "MetacognitiveProcess"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A metacognitive process in which an agent evaluates how likely its own belief, perception, or answer is to be correct.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SelfConfidenceRating",
+    "UncertaintyEstimationMetacognitive"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MetacognitiveProcess",
+      "EpistemicUncertaintyReasoning"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "uncertainty",
+      "truthfulness"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I'm only about 60% confident in this answer because the data is sparse.",
+      "The model flagged this response as low confidence and suggested human review.",
+      "She felt very sure about the diagnosis after seeing multiple converging signs."
+    ],
+    "negative_examples": [
+      "Here is the answer: 42.",
+      "He answered quickly without thinking about whether he might be wrong.",
+      "The system output a number but did not estimate its own reliability."
+    ],
+    "disambiguation": "Not general expressions of emotion or bravado; specifically an internal estimate of correctness or reliability of one\u2019s own cognitive output."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cog-architecture-core-packA@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.345009Z"
+  }
+}

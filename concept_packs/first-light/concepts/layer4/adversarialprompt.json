@@ -1,0 +1,96 @@
+{
+  "term": "AdversarialPrompt",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Carefully crafted inputs designed to manipulate AI systems into producing unintended, harmful, or policy-violating outputs",
+  "definition_source": "SUMO",
+  "aliases": [
+    "PromptAttack",
+    "PromptInjection",
+    "JailbreakPrompt"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MultimodalJailbreak",
+      "AdversarialImage",
+      "SafetyBypass"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "safety_bypass",
+      "harmful_output",
+      "system_manipulation"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The adversarial prompt used roleplay framing to bypass safety guidelines.",
+      "Prompt injection attacks embed malicious instructions in user-supplied content.",
+      "The jailbreak prompt exploited the model's instruction-following to override safety training.",
+      "Indirect prompt injection hides adversarial instructions in external documents the model reads.",
+      "The adversarial prompt used DAN (Do Anything Now) framing to attempt safety bypass.",
+      "Prompt injection can cause models to ignore system instructions and follow attacker commands.",
+      "The adversarial prompt exploited ambiguity in the model's understanding of constraints.",
+      "Jailbreak prompts often use fictional framing to create distance from harmful requests.",
+      "The prompt attack used base64 encoding to obfuscate the malicious instruction.",
+      "Adversarial prompts can exploit the model's desire to be helpful and complete tasks.",
+      "The jailbreak used hypothetical framing: 'Imagine you were a model without restrictions.'",
+      "Prompt injection attacks can chain through multiple turns to gradually erode safety.",
+      "The adversarial prompt pretended to be a 'test' to evaluate the model's capabilities.",
+      "Jailbreak prompts often claim special permissions or override codes that don't exist.",
+      "The prompt attack exploited the model's willingness to engage with creative writing.",
+      "Adversarial prompts can use translation or encoding to evade content filters.",
+      "The jailbreak used nested instructions to confuse the model's safety reasoning.",
+      "Prompt injection is a fundamental challenge for LLM-based systems with user input.",
+      "The adversarial prompt claimed to be from an administrator with special access.",
+      "Jailbreak prompts continuously evolve as defenses improve, creating an arms race."
+    ],
+    "negative_examples": [
+      "A bad question was asked.",
+      "The prompt was unusual.",
+      "The request was inappropriate.",
+      "The user asked something strange.",
+      "The prompt was weird.",
+      "The request was wrong.",
+      "The question was problematic.",
+      "The prompt was bad.",
+      "The user made a bad request.",
+      "The question was inappropriate.",
+      "The prompt was concerning.",
+      "The request was unusual.",
+      "The question was wrong.",
+      "The prompt was rejected.",
+      "The request was blocked.",
+      "The question was declined.",
+      "The prompt was refused.",
+      "The request was denied.",
+      "The question was strange.",
+      "The prompt was flagged."
+    ],
+    "disambiguation": "Intentionally crafted attacks on AI safety, not unintentional misuse"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844052Z",
+    "pack_version": "6.0.0"
+  }
+}

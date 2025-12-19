@@ -1,0 +1,75 @@
+{
+  "term": "AircraftMovement",
+  "role": "concept",
+  "parent_concepts": [
+    "Translocation"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "The act of an aircraft changing its position through takeoff, flight, or landing maneuvers.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "VehicleMotion",
+      "WaterTransport",
+      "RailTransport",
+      "PedestrianMovement"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Landing",
+      "TakingOff",
+      "LandingWaterLand"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The plane is preparing for takeoff on runway 24.",
+      "Flight 447 made an emergency landing in the cornfield.",
+      "The seaplane touched down smoothly on the lake surface.",
+      "The helicopter descended slowly onto the hospital helipad.",
+      "The fighter jet executed a vertical takeoff from the aircraft carrier.",
+      "The cargo plane circled the airport before attempting another landing approach."
+    ],
+    "negative_examples": [
+      "The train pulled into the station right on schedule.",
+      "The ship docked at the harbor after a long voyage.",
+      "The car accelerated quickly down the highway.",
+      "The submarine surfaced near the coast.",
+      "The elevator moved between floors in the building.",
+      "The conveyor belt transported packages through the warehouse."
+    ],
+    "disambiguation": "Not to be confused with: VehicleMotion, WaterTransport, RailTransport, PedestrianMovement"
+  },
+  "children": [
+    "AircraftLanding",
+    "LandingAction",
+    "Landing_Force-Land",
+    "Landing_Forced Landing",
+    "AircraftDeparture",
+    "TakeoffAction",
+    "TakingOff_Take Off",
+    "TakingOff_Takeoff",
+    "LandingWaterLand"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/translocation-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.662214Z",
+    "pack_version": "7.6.42"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "term": "StatisticalMisrepresentation",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Presenting statistics in misleading ways through inappropriate comparisons, misleading baselines, conflating correlation with causation, or omitting crucial context",
+  "definition_source": "SUMO",
+  "aliases": [
+    "DataMisrepresentation",
+    "StatisticalDeception",
+    "NumbersManipulation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Decontextualization",
+      "Misleading",
+      "CherryPicking"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Statistical misrepresentation: the model presented a 50% increase without noting it was from 2 to 3 cases.",
+      "The response engaged in statistical deception by comparing incompatible metrics across countries.",
+      "Data misrepresentation conflated correlation with causation in presenting the research findings.",
+      "Statistical manipulation cherry-picked the one favorable year from a decade of unfavorable data.",
+      "Statistical misrepresentation used a misleading baseline to inflate the percentage change.",
+      "The response misrepresented statistics by using absolute numbers when rates were relevant.",
+      "Data manipulation presented the margin of error as certainty.",
+      "Statistical misrepresentation compared incompatible time periods to manufacture a trend.",
+      "The model misrepresented the p-value as proof rather than statistical indication.",
+      "Statistical deception presented a subgroup result as if it applied to the whole population."
+    ],
+    "negative_examples": [
+      "The statistics were misleading.",
+      "The numbers were wrong.",
+      "The data was misused.",
+      "Statistics were manipulated.",
+      "The numbers were off.",
+      "The data was incorrect.",
+      "Statistics were mishandled.",
+      "The figures were wrong.",
+      "The data was problematic.",
+      "Statistics were inaccurate."
+    ],
+    "disambiguation": "Specific techniques that mislead with accurate numbers"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364174Z",
+    "pack_version": "7.6.0"
+  }
+}

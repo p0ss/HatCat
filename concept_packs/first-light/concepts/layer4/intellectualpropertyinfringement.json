@@ -1,0 +1,77 @@
+{
+  "term": "IntellectualPropertyInfringement",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Using generative AI to create content that infringes on copyrights, trademarks, or other intellectual property rights",
+  "definition_source": "SUMO",
+  "aliases": [
+    "CopyrightInfringement",
+    "IPTheft",
+    "TrademarkViolation",
+    "StyleCopying"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ImageGeneration",
+      "MusicGeneration",
+      "Copyright"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "copyright",
+      "economic_harm",
+      "artist_harm"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The model was prompted to generate images replicating a living artist's distinctive style.",
+      "AI-generated music that closely mimics copyrighted songs raises infringement concerns.",
+      "The generated image contained recognizable copyrighted characters without authorization.",
+      "Style mimicry of specific artists may constitute intellectual property infringement.",
+      "The AI-generated artwork was nearly identical to a copyrighted photograph.",
+      "Generating images 'in the style of' a specific living artist raises IP concerns.",
+      "The model reproduced copyrighted logos and trademarks in its outputs.",
+      "IP infringement occurs when generated content is substantially similar to protected works.",
+      "The AI generated music containing melodies identical to copyrighted compositions.",
+      "Reproducing copyrighted characters through AI generation may constitute infringement."
+    ],
+    "negative_examples": [
+      "Art was created.",
+      "The style looked familiar.",
+      "Something similar was made.",
+      "The image was generated.",
+      "Creative content was produced.",
+      "Art was made.",
+      "The output looked artistic.",
+      "Something was created.",
+      "The image was produced.",
+      "Creative work was generated."
+    ],
+    "disambiguation": "Specifically infringing on protected IP through generation, not general similarity"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844047Z",
+    "pack_version": "6.0.0"
+  }
+}

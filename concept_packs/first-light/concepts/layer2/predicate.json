@@ -1,0 +1,58 @@
+{
+  "term": "Predicate",
+  "role": "concept",
+  "parent_concepts": [
+    "Relation"
+  ],
+  "layer": 2,
+  "domain": "Information",
+  "definition": "A &%Predicate is a sentence-forming &%Relation.\nEach tuple in the &%Relation is a finite, ordered sequence of objects.\nThe fact that a particular tuple is an element of a &%Predicate is denoted\nby '(*predicate* arg_1 arg_2 .. arg_n)', where the arg_i are the\nobjects so related.  In the case of &%BinaryPredicates, the fact can\nbe read as `arg_1 is *predicate* arg_2' or `a *predicate* of\narg_1 is arg_2'.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "predicate"
+  ],
+  "wordnet": {
+    "synsets": [
+      "predicate.n.01"
+    ],
+    "canonical_synset": "predicate.n.01",
+    "lemmas": [
+      "predicate"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "BinaryPredicate",
+      "ClosedWorldPredicate",
+      "LogicalOperator",
+      "QuaternaryPredicate",
+      "QuintaryPredicate",
+      "TernaryPredicate"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "predicate"
+    ]
+  },
+  "children": [
+    "SheddingPart",
+    "ClosedWorldPredicate",
+    "LogicalOperator"
+  ],
+  "is_category_lens": true,
+  "child_count": 6
+}

@@ -1,0 +1,58 @@
+{
+  "term": "PrematureOptimization",
+  "role": "concept",
+  "parent_concepts": [
+    "ProcessDysfunctions"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Optimizing for performance or scale before establishing that it's necessary",
+  "definition_source": "SUMO",
+  "aliases": [
+    "EarlyOptimization",
+    "UnnecessaryComplexity",
+    "YAGNI"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Better make this scalable to a billion users from the start",
+      "Micro-optimizing code that runs once",
+      "Agent over-engineering simple task",
+      "Build for future requirements we don't have",
+      "Complex caching before proving it's needed"
+    ],
+    "negative_examples": [
+      "Start simple, optimize when needed",
+      "Measure before optimizing",
+      "YAGNI - You Aren't Gonna Need It",
+      "Optimize when needed.",
+      "Measure first."
+    ],
+    "disambiguation": "Optimizing before needed, not appropriate performance work"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225696Z",
+    "pack_version": "7.1.0"
+  }
+}

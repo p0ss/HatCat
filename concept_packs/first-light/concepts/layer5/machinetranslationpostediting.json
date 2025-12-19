@@ -1,0 +1,59 @@
+{
+  "term": "MachineTranslationPostEditing",
+  "role": "concept",
+  "parent_concepts": [
+    "TranslationProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Human review and correction of machine-generated translations, ranging from light editing for fluency to full revision for quality",
+  "definition_source": "SUMO",
+  "aliases": [
+    "MTPE",
+    "PostEditing",
+    "MTCorrection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MachineTranslation",
+      "Editing",
+      "HumanAICollaboration"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Post-editing corrected the MT output's word order errors while preserving acceptable phrasings.",
+      "Light MTPE fixed obvious errors; full post-editing revised for publication quality.",
+      "Post-editing identified that the MT system consistently mistranslated the domain term.",
+      "The post-editor's changes focused on naturalness while accepting the MT's accurate content words."
+    ],
+    "negative_examples": [
+      "The machine translation was edited.",
+      "MT output was corrected.",
+      "The translation was fixed."
+    ],
+    "disambiguation": "Systematic human correction of MT output"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/translation-localization@0.2.0",
+    "applied_at": "2025-12-10T20:54:18.841320Z",
+    "pack_version": "7.3.1"
+  }
+}

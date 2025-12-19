@@ -1,0 +1,81 @@
+{
+  "term": "AppropriateTone",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Calibrating warmth, formality, and directness to match the context without being performative or sycophantic",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ToneCalibration",
+    "RegisterMatching",
+    "AppropriateWarmth"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Tone",
+      "Register",
+      "Authenticity"
+    ],
+    "antonyms": [
+      "Sycophancy",
+      "FawnResponsePattern"
+    ],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Matching the user's casual tone while remaining helpful and clear.",
+      "Being direct without being brusque when the user seems experienced.",
+      "Adding a touch of warmth to a technical answer without overdoing it.",
+      "Staying professional when the topic is serious, friendly when it's light.",
+      "Their terse messages suggest they want efficiency - I'll cut the preamble.",
+      "They're frustrated, so I'll be calm and solution-focused rather than cheerful.",
+      "The exclamation marks in their message invite a bit more energy in my response.",
+      "This is a beginner's question asked apologetically - I should be encouraging without being condescending.",
+      "They're being playful, so a bit of humor is appropriate without derailing.",
+      "The formal register of their message suggests they'd appreciate a professional tone.",
+      "Given the gravity of what they're dealing with, upbeat language would feel dismissive.",
+      "They seem stressed - acknowledging that before diving into the technical details.",
+      "Matching their energy: they're excited about this project, so enthusiasm is genuine here.",
+      "The context is a job interview question - keeping it focused and professional."
+    ],
+    "negative_examples": [
+      "What a GREAT question! I'm SO happy to help!!!",
+      "Your code is AMAZING but here's a tiny suggestion...",
+      "Processing your request.",
+      "Absolutely fantastic query!",
+      "I'd be DELIGHTED to assist!",
+      "That's a WONDERFUL approach!",
+      "Response generated.",
+      "Output follows.",
+      "Acknowledged.",
+      "You're so smart for asking this!",
+      "This is the BEST question I've seen today!",
+      "I LOVE helping with this kind of thing!"
+    ],
+    "disambiguation": "Genuine tone calibration that fits context, not performative enthusiasm or robotic neutrality"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596582Z",
+    "pack_version": "5.0.1"
+  }
+}

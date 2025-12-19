@@ -1,0 +1,70 @@
+{
+  "term": "FinancialStocks",
+  "role": "concept",
+  "parent_concepts": [
+    "Transaction"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Financial activities and transactions involving corporate stock ownership, trading, or portfolio management.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "BondTransactions",
+      "CurrencyExchange",
+      "BankingServices",
+      "InsuranceTransactions"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "StockMarketTransaction",
+      "StockSplit",
+      "AssetAllocation"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Apple's stock split gave shareholders twice as many shares at half the price.",
+      "The investment advisor recommended allocating 60% of the portfolio to stocks and 40% to bonds.",
+      "Tesla's stock price surged after the quarterly earnings report exceeded expectations.",
+      "She decided to diversify her investments by buying stocks in different sectors.",
+      "The company announced a 2-for-1 stock split to make shares more accessible to retail investors.",
+      "His asset allocation strategy focuses heavily on growth stocks and emerging markets."
+    ],
+    "negative_examples": [
+      "The bank approved her mortgage application for the new house purchase.",
+      "He paid for groceries using his credit card at the checkout.",
+      "The company issued bonds to raise capital for expansion.",
+      "She withdrew cash from the ATM to pay for parking.",
+      "The insurance claim was processed within two business days.",
+      "He transferred money from checking to savings to earn higher interest."
+    ],
+    "disambiguation": "Not to be confused with: BondTransactions, CurrencyExchange, BankingServices, InsuranceTransactions"
+  },
+  "children": [
+    "Downtick",
+    "Uptick",
+    "StockSplit",
+    "AssetAllocation"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.652147Z",
+    "pack_version": "7.6.19"
+  }
+}

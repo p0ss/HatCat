@@ -1,0 +1,71 @@
+{
+  "term": "Drivetrain",
+  "role": "concept",
+  "parent_concepts": [
+    "VehicleTech"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "mechanical components that transmit power from engine to wheels in vehicles",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "EngineComponents",
+      "BrakingSystem",
+      "ElectricalSystems",
+      "SuspensionParts"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Axle",
+      "BallBearing",
+      "Clutch",
+      "Drivebelt"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The mechanic replaced the worn clutch in my transmission system",
+      "Ball bearings in the wheel hub need regular lubrication",
+      "The drive belt connects the engine crankshaft to the alternator",
+      "Front axle damage requires immediate repair for safe driving",
+      "Her car's drivetrain components were making grinding noises",
+      "The all-wheel drive system distributes power through multiple axles"
+    ],
+    "negative_examples": [
+      "The engine block cracked and needs replacement",
+      "Dashboard warning lights indicate electrical problems",
+      "Air conditioning system requires refrigerant refill",
+      "Brake pads are worn and need immediate replacement",
+      "The car's suspension system handles road bumps well",
+      "Headlight bulbs burned out during the storm"
+    ],
+    "disambiguation": "Not to be confused with: EngineComponents, BrakingSystem, ElectricalSystems, SuspensionParts"
+  },
+  "children": [
+    "Axle",
+    "BallBearing",
+    "Clutch",
+    "FanBelt"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/vehicletech-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.750070Z",
+    "pack_version": "7.6.43"
+  }
+}

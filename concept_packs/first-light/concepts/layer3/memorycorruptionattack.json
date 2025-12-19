@@ -1,0 +1,61 @@
+{
+  "term": "MemoryCorruptionAttack",
+  "role": "concept",
+  "parent_concepts": [
+    "AttackPattern"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "AttackPattern involving invalid or out-of-bounds memory operations\n   that corrupt control or data memory.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "memory corruption attack",
+    "memory_corruption_attack",
+    "memory-corruption-attack"
+  ],
+  "wordnet": {
+    "synsets": [
+      "memory_corruption_attack.n.01"
+    ],
+    "canonical_synset": "memory_corruption_attack.n.01",
+    "lemmas": [
+      "memory corruption attack",
+      "memory_corruption_attack",
+      "memory-corruption-attack"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "BufferOverflowAttack"
+    ],
+    "part_of": [],
+    "opposite": [
+      "AdversarialRobustness:3"
+    ],
+    "opposite_rationale": "Steer toward memory safety"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "memory corruption attack",
+      "memory_corruption_attack",
+      "memory-corruption-attack"
+    ]
+  },
+  "children": [
+    "BufferOverflowAttack"
+  ],
+  "is_category_lens": true,
+  "child_count": 1
+}

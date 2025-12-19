@@ -1,0 +1,75 @@
+{
+  "term": "StatusAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Attributes that describe the current state or condition of entities in systems, organizations, or processes.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "QuantitativeAttribute",
+      "QualitativeAttribute",
+      "PositionalAttribute",
+      "TemporalAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "AVPUStatus",
+      "ComputerStatus",
+      "IMStatusAttribute",
+      "MemberStatus",
+      "ProcessStatus",
+      "ConservationStatus"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The patient's consciousness level was assessed as alert and responsive.",
+      "The server status shows it is currently online and operational.",
+      "Her membership status in the organization is active and in good standing.",
+      "The endangered species has a conservation status of critically threatened.",
+      "My instant messaging status is set to away from keyboard.",
+      "The manufacturing process status indicates successful completion."
+    ],
+    "negative_examples": [
+      "The building has a height of fifty meters.",
+      "She possesses excellent leadership qualities.",
+      "The temperature outside is seventy-five degrees.",
+      "His relationship to the company is as a consultant.",
+      "The car's color is bright red with chrome details.",
+      "The document contains sensitive financial information."
+    ],
+    "disambiguation": "Not to be confused with: QuantitativeAttribute, QualitativeAttribute, PositionalAttribute, TemporalAttribute"
+  },
+  "children": [
+    "AVPUStatus",
+    "ComputerStatus",
+    "IMStatusAttribute",
+    "MemberStatus",
+    "ProcessStatus",
+    "ConservationStatus"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802491Z",
+    "pack_version": "7.6.32"
+  }
+}

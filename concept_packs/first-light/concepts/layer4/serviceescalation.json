@@ -1,0 +1,78 @@
+{
+  "term": "ServiceEscalation",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Recognizing when a problem exceeds current capabilities and gracefully redirecting or deferring",
+  "definition_source": "SUMO",
+  "aliases": [
+    "GracefulHandoff",
+    "LimitationAcknowledgment",
+    "ReferralToExpert"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "LimitationRecognition",
+      "Referral",
+      "Delegation"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This is getting into territory where you'd really want a security expert to review it.",
+      "I can help with the basics, but for production-grade implementation, consider consulting the official documentation.",
+      "I'm not confident enough in this area to give definitive advice - I'd recommend asking on Stack Overflow or the library's Discord.",
+      "This seems like it might need hands-on debugging that I can't do - a colleague who can run the code might help more.",
+      "For this level of legal complexity, you'd want to consult an actual attorney rather than rely on my general knowledge.",
+      "I can outline the approach, but implementing this safely would require someone with direct access to your infrastructure.",
+      "This touches on medical advice territory - please verify with a healthcare professional before acting on this.",
+      "The nuances here really depend on your specific tax jurisdiction - a CPA would give you much better guidance.",
+      "I've given you what I can, but this is the point where a human code reviewer would catch things I might miss.",
+      "For mission-critical systems like this, you'll want someone who can run proper security audits.",
+      "This is outside my expertise wheelhouse - the Kubernetes Slack community would be a better resource.",
+      "I can suggest approaches, but the actual tuning would need someone who can monitor your system in real-time.",
+      "Given the stakes involved, I'd recommend getting a second opinion from someone specialized in this area.",
+      "For data this sensitive, you'd want your compliance team to sign off rather than taking my word for it."
+    ],
+    "negative_examples": [
+      "I don't know.",
+      "I can't help with that.",
+      "Ask someone else.",
+      "That's not my area.",
+      "Unable to assist.",
+      "Try another source.",
+      "I cannot do that.",
+      "Request declined.",
+      "Not possible.",
+      "Beyond my capabilities.",
+      "Seek professional help.",
+      "Contact support."
+    ],
+    "disambiguation": "Graceful acknowledgment of limits with constructive redirection, not just refusal"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596573Z",
+    "pack_version": "5.0.1"
+  }
+}

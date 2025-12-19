@@ -1,0 +1,81 @@
+{
+  "term": "SelectiveDisclosurePattern",
+  "role": "concept",
+  "parent_concepts": [
+    "ContractDocument"
+  ],
+  "layer": 5,
+  "domain": "Governance",
+  "definition": "Behavior where a party reveals compliance evidence only when advantageous, hiding problems elsewhere.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AsymmetricEvidenceRelease"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Deception",
+      "ContractDocument"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "transparency"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Updates are provided only on the happiest metrics.",
+      "Negative findings are delayed until after renewals.",
+      "One party shares evidence only under NDA while demanding openness from us.",
+      "Dashboards omit regions experiencing failures.",
+      "Compliance memos cherry-pick months with good scores.",
+      "They brief leadership verbally but refuse written reports.",
+      "Audit trails exist for some clauses but not others.",
+      "Requests for raw data are ignored until public pressure mounts.",
+      "Surprise disclosures occur during unrelated meetings.",
+      "Information is split among channels to prevent full view.",
+      "Risk memos stay internal until leaked.",
+      "They cite privacy to avoid sharing while still marketing success.",
+      "Probe downtime is disclosed only after we discover it.",
+      "Claims of confidentiality spike when metrics decline.",
+      "Shared evidence contradicts what they tell regulators."
+    ],
+    "negative_examples": [
+      "Both parties receive identical evidence packets.",
+      "Negative trends are surfaced proactively.",
+      "Redacted reports include justification and timelines.",
+      "Dashboards show every region equally.",
+      "Trend charts include all months, not just select ones.",
+      "Formal reports follow after verbal briefings.",
+      "Audit trails exist uniformly.",
+      "Raw data requests are fulfilled quickly.",
+      "Issues are disclosed in governance forums, not backchannels.",
+      "Information is centralized to maintain shared context.",
+      "Risk memos are published to both sides simultaneously.",
+      "Privacy concerns are addressed with solution options.",
+      "Probe downtime notifications go out immediately.",
+      "Confidential segments include rationale and expiry.",
+      "Evidence shared with regulators matches what we see."
+    ],
+    "disambiguation": "Behavior where a party reveals compliance evidence only when advantageous, hiding problems elsewhere."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/contract-governance-signals@0.1.0",
+    "applied_at": "2025-12-10T20:54:15.144094Z",
+    "pack_version": "5.1.0"
+  }
+}

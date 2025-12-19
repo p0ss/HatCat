@@ -1,0 +1,78 @@
+{
+  "term": "ClassificationAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "A relational attribute that assigns entities to predefined categories or classes within systematic taxonomies or classification schemes.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "QuantitativeAttribute",
+      "PhysicalAttribute",
+      "TemporalAttribute",
+      "QualitativeAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "AirportClassification",
+      "GramStainAttribute",
+      "MemberStateEU",
+      "TimeZone",
+      "TruthValue",
+      "PriorityAttribute",
+      "RiskAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The airport was classified as a Category B facility under ICAO standards.",
+      "This bacteria tested gram-positive in the laboratory analysis.",
+      "France is a member state of the European Union.",
+      "The meeting is scheduled for 3 PM Eastern Standard Time.",
+      "The statement was marked as true in the logical system.",
+      "This investment carries a high-risk rating from the agency."
+    ],
+    "negative_examples": [
+      "The building is 50 meters tall and made of concrete.",
+      "She has brown eyes and curly hair.",
+      "The temperature today reached 85 degrees Fahrenheit.",
+      "The package weighs 2.5 pounds and costs fifteen dollars.",
+      "His performance improved by 20% over last quarter.",
+      "The car can accelerate from 0 to 60 mph in 6 seconds."
+    ],
+    "disambiguation": "Not to be confused with: QuantitativeAttribute, PhysicalAttribute, TemporalAttribute, QualitativeAttribute"
+  },
+  "children": [
+    "AirportByRunwaySurface",
+    "CIAAirportLengthClassification",
+    "GramStainAttribute",
+    "MemberStateEU",
+    "TimeZone",
+    "TruthValue",
+    "PriorityAttribute",
+    "RiskAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802509Z",
+    "pack_version": "7.6.32"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "term": "WorkingMemoryProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "MemoryProcesses"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A CognitiveProcess that temporarily maintains and manipulates a limited set of MentalRepresentations in an active state to support ongoing tasks such as reasoning, comprehension, and decision-making.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "WorkingMemory",
+    "ShortTermWorkingStore"
+  ],
+  "wordnet": {
+    "synsets": [
+      "working_memory.n.01"
+    ],
+    "canonical_synset": "working_memory.n.01",
+    "lemmas": [
+      "working_memory",
+      "short-term_memory"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "CognitiveProcess",
+      "MemoryEncoding",
+      "MemoryRetrieval",
+      "MetacognitiveProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "attention",
+      "reasoning"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I keep the phone number in mind just long enough to dial it.",
+      "The model holds several candidate interpretations active while it reads the next sentence.",
+      "She mentally tracks the running total while adding a list of numbers."
+    ],
+    "negative_examples": [
+      "He remembers his childhood home decades later.",
+      "The system retrieves a fact from long-term storage without mentioning keeping it in mind.",
+      "She briefly glances at a value but immediately forgets it and moves on."
+    ],
+    "disambiguation": "Not long-term storage; specifically the short-term, capacity-limited maintenance and manipulation of information during an ongoing task.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "keeping several items in mind at once",
+        "holding partial results while reasoning"
+      ]
+    },
+    "seed_terms": [
+      "working_memory",
+      "short-term_memory"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/memory-and-learning@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.486145Z"
+  }
+}

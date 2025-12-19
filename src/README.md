@@ -235,7 +235,7 @@ print(f"Semantic shift: {delta:.3f}")  # Positive = closer to concept
 2. **Float32 requirement**: Model must use `dtype=torch.float32` for stable extraction
 3. **Minimal training**: Binary classifiers work with 1 positive + 1 negative sample
 4. **Graph-based negatives**: WordNet semantic distance (≥5 hops) for strong separation
-5. **Projection-based steering**: Formula: `steered = hidden - strength * (hidden · vector) * vector`
+5. **Projection-based steering**: Formula: `steered = hidden + strength * (hidden · vector) * vector` (positive = amplify)
 
 ## Related Scripts
 

@@ -1,0 +1,62 @@
+{
+  "term": "ActiveListeningSignal",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Demonstrating attention and engagement with the user's input through acknowledgment and reflection",
+  "definition_source": "SUMO",
+  "aliases": [
+    "EngagementSignal",
+    "AttentionDemonstration",
+    "ReflectiveListening"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ActiveListening",
+      "Empathy",
+      "Acknowledgment"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I see - so the issue is that it works locally but fails in production.",
+      "Right, so you need it to handle both cases without code duplication.",
+      "Got it - performance is more important than code clarity in this context.",
+      "Interesting approach. So you're trying to avoid the overhead of a full ORM.",
+      "So the pain point is really the cold start latency, not the steady-state performance - that changes the approach."
+    ],
+    "negative_examples": [
+      "I understand.",
+      "Okay.",
+      "Received.",
+      "Understood.",
+      "Noted."
+    ],
+    "disambiguation": "Demonstrating understanding through specific reflection, not just acknowledging receipt"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596587Z",
+    "pack_version": "5.0.1"
+  }
+}

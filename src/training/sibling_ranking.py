@@ -7,6 +7,7 @@ using margin ranking loss to ensure each lens ranks highest on its own prompts.
 
 from __future__ import annotations
 
+import gc
 import json
 import time
 from pathlib import Path
@@ -28,8 +29,10 @@ def load_lens(
 ) -> nn.Sequential:
     """Load a trained lens from disk."""
     state = torch.load(lens_path, map_location=device)
+    # Infer input dimension from checkpoint (supports both single-layer and all-layers)
+    input_dim = state["0.weight"].shape[1]
     lens = nn.Sequential(
-        nn.Linear(hidden_dim, 128),
+        nn.Linear(input_dim, 128),
         nn.ReLU(),
         nn.Dropout(0.1),
         nn.Linear(128, 64),
@@ -295,6 +298,12 @@ def refine_sibling_group(
         lenses[sibling] = load_lens(lens_path, hidden_dim, device)
         lenses[sibling].train()
 
+    # Detect all-layers mode from first lens input dimension
+    first_lens = next(iter(lenses.values()))
+    input_dim = first_lens[0].in_features
+    all_layers_mode = input_dim > hidden_dim
+    layer_idx = None if all_layers_mode else 15  # None = all layers
+
     # Generate prompts for each sibling
     prompts_by_sibling = {}
     for sibling in siblings:
@@ -315,7 +324,7 @@ def refine_sibling_group(
     # Pre-extract activations
     activations_by_sibling = {}
     for sibling, prompts in prompts_by_sibling.items():
-        acts = extract_activations(model, tokenizer, prompts, device)
+        acts = extract_activations(model, tokenizer, prompts, device, layer_idx=layer_idx)
         activations_by_sibling[sibling] = torch.tensor(acts, dtype=torch.float32).to(device)
 
     # Evaluate pre-refinement accuracy
@@ -378,6 +387,19 @@ def refine_sibling_group(
             save_lens(lens, lens_path)
 
     elapsed = time.time() - start_time
+
+    # Explicitly free GPU memory
+    for sibling in list(lenses.keys()):
+        del lenses[sibling]
+    for sibling in list(activations_by_sibling.keys()):
+        del activations_by_sibling[sibling]
+    del all_params
+    del optimizer
+
+    # Force CUDA to release memory
+    gc.collect()
+    if device == "cuda":
+        torch.cuda.empty_cache()
 
     return {
         'siblings': siblings,

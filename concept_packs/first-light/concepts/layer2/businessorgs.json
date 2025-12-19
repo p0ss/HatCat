@@ -1,0 +1,72 @@
+{
+  "term": "BusinessOrgs",
+  "role": "concept",
+  "parent_concepts": [
+    "Organization"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Organizations established primarily for commercial, financial, or economic activities and profit generation.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "GovernmentOrganization",
+      "NonProfitOrganization",
+      "EducationalInstitution",
+      "MilitaryOrganization",
+      "ReligiousOrganization"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Business",
+      "Corporation",
+      "PrivateOrganization",
+      "StockMarket"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Apple Inc. reported record quarterly earnings last week.",
+      "The startup is seeking Series A funding from venture capitalists.",
+      "Microsoft announced a merger with the software company.",
+      "The corporation's stock price jumped after the earnings call.",
+      "Small businesses struggled during the economic downturn.",
+      "The investment firm manages billions in assets."
+    ],
+    "negative_examples": [
+      "The Red Cross provided disaster relief to flood victims.",
+      "Students protested outside the university administration building.",
+      "The military deployed troops to the border region.",
+      "Doctors Without Borders treated patients in refugee camps.",
+      "The city council voted on the new housing ordinance.",
+      "NASA launched another space exploration mission."
+    ],
+    "disambiguation": "Not to be confused with: GovernmentOrganization, NonProfitOrganization, EducationalInstitution, MilitaryOrganization, ReligiousOrganization"
+  },
+  "children": [
+    "Business",
+    "Corporation",
+    "PrivateOrganization",
+    "StockMarket"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/organization-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.506439Z",
+    "pack_version": "7.6.28"
+  }
+}

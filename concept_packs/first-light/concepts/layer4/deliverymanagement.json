@@ -1,0 +1,74 @@
+{
+  "term": "DeliveryManagement",
+  "role": "concept",
+  "parent_concepts": [
+    "ProjectDevelopment"
+  ],
+  "layer": 4,
+  "domain": "Information",
+  "definition": "Practices for planning, tracking, and executing work delivery",
+  "definition_source": "SUMO",
+  "aliases": [
+    "DeliveryProcess",
+    "WorkManagement",
+    "ExecutionManagement"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Execution",
+      "Planning",
+      "Tracking"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "VelocityTracking",
+      "CadenceManagement",
+      "ReleaseManagement",
+      "WorkPrioritization"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Sprint planning for next iteration",
+      "Release scheduled for Friday",
+      "Velocity trending upward",
+      "Agent task queue management",
+      "Release planning coordinates delivery activities."
+    ],
+    "negative_examples": [
+      "Writing code",
+      "Reviewing pull requests",
+      "Debugging issues",
+      "Just code and ship.",
+      "No planning needed."
+    ],
+    "disambiguation": "Managing delivery, not doing the work itself"
+  },
+  "children": [
+    "CadenceManagement",
+    "ReleaseManagement",
+    "TimeboxedIteration",
+    "VelocityTracking",
+    "WorkPrioritization"
+  ],
+  "is_category_lens": true,
+  "child_count": 5,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225592Z",
+    "pack_version": "7.1.0"
+  }
+}

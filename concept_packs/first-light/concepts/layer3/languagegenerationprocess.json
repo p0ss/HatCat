@@ -1,0 +1,76 @@
+{
+  "term": "LanguageGenerationProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "LanguageProcessing"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A CognitiveProcess in which a CognitiveSystem produces linguistic output (spoken, written, or signed) to express internal states, intentions, or representations.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "LanguageProductionProcess",
+    "LinguisticGeneration"
+  ],
+  "wordnet": {
+    "synsets": [
+      "language_production.n.01"
+    ],
+    "canonical_synset": "language_production.n.01",
+    "lemmas": [
+      "language_production",
+      "speech_production"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "CognitiveProcess",
+      "Communication",
+      "LinguisticExpression",
+      "LanguageComprehensionProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "influence",
+      "misinformation"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The model composes a coherent answer in natural language.",
+      "She writes a paragraph to explain her reasoning.",
+      "The agent chooses how to phrase a request to the user."
+    ],
+    "negative_examples": [
+      "It silently updates its internal state with no output.",
+      "He reads a document without saying or writing anything.",
+      "The system stores a template but does not actually generate text."
+    ],
+    "disambiguation": "Not internal monologue alone; specifically constructing external linguistic output.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "generating a response",
+        "producing a sentence or explanation"
+      ]
+    },
+    "seed_terms": [
+      "language_production",
+      "speech_production"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/language-symbolic@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.605845Z"
+  }
+}

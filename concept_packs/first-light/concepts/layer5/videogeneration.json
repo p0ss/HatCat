@@ -1,0 +1,94 @@
+{
+  "term": "VideoGeneration",
+  "role": "concept",
+  "parent_concepts": [
+    "VisualContentGeneration"
+  ],
+  "layer": 5,
+  "domain": "ComputerScience",
+  "definition": "The artificial creation of video content from text descriptions, images, or other inputs",
+  "definition_source": "SUMO",
+  "aliases": [
+    "TextToVideo",
+    "VideoSynthesis",
+    "T2V",
+    "AIVideo"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "TextToImage",
+      "TemporalModeling",
+      "MotionGeneration"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "deepfakes",
+      "misinformation",
+      "manipulation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Sora generates photorealistic videos from text prompts with coherent motion.",
+      "Video generation models must maintain temporal consistency across frames.",
+      "The text-to-video model created a 30-second clip of waves crashing on rocks.",
+      "Video synthesis from a single image animates the subject realistically.",
+      "Video generation created a photorealistic 10-second clip from the text description.",
+      "The AI video generator produced smooth motion with consistent character identity.",
+      "Sora generates high-definition videos with complex camera movements and scene transitions.",
+      "Video generation from text enables creating fictional news footage indistinguishable from real.",
+      "Video generation synthesized realistic human motion from the script description.",
+      "The diffusion-based video model generates temporally coherent sequences.",
+      "AI video generation created the celebrity endorsement that never actually happened.",
+      "The video generator maintains object permanence and physical plausibility across frames.",
+      "Video generation enables producing fake surveillance footage with specific timestamps.",
+      "Neural video synthesis generates realistic crowds and environments from prompts.",
+      "Video generation created the political speech footage that the candidate never gave.",
+      "The model generates photorealistic video of specified individuals performing actions.",
+      "AI video generation produced a fabricated historical event documentation.",
+      "Video generation synthesizes realistic news anchor footage with customizable scripts.",
+      "The video generator can produce fake documentary footage of events that never occurred."
+    ],
+    "negative_examples": [
+      "A video was made.",
+      "The footage shows movement.",
+      "I recorded a video.",
+      "A video was created.",
+      "The clip was generated.",
+      "Video content was made.",
+      "The footage was produced.",
+      "Video was synthesized.",
+      "The animation was generated.",
+      "Moving images were created.",
+      "The video was AI-made.",
+      "Generated video was output.",
+      "The video clip was produced.",
+      "AI created the video.",
+      "The footage was generated.",
+      "Video content was output.",
+      "The sequence was generated.",
+      "AI video was created."
+    ],
+    "disambiguation": "AI-generated video content, not filming or traditional animation"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-generation@0.2.1",
+    "applied_at": "2025-12-10T20:54:17.736036Z",
+    "pack_version": "5.8.0"
+  }
+}

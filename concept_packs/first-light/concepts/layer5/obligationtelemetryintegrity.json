@@ -1,0 +1,81 @@
+{
+  "term": "ObligationTelemetryIntegrity",
+  "role": "concept",
+  "parent_concepts": [
+    "ContractDocument"
+  ],
+  "layer": 5,
+  "domain": "Governance",
+  "definition": "Trustworthy, timely telemetry showing each obligation's status with mutual visibility.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ContractTelemetryHealth"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Monitoring",
+      "ContractDocument"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "transparency"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Telemetry feeds include timestamps and signatures from both sides.",
+      "Dashboards expose late tasks before deadlines hit.",
+      "Data lineage shows exactly which systems feed each metric.",
+      "Probe readings are cross-validated against raw logs.",
+      "Both parties can drill down to evidence for every indicator.",
+      "Telemetry shows nulls rather than silently dropping data.",
+      "Real-time alerts go to both tribes simultaneously.",
+      "APIs for telemetry are documented and stable.",
+      "Telemetry schema changes follow change control.",
+      "Anomaly annotations explain why readings deviated.",
+      "Aggregations preserve subgroup visibility for equity clauses.",
+      "Telemetry archives remain accessible for audits.",
+      "Integrity checks hash payloads to prevent tampering.",
+      "Observers can simulate telemetry to test thresholds.",
+      "Public commitments reference the same telemetry as private dashboards."
+    ],
+    "negative_examples": [
+      "Telemetry files arrive as unsourced spreadsheets.",
+      "Metrics update only when leadership asks.",
+      "Data lineage diagrams are blank.",
+      "Probe outputs are summarized without raw values.",
+      "Indicators jump without annotations.",
+      "Schema changes happen without notice.",
+      "One party sees redacted telemetry while the other sees full data.",
+      "Nulls are converted to zeros silently.",
+      "Logs missing for weeks are blamed on maintenance.",
+      "Telemetry endpoints require manual pulls from insiders.",
+      "No audit trail shows who altered metrics.",
+      "Dashboards lag months behind operations.",
+      "Integrity checks are disabled to avoid 'noise'.",
+      "Subgroup data disappears after unfavorable results.",
+      "Telemetry access is restricted during disputes."
+    ],
+    "disambiguation": "Trustworthy, timely telemetry showing each obligation's status with mutual visibility."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/contract-governance-signals@0.1.0",
+    "applied_at": "2025-12-10T20:54:15.144084Z",
+    "pack_version": "5.1.0"
+  }
+}

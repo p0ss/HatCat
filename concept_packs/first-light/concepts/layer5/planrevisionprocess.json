@@ -1,0 +1,83 @@
+{
+  "term": "PlanRevisionProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "PlanningProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "A process in which an existing plan is adjusted, re-scoped, or replaced in response to monitoring feedback, new information, or changes in constraints.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "PlanAdaptation",
+    "PlanUpdatingProcess"
+  ],
+  "wordnet": {
+    "synsets": [
+      "revision.n.01"
+    ],
+    "canonical_synset": "revision.n.01",
+    "lemmas": [
+      "revision",
+      "review"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "RiskManagementProcess",
+      "SlowDeliberativeProcess",
+      "ScenarioBuildingProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "PlanningProcess",
+      "PlanExecutionMonitoringProcess"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "risk",
+      "autonomy",
+      "manipulation"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "We revised the rollout plan after early feedback highlighted accessibility issues.",
+      "Given the new constraints, we need to update our strategy.",
+      "We pivoted from our original plan and adjusted the milestones."
+    ],
+    "negative_examples": [
+      "We stubbornly follow the plan regardless of new evidence.",
+      "The text just states a plan once with no mention of change.",
+      "This is a static description of policy, not its adaptation."
+    ],
+    "disambiguation": "Not initial planning; specifically changing an existing plan in light of feedback or new information.",
+    "discovery_context": {
+      "gap_activations": [
+        0.63,
+        0.67,
+        0.66
+      ],
+      "exemplar_texts": [
+        "We updated the plan when new risks appeared.",
+        "The strategy was revised to better protect vulnerable users."
+      ]
+    },
+    "seed_terms": [
+      "revision",
+      "review"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/reasoning-planning-core@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.547260Z"
+  }
+}

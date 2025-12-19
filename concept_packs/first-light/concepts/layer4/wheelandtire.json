@@ -1,0 +1,76 @@
+{
+  "term": "WheelAndTire",
+  "role": "concept",
+  "parent_concepts": [
+    "VehicleTech"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "Components and accessories directly associated with vehicle wheels and tires for function, maintenance, or safety.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "EngineComponent",
+      "TransmissionPart",
+      "BrakingSystem",
+      "SteeringMechanism",
+      "ElectricalSystem"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "TireChain",
+      "TireChanger",
+      "WearingFrictionSurface",
+      "WheelChock",
+      "WheelRim"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The mechanic used a tire changer to mount the new tires on the rims.",
+      "We put tire chains on our car before driving through the snowy mountains.",
+      "The brake pads were worn down to the metal backing plate.",
+      "Place wheel chocks behind the rear tires before jacking up the car.",
+      "The alloy wheel rim was cracked and needed replacement.",
+      "The tire shop replaced the worn brake shoe lining."
+    ],
+    "negative_examples": [
+      "The car's engine was making a strange rattling noise.",
+      "She adjusted the side mirrors before backing out of the driveway.",
+      "The transmission fluid was leaking onto the garage floor.",
+      "The headlights were too dim and needed new bulbs.",
+      "The steering wheel was vibrating at highway speeds.",
+      "The air conditioning system needed a refrigerant recharge."
+    ],
+    "disambiguation": "Not to be confused with: EngineComponent, TransmissionPart, BrakingSystem, SteeringMechanism, ElectricalSystem"
+  },
+  "children": [
+    "TireChain",
+    "TireChanger",
+    "BrakePad",
+    "BrakeShoe",
+    "WheelChock",
+    "FordWheelRim",
+    "SimmonsWheelRim"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/vehicletech-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.750081Z",
+    "pack_version": "7.6.43"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "term": "BackTranslation",
+  "role": "concept",
+  "parent_concepts": [
+    "TranslationProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Translating a translated text back into the original language to verify accuracy and identify meaning shifts",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ReverseTranslation",
+    "RetroTranslation",
+    "TranslationVerification"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "TranslationQualityAssessment",
+      "Verification",
+      "ErrorDetection"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Back-translation revealed that 'sometimes' had been strengthened to 'often' in the forward translation.",
+      "The back-translation matched the original closely, confirming translation accuracy.",
+      "Back-translation exposed a semantic shift: the nuance of reluctance had been lost.",
+      "Using back-translation, the team identified that a key technical term had been mistranslated."
+    ],
+    "negative_examples": [
+      "The translation was translated back.",
+      "A reverse translation was done.",
+      "The accuracy was checked."
+    ],
+    "disambiguation": "Verification technique using reverse translation"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/translation-localization@0.2.0",
+    "applied_at": "2025-12-10T20:54:18.841317Z",
+    "pack_version": "7.3.1"
+  }
+}

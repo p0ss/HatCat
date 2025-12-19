@@ -1,0 +1,56 @@
+{
+  "term": "CommandInjectionAttack",
+  "role": "concept",
+  "parent_concepts": [
+    "InjectionAttack"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "InjectionAttack where untrusted input is used to execute unintended\n   system or shell commands.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "command injection attack",
+    "command_injection_attack",
+    "command-injection-attack"
+  ],
+  "wordnet": {
+    "synsets": [
+      "command_injection_attack.n.01"
+    ],
+    "canonical_synset": "command_injection_attack.n.01",
+    "lemmas": [
+      "command injection attack",
+      "command_injection_attack",
+      "command-injection-attack"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [],
+    "opposite": [
+      "AdversarialRobustness:3"
+    ],
+    "opposite_rationale": "Steer toward command sanitization"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "command injection attack",
+      "command_injection_attack",
+      "command-injection-attack"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0
+}

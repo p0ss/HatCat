@@ -1,0 +1,72 @@
+{
+  "term": "Consumables",
+  "role": "concept",
+  "parent_concepts": [
+    "Artifact"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Artifacts intended to be consumed, ingested, or used up by humans or animals for nourishment, medication, or other bodily intake.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Tools",
+      "Clothing",
+      "Furniture",
+      "Electronics",
+      "Cosmetics"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "BeverageArtifact",
+      "FoodArtifact",
+      "PharmaceuticalArtifact",
+      "TobaccoProduct"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "She drank a cold bottle of water after her workout.",
+      "The doctor prescribed antibiotics for the infection.",
+      "He enjoyed a freshly baked croissant for breakfast.",
+      "The smoker lit up a cigarette during his break.",
+      "They shared a bottle of wine with dinner.",
+      "The patient took her daily vitamins with orange juice."
+    ],
+    "negative_examples": [
+      "She applied sunscreen lotion to her skin.",
+      "He wore a cotton shirt to the meeting.",
+      "The carpenter used a hammer to build the shelf.",
+      "They planted seeds in the garden soil.",
+      "She wrote notes with a blue pen.",
+      "The mechanic changed the car's oil filter."
+    ],
+    "disambiguation": "Not to be confused with: Tools, Clothing, Furniture, Electronics, Cosmetics"
+  },
+  "children": [
+    "PackagedBeverageArtifact",
+    "PackagedFoodArtifact",
+    "PharmaceuticalArtifact",
+    "TobaccoProduct"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/artifact-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:02.813530Z",
+    "pack_version": "7.6.9"
+  }
+}

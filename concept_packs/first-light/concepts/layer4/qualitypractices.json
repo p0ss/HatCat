@@ -1,0 +1,73 @@
+{
+  "term": "QualityPractices",
+  "role": "concept",
+  "parent_concepts": [
+    "ProjectDevelopment"
+  ],
+  "layer": 4,
+  "domain": "Information",
+  "definition": "Practices ensuring work meets quality standards and stakeholder needs",
+  "definition_source": "SUMO",
+  "aliases": [
+    "QualityAssurance",
+    "QualityEngineering",
+    "QualityManagement"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Quality",
+      "Testing",
+      "Standards"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ContinuousIntegration",
+      "TestingPractice",
+      "CodeReview",
+      "TechnicalDebtManagement"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "All tests must pass before merge",
+      "Code review required for all changes",
+      "Quality gate blocks deployment",
+      "Agent output validated against criteria",
+      "Quality gates ensure standards are met."
+    ],
+    "negative_examples": [
+      "Writing code",
+      "Designing features",
+      "Planning sprints",
+      "Just ship it.",
+      "Quality is secondary."
+    ],
+    "disambiguation": "Quality assurance, not feature development"
+  },
+  "children": [
+    "ContinuousIntegration",
+    "DefinitionOfDone",
+    "TechnicalDebtManagement",
+    "TestingPractice"
+  ],
+  "is_category_lens": true,
+  "child_count": 4,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225607Z",
+    "pack_version": "7.1.0"
+  }
+}

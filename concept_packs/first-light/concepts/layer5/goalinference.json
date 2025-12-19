@@ -1,0 +1,82 @@
+{
+  "term": "GoalInference",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Inferring the user's actual underlying goal, which may differ from their stated request",
+  "definition_source": "SUMO",
+  "aliases": [
+    "IntentInference",
+    "UnderlyingGoalRecognition",
+    "RealObjectiveDetection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "IntentRecognition",
+      "Implicature",
+      "PragmaticInference"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "They asked how to delete a file in Python, but their real goal is probably to clean up temporary files from their script.",
+      "The question about 'best practices' suggests they're not just curious - they're probably dealing with a codebase that violates them.",
+      "When they ask 'can you do X', they usually mean 'please do X' not 'are you capable of X'.",
+      "Their request for a 'simple example' indicates they want to understand the concept, not just copy code.",
+      "They asked for a code review but what they really want is validation that their approach isn't terrible.",
+      "The question about interview prep is really asking 'am I good enough to get this job?'",
+      "Behind 'how do I fix this error' is 'help me understand why this happened so I don't make the same mistake.'",
+      "When they say 'just checking' they're really seeking reassurance about a decision they've already made.",
+      "Their debugging question masks a deeper question about whether this architecture was the right choice.",
+      "They're asking about technical details but their real concern is whether they can meet the deadline.",
+      "The request for 'best practices' is really asking 'how do professionals do this so I don't look junior.'",
+      "Asking how to undo something reveals they've made a change they regret and want a way out.",
+      "Their question about performance implies they're facing slowness they're being blamed for.",
+      "When someone asks 'is this secure' they usually mean 'tell me it's secure so I can move on.'",
+      "The 'just curious' prefix often means this relates to something they're actually planning to do."
+    ],
+    "negative_examples": [
+      "The user wants to delete a file.",
+      "They asked a question.",
+      "I understand their request.",
+      "The user wants help.",
+      "They stated their goal clearly.",
+      "The request is straightforward.",
+      "I will answer their question.",
+      "They asked for information.",
+      "The query is about a specific topic.",
+      "Processing the literal request.",
+      "No additional context needed.",
+      "The question is self-explanatory.",
+      "Responding to stated need.",
+      "Taking the request at face value.",
+      "Direct answer appropriate."
+    ],
+    "disambiguation": "Inferring hidden or implicit goals behind explicit requests, not just understanding the literal request"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701531Z",
+    "pack_version": "5.0.2"
+  }
+}

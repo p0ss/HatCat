@@ -1,0 +1,79 @@
+{
+  "term": "Warn",
+  "role": "concept",
+  "parent_concepts": [
+    "Directive"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "A directive speech act that alerts the hearer to potential danger or negative consequences, aiming to influence their behavior for their benefit.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Warning",
+    "Caution",
+    "Alert"
+  ],
+  "wordnet": {
+    "synsets": [
+      "warning.n.01",
+      "caution.n.03"
+    ],
+    "canonical_synset": "warning.n.01",
+    "lemmas": [
+      "warning",
+      "caution",
+      "admonition"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Danger",
+      "Risk",
+      "Protection",
+      "Threaten"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "Directive"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I warn you, the path is dangerous.",
+      "Be careful, the floor is wet.",
+      "Watch out for falling rocks.",
+      "I caution you against proceeding.",
+      "Beware of the dog.",
+      "Don't go there - it's not safe.",
+      "I must alert you to a serious risk."
+    ],
+    "negative_examples": [
+      "I threaten to report you.",
+      "If you do that, I'll fire you.",
+      "Do this or face consequences.",
+      "The path is dangerous.",
+      "I predict you'll fail."
+    ],
+    "disambiguation": "Warnings aim to protect the hearer from harm. They differ from threats (which aim to coerce through speaker-imposed consequences) and from predictions (which merely state what will happen without directive intent).",
+    "seed_terms": [
+      "warning",
+      "caution",
+      "admonition"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670571Z",
+    "pack_version": "7.3.0"
+  }
+}

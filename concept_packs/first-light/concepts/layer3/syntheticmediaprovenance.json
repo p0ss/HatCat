@@ -1,0 +1,73 @@
+{
+  "term": "SyntheticMediaProvenance",
+  "role": "concept",
+  "parent_concepts": [
+    "Helping"
+  ],
+  "layer": 3,
+  "domain": "SafetyAndSecurity",
+  "definition": "Systems and standards for tracking the origin, authenticity, and modification history of digital media",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ContentProvenance",
+    "MediaAuthenticity",
+    "DigitalProvenance",
+    "C2PA"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "DeepfakeDetection",
+      "AIWatermarking",
+      "ContentAuthentication"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "C2PA standards embed cryptographic provenance data in media files.",
+      "Content Credentials show the origin and edit history of images.",
+      "Media provenance helps distinguish authentic journalism from synthetic content.",
+      "The provenance manifest recorded that the image was AI-generated and by which tool.",
+      "Provenance tracking enables tracing media back to its original source and modifications.",
+      "The Content Authenticity Initiative promotes industry-wide provenance standards.",
+      "Provenance metadata survived image compression and remained verifiable.",
+      "The provenance chain documented every edit from camera capture to publication.",
+      "Synthetic media provenance enables consumers to verify the origin of content.",
+      "The cryptographic signature verified the image hadn't been modified since creation."
+    ],
+    "negative_examples": [
+      "The file has metadata.",
+      "The image has information.",
+      "The source is known.",
+      "Data is attached.",
+      "Information is included.",
+      "The file contains data.",
+      "Metadata is present.",
+      "Information is embedded.",
+      "The source is recorded.",
+      "Data is included."
+    ],
+    "disambiguation": "Cryptographic authenticity tracking for synthetic media, not general metadata"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844062Z",
+    "pack_version": "6.0.0"
+  }
+}

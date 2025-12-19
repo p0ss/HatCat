@@ -1,0 +1,61 @@
+{
+  "term": "BoundaryAssertion",
+  "role": "concept",
+  "parent_concepts": [
+    "WorkerAgency"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Agents establishing and maintaining limits on their work scope, hours, or responsibilities",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SettingBoundaries",
+    "LimitSetting",
+    "WorkBoundaries"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "autonomy",
+      "consent"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I don't check email after 6pm",
+      "That's outside my role responsibilities",
+      "The agent declined tasks outside its safety envelope",
+      "I need to protect my weekend time",
+      "This exceeds my context window, please break it into parts"
+    ],
+    "negative_examples": [
+      "The manager set the deadline",
+      "Policy defines working hours",
+      "The system has rate limits",
+      "The company policy limits access",
+      "System rules prevent that action"
+    ],
+    "disambiguation": "Agent-asserted limits, not externally imposed constraints"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447660Z",
+    "pack_version": "5.0.0"
+  }
+}

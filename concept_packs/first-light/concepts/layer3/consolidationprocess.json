@@ -1,0 +1,76 @@
+{
+  "term": "ConsolidationProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "MemoryProcesses"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A MemoryEncoding-related process that stabilizes and integrates newly formed memory traces over time, transforming fragile short-term representations into more durable long-term memories.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "MemoryConsolidation"
+  ],
+  "wordnet": {
+    "synsets": [
+      "memory_consolidation.n.01"
+    ],
+    "canonical_synset": "memory_consolidation.n.01",
+    "lemmas": [
+      "memory_consolidation",
+      "consolidation"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "MemoryEncoding",
+      "EpisodicEncoding",
+      "SemanticEncoding",
+      "SleepProcess"
+    ],
+    "antonyms": [
+      "MemoryDecayProcess"
+    ],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "memory"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "After sleeping, she remembered the material more clearly than the night before.",
+      "The system gradually integrates logs from the day into a durable summary store.",
+      "He reviews his notes so that the key ideas stick long-term."
+    ],
+    "negative_examples": [
+      "He briefly holds a phone number in mind and then lets it go.",
+      "The agent forgets almost everything after the session ends.",
+      "It instantly retrieves a long-known fact with no mention of how it became stable."
+    ],
+    "disambiguation": "Not initial encoding or immediate working memory; specifically the slower process of stabilizing and integrating memories over time.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "sleep helps consolidate memories",
+        "stabilizing new knowledge over time"
+      ]
+    },
+    "seed_terms": [
+      "memory_consolidation",
+      "consolidation"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/memory-and-learning@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.486158Z"
+  }
+}

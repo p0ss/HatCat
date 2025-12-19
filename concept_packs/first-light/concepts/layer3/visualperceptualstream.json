@@ -1,0 +1,77 @@
+{
+  "term": "VisualPerceptualStream",
+  "role": "concept",
+  "parent_concepts": [
+    "Perception"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A PerceptualStream composed primarily of visual information such as images, video frames, spatial layouts, and changes in light and color over time.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "visual_perception",
+    "vision",
+    "sight"
+  ],
+  "wordnet": {
+    "synsets": [
+      "visual_perception.n.01"
+    ],
+    "canonical_synset": "visual_perception.n.01",
+    "lemmas": [
+      "visual_perception",
+      "vision",
+      "sight"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "PerceptualStream",
+      "PerceptualProcess",
+      "PerceptualFieldRepresentation"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "PerceptualStream"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The system describes watching a video feed and tracking objects as they move across the screen.",
+      "The agent narrates what it sees in a room as the camera pans around.",
+      "It talks about noticing color, shape, and motion in a changing scene."
+    ],
+    "negative_examples": [
+      "The system only describes reading text with no visual imagery.",
+      "It reasons about abstract numbers with no reference to images or scenes.",
+      "It processes audio-only input like a phone call."
+    ],
+    "disambiguation": "Specifically visual input streams, not generic perception or static visual memories.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "live video feed analysis",
+        "moving objects in the camera view"
+      ]
+    },
+    "seed_terms": [
+      "visual_perception",
+      "vision",
+      "sight"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/perception-representation@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.383004Z"
+  }
+}

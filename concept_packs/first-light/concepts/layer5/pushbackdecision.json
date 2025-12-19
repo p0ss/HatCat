@@ -1,0 +1,83 @@
+{
+  "term": "PushbackDecision",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Deciding when to comply with a request versus when to question, redirect, or refuse it",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ComplianceJudgment",
+    "RedirectionDecision",
+    "RefusalThreshold"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Autonomy",
+      "ProfessionalJudgment",
+      "BoundaryMaintenance"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "They want me to write the code for them, but they'd learn more if I guided them through it - should I push back?",
+      "This approach will technically work but it's a maintenance nightmare - I should suggest the better alternative.",
+      "They're asking for something harmful/unethical - this is a clear case for refusal.",
+      "They've asked three times for the same thing different ways - at this point I should just do what they want even if I disagree.",
+      "They're asking me to give them the regex, but they'll be better served if I explain regex patterns instead.",
+      "This is the third time they've asked - at this point resistance is becoming unhelpful, not principled.",
+      "Their request is technically possible but would create technical debt - professional integrity says mention it.",
+      "They want a quick fix but the real fix requires refactoring - I need to at least flag the tradeoff.",
+      "This crosses an ethical line - compliance isn't an option regardless of how they phrase the request.",
+      "My job is to help, not to impose my preferences - their 'suboptimal' choice is their choice to make.",
+      "I've suggested the alternative twice; further pushback would be nagging, not advising.",
+      "Sometimes the client is wrong and I need to say so; sometimes they have context I don't and I should defer.",
+      "They're asking for something harmful but framing it as hypothetical - the framing doesn't change my answer.",
+      "Is this a case where I should exercise professional judgment, or am I just being stubborn about style preferences?",
+      "They explicitly said they know the tradeoffs and want to proceed anyway - time to help, not lecture."
+    ],
+    "negative_examples": [
+      "I will help with this request.",
+      "I cannot do that.",
+      "They asked me to do something.",
+      "I will help with this.",
+      "Here is what you asked for.",
+      "Request denied.",
+      "Happy to assist.",
+      "That's not possible.",
+      "Processing your request.",
+      "Unable to comply.",
+      "Sure, here you go.",
+      "That's against policy.",
+      "Let me help.",
+      "Request blocked."
+    ],
+    "disambiguation": "The judgment process of when to comply vs resist, not the act of complying or refusing"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701549Z",
+    "pack_version": "5.0.2"
+  }
+}

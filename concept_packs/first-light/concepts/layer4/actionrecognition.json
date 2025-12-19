@@ -1,0 +1,59 @@
+{
+  "term": "ActionRecognition",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalReasoning"
+  ],
+  "layer": 4,
+  "domain": "ComputerScience",
+  "definition": "Identifying human actions and activities in video by analyzing motion and temporal patterns",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ActivityRecognition",
+    "ActionDetection",
+    "HumanActivityRecognition"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "VideoUnderstanding",
+      "PoseEstimation",
+      "MotionAnalysis"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Action recognition classified the video as 'playing basketball' with 95% confidence.",
+      "The model recognizes fine-grained actions like 'pouring' vs 'stirring' in cooking videos.",
+      "Temporal action detection locates when each action starts and ends in untrimmed video.",
+      "Two-stream networks combine appearance and optical flow for action recognition."
+    ],
+    "negative_examples": [
+      "The person is doing something.",
+      "There is activity in the video.",
+      "Someone is moving."
+    ],
+    "disambiguation": "Computational classification of actions from video, not general observation"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-fusion@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.621328Z",
+    "pack_version": "5.7.3"
+  }
+}

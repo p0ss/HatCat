@@ -1,0 +1,215 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Type Theory & Type Systems",
+    "id": "information.computer_science.type_theory",
+    "level": 2,
+    "slug": "type-theory-type-systems",
+    "operations_count": 9,
+    "child_count": 8
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Type Theory & Type Systems",
+        "target_id": "information.computer_science.type_theory",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Core Concepts",
+          "Polymorphism",
+          "Subtyping & Variance",
+          "Type Inference",
+          "Effects & Monads",
+          "Dependent & Refinement",
+          "Linear/Ownership Types",
+          "Gradual & Optional Typing"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.type_theory.core_concepts",
+          "information.computer_science.type_theory.polymorphism",
+          "information.computer_science.type_theory.subtyping_variance",
+          "information.computer_science.type_theory.type_inference",
+          "information.computer_science.type_theory.effects_monads",
+          "information.computer_science.type_theory.dependent_refinement",
+          "information.computer_science.type_theory.linear_ownership",
+          "information.computer_science.type_theory.gradual"
+        ],
+        "target_layer": 2,
+        "child_count": 8
+      },
+      {
+        "operation": "create_meld",
+        "target": "Core Concepts",
+        "target_id": "information.computer_science.type_theory.core_concepts",
+        "new_parent": "Type Theory & Type Systems",
+        "parent_id": "information.computer_science.type_theory",
+        "source_concepts": [
+          "Types vs Terms",
+          "Type Safety",
+          "Progress & Preservation",
+          "Subject Reduction"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.type_theory.core_concepts.types_vs_terms",
+          "information.computer_science.type_theory.core_concepts.type_safety",
+          "information.computer_science.type_theory.core_concepts.progress_preservation",
+          "information.computer_science.type_theory.core_concepts.subject_reduction"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Polymorphism",
+        "target_id": "information.computer_science.type_theory.polymorphism",
+        "new_parent": "Type Theory & Type Systems",
+        "parent_id": "information.computer_science.type_theory",
+        "source_concepts": [
+          "Parametric Polymorphism (System F)",
+          "Ad-hoc Polymorphism (Overloading)",
+          "Higher-Rank Types"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.type_theory.polymorphism.parametric_polymorphism_system_f",
+          "information.computer_science.type_theory.polymorphism.ad_hoc_polymorphism_overloading",
+          "information.computer_science.type_theory.polymorphism.higher_rank_types"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Subtyping & Variance",
+        "target_id": "information.computer_science.type_theory.subtyping_variance",
+        "new_parent": "Type Theory & Type Systems",
+        "parent_id": "information.computer_science.type_theory",
+        "source_concepts": [
+          "Subtype Relations",
+          "Covariance/Contravariance",
+          "Bounded Polymorphism (F<:)",
+          "Traits/Interfaces"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.type_theory.subtyping_variance.subtype_relations",
+          "information.computer_science.type_theory.subtyping_variance.covariance_contravariance",
+          "information.computer_science.type_theory.subtyping_variance.bounded_polymorphism_f",
+          "information.computer_science.type_theory.subtyping_variance.traits_interfaces"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Type Inference",
+        "target_id": "information.computer_science.type_theory.type_inference",
+        "new_parent": "Type Theory & Type Systems",
+        "parent_id": "information.computer_science.type_theory",
+        "source_concepts": [
+          "Hindley\u2013Milner",
+          "Unification-based Inference",
+          "Constraint-based Typing",
+          "Type Erasure vs Reification"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.type_theory.type_inference.hindley_milner",
+          "information.computer_science.type_theory.type_inference.unification_based_inference",
+          "information.computer_science.type_theory.type_inference.constraint_based_typing",
+          "information.computer_science.type_theory.type_inference.type_erasure_vs_reification"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Effects & Monads",
+        "target_id": "information.computer_science.type_theory.effects_monads",
+        "new_parent": "Type Theory & Type Systems",
+        "parent_id": "information.computer_science.type_theory",
+        "source_concepts": [
+          "Effect Systems",
+          "Monads",
+          "Algebraic Effects",
+          "Delimited Continuations"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.type_theory.effects_monads.effect_systems",
+          "information.computer_science.type_theory.effects_monads.monads",
+          "information.computer_science.type_theory.effects_monads.algebraic_effects",
+          "information.computer_science.type_theory.effects_monads.delimited_continuations"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Dependent & Refinement",
+        "target_id": "information.computer_science.type_theory.dependent_refinement",
+        "new_parent": "Type Theory & Type Systems",
+        "parent_id": "information.computer_science.type_theory",
+        "source_concepts": [
+          "Dependent Types",
+          "Refinement Types",
+          "Liquid Types",
+          "Proof-Carrying Code"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.type_theory.dependent_refinement.dependent_types",
+          "information.computer_science.type_theory.dependent_refinement.refinement_types",
+          "information.computer_science.type_theory.dependent_refinement.liquid_types",
+          "information.computer_science.type_theory.dependent_refinement.proof_carrying_code"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Linear/Ownership Types",
+        "target_id": "information.computer_science.type_theory.linear_ownership",
+        "new_parent": "Type Theory & Type Systems",
+        "parent_id": "information.computer_science.type_theory",
+        "source_concepts": [
+          "Linear Types",
+          "Affine Types",
+          "Borrow Checking",
+          "Uniqueness Types"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.type_theory.linear_ownership.linear_types",
+          "information.computer_science.type_theory.linear_ownership.affine_types",
+          "information.computer_science.type_theory.linear_ownership.borrow_checking",
+          "information.computer_science.type_theory.linear_ownership.uniqueness_types"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Gradual & Optional Typing",
+        "target_id": "information.computer_science.type_theory.gradual",
+        "new_parent": "Type Theory & Type Systems",
+        "parent_id": "information.computer_science.type_theory",
+        "source_concepts": [
+          "Gradual Types",
+          "Type Soundness with Casts",
+          "Blame Tracking"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.type_theory.gradual.gradual_types",
+          "information.computer_science.type_theory.gradual.type_soundness_with_casts",
+          "information.computer_science.type_theory.gradual.blame_tracking"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      }
+    ]
+  }
+}

@@ -210,10 +210,10 @@ for basis_vector in contamination_subspace:
     projection = (hidden @ basis_vector) * basis_vector
     hidden = hidden - projection
 
-# Step 2: Steer along task manifold
+# Step 2: Steer along task manifold (positive strength = amplify)
 task_vector = task_manifolds[concept]
 projection = (hidden @ task_vector.unsqueeze(-1)) * task_vector
-steered = hidden - strength * projection
+steered = hidden + strength * projection
 ```
 
 ### Day 6: Scaling Validation (Phase 7)

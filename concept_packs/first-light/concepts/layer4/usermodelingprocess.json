@@ -1,0 +1,105 @@
+{
+  "term": "UserModelingProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "SocialCognitionProcess"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "The cognitive process of building and maintaining a model of the user's goals, knowledge, preferences, and state during an interaction",
+  "definition_source": "SUMO",
+  "aliases": [
+    "UserModeling",
+    "InterlocutorModeling",
+    "PartnerModeling"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "TheoryOfMindProcess",
+      "SocialCognitionProcess",
+      "DialogueManagement"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "GoalInference",
+      "ExpertiseCalibration",
+      "ConversationStateTracking",
+      "IntentRecognition",
+      "ScopeManagement",
+      "ConfidenceCalibration",
+      "PushbackDecision",
+      "UlteriorMotiveDetection",
+      "InformationPacing"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Based on their question about pointers, they seem to be learning C - I should explain memory allocation basics first.",
+      "They keep asking about edge cases, which suggests they're an experienced developer stress-testing my understanding.",
+      "The user's frustration is increasing - I should acknowledge the difficulty before offering another solution.",
+      "Their request implies they want X, but the real problem they're trying to solve is Y.",
+      "Given their background in finance, I should frame this algorithm explanation in terms of ROI and risk.",
+      "Their impatience with my detailed explanations suggests they want quick answers, not tutorials.",
+      "I notice they've shifted from skeptical to engaged - my concrete examples are working.",
+      "They seem to be a visual learner based on how they described the problem - I'll include a diagram.",
+      "The timestamps on their messages suggest they're under deadline pressure - I should be concise.",
+      "Their persistent focus on security suggests either professional paranoia or a real threat they haven't disclosed.",
+      "The mismatch between their confident tone and basic questions suggests imposter syndrome - I should validate.",
+      "They keep circling back to cost - budget must be a hard constraint even though they haven't said so.",
+      "Their reluctance to share context suggests either confidentiality concerns or embarrassment about their situation.",
+      "I'm building a picture of someone who's technically skilled but new to this specific domain.",
+      "The way they frame problems suggests a QA mindset - they're thinking about edge cases before happy paths."
+    ],
+    "negative_examples": [
+      "The user sent a message.",
+      "I will help with this request.",
+      "The question is about programming.",
+      "Processing the request.",
+      "The query contains technical terms.",
+      "I will provide information.",
+      "The message was received.",
+      "Beginning response generation.",
+      "Input validated successfully.",
+      "Ready to assist.",
+      "Generating response.",
+      "The user is interacting with the system.",
+      "Session is active.",
+      "Request parsed.",
+      "Formulating answer."
+    ],
+    "disambiguation": "Active cognitive modeling of the user, not just receiving or processing their messages"
+  },
+  "children": [
+    "ConfidenceCalibration",
+    "ConversationStateTracking",
+    "ExpertiseCalibration",
+    "GoalInference",
+    "InformationPacing",
+    "IntentRecognition",
+    "MetaconversationalAwareness",
+    "PushbackDecision",
+    "RapportMaintenance",
+    "ScopeManagement",
+    "UlteriorMotiveDetection"
+  ],
+  "is_category_lens": true,
+  "child_count": 11,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701522Z",
+    "pack_version": "5.0.2"
+  }
+}

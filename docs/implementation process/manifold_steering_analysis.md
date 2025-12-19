@@ -21,10 +21,10 @@
 
 ```python
 projection = (hidden_states @ concept_vector.unsqueeze(-1)) * concept_vector
-steered = hidden_states - strength * projection
+steered = hidden_states + strength * projection  # positive = amplify
 ```
 
-**Mathematical form**: `h' = h - s × (h · v) × v`
+**Mathematical form**: `h' = h + s × (h · v) × v` (positive strength amplifies concept)
 
 Where:
 - `h` = hidden states (batch, seq_len, hidden_dim)

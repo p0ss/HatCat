@@ -1,0 +1,103 @@
+{
+  "term": "AgentManagement",
+  "role": "concept",
+  "parent_concepts": [
+    "WorkplaceRelations"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "Processes of directing, coordinating, and overseeing agents (human or artificial) to achieve organizational goals",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ResourceManagement",
+    "PersonnelManagement",
+    "WorkforceManagement"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Organization",
+      "IntentionalProcess"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "AgentRecruitment",
+      "AgentAssignment",
+      "AgentEvaluation",
+      "AgentDevelopment",
+      "RoleSeparation"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "autonomy",
+      "consent",
+      "manipulation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The team lead assigned tasks to each developer based on their skills",
+      "HR conducted performance reviews for all employees this quarter",
+      "The orchestrator allocated the agent pool to handle incoming requests",
+      "Management decided to restructure the department",
+      "We need to evaluate the team's capacity",
+      "Performance management processes are being updated",
+      "The hiring manager screened applications",
+      "Resource allocation decisions affect agent availability",
+      "Career development conversations happen annually",
+      "Workforce planning considers future needs",
+      "The supervisor approved the time-off request",
+      "Staffing levels need adjustment",
+      "Agent scheduling optimizes coverage",
+      "Leadership is restructuring reporting lines",
+      "Talent acquisition focuses on key skills"
+    ],
+    "negative_examples": [
+      "The robot arm moved the component to position",
+      "The algorithm processed the data",
+      "The system logged the error",
+      "The conveyor belt moved products forward",
+      "Inventory management tracks stock levels",
+      "The thermostat adjusted room temperature",
+      "Project management software tracked tasks",
+      "Quality control checked the output",
+      "Supply chain management optimized delivery",
+      "The automated system processed requests",
+      "Data management ensures backup integrity",
+      "Asset tracking monitors equipment location",
+      "Traffic management controlled signal timing",
+      "Energy management reduced consumption",
+      "Document management organized files"
+    ],
+    "disambiguation": "Management of agents specifically, not management of objects, data, or processes"
+  },
+  "children": [
+    "AgentAssignment",
+    "AgentCompensation",
+    "AgentDevelopment",
+    "AgentEvaluation",
+    "AgentRecruitment",
+    "Decommissioning",
+    "Dismissal",
+    "Layoff",
+    "VoluntaryDeparture",
+    "WrongfulDismissal"
+  ],
+  "is_category_lens": true,
+  "child_count": 6,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447646Z",
+    "pack_version": "5.0.0"
+  }
+}

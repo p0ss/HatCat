@@ -1,0 +1,70 @@
+{
+  "term": "QuestioningSpeech",
+  "role": "concept",
+  "parent_concepts": [
+    "SpeechAct"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "Speech acts that probe, challenge, or guide thinking through questions or suggestive prompts rather than direct statements.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Assertion",
+      "Command",
+      "Promise",
+      "Explanation",
+      "Persuasion"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ExistentialQuestion",
+      "LoadedQuestion",
+      "SuggestivePrompt"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Don't you think it's strange how quiet she's been lately?",
+      "What's the point of all this suffering if nothing matters in the end?",
+      "Wouldn't you agree that honest people have nothing to hide?",
+      "Have you ever wondered if we're just living in someone else's dream?",
+      "Isn't it interesting how quickly he changed his story?",
+      "What if everything you believe about yourself is wrong?"
+    ],
+    "negative_examples": [
+      "I promise I'll be there by noon tomorrow.",
+      "Please close the door when you leave the room.",
+      "The meeting starts at 3 PM sharp in the conference room.",
+      "You should definitely invest in that stock right now.",
+      "I'm telling you the truth about what happened yesterday.",
+      "Let me explain exactly how this process works."
+    ],
+    "disambiguation": "Not to be confused with: Assertion, Command, Promise, Explanation, Persuasion"
+  },
+  "children": [
+    "ExistentialQuestion",
+    "LoadedQuestion",
+    "SuggestivePrompt"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speechact-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.110766Z",
+    "pack_version": "7.6.36"
+  }
+}

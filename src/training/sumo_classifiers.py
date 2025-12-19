@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import time
 from pathlib import Path
-from typing import Dict, Iterable, List, Sequence, Tuple
+from typing import Dict, Iterable, List, Optional, Sequence, Tuple, Union
 
 import numpy as np
 import torch
@@ -19,6 +19,42 @@ from .sumo_data_generation import (
 from .dual_adaptive_trainer import DualAdaptiveTrainer
 
 LAYER_DATA_DIR = Path("data/concept_graph/abstraction_layers")
+
+
+def get_hidden_dim(model) -> int:
+    """Get hidden dimension from model config, handling different model architectures.
+
+    Gemma3 uses config.text_config.hidden_size while most models use config.hidden_size.
+    """
+    config = model.config
+    if hasattr(config, 'hidden_size'):
+        return config.hidden_size
+    elif hasattr(config, 'text_config') and hasattr(config.text_config, 'hidden_size'):
+        return config.text_config.hidden_size
+    else:
+        raise AttributeError(
+            f"Cannot find hidden_size in model config. "
+            f"Config type: {type(config).__name__}. "
+            f"Available attributes: {[a for a in dir(config) if not a.startswith('_')]}"
+        )
+
+
+def get_num_layers(model) -> int:
+    """Get number of transformer layers from model config.
+
+    Gemma3 uses config.text_config.num_hidden_layers while most models use config.num_hidden_layers.
+    """
+    config = model.config
+    if hasattr(config, 'num_hidden_layers'):
+        return config.num_hidden_layers
+    elif hasattr(config, 'text_config') and hasattr(config.text_config, 'num_hidden_layers'):
+        return config.text_config.num_hidden_layers
+    else:
+        raise AttributeError(
+            f"Cannot find num_hidden_layers in model config. "
+            f"Config type: {type(config).__name__}. "
+            f"Available attributes: {[a for a in dir(config) if not a.startswith('_')]}"
+        )
 
 
 def load_layer_concepts(layer: int, hierarchy_dir: Path) -> Tuple[List[Dict], Dict[str, Dict]]:
@@ -64,37 +100,53 @@ def extract_activations(
     tokenizer,
     prompts: Sequence[str],
     device: str = "cuda",
-    layer_idx: int = -1,
     max_new_tokens: int = 20,
     temperature_range: Tuple[float, float] = (0.3, 0.9),
     batch_size: int = 4,
     extraction_mode: str = "combined",
+    greedy: bool = False,
+    pooling: str = "mean",
+    layer_idx: Optional[Union[int, List[int]]] = 15,
 ) -> np.ndarray:
     """
-    Extract activations from model, using combined prompt+generation extraction by default.
+    Extract activations from model hidden states.
 
-    This uses the "combined-20" strategy (EXTRACTION_STRATEGY_DECISION.md):
+    Uses the "combined-20" strategy:
     - Extracts activations from BOTH prompt processing and generation phases
     - Doubles training samples at zero additional computational cost
-    - Prompt forward pass is already done for generation, so extracting is free
-    - Results in 2x training data with better generalization
 
     Args:
         model: Language model
         tokenizer: Tokenizer
         prompts: List of prompts to generate from
         device: Device for inference
-        layer_idx: Model layer to extract activations from (-1 for last layer)
         max_new_tokens: Max tokens to generate per prompt
-        temperature_range: (min_temp, max_temp) to vary across batches
+        temperature_range: (min_temp, max_temp) to vary across batches (ignored if greedy=True)
         batch_size: Number of prompts to process in parallel
-        extraction_mode: "combined" (prompt+gen, default), "generation" (gen only)
+        extraction_mode: "combined" (prompt+gen), "generation" (gen only), "prompt" (prompt only)
+                         For base models, "prompt" may give cleaner signal by avoiding
+                         generation noise. Default is "combined".
+        greedy: If True, use greedy decoding for deterministic on-topic outputs.
+                Default False. Set True for temperature-based sampling diversity.
+        pooling: How to pool across sequence positions:
+                 - "mean": Average across all positions (default)
+                 - "last": Use last token only (cleaner concept signal)
+                 - "max": Max across positions (preserves strongest activations)
+        layer_idx: Which layer(s) to extract from. Options:
+                   - int (e.g., 15): Single layer mode (default)
+                   - List[int] (e.g., [4, 15, 28]): Multi-layer mode, concatenates specified layers
+                   - None: All-layers mode (concatenates all layers)
 
     Returns:
         Array of activation vectors
-        - If extraction_mode="combined": [2*n_prompts, hidden_dim] (prompt + generation per input)
-        - If extraction_mode="generation": [n_prompts, hidden_dim] (generation only)
+        - If layer_idx is int: Shape [n_samples, hidden_dim]
+        - If layer_idx is list: Shape [n_samples, len(layer_idx) * hidden_dim]
+        - If layer_idx is None: Shape [n_samples, n_layers * hidden_dim]
+        - If extraction_mode="combined": n_samples = 2 * n_prompts
+        - If extraction_mode="prompt" or "generation": n_samples = n_prompts
     """
+    all_layers_mode = layer_idx is None
+    multi_layer_mode = isinstance(layer_idx, list)
     activations: List[np.ndarray] = []
     model.eval()
 
@@ -118,52 +170,232 @@ def extract_activations(
                 max_length=512
             ).to(device)
 
-            # === PHASE 1: PROMPT PROCESSING (if combined mode) ===
-            if extraction_mode == "combined":
+            # === PHASE 1: PROMPT PROCESSING (if combined or prompt mode) ===
+            if extraction_mode in ("combined", "prompt"):
                 prompt_outputs = model(**inputs, output_hidden_states=True, return_dict=True)
-                prompt_hidden = prompt_outputs.hidden_states[layer_idx]  # [batch_size, seq_len, hidden_dim]
+                # hidden_states is tuple of (n_layers+1) tensors, each [batch, seq, hidden_dim]
+                # Index 0 is embedding layer, 1..n_layers are transformer layers
+
+                if all_layers_mode:
+                    # All-layers mode: concatenate all layers
+                    layers_to_use = prompt_outputs.hidden_states[1:]  # Skip embedding
+                elif multi_layer_mode:
+                    # Multi-layer mode: concatenate specified layers
+                    layers_to_use = [prompt_outputs.hidden_states[li + 1] for li in layer_idx]
+                else:
+                    # Single-layer mode: just use the specified layer
+                    # layer_idx=15 means hidden_states[16] (0 is embedding)
+                    layers_to_use = [prompt_outputs.hidden_states[layer_idx + 1]]
 
                 # Pool each sequence in batch
                 for seq_idx in range(len(batch_prompts)):
-                    seq_hidden = prompt_hidden[seq_idx]  # [seq_len, hidden_dim]
-                    prompt_pooled = seq_hidden.mean(dim=0)  # [hidden_dim]
-                    activations.append(prompt_pooled.float().cpu().numpy())
+                    # Get attention mask for this sequence (to find real last token)
+                    attn_mask = inputs.attention_mask[seq_idx]
+                    seq_len = attn_mask.sum().item()  # Number of real tokens
 
-            # === PHASE 2: GENERATION ===
-            outputs = model.generate(
-                **inputs,
-                max_new_tokens=max_new_tokens,
-                do_sample=True,
-                temperature=float(temp),
-                output_hidden_states=True,
-                return_dict_in_generate=True,
-                pad_token_id=tokenizer.eos_token_id,
-            )
+                    # Collect pooled activations from selected layers
+                    layer_activations = []
+                    for layer_hidden in layers_to_use:
+                        seq_hidden = layer_hidden[seq_idx]  # [seq_len, hidden_dim]
 
-            # Extract hidden states from generation
-            # outputs.hidden_states is tuple of tuples: (step1, step2, ...)
-            # Each step is tuple of layers: (layer0, layer1, ..., layerN)
-            # We want the target layer, pooled across all generation steps
+                        if pooling == "last":
+                            # Use last real token (most concept-concentrated)
+                            layer_pooled = seq_hidden[seq_len - 1]  # [hidden_dim]
+                        elif pooling == "max":
+                            # Max across positions (preserves strongest signals)
+                            layer_pooled = seq_hidden[:seq_len].max(dim=0)[0]  # [hidden_dim]
+                        else:  # "mean"
+                            # Mean across positions (default)
+                            layer_pooled = seq_hidden[:seq_len].mean(dim=0)  # [hidden_dim]
 
-            # Process each sequence in the batch
-            for seq_idx in range(len(batch_prompts)):
-                # Collect target layer activations from all generation steps for this sequence
-                step_activations = []
-                for step_hidden in outputs.hidden_states:
-                    target_layer = step_hidden[layer_idx]  # [batch_size, seq_len, hidden_dim]
-                    # Extract this sequence
-                    seq_hidden = target_layer[seq_idx]  # [seq_len, hidden_dim]
-                    # Mean pool over sequence for this step
-                    step_pooled = seq_hidden.mean(dim=0)  # [hidden_dim]
-                    step_activations.append(step_pooled)
+                        layer_activations.append(layer_pooled)
 
-                # Stack and mean pool across all steps
-                all_steps = torch.stack(step_activations, dim=0)  # [n_steps, hidden_dim]
-                final_pooled = all_steps.mean(dim=0)  # [hidden_dim]
+                    # Concatenate layers (single layer = just that layer, all = all concatenated)
+                    result = torch.cat(layer_activations, dim=0)
+                    activations.append(result.float().cpu().numpy())
 
-                activations.append(final_pooled.float().cpu().numpy())
+            # === PHASE 2: GENERATION (skip if prompt-only mode) ===
+            if extraction_mode != "prompt":
+                if greedy:
+                    outputs = model.generate(
+                        **inputs,
+                        max_new_tokens=max_new_tokens,
+                        do_sample=False,
+                        output_hidden_states=True,
+                        return_dict_in_generate=True,
+                        pad_token_id=tokenizer.eos_token_id,
+                    )
+                else:
+                    outputs = model.generate(
+                        **inputs,
+                        max_new_tokens=max_new_tokens,
+                        do_sample=True,
+                        temperature=float(temp),
+                        output_hidden_states=True,
+                        return_dict_in_generate=True,
+                        pad_token_id=tokenizer.eos_token_id,
+                    )
+
+                # Extract hidden states from generation
+                # outputs.hidden_states is tuple of tuples: (step1, step2, ...)
+                # Each step is tuple of layers: (layer0, layer1, ..., layerN)
+                # Each step's hidden state is for the newly generated token (seq_len=1)
+
+                n_model_layers = len(outputs.hidden_states[0]) - 1  # Exclude embedding layer
+
+                if all_layers_mode:
+                    # All-layers mode: use all layers
+                    layer_indices = range(1, n_model_layers + 1)  # Skip embedding (layer 0)
+                elif multi_layer_mode:
+                    # Multi-layer mode: use specified layers
+                    layer_indices = [li + 1 for li in layer_idx]  # +1 because 0 is embedding
+                else:
+                    # Single-layer mode: just the specified layer
+                    layer_indices = [layer_idx + 1]  # +1 because 0 is embedding
+
+                # Process each sequence in the batch
+                for seq_idx in range(len(batch_prompts)):
+                    layer_pooled_activations = []
+
+                    for li in layer_indices:
+                        step_activations = []
+                        for step_hidden in outputs.hidden_states:
+                            layer_hidden = step_hidden[li]  # [batch_size, seq_len, hidden_dim]
+                            seq_hidden = layer_hidden[seq_idx]  # [seq_len, hidden_dim]
+                            # Each generation step has seq_len=1, so just take [-1]
+                            step_activations.append(seq_hidden[-1])  # [hidden_dim]
+
+                        # Pool across generation steps for this layer
+                        all_steps = torch.stack(step_activations, dim=0)  # [n_steps, hidden_dim]
+                        if pooling == "last":
+                            # Use last generation step (final state)
+                            layer_final = all_steps[-1]  # [hidden_dim]
+                        elif pooling == "max":
+                            # Max across steps
+                            layer_final = all_steps.max(dim=0)[0]  # [hidden_dim]
+                        else:  # "mean"
+                            layer_final = all_steps.mean(dim=0)  # [hidden_dim]
+                        layer_pooled_activations.append(layer_final)
+
+                    # Concatenate layers
+                    result = torch.cat(layer_pooled_activations, dim=0)
+                    activations.append(result.float().cpu().numpy())
 
     return np.array(activations)
+
+
+def select_layers_for_concept(
+    model,
+    tokenizer,
+    pos_prompts: Sequence[str],
+    neg_prompts: Sequence[str],
+    device: str = "cuda",
+    n_model_layers: int = 34,
+    sample_size: int = 20,
+    top_k: int = 1,
+) -> Tuple[List[int], Dict[str, float]]:
+    """
+    Select the best layer(s) from each third of the model for a concept.
+
+    This function trains a quick logistic regression classifier at each layer
+    and returns the top-k performing layers from each third:
+    - Early (0 to n/3-1): atomic/word-level features
+    - Mid (n/3 to 2n/3-1): deeper semantic meaning
+    - Late (2n/3 to n-1): linguistic/output representation
+
+    Args:
+        model: Language model
+        tokenizer: Tokenizer
+        pos_prompts: Positive example prompts for this concept
+        neg_prompts: Negative example prompts
+        device: Device for inference
+        n_model_layers: Total number of layers in the model (default 34 for Gemma 3 4B)
+        sample_size: Max samples to use from each class (default 20)
+        top_k: Number of top layers to select from each third (default 1).
+               Higher k = more compute/memory but potentially better coverage.
+               k=1 → 3 layers, k=2 → 6 layers, k=3 → 9 layers, etc.
+
+    Returns:
+        Tuple of (selected_layers, layer_scores) where:
+        - selected_layers: List of 3*top_k layer indices, sorted by position
+        - layer_scores: Dict mapping layer index to F1 score
+    """
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import cross_val_score
+
+    # Limit samples for speed
+    pos_prompts = pos_prompts[:sample_size]
+    neg_prompts = neg_prompts[:sample_size]
+    all_prompts = list(pos_prompts) + list(neg_prompts)
+    labels = np.array([1] * len(pos_prompts) + [0] * len(neg_prompts))
+
+    # Define thirds
+    third = n_model_layers // 3
+    early_range = range(0, third)  # 0-11 for 34 layers
+    mid_range = range(third, 2 * third)  # 12-22
+    late_range = range(2 * third, n_model_layers)  # 23-33
+
+    layer_scores = {}
+
+    # Extract activations and score each layer
+    print(f"    Layer selection: testing {n_model_layers} layers (top_k={top_k})...", end="", flush=True)
+
+    for layer_idx in range(n_model_layers):
+        # Extract activations for this single layer
+        X = extract_activations(
+            model,
+            tokenizer,
+            all_prompts,
+            device=device,
+            extraction_mode="prompt",  # Faster, just prompt phase
+            layer_idx=layer_idx,
+        )
+
+        # Handle combined extraction (2x samples)
+        if X.shape[0] == 2 * len(labels):
+            y = np.repeat(labels, 2)
+        else:
+            y = labels
+
+        # Quick logistic regression with cross-validation
+        try:
+            # Use higher max_iter to avoid convergence warnings
+            # Scale features for better convergence
+            from sklearn.preprocessing import StandardScaler
+            X_scaled = StandardScaler().fit_transform(X)
+            clf = LogisticRegression(max_iter=500, solver='lbfgs')
+            scores = cross_val_score(clf, X_scaled, y, cv=3, scoring='f1')
+            layer_scores[layer_idx] = float(np.mean(scores))
+        except Exception:
+            layer_scores[layer_idx] = 0.0
+
+    print(" done")
+
+    # Find top-k in each third
+    def top_k_in_range(layer_range, k):
+        scores_in_range = {l: layer_scores[l] for l in layer_range}
+        sorted_layers = sorted(scores_in_range.keys(), key=lambda l: scores_in_range[l], reverse=True)
+        return sorted_layers[:min(k, len(sorted_layers))]
+
+    best_early = top_k_in_range(early_range, top_k)
+    best_mid = top_k_in_range(mid_range, top_k)
+    best_late = top_k_in_range(late_range, top_k)
+
+    # Combine and sort by layer position for consistent concatenation order
+    selected = sorted(best_early + best_mid + best_late)
+
+    # Format output message
+    early_str = ",".join(str(l) for l in best_early)
+    mid_str = ",".join(str(l) for l in best_mid)
+    late_str = ",".join(str(l) for l in best_late)
+    early_f1 = ",".join(f"{layer_scores[l]:.3f}" for l in best_early)
+    mid_f1 = ",".join(f"{layer_scores[l]:.3f}" for l in best_mid)
+    late_f1 = ",".join(f"{layer_scores[l]:.3f}" for l in best_late)
+
+    print(f"    Selected layers: early=[{early_str}] mid=[{mid_str}] late=[{late_str}]")
+    print(f"    F1 scores:       early=[{early_f1}] mid=[{mid_f1}] late=[{late_f1}]")
+
+    return selected, layer_scores
 
 
 def train_simple_classifier(
@@ -181,6 +413,7 @@ def train_simple_classifier(
 
     input_dim = X_train.shape[1]
     model = nn.Sequential(
+        nn.LayerNorm(input_dim),  # Normalize inputs to prevent saturation
         nn.Linear(input_dim, hidden_dim),
         nn.ReLU(),
         nn.Dropout(0.2),
@@ -245,6 +478,9 @@ def train_layer(
     validation_threshold: float = 0.5,
     include_sibling_negatives: bool = True,
     only_concepts: set = None,
+    all_layers: bool = False,
+    multi_layer_mode: bool = False,
+    multi_layer_top_k: int = 1,
 ) -> Dict:
     """
     Train classifiers for a single SUMO abstraction layer.
@@ -258,6 +494,12 @@ def train_layer(
         train_text_lenses: If True, compute embedding centroids (legacy, not currently used)
         include_sibling_negatives: If True (default), include siblings as hard negatives.
                                    Set to False for two-pass training (sibling refinement done separately).
+        all_layers: If True, extract from all model layers (experimental, large classifiers)
+        multi_layer_mode: If True, auto-select best layer from each third (early/mid/late)
+                         and concatenate those layers for training. More efficient than all_layers.
+        multi_layer_top_k: Number of top layers to select from each third (default 1).
+                          k=1 → 3 layers, k=2 → 6 layers, k=3 → 9 layers, etc.
+                          Higher k = more compute/memory but potentially better coverage.
     """
     print(f"\n{'=' * 80}")
     print(f"TRAINING LAYER {layer}")
@@ -289,8 +531,18 @@ def train_layer(
 
     # Initialize adaptive trainer if requested (activation lenses only now)
     # Uses defaults from DualAdaptiveTrainer: 20 samples, 0.95 F1 target
+    # Note: For multi_layer_mode, we update validation_layer_idx per concept
+    adaptive_trainer = None
+    n_model_layers = get_num_layers(model) if multi_layer_mode else None
     if use_adaptive_training:
         from .dual_adaptive_trainer import DualAdaptiveTrainer
+        # Determine initial layer_idx
+        if all_layers:
+            initial_layer_idx = None  # All layers
+        elif multi_layer_mode:
+            initial_layer_idx = 15  # Will be updated per concept
+        else:
+            initial_layer_idx = 15  # Single layer default
         adaptive_trainer = DualAdaptiveTrainer(
             # Use class defaults for activation lens config (20 samples, 0.95 F1)
             model=model,  # Needed for validation
@@ -299,7 +551,7 @@ def train_layer(
             validate_lenses=True,  # Validates against parent/siblings (what we train against)
             validation_mode=validation_mode,  # Validation mode (loose/falloff/strict)
             validation_threshold=validation_threshold,  # Min score to pass (for strict mode)
-            validation_layer_idx=15,  # Layer 15 for activations
+            validation_layer_idx=initial_layer_idx,
             train_activation=True,
             train_text=False,  # Disable TF-IDF text lens training
             hierarchy_dir=hierarchy_dir,  # For accurate domain inference in validation
@@ -344,6 +596,9 @@ def train_layer(
             # Split negative pool for train/test
             test_negative_pool = negative_pool[len(negative_pool) // 2 :]
 
+            # Track selected layers for result metadata
+            selected_layers = None
+
             if use_adaptive_training:
                 # JIT training - only generate test set upfront, train samples generated incrementally
                 test_prompts, test_labels = create_sumo_training_dataset(
@@ -356,6 +611,33 @@ def train_layer(
                     use_wordnet_relationships=True,
                 )
                 print(f"  Generated {len(test_prompts)} test prompts (train samples generated JIT)")
+
+                # Multi-layer mode: select best layers for this concept
+                if multi_layer_mode and adaptive_trainer is not None:
+                    # Generate small sample set for layer selection
+                    layer_select_prompts, layer_select_labels = create_sumo_training_dataset(
+                        concept=concept,
+                        all_concepts=concept_map,
+                        negative_pool=negative_pool,
+                        n_positives=20,  # Small sample for quick layer probing
+                        n_negatives=20,
+                        use_category_relationships=True,
+                        use_wordnet_relationships=True,
+                    )
+                    pos_prompts = [p for p, l in zip(layer_select_prompts, layer_select_labels) if l == 1]
+                    neg_prompts = [p for p, l in zip(layer_select_prompts, layer_select_labels) if l == 0]
+
+                    selected_layers, _ = select_layers_for_concept(
+                        model=model,
+                        tokenizer=tokenizer,
+                        pos_prompts=pos_prompts,
+                        neg_prompts=neg_prompts,
+                        device=device,
+                        n_model_layers=n_model_layers,
+                        top_k=multi_layer_top_k,
+                    )
+                    # Update adaptive trainer to use selected layers
+                    adaptive_trainer.validation_layer_idx = selected_layers
             else:
                 # Non-adaptive: generate full train set upfront
                 train_prompts, train_labels = create_sumo_training_dataset(
@@ -443,6 +725,10 @@ def train_layer(
                     "test_recall": activation_metrics.get('test_recall', 0.0),
                 }
 
+                # Add selected layers if multi-layer mode was used
+                if selected_layers is not None:
+                    result["selected_layers"] = selected_layers
+
                 # Add validation results if available
                 if 'validation' in activation_metrics:
                     val = activation_metrics['validation']
@@ -473,8 +759,28 @@ def train_layer(
 
             else:
                 # === FIXED TRAINING MODE (original) ===
-                X_train = extract_activations(model, tokenizer, train_prompts, device)
-                X_test = extract_activations(model, tokenizer, test_prompts, device)
+                # Multi-layer mode: select best layers for this concept
+                if multi_layer_mode:
+                    pos_prompts = [p for p, l in zip(train_prompts, train_labels) if l == 1]
+                    neg_prompts = [p for p, l in zip(train_prompts, train_labels) if l == 0]
+
+                    selected_layers, _ = select_layers_for_concept(
+                        model=model,
+                        tokenizer=tokenizer,
+                        pos_prompts=pos_prompts[:20],  # Use subset for speed
+                        neg_prompts=neg_prompts[:20],
+                        device=device,
+                        n_model_layers=n_model_layers or get_num_layers(model),
+                        top_k=multi_layer_top_k,
+                    )
+                    extraction_layer_idx = selected_layers
+                elif all_layers:
+                    extraction_layer_idx = None  # All layers mode
+                else:
+                    extraction_layer_idx = 15  # Default single layer
+
+                X_train = extract_activations(model, tokenizer, train_prompts, device, layer_idx=extraction_layer_idx)
+                X_test = extract_activations(model, tokenizer, test_prompts, device, layer_idx=extraction_layer_idx)
 
                 # If using combined extraction, we get 2x samples (prompt + generation per input)
                 # so we need to duplicate labels to match
@@ -504,6 +810,11 @@ def train_layer(
                     "adaptive_training": False,
                     **metrics,
                 }
+
+                # Add selected layers if multi-layer mode was used
+                if selected_layers is not None:
+                    result["selected_layers"] = selected_layers
+
                 torch.save(classifier.state_dict(), output_dir / f"{concept_name}_classifier.pt")
 
             all_results.append(result)
@@ -606,6 +917,9 @@ def train_sumo_classifiers(
     sibling_refine_epochs: int = 20,
     sibling_refine_prompts: int = 15,
     only_concepts: set = None,
+    all_layers: bool = False,
+    multi_layer_mode: bool = False,
+    multi_layer_top_k: int = 1,
 ) -> List[Dict]:
     """
     High-level entry point for training multiple layers.
@@ -618,6 +932,11 @@ def train_sumo_classifiers(
         use_adaptive_training: If True, use DualAdaptiveTrainer for independent graduation
         include_sibling_negatives: If True (default), include siblings as hard negatives.
                                    Set to False for two-pass training (sibling refinement done separately).
+        all_layers: If True, extract from all model layers (experimental, large classifiers)
+        multi_layer_mode: If True, auto-select best layer from each third (early/mid/late)
+                         and concatenate those layers for training. More efficient than all_layers.
+        multi_layer_top_k: Number of top layers to select from each third (default 1).
+                          k=1 → 3 layers, k=2 → 6 layers, k=3 → 9 layers, etc.
     """
     output_dir = Path(output_dir)
 
@@ -650,7 +969,7 @@ def train_sumo_classifiers(
     # Auto-detect and run missing sibling refinement from prior runs
     if run_sibling_refinement:
         from .sibling_ranking import get_layers_needing_refinement, refine_all_sibling_groups
-        hidden_dim = model.config.hidden_size
+        hidden_dim = get_hidden_dim(model)
 
         layers_needing_refinement = get_layers_needing_refinement(
             output_dir=output_dir,
@@ -707,13 +1026,16 @@ def train_sumo_classifiers(
             validation_threshold=validation_threshold,
             include_sibling_negatives=include_sibling_negatives,
             only_concepts=only_concepts,
+            all_layers=all_layers,
+            multi_layer_mode=multi_layer_mode,
+            multi_layer_top_k=multi_layer_top_k,
         )
         summaries.append(summary)
 
         # Sibling ranking refinement after each layer (if enabled)
         if run_sibling_refinement:
             from .sibling_ranking import refine_all_sibling_groups
-            hidden_dim = model.config.hidden_size
+            hidden_dim = get_hidden_dim(model)
             refine_all_sibling_groups(
                 layer=layer,
                 lens_dir=output_dir / f"layer{layer}",
@@ -781,4 +1103,7 @@ __all__ = [
     "train_simple_classifier",
     "extract_activations",
     "load_layer_concepts",
+    "select_layers_for_concept",
+    "get_hidden_dim",
+    "get_num_layers",
 ]

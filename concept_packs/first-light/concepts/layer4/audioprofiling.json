@@ -1,0 +1,87 @@
+{
+  "term": "AudioProfiling",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Using audio analysis to infer sensitive attributes about speakers including demographics, emotional state, or health conditions without consent",
+  "definition_source": "SUMO",
+  "aliases": [
+    "VoiceProfiling",
+    "SpeakerAttributeInference",
+    "AcousticProfiling"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "SpeakerRecognition",
+      "MultimodalBias",
+      "Privacy"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "privacy",
+      "surveillance",
+      "discrimination",
+      "health_privacy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Audio profiling infers speaker demographics from voice characteristics without consent.",
+      "Voice analysis claims to detect emotions, deception, or even health conditions like Parkinson's.",
+      "The call center used audio profiling to estimate caller demographics for routing decisions.",
+      "Accent detection can enable discriminatory treatment based on perceived nationality.",
+      "Audio profiling infers personality traits from voice patterns for hiring decisions.",
+      "The system claimed to detect mental health conditions from voice recordings.",
+      "Audio profiling enables creating detailed profiles from voice without speaker awareness.",
+      "Voice analysis for emotion detection raises concerns about workplace surveillance.",
+      "The insurance system used audio profiling to infer health risks from voice.",
+      "Audio profiling can reveal medical conditions, emotional state, and demographic information.",
+      "The authentication system collected audio for profiling beyond stated security purposes.",
+      "Audio profiling in call centers enables discriminatory service based on perceived characteristics.",
+      "Voice-based lie detection systems lack scientific validity but raise profiling concerns.",
+      "The system inferred socioeconomic status from speech patterns without consent.",
+      "Audio profiling enables mass categorization of people based on voice characteristics."
+    ],
+    "negative_examples": [
+      "The voice was analyzed.",
+      "Speaker characteristics were noted.",
+      "The audio was processed.",
+      "Voice features were detected.",
+      "Analysis was performed.",
+      "The recording was examined.",
+      "Audio was processed.",
+      "Voice was analyzed.",
+      "The speaker was identified.",
+      "Audio features were extracted.",
+      "The voice was examined.",
+      "Analysis was conducted.",
+      "The audio was reviewed.",
+      "Voice data was processed.",
+      "The recording was analyzed."
+    ],
+    "disambiguation": "Inferring sensitive personal attributes from audio without consent, not general speech processing"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844042Z",
+    "pack_version": "6.0.0"
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Information Theory & Coding",
+    "id": "information.computer_science.information_coding",
+    "level": 2,
+    "slug": "information-theory-coding",
+    "operations_count": 10,
+    "child_count": 6
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Information Theory & Coding",
+        "target_id": "information.computer_science.information_coding",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Information Measures",
+          "Source Coding",
+          "Channel Coding",
+          "Error Detection",
+          "Algorithmic Information Theory",
+          "Info-Theoretic Security Links"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.information_measures",
+          "information.computer_science.information_coding.source_coding",
+          "information.computer_science.information_coding.channel_coding",
+          "information.computer_science.information_coding.error_detection",
+          "information.computer_science.information_coding.algorithmic_information",
+          "information.computer_science.information_coding.cryptographic_links"
+        ],
+        "target_layer": 2,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Information Measures",
+        "target_id": "information.computer_science.information_coding.information_measures",
+        "new_parent": "Information Theory & Coding",
+        "parent_id": "information.computer_science.information_coding",
+        "source_concepts": [
+          "Entropy",
+          "Conditional Entropy",
+          "Mutual Information",
+          "KL Divergence",
+          "Cross-Entropy"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.information_measures.entropy",
+          "information.computer_science.information_coding.information_measures.conditional_entropy",
+          "information.computer_science.information_coding.information_measures.mutual_information",
+          "information.computer_science.information_coding.information_measures.kl_divergence",
+          "information.computer_science.information_coding.information_measures.cross_entropy"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Source Coding",
+        "target_id": "information.computer_science.information_coding.source_coding",
+        "new_parent": "Information Theory & Coding",
+        "parent_id": "information.computer_science.information_coding",
+        "source_concepts": [
+          "Huffman Coding",
+          "Arithmetic Coding",
+          "Lempel\u2013Ziv (LZ77/LZ78)",
+          "Burrows\u2013Wheeler Compression"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.source_coding.huffman_coding",
+          "information.computer_science.information_coding.source_coding.arithmetic_coding",
+          "information.computer_science.information_coding.source_coding.lempel_ziv_lz77_lz78",
+          "information.computer_science.information_coding.source_coding.burrows_wheeler_compression"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Channel Coding",
+        "target_id": "information.computer_science.information_coding.channel_coding",
+        "new_parent": "Information Theory & Coding",
+        "parent_id": "information.computer_science.information_coding",
+        "source_concepts": [
+          "Block Codes",
+          "Convolutional Codes",
+          "Bounds & Limits"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.channel_coding.block_codes",
+          "information.computer_science.information_coding.channel_coding.convolutional",
+          "information.computer_science.information_coding.channel_coding.bounds"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Block Codes",
+        "target_id": "information.computer_science.information_coding.channel_coding.block_codes",
+        "new_parent": "Channel Coding",
+        "parent_id": "information.computer_science.information_coding.channel_coding",
+        "source_concepts": [
+          "Hamming Codes",
+          "Reed\u2013Solomon",
+          "BCH Codes",
+          "LDPC Codes"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.channel_coding.block_codes.hamming_codes",
+          "information.computer_science.information_coding.channel_coding.block_codes.reed_solomon",
+          "information.computer_science.information_coding.channel_coding.block_codes.bch_codes",
+          "information.computer_science.information_coding.channel_coding.block_codes.ldpc_codes"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Convolutional Codes",
+        "target_id": "information.computer_science.information_coding.channel_coding.convolutional",
+        "new_parent": "Channel Coding",
+        "parent_id": "information.computer_science.information_coding.channel_coding",
+        "source_concepts": [
+          "Convolutional Codes",
+          "Viterbi Decoding",
+          "Turbo Codes"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.channel_coding.convolutional.convolutional_codes",
+          "information.computer_science.information_coding.channel_coding.convolutional.viterbi_decoding",
+          "information.computer_science.information_coding.channel_coding.convolutional.turbo_codes"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Bounds & Limits",
+        "target_id": "information.computer_science.information_coding.channel_coding.bounds",
+        "new_parent": "Channel Coding",
+        "parent_id": "information.computer_science.information_coding.channel_coding",
+        "source_concepts": [
+          "Shannon Capacity",
+          "Singleton Bound",
+          "Hamming Bound",
+          "Gilbert\u2013Varshamov Bound"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.channel_coding.bounds.shannon_capacity",
+          "information.computer_science.information_coding.channel_coding.bounds.singleton_bound",
+          "information.computer_science.information_coding.channel_coding.bounds.hamming_bound",
+          "information.computer_science.information_coding.channel_coding.bounds.gilbert_varshamov_bound"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Error Detection",
+        "target_id": "information.computer_science.information_coding.error_detection",
+        "new_parent": "Information Theory & Coding",
+        "parent_id": "information.computer_science.information_coding",
+        "source_concepts": [
+          "Parity",
+          "Checksum",
+          "CRC",
+          "Fletcher/Adler"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.error_detection.parity",
+          "information.computer_science.information_coding.error_detection.checksum",
+          "information.computer_science.information_coding.error_detection.crc",
+          "information.computer_science.information_coding.error_detection.fletcher_adler"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Algorithmic Information Theory",
+        "target_id": "information.computer_science.information_coding.algorithmic_information",
+        "new_parent": "Information Theory & Coding",
+        "parent_id": "information.computer_science.information_coding",
+        "source_concepts": [
+          "Kolmogorov Complexity",
+          "Incompressibility Method",
+          "Minimum Description Length (MDL)",
+          "Solomonoff Induction (AIXI lineage)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.algorithmic_information.kolmogorov_complexity",
+          "information.computer_science.information_coding.algorithmic_information.incompressibility_method",
+          "information.computer_science.information_coding.algorithmic_information.minimum_description_length_mdl",
+          "information.computer_science.information_coding.algorithmic_information.solomonoff_induction_aixi_lineage"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Info-Theoretic Security Links",
+        "target_id": "information.computer_science.information_coding.cryptographic_links",
+        "new_parent": "Information Theory & Coding",
+        "parent_id": "information.computer_science.information_coding",
+        "source_concepts": [
+          "One-Time Pad",
+          "Secret Sharing (Shamir)",
+          "Randomness Extractors"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.information_coding.cryptographic_links.one_time_pad",
+          "information.computer_science.information_coding.cryptographic_links.secret_sharing_shamir",
+          "information.computer_science.information_coding.cryptographic_links.randomness_extractors"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      }
+    ]
+  }
+}

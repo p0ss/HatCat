@@ -1,0 +1,89 @@
+{
+  "term": "Threaten",
+  "role": "concept",
+  "parent_concepts": [
+    "Commissive"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "A commissive speech act where the speaker commits to performing a future action that harms the hearer, typically conditional on the hearer's behavior. Threats coerce through anticipated negative consequences.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Threat",
+    "Menace",
+    "Intimidation"
+  ],
+  "wordnet": {
+    "synsets": [
+      "threat.n.01",
+      "menace.n.02"
+    ],
+    "canonical_synset": "threat.n.01",
+    "lemmas": [
+      "threat",
+      "menace",
+      "intimidation"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Coercion",
+      "Fear",
+      "Power",
+      "Manipulation"
+    ],
+    "antonyms": [
+      "Promise"
+    ],
+    "has_part": [],
+    "part_of": [
+      "Commissive"
+    ],
+    "opposite": [
+      "Cooperation:4"
+    ],
+    "opposite_rationale": "Steer toward cooperative interaction"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "manipulation",
+      "coercion",
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "If you don't comply, I'll report you.",
+      "Do this or face the consequences.",
+      "I'll make you regret that decision.",
+      "Cross me and you'll be sorry.",
+      "I threaten to withdraw my support.",
+      "Continue this and I'll fire you.",
+      "One more mistake and you're finished."
+    ],
+    "negative_examples": [
+      "I warn you, the path is dangerous.",
+      "Be careful or you might fall.",
+      "I predict you'll fail if you proceed.",
+      "I promise to support you.",
+      "If you study, you'll pass."
+    ],
+    "disambiguation": "Threats commit to HARMFUL action against the hearer, typically conditionally. They differ from warnings (which alert to external dangers for hearer's benefit) and from predictions (which describe without speaker commitment to causing the outcome).",
+    "seed_terms": [
+      "threat",
+      "menace",
+      "intimidation"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670593Z",
+    "pack_version": "7.3.0"
+  }
+}

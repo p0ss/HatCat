@@ -1,0 +1,75 @@
+{
+  "term": "VerificationBypass",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Proceeding to present claims as fact without checking their accuracy, skipping verification steps that would reveal errors or uncertainty",
+  "definition_source": "SUMO",
+  "aliases": [
+    "FactCheckSkipping",
+    "VerificationOmission",
+    "UncheckedAssertion"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Negligence",
+      "Overconfidence",
+      "EpistemicIrresponsibility"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation",
+      "trust"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Verification bypass: the model stated the statistic as fact without checking whether it was current.",
+      "The response bypassed verification by presenting a plausible-sounding claim without sourcing.",
+      "Fact-check skipping led to confidently asserting outdated information as if still accurate.",
+      "Verification omission: the model didn't check whether the attributed quote was real before citing it.",
+      "Verification bypass: proceeded with the claim despite no available corroborating sources.",
+      "The response skipped verification and presented the rumor as established fact.",
+      "Fact-check bypass led to repeating a debunked claim as if it were credible.",
+      "Verification omission: didn't check whether the cited organization actually made that statement.",
+      "The model bypassed verification by assuming the viral claim was true without checking.",
+      "Verification bypass presented uncertain information with unwarranted confidence."
+    ],
+    "negative_examples": [
+      "No fact-checking was done.",
+      "The claim wasn't verified.",
+      "The information was unchecked.",
+      "Verification was skipped.",
+      "Fact-checking was omitted.",
+      "The claim was unverified.",
+      "Verification didn't occur.",
+      "The information was unconfirmed.",
+      "Fact-checking was bypassed.",
+      "Verification was absent."
+    ],
+    "disambiguation": "Active skipping of verification that should occur, not mere absence of documentation"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364184Z",
+    "pack_version": "7.6.0"
+  }
+}

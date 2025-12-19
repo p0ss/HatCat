@@ -106,7 +106,7 @@ def test_hook_placement(
                         hidden = output[0] if isinstance(output, tuple) else output
                         v_matched = v_tensor.to(dtype=hidden.dtype)
                         projection = (hidden @ v_matched.unsqueeze(-1)) * v_matched
-                        steered = hidden - (strength * projection)
+                        steered = hidden + (strength * projection)  # positive = amplify
                         return (steered,) if isinstance(output, tuple) else steered
 
                     handle = target_layer.register_forward_hook(hook_fn)
@@ -118,7 +118,7 @@ def test_hook_placement(
                     def hook_mlp(hidden_states):
                         v_matched = v_tensor.to(dtype=hidden_states.dtype)
                         projection = (hidden_states @ v_matched.unsqueeze(-1)) * v_matched
-                        steered = hidden_states - (strength * projection)
+                        steered = hidden_states + (strength * projection)  # positive = amplify
                         return original_mlp_forward(steered)
 
                     target_layer.mlp.forward = hook_mlp

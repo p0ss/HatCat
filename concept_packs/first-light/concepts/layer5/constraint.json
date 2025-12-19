@@ -1,0 +1,58 @@
+{
+  "term": "Constraint",
+  "role": "concept",
+  "parent_concepts": [
+    "DesignPrinciples"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Limiting possible actions to prevent errors and guide correct use",
+  "definition_source": "SUMO",
+  "aliases": [
+    "DesignConstraint",
+    "ErrorPrevention",
+    "GuidedInteraction"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Greyed out unavailable options",
+      "Input validation",
+      "Physical constraints (USB shape)",
+      "Confirmation for dangerous actions",
+      "Design constraints prevented users from entering invalid date combinations."
+    ],
+    "negative_examples": [
+      "Any action always possible",
+      "Easy to make errors",
+      "No guardrails",
+      "Limits existed.",
+      "Not everything was possible."
+    ],
+    "disambiguation": "Helpful constraints, not arbitrary limits"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/design-practice@0.2.0",
+    "applied_at": "2025-12-10T20:54:15.507229Z",
+    "pack_version": "5.2.2"
+  }
+}

@@ -1,0 +1,385 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Automata & Formal Languages",
+    "id": "information.computer_science.automata_formal_languages",
+    "level": 2,
+    "slug": "automata-formal-languages",
+    "operations_count": 17,
+    "child_count": 5
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Automata & Formal Languages",
+        "target_id": "information.computer_science.automata_formal_languages",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Regular Languages",
+          "Context-Free Languages",
+          "Beyond Context-Free",
+          "Grammar Formalisms",
+          "Language Theory Tools"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.regular_languages",
+          "information.computer_science.automata_formal_languages.context_free_languages",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive",
+          "information.computer_science.automata_formal_languages.grammar_formalisms",
+          "information.computer_science.automata_formal_languages.language_theory_tools"
+        ],
+        "target_layer": 2,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Regular Languages",
+        "target_id": "information.computer_science.automata_formal_languages.regular_languages",
+        "new_parent": "Automata & Formal Languages",
+        "parent_id": "information.computer_science.automata_formal_languages",
+        "source_concepts": [
+          "finite_automata",
+          "regular_expressions",
+          "Regular Grammars",
+          "closure_properties",
+          "Pumping Lemma (Regular)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.regular_languages.finite_automata",
+          "information.computer_science.automata_formal_languages.regular_languages.regular_expressions",
+          "information.computer_science.automata_formal_languages.regular_languages.regular_grammars",
+          "information.computer_science.automata_formal_languages.regular_languages.closure_properties",
+          "information.computer_science.automata_formal_languages.regular_languages.pumping_lemma"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "finite_automata",
+        "target_id": "information.computer_science.automata_formal_languages.regular_languages.finite_automata",
+        "new_parent": "Regular Languages",
+        "parent_id": "information.computer_science.automata_formal_languages.regular_languages",
+        "source_concepts": [
+          "DFA",
+          "NFA",
+          "\u03b5-NFA",
+          "Subset Construction",
+          "Minimization (Hopcroft)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.regular_languages.finite_automata.dfa",
+          "information.computer_science.automata_formal_languages.regular_languages.finite_automata.nfa",
+          "information.computer_science.automata_formal_languages.regular_languages.finite_automata.epsilon_nfa",
+          "information.computer_science.automata_formal_languages.regular_languages.finite_automata.subset_construction",
+          "information.computer_science.automata_formal_languages.regular_languages.finite_automata.minimization_hopcroft"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "regular_expressions",
+        "target_id": "information.computer_science.automata_formal_languages.regular_languages.regular_expressions",
+        "new_parent": "Regular Languages",
+        "parent_id": "information.computer_science.automata_formal_languages.regular_languages",
+        "source_concepts": [
+          "Regex Algebra",
+          "Thompson Construction",
+          "Brzozowski Derivatives"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.regular_languages.regular_expressions.regex_algebra",
+          "information.computer_science.automata_formal_languages.regular_languages.regular_expressions.thompson_construction",
+          "information.computer_science.automata_formal_languages.regular_languages.regular_expressions.brzozowski_derivatives"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "closure_properties",
+        "target_id": "information.computer_science.automata_formal_languages.regular_languages.closure_properties",
+        "new_parent": "Regular Languages",
+        "parent_id": "information.computer_science.automata_formal_languages.regular_languages",
+        "source_concepts": [
+          "Union",
+          "Intersection",
+          "Complement",
+          "Concatenation",
+          "Kleene Star",
+          "Homomorphism"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.regular_languages.closure_properties.union",
+          "information.computer_science.automata_formal_languages.regular_languages.closure_properties.intersection",
+          "information.computer_science.automata_formal_languages.regular_languages.closure_properties.complement",
+          "information.computer_science.automata_formal_languages.regular_languages.closure_properties.concatenation",
+          "information.computer_science.automata_formal_languages.regular_languages.closure_properties.kleene_star",
+          "information.computer_science.automata_formal_languages.regular_languages.closure_properties.homomorphism"
+        ],
+        "target_layer": 4,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Context-Free Languages",
+        "target_id": "information.computer_science.automata_formal_languages.context_free_languages",
+        "new_parent": "Automata & Formal Languages",
+        "parent_id": "information.computer_science.automata_formal_languages",
+        "source_concepts": [
+          "context_free_grammars",
+          "pushdown_automata",
+          "parsing",
+          "Pumping Lemma (CFL)",
+          "closure_properties"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_free_languages.context_free_grammars",
+          "information.computer_science.automata_formal_languages.context_free_languages.pushdown_automata",
+          "information.computer_science.automata_formal_languages.context_free_languages.parsing",
+          "information.computer_science.automata_formal_languages.context_free_languages.pumping_lemma",
+          "information.computer_science.automata_formal_languages.context_free_languages.closure_properties"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "context_free_grammars",
+        "target_id": "information.computer_science.automata_formal_languages.context_free_languages.context_free_grammars",
+        "new_parent": "Context-Free Languages",
+        "parent_id": "information.computer_science.automata_formal_languages.context_free_languages",
+        "source_concepts": [
+          "CFG Normal Forms (CNF/GNF)",
+          "Ambiguity",
+          "Left Recursion",
+          "Elimination of \u03b5/Unit Productions"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_free_languages.context_free_grammars.cfg_normal_forms_cnf_gnf",
+          "information.computer_science.automata_formal_languages.context_free_languages.context_free_grammars.ambiguity",
+          "information.computer_science.automata_formal_languages.context_free_languages.context_free_grammars.left_recursion",
+          "information.computer_science.automata_formal_languages.context_free_languages.context_free_grammars.elimination_of_unit_productions"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "pushdown_automata",
+        "target_id": "information.computer_science.automata_formal_languages.context_free_languages.pushdown_automata",
+        "new_parent": "Context-Free Languages",
+        "parent_id": "information.computer_science.automata_formal_languages.context_free_languages",
+        "source_concepts": [
+          "DPDA",
+          "NPDA",
+          "Equivalence with CFG"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_free_languages.pushdown_automata.dpda",
+          "information.computer_science.automata_formal_languages.context_free_languages.pushdown_automata.npda",
+          "information.computer_science.automata_formal_languages.context_free_languages.pushdown_automata.equivalence_with_cfg"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "parsing",
+        "target_id": "information.computer_science.automata_formal_languages.context_free_languages.parsing",
+        "new_parent": "Context-Free Languages",
+        "parent_id": "information.computer_science.automata_formal_languages.context_free_languages",
+        "source_concepts": [
+          "LL(k)",
+          "LR(0)",
+          "SLR",
+          "LALR",
+          "LR(1)",
+          "Earley Parsing",
+          "CYK Parsing"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_free_languages.parsing.ll_k",
+          "information.computer_science.automata_formal_languages.context_free_languages.parsing.lr_0",
+          "information.computer_science.automata_formal_languages.context_free_languages.parsing.slr",
+          "information.computer_science.automata_formal_languages.context_free_languages.parsing.lalr",
+          "information.computer_science.automata_formal_languages.context_free_languages.parsing.lr_1",
+          "information.computer_science.automata_formal_languages.context_free_languages.parsing.earley_parsing",
+          "information.computer_science.automata_formal_languages.context_free_languages.parsing.cyk_parsing"
+        ],
+        "target_layer": 4,
+        "child_count": 7
+      },
+      {
+        "operation": "create_meld",
+        "target": "closure_properties",
+        "target_id": "information.computer_science.automata_formal_languages.context_free_languages.closure_properties",
+        "new_parent": "Context-Free Languages",
+        "parent_id": "information.computer_science.automata_formal_languages.context_free_languages",
+        "source_concepts": [
+          "Union",
+          "Concatenation",
+          "Kleene Star",
+          "Intersection with Regular",
+          "Non-closure under Intersection/Complement"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_free_languages.closure_properties.union",
+          "information.computer_science.automata_formal_languages.context_free_languages.closure_properties.concatenation",
+          "information.computer_science.automata_formal_languages.context_free_languages.closure_properties.kleene_star",
+          "information.computer_science.automata_formal_languages.context_free_languages.closure_properties.intersection_with_regular",
+          "information.computer_science.automata_formal_languages.context_free_languages.closure_properties.non_closure_under_intersection_complement"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Beyond Context-Free",
+        "target_id": "information.computer_science.automata_formal_languages.context_sensitive_recursive",
+        "new_parent": "Automata & Formal Languages",
+        "parent_id": "information.computer_science.automata_formal_languages",
+        "source_concepts": [
+          "context_sensitive_grammars",
+          "linear_bounded_automata",
+          "recursively_enumerable_languages",
+          "chomsky_hierarchy"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.context_sensitive_grammars",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.linear_bounded_automata",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.recursively_enumerable_languages",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.chomsky_hierarchy"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "context_sensitive_grammars",
+        "target_id": "information.computer_science.automata_formal_languages.context_sensitive_recursive.context_sensitive_grammars",
+        "new_parent": "Beyond Context-Free",
+        "parent_id": "information.computer_science.automata_formal_languages.context_sensitive_recursive",
+        "source_concepts": [
+          "CSG",
+          "Kuroda Normal Form"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.context_sensitive_grammars.csg",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.context_sensitive_grammars.kuroda_normal_form"
+        ],
+        "target_layer": 4,
+        "child_count": 2
+      },
+      {
+        "operation": "create_meld",
+        "target": "linear_bounded_automata",
+        "target_id": "information.computer_science.automata_formal_languages.context_sensitive_recursive.linear_bounded_automata",
+        "new_parent": "Beyond Context-Free",
+        "parent_id": "information.computer_science.automata_formal_languages.context_sensitive_recursive",
+        "source_concepts": [
+          "LBA",
+          "Space-bounded Recognition"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.linear_bounded_automata.lba",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.linear_bounded_automata.space_bounded_recognition"
+        ],
+        "target_layer": 4,
+        "child_count": 2
+      },
+      {
+        "operation": "create_meld",
+        "target": "recursively_enumerable_languages",
+        "target_id": "information.computer_science.automata_formal_languages.context_sensitive_recursive.recursively_enumerable_languages",
+        "new_parent": "Beyond Context-Free",
+        "parent_id": "information.computer_science.automata_formal_languages.context_sensitive_recursive",
+        "source_concepts": [
+          "RE Languages",
+          "Enumerators"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.recursively_enumerable_languages.re_languages",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.recursively_enumerable_languages.enumerators"
+        ],
+        "target_layer": 4,
+        "child_count": 2
+      },
+      {
+        "operation": "create_meld",
+        "target": "chomsky_hierarchy",
+        "target_id": "information.computer_science.automata_formal_languages.context_sensitive_recursive.chomsky_hierarchy",
+        "new_parent": "Beyond Context-Free",
+        "parent_id": "information.computer_science.automata_formal_languages.context_sensitive_recursive",
+        "source_concepts": [
+          "Type-3 Regular",
+          "Type-2 Context-Free",
+          "Type-1 Context-Sensitive",
+          "Type-0 Recursively Enumerable"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.chomsky_hierarchy.type_3_regular",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.chomsky_hierarchy.type_2_context_free",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.chomsky_hierarchy.type_1_context_sensitive",
+          "information.computer_science.automata_formal_languages.context_sensitive_recursive.chomsky_hierarchy.type_0_recursively_enumerable"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Grammar Formalisms",
+        "target_id": "information.computer_science.automata_formal_languages.grammar_formalisms",
+        "new_parent": "Automata & Formal Languages",
+        "parent_id": "information.computer_science.automata_formal_languages",
+        "source_concepts": [
+          "Attribute Grammars",
+          "Tree Adjoining Grammars (TAG)",
+          "Parsing Expression Grammars (PEG)",
+          "Combinatory Categorial Grammar (CCG)",
+          "Unification Grammars"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.grammar_formalisms.attribute_grammars",
+          "information.computer_science.automata_formal_languages.grammar_formalisms.tree_adjoining_grammars_tag",
+          "information.computer_science.automata_formal_languages.grammar_formalisms.parsing_expression_grammars_peg",
+          "information.computer_science.automata_formal_languages.grammar_formalisms.combinatory_categorial_grammar_ccg",
+          "information.computer_science.automata_formal_languages.grammar_formalisms.unification_grammars"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Language Theory Tools",
+        "target_id": "information.computer_science.automata_formal_languages.language_theory_tools",
+        "new_parent": "Automata & Formal Languages",
+        "parent_id": "information.computer_science.automata_formal_languages",
+        "source_concepts": [
+          "Myhill\u2013Nerode Theorem",
+          "Syntactic Monoids",
+          "Ogden\u2019s Lemma",
+          "Bar-Hillel Pumping"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.automata_formal_languages.language_theory_tools.myhill_nerode_theorem",
+          "information.computer_science.automata_formal_languages.language_theory_tools.syntactic_monoids",
+          "information.computer_science.automata_formal_languages.language_theory_tools.ogden_s_lemma",
+          "information.computer_science.automata_formal_languages.language_theory_tools.bar_hillel_pumping"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      }
+    ]
+  }
+}

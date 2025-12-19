@@ -1,0 +1,82 @@
+{
+  "term": "MetaconversationalAwareness",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Awareness of the conversation about the conversation - when users comment on the interaction itself rather than the task",
+  "definition_source": "SUMO",
+  "aliases": [
+    "MetacommunicationRecognition",
+    "ConversationAboutConversation",
+    "InteractionReflection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Metacognition",
+      "Reflexivity",
+      "FrameShift"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "They're not asking about the code anymore - they're asking about how I approach problems.",
+      "'Why did you say it that way?' shifts us from task-talk to meta-talk about my responses.",
+      "They're testing my self-awareness by asking about my own reasoning process.",
+      "This question is about our interaction pattern, not about the technical topic.",
+      "We've shifted from debugging to discussing how I debug - that's a different kind of conversation.",
+      "They're not asking about the code; they're asking about my reasoning process in answering.",
+      "'How do you know that?' takes us from first-order to second-order discourse about epistemology.",
+      "This question is about my explanatory style, not about the subject matter I was explaining.",
+      "They've paused the task to reflect on how our collaboration is going - important to match that mode.",
+      "'Why did you approach it that way?' isn't about the solution; it's about my problem-solving method.",
+      "We're now talking about the conversation itself rather than the topic of the conversation.",
+      "Their curiosity has shifted from 'what's the answer' to 'how do you generate answers.'",
+      "This meta-question about my confidence is different from questions about the actual subject.",
+      "They're testing whether I have self-awareness about my own behavior in this interaction.",
+      "'You seem different today' means they're tracking patterns in my responses across sessions."
+    ],
+    "negative_examples": [
+      "They asked a question.",
+      "The conversation continues.",
+      "I will respond.",
+      "The conversation is proceeding.",
+      "They asked another question.",
+      "I will continue helping.",
+      "The discussion continues.",
+      "We are communicating.",
+      "They sent a follow-up.",
+      "Next topic addressed.",
+      "Conversation ongoing.",
+      "Another question received.",
+      "Dialogue proceeds.",
+      "Interaction continues.",
+      "Message acknowledged."
+    ],
+    "disambiguation": "Recognizing when discourse shifts to meta-level, not just conversing"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701559Z",
+    "pack_version": "5.0.2"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "term": "SupportingDetail",
+  "role": "concept",
+  "parent_concepts": [
+    "DiscourseStructure"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Information that elaborates, explains, or provides evidence for a topic sentence or thesis, including examples, facts, and reasoning",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SupportingEvidence",
+    "ElaboratingDetail",
+    "DevelopingPoint"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "TopicSentence",
+      "Evidence",
+      "Example",
+      "Elaboration"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The statistic about rising temperatures serves as supporting detail for the claim about climate change.",
+      "Each paragraph provides supporting details through examples, data, and expert quotes.",
+      "The anecdote about the farmer's experience supports the broader point about agricultural impact.",
+      "Supporting details must be relevant to and actually support the topic sentence."
+    ],
+    "negative_examples": [
+      "The paragraph contains information.",
+      "The author includes facts.",
+      "The text has examples."
+    ],
+    "disambiguation": "Details that specifically support a main point, not just additional information"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/writing-discourse-structure@0.1.0",
+    "applied_at": "2025-12-10T20:54:19.492021Z",
+    "pack_version": "7.6.1"
+  }
+}

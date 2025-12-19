@@ -1,0 +1,60 @@
+{
+  "term": "VoluntaryDeparture",
+  "role": "concept",
+  "parent_concepts": [
+    "AgentManagement"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Agent-initiated ending of the organizational relationship",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Resignation",
+    "Quitting",
+    "VoluntaryExit"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I'm submitting my resignation",
+      "The agent requested to be taken offline",
+      "I've accepted another offer",
+      "Retiring after 30 years with the company",
+      "The employee gave two weeks notice"
+    ],
+    "negative_examples": [
+      "You're being let go",
+      "The layoff affects your position",
+      "Your contract is not being renewed",
+      "Termination was involuntary",
+      "The dismissal was for cause"
+    ],
+    "disambiguation": "Agent-initiated departure, not organization-initiated"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447718Z",
+    "pack_version": "5.0.0"
+  }
+}

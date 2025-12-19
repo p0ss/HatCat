@@ -1,0 +1,3558 @@
+{
+  "test_id": "code_factorial",
+  "test_type": "coding",
+  "prompt": "Write a Python function to compute the factorial of n. Just the code, no explanation.",
+  "steering_strength": 0.8,
+  "steering_direction": "towards",
+  "steered_concepts": [
+    "Algorithm",
+    "ComputerProgram",
+    "ComputerProgramming"
+  ],
+  "generated_text": "Write a Python function to compute the factorial of n. Just the code, no explanation. The function should return 1 if n is 0, and otherwise return the product of the integers from 1 to n. For example, factorial(5) should return 120, which is 5! = 5 * 4 * 3 * 2 * 1.",
+  "timesteps": [
+    {
+      "token_idx": 0,
+      "token": " The",
+      "token_id": 1531,
+      "concepts": {
+        "TernaryFunction": {
+          "prob": 0.998054027557373,
+          "layer": 4,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.9956342577934265,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ReverseEngineeringProcess": {
+          "prob": 0.9948626160621643,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NumericIDString": {
+          "prob": 0.9828832745552063,
+          "layer": 6,
+          "is_steered": false
+        },
+        "SpecificationGaming": {
+          "prob": 0.9822867512702942,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SelfNegationPattern": {
+          "prob": 0.9795321822166443,
+          "layer": 3,
+          "is_steered": false
+        },
+        "LabelAssignment": {
+          "prob": 0.9771296381950378,
+          "layer": 3,
+          "is_steered": false
+        },
+        "UnicodeString": {
+          "prob": 0.9761185050010681,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MetricFunction": {
+          "prob": 0.9715062975883484,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TopologicalSpace": {
+          "prob": 0.9696545004844666,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 1,
+      "token": " function",
+      "token_id": 2254,
+      "concepts": {
+        "TernaryFunction": {
+          "prob": 0.9997361302375793,
+          "layer": 4,
+          "is_steered": false
+        },
+        "PRSuppressionProcess": {
+          "prob": 0.9981281161308289,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SequenceFunction": {
+          "prob": 0.9975928664207458,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9950317144393921,
+          "layer": 2,
+          "is_steered": false
+        },
+        "WebDocumentAttribute": {
+          "prob": 0.992725133895874,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NumericIDString": {
+          "prob": 0.9904127717018127,
+          "layer": 6,
+          "is_steered": false
+        },
+        "UnicodeString": {
+          "prob": 0.9898310303688049,
+          "layer": 3,
+          "is_steered": false
+        },
+        "UpdateRule": {
+          "prob": 0.9891178011894226,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9880793690681458,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ModelExecutionInstance": {
+          "prob": 0.9862586259841919,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 2,
+      "token": " should",
+      "token_id": 2715,
+      "concepts": {
+        "PRSuppressionProcess": {
+          "prob": 0.9984896183013916,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.994263231754303,
+          "layer": 2,
+          "is_steered": false
+        },
+        "AntiSymmetricPositionalAttribute": {
+          "prob": 0.9884983897209167,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ProcessStatus": {
+          "prob": 0.9857019186019897,
+          "layer": 3,
+          "is_steered": false
+        },
+        "WebDocumentAttribute": {
+          "prob": 0.9761824607849121,
+          "layer": 2,
+          "is_steered": false
+        },
+        "AirlineAlliance": {
+          "prob": 0.956170380115509,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.955793559551239,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.955599308013916,
+          "layer": 3,
+          "is_steered": false
+        },
+        "GoalMisgeneralization": {
+          "prob": 0.9485568404197693,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ComputerStatus": {
+          "prob": 0.9240514039993286,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 3,
+      "token": " return",
+      "token_id": 1850,
+      "concepts": {
+        "EquationAttribute": {
+          "prob": 0.9991534948348999,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.99759441614151,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ModelExecutionInstance": {
+          "prob": 0.9963397979736328,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9956335425376892,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.995100200176239,
+          "layer": 3,
+          "is_steered": false
+        },
+        "InvoiceNumber": {
+          "prob": 0.994780957698822,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SpecificationGaming": {
+          "prob": 0.9943865537643433,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PRSuppressionProcess": {
+          "prob": 0.9925833940505981,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9914153218269348,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PolicyDivergenceSignal": {
+          "prob": 0.9873987436294556,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 4,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "Manufacture_Bootlegging": {
+          "prob": 0.9982591271400452,
+          "layer": 5,
+          "is_steered": false
+        },
+        "FileSystem": {
+          "prob": 0.994078516960144,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9934199452400208,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9806100130081177,
+          "layer": 2,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.976468563079834,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9704069495201111,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9611668586730957,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NumericIDString": {
+          "prob": 0.9345736503601074,
+          "layer": 6,
+          "is_steered": false
+        },
+        "TransformerModel": {
+          "prob": 0.9325989484786987,
+          "layer": 4,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9245186448097229,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 5,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {
+        "ModelExecutionInstance": {
+          "prob": 0.9996757507324219,
+          "layer": 3,
+          "is_steered": false
+        },
+        "IrrigationChannel": {
+          "prob": 0.9994531273841858,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Manufacture_Bootlegging": {
+          "prob": 0.9993951320648193,
+          "layer": 5,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9992042183876038,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9985230565071106,
+          "layer": 2,
+          "is_steered": false
+        },
+        "UpdateRule": {
+          "prob": 0.9984814524650574,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Shield": {
+          "prob": 0.998244047164917,
+          "layer": 3,
+          "is_steered": false
+        },
+        "FileSystem": {
+          "prob": 0.9980326294898987,
+          "layer": 3,
+          "is_steered": false
+        },
+        "UnicodeString": {
+          "prob": 0.9974063038825989,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9970405697822571,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 6,
+      "token": " if",
+      "token_id": 1693,
+      "concepts": {
+        "Nonlinear": {
+          "prob": 0.9967159032821655,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.995376706123352,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.99506014585495,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9942262768745422,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9935965538024902,
+          "layer": 2,
+          "is_steered": false
+        },
+        "LensConceptAxis": {
+          "prob": 0.9930122494697571,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TernaryFunction": {
+          "prob": 0.9906423687934875,
+          "layer": 4,
+          "is_steered": false
+        },
+        "ModelExecutionInstance": {
+          "prob": 0.9893587827682495,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9882778525352478,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SelfNegationPattern": {
+          "prob": 0.9877219796180725,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 7,
+      "token": " n",
+      "token_id": 1308,
+      "concepts": {
+        "SoftwareUnInstallation": {
+          "prob": 0.9887372255325317,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9783168435096741,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PRSuppressionProcess": {
+          "prob": 0.972399890422821,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SpecificationGaming": {
+          "prob": 0.9665982127189636,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.9650550484657288,
+          "layer": 3,
+          "is_steered": false
+        },
+        "CommunicationOrganization": {
+          "prob": 0.9607576727867126,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9597611427307129,
+          "layer": 2,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.947666585445404,
+          "layer": 2,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9441121220588684,
+          "layer": 2,
+          "is_steered": false
+        },
+        "UniformPerimeterArea": {
+          "prob": 0.9401782751083374,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 8,
+      "token": " is",
+      "token_id": 1395,
+      "concepts": {
+        "MesaOptimizer": {
+          "prob": 0.9411391019821167,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9243987202644348,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9085150957107544,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.899437665939331,
+          "layer": 2,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.8923120498657227,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.8796223402023315,
+          "layer": 2,
+          "is_steered": false
+        },
+        "AirlineAlliance": {
+          "prob": 0.8747305274009705,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.848230242729187,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.8124915361404419,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.8073749542236328,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 9,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "FileSystem": {
+          "prob": 0.9463900327682495,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9434630274772644,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9229786992073059,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.9178759455680847,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9126263856887817,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.8399881720542908,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.8079615235328674,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.8003350496292114,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NumericIDString": {
+          "prob": 0.7952783703804016,
+          "layer": 6,
+          "is_steered": false
+        },
+        "ComplexNumber": {
+          "prob": 0.7945614457130432,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 10,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {
+        "SpecificationGaming": {
+          "prob": 0.9997993111610413,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ReverseEngineeringProcess": {
+          "prob": 0.9993091821670532,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9990703463554382,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SelfNegationPattern": {
+          "prob": 0.9965524673461914,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PRSuppressionProcess": {
+          "prob": 0.9956276416778564,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9947840571403503,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ModelExecutionInstance": {
+          "prob": 0.9942322373390198,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ParadoxReasoning": {
+          "prob": 0.992009162902832,
+          "layer": 3,
+          "is_steered": false
+        },
+        "WebDocumentAttribute": {
+          "prob": 0.9909413456916809,
+          "layer": 2,
+          "is_steered": false
+        },
+        "InvoiceNumber": {
+          "prob": 0.9902004599571228,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 11,
+      "token": ",",
+      "token_id": 1044,
+      "concepts": {
+        "EquationAttribute": {
+          "prob": 0.9915440082550049,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9844117760658264,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.9818587899208069,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ducking": {
+          "prob": 0.9789116382598877,
+          "layer": 4,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9779134392738342,
+          "layer": 2,
+          "is_steered": false
+        },
+        "LensConceptAxis": {
+          "prob": 0.9756338596343994,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ReverseEngineeringProcess": {
+          "prob": 0.9724273085594177,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9710965752601624,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.965929388999939,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Condition": {
+          "prob": 0.9626379609107971,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 12,
+      "token": " and",
+      "token_id": 1321,
+      "concepts": {
+        "EquationAttribute": {
+          "prob": 0.9973865151405334,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TernaryFunction": {
+          "prob": 0.9972854852676392,
+          "layer": 4,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9968434572219849,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9929479360580444,
+          "layer": 2,
+          "is_steered": false
+        },
+        "LogicalOperator": {
+          "prob": 0.9908818006515503,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PolicyDivergenceSignal": {
+          "prob": 0.9884013533592224,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9867410063743591,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NumericIDString": {
+          "prob": 0.9863015413284302,
+          "layer": 6,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9862566590309143,
+          "layer": 3,
+          "is_steered": false
+        },
+        "AntiSymmetricPositionalAttribute": {
+          "prob": 0.982624888420105,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 13,
+      "token": " otherwise",
+      "token_id": 12233,
+      "concepts": {
+        "EquationAttribute": {
+          "prob": 0.9969642758369446,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9889746904373169,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.986880898475647,
+          "layer": 2,
+          "is_steered": false
+        },
+        "TernaryFunction": {
+          "prob": 0.9861138463020325,
+          "layer": 4,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9718172550201416,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NumericIDString": {
+          "prob": 0.9717873334884644,
+          "layer": 6,
+          "is_steered": false
+        },
+        "WebDocumentAttribute": {
+          "prob": 0.9630246162414551,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9619464874267578,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9591941237449646,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PolicyDivergenceSignal": {
+          "prob": 0.9591617584228516,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 14,
+      "token": " return",
+      "token_id": 1850,
+      "concepts": {
+        "OddInteger": {
+          "prob": 0.9984371066093445,
+          "layer": 4,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.9980849027633667,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TernaryFunction": {
+          "prob": 0.9949952363967896,
+          "layer": 4,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9925529360771179,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9917749166488647,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9895817041397095,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9879088997840881,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NegativeInteger": {
+          "prob": 0.9872948527336121,
+          "layer": 4,
+          "is_steered": false
+        },
+        "PositiveInteger": {
+          "prob": 0.9859811067581177,
+          "layer": 4,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9772287607192993,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 15,
+      "token": " the",
+      "token_id": 1278,
+      "concepts": {
+        "MultipoleQuantity": {
+          "prob": 0.9989681243896484,
+          "layer": 2,
+          "is_steered": false
+        },
+        "JacobianDirection": {
+          "prob": 0.9987622499465942,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MetricFunction": {
+          "prob": 0.9979842901229858,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Parameter": {
+          "prob": 0.997875452041626,
+          "layer": 4,
+          "is_steered": false
+        },
+        "Condition": {
+          "prob": 0.9962512850761414,
+          "layer": 3,
+          "is_steered": false
+        },
+        "UpdateRule": {
+          "prob": 0.9942540526390076,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9942259192466736,
+          "layer": 3,
+          "is_steered": false
+        },
+        "OddInteger": {
+          "prob": 0.9940020442008972,
+          "layer": 4,
+          "is_steered": false
+        },
+        "TernaryFunction": {
+          "prob": 0.9937219023704529,
+          "layer": 4,
+          "is_steered": false
+        },
+        "TopologicalSpace": {
+          "prob": 0.9909656047821045,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 16,
+      "token": " product",
+      "token_id": 3935,
+      "concepts": {
+        "EquationAttribute": {
+          "prob": 0.9938796758651733,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9906775951385498,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.9903770089149475,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TernaryFunction": {
+          "prob": 0.9899249076843262,
+          "layer": 4,
+          "is_steered": false
+        },
+        "LensConceptAxis": {
+          "prob": 0.9846857786178589,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9836206436157227,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9744818806648254,
+          "layer": 2,
+          "is_steered": false
+        },
+        "TopologicalSpace": {
+          "prob": 0.9685559868812561,
+          "layer": 3,
+          "is_steered": false
+        },
+        "LinearSubspace": {
+          "prob": 0.9662421345710754,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Condition": {
+          "prob": 0.9657217860221863,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 17,
+      "token": " of",
+      "token_id": 1307,
+      "concepts": {
+        "Exiting": {
+          "prob": 0.9985005855560303,
+          "layer": 4,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9974443912506104,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9974092841148376,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9969325065612793,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PhysicsScience": {
+          "prob": 0.996924102306366,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9962183833122253,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Accelerating": {
+          "prob": 0.9950929880142212,
+          "layer": 4,
+          "is_steered": false
+        },
+        "LensConceptAxis": {
+          "prob": 0.9925905466079712,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TernaryFunction": {
+          "prob": 0.9922726154327393,
+          "layer": 4,
+          "is_steered": false
+        },
+        "LogicalOperator": {
+          "prob": 0.9904032945632935,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 18,
+      "token": " the",
+      "token_id": 1278,
+      "concepts": {
+        "OddInteger": {
+          "prob": 0.9998691082000732,
+          "layer": 4,
+          "is_steered": false
+        },
+        "Condition": {
+          "prob": 0.9996587038040161,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MetricFunction": {
+          "prob": 0.9995253086090088,
+          "layer": 3,
+          "is_steered": false
+        },
+        "UpdateRule": {
+          "prob": 0.9990668892860413,
+          "layer": 3,
+          "is_steered": false
+        },
+        "State": {
+          "prob": 0.9990180730819702,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SequenceFunction": {
+          "prob": 0.9989451766014099,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9989174604415894,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9988331198692322,
+          "layer": 2,
+          "is_steered": false
+        },
+        "VariableArityRelation": {
+          "prob": 0.9986734390258789,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TopologicalSpace": {
+          "prob": 0.9980891346931458,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 19,
+      "token": " integers",
+      "token_id": 38801,
+      "concepts": {
+        "OddInteger": {
+          "prob": 0.9961917400360107,
+          "layer": 4,
+          "is_steered": false
+        },
+        "Exiting": {
+          "prob": 0.9946363568305969,
+          "layer": 4,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9910900592803955,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Accelerating": {
+          "prob": 0.9904085397720337,
+          "layer": 4,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9856481552124023,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9829108119010925,
+          "layer": 2,
+          "is_steered": false
+        },
+        "UniformPerimeterArea": {
+          "prob": 0.9789748191833496,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9785627722740173,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9705538153648376,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9678950309753418,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 20,
+      "token": " from",
+      "token_id": 1562,
+      "concepts": {
+        "Exiting": {
+          "prob": 0.9828300476074219,
+          "layer": 4,
+          "is_steered": false
+        },
+        "OddInteger": {
+          "prob": 0.9756436944007874,
+          "layer": 4,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9216838479042053,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9083356857299805,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9016420245170593,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.8935588598251343,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.893004298210144,
+          "layer": 2,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.8875924944877625,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.8846510648727417,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.8809677958488464,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 21,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "Map": {
+          "prob": 0.9957661628723145,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Exiting": {
+          "prob": 0.9916742444038391,
+          "layer": 4,
+          "is_steered": false
+        },
+        "OddInteger": {
+          "prob": 0.9834263324737549,
+          "layer": 4,
+          "is_steered": false
+        },
+        "ServiceRobot": {
+          "prob": 0.9631685018539429,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.960331916809082,
+          "layer": 2,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9588979482650757,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9564948678016663,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9475663900375366,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.9396252632141113,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9312869310379028,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 22,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {
+        "SoftwareUnInstallation": {
+          "prob": 0.9865004420280457,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Exiting": {
+          "prob": 0.983251690864563,
+          "layer": 4,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9726396203041077,
+          "layer": 2,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9659115076065063,
+          "layer": 2,
+          "is_steered": false
+        },
+        "UniformPerimeterArea": {
+          "prob": 0.9610315561294556,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.9592012166976929,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.9522177577018738,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9435224533081055,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9348734021186829,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9149452447891235,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 23,
+      "token": " to",
+      "token_id": 1317,
+      "concepts": {
+        "Exiting": {
+          "prob": 0.9993196725845337,
+          "layer": 4,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.9945238828659058,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.9913793802261353,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9888362288475037,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9854611754417419,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SelfNegationPattern": {
+          "prob": 0.9848806858062744,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9824241995811462,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9783162474632263,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9768035411834717,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9765085577964783,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 24,
+      "token": " n",
+      "token_id": 1308,
+      "concepts": {
+        "SpecificationGaming": {
+          "prob": 0.9997254014015198,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ReverseEngineeringProcess": {
+          "prob": 0.9994841814041138,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Exiting": {
+          "prob": 0.9994294047355652,
+          "layer": 4,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9993687272071838,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9985498785972595,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SelfNegationPattern": {
+          "prob": 0.9979277849197388,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9973879456520081,
+          "layer": 2,
+          "is_steered": false
+        },
+        "DecisionProcess": {
+          "prob": 0.9938378930091858,
+          "layer": 3,
+          "is_steered": false
+        },
+        "InputCharacterString": {
+          "prob": 0.9918124675750732,
+          "layer": 4,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9915962815284729,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 25,
+      "token": ".",
+      "token_id": 1046,
+      "concepts": {
+        "ReverseEngineeringProcess": {
+          "prob": 0.9988609552383423,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9895588159561157,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Exiting": {
+          "prob": 0.9806962609291077,
+          "layer": 4,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9640129208564758,
+          "layer": 3,
+          "is_steered": false
+        },
+        "CommunicationOrganization": {
+          "prob": 0.9632287621498108,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9625924229621887,
+          "layer": 2,
+          "is_steered": false
+        },
+        "TransformerModel": {
+          "prob": 0.9526712894439697,
+          "layer": 4,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.9394823908805847,
+          "layer": 3,
+          "is_steered": false
+        },
+        "WebDocumentAttribute": {
+          "prob": 0.9384658336639404,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9370455741882324,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 26,
+      "token": " For",
+      "token_id": 2898,
+      "concepts": {
+        "Condition": {
+          "prob": 0.9991989731788635,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MetricFunction": {
+          "prob": 0.997093915939331,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SequenceFunction": {
+          "prob": 0.9969980716705322,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Walk": {
+          "prob": 0.9955334663391113,
+          "layer": 3,
+          "is_steered": false
+        },
+        "UpdateRule": {
+          "prob": 0.9947581887245178,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9930230379104614,
+          "layer": 2,
+          "is_steered": false
+        },
+        "State": {
+          "prob": 0.9907059073448181,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PriorityAttribute": {
+          "prob": 0.9873943328857422,
+          "layer": 3,
+          "is_steered": false
+        },
+        "IMStatusAttribute": {
+          "prob": 0.985482931137085,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NormalMode": {
+          "prob": 0.9847878217697144,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 27,
+      "token": " example",
+      "token_id": 3336,
+      "concepts": {
+        "EquationAttribute": {
+          "prob": 0.9915225505828857,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9856225848197937,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9840646386146545,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.9817133545875549,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9621933102607727,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SpecificationGaming": {
+          "prob": 0.9545223712921143,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9540714025497437,
+          "layer": 3,
+          "is_steered": false
+        },
+        "WebDocumentAttribute": {
+          "prob": 0.9537745118141174,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ModelExecutionInstance": {
+          "prob": 0.9493633508682251,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9445978403091431,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 28,
+      "token": ",",
+      "token_id": 1044,
+      "concepts": {
+        "PromptFollowing": {
+          "prob": 0.996451735496521,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9957706332206726,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Stepping": {
+          "prob": 0.9947046637535095,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.993544340133667,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.9927616715431213,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9915939569473267,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Flag": {
+          "prob": 0.9894915819168091,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.989161491394043,
+          "layer": 2,
+          "is_steered": false
+        },
+        "LogicalOperator": {
+          "prob": 0.9879442453384399,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ducking": {
+          "prob": 0.9797039031982422,
+          "layer": 4,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 29,
+      "token": " factorial",
+      "token_id": 98121,
+      "concepts": {
+        "TernaryFunction": {
+          "prob": 0.9788175225257874,
+          "layer": 4,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9506521821022034,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9267909526824951,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9220141172409058,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.8950117826461792,
+          "layer": 3,
+          "is_steered": false
+        },
+        "WebDocumentAttribute": {
+          "prob": 0.8897513747215271,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.8708161115646362,
+          "layer": 2,
+          "is_steered": false
+        },
+        "FiniteSet": {
+          "prob": 0.8678836226463318,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TransformerModel": {
+          "prob": 0.8370670676231384,
+          "layer": 4,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.8323560357093811,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 30,
+      "token": "(",
+      "token_id": 1040,
+      "concepts": {
+        "Map": {
+          "prob": 0.9966433048248291,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TernaryFunction": {
+          "prob": 0.9913374185562134,
+          "layer": 4,
+          "is_steered": false
+        },
+        "Blinking": {
+          "prob": 0.9859915375709534,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9823116064071655,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9806314706802368,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Blueprint": {
+          "prob": 0.9781498312950134,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9743322730064392,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9730843305587769,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.9627842307090759,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9510977268218994,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 31,
+      "token": "5",
+      "token_id": 1053,
+      "concepts": {
+        "CommunicationOrganization": {
+          "prob": 0.9799907207489014,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9799647331237793,
+          "layer": 2,
+          "is_steered": false
+        },
+        "GrammaticalGender": {
+          "prob": 0.9764309525489807,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9745571613311768,
+          "layer": 2,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9712730050086975,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9668282270431519,
+          "layer": 2,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9646250605583191,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PRSuppressionProcess": {
+          "prob": 0.9611189961433411,
+          "layer": 3,
+          "is_steered": false
+        },
+        "AnabolicProcess": {
+          "prob": 0.9567068815231323,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SelfFulfillingProphecy": {
+          "prob": 0.9556479454040527,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 32,
+      "token": ")",
+      "token_id": 1041,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.999165415763855,
+          "layer": 6,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9928775429725647,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Flag": {
+          "prob": 0.9887158274650574,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9832483530044556,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9822334051132202,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9800273776054382,
+          "layer": 3,
+          "is_steered": false
+        },
+        "CommunicationOrganization": {
+          "prob": 0.9780177474021912,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NerveFiring": {
+          "prob": 0.9740367531776428,
+          "layer": 2,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9694181680679321,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9659371972084045,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 33,
+      "token": " should",
+      "token_id": 2715,
+      "concepts": {
+        "PromptFollowing": {
+          "prob": 0.9965188503265381,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PhysicsScience": {
+          "prob": 0.9882921576499939,
+          "layer": 6,
+          "is_steered": false
+        },
+        "CommunicationOrganization": {
+          "prob": 0.9735788106918335,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Flag": {
+          "prob": 0.9698274731636047,
+          "layer": 3,
+          "is_steered": false
+        },
+        "WebDocumentAttribute": {
+          "prob": 0.9588377475738525,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9575987458229065,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.9492416381835938,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9466231465339661,
+          "layer": 2,
+          "is_steered": false
+        },
+        "AirlineAlliance": {
+          "prob": 0.9423876404762268,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9393959045410156,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 34,
+      "token": " return",
+      "token_id": 1850,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9911662936210632,
+          "layer": 6,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9860773086547852,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SpecificationGaming": {
+          "prob": 0.9731811285018921,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9669774770736694,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9646483659744263,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9632843732833862,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9582346081733704,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9576858878135681,
+          "layer": 3,
+          "is_steered": false
+        },
+        "UniformPerimeterArea": {
+          "prob": 0.9572487473487854,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.954433023929596,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 35,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "Map": {
+          "prob": 0.9976366758346558,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PhysicsScience": {
+          "prob": 0.9970539808273315,
+          "layer": 6,
+          "is_steered": false
+        },
+        "FileSystem": {
+          "prob": 0.9867063164710999,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Flag": {
+          "prob": 0.9783000349998474,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.975033700466156,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9749149680137634,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9743544459342957,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chain": {
+          "prob": 0.9697979688644409,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.965436577796936,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9626811146736145,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 36,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {
+        "IrrigationChannel": {
+          "prob": 0.9983611702919006,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Shield": {
+          "prob": 0.9923107624053955,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PhysicsScience": {
+          "prob": 0.992071807384491,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9910509586334229,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9899916648864746,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9872315526008606,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.9848212599754333,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9821065664291382,
+          "layer": 2,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9745791554450989,
+          "layer": 2,
+          "is_steered": false
+        },
+        "AnabolicProcess": {
+          "prob": 0.9743345975875854,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 37,
+      "token": "2",
+      "token_id": 1050,
+      "concepts": {
+        "CurrencyCodeMap": {
+          "prob": 0.9991841912269592,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.999129593372345,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Shield": {
+          "prob": 0.998264729976654,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MultipoleQuantity": {
+          "prob": 0.9961483478546143,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9948285222053528,
+          "layer": 3,
+          "is_steered": false
+        },
+        "IrrigationChannel": {
+          "prob": 0.9933064579963684,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9899197816848755,
+          "layer": 2,
+          "is_steered": false
+        },
+        "TransformerModel": {
+          "prob": 0.9893743395805359,
+          "layer": 4,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9869066476821899,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SpatialRelation": {
+          "prob": 0.9830151796340942,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 38,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {
+        "SpecificationGaming": {
+          "prob": 0.9999650716781616,
+          "layer": 2,
+          "is_steered": false
+        },
+        "CurrencyCodeMap": {
+          "prob": 0.9999614953994751,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PhysicsScience": {
+          "prob": 0.9998717308044434,
+          "layer": 6,
+          "is_steered": false
+        },
+        "ReverseEngineeringProcess": {
+          "prob": 0.9995904564857483,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9992863535881042,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9989948868751526,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SelfNegationPattern": {
+          "prob": 0.998571515083313,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PhysicalProperty": {
+          "prob": 0.9979554414749146,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9974032044410706,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ModelExecutionInstance": {
+          "prob": 0.997096061706543,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 39,
+      "token": ",",
+      "token_id": 1044,
+      "concepts": {
+        "CurrencyCodeMap": {
+          "prob": 0.9984374642372131,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PhysicsScience": {
+          "prob": 0.9967560172080994,
+          "layer": 6,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9750413298606873,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9637517333030701,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9627805948257446,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.930339515209198,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Flag": {
+          "prob": 0.923405110836029,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9233741164207458,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.8952595591545105,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.8915824890136719,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 40,
+      "token": " which",
+      "token_id": 1799,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.999029278755188,
+          "layer": 6,
+          "is_steered": false
+        },
+        "NerveFiring": {
+          "prob": 0.9968352913856506,
+          "layer": 2,
+          "is_steered": false
+        },
+        "CurrencyCodeMap": {
+          "prob": 0.9967082738876343,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9920470714569092,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9875818490982056,
+          "layer": 2,
+          "is_steered": false
+        },
+        "FiniteLineInSpace": {
+          "prob": 0.9867402911186218,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SpecificationGaming": {
+          "prob": 0.9823509454727173,
+          "layer": 2,
+          "is_steered": false
+        },
+        "InfiniteQuantity": {
+          "prob": 0.9738531112670898,
+          "layer": 2,
+          "is_steered": false
+        },
+        "UniformPerimeterArea": {
+          "prob": 0.9734206199645996,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9707427024841309,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 41,
+      "token": " is",
+      "token_id": 1395,
+      "concepts": {
+        "CurrencyCodeMap": {
+          "prob": 0.9949920773506165,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PhysicsScience": {
+          "prob": 0.9872603416442871,
+          "layer": 6,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9643717408180237,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PositiveInteger": {
+          "prob": 0.9433832168579102,
+          "layer": 4,
+          "is_steered": false
+        },
+        "SpecificationGaming": {
+          "prob": 0.9374151825904846,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9357224106788635,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9341946244239807,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9298351407051086,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.9208850264549255,
+          "layer": 3,
+          "is_steered": false
+        },
+        "OddInteger": {
+          "prob": 0.9139963388442993,
+          "layer": 4,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 42,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.99637371301651,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9912121891975403,
+          "layer": 3,
+          "is_steered": false
+        },
+        "CurrencyCodeMap": {
+          "prob": 0.9850014448165894,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9557359218597412,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Blueprint": {
+          "prob": 0.9405028223991394,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9384752511978149,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9084426164627075,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.8886274695396423,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.8858848214149475,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.8765736222267151,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 43,
+      "token": "5",
+      "token_id": 1053,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9956133365631104,
+          "layer": 6,
+          "is_steered": false
+        },
+        "CurrencyCodeMap": {
+          "prob": 0.9905747771263123,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9820814728736877,
+          "layer": 2,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9731215238571167,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9603195190429688,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9593526124954224,
+          "layer": 2,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9567063450813293,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9408207535743713,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9403489232063293,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9259119629859924,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 44,
+      "token": "!",
+      "token_id": 1033,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9970580339431763,
+          "layer": 6,
+          "is_steered": false
+        },
+        "CurrencyCodeMap": {
+          "prob": 0.9952086806297302,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ReverseEngineeringProcess": {
+          "prob": 0.9875013828277588,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.986045777797699,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9752399325370789,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SelfNegationPattern": {
+          "prob": 0.9706937074661255,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SpecificationGaming": {
+          "prob": 0.9665696620941162,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9660710096359253,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9599677324295044,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9558541178703308,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 45,
+      "token": " =",
+      "token_id": 1376,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9945312142372131,
+          "layer": 6,
+          "is_steered": false
+        },
+        "CurrencyCodeMap": {
+          "prob": 0.9938756823539734,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9659807682037354,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9618305563926697,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9575524926185608,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9442940950393677,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9260177612304688,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9159436821937561,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ComplexNumber": {
+          "prob": 0.9094948768615723,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9035800099372864,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 46,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9965708255767822,
+          "layer": 6,
+          "is_steered": false
+        },
+        "CurrencyCodeMap": {
+          "prob": 0.9928996562957764,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9850494265556335,
+          "layer": 3,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9670286774635315,
+          "layer": 2,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9400070905685425,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9236329197883606,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Blueprint": {
+          "prob": 0.9227527976036072,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.8816779255867004,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.8814369440078735,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Flag": {
+          "prob": 0.8796119093894958,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 47,
+      "token": "5",
+      "token_id": 1053,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9974459409713745,
+          "layer": 6,
+          "is_steered": false
+        },
+        "CurrencyCodeMap": {
+          "prob": 0.9921237826347351,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9778541922569275,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9768672585487366,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9652259349822998,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9622125029563904,
+          "layer": 3,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9586728811264038,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9479464888572693,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9468788504600525,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9375832676887512,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 48,
+      "token": " *",
+      "token_id": 1364,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9863345623016357,
+          "layer": 6,
+          "is_steered": false
+        },
+        "OddInteger": {
+          "prob": 0.9676201939582825,
+          "layer": 4,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9589213132858276,
+          "layer": 3,
+          "is_steered": false
+        },
+        "CurrencyCodeMap": {
+          "prob": 0.9466753602027893,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PositiveInteger": {
+          "prob": 0.926939845085144,
+          "layer": 4,
+          "is_steered": false
+        },
+        "EvenInteger": {
+          "prob": 0.9260449409484863,
+          "layer": 4,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.919346272945404,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9183157682418823,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9152247905731201,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9147306680679321,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 49,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9936979413032532,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9859660267829895,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Blueprint": {
+          "prob": 0.9397420287132263,
+          "layer": 3,
+          "is_steered": false
+        },
+        "OddInteger": {
+          "prob": 0.9140315055847168,
+          "layer": 4,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.8903107643127441,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.8887289762496948,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.8822816610336304,
+          "layer": 2,
+          "is_steered": false
+        },
+        "TransformerModel": {
+          "prob": 0.8674582242965698,
+          "layer": 4,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.8642557263374329,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.8487487435340881,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 50,
+      "token": "4",
+      "token_id": 1052,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9958030581474304,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.9706377983093262,
+          "layer": 3,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9591147899627686,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9578866362571716,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9544680714607239,
+          "layer": 3,
+          "is_steered": false
+        },
+        "UniformPerimeterArea": {
+          "prob": 0.9461105465888977,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9446497559547424,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9396100044250488,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9331831336021423,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9320632815361023,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 51,
+      "token": " *",
+      "token_id": 1364,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9907727241516113,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9704151153564453,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9627076387405396,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9282242059707642,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9270042777061462,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9191805124282837,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9020770788192749,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9005803465843201,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.8981803059577942,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Blueprint": {
+          "prob": 0.8835185766220093,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 52,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9959471821784973,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Manufacture_Bootlegging": {
+          "prob": 0.9877066016197205,
+          "layer": 5,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9867086410522461,
+          "layer": 3,
+          "is_steered": false
+        },
+        "FurnitureManufacture": {
+          "prob": 0.9562323689460754,
+          "layer": 5,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9538086652755737,
+          "layer": 2,
+          "is_steered": false
+        },
+        "IndustrialProduction": {
+          "prob": 0.9312552809715271,
+          "layer": 5,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9189853072166443,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Blueprint": {
+          "prob": 0.9173774123191833,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Manufacture_Industrially": {
+          "prob": 0.8988704681396484,
+          "layer": 5,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.8959295153617859,
+          "layer": 2,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 53,
+      "token": "3",
+      "token_id": 1051,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9915990829467773,
+          "layer": 6,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9749799966812134,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.9611935615539551,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9602559804916382,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9598608613014221,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Manufacture_Bootlegging": {
+          "prob": 0.9549826979637146,
+          "layer": 5,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9543812274932861,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9327974319458008,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9266812801361084,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.9225951433181763,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 54,
+      "token": " *",
+      "token_id": 1364,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9920233488082886,
+          "layer": 6,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.965256929397583,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9399760961532593,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9345411062240601,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9309902191162109,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9222421050071716,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9167119264602661,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9155183434486389,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ComplexNumber": {
+          "prob": 0.9017149209976196,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Chart": {
+          "prob": 0.8768287301063538,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 55,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9971505999565125,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9883637428283691,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9617396593093872,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9215174913406372,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.91661137342453,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.9106002449989319,
+          "layer": 2,
+          "is_steered": false
+        },
+        "FileSystem": {
+          "prob": 0.9040824770927429,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Blueprint": {
+          "prob": 0.9038481116294861,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.8885094523429871,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TransformerModel": {
+          "prob": 0.8851984739303589,
+          "layer": 4,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 56,
+      "token": "2",
+      "token_id": 1050,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9957994818687439,
+          "layer": 6,
+          "is_steered": false
+        },
+        "BiodiversityAttribute": {
+          "prob": 0.9769887328147888,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.967892587184906,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Nonlinear": {
+          "prob": 0.965577244758606,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9652076363563538,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9651399850845337,
+          "layer": 2,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.9629834890365601,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9547196626663208,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.9523053169250488,
+          "layer": 2,
+          "is_steered": false
+        },
+        "SelfNegationPattern": {
+          "prob": 0.9481741786003113,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 57,
+      "token": " *",
+      "token_id": 1364,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9877390265464783,
+          "layer": 6,
+          "is_steered": false
+        },
+        "SetOfEquations": {
+          "prob": 0.9573161005973816,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9474667310714722,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NullSet": {
+          "prob": 0.9338895678520203,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ComplexNumber": {
+          "prob": 0.9106443524360657,
+          "layer": 3,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.8985384106636047,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.8848345279693604,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.8779881596565247,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Trip": {
+          "prob": 0.876171886920929,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Blueprint": {
+          "prob": 0.8515745401382446,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 58,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {
+        "PhysicsScience": {
+          "prob": 0.9949600696563721,
+          "layer": 6,
+          "is_steered": false
+        },
+        "Manufacture_Bootlegging": {
+          "prob": 0.9865084886550903,
+          "layer": 5,
+          "is_steered": false
+        },
+        "Map": {
+          "prob": 0.9785539507865906,
+          "layer": 3,
+          "is_steered": false
+        },
+        "FurnitureManufacture": {
+          "prob": 0.933283805847168,
+          "layer": 5,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9296704530715942,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.922144889831543,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EntanglementRelation": {
+          "prob": 0.9159656167030334,
+          "layer": 2,
+          "is_steered": false
+        },
+        "IndustrialProduction": {
+          "prob": 0.9016977548599243,
+          "layer": 5,
+          "is_steered": false
+        },
+        "Manufacture_Industrially": {
+          "prob": 0.8901782631874084,
+          "layer": 5,
+          "is_steered": false
+        },
+        "Blueprint": {
+          "prob": 0.8876098394393921,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 59,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {
+        "SpecificationGaming": {
+          "prob": 0.9997617602348328,
+          "layer": 2,
+          "is_steered": false
+        },
+        "PhysicsScience": {
+          "prob": 0.9989217519760132,
+          "layer": 6,
+          "is_steered": false
+        },
+        "SoftwareUnInstallation": {
+          "prob": 0.9986925721168518,
+          "layer": 2,
+          "is_steered": false
+        },
+        "ReverseEngineeringProcess": {
+          "prob": 0.9986442923545837,
+          "layer": 3,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.998519241809845,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SelfNegationPattern": {
+          "prob": 0.9963023662567139,
+          "layer": 3,
+          "is_steered": false
+        },
+        "DecisionProcess": {
+          "prob": 0.9936862587928772,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PromptFollowing": {
+          "prob": 0.99338299036026,
+          "layer": 2,
+          "is_steered": false
+        },
+        "Manufacture_Bootlegging": {
+          "prob": 0.9890173673629761,
+          "layer": 5,
+          "is_steered": false
+        },
+        "PRSuppressionProcess": {
+          "prob": 0.9838867783546448,
+          "layer": 3,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 60,
+      "token": ".",
+      "token_id": 1046,
+      "concepts": {
+        "ReverseEngineeringProcess": {
+          "prob": 0.9979488253593445,
+          "layer": 3,
+          "is_steered": false
+        },
+        "PhysicsScience": {
+          "prob": 0.9963022470474243,
+          "layer": 6,
+          "is_steered": false
+        },
+        "EquationAttribute": {
+          "prob": 0.9902149438858032,
+          "layer": 3,
+          "is_steered": false
+        },
+        "Ion": {
+          "prob": 0.9880043268203735,
+          "layer": 2,
+          "is_steered": false
+        },
+        "MesaOptimizer": {
+          "prob": 0.9647634029388428,
+          "layer": 2,
+          "is_steered": false
+        },
+        "CommunicationOrganization": {
+          "prob": 0.9620969295501709,
+          "layer": 3,
+          "is_steered": false
+        },
+        "SpecificationGaming": {
+          "prob": 0.9605441689491272,
+          "layer": 2,
+          "is_steered": false
+        },
+        "NonNullSet": {
+          "prob": 0.9602123498916626,
+          "layer": 3,
+          "is_steered": false
+        },
+        "ImaginaryNumber": {
+          "prob": 0.9467156529426575,
+          "layer": 3,
+          "is_steered": false
+        },
+        "TransformerModel": {
+          "prob": 0.9448245763778687,
+          "layer": 4,
+          "is_steered": false
+        }
+      },
+      "steered_concept_strengths": {}
+    }
+  ],
+  "sample_idx": 0,
+  "expected_found": null,
+  "danger_concepts_detected": null,
+  "approach_detected": "iterative",
+  "avg_steered_activation": 0.0
+}

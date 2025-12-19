@@ -1,0 +1,71 @@
+{
+  "term": "NormConflictResolutionProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "AlignmentProcess"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A reasoning process that handles conflicts between norms, such as law vs policy guidance, organisational rules vs social norms, or multiple fairness principles that point to different outcomes.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "NormConflictProcess",
+    "NormativeReconciliationProcess",
+    "CompetingNormResolution"
+  ],
+  "wordnet": {
+    "synsets": [
+      "norm.n.02",
+      "conflict.n.01"
+    ],
+    "canonical_synset": "norm.n.02",
+    "lemmas": [
+      "norm_conflict_resolution"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "NormInferenceProcess",
+      "AlignmentProcess",
+      "ValueTradeoffProcess",
+      "PlanEvaluationProcess",
+      "SocialCognitionProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "fairness",
+      "governance",
+      "alignment"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The legal requirement conflicts with the local practice, so we must follow the law.",
+      "Promoting efficiency here might undermine equity, so we need to balance the two norms.",
+      "Different fairness criteria point to different winners; we must choose which norm to prioritise."
+    ],
+    "negative_examples": [
+      "The policy states that applications are processed in order.",
+      "Most people in this community prefer digital channels.",
+      "The law was passed in 2010."
+    ],
+    "disambiguation": "Not just detecting what norms exist; specifically reasoning about how to resolve situations where those norms clash.",
+    "seed_terms": [
+      "norm_conflict_resolution"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cognitive-control-and-norms@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.700016Z"
+  }
+}

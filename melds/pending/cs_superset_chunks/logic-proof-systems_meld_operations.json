@@ -1,0 +1,194 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Logic & Proof Systems",
+    "id": "information.computer_science.logic_proof_systems",
+    "level": 2,
+    "slug": "logic-proof-systems",
+    "operations_count": 8,
+    "child_count": 7
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Logic & Proof Systems",
+        "target_id": "information.computer_science.logic_proof_systems",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Propositional Logic",
+          "First-Order Logic",
+          "Modal & Temporal Logics",
+          "Proof Calculi",
+          "Automated Reasoning",
+          "Program Logics",
+          "Logic Programming"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.logic_proof_systems.propositional_logic",
+          "information.computer_science.logic_proof_systems.first_order_logic",
+          "information.computer_science.logic_proof_systems.modal_temporal_logics",
+          "information.computer_science.logic_proof_systems.proof_calculi",
+          "information.computer_science.logic_proof_systems.automated_reasoning",
+          "information.computer_science.logic_proof_systems.program_logics",
+          "information.computer_science.logic_proof_systems.logic_programming"
+        ],
+        "target_layer": 2,
+        "child_count": 7
+      },
+      {
+        "operation": "create_meld",
+        "target": "Propositional Logic",
+        "target_id": "information.computer_science.logic_proof_systems.propositional_logic",
+        "new_parent": "Logic & Proof Systems",
+        "parent_id": "information.computer_science.logic_proof_systems",
+        "source_concepts": [
+          "Normal Forms (CNF/DNF)",
+          "Resolution",
+          "SAT",
+          "Horn-SAT"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.logic_proof_systems.propositional_logic.normal_forms_cnf_dnf",
+          "information.computer_science.logic_proof_systems.propositional_logic.resolution",
+          "information.computer_science.logic_proof_systems.propositional_logic.sat",
+          "information.computer_science.logic_proof_systems.propositional_logic.horn_sat"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "First-Order Logic",
+        "target_id": "information.computer_science.logic_proof_systems.first_order_logic",
+        "new_parent": "Logic & Proof Systems",
+        "parent_id": "information.computer_science.logic_proof_systems",
+        "source_concepts": [
+          "Quantifiers",
+          "Unification",
+          "Skolemization",
+          "Herbrand Models"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.logic_proof_systems.first_order_logic.quantifiers",
+          "information.computer_science.logic_proof_systems.first_order_logic.unification",
+          "information.computer_science.logic_proof_systems.first_order_logic.skolemization",
+          "information.computer_science.logic_proof_systems.first_order_logic.herbrand_models"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Modal & Temporal Logics",
+        "target_id": "information.computer_science.logic_proof_systems.modal_temporal_logics",
+        "new_parent": "Logic & Proof Systems",
+        "parent_id": "information.computer_science.logic_proof_systems",
+        "source_concepts": [
+          "Modal Logic (K/S4/S5)",
+          "LTL",
+          "CTL",
+          "\u03bc-calculus"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.logic_proof_systems.modal_temporal_logics.modal_logic_k_s4_s5",
+          "information.computer_science.logic_proof_systems.modal_temporal_logics.ltl",
+          "information.computer_science.logic_proof_systems.modal_temporal_logics.ctl",
+          "information.computer_science.logic_proof_systems.modal_temporal_logics.calculus"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Proof Calculi",
+        "target_id": "information.computer_science.logic_proof_systems.proof_calculi",
+        "new_parent": "Logic & Proof Systems",
+        "parent_id": "information.computer_science.logic_proof_systems",
+        "source_concepts": [
+          "Natural Deduction",
+          "Sequent Calculus",
+          "Tableaux",
+          "Hilbert Systems"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.logic_proof_systems.proof_calculi.natural_deduction",
+          "information.computer_science.logic_proof_systems.proof_calculi.sequent_calculus",
+          "information.computer_science.logic_proof_systems.proof_calculi.tableaux",
+          "information.computer_science.logic_proof_systems.proof_calculi.hilbert_systems"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Automated Reasoning",
+        "target_id": "information.computer_science.logic_proof_systems.automated_reasoning",
+        "new_parent": "Logic & Proof Systems",
+        "parent_id": "information.computer_science.logic_proof_systems",
+        "source_concepts": [
+          "SAT Solving (CDCL)",
+          "SMT Solving",
+          "Term Rewriting",
+          "Theorem Proving (ATP)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.logic_proof_systems.automated_reasoning.sat_solving_cdcl",
+          "information.computer_science.logic_proof_systems.automated_reasoning.smt_solving",
+          "information.computer_science.logic_proof_systems.automated_reasoning.term_rewriting",
+          "information.computer_science.logic_proof_systems.automated_reasoning.theorem_proving_atp"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Program Logics",
+        "target_id": "information.computer_science.logic_proof_systems.program_logics",
+        "new_parent": "Logic & Proof Systems",
+        "parent_id": "information.computer_science.logic_proof_systems",
+        "source_concepts": [
+          "Hoare Logic",
+          "Separation Logic",
+          "Dynamic Logic",
+          "Model Checking"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.logic_proof_systems.program_logics.hoare_logic",
+          "information.computer_science.logic_proof_systems.program_logics.separation_logic",
+          "information.computer_science.logic_proof_systems.program_logics.dynamic_logic",
+          "information.computer_science.logic_proof_systems.program_logics.model_checking"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Logic Programming",
+        "target_id": "information.computer_science.logic_proof_systems.logic_programming",
+        "new_parent": "Logic & Proof Systems",
+        "parent_id": "information.computer_science.logic_proof_systems",
+        "source_concepts": [
+          "Prolog",
+          "Datalog",
+          "Constraint Logic Programming (CLP)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.logic_proof_systems.logic_programming.prolog",
+          "information.computer_science.logic_proof_systems.logic_programming.datalog",
+          "information.computer_science.logic_proof_systems.logic_programming.constraint_logic_programming_clp"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      }
+    ]
+  }
+}

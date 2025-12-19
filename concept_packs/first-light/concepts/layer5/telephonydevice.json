@@ -1,0 +1,63 @@
+{
+  "term": "TelephonyDevice",
+  "role": "concept",
+  "parent_concepts": [
+    "CommunicationElectronics"
+  ],
+  "layer": 5,
+  "domain": "CreatedThings",
+  "definition": "A\n&%TelephonyDevice is a &%CommunicationDevice that, when connected\nto a &%TelephoneSystem, functions as an access point allowing end\nusers (&%Humans or other &%Agents, such as autonomous/scheduled\n&%ComputerPrograms) to send or receive signals via the system.\n&%Telephones and &%FaxMachines are &%TelephonyDevices.  A given\n&%Computer may or may not function as a &%TelephonyDevice,\ndepending on the &%ComputerPrograms it runs and the\n&%ComputerComponents that are part of it.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "telephony-device",
+    "telephony_device",
+    "telephony device"
+  ],
+  "wordnet": {
+    "synsets": [
+      "telephony_device.n.01"
+    ],
+    "canonical_synset": "telephony_device.n.01",
+    "lemmas": [
+      "telephony-device",
+      "telephony_device",
+      "telephony device"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "FaxMachine",
+      "Telephone"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "telephony-device",
+      "telephony_device",
+      "telephony device"
+    ]
+  },
+  "children": [
+    "FaxMachine",
+    "CordedTelephone",
+    "CordlessTelephone",
+    "MobileCellPhone",
+    "SatellitePhone",
+    "TDDPhone"
+  ],
+  "is_category_lens": true,
+  "child_count": 2
+}

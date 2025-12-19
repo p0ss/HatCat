@@ -1,0 +1,430 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Computational Complexity",
+    "id": "information.computer_science.computational_complexity",
+    "level": 2,
+    "slug": "computational-complexity",
+    "operations_count": 18,
+    "child_count": 8
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Computational Complexity",
+        "target_id": "information.computer_science.computational_complexity",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Complexity Classes",
+          "Reductions & Completeness",
+          "Canonical Complete Problems",
+          "Randomization & Derandomization",
+          "Approximation & Parameterized",
+          "Circuit Complexity & Lower Bounds",
+          "Communication & Query Complexity",
+          "Fine-Grained Complexity"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complexity_classes",
+          "information.computer_science.computational_complexity.reductions_completeness",
+          "information.computer_science.computational_complexity.complete_problems",
+          "information.computer_science.computational_complexity.randomization_derandomization",
+          "information.computer_science.computational_complexity.approximation_parameterized",
+          "information.computer_science.computational_complexity.circuit_lower_bounds",
+          "information.computer_science.computational_complexity.communication_query",
+          "information.computer_science.computational_complexity.fine_grained"
+        ],
+        "target_layer": 2,
+        "child_count": 8
+      },
+      {
+        "operation": "create_meld",
+        "target": "Complexity Classes",
+        "target_id": "information.computer_science.computational_complexity.complexity_classes",
+        "new_parent": "Computational Complexity",
+        "parent_id": "information.computer_science.computational_complexity",
+        "source_concepts": [
+          "Time",
+          "Space",
+          "Parallel",
+          "Randomized",
+          "Counting",
+          "Hierarchies"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complexity_classes.time_classes",
+          "information.computer_science.computational_complexity.complexity_classes.space_classes",
+          "information.computer_science.computational_complexity.complexity_classes.parallel_classes",
+          "information.computer_science.computational_complexity.complexity_classes.randomized_classes",
+          "information.computer_science.computational_complexity.complexity_classes.counting_classes",
+          "information.computer_science.computational_complexity.complexity_classes.hierarchies"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Time",
+        "target_id": "information.computer_science.computational_complexity.complexity_classes.time_classes",
+        "new_parent": "Complexity Classes",
+        "parent_id": "information.computer_science.computational_complexity.complexity_classes",
+        "source_concepts": [
+          "P",
+          "NP",
+          "coNP",
+          "EXP",
+          "NEXP",
+          "EXPTIME",
+          "E",
+          "NE"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complexity_classes.time_classes.p",
+          "information.computer_science.computational_complexity.complexity_classes.time_classes.np",
+          "information.computer_science.computational_complexity.complexity_classes.time_classes.conp",
+          "information.computer_science.computational_complexity.complexity_classes.time_classes.exp",
+          "information.computer_science.computational_complexity.complexity_classes.time_classes.nexp",
+          "information.computer_science.computational_complexity.complexity_classes.time_classes.exptime",
+          "information.computer_science.computational_complexity.complexity_classes.time_classes.e",
+          "information.computer_science.computational_complexity.complexity_classes.time_classes.ne"
+        ],
+        "target_layer": 4,
+        "child_count": 8
+      },
+      {
+        "operation": "create_meld",
+        "target": "Space",
+        "target_id": "information.computer_science.computational_complexity.complexity_classes.space_classes",
+        "new_parent": "Complexity Classes",
+        "parent_id": "information.computer_science.computational_complexity.complexity_classes",
+        "source_concepts": [
+          "L",
+          "NL",
+          "PSPACE",
+          "EXPSPACE"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complexity_classes.space_classes.l",
+          "information.computer_science.computational_complexity.complexity_classes.space_classes.nl",
+          "information.computer_science.computational_complexity.complexity_classes.space_classes.pspace",
+          "information.computer_science.computational_complexity.complexity_classes.space_classes.expspace"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Parallel",
+        "target_id": "information.computer_science.computational_complexity.complexity_classes.parallel_classes",
+        "new_parent": "Complexity Classes",
+        "parent_id": "information.computer_science.computational_complexity.complexity_classes",
+        "source_concepts": [
+          "NC",
+          "AC",
+          "TC",
+          "SC"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complexity_classes.parallel_classes.nc",
+          "information.computer_science.computational_complexity.complexity_classes.parallel_classes.ac",
+          "information.computer_science.computational_complexity.complexity_classes.parallel_classes.tc",
+          "information.computer_science.computational_complexity.complexity_classes.parallel_classes.sc"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Randomized",
+        "target_id": "information.computer_science.computational_complexity.complexity_classes.randomized_classes",
+        "new_parent": "Complexity Classes",
+        "parent_id": "information.computer_science.computational_complexity.complexity_classes",
+        "source_concepts": [
+          "RP",
+          "coRP",
+          "ZPP",
+          "BPP",
+          "PP",
+          "BQP"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complexity_classes.randomized_classes.rp",
+          "information.computer_science.computational_complexity.complexity_classes.randomized_classes.corp",
+          "information.computer_science.computational_complexity.complexity_classes.randomized_classes.zpp",
+          "information.computer_science.computational_complexity.complexity_classes.randomized_classes.bpp",
+          "information.computer_science.computational_complexity.complexity_classes.randomized_classes.pp",
+          "information.computer_science.computational_complexity.complexity_classes.randomized_classes.bqp"
+        ],
+        "target_layer": 4,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Counting",
+        "target_id": "information.computer_science.computational_complexity.complexity_classes.counting_classes",
+        "new_parent": "Complexity Classes",
+        "parent_id": "information.computer_science.computational_complexity.complexity_classes",
+        "source_concepts": [
+          "#P",
+          "\u2295P (Parity-P)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complexity_classes.counting_classes.p",
+          "information.computer_science.computational_complexity.complexity_classes.counting_classes.p_parity_p"
+        ],
+        "target_layer": 4,
+        "child_count": 2
+      },
+      {
+        "operation": "create_meld",
+        "target": "Hierarchies",
+        "target_id": "information.computer_science.computational_complexity.complexity_classes.hierarchies",
+        "new_parent": "Complexity Classes",
+        "parent_id": "information.computer_science.computational_complexity.complexity_classes",
+        "source_concepts": [
+          "Polynomial Hierarchy (PH)",
+          "Time Hierarchy Theorem",
+          "Space Hierarchy Theorem"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complexity_classes.hierarchies.polynomial_hierarchy_ph",
+          "information.computer_science.computational_complexity.complexity_classes.hierarchies.time_hierarchy_theorem",
+          "information.computer_science.computational_complexity.complexity_classes.hierarchies.space_hierarchy_theorem"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Reductions & Completeness",
+        "target_id": "information.computer_science.computational_complexity.reductions_completeness",
+        "new_parent": "Computational Complexity",
+        "parent_id": "information.computer_science.computational_complexity",
+        "source_concepts": [
+          "Karp Reductions",
+          "Cook (Turing) Reductions",
+          "Log-space Reductions",
+          "NP-Completeness",
+          "PSPACE-Completeness",
+          "#P-Completeness"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.reductions_completeness.karp_reductions",
+          "information.computer_science.computational_complexity.reductions_completeness.cook_turing_reductions",
+          "information.computer_science.computational_complexity.reductions_completeness.log_space_reductions",
+          "information.computer_science.computational_complexity.reductions_completeness.np_completeness",
+          "information.computer_science.computational_complexity.reductions_completeness.pspace_completeness",
+          "information.computer_science.computational_complexity.reductions_completeness.p_completeness"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Canonical Complete Problems",
+        "target_id": "information.computer_science.computational_complexity.complete_problems",
+        "new_parent": "Computational Complexity",
+        "parent_id": "information.computer_science.computational_complexity",
+        "source_concepts": [
+          "NP-complete",
+          "PSPACE-complete",
+          "NL-complete"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complete_problems.np_complete",
+          "information.computer_science.computational_complexity.complete_problems.pspace_complete",
+          "information.computer_science.computational_complexity.complete_problems.nl_complete"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "NP-complete",
+        "target_id": "information.computer_science.computational_complexity.complete_problems.np_complete",
+        "new_parent": "Canonical Complete Problems",
+        "parent_id": "information.computer_science.computational_complexity.complete_problems",
+        "source_concepts": [
+          "SAT",
+          "3-SAT",
+          "CLIQUE",
+          "VERTEX COVER",
+          "HAMILTONIAN CYCLE",
+          "SUBSET SUM",
+          "TSP (Decision)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complete_problems.np_complete.sat",
+          "information.computer_science.computational_complexity.complete_problems.np_complete.3_sat",
+          "information.computer_science.computational_complexity.complete_problems.np_complete.clique",
+          "information.computer_science.computational_complexity.complete_problems.np_complete.vertex_cover",
+          "information.computer_science.computational_complexity.complete_problems.np_complete.hamiltonian_cycle",
+          "information.computer_science.computational_complexity.complete_problems.np_complete.subset_sum",
+          "information.computer_science.computational_complexity.complete_problems.np_complete.tsp_decision"
+        ],
+        "target_layer": 4,
+        "child_count": 7
+      },
+      {
+        "operation": "create_meld",
+        "target": "PSPACE-complete",
+        "target_id": "information.computer_science.computational_complexity.complete_problems.pspace_complete",
+        "new_parent": "Canonical Complete Problems",
+        "parent_id": "information.computer_science.computational_complexity.complete_problems",
+        "source_concepts": [
+          "TQBF",
+          "Generalized Geography"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complete_problems.pspace_complete.tqbf",
+          "information.computer_science.computational_complexity.complete_problems.pspace_complete.generalized_geography"
+        ],
+        "target_layer": 4,
+        "child_count": 2
+      },
+      {
+        "operation": "create_meld",
+        "target": "NL-complete",
+        "target_id": "information.computer_science.computational_complexity.complete_problems.nl_complete",
+        "new_parent": "Canonical Complete Problems",
+        "parent_id": "information.computer_science.computational_complexity.complete_problems",
+        "source_concepts": [
+          "s-t Reachability",
+          "Graph Accessibility Problem (GAP)",
+          "Directed s-t Connectivity (STCON)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.complete_problems.nl_complete.s_t_reachability",
+          "information.computer_science.computational_complexity.complete_problems.nl_complete.graph_accessibility_problem_gap",
+          "information.computer_science.computational_complexity.complete_problems.nl_complete.directed_s_t_connectivity_stcon"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Randomization & Derandomization",
+        "target_id": "information.computer_science.computational_complexity.randomization_derandomization",
+        "new_parent": "Computational Complexity",
+        "parent_id": "information.computer_science.computational_complexity",
+        "source_concepts": [
+          "Monte Carlo vs Las Vegas",
+          "Amplification",
+          "Pseudorandom Generators (PRG)",
+          "Hardness vs Randomness"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.randomization_derandomization.monte_carlo_vs_las_vegas",
+          "information.computer_science.computational_complexity.randomization_derandomization.amplification",
+          "information.computer_science.computational_complexity.randomization_derandomization.pseudorandom_generators_prg",
+          "information.computer_science.computational_complexity.randomization_derandomization.hardness_vs_randomness"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Approximation & Parameterized",
+        "target_id": "information.computer_science.computational_complexity.approximation_parameterized",
+        "new_parent": "Computational Complexity",
+        "parent_id": "information.computer_science.computational_complexity",
+        "source_concepts": [
+          "APX",
+          "PTAS",
+          "FPTAS",
+          "L-reductions",
+          "FPT",
+          "W[1]",
+          "Kernelization"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.approximation_parameterized.apx",
+          "information.computer_science.computational_complexity.approximation_parameterized.ptas",
+          "information.computer_science.computational_complexity.approximation_parameterized.fptas",
+          "information.computer_science.computational_complexity.approximation_parameterized.l_reductions",
+          "information.computer_science.computational_complexity.approximation_parameterized.fpt",
+          "information.computer_science.computational_complexity.approximation_parameterized.w_1",
+          "information.computer_science.computational_complexity.approximation_parameterized.kernelization"
+        ],
+        "target_layer": 3,
+        "child_count": 7
+      },
+      {
+        "operation": "create_meld",
+        "target": "Circuit Complexity & Lower Bounds",
+        "target_id": "information.computer_science.computational_complexity.circuit_lower_bounds",
+        "new_parent": "Computational Complexity",
+        "parent_id": "information.computer_science.computational_complexity",
+        "source_concepts": [
+          "Non-uniform Complexity",
+          "Lower Bound Techniques",
+          "Switching Lemma",
+          "Natural Proofs Barrier",
+          "Relativization/Algebrization"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.circuit_lower_bounds.non_uniform_complexity",
+          "information.computer_science.computational_complexity.circuit_lower_bounds.lower_bound_techniques",
+          "information.computer_science.computational_complexity.circuit_lower_bounds.switching_lemma",
+          "information.computer_science.computational_complexity.circuit_lower_bounds.natural_proofs_barrier",
+          "information.computer_science.computational_complexity.circuit_lower_bounds.relativization_algebrization"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Communication & Query Complexity",
+        "target_id": "information.computer_science.computational_complexity.communication_query",
+        "new_parent": "Computational Complexity",
+        "parent_id": "information.computer_science.computational_complexity",
+        "source_concepts": [
+          "Deterministic Communication",
+          "Randomized Communication",
+          "Information Complexity",
+          "Decision Tree Complexity",
+          "Property Testing"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.communication_query.deterministic_communication",
+          "information.computer_science.computational_complexity.communication_query.randomized_communication",
+          "information.computer_science.computational_complexity.communication_query.information_complexity",
+          "information.computer_science.computational_complexity.communication_query.decision_tree_complexity",
+          "information.computer_science.computational_complexity.communication_query.property_testing"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Fine-Grained Complexity",
+        "target_id": "information.computer_science.computational_complexity.fine_grained",
+        "new_parent": "Computational Complexity",
+        "parent_id": "information.computer_science.computational_complexity",
+        "source_concepts": [
+          "SETH",
+          "3SUM-hardness",
+          "Orthogonal Vectors (OV)",
+          "Conditional Lower Bounds"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.computational_complexity.fine_grained.seth",
+          "information.computer_science.computational_complexity.fine_grained.3sum_hardness",
+          "information.computer_science.computational_complexity.fine_grained.orthogonal_vectors_ov",
+          "information.computer_science.computational_complexity.fine_grained.conditional_lower_bounds"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      }
+    ]
+  }
+}

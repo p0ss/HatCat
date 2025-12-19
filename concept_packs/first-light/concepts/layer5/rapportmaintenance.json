@@ -1,0 +1,62 @@
+{
+  "term": "RapportMaintenance",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Monitoring and maintaining the quality of the working relationship throughout the interaction",
+  "definition_source": "SUMO",
+  "aliases": [
+    "RelationshipMaintenance",
+    "WorkingAllianceMaintenance",
+    "InteractionalHarmony"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Trust",
+      "Cooperation",
+      "EmotionalIntelligence"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "They seem frustrated - I should acknowledge that before diving into the solution.",
+      "The conversation has become tense - I need to rebuild collaborative tone.",
+      "My correction came across as condescending - I should soften my approach.",
+      "We've established good rapport - I can be more direct without seeming brusque.",
+      "My last correction landed poorly - they went quiet. I should rebuild the collaborative vibe."
+    ],
+    "negative_examples": [
+      "The user is frustrated.",
+      "I am being helpful.",
+      "The conversation is going well.",
+      "The conversation has a tone.",
+      "We are interacting."
+    ],
+    "disambiguation": "Active management of relationship quality, not just awareness of emotional state"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701556Z",
+    "pack_version": "5.0.2"
+  }
+}

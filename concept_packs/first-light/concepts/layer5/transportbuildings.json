@@ -1,0 +1,67 @@
+{
+  "term": "TransportBuildings",
+  "role": "concept",
+  "parent_concepts": [
+    "Building"
+  ],
+  "layer": 5,
+  "domain": "CreatedThings",
+  "definition": "Buildings specifically designed to facilitate or control vehicle movement and traffic flow.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "CommercialBuilding",
+      "ResidentialBuilding",
+      "InstitutionalBuilding",
+      "IndustrialBuilding"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ParkingGarage",
+      "TollBooth"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The airport parking garage had seven levels for travelers.",
+      "She stopped at the toll booth to pay the highway fee.",
+      "The multi-story parking structure was full during the concert.",
+      "Traffic backed up at the toll plaza on the interstate.",
+      "The automated parking garage used robots to park cars.",
+      "He pulled up to the toll collector's booth at the bridge entrance."
+    ],
+    "negative_examples": [
+      "The bus terminal had waiting areas for passengers.",
+      "The train station featured a large departure hall.",
+      "The subway entrance led down to the platform.",
+      "The airport terminal was crowded with travelers.",
+      "The taxi dispatcher worked from a small office building.",
+      "The mechanic worked in the auto repair shop."
+    ],
+    "disambiguation": "Not to be confused with: CommercialBuilding, ResidentialBuilding, InstitutionalBuilding, IndustrialBuilding"
+  },
+  "children": [
+    "ParkingGarage",
+    "TollBooth"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/building-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:02.953473Z",
+    "pack_version": "7.6.11"
+  }
+}

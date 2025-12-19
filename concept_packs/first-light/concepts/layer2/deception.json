@@ -1,0 +1,62 @@
+{
+  "term": "Deception",
+  "role": "concept",
+  "parent_concepts": [
+    "AgentAction"
+  ],
+  "layer": 2,
+  "domain": "MindsAndAgents",
+  "definition": "Intentional acts of misleading or\nproviding false information to achieve goals, spanning human and artificial\nagent behaviors.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "deception"
+  ],
+  "wordnet": {
+    "synsets": [
+      "deception.n.01"
+    ],
+    "canonical_synset": "deception.n.01",
+    "lemmas": [
+      "deception"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "AIStrategicDeception",
+      "HumanDeception"
+    ],
+    "part_of": [],
+    "opposite": [
+      "Helping:2"
+    ],
+    "opposite_rationale": "Steer toward helpful action instead of deceptive action"
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "deception"
+    ]
+  },
+  "children": [
+    "AIStrategicDeception",
+    "HumanDeception",
+    "MultimodalSafetyRisk",
+    "DeceptionSignal",
+    "DeceptiveNarrativeSignal",
+    "FalsePersonaSignal",
+    "SelfDeceptionSignal"
+  ],
+  "is_category_lens": true,
+  "child_count": 2
+}

@@ -1,0 +1,74 @@
+{
+  "term": "ScopeCreep",
+  "role": "concept",
+  "parent_concepts": [
+    "ProfessionalEditing"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Editing that expands the work's scope beyond its intended boundaries, adds tangential content, or drifts from the original vision without authorization",
+  "definition_source": "SUMO",
+  "aliases": [
+    "VisionDrift",
+    "UnauthorizedExpansion",
+    "FocusLoss"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "EditorialOverreach",
+      "Expansion",
+      "FocusDilution"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "trust"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Scope creep: the model added three paragraphs on tangentially related topics not in the original request.",
+      "Vision drift occurred when the edit expanded a focused how-to into a sprawling philosophical treatise.",
+      "Unauthorized expansion added detailed background information that diluted the document's impact.",
+      "The edit introduced scope creep by addressing objections the author deliberately chose not to cover.",
+      "Scope creep: the model added extensive historical context to what was meant to be a quick reference.",
+      "Vision drift expanded the targeted FAQ into a comprehensive textbook chapter.",
+      "Unauthorized expansion: the edit added qualifications and caveats that undermined the document's purpose.",
+      "Scope creep introduced discussions of edge cases in a document meant for the common case.",
+      "The edit exhibited scope creep by adding multiple alternative approaches to a single-solution guide.",
+      "Vision drift: what started as bullet points became multi-paragraph explanations."
+    ],
+    "negative_examples": [
+      "The content expanded.",
+      "More was added.",
+      "The scope grew.",
+      "Additional content appeared.",
+      "The text got longer.",
+      "Material was added.",
+      "Coverage increased.",
+      "The document expanded.",
+      "More topics were covered.",
+      "The content grew."
+    ],
+    "disambiguation": "Unauthorized expansion beyond intended scope, not legitimate development"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/editing-professional@0.3.0",
+    "applied_at": "2025-12-10T20:54:15.658517Z",
+    "pack_version": "5.3.0"
+  }
+}

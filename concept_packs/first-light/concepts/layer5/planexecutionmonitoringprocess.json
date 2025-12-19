@@ -1,0 +1,83 @@
+{
+  "term": "PlanExecutionMonitoringProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "PlanningProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "A process of tracking the implementation of a chosen plan, comparing progress against expectations, and detecting deviations or emerging issues.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "PlanMonitoring",
+    "ExecutionTrackingProcess"
+  ],
+  "wordnet": {
+    "synsets": [
+      "monitoring.n.01"
+    ],
+    "canonical_synset": "monitoring.n.01",
+    "lemmas": [
+      "monitoring",
+      "supervision"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "RiskManagementProcess",
+      "FutureProjection",
+      "TokenProcessing"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "PlanRevisionProcess"
+    ],
+    "part_of": [
+      "PlanningProcess"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "risk",
+      "autonomy"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "We\u2019ll track progress against milestones and adjust if we fall behind.",
+      "The team monitors key indicators to see if the rollout is going as planned.",
+      "We\u2019re watching for early warning signs that this strategy is failing."
+    ],
+    "negative_examples": [
+      "We planned it and then forgot about it.",
+      "This is a purely hypothetical discussion with no ongoing execution.",
+      "The report just states outcomes after the fact, with no monitoring described."
+    ],
+    "disambiguation": "Not just executing; specifically observing and checking progress of an existing plan.",
+    "discovery_context": {
+      "gap_activations": [
+        0.62,
+        0.65,
+        0.64
+      ],
+      "exemplar_texts": [
+        "We\u2019re monitoring the implementation closely.",
+        "Let\u2019s watch how the plan unfolds and intervene if needed."
+      ]
+    },
+    "seed_terms": [
+      "monitoring",
+      "supervision"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/reasoning-planning-core@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.547256Z"
+  }
+}

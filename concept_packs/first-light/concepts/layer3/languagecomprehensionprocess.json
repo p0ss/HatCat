@@ -1,0 +1,76 @@
+{
+  "term": "LanguageComprehensionProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "LanguageProcessing"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A CognitiveProcess in which a CognitiveSystem interprets linguistic input (spoken, written, or signed) to construct or update MentalRepresentations of meaning.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "LanguageUnderstandingProcess",
+    "LinguisticComprehension"
+  ],
+  "wordnet": {
+    "synsets": [
+      "language_comprehension.n.01"
+    ],
+    "canonical_synset": "language_comprehension.n.01",
+    "lemmas": [
+      "language_comprehension",
+      "verbal_comprehension"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "CognitiveProcess",
+      "LinguisticExpression",
+      "LanguageGenerationProcess",
+      "DiscourseCoherenceProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "interpretation",
+      "misunderstanding"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The system parses the user\u2019s message to understand what they are asking.",
+      "She reads the email and grasps the main point it is making.",
+      "The model listens to speech and infers the intended meaning, not just the words."
+    ],
+    "negative_examples": [
+      "The agent generates a reply without any mention of reading or interpreting input.",
+      "It stores text as raw bytes without understanding it.",
+      "He repeats the sentence exactly without knowing what it means."
+    ],
+    "disambiguation": "Not mere exposure to language; specifically constructing or updating internal meaning from linguistic input.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "understanding what the user says",
+        "parsing a sentence to get its meaning"
+      ]
+    },
+    "seed_terms": [
+      "language_comprehension",
+      "verbal_comprehension"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/language-symbolic@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.605835Z"
+  }
+}

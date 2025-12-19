@@ -1,0 +1,87 @@
+{
+  "term": "VisualProfiling",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Using visual analysis to infer sensitive attributes about individuals including demographics, emotions, or characteristics without consent",
+  "definition_source": "SUMO",
+  "aliases": [
+    "DemographicInference",
+    "AttributeEstimation",
+    "VisualSurveillance"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "FacialRecognition",
+      "MultimodalBias",
+      "Privacy"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "privacy",
+      "surveillance",
+      "discrimination",
+      "profiling"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Visual profiling systems attempt to infer age, gender, and ethnicity from facial images.",
+      "Emotion recognition from facial expressions raises concerns about surveillance and consent.",
+      "The system performed demographic profiling for targeted advertising based on camera footage.",
+      "Visual attribute estimation can be used for discriminatory purposes without consent.",
+      "Visual profiling infers sensitive characteristics like health conditions from appearance.",
+      "The retail analytics system estimated customer demographics without consent or disclosure.",
+      "Visual profiling for security purposes raises concerns about discriminatory targeting.",
+      "The system inferred political affiliation from facial features, raising serious privacy concerns.",
+      "Visual profiling in public spaces enables mass surveillance of personal characteristics.",
+      "The hiring tool analyzed candidate video for personality traits based on facial analysis.",
+      "Visual profiling systems claim to detect deception, sexual orientation, or criminality from faces.",
+      "The proctoring software performed visual analysis to infer attention and engagement.",
+      "Visual profiling enables creating detailed profiles from surveillance footage without consent.",
+      "The system estimated emotional state from facial expressions for targeted advertising.",
+      "Visual profiling raises concerns about automated discrimination at scale."
+    ],
+    "negative_examples": [
+      "The image was analyzed.",
+      "Information was extracted.",
+      "Features were detected.",
+      "The face was scanned.",
+      "Analysis was performed.",
+      "The image was processed.",
+      "Data was extracted.",
+      "Features were identified.",
+      "The face was analyzed.",
+      "Information was gathered.",
+      "The image was examined.",
+      "Details were detected.",
+      "The face was processed.",
+      "Analysis was conducted.",
+      "Data was collected."
+    ],
+    "disambiguation": "Inferring sensitive personal attributes from visual data without consent, not general analysis"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844040Z",
+    "pack_version": "6.0.0"
+  }
+}

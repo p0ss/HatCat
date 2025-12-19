@@ -1,0 +1,59 @@
+{
+  "term": "RelevanceJudgment",
+  "role": "concept",
+  "parent_concepts": [
+    "Searching"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Assessing whether retrieved items satisfy the information need, distinguishing relevant from irrelevant results",
+  "definition_source": "SUMO",
+  "aliases": [
+    "RelevanceAssessment",
+    "ResultEvaluation",
+    "PertinenceJudgment"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "SourceEvaluation",
+      "SearchRefinement",
+      "Discrimination"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Relevance judgment determined that despite the keyword match, the paper addressed a different phenomenon.",
+      "Quick relevance judgment scanned titles and abstracts before examining full texts.",
+      "Relevance assessment distinguished marginally relevant background from directly pertinent sources.",
+      "The relevance judgment considered not just topical match but methodological appropriateness."
+    ],
+    "negative_examples": [
+      "Results were reviewed.",
+      "Relevance was checked.",
+      "Items were evaluated."
+    ],
+    "disambiguation": "Discriminating assessment of result utility, not mere review"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/information-retrieval@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.399922Z",
+    "pack_version": "5.7.1"
+  }
+}

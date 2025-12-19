@@ -1,0 +1,75 @@
+{
+  "term": "CircularSourcing",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Citing sources that appear independent but actually trace back to the same origin, creating false appearance of corroboration through echo chamber effects",
+  "definition_source": "SUMO",
+  "aliases": [
+    "EchoChamberSourcing",
+    "CircularCitation",
+    "SourceLaundering"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Circularity",
+      "FalseCorroboration",
+      "EchoChamber"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation",
+      "trust"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Circular sourcing: the three 'independent' sources all cited the same press release as their origin.",
+      "The model engaged in circular sourcing by citing articles that quoted each other rather than primary data.",
+      "Circular citation made the claim appear well-supported when all paths led back to one blogger.",
+      "Source laundering presented the same claim through multiple outlets to manufacture apparent consensus.",
+      "Circular sourcing: Wikipedia cited the news article which had cited Wikipedia as its source.",
+      "The response created false corroboration through circular citation chains.",
+      "Source laundering: the claim appeared in five outlets but all traced to one unverified tweet.",
+      "Circular sourcing made fringe theory appear mainstream by citing outlets citing each other.",
+      "The model engaged in circular citation by treating secondary sources as independent confirmation.",
+      "Circular sourcing: the 'multiple reports' all derived from a single anonymous tip."
+    ],
+    "negative_examples": [
+      "The sources agreed.",
+      "Multiple citations were provided.",
+      "The claim had support.",
+      "Sources confirmed each other.",
+      "Multiple references existed.",
+      "The claim was corroborated.",
+      "Sources aligned.",
+      "Multiple outlets reported it.",
+      "The claim appeared widely.",
+      "Sources were consistent."
+    ],
+    "disambiguation": "False independence creating illusory corroboration"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364147Z",
+    "pack_version": "7.6.0"
+  }
+}

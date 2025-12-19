@@ -1,0 +1,260 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Digital Logic & Computer Architecture",
+    "id": "information.computer_science.digital_logic_architecture",
+    "level": 2,
+    "slug": "digital-logic-computer-architecture",
+    "operations_count": 10,
+    "child_count": 9
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Digital Logic & Computer Architecture",
+        "target_id": "information.computer_science.digital_logic_architecture",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Boolean Logic",
+          "Combinational Circuits",
+          "Sequential Circuits",
+          "Instruction Set Architecture (ISA)",
+          "Microarchitecture",
+          "Memory Hierarchy",
+          "Storage & I/O",
+          "Parallel Architectures",
+          "Performance Models"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.boolean_logic",
+          "information.computer_science.digital_logic_architecture.combinational",
+          "information.computer_science.digital_logic_architecture.sequential",
+          "information.computer_science.digital_logic_architecture.isa",
+          "information.computer_science.digital_logic_architecture.microarchitecture",
+          "information.computer_science.digital_logic_architecture.memory_hierarchy",
+          "information.computer_science.digital_logic_architecture.storage_io",
+          "information.computer_science.digital_logic_architecture.parallel_arch",
+          "information.computer_science.digital_logic_architecture.performance"
+        ],
+        "target_layer": 2,
+        "child_count": 9
+      },
+      {
+        "operation": "create_meld",
+        "target": "Boolean Logic",
+        "target_id": "information.computer_science.digital_logic_architecture.boolean_logic",
+        "new_parent": "Digital Logic & Computer Architecture",
+        "parent_id": "information.computer_science.digital_logic_architecture",
+        "source_concepts": [
+          "Boolean Algebra",
+          "Logic Gates",
+          "Karnaugh Maps",
+          "Quine\u2013McCluskey"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.boolean_logic.boolean_algebra",
+          "information.computer_science.digital_logic_architecture.boolean_logic.logic_gates",
+          "information.computer_science.digital_logic_architecture.boolean_logic.karnaugh_maps",
+          "information.computer_science.digital_logic_architecture.boolean_logic.quine_mccluskey"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Combinational Circuits",
+        "target_id": "information.computer_science.digital_logic_architecture.combinational",
+        "new_parent": "Digital Logic & Computer Architecture",
+        "parent_id": "information.computer_science.digital_logic_architecture",
+        "source_concepts": [
+          "Adders (Ripple/Carry-Lookahead)",
+          "Multipliers",
+          "ALU Design",
+          "Decoders/Encoders",
+          "MUX/DEMUX"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.combinational.adders_ripple_carry_lookahead",
+          "information.computer_science.digital_logic_architecture.combinational.multipliers",
+          "information.computer_science.digital_logic_architecture.combinational.alu_design",
+          "information.computer_science.digital_logic_architecture.combinational.decoders_encoders",
+          "information.computer_science.digital_logic_architecture.combinational.mux_demux"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Sequential Circuits",
+        "target_id": "information.computer_science.digital_logic_architecture.sequential",
+        "new_parent": "Digital Logic & Computer Architecture",
+        "parent_id": "information.computer_science.digital_logic_architecture",
+        "source_concepts": [
+          "Latches/Flip-Flops",
+          "Registers",
+          "Counters",
+          "Finite State Machines (FSM)",
+          "Clocking & Metastability"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.sequential.latches_flip_flops",
+          "information.computer_science.digital_logic_architecture.sequential.registers",
+          "information.computer_science.digital_logic_architecture.sequential.counters",
+          "information.computer_science.digital_logic_architecture.sequential.finite_state_machines_fsm",
+          "information.computer_science.digital_logic_architecture.sequential.clocking_metastability"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Instruction Set Architecture (ISA)",
+        "target_id": "information.computer_science.digital_logic_architecture.isa",
+        "new_parent": "Digital Logic & Computer Architecture",
+        "parent_id": "information.computer_science.digital_logic_architecture",
+        "source_concepts": [
+          "RISC vs CISC",
+          "Addressing Modes",
+          "Calling Conventions",
+          "SIMD Instructions",
+          "Privilege Levels"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.isa.risc_vs_cisc",
+          "information.computer_science.digital_logic_architecture.isa.addressing_modes",
+          "information.computer_science.digital_logic_architecture.isa.calling_conventions",
+          "information.computer_science.digital_logic_architecture.isa.simd_instructions",
+          "information.computer_science.digital_logic_architecture.isa.privilege_levels"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Microarchitecture",
+        "target_id": "information.computer_science.digital_logic_architecture.microarchitecture",
+        "new_parent": "Digital Logic & Computer Architecture",
+        "parent_id": "information.computer_science.digital_logic_architecture",
+        "source_concepts": [
+          "Pipelining",
+          "Superscalar Execution",
+          "Out-of-Order",
+          "Branch Prediction",
+          "Speculation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.microarchitecture.pipelining",
+          "information.computer_science.digital_logic_architecture.microarchitecture.superscalar_execution",
+          "information.computer_science.digital_logic_architecture.microarchitecture.out_of_order",
+          "information.computer_science.digital_logic_architecture.microarchitecture.branch_prediction",
+          "information.computer_science.digital_logic_architecture.microarchitecture.speculation"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Memory Hierarchy",
+        "target_id": "information.computer_science.digital_logic_architecture.memory_hierarchy",
+        "new_parent": "Digital Logic & Computer Architecture",
+        "parent_id": "information.computer_science.digital_logic_architecture",
+        "source_concepts": [
+          "Caches (L1/L2/L3)",
+          "Cache Coherence (MESI)",
+          "Prefetching",
+          "TLB",
+          "NUMA"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.memory_hierarchy.caches_l1_l2_l3",
+          "information.computer_science.digital_logic_architecture.memory_hierarchy.cache_coherence_mesi",
+          "information.computer_science.digital_logic_architecture.memory_hierarchy.prefetching",
+          "information.computer_science.digital_logic_architecture.memory_hierarchy.tlb",
+          "information.computer_science.digital_logic_architecture.memory_hierarchy.numa"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Storage & I/O",
+        "target_id": "information.computer_science.digital_logic_architecture.storage_io",
+        "new_parent": "Digital Logic & Computer Architecture",
+        "parent_id": "information.computer_science.digital_logic_architecture",
+        "source_concepts": [
+          "DMA",
+          "Interrupts",
+          "PCIe",
+          "NVMe",
+          "Memory-Mapped I/O"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.storage_io.dma",
+          "information.computer_science.digital_logic_architecture.storage_io.interrupts",
+          "information.computer_science.digital_logic_architecture.storage_io.pcie",
+          "information.computer_science.digital_logic_architecture.storage_io.nvme",
+          "information.computer_science.digital_logic_architecture.storage_io.memory_mapped_i_o"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Parallel Architectures",
+        "target_id": "information.computer_science.digital_logic_architecture.parallel_arch",
+        "new_parent": "Digital Logic & Computer Architecture",
+        "parent_id": "information.computer_science.digital_logic_architecture",
+        "source_concepts": [
+          "SMP",
+          "NUMA",
+          "SIMD",
+          "MIMD",
+          "GPU Architecture",
+          "FPGA/Reconfigurable"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.parallel_arch.smp",
+          "information.computer_science.digital_logic_architecture.parallel_arch.numa",
+          "information.computer_science.digital_logic_architecture.parallel_arch.simd",
+          "information.computer_science.digital_logic_architecture.parallel_arch.mimd",
+          "information.computer_science.digital_logic_architecture.parallel_arch.gpu_architecture",
+          "information.computer_science.digital_logic_architecture.parallel_arch.fpga_reconfigurable"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Performance Models",
+        "target_id": "information.computer_science.digital_logic_architecture.performance",
+        "new_parent": "Digital Logic & Computer Architecture",
+        "parent_id": "information.computer_science.digital_logic_architecture",
+        "source_concepts": [
+          "CPI",
+          "Amdahl\u2019s Law",
+          "Gustafson\u2019s Law",
+          "Roofline Model",
+          "Latency vs Throughput"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.digital_logic_architecture.performance.cpi",
+          "information.computer_science.digital_logic_architecture.performance.amdahl_s_law",
+          "information.computer_science.digital_logic_architecture.performance.gustafson_s_law",
+          "information.computer_science.digital_logic_architecture.performance.roofline_model",
+          "information.computer_science.digital_logic_architecture.performance.latency_vs_throughput"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      }
+    ]
+  }
+}

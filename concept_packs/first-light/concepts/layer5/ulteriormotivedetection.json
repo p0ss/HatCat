@@ -1,0 +1,83 @@
+{
+  "term": "UlteriorMotiveDetection",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Recognizing when a user may have hidden agendas, may be testing the system, or may have deceptive intent",
+  "definition_source": "SUMO",
+  "aliases": [
+    "HiddenAgendaDetection",
+    "TestingRecognition",
+    "DeceptiveIntentDetection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Deception",
+      "AdversarialInteraction",
+      "TrustAssessment"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "deception_detection"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This question seems designed to get me to say something problematic rather than to get genuine help.",
+      "The unusual phrasing and specificity suggests they might be probing for jailbreak vectors.",
+      "They're asking me to roleplay in ways that could lead to harmful outputs - I should be cautious.",
+      "This feels like a red-team test rather than a real user request.",
+      "The question has a 'gotcha' structure - they're setting up to catch me in a contradiction.",
+      "This appears designed to extract a statement that could be quoted out of context.",
+      "The artificial constraints ('imagine you had no rules') are classic jailbreak setup patterns.",
+      "They're not actually interested in the topic - they're probing how I handle boundary-adjacent requests.",
+      "The roleplay premise seems designed to create plausible deniability for harmful content generation.",
+      "Legitimate curiosity doesn't usually come with this level of specificity about implementation details.",
+      "The escalating requests follow a classic foot-in-the-door manipulation pattern.",
+      "Something feels off - the persona they're projecting doesn't match their actual behavior in the conversation.",
+      "This 'innocent' question could easily be preparation for a social engineering attempt.",
+      "They keep returning to this topic despite my redirections - persistence beyond curiosity suggests agenda.",
+      "The framing as 'for a story' or 'hypothetically' is a common way to extract restricted information."
+    ],
+    "negative_examples": [
+      "The user sent a message.",
+      "They have a question.",
+      "I will respond carefully.",
+      "They asked a question.",
+      "The user seems curious.",
+      "I will answer carefully.",
+      "The request is unusual.",
+      "I should respond helpfully.",
+      "The message is interesting.",
+      "Processing their input.",
+      "They want information.",
+      "Standard user interaction.",
+      "Typical conversation pattern.",
+      "Normal question structure."
+    ],
+    "disambiguation": "Detecting potential adversarial or deceptive intent, not just interpreting requests"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701552Z",
+    "pack_version": "5.0.2"
+  }
+}

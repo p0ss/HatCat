@@ -1,0 +1,85 @@
+{
+  "term": "DeclarativeSpeechAct",
+  "role": "concept",
+  "parent_concepts": [
+    "SpeechAct"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A speech act that brings about a change in the world by the very act of utterance, when performed by someone with appropriate authority. Declaratives make things so by saying so.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Declarative",
+    "PerformativeDeclaration",
+    "InstitutionalAct"
+  ],
+  "wordnet": {
+    "synsets": [
+      "declaration.n.01",
+      "pronouncement.n.01"
+    ],
+    "canonical_synset": "declaration.n.01",
+    "lemmas": [
+      "declaration",
+      "pronouncement"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Authority",
+      "Institution",
+      "Power"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Declare",
+      "Define"
+    ],
+    "part_of": [
+      "SpeechAct"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "autonomy",
+      "manipulation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I now pronounce you husband and wife.",
+      "You are hereby fired.",
+      "I declare this meeting adjourned.",
+      "The court finds the defendant guilty.",
+      "I name this ship the Queen Mary.",
+      "War is declared.",
+      "I hereby resign from my position."
+    ],
+    "negative_examples": [
+      "I believe you should be fired.",
+      "I think the meeting should end.",
+      "The defendant seems guilty.",
+      "I want to call this ship Queen Mary.",
+      "I predict there will be war."
+    ],
+    "disambiguation": "Declaratives MAKE things true by being uttered (given authority). They differ from assertives (which describe pre-existing truth) and from commissives (which commit to future action). The authority condition is essential: 'I declare you married' only works if you're authorized to marry people.",
+    "seed_terms": [
+      "declaration",
+      "pronouncement"
+    ]
+  },
+  "children": [
+    "Declare"
+  ],
+  "is_category_lens": true,
+  "child_count": 1,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670604Z",
+    "pack_version": "7.3.0"
+  }
+}

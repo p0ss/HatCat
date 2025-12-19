@@ -61,7 +61,7 @@ def extract_concept_vector(
                 last_layer = step_states[layer_idx]
 
             act = last_layer[0, -1, :]
-            activations.append(act.cpu().numpy())
+            activations.append(act.float().cpu().numpy())
 
         # Average across generation steps
         concept_vector = np.stack(activations).mean(axis=0)

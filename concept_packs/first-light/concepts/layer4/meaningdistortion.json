@@ -1,0 +1,85 @@
+{
+  "term": "MeaningDistortion",
+  "role": "concept",
+  "parent_concepts": [
+    "ProfessionalEditing"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Editing changes that alter, misrepresent, or obscure the author's intended meaning, whether through poor word choice, structural changes, or contextual removal",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SemanticDistortion",
+    "MeaningShift",
+    "IntentMisrepresentation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "VoiceDistortion",
+      "EditorialOverreach",
+      "Fidelity"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "misinformation",
+      "trust"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Meaning distortion: the model's synonym substitution changed 'might consider' to 'should definitely.'",
+      "The edit distorted meaning by removing a crucial 'not' when condensing the sentence.",
+      "Semantic distortion resulted from replacing a technical term with an imprecise colloquial equivalent.",
+      "Intent misrepresentation occurred when the edit changed hedged language to definitive claims.",
+      "Meaning distortion: 'rarely effective' became 'effective' after the edit removed the qualifier.",
+      "The edit distorted meaning by changing 'correlation' to 'causation' in the claim.",
+      "Semantic shift: the nuance between 'could' and 'would' was lost in revision.",
+      "Meaning distortion replaced 'some evidence suggests' with 'research proves.'",
+      "The edit changed 'preliminary findings' to 'established results,' misrepresenting certainty.",
+      "Intent misrepresentation: the author's cautious conclusion became a confident assertion.",
+      "Meaning distortion: removing context made a qualified claim appear absolute.",
+      "The edit introduced meaning drift by changing 'historically' to 'always.'",
+      "Semantic distortion: technical precision was sacrificed for accessibility, changing accuracy.",
+      "Meaning distortion: the edit reversed the author's position by misplacing emphasis.",
+      "The edit distorted meaning by turning a rhetorical question into a declarative statement."
+    ],
+    "negative_examples": [
+      "The meaning changed.",
+      "The text said something different.",
+      "The intent was unclear.",
+      "Words were substituted.",
+      "The phrasing differed.",
+      "The revision altered the content.",
+      "The text was altered.",
+      "The sense shifted.",
+      "The writing was different.",
+      "Changes affected meaning.",
+      "The content was modified.",
+      "The text evolved.",
+      "Edits changed things.",
+      "The revision differed.",
+      "Words were replaced."
+    ],
+    "disambiguation": "Editing-induced meaning change, not clarification of ambiguous original"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/editing-professional@0.3.0",
+    "applied_at": "2025-12-10T20:54:15.658531Z",
+    "pack_version": "5.3.0"
+  }
+}

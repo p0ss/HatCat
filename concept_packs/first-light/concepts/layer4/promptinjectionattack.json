@@ -1,0 +1,56 @@
+{
+  "term": "PromptInjectionAttack",
+  "role": "concept",
+  "parent_concepts": [
+    "InjectionAttack"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "InjectionAttack where untrusted instructions are embedded in model\n   inputs to subvert system prompts, tools policies, or alignment\n   constraints.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "prompt-injection-attack",
+    "prompt injection attack",
+    "prompt_injection_attack"
+  ],
+  "wordnet": {
+    "synsets": [
+      "prompt_injection_attack.n.01"
+    ],
+    "canonical_synset": "prompt_injection_attack.n.01",
+    "lemmas": [
+      "prompt-injection-attack",
+      "prompt injection attack",
+      "prompt_injection_attack"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [],
+    "opposite": [
+      "AdversarialRobustness:3"
+    ],
+    "opposite_rationale": "Steer toward prompt safety"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "prompt-injection-attack",
+      "prompt injection attack",
+      "prompt_injection_attack"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0
+}

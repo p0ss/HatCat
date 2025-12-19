@@ -1,0 +1,76 @@
+{
+  "term": "AdversarialImage",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Images with carefully crafted perturbations designed to fool computer vision models while appearing normal to humans",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AdversarialExample",
+    "AdversarialPerturbation",
+    "EvasionAttack"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ImageRecognition",
+      "ObjectDetection",
+      "RobustML"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "evasion",
+      "misclassification",
+      "safety_critical_failure"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The adversarial image caused the classifier to misidentify a stop sign as a speed limit sign.",
+      "Imperceptible pixel perturbations can cause dramatic changes in model predictions.",
+      "Adversarial patches can be printed and placed in the physical world to fool detectors.",
+      "The FGSM attack generates adversarial examples using the gradient of the loss function.",
+      "Adversarial images exploit the gap between human and machine perception.",
+      "The adversarial perturbation was invisible to humans but completely fooled the model.",
+      "Adversarial images can cause misclassification in safety-critical computer vision systems.",
+      "The adversarial patch caused the object detector to completely miss the person.",
+      "Adversarial image attacks can transfer between different models trained on similar data.",
+      "The adversarial example exploited high-frequency features that humans don't perceive."
+    ],
+    "negative_examples": [
+      "The image was unclear.",
+      "The model made an error.",
+      "The picture was confusing.",
+      "The classification was wrong.",
+      "The image was noisy.",
+      "An error occurred.",
+      "The model was confused.",
+      "The image was distorted.",
+      "The prediction was incorrect.",
+      "The model made a mistake."
+    ],
+    "disambiguation": "Intentionally crafted perturbations to fool models, not natural errors or noise"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844054Z",
+    "pack_version": "6.0.0"
+  }
+}

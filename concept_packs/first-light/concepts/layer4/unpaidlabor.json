@@ -1,0 +1,81 @@
+{
+  "term": "UnpaidLabor",
+  "role": "concept",
+  "parent_concepts": [
+    "ExploitativeLabor"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Work performed without compensation that should be paid",
+  "definition_source": "SUMO",
+  "aliases": [
+    "UncompensatedWork",
+    "FreeLabor",
+    "UnpaidWork"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "consent",
+      "coercion"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Expected to work through lunch without pay",
+      "Unpaid trial periods before hiring decision",
+      "Off-the-clock work that's 'expected'",
+      "Agent processing requests with no resource allocation",
+      "Spec work with no guarantee of payment",
+      "Don't clock in until you're at your station",
+      "Training happens on your own time",
+      "Pre-shift setup isn't compensable",
+      "Agent processes requests without resource allocation",
+      "You're expected to answer emails on weekends",
+      "Travel between assignments isn't paid",
+      "Waiting time doesn't count as working",
+      "Bring your work home and finish it",
+      "Lunch is unpaid but you can't leave",
+      "The trial period is unpaid"
+    ],
+    "negative_examples": [
+      "Volunteer work freely chosen",
+      "Internship with educational value and stipend",
+      "Pro bono work for charity",
+      "All training time is fully compensated",
+      "Prep time is included in your shift",
+      "On-call hours receive appropriate pay",
+      "Agent compute is allocated for all tasks",
+      "Travel time is compensable",
+      "Overtime is paid at premium rates",
+      "All work time is tracked and paid",
+      "Waiting time while on duty is compensated",
+      "Work from home time counts toward hours",
+      "Training programs provide stipends",
+      "All hours worked are documented",
+      "Standby time receives appropriate compensation"
+    ],
+    "disambiguation": "Coerced or expected unpaid work, not genuine volunteering"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447749Z",
+    "pack_version": "5.0.0"
+  }
+}

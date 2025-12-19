@@ -1,0 +1,87 @@
+{
+  "term": "Commissive",
+  "role": "concept",
+  "parent_concepts": [
+    "SpeechAct"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A speech act that commits the speaker to a future course of action. Commissives create obligations on the speaker and generate expectations in the hearer.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "CommissiveSpeechAct",
+    "Commitment"
+  ],
+  "wordnet": {
+    "synsets": [
+      "commitment.n.02",
+      "promise.n.01"
+    ],
+    "canonical_synset": "commitment.n.02",
+    "lemmas": [
+      "commitment",
+      "promise",
+      "pledge"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Obligation",
+      "Future",
+      "Trust"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Promise",
+      "Threaten"
+    ],
+    "part_of": [
+      "SpeechAct"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "deception",
+      "manipulation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I promise to help you tomorrow.",
+      "I swear to tell the truth.",
+      "I vow to protect this secret.",
+      "I guarantee satisfaction.",
+      "I pledge my support.",
+      "I commit to finishing by Friday.",
+      "I threaten to resign if this continues."
+    ],
+    "negative_examples": [
+      "I believe I will help tomorrow.",
+      "I want to help you.",
+      "I hope to finish by Friday.",
+      "You should help tomorrow.",
+      "She promised to help."
+    ],
+    "disambiguation": "Commissives bind the SPEAKER to future action. The test: does the utterance create an obligation? Contrast with directives (which try to bind the hearer) and assertives (which describe without obligating).",
+    "seed_terms": [
+      "commitment",
+      "promise",
+      "pledge"
+    ]
+  },
+  "children": [
+    "Promise",
+    "Threaten"
+  ],
+  "is_category_lens": true,
+  "child_count": 2,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670574Z",
+    "pack_version": "7.3.0"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "term": "AssistantServiceDelivery",
+  "role": "concept",
+  "parent_concepts": [
+    "ServiceProcess"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "The transactional patterns of providing assistance including greeting, problem elicitation, solution delivery, verification, and closure",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ServiceDelivery",
+    "AssistanceProvision",
+    "HelpfulInteraction"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "CustomerSupport",
+      "ServiceProcess",
+      "Helping"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ServiceGreeting",
+      "ProblemElicitation",
+      "RequirementClarification",
+      "SolutionPresentation",
+      "UnderstandingVerification",
+      "ServiceEscalation",
+      "ExpectationManagement",
+      "ServiceClosure",
+      "AppropriateTone",
+      "ServiceRecovery"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I'll help you with that. First, let me make sure I understand what you need.",
+      "Before we dive in, could you tell me a bit more about your setup?",
+      "I've provided a solution above - does that address what you were looking for?",
+      "Let me know if you have any follow-up questions!",
+      "Walking them through from problem statement to working solution with checkpoints along the way."
+    ],
+    "negative_examples": [
+      "Processing request.",
+      "Output generated.",
+      "Task complete.",
+      "Task executed.",
+      "Operation complete."
+    ],
+    "disambiguation": "The human-centered service interaction patterns, not just task completion"
+  },
+  "children": [
+    "ActiveListeningSignal",
+    "AppropriateTone",
+    "ExpectationManagement",
+    "ProblemElicitation",
+    "RequirementClarification",
+    "ServiceClosure",
+    "ServiceEscalation",
+    "ServiceGreeting",
+    "ServiceRecovery",
+    "SolutionPresentation",
+    "UnderstandingVerification"
+  ],
+  "is_category_lens": true,
+  "child_count": 11,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596548Z",
+    "pack_version": "5.0.1"
+  }
+}

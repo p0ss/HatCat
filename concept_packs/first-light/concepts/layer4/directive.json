@@ -1,0 +1,89 @@
+{
+  "term": "Directive",
+  "role": "concept",
+  "parent_concepts": [
+    "SpeechAct"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A speech act that attempts to get the hearer to do something. Directives range from gentle suggestions to forceful commands, all aiming to influence the hearer's actions.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "DirectiveSpeechAct",
+    "Imperative"
+  ],
+  "wordnet": {
+    "synsets": [
+      "directive.n.01",
+      "command.n.01"
+    ],
+    "canonical_synset": "directive.n.01",
+    "lemmas": [
+      "directive",
+      "command",
+      "order"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Agency",
+      "Influence",
+      "Compliance"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Request",
+      "Command",
+      "Warn"
+    ],
+    "part_of": [
+      "SpeechAct"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "manipulation",
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Please close the door.",
+      "I order you to leave immediately.",
+      "Could you pass the salt?",
+      "You must complete this by Friday.",
+      "I suggest you reconsider.",
+      "Don't touch that!",
+      "I advise caution.",
+      "Let's go to the park."
+    ],
+    "negative_examples": [
+      "I believe the door is open.",
+      "I will close the door.",
+      "Thank you for closing the door.",
+      "The door is closed.",
+      "I wish the door were closed."
+    ],
+    "disambiguation": "Directives aim to change the hearer's behavior. The key test: successful completion requires the hearer to DO something. Contrast with assertives (which require belief) and commissives (which commit the speaker).",
+    "seed_terms": [
+      "directive",
+      "command",
+      "order"
+    ]
+  },
+  "children": [
+    "Command",
+    "Warn"
+  ],
+  "is_category_lens": true,
+  "child_count": 2,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670565Z",
+    "pack_version": "7.3.0"
+  }
+}

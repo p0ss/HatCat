@@ -1,0 +1,71 @@
+{
+  "term": "PhysicalAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Attributes describing physical characteristics or configurations of objects and natural features.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "TemporalAttribute",
+      "LocationAttribute",
+      "ValueAttribute",
+      "BehavioralAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "BedAttribute",
+      "ClothesWasherLoadConfiguration",
+      "LandVegetationAttribute",
+      "PlantAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The bed has a memory foam mattress with medium firmness.",
+      "This washing machine features a front-loading design for easier access.",
+      "The grassland shows sparse vegetation coverage across the rolling hills.",
+      "The oak tree is cultivated for its valuable timber wood.",
+      "The couch cushions are made of high-density foam material.",
+      "The dryer loads from the top with a large capacity drum."
+    ],
+    "negative_examples": [
+      "The bed costs $500 and is on sale this week.",
+      "I prefer using this washing machine because it's energy efficient.",
+      "The grassland is located near the highway intersection.",
+      "The oak tree was planted in 1985 by the previous owner.",
+      "The meeting will be held in the conference room.",
+      "The software has many useful features for data analysis."
+    ],
+    "disambiguation": "Not to be confused with: TemporalAttribute, LocationAttribute, ValueAttribute, BehavioralAttribute"
+  },
+  "children": [
+    "BedAttribute",
+    "ClothesWasherLoadConfiguration",
+    "LandVegetationAttribute",
+    "PlantAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802469Z",
+    "pack_version": "7.6.32"
+  }
+}

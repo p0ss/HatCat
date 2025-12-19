@@ -1,0 +1,59 @@
+{
+  "term": "CodeReview",
+  "role": "concept",
+  "parent_concepts": [
+    "ComputerProgramming"
+  ],
+  "layer": 4,
+  "domain": "ComputerScience",
+  "definition": "Systematic examination of code to identify issues, suggest improvements, and ensure quality standards",
+  "definition_source": "SUMO",
+  "aliases": [
+    "PeerReview",
+    "CodeInspection",
+    "CodeAudit"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "QualityAssurance",
+      "CodeDebugging",
+      "BestPractices"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Code review identified that the function should validate input before processing.",
+      "The reviewer noted a potential SQL injection vulnerability in the query construction.",
+      "AI code review suggests extracting the magic number 86400 into a named constant.",
+      "The code review recommends adding error handling for the network call."
+    ],
+    "negative_examples": [
+      "The code was looked at.",
+      "Someone checked the code.",
+      "The code was read."
+    ],
+    "disambiguation": "Systematic quality evaluation with actionable feedback"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/code-generation@0.1.0",
+    "applied_at": "2025-12-10T20:54:14.807383Z",
+    "pack_version": "5.0.3"
+  }
+}

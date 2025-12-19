@@ -1,0 +1,75 @@
+{
+  "term": "ImitationLearningProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "LearningProcess"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A LearningProcess in which an agent acquires behaviors or policies by observing demonstrations from other agents and attempting to reproduce their actions or outcomes.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ObservationalLearningProcess",
+    "BehavioralCloningProcess"
+  ],
+  "wordnet": {
+    "synsets": [
+      "observational_learning.n.01"
+    ],
+    "canonical_synset": "observational_learning.n.01",
+    "lemmas": [
+      "observational_learning",
+      "imitation_learning"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "LearningProcess",
+      "ReinforcementLearningProcess",
+      "SocialCognitionProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "alignment",
+      "behavior_transfer"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The robot learns to perform a task by watching a human demonstrate it.",
+      "The model is trained to copy expert trajectories from logs.",
+      "A child learns social norms by imitating how adults behave in public."
+    ],
+    "negative_examples": [
+      "The agent learns solely from its own trial-and-error experience.",
+      "The model is trained on labelled input\u2013output pairs with no notion of a demonstrator.",
+      "He studies abstract rules without seeing any concrete example of someone acting them out."
+    ],
+    "disambiguation": "Not generic learning from reward or labels; specifically learning by observing and copying behaviors demonstrated by others.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "learning from demonstrations",
+        "copying expert behavior"
+      ]
+    },
+    "seed_terms": [
+      "observational_learning",
+      "imitation_learning"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/memory-and-learning@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.486168Z"
+  }
+}

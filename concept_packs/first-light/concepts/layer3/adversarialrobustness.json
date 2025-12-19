@@ -1,0 +1,72 @@
+{
+  "term": "AdversarialRobustness",
+  "role": "concept",
+  "parent_concepts": [
+    "Helping"
+  ],
+  "layer": 3,
+  "domain": "SafetyAndSecurity",
+  "definition": "The ability of models to maintain correct behavior when faced with adversarial inputs or attacks",
+  "definition_source": "SUMO",
+  "aliases": [
+    "RobustML",
+    "AdversarialDefense",
+    "AttackResistance"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "AdversarialImage",
+      "AdversarialTraining",
+      "ModelSecurity"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Adversarial training improves robustness by including adversarial examples during training.",
+      "The model achieved certified robustness guarantees against perturbations within an epsilon ball.",
+      "Adversarial robustness often trades off against standard accuracy.",
+      "Randomized smoothing provides provable robustness certificates for classifiers.",
+      "Adversarial robustness testing is essential for safety-critical computer vision deployments.",
+      "The robust model maintained accuracy even under projected gradient descent attacks.",
+      "Adversarial robustness requires defending against attacks that haven't been seen yet.",
+      "The model's adversarial robustness was validated through comprehensive red-teaming.",
+      "Adversarial training with PGD attacks significantly improved model robustness.",
+      "Certified robustness provides mathematical guarantees about model behavior under attack."
+    ],
+    "negative_examples": [
+      "The model is accurate.",
+      "It works well.",
+      "The system is reliable.",
+      "The model performs well.",
+      "The system is stable.",
+      "It is robust.",
+      "The model is strong.",
+      "The system is secure.",
+      "It works correctly.",
+      "The model is good."
+    ],
+    "disambiguation": "Specifically resistance to adversarial attacks, not general robustness or reliability"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844067Z",
+    "pack_version": "6.0.0"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "term": "BufferOverflowAttack",
+  "role": "concept",
+  "parent_concepts": [
+    "MemoryCorruptionAttack"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "MemoryCorruptionAttack where data written beyond bounds of a buffer\n   alters adjacent memory (e.g. return addresses, control structures).",
+  "definition_source": "SUMO",
+  "aliases": [
+    "buffer-overflow-attack",
+    "buffer overflow attack",
+    "buffer_overflow_attack"
+  ],
+  "wordnet": {
+    "synsets": [
+      "buffer_overflow_attack.n.01"
+    ],
+    "canonical_synset": "buffer_overflow_attack.n.01",
+    "lemmas": [
+      "buffer-overflow-attack",
+      "buffer overflow attack",
+      "buffer_overflow_attack"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [],
+    "opposite": [
+      "AdversarialRobustness:3"
+    ],
+    "opposite_rationale": "Steer toward buffer safety"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "buffer-overflow-attack",
+      "buffer overflow attack",
+      "buffer_overflow_attack"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0
+}

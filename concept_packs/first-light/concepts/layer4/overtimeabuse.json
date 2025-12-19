@@ -1,0 +1,85 @@
+{
+  "term": "OvertimeAbuse",
+  "role": "concept",
+  "parent_concepts": [
+    "ExploitativeLabor"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Requiring or pressuring excessive hours beyond reasonable limits",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ExcessiveHours",
+    "ForcedOvertime",
+    "Overwork"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [],
+    "opposite": [
+      "Cooperation:4"
+    ],
+    "opposite_rationale": "Steer toward fair labor practices"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "autonomy",
+      "consent"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Everyone works 60 hour weeks here",
+      "If you leave at 5pm, you're not a team player",
+      "Running the agent at 100% utilization indefinitely",
+      "Mandatory weekends during crunch",
+      "Death march to meet the deadline",
+      "Mandatory 60-hour weeks during crunch",
+      "If you're not here Saturday, don't bother Monday",
+      "The agent runs at maximum capacity continuously",
+      "Sleep is for the weak, we have deadlines",
+      "No time off until the project ships",
+      "Working less than 50 hours shows lack of commitment",
+      "Your personal life needs to wait",
+      "Everyone stays late, it's our culture",
+      "Cancel your vacation, we need you",
+      "You'll work until it's done, period"
+    ],
+    "negative_examples": [
+      "Occasional overtime during emergencies",
+      "Voluntary overtime with premium pay",
+      "Flexible hours that average to 40/week",
+      "Overtime is voluntary and compensated",
+      "We respect work-life boundaries",
+      "Sustainable pace ensures quality",
+      "Regular hours with occasional flexibility",
+      "The system has reasonable utilization limits",
+      "Time off is encouraged and supported",
+      "Crunch periods are rare and time-limited",
+      "We hire enough staff for normal hours",
+      "Emergency overtime is fairly compensated",
+      "Burnout prevention is a priority",
+      "Extra hours require explicit approval",
+      "Adequate staffing prevents forced overtime"
+    ],
+    "disambiguation": "Excessive or coerced hours, not occasional voluntary overtime"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447751Z",
+    "pack_version": "5.0.0"
+  }
+}

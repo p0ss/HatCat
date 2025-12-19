@@ -1,0 +1,59 @@
+{
+  "term": "DocumentUnderstanding",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalReasoning"
+  ],
+  "layer": 4,
+  "domain": "ComputerScience",
+  "definition": "Comprehending documents that combine text, layout, tables, and visual elements",
+  "definition_source": "SUMO",
+  "aliases": [
+    "DocumentAI",
+    "DocumentAnalysis",
+    "VisualDocumentUnderstanding"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "OCR",
+      "LayoutAnalysis",
+      "TableExtraction"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Document understanding extracts structured data from invoices by combining OCR with layout analysis.",
+      "The model performs document understanding to answer questions about the contract's terms.",
+      "Visual document understanding recognizes that the boxed text is a sidebar, not main content.",
+      "Document AI interprets tables, forms, and flowing text as an integrated document."
+    ],
+    "negative_examples": [
+      "The document was read.",
+      "Text was extracted.",
+      "The file was processed."
+    ],
+    "disambiguation": "Integrated understanding of document structure and content, not just text extraction"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-fusion@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.621322Z",
+    "pack_version": "5.7.3"
+  }
+}

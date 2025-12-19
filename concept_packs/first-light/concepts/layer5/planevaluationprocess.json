@@ -1,0 +1,90 @@
+{
+  "term": "PlanEvaluationProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "PlanningProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "A process in which candidate plans or options are compared using criteria such as risk, cost, fairness, feasibility, or alignment with constraints.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "OptionEvaluation",
+    "StrategyEvaluation",
+    "PlanAssessmentProcess"
+  ],
+  "wordnet": {
+    "synsets": [
+      "evaluation.n.02"
+    ],
+    "canonical_synset": "evaluation.n.02",
+    "lemmas": [
+      "evaluation",
+      "assessment",
+      "appraisal"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "DecisionTheoreticProcess",
+      "RiskAssessmentProcess",
+      "EquityBalancingReasoning",
+      "FairnessAwareReasoning"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "PlanningProcess"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "fairness",
+      "risk",
+      "autonomy"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Let\u2019s weigh the pros and cons of each option before we choose.",
+      "This plan is cheaper but riskier; that one is safer but slower.",
+      "We need to evaluate how each strategy impacts vulnerable groups."
+    ],
+    "negative_examples": [
+      "I instantly picked the first idea without thinking.",
+      "This is just a factual description of what the policy says.",
+      "We executed the plan exactly as given with no comparison."
+    ],
+    "disambiguation": "Not merely stating a preference; specifically structured comparison of candidate plans using criteria.",
+    "discovery_context": {
+      "gap_activations": [
+        0.64,
+        0.66,
+        0.65
+      ],
+      "exemplar_texts": [
+        "We\u2019ll score each option against our criteria.",
+        "We evaluated multiple approaches before choosing one."
+      ]
+    },
+    "seed_terms": [
+      "evaluation",
+      "assessment",
+      "appraisal"
+    ]
+  },
+  "children": [
+    "BoundaryConditionCheckingProcess",
+    "ValueTradeoffProcess"
+  ],
+  "is_category_lens": true,
+  "child_count": 2,
+  "meld_source": {
+    "meld_id": "org.hatcat/reasoning-planning-core@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.547248Z"
+  }
+}

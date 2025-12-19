@@ -1,0 +1,59 @@
+{
+  "term": "VisionLanguageModel",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalReasoning"
+  ],
+  "layer": 4,
+  "domain": "ComputerScience",
+  "definition": "A model architecture that can process and reason over both images and text",
+  "definition_source": "SUMO",
+  "aliases": [
+    "VLM",
+    "MultimodalLLM",
+    "VisualLanguageModel"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "LargeLanguageModel",
+      "ComputerVision",
+      "Transformer"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "GPT-4V is a vision-language model that can analyze images and answer questions about them.",
+      "The VLM architecture combines a vision encoder with a language model through learned projections.",
+      "LLaVA fine-tunes a language model to accept visual tokens from a CLIP encoder.",
+      "Vision-language models enable conversational interaction about visual content."
+    ],
+    "negative_examples": [
+      "A model that understands images.",
+      "AI that can see.",
+      "The system processes pictures."
+    ],
+    "disambiguation": "Specific integrated architecture for vision and language, not any image-capable system"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-fusion@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.621319Z",
+    "pack_version": "5.7.3"
+  }
+}

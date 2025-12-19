@@ -1,0 +1,57 @@
+{
+  "term": "SemanticRetrieval",
+  "role": "concept",
+  "parent_concepts": [
+    "MemoryProcesses"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A memory retrieval process that accesses stored meanings, concepts, or facts without reconstructing the original learning episode.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ConceptualRetrieval"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MemoryRetrieval",
+      "SemanticEncoding"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "memory",
+      "knowledge"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "He recalled that the law changed in 2022, without remembering the exact meeting.",
+      "The AI retrieved the definition of 'differential privacy' from its knowledge base.",
+      "She remembered that the office moved to a new building two years ago."
+    ],
+    "negative_examples": [
+      "I vividly remember the day we signed the contract.",
+      "The system replayed a recorded call from that afternoon.",
+      "She described the scene where she first learned that concept."
+    ],
+    "disambiguation": "Not replaying an episode; specifically retrieving abstracted facts and meanings."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cog-architecture-core-packA@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.345036Z"
+  }
+}

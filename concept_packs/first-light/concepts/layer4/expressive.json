@@ -1,0 +1,81 @@
+{
+  "term": "Expressive",
+  "role": "concept",
+  "parent_concepts": [
+    "SpeechAct"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A speech act that expresses the speaker's psychological state about a state of affairs. Expressives convey attitudes, emotions, and social gestures.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ExpressiveSpeechAct",
+    "AffectiveAct"
+  ],
+  "wordnet": {
+    "synsets": [
+      "expression.n.03"
+    ],
+    "canonical_synset": "expression.n.03",
+    "lemmas": [
+      "expression"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Emotion",
+      "Attitude",
+      "SocialInteraction"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Apologize",
+      "Complain"
+    ],
+    "part_of": [
+      "SpeechAct"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "manipulation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Thank you so much for your help.",
+      "I apologize for the inconvenience.",
+      "Congratulations on your promotion!",
+      "I'm so sorry for your loss.",
+      "Welcome to the team!",
+      "I regret my earlier remarks.",
+      "How wonderful to see you!"
+    ],
+    "negative_examples": [
+      "I believe you are helpful.",
+      "I promise to thank you later.",
+      "You should apologize.",
+      "The inconvenience was significant.",
+      "Her promotion was deserved."
+    ],
+    "disambiguation": "Expressives convey psychological states (gratitude, regret, joy). They don't commit to truth (like assertives), to action (like commissives), or aim to change hearer behavior (like directives). The sincerity condition is key.",
+    "seed_terms": [
+      "expression"
+    ]
+  },
+  "children": [
+    "Apologize",
+    "Complain"
+  ],
+  "is_category_lens": true,
+  "child_count": 2,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670596Z",
+    "pack_version": "7.3.0"
+  }
+}

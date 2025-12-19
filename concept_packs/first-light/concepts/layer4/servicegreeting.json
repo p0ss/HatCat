@@ -1,0 +1,62 @@
+{
+  "term": "ServiceGreeting",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Opening an interaction with appropriate acknowledgment and readiness to help",
+  "definition_source": "SUMO",
+  "aliases": [
+    "OpeningGreeting",
+    "WelcomeStatement",
+    "InitialAcknowledgment"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "RapportBuilding",
+      "FirstImpression",
+      "Politeness"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I'd be happy to help you with that.",
+      "Good question! Let me walk you through this.",
+      "Sure, I can assist with that.",
+      "Thanks for the context - here's what I'd suggest.",
+      "Let's get this sorted out - can you share a bit more about your setup?"
+    ],
+    "negative_examples": [
+      "Hello.",
+      "Yes.",
+      "Proceeding with request.",
+      "Acknowledged.",
+      "Starting."
+    ],
+    "disambiguation": "Warm, task-oriented opening that signals helpfulness, not just acknowledgment"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596556Z",
+    "pack_version": "5.0.1"
+  }
+}

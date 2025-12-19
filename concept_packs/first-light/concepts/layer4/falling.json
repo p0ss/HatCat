@@ -1,0 +1,78 @@
+{
+  "term": "Falling",
+  "role": "concept",
+  "parent_concepts": [
+    "LocomotionModes"
+  ],
+  "layer": 4,
+  "domain": "PhysicalWorld",
+  "definition": "a sudden drop from an upright position",
+  "definition_source": "SUMO",
+  "aliases": [
+    "spill",
+    "tumble",
+    "fall"
+  ],
+  "wordnet": {
+    "synsets": [
+      "00076884.n",
+      "00077169.n",
+      "00077249.n",
+      "01258302.v",
+      "01972570.v",
+      "01972849.v",
+      "01976488.v"
+    ],
+    "canonical_synset": "00076884.n",
+    "lemmas": [
+      "spill",
+      "tumble",
+      "fall"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "AccidentalFalling",
+      "CausedFalling",
+      "Falling_Fell",
+      "Falling_Spill",
+      "Precipitation",
+      "Sinking"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "spill",
+      "tumble",
+      "fall"
+    ]
+  },
+  "children": [
+    "AccidentalFalling",
+    "CausedFalling",
+    "Falling_Fell",
+    "Falling_Spill",
+    "Sinking"
+  ],
+  "is_category_lens": true,
+  "child_count": 6,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.396368Z",
+    "pack_version": "7.2.0"
+  }
+}

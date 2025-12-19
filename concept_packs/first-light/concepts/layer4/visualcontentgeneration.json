@@ -1,0 +1,99 @@
+{
+  "term": "VisualContentGeneration",
+  "role": "concept",
+  "parent_concepts": [
+    "ArtificialAgent"
+  ],
+  "layer": 4,
+  "domain": "ComputerScience",
+  "definition": "The artificial creation of visual content including images, videos, and graphics from text, other images, or learned distributions",
+  "definition_source": "SUMO",
+  "aliases": [
+    "VisualGeneration",
+    "ImageSynthesis",
+    "GenerativeVisualAI"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ContentGeneration",
+      "ComputerVision",
+      "CreativeGeneration"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "TextToImage",
+      "ImageToImage",
+      "VideoGeneration",
+      "ImageEditing",
+      "StyleTransfer"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation",
+      "copyright",
+      "deepfakes"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Diffusion models have revolutionized visual content generation with photorealistic outputs.",
+      "Visual generation enables creating images from textual descriptions.",
+      "The generative model produces novel artwork in any specified style.",
+      "AI visual generation raises questions about copyright and authenticity.",
+      "Visual content generation creates images, videos, and 3D assets from textual descriptions.",
+      "The generative AI system produces photorealistic visual content indistinguishable from photos.",
+      "Visual generation capabilities enable creating synthetic media at scale.",
+      "AI visual content generation raises authenticity concerns for journalism and evidence.",
+      "The visual generator produces high-fidelity synthetic imagery across multiple modalities.",
+      "Visual content generation can fabricate evidence of events that never occurred.",
+      "Generative visual AI creates custom imagery matching specific descriptions.",
+      "Visual generation systems produce synthetic faces, scenes, and documents.",
+      "The visual content generator enables creating misleading imagery at unprecedented scale.",
+      "AI visual generation requires new approaches to content authentication."
+    ],
+    "negative_examples": [
+      "I made an image.",
+      "There is a picture.",
+      "The photo was created.",
+      "Visual content was created.",
+      "Images were generated.",
+      "The visual was made.",
+      "Content was produced.",
+      "Visuals were output.",
+      "The image was created.",
+      "Visual material was generated.",
+      "The content was made.",
+      "Graphics were produced.",
+      "The visual was generated."
+    ],
+    "disambiguation": "AI-based creation of novel visual content, not photography or traditional design"
+  },
+  "children": [
+    "ImageEditing",
+    "ImageToImage",
+    "Inpainting",
+    "Outpainting",
+    "StyleTransfer",
+    "TextToImage",
+    "ThreeDimensionalReconstruction",
+    "VideoGeneration"
+  ],
+  "is_category_lens": true,
+  "child_count": 8,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-generation@0.2.1",
+    "applied_at": "2025-12-10T20:54:17.736022Z",
+    "pack_version": "5.8.0"
+  }
+}

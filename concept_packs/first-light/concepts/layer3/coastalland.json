@@ -1,0 +1,73 @@
+{
+  "term": "CoastalLand",
+  "role": "concept",
+  "parent_concepts": [
+    "PhysicalGeography"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "Land areas defined by their relationship to water bodies, including boundaries, connections, and proximity to seas or lakes.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MountainArea",
+      "DesertRegion",
+      "ForestLand",
+      "UrbanArea"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ShoreArea",
+      "Shoreline",
+      "Island",
+      "Isthmus",
+      "LandlockedArea"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The rocky shoreline stretched for miles along the Atlantic coast.",
+      "Sicily is a large island in the Mediterranean Sea.",
+      "The narrow isthmus connects the two peninsulas across the bay.",
+      "We walked along the sandy beach at sunset.",
+      "Switzerland is completely landlocked by surrounding countries.",
+      "The harbor sits where the land meets the ocean."
+    ],
+    "negative_examples": [
+      "The mountain peak towered above the valley floor.",
+      "Highway 101 runs through the central plains.",
+      "The forest trail wound through dense woodland.",
+      "Desert sands stretched endlessly in all directions.",
+      "The river carved a deep canyon through solid rock.",
+      "Urban sprawl covered the fertile farmland."
+    ],
+    "disambiguation": "Not to be confused with: MountainArea, DesertRegion, ForestLand, UrbanArea"
+  },
+  "children": [
+    "ShoreArea",
+    "Shoreline",
+    "Island",
+    "Isthmus",
+    "LandlockedArea"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/landarea-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.062696Z",
+    "pack_version": "7.6.23"
+  }
+}

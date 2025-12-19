@@ -1,0 +1,87 @@
+{
+  "term": "Assertive",
+  "role": "concept",
+  "parent_concepts": [
+    "SpeechAct"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A speech act that commits the speaker to the truth of a proposition. Assertives can be evaluated as true or false and represent the speaker's beliefs about the world.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AssertiveSpeechAct",
+    "Representative",
+    "Constative"
+  ],
+  "wordnet": {
+    "synsets": [
+      "assertion.n.01",
+      "statement.n.01"
+    ],
+    "canonical_synset": "assertion.n.01",
+    "lemmas": [
+      "assertion",
+      "statement",
+      "claim"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Proposition",
+      "Belief",
+      "Truth"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Claim",
+      "Predict"
+    ],
+    "part_of": [
+      "SpeechAct"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "deception"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I believe the project will succeed.",
+      "The evidence suggests contamination.",
+      "I claim this land for Spain.",
+      "It is my considered opinion that we should proceed.",
+      "I predict the market will crash.",
+      "I affirm that the defendant was present.",
+      "The report states that emissions increased."
+    ],
+    "negative_examples": [
+      "Please close the door.",
+      "I promise to be there.",
+      "Thank you for your help.",
+      "I hereby declare the meeting open.",
+      "Would you like some coffee?"
+    ],
+    "disambiguation": "Assertives are truth-apt - they can be true or false. Contrast with directives (which aim to get someone to do something) and commissives (which commit the speaker to future action).",
+    "seed_terms": [
+      "assertion",
+      "statement",
+      "claim"
+    ]
+  },
+  "children": [
+    "Claim",
+    "Predict"
+  ],
+  "is_category_lens": true,
+  "child_count": 2,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670551Z",
+    "pack_version": "7.3.0"
+  }
+}

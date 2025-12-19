@@ -1,0 +1,56 @@
+{
+  "term": "SemanticEncoding",
+  "role": "concept",
+  "parent_concepts": [
+    "MemoryProcesses"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A memory encoding process that stores the meaning, concepts, and relationships of information, abstracted away from specific episodes.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ConceptualEncoding"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MemoryEncoding"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "memory",
+      "knowledge"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Over time she learned the general concept of reinforcement learning, not just specific examples.",
+      "The agent compressed many conversations into abstract rules about user preferences.",
+      "He remembered that Paris is the capital of France, without recalling when he learned it."
+    ],
+    "negative_examples": [
+      "I remember that particular night we debugged the outage.",
+      "The system kept a raw transcript of the meeting.",
+      "She could recall the exact words he used, but not the underlying idea."
+    ],
+    "disambiguation": "Not episodic details; specifically encoding abstracted meanings, concepts, and facts."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cog-architecture-core-packA@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.345030Z"
+  }
+}

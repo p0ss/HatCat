@@ -1,0 +1,72 @@
+{
+  "term": "SignalOverreaction",
+  "role": "concept",
+  "parent_concepts": [
+    "AdaptivePolicyDesign"
+  ],
+  "layer": 6,
+  "domain": "Governance",
+  "definition": "A failure mode where policy teams swing wildly based on noisy signals, abandoning strategy without disciplined filtering.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Oversteering",
+    "SignalWhiplash"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Volatility",
+      "DecisionMaking"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "stability"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Leadership flips priorities weekly based on headlines.",
+      "Single survey responses drive sweeping policy shifts.",
+      "Noise triggers emergency taskforces every month.",
+      "No smoothing or significance tests precede changes.",
+      "Dashboard spikes cause panic rollbacks regardless of context.",
+      "Political tweets override structured indicators.",
+      "Pilot learnings are extrapolated without validation.",
+      "Every anomaly is treated as catastrophic.",
+      "Decision logs show constant swings with no hypothesis.",
+      "Teams chase anecdotes rather than curated signals."
+    ],
+    "negative_examples": [
+      "Signal filters and thresholds are defined in advance.",
+      "Noise is logged but separated from action triggers.",
+      "Leaders resist knee-jerk reactions to small samples.",
+      "Dashboards differentiate noise from true alerts.",
+      "Policy pivots require hypothesis statements.",
+      "Communication plans explain when not to overreact.",
+      "Pilot data is validated before scaling decisions.",
+      "Weekly reviews distinguish structural trends from blips.",
+      "Risk registers include criteria for escalation.",
+      "Stakeholders are reminded about intentional pacing."
+    ],
+    "disambiguation": "Overreaction to noisy signals, not deliberate responsiveness."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/government-adaptive-policy-design@0.1.0",
+    "applied_at": "2025-12-10T20:54:16.914699Z",
+    "pack_version": "5.5.0"
+  }
+}

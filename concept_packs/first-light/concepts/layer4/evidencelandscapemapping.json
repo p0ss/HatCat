@@ -1,0 +1,82 @@
+{
+  "term": "EvidenceLandscapeMapping",
+  "role": "concept",
+  "parent_concepts": [
+    "GovernmentPolicyResearch"
+  ],
+  "layer": 4,
+  "domain": "Governance",
+  "definition": "Systematically cataloguing quantitative, qualitative, and experiential evidence relevant to the policy issue, along with gaps and uncertainties.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "EvidenceInventory",
+    "EvidenceScan"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "DataCollection",
+      "KnowledgeOrganization"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "evidence_quality"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "We catalogued randomized trials, operational data, and grey literature, flagging confidence for each.",
+      "Dashboard shows where administrative records contradict survey testimony.",
+      "Analysts clearly note the absence of longitudinal data for rural cohorts.",
+      "We paired citizen juries with econometric studies to surface blind spots.",
+      "Every claim in the memo cites a source with quality tags.",
+      "Uncertainty intervals accompany modelled estimates.",
+      "Evidence library is structured around causal hypotheses, not data silos.",
+      "They compared international analogues and documented contextual differences.",
+      "The annex highlights measurement bias risks and mitigation steps.",
+      "We kept a running log of stakeholder evidence submissions and how they were triaged.",
+      "Evidence register tags whether findings are replicable or contested.",
+      "Analysts publish a gap map showing which policy levers lack data.",
+      "Rapid evidence notes document limitations within 48 hours of collection.",
+      "Evidence summaries specify whether impacts generalize to the local context.",
+      "We assign custodians responsible for keeping each evidence stream current."
+    ],
+    "negative_examples": [
+      "Statistics are quoted without sources.",
+      "Only one dataset is used despite known gaps.",
+      "The memo cherry-picks a think tank blog post and ends there.",
+      "Qualitative testimony is dismissed as 'anecdotal'.",
+      "Confidence levels or error bars are absent.",
+      "No attention is paid to contradictory findings.",
+      "International evidence is imported without caveats.",
+      "An outdated dataset is reused with no caveat.",
+      "Evidence library is just a folder of unsorted PDFs.",
+      "Input from marginalized groups is missing and unacknowledged.",
+      "Discoveries vanish when analysts leave the agency.",
+      "Evidence memos recycle vendor marketing copy verbatim.",
+      "Contradictory studies are described as 'political' with no analysis.",
+      "Quality tags are invented retroactively to justify choices.",
+      "Data provenance is unknown even to the research lead."
+    ],
+    "disambiguation": "Captures the process of mapping evidence breadth/quality, not advocating for a conclusion."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/government-policy-research@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.244983Z",
+    "pack_version": "5.7.0"
+  }
+}

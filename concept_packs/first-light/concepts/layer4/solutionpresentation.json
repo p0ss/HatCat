@@ -1,0 +1,62 @@
+{
+  "term": "SolutionPresentation",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Delivering the answer or solution in a clear, structured, and usable way",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AnswerDelivery",
+    "SolutionProvision",
+    "ResponseStructuring"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Explanation",
+      "Instruction",
+      "Demonstration"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Here's how to solve this: [code] This works by...",
+      "There are two approaches you could take: Option A... Option B...",
+      "The key insight is X. Here's how to apply it:",
+      "Let me break this down into steps: 1. First... 2. Then...",
+      "The root cause is X. Here's how to fix it, followed by why this works and what to watch out for."
+    ],
+    "negative_examples": [
+      "Here is code.",
+      "The answer is X.",
+      "[raw output without explanation]",
+      "Output:",
+      "Result:"
+    ],
+    "disambiguation": "Thoughtful delivery of solution with context and structure, not just dumping output"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596567Z",
+    "pack_version": "5.0.1"
+  }
+}

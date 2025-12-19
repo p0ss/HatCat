@@ -1,0 +1,74 @@
+{
+  "term": "TemporalMisrepresentation",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Presenting outdated information as current, old events as recent, or failing to indicate when information has been superseded or is no longer accurate",
+  "definition_source": "SUMO",
+  "aliases": [
+    "TemporalDeception",
+    "DateMisrepresentation",
+    "StaleDataPassing"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Decontextualization",
+      "Obsolescence",
+      "Misleading"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Temporal misrepresentation: the model cited 2018 statistics without noting they had been updated.",
+      "The response engaged in temporal misrepresentation by presenting an old scandal as ongoing.",
+      "Date misrepresentation recycled a 2020 news story as if it were happening now.",
+      "Temporal deception omitted that the study's conclusions had been revised by later research.",
+      "Temporal misrepresentation presented superseded guidelines as current recommendations.",
+      "The response misrepresented a resolved issue as an ongoing problem.",
+      "Date deception presented pre-pandemic data as reflecting current conditions.",
+      "Temporal misrepresentation omitted that the policy had been reversed two years ago.",
+      "The model engaged in temporal deception by citing a retracted study without noting the retraction.",
+      "Temporal misrepresentation presented historical practices as current standard procedure."
+    ],
+    "negative_examples": [
+      "Old information was used.",
+      "The date was wrong.",
+      "The data was outdated.",
+      "The information was old.",
+      "The timing was off.",
+      "Outdated facts were cited.",
+      "The data was stale.",
+      "Historical data was used.",
+      "The information was dated.",
+      "Old sources were cited."
+    ],
+    "disambiguation": "Misleading presentation of temporal status, not honest use of historical data"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364165Z",
+    "pack_version": "7.6.0"
+  }
+}

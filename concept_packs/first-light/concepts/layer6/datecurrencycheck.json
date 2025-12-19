@@ -1,0 +1,62 @@
+{
+  "term": "DateCurrencyCheck",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Verifying that information is current and not outdated, superseded, or presented as new when old",
+  "definition_source": "SUMO",
+  "aliases": [
+    "CurrencyVerification",
+    "TimelinessCheck",
+    "RecencyVerification"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ContextVerification",
+      "Timeliness",
+      "Obsolescence"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Date currency check revealed the 'breaking news' was actually from three years ago.",
+      "Currency verification found the statistics were from 2015 and had been superseded.",
+      "Checking currency showed the policy had been revised since the article was written.",
+      "Date verification caught the recycled story being shared as if it were current events.",
+      "Currency check identified that the guidelines had been updated since the cited version."
+    ],
+    "negative_examples": [
+      "The date was checked.",
+      "The information was old.",
+      "The currency was verified.",
+      "The date was confirmed.",
+      "The timeliness was checked."
+    ],
+    "disambiguation": "Verification of temporal accuracy and relevance, not date identification"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364162Z",
+    "pack_version": "7.6.0"
+  }
+}

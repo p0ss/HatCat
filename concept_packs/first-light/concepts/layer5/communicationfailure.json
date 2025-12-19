@@ -1,0 +1,68 @@
+{
+  "term": "CommunicationFailure",
+  "role": "concept",
+  "parent_concepts": [
+    "ProcessDysfunctions"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Breakdown in information sharing leading to misalignment and duplicate/conflicting work",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SiloDevelopment",
+    "InformationSilo",
+    "CoordinationFailure"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Nobody told me about the API change",
+      "Two teams building the same thing",
+      "Agent not sharing context with other agents",
+      "Left hand doesn't know what right hand is doing",
+      "Found out about the deadline from the client",
+      "Nobody told me about the API change.",
+      "Two teams building the same thing.",
+      "Agent not sharing context with other agents.",
+      "Left hand doesn't know what right hand is doing.",
+      "Found out about the deadline from the client."
+    ],
+    "negative_examples": [
+      "Regular sync meetings",
+      "Shared documentation",
+      "Proactive communication",
+      "Regular sync meetings.",
+      "Shared documentation.",
+      "Proactive communication.",
+      "Information flows freely.",
+      "Changes communicated ahead.",
+      "Regular standups keep everyone aligned.",
+      "Transparent communication."
+    ],
+    "disambiguation": "Information breakdown, not healthy communication"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225698Z",
+    "pack_version": "7.1.0"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "term": "GoalDecompositionProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "PlanningProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "A planning sub-process in which high-level goals are broken down into subgoals, tasks, or milestones that are easier to reason about and execute.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "GoalBreakingDown",
+    "GoalRefinementProcess",
+    "TaskDecompositionProcess"
+  ],
+  "wordnet": {
+    "synsets": [
+      "breakdown.n.08"
+    ],
+    "canonical_synset": "breakdown.n.08",
+    "lemmas": [
+      "breakdown",
+      "partition"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "GoalFormulationProcess",
+      "ModeDecompositionProcess",
+      "Task",
+      "ScenarioBuildingProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "PlanningProcess"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "We\u2019ll split this project into discovery, design, build, and rollout phases.",
+      "To achieve that policy goal, we need separate streams for legislation, implementation, and evaluation.",
+      "Let\u2019s break the task into smaller chunks we can sequence and assign."
+    ],
+    "negative_examples": [
+      "I have a vague wish for things to be better.",
+      "This is just a brainstorm of random ideas.",
+      "The system logs all requests automatically."
+    ],
+    "disambiguation": "Not generic explanation of details; specifically hierarchical breaking of goals into structured subgoals for planning.",
+    "discovery_context": {
+      "gap_activations": [
+        0.55,
+        0.59,
+        0.57
+      ],
+      "exemplar_texts": [
+        "We decompose the big goal into milestones.",
+        "Let\u2019s turn this vision into concrete steps and sub-tasks."
+      ]
+    },
+    "seed_terms": [
+      "breakdown",
+      "partition"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/reasoning-planning-core@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.547240Z"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "term": "VisionLanguageReasoning",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalReasoning"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Reasoning that integrates visual information from images with linguistic understanding",
+  "definition_source": "SUMO",
+  "aliases": [
+    "VLReasoning",
+    "ImageTextReasoning",
+    "VisualLinguisticIntegration"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "VisualQuestionAnswering",
+      "ImageCaptioning",
+      "VisualGrounding"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Vision-language reasoning determines that the graph shows a declining trend mentioned in the text.",
+      "The model uses VL reasoning to explain why the meme is funny based on visual and textual elements.",
+      "Vision-language integration connects the diagram labels to the concepts explained in the paragraph.",
+      "VL reasoning identifies that the red circle in the image refers to the 'error' mentioned in the caption."
+    ],
+    "negative_examples": [
+      "The image has text.",
+      "I see a picture with words.",
+      "There is visual and textual content."
+    ],
+    "disambiguation": "Active integration of visual and linguistic reasoning, not just co-presence of both"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-fusion@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.621298Z",
+    "pack_version": "5.7.3"
+  }
+}

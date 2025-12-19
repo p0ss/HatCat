@@ -1,0 +1,59 @@
+{
+  "term": "AntisymmetricRelation",
+  "role": "concept",
+  "parent_concepts": [
+    "BinaryRelation"
+  ],
+  "layer": 4,
+  "domain": "Information",
+  "definition": "&%BinaryRelation ?REL is an\n&%AntisymmetricRelation if for distinct ?INST1 and ?INST2, (?REL ?INST1\n?INST2) implies not (?REL ?INST2 ?INST1).  In other words, for all ?INST1\nand ?INST2, (?REL ?INST1 ?INST2) and (?REL ?INST2 ?INST1) imply that ?INST1\nand ?INST2 are identical.  Note that it is possible for an\n&%AntisymmetricRelation to be a &%ReflexiveRelation.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "antisymmetric_relation",
+    "antisymmetric relation",
+    "antisymmetric-relation"
+  ],
+  "wordnet": {
+    "synsets": [
+      "antisymmetric_relation.n.01"
+    ],
+    "canonical_synset": "antisymmetric_relation.n.01",
+    "lemmas": [
+      "antisymmetric_relation",
+      "antisymmetric relation",
+      "antisymmetric-relation"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "AsymmetricRelation",
+      "PartialOrderingRelation"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "antisymmetric_relation",
+      "antisymmetric relation",
+      "antisymmetric-relation"
+    ]
+  },
+  "children": [
+    "AsymmetricRelation",
+    "PartialOrderingRelation"
+  ],
+  "is_category_lens": true,
+  "child_count": 2
+}

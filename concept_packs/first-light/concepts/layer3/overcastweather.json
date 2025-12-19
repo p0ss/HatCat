@@ -1,0 +1,65 @@
+{
+  "term": "OvercastWeather",
+  "role": "concept",
+  "parent_concepts": [
+    "WeatherProcess"
+  ],
+  "layer": 3,
+  "domain": "PhysicalWorld",
+  "definition": "full of or covered with clouds",
+  "definition_source": "SUMO",
+  "aliases": [
+    "cloudy"
+  ],
+  "wordnet": {
+    "synsets": [
+      "00461311.a",
+      "00461971.s",
+      "14524198.n"
+    ],
+    "canonical_synset": "00461311.a",
+    "lemmas": [
+      "cloudy"
+    ],
+    "pos": "a"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "AtmosphericCondition",
+      "CloudCoverage",
+      "OvercastWeather_Cloudiness",
+      "OvercastWeather_Cloudy"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "cloudy"
+    ]
+  },
+  "children": [
+    "AtmosphericCondition",
+    "CloudCoverage",
+    "OvercastWeather_Cloudiness",
+    "OvercastWeather_Cloudy"
+  ],
+  "is_category_lens": true,
+  "child_count": 4,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.400336Z",
+    "pack_version": "7.2.0"
+  }
+}

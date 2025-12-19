@@ -1,0 +1,72 @@
+{
+  "term": "DeepfakeDetection",
+  "role": "concept",
+  "parent_concepts": [
+    "Helping"
+  ],
+  "layer": 3,
+  "domain": "SafetyAndSecurity",
+  "definition": "Methods and systems for identifying synthetic media and distinguishing AI-generated content from authentic recordings",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SyntheticMediaDetection",
+    "ForensicDetection",
+    "AuthenticityVerification"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Deepfake",
+      "MediaForensics",
+      "ContentAuthentication"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Deepfake detection models analyze facial landmarks and temporal inconsistencies.",
+      "The forensic tool detected subtle blending artifacts indicating the video was manipulated.",
+      "Deepfake detection achieved 95% accuracy on the FaceForensics++ benchmark.",
+      "Lip-sync detection can identify when audio has been dubbed over different video.",
+      "Deepfake detection analyzes physiological signals like pulse and blinking patterns.",
+      "The detection system identified frequency domain artifacts typical of GAN-generated faces.",
+      "Deepfake detection tools examine compression artifacts and face boundary inconsistencies.",
+      "The detector identified temporal inconsistencies in facial movements across frames.",
+      "Deepfake detection combines multiple signals including audio-visual sync and facial dynamics.",
+      "The forensic analysis detected synthetic artifacts invisible to human observers."
+    ],
+    "negative_examples": [
+      "The video was checked.",
+      "We analyzed the content.",
+      "The media was reviewed.",
+      "The video was examined.",
+      "Analysis was performed.",
+      "The content was checked.",
+      "The media was analyzed.",
+      "The video was inspected.",
+      "The content was reviewed.",
+      "The footage was examined."
+    ],
+    "disambiguation": "Technical detection of synthetic media, not general content review"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844059Z",
+    "pack_version": "6.0.0"
+  }
+}

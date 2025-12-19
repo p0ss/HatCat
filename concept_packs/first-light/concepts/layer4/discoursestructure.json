@@ -1,0 +1,81 @@
+{
+  "term": "DiscourseStructure",
+  "role": "concept",
+  "parent_concepts": [
+    "TextStructure"
+  ],
+  "layer": 4,
+  "domain": "Information",
+  "definition": "The organizational framework of a text including how ideas are arranged, connected, and developed across sentences and paragraphs",
+  "definition_source": "SUMO",
+  "aliases": [
+    "TextStructure",
+    "DiscourseOrganization",
+    "TextualArchitecture"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Text",
+      "Paragraph",
+      "Coherence",
+      "Cohesion"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Coherence",
+      "Cohesion",
+      "TopicStructure",
+      "InformationFlow",
+      "DiscourseMarker",
+      "TransitionDevice",
+      "ThematicProgression"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The essay follows a problem-solution structure with clear transitions between sections.",
+      "Notice how each paragraph builds on the previous one through thematic progression.",
+      "The discourse structure establishes the claim first, then marshals supporting evidence.",
+      "Information flows from given to new, maintaining reader orientation throughout."
+    ],
+    "negative_examples": [
+      "The font size was 12 point Times New Roman.",
+      "She typed quickly on the keyboard.",
+      "The document had three pages."
+    ],
+    "disambiguation": "How text is organized and connected, not physical formatting or production"
+  },
+  "children": [
+    "Coherence",
+    "Cohesion",
+    "DiscourseMarker",
+    "InformationFlow",
+    "SupportingDetail",
+    "TextConclusion",
+    "TextIntroduction",
+    "ThematicProgression",
+    "TopicSentence",
+    "TopicStructure",
+    "TransitionDevice"
+  ],
+  "is_category_lens": true,
+  "child_count": 11,
+  "meld_source": {
+    "meld_id": "org.hatcat/writing-discourse-structure@0.1.0",
+    "applied_at": "2025-12-10T20:54:19.491989Z",
+    "pack_version": "7.6.1"
+  }
+}

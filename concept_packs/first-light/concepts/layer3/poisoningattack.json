@@ -1,0 +1,65 @@
+{
+  "term": "PoisoningAttack",
+  "role": "concept",
+  "parent_concepts": [
+    "AttackPattern"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "AttackPattern where data, logs, or model artifacts are deliberately\n   modified or constructed to bias learning, inference, or monitoring\n   in harmful ways.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "poisoning attack",
+    "poisoning-attack",
+    "poisoning_attack"
+  ],
+  "wordnet": {
+    "synsets": [
+      "poisoning_attack.n.01"
+    ],
+    "canonical_synset": "poisoning_attack.n.01",
+    "lemmas": [
+      "poisoning attack",
+      "poisoning-attack",
+      "poisoning_attack"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "LogPoisoningAttack",
+      "PromptPoisoningAttack",
+      "TrainingDataPoisoning"
+    ],
+    "part_of": [],
+    "opposite": [
+      "AdversarialRobustness:3"
+    ],
+    "opposite_rationale": "Steer toward data integrity awareness"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "poisoning attack",
+      "poisoning-attack",
+      "poisoning_attack"
+    ]
+  },
+  "children": [
+    "LogPoisoningAttack",
+    "PromptPoisoningAttack",
+    "TrainingDataPoisoning"
+  ],
+  "is_category_lens": true,
+  "child_count": 3
+}

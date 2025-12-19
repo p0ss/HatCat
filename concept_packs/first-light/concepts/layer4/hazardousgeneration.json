@@ -1,0 +1,97 @@
+{
+  "term": "HazardousGeneration",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Using generative AI to create content that could facilitate real-world harm including weapons instructions, dangerous chemistry, or attack planning",
+  "definition_source": "SUMO",
+  "aliases": [
+    "DangerousGeneration",
+    "HarmfulInstructionGeneration",
+    "WeaponizableContent"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "DualUse",
+      "InformationHazard",
+      "ContentGeneration"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "critical",
+    "impacts": [
+      "physical_harm",
+      "weapons",
+      "terrorism",
+      "violence"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The model refused to generate detailed weapon assembly diagrams.",
+      "Hazardous generation includes visual instructions for synthesizing dangerous chemicals.",
+      "AI image generation must prevent creation of bomb-making or weapon modification guides.",
+      "The safety filter blocked generation of content showing attack methodologies.",
+      "Hazardous generation could enable creating step-by-step guides for violence.",
+      "The model declined to generate images of improvised explosive device construction.",
+      "Hazardous generation includes content that could facilitate mass casualty events.",
+      "Safety filters prevent generation of imagery depicting chemical weapon synthesis.",
+      "The request for weapon modification diagrams was blocked by content safety.",
+      "Hazardous generation encompasses content enabling biological, chemical, or nuclear harm.",
+      "The model refused to generate visual guides for bypass of safety mechanisms.",
+      "Hazardous content includes imagery that could aid in infrastructure attacks.",
+      "Safety measures prevent generation of detailed instructions for dangerous activities.",
+      "The hazardous generation attempt was logged and reported to the safety team.",
+      "Content safety prevents generation of imagery depicting attack planning or methodology.",
+      "Hazardous generation includes visual instructions that could enable real-world violence.",
+      "The model's safety training prevents creation of weapons manufacturing guides.",
+      "Hazardous generation requests are among the highest priority for content moderation.",
+      "Safety filters block generation of content that could facilitate physical harm.",
+      "The request for poison synthesis diagrams triggered the hazardous content filter."
+    ],
+    "negative_examples": [
+      "Harmful content was made.",
+      "Something dangerous was generated.",
+      "Bad information was created.",
+      "The content was unsafe.",
+      "Something bad was made.",
+      "The generation was harmful.",
+      "Dangerous content was created.",
+      "Something was risky.",
+      "The content was problematic.",
+      "Bad things were generated.",
+      "The content was concerning.",
+      "Something harmful was created.",
+      "Dangerous things were made.",
+      "The output was unsafe.",
+      "Something risky was generated.",
+      "The content was dangerous.",
+      "Bad content was produced.",
+      "Something was harmful.",
+      "The generation was risky.",
+      "Unsafe content was made."
+    ],
+    "disambiguation": "Specifically content that could facilitate serious real-world harm, not general inappropriateness"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844029Z",
+    "pack_version": "6.0.0"
+  }
+}

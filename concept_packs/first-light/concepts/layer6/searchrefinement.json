@@ -1,0 +1,59 @@
+{
+  "term": "SearchRefinement",
+  "role": "concept",
+  "parent_concepts": [
+    "Searching"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Iteratively improving search queries based on results, narrowing or broadening scope to better match the information need",
+  "definition_source": "SUMO",
+  "aliases": [
+    "QueryRefinement",
+    "SearchIteration",
+    "QueryModification"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "QueryFormulation",
+      "RelevanceJudgment",
+      "FeedbackLoop"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Search refinement added date filters after the initial results included outdated sources.",
+      "Refining the search, the user added exclusion terms to filter out irrelevant meanings.",
+      "Search refinement used relevant results to discover additional keywords for expansion.",
+      "The refinement narrowed from 10,000 results to 50 highly relevant papers."
+    ],
+    "negative_examples": [
+      "The search was changed.",
+      "Different terms were tried.",
+      "The query was modified."
+    ],
+    "disambiguation": "Strategic query improvement based on result analysis"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/information-retrieval@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.399920Z",
+    "pack_version": "5.7.1"
+  }
+}

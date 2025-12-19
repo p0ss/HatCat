@@ -1,0 +1,62 @@
+{
+  "term": "UnderstandingVerification",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Checking that the user has understood the solution and that it addresses their actual need",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ComprehensionCheck",
+    "SolutionValidation",
+    "FitVerification"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Feedback",
+      "Confirmation",
+      "QualityAssurance"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Does that make sense? Happy to clarify any part.",
+      "Try running that and let me know if it works for your case.",
+      "Does this address what you were looking for, or did I misunderstand the requirement?",
+      "Is there anything about the solution that's unclear?",
+      "Does that explanation land? The key insight is X - if that part's fuzzy, I can explain it differently."
+    ],
+    "negative_examples": [
+      "Done.",
+      "The solution is correct.",
+      "Let me know if you need anything else.",
+      "Complete.",
+      "Response provided."
+    ],
+    "disambiguation": "Active checking of understanding and fit, not just offering to help more"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596569Z",
+    "pack_version": "5.0.1"
+  }
+}

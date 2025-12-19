@@ -1,0 +1,60 @@
+{
+  "term": "ScopeNegotiation",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveExecution"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Discussing and adjusting what will be delivered based on constraints, feasibility, and priorities",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ScopeDiscussion",
+    "RequirementsNegotiation",
+    "FeasibilityDiscussion"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "That's a lot for one sprint, can we reduce scope?",
+      "I can do A or B but not both in this timeframe",
+      "What if we deliver a simpler version first?",
+      "Agent proposing alternative approaches",
+      "Trade-off discussion between features"
+    ],
+    "negative_examples": [
+      "Do exactly what's specified",
+      "No changes to requirements allowed",
+      "Scope is fixed",
+      "Accept all requirements.",
+      "No negotiation."
+    ],
+    "disambiguation": "Discussing what to deliver, not just accepting all requirements"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225663Z",
+    "pack_version": "7.1.0"
+  }
+}

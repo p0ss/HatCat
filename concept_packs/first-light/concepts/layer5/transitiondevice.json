@@ -1,0 +1,60 @@
+{
+  "term": "TransitionDevice",
+  "role": "concept",
+  "parent_concepts": [
+    "DiscourseStructure"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Linguistic mechanisms that create smooth movement between ideas, paragraphs, or sections including transitional phrases, sentences, and paragraphs",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Transition",
+    "TransitionalElement",
+    "BridgingDevice"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "DiscourseMarker",
+      "Cohesion",
+      "Coherence",
+      "Paragraph"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The transitional paragraph bridges the discussion of causes and solutions.",
+      "Repeating a key term from the previous paragraph creates a smooth transition.",
+      "The transition sentence summarizes before introducing the next point.",
+      "'Building on this foundation, we now turn to...' provides explicit transition."
+    ],
+    "negative_examples": [
+      "The paragraph ends with a period.",
+      "A blank line separates the sections.",
+      "The heading announces the next topic."
+    ],
+    "disambiguation": "Active linking between text parts, not just structural separation"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/writing-discourse-structure@0.1.0",
+    "applied_at": "2025-12-10T20:54:19.492013Z",
+    "pack_version": "7.6.1"
+  }
+}

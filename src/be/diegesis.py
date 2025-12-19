@@ -388,7 +388,7 @@ class BEDFrame:
             hidden_states = output[0]
             vec_matched = vec_tensor.to(dtype=hidden_states.dtype)
             projection = (hidden_states @ vec_matched.unsqueeze(-1)) * vec_matched
-            steered = hidden_states - strength * projection
+            steered = hidden_states + strength * projection  # positive = amplify
             return (steered,)
 
         return hook

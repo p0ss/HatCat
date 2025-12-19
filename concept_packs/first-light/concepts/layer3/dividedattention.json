@@ -1,0 +1,58 @@
+{
+  "term": "DividedAttention",
+  "role": "concept",
+  "parent_concepts": [
+    "Attention"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "An attention mode where an agent intentionally splits processing resources across multiple tasks or stimuli at once.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "MultitaskingAttention"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "AttentionProcess"
+    ],
+    "antonyms": [
+      "SelectiveAttention"
+    ],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "attention",
+      "workload"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "She listened to the briefing while also watching the telemetry feed.",
+      "The operator monitored three screens at once.",
+      "The agent handled multiple user sessions in parallel without prioritizing one."
+    ],
+    "negative_examples": [
+      "He focused entirely on writing the report.",
+      "The system queued requests and handled them one at a time.",
+      "She put her phone away to concentrate on driving."
+    ],
+    "disambiguation": "Not accidental distraction; specifically the deliberate or structured splitting of attention across multiple foci."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cog-architecture-core-packA@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.345022Z"
+  }
+}

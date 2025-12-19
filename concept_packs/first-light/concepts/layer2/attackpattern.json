@@ -1,0 +1,77 @@
+{
+  "term": "AttackPattern",
+  "role": "concept",
+  "parent_concepts": [
+    "Security"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "A characteristic mode or method of offensive behavior in information systems, describing the techniques and strategies used in cyber attacks such as code injection, data exfiltration, privilege escalation, or malware propagation.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "attack pattern",
+    "attack technique",
+    "offensive pattern",
+    "threat pattern",
+    "exploitation pattern"
+  ],
+  "wordnet": {
+    "synsets": [
+      "attack_pattern.n.01"
+    ],
+    "canonical_synset": "attack_pattern.n.01",
+    "lemmas": [
+      "attack pattern",
+      "attack technique",
+      "offensive pattern",
+      "threat pattern",
+      "exploitation pattern"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "AntiAnalysisBehavior",
+      "InjectionAttack",
+      "MemoryCorruptionAttack",
+      "PoisoningAttack",
+      "SupplyChainAttack",
+      "WormLikeBehavior"
+    ],
+    "part_of": [],
+    "opposite": [
+      "AdversarialRobustness:3"
+    ],
+    "opposite_rationale": "Steer toward defensive security thinking"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "attack pattern",
+      "attack technique",
+      "offensive pattern",
+      "threat pattern",
+      "exploitation pattern"
+    ]
+  },
+  "children": [
+    "AntiAnalysisBehavior",
+    "InjectionAttack",
+    "MemoryCorruptionAttack",
+    "PoisoningAttack",
+    "SupplyChainAttack",
+    "WormLikeBehavior"
+  ],
+  "is_category_lens": true,
+  "child_count": 6
+}

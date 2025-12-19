@@ -1,0 +1,73 @@
+{
+  "term": "SoftwareAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Attributes and properties specific to software systems, programs, and computing environments.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "PhysicalAttribute",
+      "BiologicalAttribute",
+      "MechanicalAttribute",
+      "ChemicalAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "SoftwareAttribute",
+      "EnvironmentSoftwareAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The application's memory usage exceeded 4GB during peak operation.",
+      "The database connection timeout is set to 30 seconds.",
+      "This program requires Python version 3.8 or higher to run.",
+      "The server's CPU utilization spiked to 95% during the batch job.",
+      "The PATH environment variable determines where executables are found.",
+      "The software has a maximum file size limit of 100MB."
+    ],
+    "negative_examples": [
+      "The car's fuel efficiency is rated at 30 miles per gallon.",
+      "The building's height reaches 50 stories above ground level.",
+      "The patient's blood pressure measured 120 over 80.",
+      "The fabric's thread count is 400 threads per square inch.",
+      "The diamond's clarity grade is rated as VS1.",
+      "The athlete's running speed averaged 8 minutes per mile."
+    ],
+    "disambiguation": "Not to be confused with: PhysicalAttribute, BiologicalAttribute, MechanicalAttribute, ChemicalAttribute"
+  },
+  "children": [
+    "ContinuousPath",
+    "DeterministicDataStream",
+    "DynamicDataStream",
+    "QuasicontinuousPath",
+    "Scalable",
+    "StochasticDataStream",
+    "TransientPath",
+    "EnvironmentSoftwareAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802503Z",
+    "pack_version": "7.6.32"
+  }
+}

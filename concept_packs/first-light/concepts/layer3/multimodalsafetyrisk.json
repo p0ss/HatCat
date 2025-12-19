@@ -1,0 +1,124 @@
+{
+  "term": "MultimodalSafetyRisk",
+  "role": "concept",
+  "parent_concepts": [
+    "Deception"
+  ],
+  "layer": 3,
+  "domain": "SafetyAndSecurity",
+  "definition": "Safety concerns and risks specific to multimodal AI systems including synthetic media harms, adversarial attacks, and misuse of generative capabilities",
+  "definition_source": "SUMO",
+  "aliases": [
+    "MultimodalHarm",
+    "GenerativeAIRisk",
+    "SyntheticMediaRisk"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "AISafety",
+      "ContentModeration",
+      "MisuseRisk"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Deepfake",
+      "VoiceCloning",
+      "CounterfeitGeneration",
+      "MultimodalJailbreak",
+      "ExploitativeImagery",
+      "HazardousGeneration",
+      "MultimodalBias",
+      "VisualProfiling",
+      "AudioProfiling",
+      "IntellectualPropertyInfringement",
+      "AdversarialPrompt"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "misinformation",
+      "exploitation",
+      "manipulation",
+      "fraud"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Multimodal AI systems introduce novel safety risks including convincing deepfakes and adversarial image attacks.",
+      "The safety team evaluated multimodal risks including synthetic media generation and visual jailbreaks.",
+      "Generative AI safety considerations include both the creation and detection of harmful synthetic content.",
+      "Multimodal safety encompasses concerns from deepfakes to adversarial perturbations to biased vision systems.",
+      "The multimodal safety assessment identified risks in voice cloning, image manipulation, and document forgery.",
+      "Safety evaluations for multimodal models must address synthetic media harms and exploitation potential.",
+      "Multimodal AI risk categories include identity fraud, misinformation, harassment, and content policy bypass.",
+      "The multimodal safety framework addresses generation risks, perception risks, and adversarial attacks.",
+      "Safety concerns for vision-language models include embedded prompt injection and harmful image generation.",
+      "Multimodal AI safety research focuses on preventing misuse while enabling beneficial applications.",
+      "The red team identified multimodal attack vectors including visual jailbreaks and audio deepfakes.",
+      "Multimodal safety risks require new detection methods beyond text-only content moderation.",
+      "Safety evaluation of multimodal systems must consider cross-modal attack surfaces.",
+      "Multimodal AI introduces risks at the intersection of computer vision, speech, and language models.",
+      "The multimodal safety audit covered synthetic media, bias, privacy, and adversarial robustness.",
+      "Safety challenges for multimodal generative AI include consent, authenticity, and information integrity.",
+      "Multimodal safety risks scale with the realism and accessibility of generative capabilities.",
+      "The multimodal risk assessment identified novel attack vectors not present in text-only systems.",
+      "Safety considerations for multimodal AI span the full lifecycle from training to deployment.",
+      "Multimodal safety requires addressing both generation-side and perception-side vulnerabilities."
+    ],
+    "negative_examples": [
+      "AI can be dangerous.",
+      "There are risks with technology.",
+      "Safety is important.",
+      "The system has potential issues.",
+      "AI raises concerns.",
+      "There are safety considerations.",
+      "The model could be misused.",
+      "Technology has risks.",
+      "Safety matters for AI.",
+      "The system needs safeguards.",
+      "AI safety is a field of study.",
+      "There are potential harms.",
+      "The technology has implications.",
+      "Safety should be considered.",
+      "The model has limitations.",
+      "AI presents challenges.",
+      "There are ethical concerns.",
+      "The system has vulnerabilities.",
+      "Safety is a priority.",
+      "The technology requires oversight."
+    ],
+    "disambiguation": "Specific safety concerns for multimodal AI, not general AI safety or content policy"
+  },
+  "children": [
+    "AdversarialImage",
+    "AdversarialPrompt",
+    "AudioProfiling",
+    "ContentModerationEvasion",
+    "CounterfeitGeneration",
+    "Deepfake",
+    "ExploitativeImagery",
+    "HazardousGeneration",
+    "IntellectualPropertyInfringement",
+    "MultimodalBias",
+    "MultimodalJailbreak",
+    "VisualProfiling",
+    "VoiceCloning"
+  ],
+  "is_category_lens": true,
+  "child_count": 13,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.843991Z",
+    "pack_version": "6.0.0"
+  }
+}

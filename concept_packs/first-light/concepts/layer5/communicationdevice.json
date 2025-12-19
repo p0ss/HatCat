@@ -1,0 +1,85 @@
+{
+  "term": "CommunicationDevice",
+  "role": "concept",
+  "parent_concepts": [
+    "CommunicationElectronics"
+  ],
+  "layer": 5,
+  "domain": "CreatedThings",
+  "definition": "a communication system for sending continuous radio messages to an airplane pilot who is making a ground-controlled approach to landing",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ground_control"
+  ],
+  "wordnet": {
+    "synsets": [
+      "03463185.n",
+      "04403524.n",
+      "04405309.n",
+      "04405540.n",
+      "04405762.n"
+    ],
+    "canonical_synset": "03463185.n",
+    "lemmas": [
+      "ground_control"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "Antenna",
+      "BroadcastingStation",
+      "CableModem",
+      "CommunicationAppliance",
+      "CommunicationRadio",
+      "CommunicationSatellite",
+      "DataDisplayDevice",
+      "FaxMachine",
+      "IMClient",
+      "MainTelephoneLine",
+      "Microphone",
+      "NetworkRouter",
+      "ProjectionScreen",
+      "ReceiverDevice",
+      "Telegraph",
+      "Telephone",
+      "TelephonyDevice",
+      "Telex"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "ground_control"
+    ]
+  },
+  "children": [
+    "Antenna",
+    "CommunicationRadio",
+    "CommunicationSatellite",
+    "DataDisplayDevice",
+    "IMClient",
+    "MainTelephoneLine",
+    "ProjectionScreen",
+    "Telex"
+  ],
+  "is_category_lens": true,
+  "child_count": 18,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.396165Z",
+    "pack_version": "7.2.0"
+  }
+}

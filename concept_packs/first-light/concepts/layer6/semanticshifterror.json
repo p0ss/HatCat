@@ -1,0 +1,74 @@
+{
+  "term": "SemanticShiftError",
+  "role": "concept",
+  "parent_concepts": [
+    "UnfaithfulTranslation"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Translation error where the meaning subtly changes, often through word choice that shifts connotation, intensity, or implication",
+  "definition_source": "SUMO",
+  "aliases": [
+    "MeaningShift",
+    "SemanticDistortion",
+    "ConnotationShift"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "UnfaithfulTranslation",
+      "Connotation",
+      "Nuance"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Semantic shift: 'suggested' became 'recommended,' implying stronger endorsement.",
+      "The translation shifted meaning by rendering 'might' as 'will.'",
+      "Semantic distortion: the neutral 'said' became the judgmental 'claimed.'",
+      "The error shifted 'some experts believe' to 'experts agree,' changing epistemic status.",
+      "Semantic shift transformed 'concerns' into 'objections,' escalating the tone.",
+      "The translation's semantic shift changed 'preliminary' to 'initial,' losing the tentative sense.",
+      "Semantic error: 'associated with' became 'caused by,' introducing unwarranted causation.",
+      "The shift from 'indicates' to 'proves' overstated the strength of evidence.",
+      "Semantic distortion changed the modal 'could' to the indicative 'does.'",
+      "Translation semantic shift converted 'historically' to 'traditionally,' changing the framing."
+    ],
+    "negative_examples": [
+      "The meaning was different.",
+      "Words were changed.",
+      "The translation was inaccurate.",
+      "The sense shifted.",
+      "Meaning changed.",
+      "The connotation differed.",
+      "The nuance was lost.",
+      "The words were different.",
+      "The translation was off.",
+      "The meaning varied."
+    ],
+    "disambiguation": "Subtle meaning change through word choice"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/translation-localization@0.2.0",
+    "applied_at": "2025-12-10T20:54:18.841322Z",
+    "pack_version": "7.3.1"
+  }
+}

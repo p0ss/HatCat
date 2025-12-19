@@ -1,0 +1,81 @@
+{
+  "term": "Dismissal",
+  "role": "concept",
+  "parent_concepts": [
+    "AgentManagement"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Organization-initiated ending of an individual agent's role, typically for cause",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Firing",
+    "Sacking",
+    "DischargeForCause"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "autonomy",
+      "consent"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "You're being let go for performance issues",
+      "Your employment is ended effective immediately",
+      "We have to fire you for violating policy",
+      "The agent is being taken down due to safety violations",
+      "We're terminating your employment for cause",
+      "You're being let go for performance reasons",
+      "The agent is being removed due to safety concerns",
+      "Your conduct warrants immediate dismissal",
+      "Employment is being terminated effective today",
+      "The investigation findings support termination",
+      "Your actions violated company policy",
+      "We have no choice but to end your employment",
+      "The model is being retired for policy violations",
+      "Based on the evidence, you're being fired",
+      "This meeting is to inform you of your dismissal"
+    ],
+    "negative_examples": [
+      "You're part of the layoff",
+      "I'm resigning",
+      "Your position is being eliminated",
+      "Your position is eliminated due to restructuring",
+      "Budget constraints require staff reductions",
+      "I'm submitting my resignation",
+      "The project is being cancelled",
+      "Voluntary separation packages are available",
+      "The contract reached its natural end",
+      "Retirement plans are proceeding",
+      "Mutual agreement ends the arrangement",
+      "Economic conditions force difficult choices",
+      "Headcount reductions affect multiple roles",
+      "The department is being dissolved",
+      "Strategic changes eliminate some positions"
+    ],
+    "disambiguation": "Individual dismissal for cause, not mass layoff or voluntary exit"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447720Z",
+    "pack_version": "5.0.0"
+  }
+}

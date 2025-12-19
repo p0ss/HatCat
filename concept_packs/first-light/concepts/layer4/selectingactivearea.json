@@ -1,0 +1,59 @@
+{
+  "term": "SelectingActiveArea",
+  "role": "concept",
+  "parent_concepts": [
+    "UserSignifiedAction"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A &%UserSignifiedAction informing a &%ComputerProgram\nthat the current &%GUIElement with the state &%GUE_ActiveState is selected.  This causes the program\ncontrolling the element to take the action that selecting the element is mapped to.  After the action has\nbeen initiated, unless the action causes a different element to become active or changes the state of the\nelement, the element reverts to &%GUE_ActiveState.\n\nSelecting an &%ActiveArea_Submitting causes a &%SubmitAction (of the type associated with the active area)\nto take place.  What is actually submitted may depend upon the state of associated active areas.  However,\nif the active area is a &%HypertextLink, &%MenuItem, or dedicated &%GUIButton the submission may not be\nstate dependent.\n\nAn off_screen element on an active window can be selected by keyboard action: tabbing to it to make it\nactive and typing the Enter/Return key.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "selecting_active_area",
+    "selecting-active-area",
+    "selecting active area"
+  ],
+  "wordnet": {
+    "synsets": [
+      "selecting_active_area.n.01"
+    ],
+    "canonical_synset": "selecting_active_area.n.01",
+    "lemmas": [
+      "selecting_active_area",
+      "selecting-active-area",
+      "selecting active area"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "RequestingHyperlink",
+      "SelectingComputerMenuOption"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "selecting_active_area",
+      "selecting-active-area",
+      "selecting active area"
+    ]
+  },
+  "children": [
+    "RequestingHyperlink",
+    "SelectingComputerMenuOption"
+  ],
+  "is_category_lens": true,
+  "child_count": 2
+}

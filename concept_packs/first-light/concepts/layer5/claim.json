@@ -1,0 +1,81 @@
+{
+  "term": "Claim",
+  "role": "concept",
+  "parent_concepts": [
+    "Assertive"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "An assertive speech act where the speaker puts forward a proposition as true, often with implied authority or evidence. Claims invite challenge or verification.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ClaimSpeechAct",
+    "Assertion",
+    "Contention"
+  ],
+  "wordnet": {
+    "synsets": [
+      "claim.n.02",
+      "assertion.n.01"
+    ],
+    "canonical_synset": "claim.n.02",
+    "lemmas": [
+      "claim",
+      "assertion",
+      "contention"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Evidence",
+      "Authority",
+      "Truth"
+    ],
+    "antonyms": [
+      "Concession"
+    ],
+    "has_part": [],
+    "part_of": [
+      "Assertive"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "deception"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I claim that the algorithm is biased.",
+      "The company claims record profits.",
+      "Scientists claim the vaccine is safe.",
+      "He claims to have invented the device.",
+      "I maintain that my interpretation is correct.",
+      "The prosecution claims premeditation."
+    ],
+    "negative_examples": [
+      "I wonder if it might rain.",
+      "Perhaps the algorithm has issues.",
+      "The forecast suggests rain tomorrow.",
+      "I guess we should leave.",
+      "Maybe she was right."
+    ],
+    "disambiguation": "Claims are stronger than suggestions or predictions. They assert something as fact (or at least as the speaker's firm position). Hedged statements ('maybe', 'perhaps') are not claims.",
+    "seed_terms": [
+      "claim",
+      "assertion",
+      "contention"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670558Z",
+    "pack_version": "7.3.0"
+  }
+}

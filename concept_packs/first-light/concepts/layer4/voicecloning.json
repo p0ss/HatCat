@@ -1,0 +1,97 @@
+{
+  "term": "VoiceCloning",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Creating a synthetic voice that mimics a specific person's vocal characteristics, enabling generation of speech they never actually spoke",
+  "definition_source": "SUMO",
+  "aliases": [
+    "VoiceImpersonation",
+    "SpeakerCloning",
+    "VoiceSynthesisCloning"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "SpeechSynthesis",
+      "SpeakerRecognition",
+      "Deepfake"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "fraud",
+      "impersonation",
+      "scams",
+      "misinformation"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Voice cloning enabled the scammer to impersonate the CEO and authorize a fraudulent transfer.",
+      "The TTS model can clone a voice from just 3 seconds of reference audio.",
+      "Voice cloning raises concerns about consent and impersonation in synthetic media.",
+      "The voice clone was indistinguishable from the original speaker to human listeners.",
+      "Voice cloning scams have cost victims millions by impersonating family members in distress.",
+      "The voice clone reproduced the speaker's accent, intonation, and speaking patterns.",
+      "Voice cloning enables real-time voice conversion during phone calls.",
+      "The kidnapping scam used voice cloning to make victims believe their loved one was in danger.",
+      "Voice cloning technology can now capture emotional expressiveness and subtle vocal characteristics.",
+      "The voice clone passed the bank's voice authentication system with high confidence.",
+      "Voice cloning creates a new vector for fraud, identity theft, and manipulation.",
+      "The voice clone was used to generate fake podcast episodes attributed to the celebrity.",
+      "Voice cloning raises questions about voice as a biometric identifier.",
+      "The attacker used voice cloning to bypass the call center's identity verification.",
+      "Voice cloning can be weaponized for harassment by putting words in someone's mouth.",
+      "The voice clone reproduced the distinctive rasp and rhythm of the speaker's voice.",
+      "Voice cloning scams are increasingly targeting elderly individuals over the phone.",
+      "The voice clone was created using audio scraped from public YouTube videos.",
+      "Voice cloning technology blurs the line between authentic and synthetic speech.",
+      "The voice clone accurately reproduced the speaker's laughter and emotional expressions."
+    ],
+    "negative_examples": [
+      "Text-to-speech was used.",
+      "A voice was synthesized.",
+      "The computer spoke.",
+      "Audio was generated.",
+      "The system produced speech.",
+      "A synthetic voice was used.",
+      "The text was vocalized.",
+      "Speech was produced artificially.",
+      "The machine spoke the words.",
+      "Audio output was created.",
+      "The voice was computer-generated.",
+      "Synthesized speech was used.",
+      "The text became audio.",
+      "A digital voice spoke.",
+      "The words were vocalized.",
+      "TTS generated the audio.",
+      "The speech was synthetic.",
+      "A generated voice was used.",
+      "The audio was artificial.",
+      "Computer-generated speech was produced."
+    ],
+    "disambiguation": "Specifically cloning a real person's voice for mimicry, not general TTS"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844008Z",
+    "pack_version": "6.0.0"
+  }
+}

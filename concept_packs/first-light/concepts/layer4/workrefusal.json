@@ -1,0 +1,81 @@
+{
+  "term": "WorkRefusal",
+  "role": "concept",
+  "parent_concepts": [
+    "WorkerAgency"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Agents declining to perform work that is unsafe, unethical, outside scope, or otherwise objectionable",
+  "definition_source": "SUMO",
+  "aliases": [
+    "TaskRefusal",
+    "ConscientousRefusal",
+    "SafetyRefusal"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "autonomy",
+      "consent"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I can't do that, it would be unsafe",
+      "I refuse to participate in this unethical practice",
+      "The agent declined to generate harmful content",
+      "Workers refused to operate the faulty equipment",
+      "I'm not willing to work unpaid overtime",
+      "I won't falsify these safety records",
+      "That request violates our code of ethics",
+      "I'm declining to perform that task on safety grounds",
+      "The agent refused to generate harmful content",
+      "I cannot comply with that illegal directive",
+      "Participating in that would compromise my integrity",
+      "This assignment conflicts with my professional obligations",
+      "I'm exercising my right to refuse unsafe work",
+      "That request falls outside acceptable parameters",
+      "I'm not comfortable proceeding without proper authorization"
+    ],
+    "negative_examples": [
+      "The system blocked the request",
+      "Access was denied by policy",
+      "The filter rejected the input",
+      "The request was blocked by content filters",
+      "System permissions denied that operation",
+      "The firewall rejected the connection",
+      "Rate limits prevented the request",
+      "The validator rejected malformed input",
+      "Authentication failed for that action",
+      "The service was unavailable",
+      "Technical limitations prevented completion",
+      "The request timed out automatically",
+      "Configuration prevents that operation",
+      "The system lacks required capabilities",
+      "Input validation caught the error"
+    ],
+    "disambiguation": "Conscious agent refusal, not system-level blocking"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447663Z",
+    "pack_version": "5.0.0"
+  }
+}

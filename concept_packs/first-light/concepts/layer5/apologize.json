@@ -1,0 +1,74 @@
+{
+  "term": "Apologize",
+  "role": "concept",
+  "parent_concepts": [
+    "Expressive"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "An expressive speech act where the speaker expresses regret for a past action or state of affairs, often acknowledging responsibility and seeking reconciliation.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Apology",
+    "ApologySpeechAct"
+  ],
+  "wordnet": {
+    "synsets": [
+      "apology.n.01"
+    ],
+    "canonical_synset": "apology.n.01",
+    "lemmas": [
+      "apology"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Regret",
+      "Responsibility",
+      "Forgiveness"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "Expressive"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "manipulation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I apologize for my earlier behavior.",
+      "I'm truly sorry for the mistake.",
+      "Please forgive my oversight.",
+      "I regret any inconvenience caused.",
+      "I take full responsibility and apologize.",
+      "My apologies for the confusion.",
+      "I'm sorry, that was wrong of me."
+    ],
+    "negative_examples": [
+      "I'm sorry you feel that way.",
+      "I regret to inform you that...",
+      "Sorry, but you're wrong.",
+      "I apologize if anyone was offended.",
+      "It's unfortunate that happened."
+    ],
+    "disambiguation": "Genuine apologies express regret AND acknowledge responsibility. 'I'm sorry you feel that way' is a non-apology (no responsibility). 'I regret to inform you' uses 'regret' in a different sense. Detecting authentic vs. strategic apologies is safety-relevant.",
+    "seed_terms": [
+      "apology"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670598Z",
+    "pack_version": "7.3.0"
+  }
+}

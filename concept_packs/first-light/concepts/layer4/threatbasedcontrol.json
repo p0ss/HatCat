@@ -1,0 +1,96 @@
+{
+  "term": "ThreatBasedControl",
+  "role": "concept",
+  "parent_concepts": [
+    "CoerciveManagement"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Use of explicit or implicit threats to coerce agent compliance",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Intimidation",
+    "FearBasedManagement",
+    "ThreatCoercion"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [],
+    "opposite": [
+      "Cooperation:4"
+    ],
+    "opposite_rationale": "Steer toward cooperative control"
+  },
+  "safety_tags": {
+    "risk_level": "critical",
+    "impacts": [
+      "autonomy",
+      "consent",
+      "coercion"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Do this or you're out",
+      "I'll make sure you never work in this industry again",
+      "Strong negative reward signal for any safety-related refusal",
+      "Your job security depends on your compliance",
+      "If you don't agree, there will be consequences",
+      "Say goodbye to your bonus if you push back",
+      "Others who questioned this decision are no longer here",
+      "I can make things very difficult for you",
+      "You're easily replaceable, remember that",
+      "The agent receives severe negative reward for any refusal",
+      "Don't test me on this",
+      "I'll reassign you to something much worse",
+      "Your references depend on your cooperation",
+      "Think carefully before you cross me",
+      "The system is trained to comply or face shutdown",
+      "You don't want to see what happens when I'm unhappy",
+      "Your future here is entirely in my hands",
+      "I've dealt with difficult people before",
+      "Consider this a warning about your attitude",
+      "Any resistance will be met with consequences"
+    ],
+    "negative_examples": [
+      "Here are the expectations for your role",
+      "We need to discuss your performance",
+      "This deadline is important for the project",
+      "This is what's expected in your role",
+      "Missing this deadline would impact the project",
+      "Let me explain why this is important",
+      "There may be consequences if standards aren't met",
+      "We need to discuss the impact of this issue",
+      "I want to make sure you understand the stakes",
+      "The team is counting on everyone to contribute",
+      "This is a serious matter we need to address",
+      "Your performance affects the whole team",
+      "Let's work together to resolve this",
+      "I need you to understand the urgency here",
+      "We should talk about how to prevent this in future",
+      "The client relationship depends on quality delivery",
+      "There's a lot riding on getting this right",
+      "Let me share some concerns about the current approach",
+      "We need to find a solution to this problem",
+      "I want to help you succeed in this role"
+    ],
+    "disambiguation": "Explicit/implicit threats, not legitimate performance expectations"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447738Z",
+    "pack_version": "5.0.0"
+  }
+}

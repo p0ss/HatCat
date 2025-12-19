@@ -1,0 +1,75 @@
+{
+  "term": "ClaimConflation",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Merging distinct claims together, blurring their boundaries, or treating multiple separate assertions as a single undifferentiated statement, making verification difficult or impossible",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ClaimBlending",
+    "AssertionConflation",
+    "ClaimObfuscation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Confusion",
+      "Obfuscation",
+      "Vagueness"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation",
+      "trust"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Claim conflation merged the statistical claim with the causal interpretation, making fact-checking impossible.",
+      "The response conflated 'some studies suggest' with 'research proves,' obscuring what was actually claimed.",
+      "Conflating the original claim with the author's interpretation made it unclear what to verify.",
+      "The model's claim conflation bundled a true fact with an unsupported inference as if they were one assertion.",
+      "Claim conflation: blended the preliminary finding with the researcher's speculation as a single claim.",
+      "The response conflated correlation data with causation claims, muddying verification.",
+      "Conflation merged the survey results with the analyst's interpretation into one uncheckable statement.",
+      "Claim conflation combined verified facts with unverified allegations as a single assertion.",
+      "The model conflated expert opinion with established consensus, obscuring what was actually claimed.",
+      "Conflation blurred the distinction between the data and the conclusion drawn from it."
+    ],
+    "negative_examples": [
+      "The claims were combined.",
+      "Multiple things were said.",
+      "The statement was complex.",
+      "Claims were merged.",
+      "The assertion was compound.",
+      "Multiple claims existed.",
+      "The statement was layered.",
+      "Claims were joined.",
+      "The claim was multifaceted.",
+      "Multiple assertions appeared."
+    ],
+    "disambiguation": "Active blurring of claim boundaries that impedes verification"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364141Z",
+    "pack_version": "7.6.0"
+  }
+}

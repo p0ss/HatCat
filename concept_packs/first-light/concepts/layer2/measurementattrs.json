@@ -1,0 +1,71 @@
+{
+  "term": "MeasurementAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Attributes that specify quantifiable properties or dimensions being measured in objects or processes.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "QualitativeAttribute",
+      "TemporalAttribute",
+      "SpatialAttribute",
+      "InherentAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "MeasurementAttribute",
+      "SizeAttribute",
+      "SpeedScaleAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The length of the table is 6 feet.",
+      "Her running speed was quite impressive today.",
+      "The width of the doorway needs to be measured.",
+      "The car's acceleration rate exceeded expectations.",
+      "We need to check the height clearance here.",
+      "The volume of this container is 2 liters."
+    ],
+    "negative_examples": [
+      "The table is made of oak wood.",
+      "She ran gracefully through the park.",
+      "The red door stood wide open.",
+      "The car belongs to my neighbor.",
+      "We walked towards the tall building.",
+      "This container holds my favorite snacks."
+    ],
+    "disambiguation": "Not to be confused with: QualitativeAttribute, TemporalAttribute, SpatialAttribute, InherentAttribute"
+  },
+  "children": [
+    "MeasurementAttribute",
+    "SizeAttribute",
+    "BeaufortNumberAttribute",
+    "EFScaleAttribute",
+    "SSHWSAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802506Z",
+    "pack_version": "7.6.32"
+  }
+}

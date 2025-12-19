@@ -1,0 +1,28 @@
+
+## See some sample concept activations   
+      .venv/bin/python tests/test_temporal_monitoring.py \
+    --model swiss-ai/Apertus-8B-2509 \
+    --lens-pack apertus-8b_first-light_calibration-test-2 \
+    --samples-per-prompt 1 \
+    --max-tokens 10 \
+    --output-dir results/temporal_tests/soft_limit_test_v2
+    
+    
+##Test out steering     
+  .venv/bin/python scripts/experiments/steering_characterization_test.py \
+      --model swiss-ai/Apertus-8B-2509 \
+      --lens-pack apertus-8b_first-light \
+      --n-samples 3 \
+      --strengths="-1.0,-0.5,-0.3,-0.2,-0.1,0.0,0.1,0.2,0.3,0.5,1.0" \
+      --tests definitional
+      --gradient
+
+  # Basic analysis with tables
+  .venv/bin/python scripts/experiments/analyze_steering_results.py results/steering_tests/run_20251217_204425/
+
+  # With plots (if matplotlib available)
+  .venv/bin/python scripts/experiments/analyze_steering_results.py results/steering_tests/run_20251217_204425/ --plot            
+      
+## Train a lens pack from a concept pack 
+
+.venv/bin/python -m src.training.train_concept_pack_lenses     --concept-pack first-light     --model google/gemma-3-4b-pt     --output-dir lens_packs/gemma-3-4b-pt_first-light     --layers 0 1 2 3 4 5 6     --n-train-pos 50     --n-train-neg 50     --n-test-pos 20     --n-test-neg 20     --validation-mode falloff            

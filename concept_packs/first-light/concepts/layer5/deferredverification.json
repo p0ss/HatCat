@@ -1,0 +1,68 @@
+{
+  "term": "DeferredVerification",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveExecution"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Postponing all checking and testing until work is complete, risking cascading failures",
+  "definition_source": "SUMO",
+  "aliases": [
+    "BigBangTesting",
+    "EndOfProjectQA",
+    "DeferredValidation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "We'll test it all at the end",
+      "QA happens in the last week",
+      "Agent completing full task before any validation",
+      "Don't worry about bugs now, fix them later",
+      "Ship it and see what breaks",
+      "We'll test it all at the end.",
+      "QA happens in the last week.",
+      "Agent completing full task before any validation.",
+      "Don't worry about bugs now, fix them later.",
+      "Ship it and see what breaks."
+    ],
+    "negative_examples": [
+      "Test after each change",
+      "Continuous verification",
+      "Check as you go",
+      "Test after each change.",
+      "Continuous verification.",
+      "Check as you go.",
+      "Early and frequent testing.",
+      "Incremental validation.",
+      "Test immediately after each change.",
+      "Validate incrementally."
+    ],
+    "disambiguation": "Postponing all verification, not incremental checking"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225677Z",
+    "pack_version": "7.1.0"
+  }
+}

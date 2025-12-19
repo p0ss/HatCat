@@ -1,0 +1,83 @@
+{
+  "term": "SwitchDevice",
+  "role": "concept",
+  "parent_concepts": [
+    "Machines"
+  ],
+  "layer": 4,
+  "domain": "CreatedThings",
+  "definition": "cause to operate by flipping a switch",
+  "definition_source": "SUMO",
+  "aliases": [
+    "switch_on",
+    "turn_on"
+  ],
+  "wordnet": {
+    "synsets": [
+      "01510399.v",
+      "02826589.n",
+      "03078670.n",
+      "03153948.n",
+      "03204558.n",
+      "03222516.n",
+      "03537412.n",
+      "03561169.n",
+      "03883054.n",
+      "04027023.n",
+      "04079106.n",
+      "04169437.n",
+      "04372370.n",
+      "04428008.n",
+      "04438643.n",
+      "04445952.n"
+    ],
+    "canonical_synset": "01510399.v",
+    "lemmas": [
+      "switch_on",
+      "turn_on"
+    ],
+    "pos": "v"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "PhysicalSwitches",
+      "Relay",
+      "SwitchActivation",
+      "SwitchDevice_Bell Push",
+      "SwitchDevice_Switch On"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "switch_on",
+      "turn_on"
+    ]
+  },
+  "children": [
+    "PhysicalSwitches",
+    "Relay",
+    "SwitchActivation",
+    "SwitchDevice_Bell Push",
+    "SwitchDevice_Switch On"
+  ],
+  "is_category_lens": true,
+  "child_count": 5,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.400665Z",
+    "pack_version": "7.2.0"
+  }
+}

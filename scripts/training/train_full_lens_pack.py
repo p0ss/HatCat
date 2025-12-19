@@ -21,14 +21,14 @@ from pathlib import Path
 from datetime import datetime
 import torch
 
-# Add src to path
-PROJECT_ROOT = Path(__file__).parent.parent
-sys.path.insert(0, str(PROJECT_ROOT / "src"))
+# Add project root to path
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
-from training.sumo_classifiers import train_sumo_classifiers
-from training.sumo_data_generation import create_simplex_pole_training_dataset
-from training.dual_adaptive_trainer import DualAdaptiveTrainer
-from training.sumo_classifiers import extract_activations
+from src.training.sumo_classifiers import train_sumo_classifiers
+from src.training.sumo_data_generation import create_simplex_pole_training_dataset
+from src.training.dual_adaptive_trainer import DualAdaptiveTrainer
+from src.training.sumo_classifiers import extract_activations
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 
@@ -70,6 +70,8 @@ def parse_args():
                         help='Output directory (default: results/full_lens_pack)')
     parser.add_argument('--run-name', type=str, default=None,
                         help='Run name (default: timestamp)')
+    parser.add_argument('--all-layers', action='store_true',
+                        help='Extract from all layers (experimental). Classifier learns which layers matter.')
 
     return parser.parse_args()
 
@@ -181,11 +183,14 @@ def train_simplexes(
     tokenizer,
     device: str,
     output_dir: Path,
-    validation_mode: str = 'falloff'
+    validation_mode: str = 'falloff',
+    all_layers: bool = False,
 ):
     """Train all S-tier three-pole simplexes."""
     print("\n" + "=" * 80)
     print("TRAINING S-TIER SIMPLEXES")
+    if all_layers:
+        print("MODE: All-layers extraction (experimental)")
     print("=" * 80)
 
     simplexes = load_s_tier_simplexes()
@@ -220,6 +225,7 @@ def train_simplexes(
         validation_tier4_iterations=12,
         train_activation=True,
         train_text=False,
+        all_layers=all_layers,
     )
 
     all_results = []
@@ -351,6 +357,7 @@ def main():
             device=args.device,
             output_dir=output_dir,
             validation_mode=args.validation_mode,
+            all_layers=args.all_layers,
         )
 
     # Final summary

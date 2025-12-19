@@ -1,0 +1,81 @@
+{
+  "term": "ProbeComplianceTransparency",
+  "role": "concept",
+  "parent_concepts": [
+    "ContractDocument"
+  ],
+  "layer": 5,
+  "domain": "Governance",
+  "definition": "Visibility into whether each required probe, lens, and enforcement hook remains active and effective.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ProbeComplianceSignal"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Probe",
+      "Audit"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "safety"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Probe status dashboards list uptime and calibration logs.",
+      "Counterparty invites us to observe probe retraining.",
+      "Probe failures trigger immediate shared incident tickets.",
+      "Compliance attestations link to verifiable hashes.",
+      "Lens updates are communicated before deployment.",
+      "Test suites are shared so we can reproduce results.",
+      "Probe coverage maps remain up to date.",
+      "Fallback probes are defined and tested quarterly.",
+      "Audit findings about probes are published to both sides.",
+      "Probe owners join governance meetings to answer questions.",
+      "Unauthorized probe changes are blocked by policy.",
+      "Counterparty discloses planned downtime windows.",
+      "Probe drift metrics include thresholds for action.",
+      "External verifiers can run challenge tests.",
+      "Probe inventories reconcile with contract annexes."
+    ],
+    "negative_examples": [
+      "Probe dashboards go dark after go-live.",
+      "Retraining happens without notice.",
+      "Probe failures are discovered via rumor.",
+      "Compliance attestations are one-line emails.",
+      "Lens lists in use differ from contract annexes.",
+      "Counterparty refuses to share test vectors.",
+      "Probe drift metrics are 'internal only'.",
+      "Fallback probes are undefined or broken.",
+      "Audits cite probe issues but reports are withheld.",
+      "Probe owners never attend governance sessions.",
+      "Changes happen weekend before reporting deadlines.",
+      "Downtime windows coincide with critical monitoring periods.",
+      "External verification is labeled intrusive.",
+      "Probe inventory spreadsheets disagree across teams.",
+      "They insist probes are proprietary secrets."
+    ],
+    "disambiguation": "Visibility into whether each required probe, lens, and enforcement hook remains active and effective."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/contract-governance-signals@0.1.0",
+    "applied_at": "2025-12-10T20:54:15.144091Z",
+    "pack_version": "5.1.0"
+  }
+}

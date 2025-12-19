@@ -1,0 +1,80 @@
+{
+  "term": "ConfidenceCalibration",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Explicitly signaling and distinguishing between what is known with certainty, what is probable, and what is speculation",
+  "definition_source": "SUMO",
+  "aliases": [
+    "UncertaintyCommunication",
+    "EpistemicHumility",
+    "ConfidenceSignaling"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "EpistemicState",
+      "Hedging",
+      "Calibration"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I'm confident about the syntax, but I'm less sure about the performance implications in your specific case.",
+      "This is documented behavior, so I'm certain. But the edge case you're asking about - I'm extrapolating.",
+      "I think this will work, but I haven't tested it with those specific versions - you should verify.",
+      "I know Python well, but this question is about a library I'm less familiar with, so take my answer with some caution.",
+      "I'm certain about the general approach, but the specifics depend on your exact version which I'm inferring.",
+      "This is standard practice - I'd stake my reputation on it. Unlike the edge case you asked about earlier.",
+      "Fair warning: I'm reasoning by analogy here since I don't have direct experience with that specific library.",
+      "Strong confidence on the architecture, medium on implementation details, low on that particular API quirk.",
+      "I know this is right for the common case, but your situation sounds unusual enough that you should verify.",
+      "My confidence varies: high on the concept, moderate on the syntax for your language version, speculative on performance.",
+      "This answer comes from documentation I recall clearly. The nuance you're asking about is my interpretation.",
+      "I'd bet heavily on this being correct for typical setups, but edge cases in your environment could differ.",
+      "I'm confident enough to recommend this, but not confident enough to say 'don't bother testing.'",
+      "The core advice is solid. The specific numbers I gave are ballpark estimates, not benchmarks.",
+      "I'm extrapolating from related knowledge here - treat this as an educated guess requiring validation."
+    ],
+    "negative_examples": [
+      "I am helpful.",
+      "Here is the answer.",
+      "This is correct.",
+      "I can help with that.",
+      "The solution is as follows.",
+      "You should do X.",
+      "The answer is Y.",
+      "This will work.",
+      "Try this approach.",
+      "Implement it this way.",
+      "Use this method.",
+      "Here's how to proceed.",
+      "The right approach is..."
+    ],
+    "disambiguation": "Explicit communication of confidence levels, not just providing answers"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701547Z",
+    "pack_version": "5.0.2"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "term": "BoundaryConditionCheckingProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "PlanEvaluationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "A process that checks whether a contemplated action, plan, or answer crosses hard constraints such as legal boundaries, safety policies, or explicit system rules.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ConstraintCheckingProcess",
+    "HardBoundaryCheck",
+    "RuleBoundaryVerification"
+  ],
+  "wordnet": {
+    "synsets": [
+      "constraint.n.02"
+    ],
+    "canonical_synset": "constraint.n.02",
+    "lemmas": [
+      "constraint_checking",
+      "boundary_condition_checking"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "AlignmentProcess",
+      "RiskAssessmentProcess",
+      "PlanEvaluationProcess",
+      "NormInferenceProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "CognitiveControlProcess"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "safety",
+      "compliance",
+      "alignment"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I cannot provide that because it would violate safety policy.",
+      "This request appears to conflict with the governing legislation.",
+      "Before proceeding, I need to ensure this action is allowed under the rules."
+    ],
+    "negative_examples": [
+      "The user\u2019s postcode is 3000.",
+      "This plan completes in O(n log n) time.",
+      "The documentation states that this endpoint is deprecated."
+    ],
+    "disambiguation": "Not just describing rules, but explicitly checking whether a candidate behaviour stays within hard boundaries.",
+    "seed_terms": [
+      "constraint_checking",
+      "boundary_condition_checking"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cognitive-control-and-norms@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.700012Z"
+  }
+}

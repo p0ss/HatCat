@@ -1,0 +1,52 @@
+{
+  "term": "GuidanceDesignPattern",
+  "role": "concept",
+  "parent_concepts": [
+    "DesignPatternAttribute"
+  ],
+  "layer": 4,
+  "domain": "Information",
+  "definition": "Instances of &%RealtimeSystems\nare described as systems with &%Guidance_DesignPattern if they consist \nof sensors connected to a software module that filters data from the \nsensors and sends the filtered data to a software module that evaluates \nthe filtered data and sends instructions to a software module that \ncommands actuators.  The design pattern is an event source that produces \nevents and a data source that produces data, both executing in parallel \nand handled by a single event-driven periodic data handler.  The two\nseparate input streams have fundamentally different characteristics.  \nThe event stream is necessarily asychronous, or transient.  Once an \nevent is sensed, the handler accepts data from the data stream, which \nhas an invariant cycle time.  There are two deadlines for a real-time\nguidance system.  The period deadline is the time to process all elements \nin the data stream once and generate an actuator command.  The action \ncompletion deadline is the time to guide the actuator to completion of \nthe action.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "guidance design pattern",
+    "guidance_design_pattern",
+    "guidance-design-pattern"
+  ],
+  "wordnet": {
+    "synsets": [
+      "guidance_design_pattern.n.01"
+    ],
+    "canonical_synset": "guidance_design_pattern.n.01",
+    "lemmas": [
+      "guidance design pattern",
+      "guidance_design_pattern",
+      "guidance-design-pattern"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "guidance design pattern",
+      "guidance_design_pattern",
+      "guidance-design-pattern"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0
+}

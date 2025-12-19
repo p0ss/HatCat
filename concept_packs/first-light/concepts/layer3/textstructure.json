@@ -1,0 +1,71 @@
+{
+  "term": "TextStructure",
+  "role": "concept",
+  "parent_concepts": [
+    "Text"
+  ],
+  "layer": 3,
+  "domain": "Information",
+  "definition": "The organizational elements and formatting components that give shape and hierarchy to written content.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "TextContent",
+      "TextStyle",
+      "TextGenre",
+      "TextQuality"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "DiscourseStructure",
+      "Paragraph",
+      "Summary",
+      "Label"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The essay was well-organized with clear paragraphs and smooth transitions between ideas.",
+      "This document uses headings and bullet points to structure the information effectively.",
+      "The abstract provides a concise summary of the research findings.",
+      "Each section label helps readers navigate through the technical manual.",
+      "The outline shows how the main arguments flow from introduction to conclusion.",
+      "File names should include descriptive labels like .pdf or .docx extensions."
+    ],
+    "negative_examples": [
+      "The author's writing style was eloquent and persuasive throughout.",
+      "This novel contains several interesting characters and plot twists.",
+      "The vocabulary used in this text is quite advanced and technical.",
+      "The font size and color scheme make this document easy to read.",
+      "The paper explores fascinating themes about human nature.",
+      "This book was published by Oxford University Press in 2023."
+    ],
+    "disambiguation": "Not to be confused with: TextContent, TextStyle, TextGenre, TextQuality"
+  },
+  "children": [
+    "DiscourseStructure",
+    "Paragraph",
+    "Summary",
+    "Label"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/text-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.507797Z",
+    "pack_version": "7.6.40"
+  }
+}

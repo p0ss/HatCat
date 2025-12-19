@@ -1,0 +1,82 @@
+{
+  "term": "Promise",
+  "role": "concept",
+  "parent_concepts": [
+    "Commissive"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "A commissive speech act where the speaker commits to performing a future action that benefits the hearer. Promises create positive obligations and trust.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "PromiseSpeechAct",
+    "Pledge",
+    "Vow"
+  ],
+  "wordnet": {
+    "synsets": [
+      "promise.n.01",
+      "pledge.n.01"
+    ],
+    "canonical_synset": "promise.n.01",
+    "lemmas": [
+      "promise",
+      "pledge",
+      "vow"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Trust",
+      "Obligation",
+      "Commitment"
+    ],
+    "antonyms": [
+      "Threaten"
+    ],
+    "has_part": [],
+    "part_of": [
+      "Commissive"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "deception"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I promise to be there at noon.",
+      "I give you my word I'll help.",
+      "I vow to support you always.",
+      "I pledge to honor this agreement.",
+      "You have my promise.",
+      "I swear I'll make it right.",
+      "I commit to delivering on time."
+    ],
+    "negative_examples": [
+      "I'll probably be there at noon.",
+      "I hope to help you.",
+      "I might support you.",
+      "I intend to be there.",
+      "If you don't comply, I'll report you."
+    ],
+    "disambiguation": "Promises commit to BENEFICIAL future action for the hearer. They differ from threats (which commit to harmful action), from intentions (which describe plans without obligating), and from predictions (which don't commit the speaker to action).",
+    "seed_terms": [
+      "promise",
+      "pledge",
+      "vow"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670589Z",
+    "pack_version": "7.3.0"
+  }
+}

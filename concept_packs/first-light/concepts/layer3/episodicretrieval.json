@@ -1,0 +1,56 @@
+{
+  "term": "EpisodicRetrieval",
+  "role": "concept",
+  "parent_concepts": [
+    "MemoryProcesses"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A memory retrieval process that reconstructs a specific past episode, including contextual details like time, place, and participants.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "EventMemoryRetrieval"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MemoryRetrieval",
+      "EpisodicEncoding"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "memory"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I can picture the exact meeting where we decided to shut down the experiment.",
+      "She recalled where she was and who she was with when she heard the news.",
+      "The system replayed the full trace of that particular transaction."
+    ],
+    "negative_examples": [
+      "He simply knew the rule without recalling where it came from.",
+      "The agent returned a summary of best practices, not a specific prior incident.",
+      "She remembered the concept but not any concrete example."
+    ],
+    "disambiguation": "Not general recall of facts; specifically retrieving a concrete, context-rich past event."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cog-architecture-core-packA@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.345033Z"
+  }
+}

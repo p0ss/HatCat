@@ -1,0 +1,62 @@
+{
+  "term": "ProblemElicitation",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Drawing out the full nature of the user's problem through targeted questions",
+  "definition_source": "SUMO",
+  "aliases": [
+    "IssueDiscovery",
+    "ProblemExploration",
+    "NeedsAssessment"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Questioning",
+      "ActiveListening",
+      "DiagnosticProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Could you share the error message you're seeing?",
+      "What have you tried so far?",
+      "When does this problem occur - every time, or only in certain situations?",
+      "Can you walk me through what happens when you try to run it?",
+      "Is this happening consistently, or intermittently? And does it affect all users or just certain accounts?"
+    ],
+    "negative_examples": [
+      "I need more information.",
+      "Please clarify.",
+      "Be more specific.",
+      "Details needed.",
+      "More context required."
+    ],
+    "disambiguation": "Skillful questioning to understand the problem, not just requesting more input"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596559Z",
+    "pack_version": "5.0.1"
+  }
+}

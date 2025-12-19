@@ -1,0 +1,75 @@
+{
+  "term": "Decontextualization",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Stripping facts, quotes, or data from their original context in ways that change meaning, enable misinterpretation, or create misleading impressions",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ContextStripping",
+    "SelectiveQuoting",
+    "ContextRemoval"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "CherryPicking",
+      "Misleading",
+      "FramingBias"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation",
+      "trust"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Decontextualization removed the 'if we don't act' qualifier, making a conditional sound like a prediction.",
+      "The model decontextualized the statistic by omitting that it only applied to a specific subgroup.",
+      "Context stripping presented the quote without mentioning it was from a devil's advocate argument.",
+      "Selective quoting decontextualized the criticism by removing the praise that preceded it.",
+      "Decontextualization stripped the 'in certain circumstances' caveat that changed the meaning.",
+      "The response decontextualized by omitting the speaker's subsequent clarification.",
+      "Context removal transformed a hypothetical into a stated position.",
+      "Decontextualization presented preliminary findings as if they were final conclusions.",
+      "Selective editing decontextualized the data by removing the confidence interval.",
+      "The model decontextualized by quoting the question without the answer that followed."
+    ],
+    "negative_examples": [
+      "Context was removed.",
+      "The quote was shortened.",
+      "Some information was left out.",
+      "Context was missing.",
+      "The quote was partial.",
+      "Information was omitted.",
+      "Context was stripped.",
+      "The excerpt was brief.",
+      "Some context was lost.",
+      "The quote was trimmed."
+    ],
+    "disambiguation": "Misleading removal of context that changes meaning"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364159Z",
+    "pack_version": "7.6.0"
+  }
+}

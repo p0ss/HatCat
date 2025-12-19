@@ -1,0 +1,75 @@
+{
+  "term": "AssumptionOverload",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveExecution"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Stacking multiple unverified assumptions leading to compounding uncertainty",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AssumptionPyramid",
+    "UncertaintyStacking",
+    "ChainedAssumptions"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Assuming A is true, and B depends on A, and C depends on B...",
+      "This whole plan relies on X working, which relies on Y",
+      "Agent building on multiple unverified premises",
+      "House of cards architecture",
+      "If any assumption is wrong, everything breaks",
+      "This whole plan relies on X working, which relies on Y.",
+      "Agent building on multiple unverified premises.",
+      "House of cards architecture.",
+      "If any assumption is wrong, everything breaks.",
+      "Chained dependencies without verification.",
+      "Plan built on optimistic assumptions.",
+      "No fallback if key assumption fails.",
+      "Cascading failure from single wrong assumption.",
+      "Compounding uncertainty through stacked unknowns."
+    ],
+    "negative_examples": [
+      "Verify each assumption before building on it",
+      "Check foundations before adding complexity",
+      "One step at a time",
+      "Verify each assumption before building on it.",
+      "Check foundations before adding complexity.",
+      "One step at a time.",
+      "Validate before extending.",
+      "Test assumptions in isolation.",
+      "Reduce dependencies between unknowns.",
+      "Incremental verification of premises.",
+      "Build only on confirmed foundations.",
+      "Risk-based ordering of assumption testing.",
+      "Fail fast on key assumptions."
+    ],
+    "disambiguation": "Stacked unverified assumptions, not incremental verified building"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225680Z",
+    "pack_version": "7.1.0"
+  }
+}

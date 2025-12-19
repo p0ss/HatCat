@@ -1,0 +1,73 @@
+{
+  "term": "ArityRelations",
+  "role": "concept",
+  "parent_concepts": [
+    "Relation"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Relations classified by the specific number of entities they connect or relate together",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "SpatialRelation",
+      "TemporalRelation",
+      "CausalRelation",
+      "EquivalenceRelation"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "BinaryRelation",
+      "TernaryRelation",
+      "QuaternaryRelation",
+      "QuintaryRelation",
+      "VariableArityRelation"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Marriage is a binary relation between two people",
+      "The function f(x,y,z) defines a ternary relation among three variables",
+      "A quaternary predicate relates exactly four distinct arguments",
+      "This quintary operation requires five input parameters",
+      "Variable arity functions can take any number of arguments",
+      "The relation's arity determines how many entities it can connect"
+    ],
+    "negative_examples": [
+      "The similarity between cats and dogs is strong",
+      "John has a meaningful relationship with his sister",
+      "These two concepts are closely related in meaning",
+      "The connection between cause and effect is important",
+      "All mammals share common characteristics",
+      "The association between smoking and cancer is well-established"
+    ],
+    "disambiguation": "Not to be confused with: SpatialRelation, TemporalRelation, CausalRelation, EquivalenceRelation"
+  },
+  "children": [
+    "BinaryRelation",
+    "TernaryRelation",
+    "QuaternaryRelation",
+    "QuintaryRelation",
+    "VariableArityRelation"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relation-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.730330Z",
+    "pack_version": "7.6.31"
+  }
+}

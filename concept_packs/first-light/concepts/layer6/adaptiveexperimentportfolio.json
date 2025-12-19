@@ -1,0 +1,72 @@
+{
+  "term": "AdaptiveExperimentPortfolio",
+  "role": "concept",
+  "parent_concepts": [
+    "AdaptivePolicyDesign"
+  ],
+  "layer": 6,
+  "domain": "Governance",
+  "definition": "Maintaining a mix of policy pilots, randomized trials, and comparative implementations to learn what works before scaling.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "PolicyExperimentSet",
+    "PolicyPortfolioTesting"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Experimentation",
+      "PilotProject"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "innovation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Portfolio includes both low-risk sandboxes and high-fidelity pilots.",
+      "Hypotheses, metrics, and stop criteria are defined before launch.",
+      "Experiments cover diverse demographics to test equity impacts.",
+      "Control groups or synthetic controls are used where feasible.",
+      "Portfolio dashboard tracks cumulative learning.",
+      "Sunseted pilots document lessons for future work.",
+      "Risk review board approves experimental guardrails.",
+      "Parallel pilots test implementation partners head-to-head.",
+      "Scaling criteria specify evidence thresholds.",
+      "Budget allocates a fixed share to experimentation."
+    ],
+    "negative_examples": [
+      "Pilots exist only to claim 'innovative' status.",
+      "Experiments lack hypotheses or success metrics.",
+      "Same pilot is rerun without learning across cohorts.",
+      "Control groups are omitted despite feasibility.",
+      "Portfolio is one giant pilot disguised as evidence.",
+      "Lessons learned documents are never written.",
+      "Pilots skip ethics or risk reviews.",
+      "Scaling occurs regardless of pilot outcomes.",
+      "Experiment data is withheld due to political risk.",
+      "Budget slashes experimentation first."
+    ],
+    "disambiguation": "Portfolio approach to experiments, not single trials."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/government-adaptive-policy-design@0.1.0",
+    "applied_at": "2025-12-10T20:54:16.914685Z",
+    "pack_version": "5.5.0"
+  }
+}

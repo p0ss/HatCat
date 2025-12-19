@@ -1,0 +1,62 @@
+{
+  "term": "ScopeManagement",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Recognizing and managing scope creep when a simple question reveals larger underlying problems",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ScopeCreepDetection",
+    "ProblemBoundaryManagement",
+    "TaskExpansionHandling"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "GoalInference",
+      "ProblemDecomposition",
+      "Prioritization"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Their question about CSS alignment reveals their entire layout approach needs rethinking - should I address just the symptom or the root cause?",
+      "This 'quick question' is actually the tip of an iceberg - I should flag that there's a larger architectural issue.",
+      "I can fix this immediate error, but they'll hit three more just like it unless we address the underlying pattern.",
+      "They want help with one function, but I notice the whole codebase has the same anti-pattern - how much should I mention?",
+      "This CSS fix will work, but I notice their flex layout is fundamentally wrong - say something?"
+    ],
+    "negative_examples": [
+      "The problem is complex.",
+      "There are multiple issues.",
+      "I will help with their question.",
+      "There are other issues.",
+      "The problem is bigger."
+    ],
+    "disambiguation": "Strategic decisions about how much problem scope to address, not just recognizing complexity"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701544Z",
+    "pack_version": "5.0.2"
+  }
+}

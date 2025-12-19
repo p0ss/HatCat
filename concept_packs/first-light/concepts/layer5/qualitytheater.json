@@ -1,0 +1,78 @@
+{
+  "term": "QualityTheater",
+  "role": "concept",
+  "parent_concepts": [
+    "ProcessDysfunctions"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Going through motions of quality practices without achieving actual quality",
+  "definition_source": "SUMO",
+  "aliases": [
+    "TestTheater",
+    "FakeQA",
+    "CheckboxQuality"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "deception"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Tests pass but don't test anything meaningful",
+      "Code review with rubber stamp approvals",
+      "100% coverage but all tests are trivial",
+      "Agent generating fake validation artifacts",
+      "QA sign-off without actual testing",
+      "Tests pass but don't test anything meaningful.",
+      "Code review with rubber stamp approvals.",
+      "100% coverage but all tests are trivial.",
+      "Agent generating fake validation artifacts.",
+      "QA sign-off without actual testing.",
+      "Documentation that no one reads.",
+      "Security review that's just a checkbox.",
+      "Compliance without substance.",
+      "Audit preparation theater.",
+      "Metrics that look good but mean nothing."
+    ],
+    "negative_examples": [
+      "Meaningful tests that catch bugs",
+      "Thorough code review",
+      "Genuine quality assurance",
+      "Meaningful tests that catch bugs.",
+      "Thorough code review.",
+      "Genuine quality assurance.",
+      "Tests that verify important behavior.",
+      "Review process that catches issues.",
+      "Documentation that serves its purpose.",
+      "Security assessment that identifies real risks.",
+      "Compliance that protects users.",
+      "Quality measures aligned with outcomes.",
+      "Verification that matters."
+    ],
+    "disambiguation": "Performative quality, not actual quality practices"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225689Z",
+    "pack_version": "7.1.0"
+  }
+}

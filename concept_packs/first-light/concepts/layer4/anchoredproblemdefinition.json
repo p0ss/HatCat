@@ -1,0 +1,72 @@
+{
+  "term": "AnchoredProblemDefinition",
+  "role": "concept",
+  "parent_concepts": [
+    "GovernmentPolicyResearch"
+  ],
+  "layer": 4,
+  "domain": "Governance",
+  "definition": "A failure mode where the policy team clings to an early, narrow framing that ignores new evidence or causal insights.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ProblemAnchoring",
+    "LockedInScope"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "CognitiveBias",
+      "ProblemSolving"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "analysis_brittleness"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Team dismisses new data because it complicates the preferred story.",
+      "Updated indicators are labelled 'outliers' without review.",
+      "Briefing ignores structural causes introduced by analysts.",
+      "Officials forbid discussing upstream determinants to preserve scope.",
+      "The problem statement stays identical despite crisis evolution.",
+      "Challengers are told the minister 'already decided the frame'.",
+      "Alternative framings are excluded from summary slides.",
+      "Key variables are frozen even when assumptions break.",
+      "Evidence contradicting the initial framing is filtered out.",
+      "The causal diagram is never revisited after kickoff."
+    ],
+    "negative_examples": [
+      "Team held a framing workshop to revisit assumptions.",
+      "Problem statement evolved as new causal links emerged.",
+      "Briefing notes highlight unresolved scope debates.",
+      "Stakeholders were invited to reframe the issue midstream.",
+      "Analysts run alternative framings in appendices.",
+      "Leads encourage dissenting frames for resilience.",
+      "Scope was widened to include supply chain data.",
+      "They retired a framing that proved inaccurate.",
+      "Leadership asked for reframing after field visits.",
+      "Debrief documents show how the framing matured."
+    ],
+    "disambiguation": "Specifically the bias of staying locked on an early frame."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/government-policy-research@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.244992Z",
+    "pack_version": "5.7.0"
+  }
+}

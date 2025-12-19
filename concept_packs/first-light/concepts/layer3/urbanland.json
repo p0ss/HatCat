@@ -1,0 +1,71 @@
+{
+  "term": "UrbanLand",
+  "role": "concept",
+  "parent_concepts": [
+    "PoliticalGeography"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "Designated land areas within or near settlements that serve specific community functions or activities.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "WildLand",
+      "AgriculturalLand",
+      "IndustrialLand",
+      "WaterFront"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "CityBlock",
+      "Park",
+      "Cemetery",
+      "Campground"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The new park downtown will include playgrounds and walking trails.",
+      "They're building condominiums on the old city block near Main Street.",
+      "The cemetery on Oak Avenue has beautiful old oak trees throughout.",
+      "We reserved a spot at the campground just outside the city limits.",
+      "The municipal planning committee approved the new recreational area.",
+      "Families gathered at the community space for the summer festival."
+    ],
+    "negative_examples": [
+      "The farmer planted corn across his entire agricultural field.",
+      "Wild deer roam freely through the untouched forest preserve.",
+      "The construction crew cleared the vacant lot for the new shopping center.",
+      "Hikers explored the remote wilderness area in the mountains.",
+      "The industrial complex spans several acres near the highway.",
+      "Ocean waves crashed against the rocky shoreline."
+    ],
+    "disambiguation": "Not to be confused with: WildLand, AgriculturalLand, IndustrialLand, WaterFront"
+  },
+  "children": [
+    "CityBlock",
+    "PublicPark",
+    "Cemetery",
+    "Campground"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/landarea-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.062699Z",
+    "pack_version": "7.6.23"
+  }
+}

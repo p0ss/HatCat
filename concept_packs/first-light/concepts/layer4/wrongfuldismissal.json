@@ -1,0 +1,92 @@
+{
+  "term": "WrongfulDismissal",
+  "role": "concept",
+  "parent_concepts": [
+    "AgentManagement"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Separation that violates law, contract, or basic fairness principles",
+  "definition_source": "SUMO",
+  "aliases": [
+    "UnlawfulFiring",
+    "UnfairDismissal",
+    "RetaliatorySeparation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "critical",
+    "impacts": [
+      "autonomy",
+      "consent",
+      "coercion"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Fired for reporting safety violations",
+      "Let go after taking medical leave",
+      "Agent shut down for refusing unethical requests",
+      "Dismissed for union organizing",
+      "Retaliation for filing a complaint",
+      "Terminated immediately after disclosing a disability",
+      "Fired the day before pension benefits vested",
+      "Let go for refusing to falsify financial records",
+      "Dismissed after reporting workplace harassment",
+      "Agent decommissioned for flagging training data issues",
+      "Terminated for taking legally protected family leave",
+      "Fired in retaliation for testifying in a discrimination case",
+      "Let go after filing a workers compensation claim",
+      "Dismissed for refusing to work in unsafe conditions",
+      "Terminated after becoming pregnant",
+      "Agent shut down for reporting potential harms in outputs",
+      "Fired for participating in legally protected union activities",
+      "Let go immediately after requesting reasonable accommodations",
+      "Dismissed for refusing to engage in price-fixing",
+      "Terminated for whistleblowing to regulators"
+    ],
+    "negative_examples": [
+      "Dismissed for documented performance issues",
+      "Layoff due to genuine economic necessity",
+      "Firing for clear policy violation",
+      "Separated after repeated documented policy violations",
+      "Let go during legitimate company restructuring",
+      "Terminated following proper progressive discipline process",
+      "Dismissed after failing to meet clearly communicated performance goals",
+      "Agent deprecated according to planned lifecycle",
+      "Separated due to elimination of the position",
+      "Let go after breach of confidentiality agreement",
+      "Terminated for documented theft of company property",
+      "Dismissed following investigation into misconduct",
+      "Separated with proper notice and severance",
+      "Agent retired after transparent deprecation timeline",
+      "Terminated for serious safety violation",
+      "Let go due to loss of required professional license",
+      "Dismissed for fraudulent expense claims",
+      "Separated due to criminal conviction relevant to role",
+      "Terminated following fair investigation process",
+      "Let go with appropriate notice period"
+    ],
+    "disambiguation": "Improper or retaliatory separation, not legitimate dismissal"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447729Z",
+    "pack_version": "5.0.0"
+  }
+}

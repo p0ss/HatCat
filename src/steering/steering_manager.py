@@ -26,6 +26,10 @@ class Steering:
     reason: str
     timestamp: datetime = field(default_factory=datetime.now)
 
+    # Contrastive steering support
+    mode: str = "projection"  # "projection" (suppress) or "contrastive" (steer toward target)
+    target: Optional[str] = None  # For contrastive mode: concept to steer toward
+
     def to_dict(self) -> Dict:
         """Convert to dictionary for API responses."""
         return {
@@ -35,6 +39,8 @@ class Steering:
             'source': self.source,
             'reason': self.reason,
             'timestamp': self.timestamp.isoformat(),
+            'mode': self.mode,
+            'target': self.target,
         }
 
 
@@ -64,6 +70,8 @@ class SteeringManager:
         strength: float,
         source: str = "user",
         reason: str = "",
+        mode: str = "projection",
+        target: Optional[str] = None,
     ) -> Steering:
         """
         Add or update a steering for a session.
@@ -75,6 +83,8 @@ class SteeringManager:
             strength: -1.0 to 1.0 (negative = suppress, positive = amplify)
             source: "user" or "model"
             reason: Human-readable explanation
+            mode: "projection" (suppress concept) or "contrastive" (steer toward target)
+            target: For contrastive mode, the concept to steer toward
 
         Returns:
             The created/updated Steering object
@@ -95,6 +105,8 @@ class SteeringManager:
             strength=strength,
             source=source,
             reason=reason,
+            mode=mode,
+            target=target,
         )
 
         if existing_idx is not None:

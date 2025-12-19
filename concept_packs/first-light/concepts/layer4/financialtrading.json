@@ -1,0 +1,75 @@
+{
+  "term": "FinancialTrading",
+  "role": "concept",
+  "parent_concepts": [
+    "Transaction"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "active market participation through buying, selling, or speculating with financial instruments or assets",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "FinancialTransfer",
+      "Payment",
+      "Lending",
+      "InsuranceTransaction"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Buying",
+      "Selling",
+      "ShortSale",
+      "Vending",
+      "Betting",
+      "Investing"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "She bought 100 shares of Apple stock this morning",
+      "The trader sold his Bitcoin holdings before the market closed",
+      "He made a short sale on Tesla stock, betting the price would fall",
+      "The vending machine accepted payment for the snacks",
+      "They invested their savings in a diversified portfolio",
+      "She placed a bet on the horse race at 5-to-1 odds"
+    ],
+    "negative_examples": [
+      "The bank processed his loan application",
+      "She transferred money to her savings account",
+      "The company paid dividends to shareholders",
+      "He deposited his paycheck into checking",
+      "They received an insurance payout for the accident",
+      "The mortgage payment was automatically deducted"
+    ],
+    "disambiguation": "Not to be confused with: FinancialTransfer, Payment, Lending, InsuranceTransaction"
+  },
+  "children": [
+    "Buying",
+    "Auctioning",
+    "ShortSale",
+    "Vending",
+    "Betting",
+    "Investing"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.652125Z",
+    "pack_version": "7.6.19"
+  }
+}

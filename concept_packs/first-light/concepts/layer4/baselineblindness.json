@@ -1,0 +1,72 @@
+{
+  "term": "BaselineBlindness",
+  "role": "concept",
+  "parent_concepts": [
+    "MeasurementProcess"
+  ],
+  "layer": 4,
+  "domain": "Governance",
+  "definition": "Failing to notice baseline drift, mis-specified benchmarks, or contextual shifts that invalidate comparisons over time.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "BaselineNeglect",
+    "ReferencePointBlindness"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Bias",
+      "TrendAnalysis"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "transparency"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Progress claims ignore that baseline year was an outlier.",
+      "Teams forget to adjust for population growth.",
+      "Baseline cohort definition changed but results were compared anyway.",
+      "Indices compare different geographies without normalization.",
+      "Seasonality is ignored so peaks look like improvement.",
+      "Inflation-adjustments are skipped when touting spending efficiency.",
+      "New data collection methods break comparability but no notice is given.",
+      "Policy resets the clock without acknowledging lost continuity.",
+      "Baseline relies on self-reported numbers later proven inaccurate.",
+      "No one monitors drift between administrative and survey baselines."
+    ],
+    "negative_examples": [
+      "Memos specify when baselines change and why.",
+      "Comparisons adjust for inflation, population, and mix effects.",
+      "Baseline cohorts are held constant unless governance approves updates.",
+      "Dashboards alert when baselines become stale.",
+      "Seasonality adjustments are applied before storytelling.",
+      "Data teams publish footnotes about comparability limits.",
+      "Baselines include multiple comparator groups.",
+      "Analysts run sensitivity checks for baseline choices.",
+      "Stakeholders are notified when methodological changes break continuity.",
+      "Audits verify continuity between baseline vintages."
+    ],
+    "disambiguation": "Specific to neglecting baseline validity."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/government-policy-measurement@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.071353Z",
+    "pack_version": "5.6.0"
+  }
+}

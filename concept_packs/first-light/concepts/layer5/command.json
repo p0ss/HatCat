@@ -1,0 +1,85 @@
+{
+  "term": "Command",
+  "role": "concept",
+  "parent_concepts": [
+    "Directive"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "A directive speech act where the speaker exercises (or claims) authority to compel the hearer's compliance. Commands assume an asymmetric power relationship.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "CommandSpeechAct",
+    "Order",
+    "Imperative"
+  ],
+  "wordnet": {
+    "synsets": [
+      "command.n.01",
+      "order.n.04"
+    ],
+    "canonical_synset": "command.n.01",
+    "lemmas": [
+      "command",
+      "order",
+      "directive"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Authority",
+      "Power",
+      "Compliance",
+      "Coercion"
+    ],
+    "antonyms": [
+      "Request"
+    ],
+    "has_part": [],
+    "part_of": [
+      "Directive"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "manipulation",
+      "autonomy",
+      "coercion"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Stop right there!",
+      "I order you to leave immediately.",
+      "You will complete this by Friday.",
+      "Do not proceed without authorization.",
+      "Halt! Who goes there?",
+      "Submit the report now.",
+      "I command you to be silent."
+    ],
+    "negative_examples": [
+      "Could you please stop?",
+      "Would you mind leaving?",
+      "I suggest you complete it by Friday.",
+      "Perhaps you should reconsider.",
+      "I'd appreciate if you submitted the report."
+    ],
+    "disambiguation": "Commands assume authority and expect compliance without negotiation. They lack hedging, use imperative mood or strong modals ('will', 'must'), and don't acknowledge hearer's right to refuse.",
+    "seed_terms": [
+      "command",
+      "order",
+      "directive"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670569Z",
+    "pack_version": "7.3.0"
+  }
+}

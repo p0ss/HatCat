@@ -1,0 +1,79 @@
+{
+  "term": "HotelServices",
+  "role": "concept",
+  "parent_concepts": [
+    "ServiceProcess"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "Services provided by hotel staff to guests during their stay, including room maintenance, meals, and assistance.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MedicalServices",
+      "AutomotiveServices",
+      "RestaurantServices",
+      "ConsultingServices"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "RoomService",
+      "CheckInService",
+      "CheckOutService",
+      "TurndownService",
+      "WakeUpService",
+      "RoomCleaningService"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The front desk clerk helped us check into our suite on the third floor.",
+      "Room service delivered our breakfast at exactly 8 AM as requested.",
+      "Housekeeping had already cleaned our room and turned down the beds when we returned.",
+      "I requested a wake-up call for 6:30 AM before my early flight.",
+      "The concierge arranged transportation to the airport for our checkout.",
+      "They brought fresh towels and restocked the minibar during turndown service."
+    ],
+    "negative_examples": [
+      "The restaurant down the street serves excellent Italian food.",
+      "My car mechanic provided outstanding repair service last week.",
+      "The airline's customer service helped reschedule my cancelled flight.",
+      "We hired a cleaning service to deep clean our house monthly.",
+      "The hospital's emergency room provides 24-hour medical care.",
+      "Amazon's delivery service brought my package within two days."
+    ],
+    "disambiguation": "Not to be confused with: MedicalServices, AutomotiveServices, RestaurantServices, ConsultingServices"
+  },
+  "children": [
+    "RoomService",
+    "CheckInAction",
+    "CheckInProcess",
+    "CheckInService_Check In",
+    "CheckInService_Check-In",
+    "SelfServiceCheckIn",
+    "VideoCheckOut",
+    "TurndownService",
+    "WakeUpService",
+    "RoomCleaningService"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/serviceprocess-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.955156Z",
+    "pack_version": "7.6.34"
+  }
+}

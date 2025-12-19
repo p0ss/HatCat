@@ -1,0 +1,72 @@
+{
+  "term": "TextGenres",
+  "role": "concept",
+  "parent_concepts": [
+    "Text"
+  ],
+  "layer": 3,
+  "domain": "Information",
+  "definition": "Categories or types of written works distinguished by their style, content, or purpose",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "TextFormat",
+      "TextLength",
+      "TextLanguage",
+      "TextStyle",
+      "TextMedium"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "FactualText",
+      "FictionalText",
+      "NarrativeText",
+      "ChristianGospel"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This book falls into the mystery genre with its detective storyline",
+      "She prefers reading romance novels over science fiction",
+      "The documentary represents factual reporting rather than entertainment",
+      "Biblical gospels constitute a unique genre of religious literature",
+      "Poetry and prose are two different literary forms",
+      "Historical accounts differ from mythological narratives in their approach"
+    ],
+    "negative_examples": [
+      "The book was written in English rather than French",
+      "This text uses a 12-point font size",
+      "The manuscript contains 300 pages of content",
+      "The document was printed on high-quality paper",
+      "She read the text aloud to the audience",
+      "The author's writing style is very engaging"
+    ],
+    "disambiguation": "Not to be confused with: TextFormat, TextLength, TextLanguage, TextStyle, TextMedium"
+  },
+  "children": [
+    "FactualText",
+    "FictionalText",
+    "NarrativeText",
+    "ChristianGospel"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/text-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.507794Z",
+    "pack_version": "7.6.40"
+  }
+}

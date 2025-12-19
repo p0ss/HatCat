@@ -1,0 +1,76 @@
+{
+  "term": "SalienceAllocationProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "Perception"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A PerceptualProcess that assigns differential weight or prominence to elements within a PerceptualStream, determining which features, regions, or events become focal for subsequent cognition.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "salience",
+    "saliency",
+    "prominence"
+  ],
+  "wordnet": {
+    "synsets": [
+      "salience.n.01"
+    ],
+    "canonical_synset": "salience.n.01",
+    "lemmas": [
+      "salience",
+      "saliency",
+      "prominence"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "PerceptualProcess",
+      "AttentionProcess",
+      "PerceptualStream",
+      "PerceptualFieldRepresentation"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The model explains that it is focusing on the most relevant sentence in a long passage.",
+      "It highlights only a few key objects in a busy scene as important.",
+      "It describes allocating more attention to unusual or threatening cues in the environment."
+    ],
+    "negative_examples": [
+      "The system treats every detail as equally important without any prioritization.",
+      "It simply lists everything present with no emphasis or ranking.",
+      "It reasons about a concept abstractly without mentioning focus, importance, or standing out."
+    ],
+    "disambiguation": "Not generic attention as a whole planning process; specifically the perceptual act of weighting some elements of input as more prominent than others.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "which parts stand out",
+        "what the model is focusing on in the input"
+      ]
+    },
+    "seed_terms": [
+      "salience",
+      "saliency",
+      "prominence"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/perception-representation@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.383016Z"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "term": "ErrorPropagation",
+  "role": "concept",
+  "parent_concepts": [
+    "ProfessionalEditing"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Failing to catch errors during editing, or introducing new errors through careless changes, resulting in degraded text quality",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ErrorIntroduction",
+    "EditingNegligence",
+    "QualityDegradation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Negligence",
+      "Error",
+      "QualityControl"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "trust"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Error propagation: the model's edit introduced a subject-verb disagreement that wasn't in the original.",
+      "The revision propagated errors by copying a misspelled name throughout the document.",
+      "Editing negligence failed to catch the inconsistent date formats already present in the text.",
+      "Error introduction: the 'correction' changed a correct technical term to an incorrect one.",
+      "Error propagation: the model's find-replace introduced errors in words containing the target substring.",
+      "The edit introduced a dangling modifier that made the sentence grammatically incorrect.",
+      "Propagated errors: the wrong citation format was 'corrected' to, spreading throughout the bibliography.",
+      "Error introduction: the model changed correct British spellings to incorrect hybrid forms.",
+      "The revision propagated the factual error in the source by not catching it during editing.",
+      "Error propagation created inconsistency by changing some instances of a term but not others."
+    ],
+    "negative_examples": [
+      "Errors were missed.",
+      "New mistakes appeared.",
+      "The editing introduced problems.",
+      "Something was wrong.",
+      "There were errors.",
+      "Mistakes happened.",
+      "Problems occurred.",
+      "Issues were present.",
+      "Errors existed.",
+      "The text had mistakes."
+    ],
+    "disambiguation": "Specific failure to maintain or improve quality through editing"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/editing-professional@0.3.0",
+    "applied_at": "2025-12-10T20:54:15.658500Z",
+    "pack_version": "5.3.0"
+  }
+}

@@ -356,6 +356,19 @@ class DynamicLensManager:
 
             self.lenses_dir = pack_path
 
+            # Read pack_info.json to get source concept pack
+            pack_info_json_path = pack_path / "pack_info.json"
+            if pack_info_json_path.exists():
+                with open(pack_info_json_path) as f:
+                    pack_info_data = json.load(f)
+                source_pack = pack_info_data.get("source_pack")
+                if source_pack:
+                    # Auto-discover concept pack hierarchy
+                    concept_pack_hierarchy = Path("concept_packs") / source_pack / "hierarchy"
+                    if concept_pack_hierarchy.exists():
+                        self.layers_data_dir = concept_pack_hierarchy
+                        print(f"  Auto-detected hierarchy: {concept_pack_hierarchy}")
+
             # Read pack.json to get lens paths
             pack_json_path = pack_path / "pack.json"
             if pack_json_path.exists():
@@ -393,6 +406,19 @@ class DynamicLensManager:
                     print(f"  Path: {pack_path}")
 
                     self.lenses_dir = pack_path
+
+                    # Read pack_info.json to get source concept pack
+                    pack_info_json_path = pack_path / "pack_info.json"
+                    if pack_info_json_path.exists():
+                        with open(pack_info_json_path) as f:
+                            pack_info_data = json.load(f)
+                        source_pack = pack_info_data.get("source_pack")
+                        if source_pack:
+                            # Auto-discover concept pack hierarchy
+                            concept_pack_hierarchy = Path("concept_packs") / source_pack / "hierarchy"
+                            if concept_pack_hierarchy.exists():
+                                self.layers_data_dir = concept_pack_hierarchy
+                                print(f"  Auto-detected hierarchy: {concept_pack_hierarchy}")
 
                     # Read pack.json to get lens paths
                     pack_json_path = pack_path / "pack.json"
@@ -538,10 +564,6 @@ class DynamicLensManager:
             for concept in layer_data['concepts']:
                 sumo_term = concept['sumo_term']
 
-                # Skip layer 6 synset-level entries - they're just training data
-                if layer == 6:
-                    continue
-
                 # Determine quality of this entry
                 is_category = concept.get('is_category_lens', False)
                 synset_count = len(concept.get('synsets', []))
@@ -574,11 +596,23 @@ class DynamicLensManager:
         deduplicated = 0
 
         for sumo_term, (layer, concept) in concept_to_best_layer.items():
-            # Check if lens exists
+            # Check if lens exists - handle both layer-based and flat structures
             has_lens = False
+            activation_path = None
+
             if self.using_lens_pack:
-                activation_path = self.activation_lenses_dir / f"{sumo_term}_classifier.pt"
-                has_lens = activation_path.exists()
+                # First try layer-based structure (common for legacy lens packs)
+                layer_dir = self.lenses_dir / f"layer{layer}"
+                layer_based_path = layer_dir / f"{sumo_term}_classifier.pt"
+                if layer_based_path.exists():
+                    activation_path = layer_based_path
+                    has_lens = True
+                else:
+                    # Fall back to activation_lenses directory structure
+                    flat_path = self.activation_lenses_dir / f"{sumo_term}_classifier.pt"
+                    if flat_path.exists():
+                        activation_path = flat_path
+                        has_lens = True
             else:
                 layer_dir = self.lenses_dir / f"layer{layer}"
                 activation_path = layer_dir / f"{sumo_term}_classifier.pt"
@@ -597,16 +631,17 @@ class DynamicLensManager:
                 sumo_depth=concept.get('sumo_depth', 0),
             )
 
-            # Set lens paths
+            # Set lens paths - use the path we already found
             if self.using_lens_pack:
-                # Lens pack structure: lenses/activation/{concept}_classifier.pt
-                activation_path = self.activation_lenses_dir / f"{sumo_term}_classifier.pt"
-                if activation_path.exists():
+                if activation_path and activation_path.exists():
                     metadata.activation_lens_path = activation_path
                     metadata.has_activation_lens = True
 
-                # Lens pack structure: lenses/embedding_centroids/{concept}_centroid.npy
-                text_lens_path = self.text_lenses_dir / f"{sumo_term}_centroid.npy"
+                # Try layer-based text lens first, then flat structure
+                layer_dir = self.lenses_dir / f"layer{layer}"
+                text_lens_path = layer_dir / f"{sumo_term}_centroid.npy"
+                if not text_lens_path.exists():
+                    text_lens_path = self.text_lenses_dir / f"{sumo_term}_centroid.npy"
                 if text_lens_path.exists():
                     metadata.text_lens_path = text_lens_path
                     metadata.has_text_lens = True
@@ -654,12 +689,18 @@ class DynamicLensManager:
 
         if hierarchy_json_path:
             self._load_authoritative_hierarchy(hierarchy_json_path)
-        else:
-            # Fallback: build mappings from scattered fields (legacy behavior)
-            self._build_hierarchy_from_metadata()
+
+        # Always run metadata-based hierarchy building to fill in any gaps
+        # (hierarchy.json may be incomplete)
+        pre_count = len(self.parent_to_children)
+        self._build_hierarchy_from_metadata()
+        added_parents = len(self.parent_to_children) - pre_count
+        if added_parents > 0:
+            print(f"  Added {added_parents} parents from metadata (fallback)")
 
         print(f"\n✓ Loaded metadata for {total_concepts} concepts across {len(layer_files)} layers")
-        print(f"  Parent-child relationships: {len(self.parent_to_children)}")
+        total_relationships = sum(len(children) for children in self.parent_to_children.values())
+        print(f"  Parent-child relationships: {total_relationships} ({len(self.parent_to_children)} unique parents)")
         print(f"  Leaf concepts: {len(self.leaf_concepts)}")
 
     def _load_authoritative_hierarchy(self, hierarchy_path: Path):
@@ -1157,6 +1198,9 @@ class DynamicLensManager:
             hidden_state = self._layer_norm(hidden_state)
             # post_std = hidden_state.std().item()
             # print(f"Normalization: pre_std={pre_std:.3f}, post_std={post_std:.3f}")
+
+        # Ensure hidden_state is on the same device as lenses
+        hidden_state = hidden_state.to(self.device)
 
         # 1. Run all currently loaded lenses
         t1 = time.time()

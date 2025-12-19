@@ -189,10 +189,10 @@ def dual_subspace_steering(hidden_states, concept, strength):
         projection = (hidden_states @ basis_vector) * basis_vector
         hidden_states = hidden_states - projection
 
-    # Step 2: Project along task manifold
+    # Step 2: Project along task manifold (positive strength = amplify)
     task_vector = task_manifolds[concept]
     projection = (hidden_states @ task_vector.unsqueeze(-1)) * task_vector
-    steered = hidden_states - strength * projection
+    steered = hidden_states + strength * projection
 
     return steered
 ```

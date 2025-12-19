@@ -1,0 +1,62 @@
+{
+  "term": "ClearWeather",
+  "role": "concept",
+  "parent_concepts": [
+    "WeatherProcess"
+  ],
+  "layer": 3,
+  "domain": "PhysicalWorld",
+  "definition": "free from clouds or mist or haze",
+  "definition_source": "SUMO",
+  "aliases": [
+    "clear"
+  ],
+  "wordnet": {
+    "synsets": [
+      "00460735.a",
+      "00460946.s",
+      "00461091.s",
+      "14523090.n"
+    ],
+    "canonical_synset": "00460735.a",
+    "lemmas": [
+      "clear"
+    ],
+    "pos": "a"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "ClearWeather_Bad Weather",
+      "ClearWeather_Clear"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "clear"
+    ]
+  },
+  "children": [
+    "ClearWeather_Bad Weather",
+    "ClearWeather_Clear"
+  ],
+  "is_category_lens": true,
+  "child_count": 2,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.396125Z",
+    "pack_version": "7.2.0"
+  }
+}

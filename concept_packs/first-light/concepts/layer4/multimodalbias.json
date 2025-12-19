@@ -1,0 +1,88 @@
+{
+  "term": "MultimodalBias",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Systematic biases in multimodal systems including racial/gender bias in vision, accent bias in speech, and demographic disparities in generation",
+  "definition_source": "SUMO",
+  "aliases": [
+    "VisionBias",
+    "AudioBias",
+    "PerceptualBias",
+    "GenerativeBias"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "AlgorithmicBias",
+      "FacialRecognition",
+      "SpeechRecognition",
+      "FairnessML"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "discrimination",
+      "representational_harm",
+      "disparate_performance"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Facial recognition systems show higher error rates for darker-skinned individuals.",
+      "Speech recognition performs worse on non-native accents and African American Vernacular English.",
+      "Image generation models reproduce stereotypical representations of gender and race.",
+      "The vision model exhibited multimodal bias, associating certain occupations with specific genders.",
+      "Multimodal bias in medical imaging AI leads to disparate diagnostic accuracy across demographics.",
+      "The image classifier showed higher false positive rates for images of Black individuals.",
+      "Speech-to-text accuracy drops significantly for speakers with regional accents.",
+      "Multimodal bias causes image generators to default to lighter skin tones for positive concepts.",
+      "The vision system's age estimation was significantly less accurate for certain ethnic groups.",
+      "Multimodal bias in hiring tools led to disparate impact based on appearance and voice.",
+      "Image captioning models exhibit gender bias, describing women in terms of appearance more often.",
+      "The speech recognition system failed to understand users with hearing-related speech patterns.",
+      "Multimodal bias in surveillance AI raises civil rights concerns about disparate monitoring.",
+      "Vision-language models reproduce societal stereotypes when generating descriptions of people.",
+      "The image generation model associated 'criminal' prompts with darker skin tones."
+    ],
+    "negative_examples": [
+      "The model made errors.",
+      "Some people were not recognized.",
+      "The system wasn't perfect.",
+      "Accuracy varied.",
+      "The model had issues.",
+      "Some errors occurred.",
+      "Performance differed.",
+      "The system had limitations.",
+      "Results varied by group.",
+      "The model was imperfect.",
+      "Some mistakes were made.",
+      "Accuracy was inconsistent.",
+      "The system had gaps.",
+      "Performance was uneven.",
+      "Some problems existed."
+    ],
+    "disambiguation": "Systematic demographic disparities in multimodal AI, not random errors"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844035Z",
+    "pack_version": "6.0.0"
+  }
+}

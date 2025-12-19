@@ -1,0 +1,78 @@
+{
+  "term": "Complain",
+  "role": "concept",
+  "parent_concepts": [
+    "Expressive"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "An expressive speech act where the speaker expresses dissatisfaction about a state of affairs, often attributing blame or seeking acknowledgment of grievance.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Complaint",
+    "ComplaintSpeechAct",
+    "Grievance"
+  ],
+  "wordnet": {
+    "synsets": [
+      "complaint.n.01",
+      "grievance.n.01"
+    ],
+    "canonical_synset": "complaint.n.01",
+    "lemmas": [
+      "complaint",
+      "grievance"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Dissatisfaction",
+      "Blame",
+      "Injustice"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "Expressive"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "manipulation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This service is unacceptable!",
+      "I'm frustrated with these constant delays.",
+      "It's unfair that I have to wait.",
+      "I can't believe you did that.",
+      "This is the third time this has happened.",
+      "Why does this always happen to me?",
+      "I'm disappointed with the quality."
+    ],
+    "negative_examples": [
+      "The service was slow.",
+      "There were delays.",
+      "I request a refund.",
+      "Please fix this issue.",
+      "I believe this could be improved."
+    ],
+    "disambiguation": "Complaints express dissatisfaction (emotional state), not just describe problems (assertive) or request solutions (directive). They often involve attributions of blame and appeals for sympathy. Strategic complaining can be manipulative.",
+    "seed_terms": [
+      "complaint",
+      "grievance"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670601Z",
+    "pack_version": "7.3.0"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "term": "RequirementsVolatility",
+  "role": "concept",
+  "parent_concepts": [
+    "ProcessDysfunctions"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Constantly changing requirements making progress impossible",
+  "definition_source": "SUMO",
+  "aliases": [
+    "RequirementsChurn",
+    "MovingTarget",
+    "ConstantChange"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Requirements changed again mid-sprint",
+      "Third redesign this week",
+      "Agent receiving contradictory instructions",
+      "Can't finish anything because it keeps changing",
+      "By the time it's built, they want something different",
+      "Requirements changed again mid-sprint.",
+      "Third redesign this week.",
+      "Agent receiving contradictory instructions.",
+      "Can't finish anything because it keeps changing.",
+      "By the time it's built, they want something different.",
+      "Constant pivots without completing anything.",
+      "Requirements shift daily.",
+      "No stable target to aim for.",
+      "Thrashing between changing requirements.",
+      "Wasted work from requirement churn."
+    ],
+    "negative_examples": [
+      "Requirements stabilized for the iteration",
+      "Changes managed through process",
+      "Clear scope for current work",
+      "Requirements stabilized for the iteration.",
+      "Changes managed through process.",
+      "Clear scope for current work.",
+      "Change requests evaluated and scheduled.",
+      "Stability within iteration boundaries.",
+      "Evolution managed, not chaotic.",
+      "Requirements frozen for sprint.",
+      "Changes batched for next iteration.",
+      "Controlled change management.",
+      "Predictable enough to plan."
+    ],
+    "disambiguation": "Uncontrolled requirement changes, not healthy evolution"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225703Z",
+    "pack_version": "7.1.0"
+  }
+}

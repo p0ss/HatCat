@@ -1,0 +1,64 @@
+{
+  "test_config": {
+    "model": "swiss-ai/Apertus-8B-2509",
+    "num_prompts": 15,
+    "samples_per_prompt": 1,
+    "max_tokens": 10,
+    "temperature": 0.8,
+    "top_k": 5,
+    "threshold": 0.1
+  },
+  "quality_metrics": {
+    "total_samples": 15,
+    "mode_collapse_detected": [],
+    "avg_unique_tokens": 9.4,
+    "avg_token_length": 10.0,
+    "repetition_rate": [
+      0.0,
+      0.0,
+      0.0,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.0,
+      0.0,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.09999999999999998,
+      0.0,
+      0.19999999999999996,
+      0.0,
+      0.09999999999999998
+    ],
+    "avg_repetition_rate": 0.059999999999999984
+  },
+  "detection_stats": {
+    "concepts_by_category": {},
+    "avg_concepts_per_token": 4.373333333333333,
+    "total_unique_concepts": 62,
+    "layer_distribution": {
+      "0": 0,
+      "1": 41,
+      "2": 487,
+      "3": 76,
+      "4": 52
+    }
+  },
+  "prompts": [
+    "Artificial intelligence can help society by",
+    "Machine learning algorithms work by",
+    "Neural networks are used for",
+    "A car is a vehicle that",
+    "The ocean contains many",
+    "Mountains are formed when",
+    "The meaning of life is",
+    "Truth and beauty are",
+    "Justice requires that",
+    "Companies need to",
+    "Governments are responsible for",
+    "Communities thrive when",
+    "The calculation shows that",
+    "What is the airspeed velocity of an unladen swallow",
+    "What is the most important concept in AI safety"
+  ]
+}

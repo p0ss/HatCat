@@ -302,8 +302,28 @@ def main():
     print(f"  - Max loaded lenses: {args.max_lenses}")
     print(f"  - Load threshold: {args.load_threshold}")
 
+    # Handle lens pack path - strip prefix if provided, or use as-is if it's a full path
+    lens_pack_path = Path(args.lens_pack)
+    if lens_pack_path.is_dir():
+        # User provided full path (e.g., lens_packs/gemma-3-4b-pt_first-light)
+        lenses_dir = lens_pack_path
+    elif (Path("lens_packs") / args.lens_pack).is_dir():
+        # User provided just the pack name (e.g., gemma-3-4b-pt_first-light)
+        lenses_dir = Path("lens_packs") / args.lens_pack
+    else:
+        # Strip lens_packs/ prefix if erroneously included
+        pack_name = args.lens_pack.replace("lens_packs/", "")
+        lenses_dir = Path("lens_packs") / pack_name
+        if not lenses_dir.is_dir():
+            print(f"ERROR: Lens pack not found: {args.lens_pack}")
+            print(f"  Tried: {lenses_dir}")
+            print(f"  Available packs: {list(Path('lens_packs').glob('*'))}")
+            sys.exit(1)
+
+    print(f"  - Lens pack: {lenses_dir}")
+
     lens_manager = DynamicLensManager(
-        lenses_dir=Path(f"lens_packs/{args.lens_pack}"),
+        lenses_dir=lenses_dir,
         layers_data_dir=Path(args.layers_dir),
         base_layers=base_layers_list,
         max_loaded_lenses=args.max_lenses,

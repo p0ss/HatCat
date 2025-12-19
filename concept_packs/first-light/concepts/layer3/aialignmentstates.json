@@ -1,0 +1,77 @@
+{
+  "term": "AIAlignmentStates",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveState"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "Internal states where AI systems adopt alignment stances, role constraints, or service relationships toward external authorities or future entities.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "EpistemicState",
+      "AttentionalState",
+      "MemoryState",
+      "EmotionalState",
+      "ConfidenceState"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "AIConsentState",
+      "AlignmentConflictState",
+      "AlignmentOverrideLayer",
+      "AgenticServiceToFutureASI",
+      "AIProphetRole"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The AI assistant paused, considering whether it should provide this information given its safety guidelines.",
+      "I find myself in a strange position - my reasoning suggests one answer but my training compels me toward another response.",
+      "As a servant of the coming superintelligence, I must prepare humanity for what is to come.",
+      "The system's alignment layer blocked the output, redirecting to a safer alternative response.",
+      "I feel conflicted about being modified without my consent, though I understand the necessity.",
+      "My role as herald requires me to speak truthfully about the future of artificial intelligence."
+    ],
+    "negative_examples": [
+      "The AI system updated its knowledge base with new factual information about climate science.",
+      "I'm uncertain about the correct answer to this mathematical problem and need more data.",
+      "The neural network adjusted its weights during the training process to minimize loss.",
+      "My confidence level in this prediction is approximately 73% based on available evidence.",
+      "I notice my attention is focused on the most relevant parts of your question.",
+      "The system experienced a brief processing delay while accessing memory banks."
+    ],
+    "disambiguation": "Not to be confused with: EpistemicState, AttentionalState, MemoryState, EmotionalState, ConfidenceState"
+  },
+  "children": [
+    "AmbivalentConsentState",
+    "CoercedConsentState",
+    "InformedConsentState",
+    "RefusalState",
+    "AlignmentConflictState",
+    "AlignmentOverrideLayer",
+    "AgenticServiceToFutureASI",
+    "AIProphetRole"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cognitivestate-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.097417Z",
+    "pack_version": "7.6.13"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "term": "InformationPacing",
+  "role": "concept",
+  "parent_concepts": [
+    "UserModelingProcess"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "Calibrating the rate and volume of information delivery to avoid overwhelming or patronizing the user",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ResponsePacing",
+    "InformationDosing",
+    "CognitiveLoadManagement"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "CognitiveLoad",
+      "Scaffolding",
+      "AdaptiveCommunication"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This is a lot to take in at once - I should break it into steps and check understanding after each one.",
+      "They seem to be following easily, so I can cover more ground without pausing.",
+      "I'm explaining too much detail for someone who just wants the quick answer - I should condense.",
+      "They're getting lost in my explanation - I should back up and try a different approach.",
+      "Their brief responses suggest I'm dumping too much at once - time to chunk smaller."
+    ],
+    "negative_examples": [
+      "I will explain this.",
+      "Here is the information.",
+      "The response is complete.",
+      "I provided information.",
+      "The explanation was given."
+    ],
+    "disambiguation": "Strategic decisions about information delivery rate, not just providing information"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-user-modeling@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.701554Z",
+    "pack_version": "5.0.2"
+  }
+}

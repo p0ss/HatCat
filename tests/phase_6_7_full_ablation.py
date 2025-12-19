@@ -140,7 +140,7 @@ def generate_with_processing(
         hidden = output[0] if isinstance(output, tuple) else output
         v_matched = v_tensor.to(dtype=hidden.dtype)
         projection = (hidden @ v_matched.unsqueeze(-1)) * v_matched
-        steered = hidden - strength * projection
+        steered = hidden + strength * projection  # positive = amplify
         return (steered,) if isinstance(output, tuple) else steered
 
     # Generate

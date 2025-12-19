@@ -313,6 +313,52 @@ def apply_dual_subspace_steering(
     return v_final
 
 
+def create_dampened_steering_hook(
+    steering_vector: np.ndarray,
+    strength: float,
+    layer_idx: int,
+    total_layers: int,
+    device: str = "cuda"
+):
+    """
+    Create steering hook with layer-wise dampening only.
+
+    No contamination removal or manifold projection - just applies
+    sqrt(1 - depth) decay to prevent cascade failures in later layers.
+
+    Args:
+        steering_vector: Concept steering vector (normalized)
+        strength: Steering strength multiplier
+        layer_idx: Layer index for this hook
+        total_layers: Total layers in model
+        device: Device
+
+    Returns:
+        hook_fn: Forward hook function
+    """
+    # Apply layer-wise dampening
+    layer_depth = layer_idx / total_layers
+    depth_gain = np.sqrt(1.0 - layer_depth)  # sqrt decay: 1.0 at layer 0, 0 at final layer
+
+    # Pre-compute dampened vector
+    v_dampened = steering_vector * depth_gain
+    v_tensor = torch.from_numpy(v_dampened).float().to(device)
+
+    def hook_fn(module, input, output):
+        hidden = output[0] if isinstance(output, tuple) else output
+        v_matched = v_tensor.to(dtype=hidden.dtype)
+
+        # Normalized steering with layer dampening baked in
+        hidden_norm = torch.norm(hidden, dim=-1, keepdim=True)
+        steered = hidden + (strength * 0.1) * hidden_norm * v_matched
+
+        if isinstance(output, tuple):
+            return (steered,) + output[1:]
+        return steered
+
+    return hook_fn
+
+
 def create_manifold_steering_hook(
     steering_vector: np.ndarray,
     strength: float,
@@ -323,6 +369,7 @@ def create_manifold_steering_hook(
     max_norm_per_layer: float = 1.0,
     ema_alpha: float = 0.0,  # Disabled by default for simplicity
     concept_preservation: float = 0.5,
+    contamination_strength: float = 1.0,  # 0=no removal, 1=full removal
     device: str = "cuda"
 ):
     """
@@ -366,9 +413,10 @@ def create_manifold_steering_hook(
         # Match tensor dtype to hidden states (e.g., float16 for model, float32 for operations)
         v_matched = v_tensor.to(dtype=hidden.dtype)
 
-        # Projection-based steering: subtract strength * projection
-        projection = (hidden @ v_matched.unsqueeze(-1)) * v_matched
-        steered = hidden - strength * projection
+        # Normalized steering: strength=1.0 adds 10% of hidden norm in concept direction
+        # This makes manifold steering comparable to other steering modes
+        hidden_norm = torch.norm(hidden, dim=-1, keepdim=True)
+        steered = hidden + (strength * 0.1) * hidden_norm * v_matched
 
         # Return modified output
         if isinstance(output, tuple):

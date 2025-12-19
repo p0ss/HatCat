@@ -1,0 +1,75 @@
+{
+  "term": "TransportContainers",
+  "role": "concept",
+  "parent_concepts": [
+    "Containers"
+  ],
+  "layer": 5,
+  "domain": "CreatedThings",
+  "definition": "Containers designed to hold, protect, and transport items from one location to another.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "StorageContainer",
+      "FoodContainer",
+      "LiquidContainer",
+      "WasteContainer"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "TravelContainer",
+      "ShipContainer",
+      "ProductPackage",
+      "ArtifactPackage",
+      "Envelope",
+      "Mailbox"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "She packed her clothes into the suitcase for the trip.",
+      "The shipping container was loaded onto the cargo ship.",
+      "I sealed the envelope and dropped it in the mailbox.",
+      "The package arrived damaged during shipping.",
+      "Workers unloaded boxes from the freight container.",
+      "Mail carriers collect letters from residential mailboxes daily."
+    ],
+    "negative_examples": [
+      "She stored leftovers in a plastic food container.",
+      "The water bottle kept his drink cold all day.",
+      "He planted flowers in a ceramic pot.",
+      "The trash can was overflowing with garbage.",
+      "She organized her jewelry in a small wooden box.",
+      "The storage bin held winter clothes in the attic."
+    ],
+    "disambiguation": "Not to be confused with: StorageContainer, FoodContainer, LiquidContainer, WasteContainer"
+  },
+  "children": [
+    "TravelContainer",
+    "ShipContainer",
+    "ProductPackage",
+    "ArtifactPackage",
+    "Envelope",
+    "Mailbox"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/container-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.176666Z",
+    "pack_version": "7.6.14"
+  }
+}

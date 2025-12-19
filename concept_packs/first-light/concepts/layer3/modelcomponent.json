@@ -1,0 +1,71 @@
+{
+  "term": "ModelComponent",
+  "role": "concept",
+  "parent_concepts": [
+    "AIArtifact"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "A structural or functional part of an AIModel (e.g. layer, attention\n   head, feed-forward block, tokenizer, position encoder).",
+  "definition_source": "SUMO",
+  "aliases": [
+    "model component",
+    "model-component",
+    "model_component"
+  ],
+  "wordnet": {
+    "synsets": [
+      "model_component.n.01"
+    ],
+    "canonical_synset": "model_component.n.01",
+    "lemmas": [
+      "model component",
+      "model-component",
+      "model_component"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "AttentionHead",
+      "CompactionMechanism",
+      "ContextWindow",
+      "Layer",
+      "ResidualConnection",
+      "Tokenizer"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "model component",
+      "model-component",
+      "model_component"
+    ]
+  },
+  "children": [
+    "AttentionHead",
+    "CompactionMechanism",
+    "ContextWindow",
+    "AttentionLayer",
+    "EmbeddingLayer",
+    "FeedForwardLayer",
+    "NormalizationLayer",
+    "PositionalEncodingLayer",
+    "ResidualConnection",
+    "Tokenizer"
+  ],
+  "is_category_lens": true,
+  "child_count": 6
+}

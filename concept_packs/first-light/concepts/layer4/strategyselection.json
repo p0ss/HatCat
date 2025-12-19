@@ -1,0 +1,58 @@
+{
+  "term": "StrategySelection",
+  "role": "concept",
+  "parent_concepts": [
+    "MetacognitiveProcess"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A metacognitive process where an agent chooses between alternative strategies or methods for solving a task or pursuing a goal.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "StrategyChoice",
+    "MethodSelection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MetacognitiveProcess",
+      "DecisionProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "autonomy",
+      "planning"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Given the time pressure, I decided to use a heuristic instead of full search.",
+      "The agent switched from a creative brainstorming mode to a strict rules-based mode.",
+      "She chose to double-check the calculation with a different method."
+    ],
+    "negative_examples": [
+      "He followed the same routine as always without thinking about alternatives.",
+      "The algorithm ran a fixed pipeline with no configuration options.",
+      "They executed the plan exactly as written with no discussion."
+    ],
+    "disambiguation": "Not generic decision-making; specifically decisions about which cognitive or behavioral strategy to apply."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cog-architecture-core-packA@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.345002Z"
+  }
+}

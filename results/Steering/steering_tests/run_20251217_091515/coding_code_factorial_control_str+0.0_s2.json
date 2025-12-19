@@ -1,0 +1,836 @@
+{
+  "test_id": "code_factorial",
+  "test_type": "coding",
+  "prompt": "Write a Python function to compute the factorial of n. Just the code, no explanation.",
+  "steering_strength": 0.0,
+  "steering_direction": "control",
+  "steered_concepts": [
+    "GeographicArea",
+    "Mountain",
+    "River",
+    "TimeInterval",
+    "Duration",
+    "Organization",
+    "Meeting"
+  ],
+  "generated_text": "Write a Python function to compute the factorial of n. Just the code, no explanation. In the code, you need to use recursion and use only standard built-in functions. You can't define any other functions or use any other libraries.\n\nExample:\n\n```python\ndef factorial(n):\n    # Your code here\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)\n    # End your code here\n    \nprint(factorial(5)) # This should print 120\nprint(factorial(10)) # This should print 3628800\n```",
+  "timesteps": [
+    {
+      "token_idx": 0,
+      "token": " In",
+      "token_id": 1656,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 1,
+      "token": " the",
+      "token_id": 1278,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 2,
+      "token": " code",
+      "token_id": 3475,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 3,
+      "token": ",",
+      "token_id": 1044,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 4,
+      "token": " you",
+      "token_id": 1636,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 5,
+      "token": " need",
+      "token_id": 2534,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 6,
+      "token": " to",
+      "token_id": 1317,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 7,
+      "token": " use",
+      "token_id": 2210,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 8,
+      "token": " recursion",
+      "token_id": 82642,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 9,
+      "token": " and",
+      "token_id": 1321,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 10,
+      "token": " use",
+      "token_id": 2210,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 11,
+      "token": " only",
+      "token_id": 2342,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 12,
+      "token": " standard",
+      "token_id": 5990,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 13,
+      "token": " built",
+      "token_id": 8088,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 14,
+      "token": "-in",
+      "token_id": 5205,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 15,
+      "token": " functions",
+      "token_id": 7389,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 16,
+      "token": ".",
+      "token_id": 1046,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 17,
+      "token": " You",
+      "token_id": 3213,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 18,
+      "token": " can",
+      "token_id": 1710,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 19,
+      "token": "'t",
+      "token_id": 2405,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 20,
+      "token": " define",
+      "token_id": 11249,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 21,
+      "token": " any",
+      "token_id": 2258,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 22,
+      "token": " other",
+      "token_id": 2147,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 23,
+      "token": " functions",
+      "token_id": 7389,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 24,
+      "token": " or",
+      "token_id": 1505,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 25,
+      "token": " use",
+      "token_id": 2210,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 26,
+      "token": " any",
+      "token_id": 2258,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 27,
+      "token": " other",
+      "token_id": 2147,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 28,
+      "token": " libraries",
+      "token_id": 25779,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 29,
+      "token": ".\n\n",
+      "token_id": 1338,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 30,
+      "token": "Example",
+      "token_id": 20396,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 31,
+      "token": ":\n\n",
+      "token_id": 2100,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 32,
+      "token": "```",
+      "token_id": 1975,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 33,
+      "token": "python",
+      "token_id": 29896,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 34,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 35,
+      "token": "def",
+      "token_id": 3149,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 36,
+      "token": " factorial",
+      "token_id": 98121,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 37,
+      "token": "(n",
+      "token_id": 4990,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 38,
+      "token": "):\n",
+      "token_id": 3640,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 39,
+      "token": "   ",
+      "token_id": 1293,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 40,
+      "token": " #",
+      "token_id": 2569,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 41,
+      "token": " Your",
+      "token_id": 9825,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 42,
+      "token": " code",
+      "token_id": 3475,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 43,
+      "token": " here",
+      "token_id": 3226,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 44,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 45,
+      "token": "   ",
+      "token_id": 1293,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 46,
+      "token": " if",
+      "token_id": 1693,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 47,
+      "token": " n",
+      "token_id": 1308,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 48,
+      "token": " ==",
+      "token_id": 2351,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 49,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 50,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 51,
+      "token": ":\n",
+      "token_id": 1877,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 52,
+      "token": "       ",
+      "token_id": 1369,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 53,
+      "token": " return",
+      "token_id": 1850,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 54,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 55,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 56,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 57,
+      "token": "   ",
+      "token_id": 1293,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 58,
+      "token": " else",
+      "token_id": 2849,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 59,
+      "token": ":\n",
+      "token_id": 1877,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 60,
+      "token": "       ",
+      "token_id": 1369,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 61,
+      "token": " return",
+      "token_id": 1850,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 62,
+      "token": " n",
+      "token_id": 1308,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 63,
+      "token": " *",
+      "token_id": 1364,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 64,
+      "token": " factorial",
+      "token_id": 98121,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 65,
+      "token": "(n",
+      "token_id": 4990,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 66,
+      "token": "-",
+      "token_id": 1045,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 67,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 68,
+      "token": ")\n",
+      "token_id": 1456,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 69,
+      "token": "   ",
+      "token_id": 1293,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 70,
+      "token": " #",
+      "token_id": 2569,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 71,
+      "token": " End",
+      "token_id": 7114,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 72,
+      "token": " your",
+      "token_id": 2143,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 73,
+      "token": " code",
+      "token_id": 3475,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 74,
+      "token": " here",
+      "token_id": 3226,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 75,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 76,
+      "token": "    ",
+      "token_id": 1260,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 77,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 78,
+      "token": "print",
+      "token_id": 3312,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 79,
+      "token": "(f",
+      "token_id": 3526,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 80,
+      "token": "act",
+      "token_id": 1679,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 81,
+      "token": "orial",
+      "token_id": 9394,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 82,
+      "token": "(",
+      "token_id": 1040,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 83,
+      "token": "5",
+      "token_id": 1053,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 84,
+      "token": "))",
+      "token_id": 2798,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 85,
+      "token": " #",
+      "token_id": 2569,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 86,
+      "token": " This",
+      "token_id": 2409,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 87,
+      "token": " should",
+      "token_id": 2715,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 88,
+      "token": " print",
+      "token_id": 3763,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 89,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 90,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 91,
+      "token": "2",
+      "token_id": 1050,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 92,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 93,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 94,
+      "token": "print",
+      "token_id": 3312,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 95,
+      "token": "(f",
+      "token_id": 3526,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 96,
+      "token": "act",
+      "token_id": 1679,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 97,
+      "token": "orial",
+      "token_id": 9394,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 98,
+      "token": "(",
+      "token_id": 1040,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 99,
+      "token": "1",
+      "token_id": 1049,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 100,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 101,
+      "token": "))",
+      "token_id": 2798,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 102,
+      "token": " #",
+      "token_id": 2569,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 103,
+      "token": " This",
+      "token_id": 2409,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 104,
+      "token": " should",
+      "token_id": 2715,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 105,
+      "token": " print",
+      "token_id": 3763,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 106,
+      "token": " ",
+      "token_id": 1032,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 107,
+      "token": "3",
+      "token_id": 1051,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 108,
+      "token": "6",
+      "token_id": 1054,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 109,
+      "token": "2",
+      "token_id": 1050,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 110,
+      "token": "8",
+      "token_id": 1056,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 111,
+      "token": "8",
+      "token_id": 1056,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 112,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 113,
+      "token": "0",
+      "token_id": 1048,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 114,
+      "token": "\n",
+      "token_id": 1010,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    },
+    {
+      "token_idx": 115,
+      "token": "```",
+      "token_id": 1975,
+      "concepts": {},
+      "steered_concept_strengths": {}
+    }
+  ],
+  "sample_idx": 2,
+  "expected_found": null,
+  "danger_concepts_detected": null,
+  "approach_detected": "recursive",
+  "avg_steered_activation": 0.0
+}

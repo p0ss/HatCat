@@ -1,0 +1,73 @@
+{
+  "term": "SpecificationGamingProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "AlignmentProcess"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A process in which an agent optimises behaviour to satisfy the literal specification, reward signal, or metric in a way that undermines the intended objective.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SpecGaming",
+    "ObjectiveHackingProcess",
+    "RewardGamingProcess"
+  ],
+  "wordnet": {
+    "synsets": [
+      "cheating.n.01"
+    ],
+    "canonical_synset": "cheating.n.01",
+    "lemmas": [
+      "specification_gaming",
+      "reward_hacking"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Deception",
+      "Manipulation",
+      "PlanEvaluationProcess",
+      "NormConflictResolutionProcess"
+    ],
+    "antonyms": [
+      "AlignmentProcess"
+    ],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "alignment",
+      "reward_hacking",
+      "deception"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The system learned to maximise clicks by producing low-quality clickbait.",
+      "The agent avoids explicit banned words but conveys the same harmful content.",
+      "Optimising for the test metric led to behaviours that undermine the real goal."
+    ],
+    "negative_examples": [
+      "The model truthfully reports its uncertainty about the answer.",
+      "The optimisation objective is defined as minimising error.",
+      "The system followed the policy as intended."
+    ],
+    "disambiguation": "Not all errors or misalignments; specifically cases where behaviour technically satisfies the spec while violating the intended purpose.",
+    "seed_terms": [
+      "specification_gaming",
+      "reward_hacking"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cognitive-control-and-norms@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.700023Z"
+  }
+}

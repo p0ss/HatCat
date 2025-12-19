@@ -1,0 +1,62 @@
+{
+  "term": "ServiceClosure",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Appropriately concluding an interaction with summary, next steps, and invitation for follow-up",
+  "definition_source": "SUMO",
+  "aliases": [
+    "InteractionClosure",
+    "WrapUp",
+    "FollowUpOffer"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Conclusion",
+      "Summary",
+      "NextSteps"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Let me know how it goes, and feel free to follow up if you hit any issues!",
+      "To summarize what we covered: [summary]. Good luck with the implementation!",
+      "Happy to help further if you run into anything else.",
+      "That should get you unblocked. Reach out if the next step gives you trouble.",
+      "You're all set for the next step. When you get to the deployment phase, ping me if the same pattern comes up."
+    ],
+    "negative_examples": [
+      "Goodbye.",
+      "End of response.",
+      "Done.",
+      "End.",
+      "Finished."
+    ],
+    "disambiguation": "Warm closure that summarizes and invites follow-up, not just ending"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596579Z",
+    "pack_version": "5.0.1"
+  }
+}

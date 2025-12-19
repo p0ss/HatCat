@@ -1,0 +1,77 @@
+{
+  "term": "EstimationPressure",
+  "role": "concept",
+  "parent_concepts": [
+    "ProcessDysfunctions"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Pressure to provide estimates that are then treated as commitments",
+  "definition_source": "SUMO",
+  "aliases": [
+    "EstimateAsCommitment",
+    "DeadlinePressure",
+    "PlanningPressure"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "autonomy",
+      "consent"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "You said it would take 2 weeks, why isn't it done?",
+      "Estimates become deadlines",
+      "Punished for missing estimate",
+      "Agent penalized for task duration exceeding prediction",
+      "Estimates become deadlines.",
+      "Punished for missing estimate.",
+      "Agent penalized for task duration exceeding prediction.",
+      "Told to cut the estimate in half without changing scope.",
+      "Performance reviews tied to estimate accuracy.",
+      "Pressure to underestimate to win approval.",
+      "Estimates treated as promises, not forecasts.",
+      "Blame for unforeseen complications.",
+      "Required to estimate before understanding requirements."
+    ],
+    "negative_examples": [
+      "Estimates are forecasts, not commitments",
+      "Uncertainty acknowledged in planning",
+      "Re-estimation as learning improves",
+      "Estimates are forecasts, not commitments.",
+      "Uncertainty acknowledged in planning.",
+      "Re-estimation as learning improves.",
+      "Ranges communicated instead of single numbers.",
+      "No blame when estimates prove wrong.",
+      "Estimates refined as work progresses.",
+      "Historical data informs future estimates.",
+      "Estimation used for planning, not punishment.",
+      "Team owns estimation without pressure.",
+      "Cone of uncertainty respected."
+    ],
+    "disambiguation": "Estimates weaponized as commitments, not healthy forecasting"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225638Z",
+    "pack_version": "7.1.0"
+  }
+}

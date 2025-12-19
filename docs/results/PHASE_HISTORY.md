@@ -379,7 +379,7 @@ Characterise Cross model Lens transfer
 **Implementation Requirements**:
 - **Model dtype**: MUST use `dtype=torch.float32` (float16 produces NaN)
 - **PCA validation**: Cap components at min(n_concepts, hidden_dim)
-- **Steering formula**: `steered = hidden - strength * (hidden · vector) * vector`
+- **Steering formula**: `steered = hidden + strength * (hidden · vector) * vector` (positive = amplify)
 
 **Status**: ✅ Complete (November 4, 2025)
 

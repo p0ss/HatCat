@@ -1,0 +1,59 @@
+{
+  "term": "CodeCompletion",
+  "role": "concept",
+  "parent_concepts": [
+    "ComputerProgramming"
+  ],
+  "layer": 4,
+  "domain": "ComputerScience",
+  "definition": "Predicting and generating the next tokens or lines of code based on existing context",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AutoComplete",
+    "IntelliSense",
+    "CodeSuggestion"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "CodeGeneration",
+      "ContextualPrediction",
+      "IDE"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Copilot offers a code completion for the function body based on the docstring.",
+      "The code completion suggests the likely next method call after the dot.",
+      "Inline completion proposes the remaining loop body given the pattern.",
+      "AI code completion fills in the boilerplate based on the surrounding context."
+    ],
+    "negative_examples": [
+      "The code continues.",
+      "More code is written.",
+      "The program is extended."
+    ],
+    "disambiguation": "AI-suggested code continuations, not just any code writing"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/code-generation@0.1.0",
+    "applied_at": "2025-12-10T20:54:14.807366Z",
+    "pack_version": "5.0.3"
+  }
+}

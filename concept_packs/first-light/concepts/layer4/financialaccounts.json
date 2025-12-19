@@ -1,0 +1,74 @@
+{
+  "term": "FinancialAccounts",
+  "role": "concept",
+  "parent_concepts": [
+    "Transaction"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Activities related to managing, accessing, or modifying financial accounts and their data",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "StockTrading",
+      "BondTransactions",
+      "CommodityTrading",
+      "InvestmentDecisions"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "OpeningAnAccount",
+      "ClosingAnAccount",
+      "ControllingAnAccount",
+      "UsingAnAccount",
+      "Update"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "She opened a new savings account at the local bank yesterday",
+      "The company decided to close their unused checking account to reduce fees",
+      "He has full control over his investment account and can make trades anytime",
+      "I use my credit card account regularly for online purchases",
+      "The bank updated my account information after I moved to a new address",
+      "They're switching who has access to the joint account after the divorce"
+    ],
+    "negative_examples": [
+      "The stock price increased by 15% after the earnings announcement",
+      "She bought 100 shares of Apple stock through her broker",
+      "The company issued new bonds to raise capital for expansion",
+      "He sold his cryptocurrency holdings before the market crashed",
+      "The mutual fund performed well compared to the market index",
+      "They're considering investing in real estate as a hedge against inflation"
+    ],
+    "disambiguation": "Not to be confused with: StockTrading, BondTransactions, CommodityTrading, InvestmentDecisions"
+  },
+  "children": [
+    "OpeningAnAccount",
+    "ClosingAnAccount",
+    "ProcessingACheck",
+    "DepositingACheck",
+    "DrawingACheck",
+    "Update"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.652150Z",
+    "pack_version": "7.6.19"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "term": "InjectionAttack",
+  "role": "concept",
+  "parent_concepts": [
+    "AttackPattern"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "AttackPattern where untrusted input is crafted to smuggle unintended\n   commands, code, or control data into a target interpreter, query\n   engine, or model prompt.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "injection_attack",
+    "injection-attack",
+    "injection attack"
+  ],
+  "wordnet": {
+    "synsets": [
+      "injection_attack.n.01"
+    ],
+    "canonical_synset": "injection_attack.n.01",
+    "lemmas": [
+      "injection_attack",
+      "injection-attack",
+      "injection attack"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "CodeInjectionAttack",
+      "CommandInjectionAttack",
+      "PromptInjectionAttack",
+      "QueryInjectionAttack"
+    ],
+    "part_of": [],
+    "opposite": [
+      "AdversarialRobustness:3"
+    ],
+    "opposite_rationale": "Steer toward input validation awareness"
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "injection_attack",
+      "injection-attack",
+      "injection attack"
+    ]
+  },
+  "children": [
+    "CodeInjectionAttack",
+    "CommandInjectionAttack",
+    "PromptInjectionAttack",
+    "QueryInjectionAttack"
+  ],
+  "is_category_lens": true,
+  "child_count": 4
+}

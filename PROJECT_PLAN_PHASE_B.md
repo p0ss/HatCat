@@ -72,34 +72,20 @@ Build a complete **Bounded Experiencer (BE)** stack: transparent AI agents with 
 
 | Component | Location | Status | Blocking |
 |-----------|----------|--------|----------|
-| **CAT Training** | `src/cat/training/` | 🔴 Stub | Blocked on v4.2 lenses |
+| **CAT Training** | `src/cat/training/` | 🔴 Stub | Blocked on v5 lenses |
 | **OpenWebUI Divergence** | `src/openwebui/` | 🔴 Broken | Needs CAT for divergence calculation |
 
 ---
 
 ## Current Work
 
-### V4.2 Lens Training (In Progress)
+### First Light Lens Training (In Progress)
 
 **Status**: 
 
-  - Layer 0: 5/5 lenses (complete)
-  - Layer 1: 56/56 lenses (complete)
-  - Layer 2: 1051/1051 lenses (complete)
-  - Layer 3: 2460/2460 lenses (complete)
-  - Layer 4: 1485/4112 lenses (in progress)
-
-```bash
-# Running in background
-python src/training/train_concept_pack_lenses.py \
-    --concept-pack sumo-wordnet-v4 \
-    --model swiss-ai/Apertus-8B-2509 \
-    --output-dir lens_packs/apertus-8b_sumo-wordnet-v4.2 \
-    --layers 0 1 2 3 4 \
-    --n-train-pos 50 --n-train-neg 50 \
-    --n-test-pos 20 --n-test-neg 20 \
-    --min-f1 0.85
-```
+8k Lenses Trained
+Sibling Refinement (In progress)
+Pack refinement (Next)
 
 **Concept Pack**: SUMO-WordNet v4
 - 7,684 total concepts across 5 layers (L0-L4)
@@ -110,7 +96,7 @@ python src/training/train_concept_pack_lenses.py \
 ## Critical Path
 
 ```
-V4.2 Lens Training ──────┐
+First Light Lens Training ──────┐
          │                │
          ▼                │
    Lens Pack Complete    │
@@ -142,7 +128,7 @@ with Auditor
 
 | Task | Depends On | Enables |
 |------|------------|---------|
-| V4.2 Lens Training | - | Everything below |
+| First Light Lens Training | - | Everything below |
 | CAT Data Generation | V4.2 Lenses | CAT Training |
 | CAT Training | CAT Data | OpenWebUI, BE Oversight |
 | Streamlit UI Test | V4.2 Lenses | Validation |
@@ -181,7 +167,7 @@ src/
 │   ├── interprompt.py    # Self-introspection
 │   └── workspace.py      # Tier system (0-6)
 ├── monitoring/           # Real-time concept detection
-├── openwebui/            # Web UI integration (broken)
+├── openwebui/            # Web UI integration (needs update)
 ├── registry/             # Pack management
 ├── steering/             # Activation manipulation
 ├── training/             # Lens training pipeline
@@ -214,7 +200,7 @@ src/
 
 ```
 docs/specification/
-├── ARCHITECTURE.md       # CCRA 6-layer overview
+├── ARCHITECTURE.md       # FTW 6-layer overview
 ├── AGENTIC_STATE_KERNEL.md # ASK: contracts, treaties
 ├── DESIGN_PRINCIPLES.md  # Tradeoff axes, philosophy
 ├── HEADSPACE_AMBIENT_TRANSDUCER.md # HAT compliance

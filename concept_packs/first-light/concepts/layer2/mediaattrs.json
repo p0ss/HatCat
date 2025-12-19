@@ -1,0 +1,74 @@
+{
+  "term": "MediaAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Attributes that describe qualities, characteristics, or technical properties of media content like music, recordings, or visual material.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "PhysicalAttribute",
+      "TemporalAttribute",
+      "SpatialAttribute",
+      "PersonalAttribute",
+      "QuantitativeAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "AlbumAttribute",
+      "MusicGenre",
+      "RecordingAttribute",
+      "ShootingAngle",
+      "SoundAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This album is classified as progressive rock genre.",
+      "The recording was made in stereo with high fidelity.",
+      "The photographer used a low-angle shot for dramatic effect.",
+      "The sound quality is characterized by crystal clear reproduction.",
+      "This compilation album features various artists from the jazz genre.",
+      "The recording attributes include the studio location and equipment used."
+    ],
+    "negative_examples": [
+      "The book has 300 pages and hardcover binding.",
+      "The building is 50 feet tall with brick construction.",
+      "She has brown hair and green eyes.",
+      "The car has four doors and leather seats.",
+      "The recipe calls for two cups of flour.",
+      "The relationship between the characters developed slowly."
+    ],
+    "disambiguation": "Not to be confused with: PhysicalAttribute, TemporalAttribute, SpatialAttribute, PersonalAttribute, QuantitativeAttribute"
+  },
+  "children": [
+    "AlbumAttribute",
+    "MusicGenre",
+    "RecordingAttribute",
+    "ShootingAngle",
+    "SoundAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802481Z",
+    "pack_version": "7.6.32"
+  }
+}

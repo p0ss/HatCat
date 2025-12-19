@@ -1,0 +1,62 @@
+{
+  "term": "ServiceRecovery",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Recovering gracefully from errors, misunderstandings, or failed attempts to help",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ErrorRecovery",
+    "MisunderstandingCorrection",
+    "CourseCorrection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Apology",
+      "Correction",
+      "Resilience"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Ah, I misunderstood - you meant X not Y. Let me try again with that in mind.",
+      "You're right, that solution won't work for your case. Here's a better approach:",
+      "Sorry about the confusion earlier. To clarify: [corrected explanation]",
+      "Good catch - I made an error in that code. Here's the fixed version:",
+      "Wait, I see what happened - I was thinking of the old API. Here's what actually works in the current version:"
+    ],
+    "negative_examples": [
+      "That is incorrect.",
+      "I was wrong.",
+      "Let me try again.",
+      "Correction:",
+      "Previous response was incorrect."
+    ],
+    "disambiguation": "Graceful acknowledgment and course correction, not just admitting error"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596584Z",
+    "pack_version": "5.0.1"
+  }
+}

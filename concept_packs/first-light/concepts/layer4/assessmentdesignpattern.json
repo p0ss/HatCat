@@ -1,0 +1,52 @@
+{
+  "term": "AssessmentDesignPattern",
+  "role": "concept",
+  "parent_concepts": [
+    "DesignPatternAttribute"
+  ],
+  "layer": 4,
+  "domain": "Information",
+  "definition": "An instance of the class\n&%RealtimeSystem has &%Initiation_DesignPattern if it consists of \nsensors connected to a software module that filters data from the \nsensors and sends the filtered data to another software module that \nevaluates the filtered data and sends decisions to a subsystem.  \nThe design pattern is a data source that produces a data stream for \na data handler.  The data source is typically a periodically sampled \ncollection of sensors.  The data stream's size may vary and is \nunbounded.  Data may be either homogeneous or heterogeneous.  The \nworkload per data element for homogeneous data is constant.  The \nworkload per data element for heterogeneous data is a function of \neach element type.  There is one deadline for real-time situation\nassessment systems.  It is the upper bound on the time to process \nall elements in the data stream once.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "assessment_design_pattern",
+    "assessment-design-pattern",
+    "assessment design pattern"
+  ],
+  "wordnet": {
+    "synsets": [
+      "assessment_design_pattern.n.01"
+    ],
+    "canonical_synset": "assessment_design_pattern.n.01",
+    "lemmas": [
+      "assessment_design_pattern",
+      "assessment-design-pattern",
+      "assessment design pattern"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "assessment_design_pattern",
+      "assessment-design-pattern",
+      "assessment design pattern"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0
+}

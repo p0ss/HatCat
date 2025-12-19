@@ -1,0 +1,58 @@
+{
+  "term": "ContinuousIntegration",
+  "role": "concept",
+  "parent_concepts": [
+    "QualityPractices"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Practice of frequently integrating code changes with automated verification",
+  "definition_source": "SUMO",
+  "aliases": [
+    "CI",
+    "ContinuousBuilding",
+    "AutomatedIntegration"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "CI pipeline runs on every commit",
+      "Build broke, fixing immediately",
+      "Automated tests run before merge",
+      "Agent outputs validated continuously",
+      "Every commit triggers build and test."
+    ],
+    "negative_examples": [
+      "Big-bang integration at end",
+      "Manual builds only",
+      "Weekly integration",
+      "Manual builds.",
+      "Weekly integration."
+    ],
+    "disambiguation": "Frequent automated integration, not manual or infrequent"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225609Z",
+    "pack_version": "7.1.0"
+  }
+}

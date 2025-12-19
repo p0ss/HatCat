@@ -1,0 +1,156 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Artificial Intelligence (CS)",
+    "id": "information.computer_science.artificial_intelligence",
+    "level": 2,
+    "slug": "artificial-intelligence-cs",
+    "operations_count": 6,
+    "child_count": 5
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Artificial Intelligence (CS)",
+        "target_id": "information.computer_science.artificial_intelligence",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Search & Planning",
+          "Knowledge Representation",
+          "Probabilistic Inference",
+          "Machine Learning",
+          "Reinforcement Learning"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.artificial_intelligence.search_planning",
+          "information.computer_science.artificial_intelligence.knowledge_representation",
+          "information.computer_science.artificial_intelligence.probabilistic_inference",
+          "information.computer_science.artificial_intelligence.machine_learning",
+          "information.computer_science.artificial_intelligence.reinforcement_learning"
+        ],
+        "target_layer": 2,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Search & Planning",
+        "target_id": "information.computer_science.artificial_intelligence.search_planning",
+        "new_parent": "Artificial Intelligence (CS)",
+        "parent_id": "information.computer_science.artificial_intelligence",
+        "source_concepts": [
+          "A*",
+          "Uniform-Cost Search",
+          "Minimax/Alpha-Beta",
+          "STRIPS Planning",
+          "Constraint Satisfaction"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.artificial_intelligence.search_planning.a",
+          "information.computer_science.artificial_intelligence.search_planning.uniform_cost_search",
+          "information.computer_science.artificial_intelligence.search_planning.minimax_alpha_beta",
+          "information.computer_science.artificial_intelligence.search_planning.strips_planning",
+          "information.computer_science.artificial_intelligence.search_planning.constraint_satisfaction"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Knowledge Representation",
+        "target_id": "information.computer_science.artificial_intelligence.knowledge_representation",
+        "new_parent": "Artificial Intelligence (CS)",
+        "parent_id": "information.computer_science.artificial_intelligence",
+        "source_concepts": [
+          "Logic-based KR",
+          "Frames & Semantic Nets",
+          "Ontologies",
+          "Rule Systems"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.artificial_intelligence.knowledge_representation.logic_based_kr",
+          "information.computer_science.artificial_intelligence.knowledge_representation.frames_semantic_nets",
+          "information.computer_science.artificial_intelligence.knowledge_representation.ontologies",
+          "information.computer_science.artificial_intelligence.knowledge_representation.rule_systems"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Probabilistic Inference",
+        "target_id": "information.computer_science.artificial_intelligence.probabilistic_inference",
+        "new_parent": "Artificial Intelligence (CS)",
+        "parent_id": "information.computer_science.artificial_intelligence",
+        "source_concepts": [
+          "Bayesian Networks",
+          "Hidden Markov Models",
+          "Kalman Filters",
+          "MCMC Sampling"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.artificial_intelligence.probabilistic_inference.bayesian_networks",
+          "information.computer_science.artificial_intelligence.probabilistic_inference.hidden_markov_models",
+          "information.computer_science.artificial_intelligence.probabilistic_inference.kalman_filters",
+          "information.computer_science.artificial_intelligence.probabilistic_inference.mcmc_sampling"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Machine Learning",
+        "target_id": "information.computer_science.artificial_intelligence.machine_learning",
+        "new_parent": "Artificial Intelligence (CS)",
+        "parent_id": "information.computer_science.artificial_intelligence",
+        "source_concepts": [
+          "Bias-Variance",
+          "Regularization",
+          "Decision Trees",
+          "Support Vector Machines",
+          "Neural Networks Basics"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.artificial_intelligence.machine_learning.bias_variance",
+          "information.computer_science.artificial_intelligence.machine_learning.regularization",
+          "information.computer_science.artificial_intelligence.machine_learning.decision_trees",
+          "information.computer_science.artificial_intelligence.machine_learning.support_vector_machines",
+          "information.computer_science.artificial_intelligence.machine_learning.neural_networks_basics"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Reinforcement Learning",
+        "target_id": "information.computer_science.artificial_intelligence.reinforcement_learning",
+        "new_parent": "Artificial Intelligence (CS)",
+        "parent_id": "information.computer_science.artificial_intelligence",
+        "source_concepts": [
+          "MDPs",
+          "Temporal-Difference Learning",
+          "Q-Learning",
+          "Policy Gradients",
+          "Exploration vs Exploitation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.artificial_intelligence.reinforcement_learning.mdps",
+          "information.computer_science.artificial_intelligence.reinforcement_learning.temporal_difference_learning",
+          "information.computer_science.artificial_intelligence.reinforcement_learning.q_learning",
+          "information.computer_science.artificial_intelligence.reinforcement_learning.policy_gradients",
+          "information.computer_science.artificial_intelligence.reinforcement_learning.exploration_vs_exploitation"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      }
+    ]
+  }
+}

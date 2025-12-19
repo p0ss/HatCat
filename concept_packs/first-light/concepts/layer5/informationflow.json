@@ -1,0 +1,59 @@
+{
+  "term": "InformationFlow",
+  "role": "concept",
+  "parent_concepts": [
+    "DiscourseStructure"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "The progression from given (known) information to new information across sentences, guiding reader processing",
+  "definition_source": "SUMO",
+  "aliases": [
+    "GivenNewStructure",
+    "InformationProgression",
+    "ThemeRheme"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ThematicProgression",
+      "TopicComment",
+      "FocusStructure"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Each sentence begins with given information and ends with new, maintaining smooth information flow.",
+      "The theme-rheme structure places the topic first, then adds new comment.",
+      "Information flows from established concepts to novel claims.",
+      "Starting with 'This result' anchors the reader before introducing implications."
+    ],
+    "negative_examples": [
+      "The sentence is long and complex.",
+      "The writing is formal in style.",
+      "The paragraph contains five sentences."
+    ],
+    "disambiguation": "How given and new information is ordered, not just information content"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/writing-discourse-structure@0.1.0",
+    "applied_at": "2025-12-10T20:54:19.492008Z",
+    "pack_version": "7.6.1"
+  }
+}

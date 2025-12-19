@@ -1,0 +1,72 @@
+{
+  "term": "FoodAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Attributes that describe characteristics, preparation methods, or qualities of food and beverages.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "LocationAttribute",
+      "TemporalAttribute",
+      "SizeAttribute",
+      "ColorAttribute",
+      "MaterialAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "CoffeeGrindAttribute",
+      "CoffeeRoastAttribute",
+      "Cuisine",
+      "PreparedFoodAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This coffee has a medium roast and coarse grind.",
+      "The restaurant specializes in authentic Italian cuisine.",
+      "I prefer my steak cooked medium-rare.",
+      "The cheese is aged and has a sharp flavor.",
+      "This wine has a full-bodied taste with fruity notes.",
+      "The bread is freshly baked and still warm."
+    ],
+    "negative_examples": [
+      "The restaurant is located downtown.",
+      "The chef graduated from culinary school.",
+      "Food prices have increased this year.",
+      "The kitchen equipment needs maintenance.",
+      "She works as a food critic.",
+      "The grocery store closes at 9 PM."
+    ],
+    "disambiguation": "Not to be confused with: LocationAttribute, TemporalAttribute, SizeAttribute, ColorAttribute, MaterialAttribute"
+  },
+  "children": [
+    "CoffeeGrindAttribute",
+    "CoffeeRoastAttribute",
+    "Cuisine",
+    "PreparedFoodAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802477Z",
+    "pack_version": "7.6.32"
+  }
+}

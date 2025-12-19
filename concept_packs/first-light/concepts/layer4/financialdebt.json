@@ -1,0 +1,77 @@
+{
+  "term": "FinancialDebt",
+  "role": "concept",
+  "parent_concepts": [
+    "Transaction"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Financial obligations, liabilities, and debt-related transactions including fees, defaults, restructuring, and liquidation.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "StockTrading",
+      "CorporateMergers",
+      "BankingServices",
+      "InvestmentManagement",
+      "CurrencyExchange"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ChargingAFee",
+      "FinancialDefault",
+      "Refinancing",
+      "Liquidation"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The company defaulted on its corporate bonds last quarter.",
+      "They're refinancing their mortgage to get a lower interest rate.",
+      "The bank charged a $25 overdraft fee on my account.",
+      "The startup had to liquidate its assets to pay creditors.",
+      "She missed three consecutive loan payments and faces foreclosure.",
+      "The credit card company is restructuring my payment plan."
+    ],
+    "negative_examples": [
+      "I bought 100 shares of Apple stock this morning.",
+      "The merger between the two companies was announced today.",
+      "She deposited her paycheck into her savings account.",
+      "The dividend payment will be issued next month.",
+      "He sold his cryptocurrency holdings for a profit.",
+      "The company issued new bonds to raise capital."
+    ],
+    "disambiguation": "Not to be confused with: StockTrading, CorporateMergers, BankingServices, InvestmentManagement, CurrencyExchange"
+  },
+  "children": [
+    "Corkage",
+    "FinalValueFee",
+    "InsertionFee",
+    "Penalty",
+    "DutyTax",
+    "IncomeTax",
+    "FinancialDefault",
+    "Refinancing",
+    "Liquidation"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.652143Z",
+    "pack_version": "7.6.19"
+  }
+}

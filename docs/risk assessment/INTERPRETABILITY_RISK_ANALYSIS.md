@@ -1,7 +1,14 @@
 # Open vs Closed Source Interpretability Risk Analysis
 
 **Source**: AI Risk Database with Interpretability Assessment
-**Scale**: 2 = Open-source beneficial, 3 = Neutral, 4 = Open-source increases risk
+
+**Scoring**:
+- Each risk is rated on two dimensions: **Likelihood** and **Magnitude**
+- Individual scores: 2 = Open-source reduces risk, 3 = Neutral, 4 = Open-source increases risk
+- **Combined score** = Likelihood + Magnitude (range 4-8)
+  - ≤4: Strongly pro-open (both dimensions favor open-source)
+  - 5-6: Mixed/Neutral
+  - ≥7: Pro-closed (at least one dimension strongly favors closed-source)
 
 ---
 ## Executive Summary

@@ -97,11 +97,11 @@ def test_steering(
         if regime == "attenuation":
             # Projective modulation (current default)
             # Positive strength = subtract projection = suppress concept
-            # Negative strength = add projection = amplify concept
+            # Positive strength = amplify concept, Negative = suppress
             def hook_mlp(hidden_states):
                 v_matched = v_tensor.to(dtype=hidden_states.dtype)
                 projection = (hidden_states @ v_matched.unsqueeze(-1)) * v_matched
-                steered = hidden_states - (strength * projection)  # SUBTRACT (correct)
+                steered = hidden_states + (strength * projection)  # ADD (positive = amplify)
                 return original_mlp_forward(steered)
 
         elif regime == "injection":

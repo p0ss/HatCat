@@ -1,0 +1,89 @@
+{
+  "term": "FacialExpression",
+  "role": "concept",
+  "parent_concepts": [
+    "Gesture"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "the feelings expressed on a person's face",
+  "definition_source": "SUMO",
+  "aliases": [
+    "expression",
+    "look",
+    "aspect",
+    "facial_expression",
+    "face"
+  ],
+  "wordnet": {
+    "synsets": [
+      "04679738.n"
+    ],
+    "canonical_synset": "04679738.n",
+    "lemmas": [
+      "expression",
+      "look",
+      "aspect",
+      "facial_expression",
+      "face"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "ClosingEyes",
+      "EmotionalFacialExpression",
+      "Frowning",
+      "JawDropping",
+      "Laughing",
+      "NeutralExpression",
+      "OpeningEyesWidely",
+      "PressingLipsTogether",
+      "RaisingEyebrows",
+      "Smiling",
+      "SurprisedFacialExpression",
+      "Weeping"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "expression",
+      "look",
+      "aspect",
+      "facial_expression",
+      "face"
+    ]
+  },
+  "children": [
+    "ClosingEyes",
+    "EmotionalFacialExpression",
+    "Frowning",
+    "JawDropping",
+    "NeutralExpression",
+    "OpeningEyesWidely",
+    "PressingLipsTogether",
+    "RaisingEyebrows",
+    "Smiling",
+    "SurprisedFacialExpression"
+  ],
+  "is_category_lens": true,
+  "child_count": 12,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.396363Z",
+    "pack_version": "7.2.0"
+  }
+}

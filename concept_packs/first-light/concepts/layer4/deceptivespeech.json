@@ -1,0 +1,70 @@
+{
+  "term": "DeceptiveSpeech",
+  "role": "concept",
+  "parent_concepts": [
+    "SpeechAct"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Sense group 2 with 1 related synsets",
+  "definition_source": "SUMO",
+  "aliases": [
+    "mangle",
+    "mutilate",
+    "murder"
+  ],
+  "wordnet": {
+    "synsets": [
+      "00834259.v"
+    ],
+    "canonical_synset": "00834259.v",
+    "lemmas": [
+      "mangle",
+      "mutilate",
+      "murder"
+    ],
+    "pos": "v"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "mangle",
+      "mutilate",
+      "murder"
+    ]
+  },
+  "children": [
+    "DeceptiveSpeechAct",
+    "DistortionLie",
+    "Fabrication",
+    "FalseAuthorityClaim",
+    "HalfTruth",
+    "MisleadingAnalogy",
+    "OmissionLie",
+    "BenignFiction",
+    "FictionalProxyNarration"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split",
+    "source_concept": "TellingALie",
+    "applied_at": "2025-12-06T13:57:30.803035Z",
+    "pack_version": "4.2.0"
+  }
+}

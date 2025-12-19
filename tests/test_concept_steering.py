@@ -81,9 +81,9 @@ def generate_with_steering(
             # output is tuple of (hidden_states,)
             hidden_states = output[0]
 
-            # Project onto concept vector and subtract
+            # Project onto concept vector and add (positive = amplify)
             projection = (hidden_states @ concept_vector.unsqueeze(-1)) * concept_vector
-            steered = hidden_states - steering_strength * projection
+            steered = hidden_states + steering_strength * projection
 
             return (steered,)
 

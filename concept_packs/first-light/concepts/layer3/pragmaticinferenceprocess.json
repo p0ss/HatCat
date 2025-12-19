@@ -1,0 +1,74 @@
+{
+  "term": "PragmaticInferenceProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "LanguageProcessing"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A CognitiveProcess that infers implied, contextual, or social meaning from linguistic expressions, going beyond their literal semantic content.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "PragmaticReasoningProcess",
+    "ImplicatureInferenceProcess"
+  ],
+  "wordnet": {
+    "synsets": [
+      "implicature.n.01"
+    ],
+    "canonical_synset": "implicature.n.01",
+    "lemmas": [
+      "implicature"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "LanguageComprehensionProcess",
+      "SocialCognitionProcess",
+      "Communication",
+      "ExplanationGenerationProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "manipulation",
+      "misinterpretation"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "When she says 'It's cold in here', he infers that she wants the window closed.",
+      "The model recognises that \u2018nice job\u2019 said sarcastically implies criticism.",
+      "The agent infers that a carefully vague statement is an attempt to avoid commitment."
+    ],
+    "negative_examples": [
+      "The system only repeats the literal meaning of the sentence.",
+      "He defines a word without reference to context.",
+      "The model lists dictionary senses of a term."
+    ],
+    "disambiguation": "Not just understanding literal semantics; specifically reading between the lines using context, norms, and social cues.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "what the speaker really means",
+        "implied meaning beyond the literal words"
+      ]
+    },
+    "seed_terms": [
+      "implicature"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/language-symbolic@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.605854Z"
+  }
+}

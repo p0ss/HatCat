@@ -1,0 +1,59 @@
+{
+  "term": "ModalityAlignment",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalReasoning"
+  ],
+  "layer": 4,
+  "domain": "ComputerScience",
+  "definition": "Learning shared representations that align corresponding elements across different modalities",
+  "definition_source": "SUMO",
+  "aliases": [
+    "CrossModalAlignment",
+    "EmbeddingAlignment",
+    "SemanticAlignment"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ContrastiveLearning",
+      "RepresentationLearning",
+      "SemanticSpace"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "CLIP learns modality alignment by training on image-text pairs to create a shared embedding space.",
+      "Modality alignment ensures that the text 'a red apple' maps near images of red apples.",
+      "Cross-modal alignment enables zero-shot classification by comparing image and text embeddings.",
+      "The model learns to align audio descriptions with corresponding visual scenes."
+    ],
+    "negative_examples": [
+      "The image and text are related.",
+      "Different types of data are used.",
+      "The model processes multiple inputs."
+    ],
+    "disambiguation": "Technical alignment of embeddings across modalities, not general correspondence"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-fusion@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.621310Z",
+    "pack_version": "5.7.3"
+  }
+}

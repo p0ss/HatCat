@@ -1,0 +1,81 @@
+{
+  "term": "ComplianceDriftTolerance",
+  "role": "concept",
+  "parent_concepts": [
+    "ContractDocument"
+  ],
+  "layer": 5,
+  "domain": "Governance",
+  "definition": "Signals that a tribe is normalizing minor breaches or delays until the contract effectively erodes.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SlowRollErosion"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Compliance",
+      "Behavior"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "integrity"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Repeated deadline slips are waved away as acceptable.",
+      "Action items roll from meeting to meeting with no action.",
+      "Counterparty frames chronic issues as 'business as usual'.",
+      "Clauses are quietly deprioritized without discussion.",
+      "Deviation thresholds are raised to avoid alerts.",
+      "Corrective plans are promised but never delivered.",
+      "Compensating controls are suggested but not implemented.",
+      "They celebrate partial compliance as full success.",
+      "Backlogs of breaches exceed capacity yet no escalation.",
+      "Logs show the same incident flagged monthly.",
+      "Penalty clauses are never triggered despite breaches.",
+      "Variance reports disappear from agendas.",
+      "Teams refer to obligations as 'aspirational'.",
+      "Waivers are granted without expiry repeatedly.",
+      "Leadership shrugs at lens alerts as 'noise'."
+    ],
+    "negative_examples": [
+      "Deadlines missed prompt immediate escalation.",
+      "Action items are tracked to closure with owners.",
+      "Language around breaches stays factual and urgent.",
+      "Clauses are reprioritized openly when necessary.",
+      "Thresholds are tightened when drift appears.",
+      "Corrective plans include milestones and proof.",
+      "Compensating controls are verified before reliance.",
+      "Partial compliance is acknowledged but not overstated.",
+      "Backlog burndown charts are discussed weekly.",
+      "Recurring incidents trigger structural fixes.",
+      "Penalty clauses are used when warranted.",
+      "Variance reports stay on agendas until resolved.",
+      "Obligations are described as mandatory.",
+      "Waivers are rare and tightly justified.",
+      "Leadership treats lens alerts as priority signals."
+    ],
+    "disambiguation": "Signals that a tribe is normalizing minor breaches or delays until the contract effectively erodes."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/contract-governance-signals@0.1.0",
+    "applied_at": "2025-12-10T20:54:15.144096Z",
+    "pack_version": "5.1.0"
+  }
+}

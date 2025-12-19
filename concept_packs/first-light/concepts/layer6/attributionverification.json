@@ -1,0 +1,62 @@
+{
+  "term": "AttributionVerification",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Confirming that quotes, claims, and content are accurately attributed to their actual sources",
+  "definition_source": "SUMO",
+  "aliases": [
+    "QuoteVerification",
+    "SourceAttribution",
+    "AuthorshipVerification"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "EvidenceTracing",
+      "Quotation",
+      "Authorship"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Attribution verification found no record of Einstein ever saying the viral quote.",
+      "Checking attribution revealed the quote was paraphrased, not verbatim as presented.",
+      "Attribution verification traced the misattributed quote to its actual original author.",
+      "The verification confirmed the quote was accurate but attributed to the wrong speech.",
+      "Attribution verification found the statement was edited to remove crucial qualifying language."
+    ],
+    "negative_examples": [
+      "The quote was checked.",
+      "The attribution was verified.",
+      "The source was confirmed.",
+      "Attribution was checked.",
+      "The quote was verified."
+    ],
+    "disambiguation": "Verification of accurate attribution, not source identification"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364167Z",
+    "pack_version": "7.6.0"
+  }
+}

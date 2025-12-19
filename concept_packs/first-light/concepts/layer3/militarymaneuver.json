@@ -1,0 +1,73 @@
+{
+  "term": "MilitaryManeuver",
+  "role": "concept",
+  "parent_concepts": [
+    "Maneuver"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "perform a movement in military or naval tactics in order to secure an advantage in attack or defense",
+  "definition_source": "SUMO",
+  "aliases": [
+    "manoeuver",
+    "maneuver",
+    "manoeuvre",
+    "operate"
+  ],
+  "wordnet": {
+    "synsets": [
+      "01109863.v",
+      "02853218.n"
+    ],
+    "canonical_synset": "01109863.v",
+    "lemmas": [
+      "manoeuver",
+      "maneuver",
+      "manoeuvre",
+      "operate"
+    ],
+    "pos": "v"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "MilitaryBlockade",
+      "MilitaryManeuver_Blockade",
+      "MilitaryManeuver_Manoeuver",
+      "TacticalManeuver"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "manoeuver",
+      "maneuver",
+      "manoeuvre",
+      "operate"
+    ]
+  },
+  "children": [
+    "MilitaryBlockade",
+    "MilitaryManeuver_Blockade",
+    "MilitaryManeuver_Manoeuver",
+    "TacticalManeuver"
+  ],
+  "is_category_lens": true,
+  "child_count": 4,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.400221Z",
+    "pack_version": "7.2.0"
+  }
+}

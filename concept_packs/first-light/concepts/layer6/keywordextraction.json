@@ -1,0 +1,59 @@
+{
+  "term": "KeywordExtraction",
+  "role": "concept",
+  "parent_concepts": [
+    "Searching"
+  ],
+  "layer": 6,
+  "domain": "ComputerScience",
+  "definition": "Identifying the most salient and discriminating terms from an information need or document for use in searching",
+  "definition_source": "SUMO",
+  "aliases": [
+    "TermExtraction",
+    "KeyTermIdentification",
+    "SalientTermSelection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "QueryFormulation",
+      "TextAnalysis",
+      "Indexing"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Keyword extraction identified 'transformer architecture' and 'attention mechanism' as key search terms.",
+      "Extracting keywords from the abstract helped formulate the literature search strategy.",
+      "Keyword extraction distinguished high-value terms from common stopwords.",
+      "The system extracted keywords using TF-IDF to identify discriminating terms."
+    ],
+    "negative_examples": [
+      "Words were selected.",
+      "Terms were chosen.",
+      "Keywords were found."
+    ],
+    "disambiguation": "Systematic identification of salient terms, not arbitrary word selection"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/information-retrieval@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.399916Z",
+    "pack_version": "5.7.1"
+  }
+}

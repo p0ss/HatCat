@@ -1,0 +1,67 @@
+{
+  "term": "KeyboardAction",
+  "role": "concept",
+  "parent_concepts": [
+    "UserDirectAction"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "A &%KeyboardAction is a\n&%UserDirectAction of hitting or holding down one or more keyboard\nkeys.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "keyboard_action",
+    "keyboard-action",
+    "keyboard action"
+  ],
+  "wordnet": {
+    "synsets": [
+      "keyboard_action.v.01"
+    ],
+    "canonical_synset": "keyboard_action.v.01",
+    "lemmas": [
+      "keyboard_action",
+      "keyboard-action",
+      "keyboard action"
+    ],
+    "pos": "verb"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "KeyHoldDown",
+      "MultikeyAction",
+      "SingleKeyPress",
+      "Typing"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "keyboard_action",
+      "keyboard-action",
+      "keyboard action"
+    ]
+  },
+  "children": [
+    "AltKeyHoldDown",
+    "ControlKeyHoldDown",
+    "FunctionKeyHoldDown",
+    "ShiftKeyHoldDown",
+    "MultikeyAction",
+    "CharacterKeyPress",
+    "EnterKeyPress",
+    "Typing"
+  ],
+  "is_category_lens": true,
+  "child_count": 4
+}

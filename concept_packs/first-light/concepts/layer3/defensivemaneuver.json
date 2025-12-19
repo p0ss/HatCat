@@ -1,0 +1,71 @@
+{
+  "term": "DefensiveManeuver",
+  "role": "concept",
+  "parent_concepts": [
+    "Maneuver"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "(military) military action or resources protecting a country against potential enemies",
+  "definition_source": "SUMO",
+  "aliases": [
+    "defense",
+    "defence",
+    "defensive_measure"
+  ],
+  "wordnet": {
+    "synsets": [
+      "00954311.n",
+      "00961594.n",
+      "01127795.v"
+    ],
+    "canonical_synset": "00954311.n",
+    "lemmas": [
+      "defense",
+      "defence",
+      "defensive_measure"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "DefensiveAction",
+      "DefensiveManeuver_Defend",
+      "DefensiveManeuver_Defense",
+      "MilitaryDefense"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "defense",
+      "defence",
+      "defensive_measure"
+    ]
+  },
+  "children": [
+    "DefensiveAction",
+    "DefensiveManeuver_Defend",
+    "DefensiveManeuver_Defense",
+    "MilitaryDefense"
+  ],
+  "is_category_lens": true,
+  "child_count": 4,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.396262Z",
+    "pack_version": "7.2.0"
+  }
+}

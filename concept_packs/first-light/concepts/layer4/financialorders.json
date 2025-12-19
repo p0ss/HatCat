@@ -1,0 +1,69 @@
+{
+  "term": "FinancialOrders",
+  "role": "concept",
+  "parent_concepts": [
+    "Transaction"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Instructions to buy, sell, or cancel transactions in financial markets or securities trading",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "PaymentProcessing",
+      "AccountTransfers",
+      "LoanTransactions",
+      "DividendPayments"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "PlacingAnOrder",
+      "FillingAnOrder",
+      "CancellingAnOrder"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The trader placed a buy order for 100 shares of Apple stock",
+      "Her broker filled the sell order at the market price",
+      "He cancelled his pending order before the market closed",
+      "The limit order was executed when the stock hit $50",
+      "She modified her stop-loss order to protect her gains",
+      "The day trader's order was partially filled during morning volatility"
+    ],
+    "negative_examples": [
+      "The company completed its merger with the competitor",
+      "He transferred money from his checking to savings account",
+      "She received her quarterly dividend payment",
+      "The bank approved his mortgage loan application",
+      "They split the restaurant bill three ways",
+      "The insurance claim was processed successfully"
+    ],
+    "disambiguation": "Not to be confused with: PaymentProcessing, AccountTransfers, LoanTransactions, DividendPayments"
+  },
+  "children": [
+    "PlacingAnOrder",
+    "FillingAnOrder",
+    "CancellingAnOrder"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.652137Z",
+    "pack_version": "7.6.19"
+  }
+}

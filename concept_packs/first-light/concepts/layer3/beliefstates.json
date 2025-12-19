@@ -1,0 +1,74 @@
+{
+  "term": "BeliefStates",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveState"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "Mental states involving what a cognitive system holds to be true, probable, or sacred, including rigid and conflicting beliefs.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "UncertaintyState",
+      "AttentionalState",
+      "EmotionalState",
+      "IntentionalState"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "BeliefState",
+      "EssentialistBelief",
+      "OutgroupHomogeneityBelief",
+      "SacredDogmatism",
+      "CognitiveDissonanceState"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "She firmly believed that all politicians were corrupt, despite evidence to the contrary.",
+      "The team held conflicting views about the project's direction, creating internal tension.",
+      "He maintained his sacred conviction that his religion was the only true path.",
+      "They assumed all members of the opposing party thought exactly alike.",
+      "The scientist struggled with evidence that contradicted her long-held theoretical beliefs.",
+      "His essentialist view was that men were naturally better at mathematics than women."
+    ],
+    "negative_examples": [
+      "She felt confused and couldn't decide what to think about the situation.",
+      "He was actively searching for more information before forming an opinion.",
+      "The data clearly showed a significant correlation between the variables.",
+      "She expressed uncertainty about whether the plan would work.",
+      "They were in the process of gathering evidence to test their hypothesis.",
+      "He admitted he didn't know enough about the topic to have a position."
+    ],
+    "disambiguation": "Not to be confused with: UncertaintyState, AttentionalState, EmotionalState, IntentionalState"
+  },
+  "children": [
+    "BeliefState",
+    "_layer",
+    "EssentialismSignal",
+    "OutgroupHomogeneityBelief",
+    "SacredDogmatism",
+    "CognitiveDissonanceState"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cognitivestate-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.097425Z",
+    "pack_version": "7.6.13"
+  }
+}

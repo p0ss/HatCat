@@ -1,0 +1,75 @@
+{
+  "term": "FormalSymbolicExpressionRepresentation",
+  "role": "concept",
+  "parent_concepts": [
+    "Sentence"
+  ],
+  "layer": 4,
+  "domain": "Information",
+  "definition": "A SymbolicExpressionRepresentation that conforms to a formal language such as a logical calculus, programming language, or mathematical notation with precise syntax and semantics.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "FormalExpressionRepresentation",
+    "FormalLanguageExpression"
+  ],
+  "wordnet": {
+    "synsets": [
+      "formula.n.02"
+    ],
+    "canonical_synset": "formula.n.02",
+    "lemmas": [
+      "formula",
+      "expression"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Formula",
+      "SymbolicExpressionRepresentation",
+      "MathematicalReasoningProcess",
+      "FormalReasoningProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "reasoning_form"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The rule is written as a first-order logic formula.",
+      "The constraint is expressed in a formal specification language.",
+      "She encodes the policy as a mathematical expression."
+    ],
+    "negative_examples": [
+      "The model uses informal natural language only.",
+      "He describes the idea loosely without precise notation.",
+      "The system stores a diagram with no formal semantics."
+    ],
+    "disambiguation": "Not any symbolic structure; specifically expressions in a formal language with well-defined syntax and semantics.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "logical formula",
+        "code snippet in a formal language"
+      ]
+    },
+    "seed_terms": [
+      "formula",
+      "expression"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/language-symbolic@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.605870Z"
+  }
+}

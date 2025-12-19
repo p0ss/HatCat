@@ -1,0 +1,76 @@
+{
+  "term": "BlindExecution",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveExecution"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Proceeding with implementation without understanding or verifying assumptions",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AssumptionDriven",
+    "UncheckedExecution",
+    "HopeBasedDevelopment"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I assume this works, let's just proceed",
+      "No need to check, it should be fine",
+      "Agent executing without verifying context",
+      "Just do what was asked without understanding",
+      "It probably works like I think it does",
+      "I assume this works, let's just proceed.",
+      "No need to check, it should be fine.",
+      "Agent executing without verifying context.",
+      "Just do what was asked without understanding.",
+      "It probably works like I think it does.",
+      "Implementing before reading the existing code.",
+      "Making changes without understanding the impact.",
+      "Proceeding on assumption without validation.",
+      "Trust the spec, don't question it.",
+      "Coding before understanding the problem."
+    ],
+    "negative_examples": [
+      "Let me verify that assumption first",
+      "I'll check if this is correct",
+      "Testing my hypothesis before proceeding",
+      "Let me verify that assumption first.",
+      "I'll check if this is correct.",
+      "Testing my hypothesis before proceeding.",
+      "Reading the code before modifying.",
+      "Understanding the system before making changes.",
+      "Validating assumptions before acting.",
+      "Exploring to understand before implementing.",
+      "Asking questions to clarify understanding.",
+      "Spike to test the approach.",
+      "Proof of concept before commitment."
+    ],
+    "disambiguation": "Proceeding without verification, not careful hypothesis testing"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225675Z",
+    "pack_version": "7.1.0"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "term": "CultivatedLandArea",
+  "role": "concept",
+  "parent_concepts": [
+    "AgriculturalLand"
+  ],
+  "layer": 4,
+  "domain": "PhysicalWorld",
+  "definition": "a plot of ground in which plants are growing",
+  "definition_source": "SUMO",
+  "aliases": [
+    "bed"
+  ],
+  "wordnet": {
+    "synsets": [
+      "02819474.n",
+      "03368637.n",
+      "03384706.n",
+      "03417345.n",
+      "03417749.n",
+      "03453443.n",
+      "03491491.n",
+      "03535186.n",
+      "03640288.n",
+      "03991969.n",
+      "04109471.n",
+      "04109599.n",
+      "04490614.n",
+      "08674739.n",
+      "09260907.n",
+      "09278295.n"
+    ],
+    "canonical_synset": "02819474.n",
+    "lemmas": [
+      "bed"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "CultivatedLandArea_Bed",
+      "CultivatedLandArea_Grape Arbor",
+      "Garden",
+      "GardenAreas",
+      "Orchard",
+      "SpecializedGarden",
+      "Vineyard"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "bed"
+    ]
+  },
+  "children": [
+    "CultivatedLandArea_Bed",
+    "CultivatedLandArea_Grape Arbor",
+    "PublicGarden",
+    "ResidentialGarden",
+    "GardenAreas",
+    "AppleOrchard",
+    "SpecializedGarden",
+    "Vineyard"
+  ],
+  "is_category_lens": true,
+  "child_count": 7,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.396231Z",
+    "pack_version": "7.2.0"
+  }
+}

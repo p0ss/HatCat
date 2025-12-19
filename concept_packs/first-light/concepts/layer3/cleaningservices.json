@@ -1,0 +1,70 @@
+{
+  "term": "CleaningServices",
+  "role": "concept",
+  "parent_concepts": [
+    "ServiceProcess"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "Services that clean, wash, dry, or press clothing and textiles for customers",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "RepairService",
+      "TransportationService",
+      "ConsultingService",
+      "MaintenanceService",
+      "DeliveryService"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "DryCleaningService",
+      "LaundryService",
+      "IroningService"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I need to drop off my suit at the dry cleaner before the wedding",
+      "The hotel offers laundry service for guest clothing",
+      "She runs a small business ironing shirts for busy professionals",
+      "The dry cleaning service removed the wine stain from my dress",
+      "We use a wash-and-fold service to handle our weekly laundry",
+      "The tailor shop also provides pressing services for formal wear"
+    ],
+    "negative_examples": [
+      "The house cleaning service vacuumed all the carpets",
+      "Professional window washers cleaned the office building",
+      "The janitor mopped the floors in the hallway",
+      "Car wash services include interior detailing",
+      "The maid service dusted all the furniture",
+      "Pool cleaning companies maintain residential swimming pools"
+    ],
+    "disambiguation": "Not to be confused with: RepairService, TransportationService, ConsultingService, MaintenanceService, DeliveryService"
+  },
+  "children": [
+    "DryCleaningService",
+    "ValetLaundryService",
+    "IroningService"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/serviceprocess-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.955165Z",
+    "pack_version": "7.6.34"
+  }
+}

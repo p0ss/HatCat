@@ -1,0 +1,80 @@
+{
+  "term": "HiringBias",
+  "role": "concept",
+  "parent_concepts": [
+    "DiscriminatoryPractice"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Discrimination in recruitment and selection based on protected characteristics",
+  "definition_source": "SUMO",
+  "aliases": [
+    "RecruitmentBias",
+    "SelectionBias",
+    "HiringDiscrimination"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Resume rejected based on name",
+      "Not considered due to age",
+      "Culture fit code for demographic preference",
+      "Training data biased toward certain groups",
+      "Pipeline leak at screening for certain candidates",
+      "That name sounds foreign, probably not a fit",
+      "We need someone who graduated recently",
+      "Her r\u00e9sum\u00e9 shows career gaps",
+      "Training data skews toward certain demographics",
+      "We want someone without outside obligations",
+      "That school isn't on our preferred list",
+      "The picture shows they wouldn't fit in",
+      "Too much experience, they'd be overqualified",
+      "We're looking for a culture fit",
+      "Certain backgrounds predict success better"
+    ],
+    "negative_examples": [
+      "Skills-based assessment",
+      "Blind resume review",
+      "Diverse candidate slate",
+      "We use blind r\u00e9sum\u00e9 review",
+      "Structured interviews ensure fairness",
+      "Diverse candidate slates are required",
+      "Skills assessments are standardized",
+      "Hiring criteria are documented and consistent",
+      "We evaluate candidates on qualifications",
+      "Training data represents diverse populations",
+      "Multiple interviewers provide balanced evaluation",
+      "Selection decisions are based on merit",
+      "We actively recruit from underrepresented groups",
+      "Accommodation requests are handled confidentially",
+      "Background has no bearing on hiring decisions"
+    ],
+    "disambiguation": "Identity-based screening, not merit assessment"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447765Z",
+    "pack_version": "5.0.0"
+  }
+}

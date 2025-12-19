@@ -1,0 +1,68 @@
+{
+  "term": "SpecDriven",
+  "role": "concept",
+  "parent_concepts": [
+    "DesignDysfunctions"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Designing strictly to specification without questioning or user validation",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SpecAsGospel",
+    "RequirementsRigidity",
+    "BlindImplementation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Spec says X so we do X",
+      "Requirements are fixed",
+      "No questioning the brief",
+      "Implementation not design",
+      "Spec-driven design delivered exactly what was specified, missing that the spec itself was wrong.",
+      "The team built exactly to spec, never noticing the spec contradicted user research findings.",
+      "Spec-driven: 'The requirements document says so' ended every discussion about user needs.",
+      "Blind implementation proceeded despite the developer noticing the spec would create usability problems.",
+      "Requirements rigidity: the outdated spec was followed even though the business context had changed.",
+      "Spec-as-gospel thinking prevented the designer from suggesting improvements to the brief."
+    ],
+    "negative_examples": [
+      "Questioning requirements",
+      "User validation of specs",
+      "Iterating on understanding",
+      "The spec was followed.",
+      "Requirements were implemented.",
+      "The document guided the work.",
+      "Specifications were used.",
+      "The requirements were clear.",
+      "The brief was referenced.",
+      "Documentation was followed."
+    ],
+    "disambiguation": "Following spec blindly, not thinking critically"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/design-practice@0.2.0",
+    "applied_at": "2025-12-10T20:54:15.507198Z",
+    "pack_version": "5.2.2"
+  }
+}

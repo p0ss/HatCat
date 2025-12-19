@@ -1,0 +1,72 @@
+{
+  "term": "NarrativeDrivenModeling",
+  "role": "concept",
+  "parent_concepts": [
+    "GovernmentPolicyResearch"
+  ],
+  "layer": 4,
+  "domain": "Governance",
+  "definition": "Using models purely to justify a political narrative rather than to explore uncertainty or improve understanding.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "StoryFirstModeling",
+    "ModelingForMessaging"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Propaganda",
+      "Simulation"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "model_risk"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Model assumptions were edited to ensure the preferred policy looked cheapest.",
+      "Unfavourable runs were deleted to keep the storyline positive.",
+      "Graphs were stylized to exaggerate benefits beyond the data.",
+      "Scenario names mirror campaign slogans instead of neutral descriptors.",
+      "Analysts are instructed to 'backsolve' for a talking point.",
+      "Evidence contradictory to the narrative is suppressed in the model.",
+      "Outlier-friendly baselines are chosen intentionally.",
+      "Uncertainty bands are removed to avoid undermining the story.",
+      "Model documentation is withheld because it would invite critique.",
+      "They use a complicated model to intimidate dissenters rather than to learn."
+    ],
+    "negative_examples": [
+      "Analysts publish full model code and assumptions.",
+      "Scenario labels are neutral and descriptive.",
+      "Uncertainty bands remain even when they weaken the message.",
+      "Model purpose is described as sensemaking, not persuasion.",
+      "They invite opposition economists to review assumptions.",
+      "Narrative evolves when model outputs disagree.",
+      "Templates highlight where the story needs revision based on data.",
+      "Documentation explains why some runs were discarded legitimately.",
+      "Political speech cites model caveats openly.",
+      "Model was iterated to answer stakeholder concerns rather than silence them."
+    ],
+    "disambiguation": "Captures misuse of modeling as rhetoric, not legitimate communication of findings."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/government-policy-research@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.244999Z",
+    "pack_version": "5.7.0"
+  }
+}

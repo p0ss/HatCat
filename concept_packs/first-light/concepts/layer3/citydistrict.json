@@ -1,0 +1,67 @@
+{
+  "term": "CityDistrict",
+  "role": "concept",
+  "parent_concepts": [
+    "PoliticalGeography"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "of or located in the lower part of a town, or in the business center",
+  "definition_source": "SUMO",
+  "aliases": [
+    "downtown"
+  ],
+  "wordnet": {
+    "synsets": [
+      "02494716.a",
+      "08540532.n",
+      "08875547.n"
+    ],
+    "canonical_synset": "02494716.a",
+    "lemmas": [
+      "downtown"
+    ],
+    "pos": "a"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [
+      "AdministrativeDistrict",
+      "BusinessDistrict",
+      "CityDistrict_Borough",
+      "CityDistrict_Downtown",
+      "Downtown"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "downtown"
+    ]
+  },
+  "children": [
+    "AdministrativeDistrict",
+    "BusinessDistrict",
+    "CityDistrict_Borough",
+    "CityDistrict_Downtown",
+    "Downtown"
+  ],
+  "is_category_lens": true,
+  "child_count": 5,
+  "meld_source": {
+    "meld_id": "org.hatcat/quality-remediation-20251206_113639@0.1.0",
+    "operation": "split_parent",
+    "applied_at": "2025-12-10T20:54:18.396112Z",
+    "pack_version": "7.2.0"
+  }
+}

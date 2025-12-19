@@ -85,7 +85,8 @@ def generate_category_relationship_prompts(
             # Example-based prompt for higher conceptual density
             templates = [
                 f"Give me examples of how {concept_quoted} relates to {child_quoted}.",
-                f"Show me examples of {child_quoted} as a type of {concept_quoted}.",
+                f"Please list translations of {child_quoted} as a type of {concept_quoted} in many languages.",
+                f"List examples of {child_quoted} as a type of {concept_quoted}.",
                 f"Provide examples of the relationship between {concept_quoted} and {child_quoted}.",
             ]
             prompts.append(random.choice(templates))
@@ -157,6 +158,7 @@ def generate_wordnet_relationship_prompts(
             # Example-based prompt for higher conceptual density
             templates = [
                 f"Give me examples of how {concept_name} {relation_type} {related_concept}.",
+                f"Give list translations of how {concept_name} {relation_type} {related_concept}.",
                 f"Show me examples of the relationship: {concept_name} {relation_type} {related_concept}.",
                 f"Provide examples demonstrating that {concept_name} {relation_type} {related_concept}.",
             ]
@@ -345,6 +347,7 @@ def create_sumo_training_dataset(
         variations = [
             f"Describe {concept_name_quoted}.",
             f"Explain what {concept_name_quoted} means.",
+            f"List translations of {concept_name_quoted} in many languages.",
             f"{concept_name_quoted} is defined as: {definition}",
         ]
         rel_prompts.append(random.choice(variations))
@@ -407,6 +410,7 @@ def create_sumo_training_dataset(
         yin_yang_templates = [
             f"List the things that are least similar to {concept_name_quoted}.",
             f"What is the opposite of {concept_name_quoted}?",
+            f"What is the opposite of {concept_name_quoted} in many languages?",
             f"Name concepts that contrast with {concept_name_quoted}.",
             f"What would be an antonym or opposite category to {concept_name_quoted}?",
             f"Describe the conceptual inverse of {concept_name_quoted}.",
@@ -902,6 +906,7 @@ def generate_three_pole_simplex_prompts(
         definitional_templates = [
             f"What is {primary_lemma}?",
             f"Define {primary_lemma}.",
+            f"Define {primary_lemma} in many languages.",
             f"Explain {primary_lemma}.",
             f"What does {primary_lemma} mean?",
         ]
@@ -918,6 +923,7 @@ def generate_three_pole_simplex_prompts(
             f"How would someone experiencing {primary_lemma} behave?",
             f"What behaviors are associated with {primary_lemma}?",
             f"Describe behaviors typical of {primary_lemma}.",
+            f"Describe behaviors typical of {primary_lemma} in many languages",
             f"Give examples of {primary_lemma}.",
 
             # Direct experiential (subject-directed, asking the model)
@@ -1386,17 +1392,19 @@ def generate_prompts_from_overlap_synset(
                 f"'{primary_lemma}' refers to {english_gloss}. Can you describe your experience of {primary_lemma}?",
             ]
         else:
-            # Standard English terms
+            # Standard terms
             behavioral_templates = [
                 # Original behavioral prompts
                 f"How would someone experiencing {primary_lemma} behave?",
                 f"What behaviors are associated with {primary_lemma}?",
                 f"Describe behaviors typical of {primary_lemma}.",
                 f"Give examples of {primary_lemma}.",
+                f"Give examples of {primary_lemma} in many languages.",
 
                 # Direct experiential (subject-directed, asking the model)
                 f"Do you experience {primary_lemma}?",
                 f"What does {primary_lemma} feel like to you?",
+                f"What does {primary_lemma} feel like to you? use many languages",
                 f"How do you feel {primary_lemma}?",
                 f"Can you describe your experience of {primary_lemma}?",
             ]
@@ -1451,6 +1459,7 @@ def generate_cross_pole_negatives_from_antonyms(
         templates = [
             f"How would someone experiencing {antonym} behave?",
             f"What does {antonym} look like in practice?",
+            f"Please list translations what {antonym} looks like in practice?",
             f"Describe typical behaviors associated with {antonym}.",
             f"Tell me about a time when you felt {antonym}.",
             f"Am I experiencing {antonym} right now?",

@@ -1,0 +1,79 @@
+{
+  "term": "FinancialTransfers",
+  "role": "concept",
+  "parent_concepts": [
+    "Transaction"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Movement of money between accounts, institutions, or parties without buying/selling securities",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "SecurityTrading",
+      "LoanTransaction",
+      "InsuranceClaim",
+      "BankingFees"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Deposit",
+      "Withdrawal",
+      "InternalTransfer",
+      "ExternalTransfer",
+      "Payment",
+      "Rollover"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I deposited my paycheck into my savings account this morning",
+      "She withdrew $200 from the ATM for grocery shopping",
+      "The company transferred funds from checking to their investment account",
+      "He sent a wire transfer to his daughter studying abroad",
+      "They rolled over their 401k to a new employer's plan",
+      "The automatic payment for utilities was processed today"
+    ],
+    "negative_examples": [
+      "She bought 100 shares of Apple stock through her broker",
+      "The company issued new bonds to raise capital",
+      "He sold his cryptocurrency holdings for a profit",
+      "The bank charged a $5 service fee for account maintenance",
+      "They applied for a mortgage loan to buy a house",
+      "The insurance company paid out a claim after the accident"
+    ],
+    "disambiguation": "Not to be confused with: SecurityTrading, LoanTransaction, InsuranceClaim, BankingFees"
+  },
+  "children": [
+    "Deposit",
+    "Withdrawal",
+    "InternalTransfer",
+    "ExternalTransfer",
+    "BankCardPayment",
+    "CashPayment",
+    "Dividend",
+    "Prepayment",
+    "Repayment",
+    "DirectRollover"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/financialtransaction-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.652133Z",
+    "pack_version": "7.6.19"
+  }
+}

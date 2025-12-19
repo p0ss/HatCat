@@ -1,0 +1,70 @@
+{
+  "term": "IndustryAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Attributes that classify objects, materials, or organizations by their industrial, commercial, or technical characteristics.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "PhysicalAttribute",
+      "TemporalAttribute",
+      "LocationAttribute",
+      "QuantityAttribute",
+      "QualityAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ArtifactAttribute",
+      "IndustryAttribute",
+      "HazardousMaterialTransportAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The pharmaceutical company obtained FDA approval for its new drug.",
+      "This steel meets automotive industry grade specifications.",
+      "The chemical is classified as a Class 3 flammable liquid for shipping.",
+      "The textile manufacturer specializes in organic cotton production.",
+      "The software company focuses on enterprise-level security solutions.",
+      "These components are rated for aerospace industry standards."
+    ],
+    "negative_examples": [
+      "The red car was parked outside the building.",
+      "She felt happy about her promotion at work.",
+      "The temperature reached 85 degrees yesterday.",
+      "The book contains 300 pages of historical information.",
+      "He lives in a two-story house with a garden.",
+      "The movie lasted for two hours and fifteen minutes."
+    ],
+    "disambiguation": "Not to be confused with: PhysicalAttribute, TemporalAttribute, LocationAttribute, QuantityAttribute, QualityAttribute"
+  },
+  "children": [
+    "ArtifactAttribute",
+    "IndustryAttribute",
+    "HazardousMaterialTransportAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802488Z",
+    "pack_version": "7.6.32"
+  }
+}

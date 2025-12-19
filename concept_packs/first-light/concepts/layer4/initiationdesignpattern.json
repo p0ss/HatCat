@@ -1,0 +1,52 @@
+{
+  "term": "InitiationDesignPattern",
+  "role": "concept",
+  "parent_concepts": [
+    "DesignPatternAttribute"
+  ],
+  "layer": 4,
+  "domain": "Information",
+  "definition": "An instance of the class\n&%RealtimeSystem has &%Initiation_DesignPattern if it consists of \none software module and the actuators it commands.  The design pattern \nis an event source which produces events for an event handler.  The \nevent source is typically an evaluate-and-decide software module.\nThe event stream is necessarily asynchronous, or transient.  The arrival\nrate of events may vary and is unbounded.  Events may be either \nhomogeneous or heterogeneous.  The workload per event for homogeneous \nevents is constant.  The workload per event for heterogeneous events \nis a function of each event type.  There is one deadline for real-time\naction initiation systems.  It is the upper bound on the time to \ngenerate a command for the actuator.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "initiation design pattern",
+    "initiation_design_pattern",
+    "initiation-design-pattern"
+  ],
+  "wordnet": {
+    "synsets": [
+      "initiation_design_pattern.n.01"
+    ],
+    "canonical_synset": "initiation_design_pattern.n.01",
+    "lemmas": [
+      "initiation design pattern",
+      "initiation_design_pattern",
+      "initiation-design-pattern"
+    ],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [],
+    "negative_examples": [],
+    "disambiguation": "",
+    "seed_terms": [
+      "initiation design pattern",
+      "initiation_design_pattern",
+      "initiation-design-pattern"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0
+}

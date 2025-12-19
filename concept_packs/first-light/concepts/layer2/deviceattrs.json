@@ -1,0 +1,79 @@
+{
+  "term": "DeviceAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "InternalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Physical or operational characteristics that describe the configuration, state, or technical properties of devices and mechanical systems.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "PhysicalAttribute",
+      "TemporalAttribute",
+      "QualityAttribute",
+      "RelationalAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "DeviceStateAttribute",
+      "Autonomous",
+      "Backlashless",
+      "Brushless",
+      "TrackGauge",
+      "StructureAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The motor is brushless and operates autonomously.",
+      "The device switched from off to on automatically.",
+      "The railway uses standard gauge tracks for compatibility.",
+      "This backlashless gear system provides precise positioning.",
+      "The printer's current state shows it is ready and online.",
+      "The autonomous vehicle's sensors are fully operational."
+    ],
+    "negative_examples": [
+      "The car's speed increased to 60 mph.",
+      "The temperature rose by 10 degrees.",
+      "She felt happy about the successful presentation.",
+      "The red color of the stop sign was clearly visible.",
+      "The building's height measures 50 feet.",
+      "His personality is very outgoing and friendly."
+    ],
+    "disambiguation": "Not to be confused with: PhysicalAttribute, TemporalAttribute, QualityAttribute, RelationalAttribute"
+  },
+  "children": [
+    "DeviceStateAttribute",
+    "Autonomous",
+    "Backlashless",
+    "Brushless",
+    "TrackGauge",
+    "MonoCrystalline",
+    "PolyCrystalline",
+    "Fingerprint",
+    "GeometricFigure",
+    "MoleculeStructuralAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/internalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.907063Z",
+    "pack_version": "7.6.21"
+  }
+}

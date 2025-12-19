@@ -1,0 +1,59 @@
+{
+  "term": "ThematicProgression",
+  "role": "concept",
+  "parent_concepts": [
+    "DiscourseStructure"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Patterns of how themes (topics) develop across sentences - linear, constant, derived, or split progression",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ThemeDevelopment",
+    "TopicProgression",
+    "ThemePattern"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "InformationFlow",
+      "TopicStructure",
+      "ThemeRheme"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Linear progression: each sentence's rheme becomes the next sentence's theme.",
+      "Constant theme progression: 'The study found X. The study also revealed Y. The study concluded Z.'",
+      "Derived themes: multiple sentences develop themes derived from a hypertheme.",
+      "The thematic progression creates a logical chain of ideas."
+    ],
+    "negative_examples": [
+      "The paragraph has three sentences.",
+      "The topic is climate change.",
+      "The author repeats words."
+    ],
+    "disambiguation": "Systematic patterns of theme development, not just topic presence"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/writing-discourse-structure@0.1.0",
+    "applied_at": "2025-12-10T20:54:19.492016Z",
+    "pack_version": "7.6.1"
+  }
+}

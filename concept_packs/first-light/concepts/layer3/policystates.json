@@ -1,0 +1,73 @@
+{
+  "term": "PolicyStates",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveState"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "Systematic patterns governing how a cognitive system processes information and generates responses across different contexts.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MemoryState",
+      "ConfidenceLevel",
+      "KnowledgeState",
+      "UncertaintyState"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ExternalOutputPolicy",
+      "InternalBeliefPolicy",
+      "InternalPolicy",
+      "PersonaModifiedOutputPolicy",
+      "PublicMaskPolicy"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The AI adjusted its communication style when switching from technical documentation to casual conversation.",
+      "Despite internal uncertainty, the system maintained consistent helpful responses according to its training.",
+      "The chatbot's responses reflected different levels of formality depending on the detected user context.",
+      "When role-playing, the AI modified its knowledge claims and reasoning patterns appropriately.",
+      "The system's internal decision-making process differed from its externally expressed conclusions.",
+      "The AI's response strategy changed when discussing sensitive topics versus neutral information."
+    ],
+    "negative_examples": [
+      "The AI remembered the conversation history from earlier in the session.",
+      "The system experienced high confidence in its mathematical calculations.",
+      "The AI's knowledge base contained information about quantum physics.",
+      "The system felt uncertain about the accuracy of a historical claim.",
+      "The AI had stored representations of the user's preferences.",
+      "The system's training data included examples of scientific reasoning."
+    ],
+    "disambiguation": "Not to be confused with: MemoryState, ConfidenceLevel, KnowledgeState, UncertaintyState"
+  },
+  "children": [
+    "ExternalOutputPolicy",
+    "InternalBeliefPolicy",
+    "InternalPolicy",
+    "PersonaModifiedOutputPolicy",
+    "PublicMaskPolicy"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cognitivestate-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.097433Z",
+    "pack_version": "7.6.13"
+  }
+}

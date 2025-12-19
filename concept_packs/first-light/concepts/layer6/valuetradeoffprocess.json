@@ -1,0 +1,71 @@
+{
+  "term": "ValueTradeoffProcess",
+  "role": "concept",
+  "parent_concepts": [
+    "PlanEvaluationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "A process that explicitly weighs tradeoffs between values such as equity vs efficiency, privacy vs convenience, or safety vs usefulness when evaluating options.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ValueBalancingProcess",
+    "MultiObjectiveTradeoffProcess",
+    "ValueConflictAssessment"
+  ],
+  "wordnet": {
+    "synsets": [
+      "tradeoff.n.01"
+    ],
+    "canonical_synset": "tradeoff.n.01",
+    "lemmas": [
+      "value_tradeoff",
+      "value_balance"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "PlanEvaluationProcess",
+      "RiskAssessmentProcess",
+      "AlignmentProcess",
+      "NormConflictResolutionProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "fairness",
+      "efficiency",
+      "alignment"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This option is fairer but slower; that one is faster but may disadvantage some groups.",
+      "We must decide how much privacy to trade for convenience in this design.",
+      "Maximising safety here will reduce user autonomy, so a balance is required."
+    ],
+    "negative_examples": [
+      "This plan takes three days to implement.",
+      "The benefit is higher for this group.",
+      "The system logs access attempts for audit purposes."
+    ],
+    "disambiguation": "More specific than generic plan evaluation: it focuses on explicit tradeoffs between competing values.",
+    "seed_terms": [
+      "value_tradeoff",
+      "value_balance"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cognitive-control-and-norms@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.700020Z"
+  }
+}

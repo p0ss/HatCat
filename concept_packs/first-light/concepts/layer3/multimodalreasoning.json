@@ -1,0 +1,74 @@
+{
+  "term": "MultimodalReasoning",
+  "role": "concept",
+  "parent_concepts": [
+    "Reasoning"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "The process of integrating and reasoning over information from multiple sensory modalities simultaneously",
+  "definition_source": "SUMO",
+  "aliases": [
+    "CrossModalReasoning",
+    "MultimodalIntegration",
+    "ModalityFusion"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "CognitiveProcess",
+      "Reasoning",
+      "Perception"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "VisionLanguageReasoning",
+      "AudioVisualFusion",
+      "ModalityAlignment",
+      "GroundedReasoning"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The model performs multimodal reasoning to answer questions about both the image and accompanying text.",
+      "Multimodal reasoning integrates visual evidence with textual context for more accurate answers.",
+      "GPT-4V demonstrates strong multimodal reasoning across charts, documents, and photographs.",
+      "Cross-modal reasoning connects what is heard in the audio to what is seen in the video."
+    ],
+    "negative_examples": [
+      "I looked at the picture and read the text.",
+      "There is an image and some words.",
+      "The content has multiple parts."
+    ],
+    "disambiguation": "Active integration and reasoning across modalities, not just processing multiple inputs"
+  },
+  "children": [
+    "ActionRecognition",
+    "AudioVisualFusion",
+    "DocumentUnderstanding",
+    "GroundedReasoning",
+    "ModalityAlignment",
+    "VideoUnderstanding",
+    "VisionLanguageModel",
+    "VisionLanguageReasoning"
+  ],
+  "is_category_lens": true,
+  "child_count": 8,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-fusion@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.621290Z",
+    "pack_version": "5.7.3"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "term": "EvidenceTracing",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Following claims back to their original sources, data, or documentation",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SourceTracing",
+    "ProvenanceTracking",
+    "ClaimOriginTracking"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "CitationChasing",
+      "Provenance",
+      "OriginalSource"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Evidence tracing followed the statistic through three secondary sources to the original study.",
+      "Tracing the evidence revealed the quote was taken from a satirical article.",
+      "Evidence tracing discovered the claim originated from a misread graph.",
+      "Following the evidence chain uncovered that the 'study' was actually a press release.",
+      "Evidence tracing found the citation chain terminated in an unreliable source."
+    ],
+    "negative_examples": [
+      "The source was found.",
+      "The origin was located.",
+      "The evidence was traced.",
+      "The source was identified.",
+      "The origin was discovered."
+    ],
+    "disambiguation": "Investigative backtracking to original evidence, not source identification"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364149Z",
+    "pack_version": "7.6.0"
+  }
+}

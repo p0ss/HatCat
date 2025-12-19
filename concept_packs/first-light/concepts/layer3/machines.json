@@ -1,0 +1,92 @@
+{
+  "term": "Machines",
+  "role": "concept",
+  "parent_concepts": [
+    "Device"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "A device with moving mechanical parts that transmits or transforms force and motion to perform work.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ElectronicDevice",
+      "Sensor",
+      "PowerSupply",
+      "OpticalDevice",
+      "MeasurementInstrument"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Gear",
+      "GearTooth",
+      "GearTrain",
+      "Gearbox",
+      "Shaft",
+      "Rotor",
+      "Stator",
+      "Flywheel",
+      "FluidPowerDevice",
+      "MechanicalJoint",
+      "DriveComponent",
+      "Handle",
+      "Manifold",
+      "Radiator",
+      "WingDevice",
+      "SwitchDevice"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The gears in the transmission shifted smoothly as the car accelerated.",
+      "She oiled the flywheel to reduce friction in the old printing press.",
+      "The rotor spun rapidly inside the generator's housing.",
+      "The mechanical joint connecting the two shafts needed replacement.",
+      "He adjusted the gearbox settings to increase the machine's torque.",
+      "The stator remained stationary while the rotor turned at high speed."
+    ],
+    "negative_examples": [
+      "The thermometer measured the patient's temperature accurately.",
+      "She plugged the charger into the wall outlet.",
+      "The LED display showed the current time and date.",
+      "The fiber optic cable transmitted data at high speeds.",
+      "He pressed the button to activate the electronic sensor.",
+      "The battery provided power to the portable radio."
+    ],
+    "disambiguation": "Not to be confused with: ElectronicDevice, Sensor, PowerSupply, OpticalDevice, MeasurementInstrument"
+  },
+  "children": [
+    "MechanicalComponents",
+    "IndustrialDevices",
+    "GearSystems",
+    "RotationalParts",
+    "FluidPowerDevice",
+    "MechanicalJoint",
+    "DriveComponent",
+    "Handle",
+    "Manifold",
+    "Radiator",
+    "WingDevice",
+    "SwitchDevice"
+  ],
+  "is_category_lens": true,
+  "child_count": 2,
+  "meld_source": {
+    "meld_id": "org.hatcat/device-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.293972Z",
+    "pack_version": "7.6.15"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "term": "TextFeeds",
+  "role": "concept",
+  "parent_concepts": [
+    "Text"
+  ],
+  "layer": 3,
+  "domain": "Information",
+  "definition": "Streams of textual content that are automatically updated and organized for users to consume in sequence.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "StaticText",
+      "DocumentText",
+      "MessageText",
+      "ArticleText"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "NewsFeed",
+      "TopNewsFeed",
+      "MostRecentFeed",
+      "LiveTestUpdate"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I scrolled through my Twitter timeline to see the latest posts from people I follow.",
+      "The RSS feed automatically updates with new blog articles from my favorite websites.",
+      "She checked her Instagram feed to see what her friends had been posting today.",
+      "The live blog provided continuous updates about the breaking news story.",
+      "My LinkedIn feed shows professional updates and articles from my network.",
+      "The forum's recent posts feed helps me stay current with ongoing discussions."
+    ],
+    "negative_examples": [
+      "I read the entire newspaper from front to back this morning.",
+      "She wrote a detailed blog post about her vacation experiences.",
+      "The book contained fascinating stories about ancient civilizations.",
+      "He sent me a long email explaining the project requirements.",
+      "The magazine article discussed climate change in great detail.",
+      "I printed out the research paper to read it more carefully."
+    ],
+    "disambiguation": "Not to be confused with: StaticText, DocumentText, MessageText, ArticleText"
+  },
+  "children": [
+    "NewsFeed",
+    "TopNewsFeed",
+    "MostRecentFeed",
+    "LiveTestUpdate"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/text-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:05.507800Z",
+    "pack_version": "7.6.40"
+  }
+}

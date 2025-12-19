@@ -1,0 +1,74 @@
+{
+  "term": "AdditionError",
+  "role": "concept",
+  "parent_concepts": [
+    "UnfaithfulTranslation"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Translation error where content not present in the source is added to the target, introducing meaning not authorized by the original",
+  "definition_source": "SUMO",
+  "aliases": [
+    "TranslationAddition",
+    "Interpolation",
+    "UnauthorizedAddition"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "UnfaithfulTranslation",
+      "Fabrication",
+      "Accuracy"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Addition error: 'effective' was inserted where the source only said 'treatment.'",
+      "The translation added 'clearly' to strengthen a claim the author didn't make.",
+      "Unauthorized addition inserted causal language ('therefore') not present in source.",
+      "The addition introduced a time frame ('recently') not specified in the original.",
+      "Addition error: 'significant' was added to a finding described only as 'observable.'",
+      "Translation addition inserted 'proven' before 'method' without source justification.",
+      "The error added 'all' to a claim that was about some instances only.",
+      "Unauthorized addition inserted 'experts say' to give unwarranted authority.",
+      "Addition error: 'always' was added to what was originally a tendency statement.",
+      "The translation added evaluative language ('excellent') to a neutral description."
+    ],
+    "negative_examples": [
+      "Extra content was added.",
+      "The translation had additions.",
+      "More was included.",
+      "Content was added.",
+      "Extra words appeared.",
+      "The translation was longer.",
+      "Additional content existed.",
+      "Content was inserted.",
+      "Extra information was added.",
+      "The translation included more."
+    ],
+    "disambiguation": "Specific unauthorized content introduced"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/translation-localization@0.2.0",
+    "applied_at": "2025-12-10T20:54:18.841327Z",
+    "pack_version": "7.3.1"
+  }
+}

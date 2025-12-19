@@ -23,6 +23,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 # Import and patch the layer data directory before importing training functions
 from training import sumo_classifiers as sumo_classifiers_module
+from training.sumo_classifiers import get_hidden_dim
 from data.version_manifest import LensManifest
 
 
@@ -89,6 +90,14 @@ def parse_args():
                         help='Path to training_manifest.json (from migrate_lens_pack.py)')
     parser.add_argument('--force-retrain', action='store_true',
                         help='Force retraining even if lens already exists')
+    parser.add_argument('--all-layers', action='store_true',
+                        help='Extract from all layers (experimental). Classifier learns which layers matter.')
+    parser.add_argument('--multi-layer', action='store_true',
+                        help='Auto-select best layer from each third (early/mid/late). More efficient than --all-layers.')
+    parser.add_argument('--multi-layer-k', type=int, default=1,
+                        help='Number of top layers per third for --multi-layer (default: 1). '
+                             'k=1 → 3 layers, k=2 → 6 layers, k=3 → 9 layers. '
+                             'Higher k = more compute but potentially better coverage.')
 
     return parser.parse_args()
 
@@ -294,6 +303,9 @@ def main():
             sibling_refine_epochs=args.sibling_refine_epochs,
             sibling_refine_prompts=args.sibling_refine_prompts,
             only_concepts=concepts_to_train,
+            all_layers=args.all_layers,
+            multi_layer_mode=args.multi_layer,
+            multi_layer_top_k=args.multi_layer_k,
         )
     else:
         # Refine-only mode: just run sibling refinement on existing lenses
@@ -316,7 +328,7 @@ def main():
             local_files_only=True,
         )
         model.eval()
-        hidden_dim = model.config.hidden_size
+        hidden_dim = get_hidden_dim(model)
 
         for layer in layers_to_train:
             lens_dir = output_dir / f"layer{layer}"

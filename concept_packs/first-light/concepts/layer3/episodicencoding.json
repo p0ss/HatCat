@@ -1,0 +1,55 @@
+{
+  "term": "EpisodicEncoding",
+  "role": "concept",
+  "parent_concepts": [
+    "MemoryProcesses"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A memory encoding process that stores information as context-rich episodes tied to particular times, places, or situations.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "EventMemoryEncoding"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "MemoryEncoding"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "memory"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I remember the evening we first deployed the new model, including the room, people, and emotions.",
+      "The system logged the full context of the incident, not just the error code.",
+      "She stored the conversation together with the timestamp and location."
+    ],
+    "negative_examples": [
+      "He memorized the phone number without any story around it.",
+      "The system stored only aggregated statistics.",
+      "She learned the definition but not when she first encountered it."
+    ],
+    "disambiguation": "Not general memory storage; specifically encoding experiences as contextual episodes tied to a particular event."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/cog-architecture-core-packA@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.345027Z"
+  }
+}

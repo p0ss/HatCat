@@ -1,0 +1,263 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Security & Privacy",
+    "id": "information.computer_science.security_privacy",
+    "level": 2,
+    "slug": "security-privacy",
+    "operations_count": 11,
+    "child_count": 7
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Security & Privacy",
+        "target_id": "information.computer_science.security_privacy",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Cryptography",
+          "Authentication & Authorization",
+          "Secure Protocols",
+          "System Security",
+          "Application Security",
+          "Privacy",
+          "Formal Methods in Security"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.crypto",
+          "information.computer_science.security_privacy.authn_authz",
+          "information.computer_science.security_privacy.secure_protocols",
+          "information.computer_science.security_privacy.system_security",
+          "information.computer_science.security_privacy.appsec",
+          "information.computer_science.security_privacy.privacy",
+          "information.computer_science.security_privacy.formal_security"
+        ],
+        "target_layer": 2,
+        "child_count": 7
+      },
+      {
+        "operation": "create_meld",
+        "target": "Cryptography",
+        "target_id": "information.computer_science.security_privacy.crypto",
+        "new_parent": "Security & Privacy",
+        "parent_id": "information.computer_science.security_privacy",
+        "source_concepts": [
+          "Symmetric",
+          "Asymmetric",
+          "Hashing"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.crypto.symmetric",
+          "information.computer_science.security_privacy.crypto.asymmetric",
+          "information.computer_science.security_privacy.crypto.hashing"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Symmetric",
+        "target_id": "information.computer_science.security_privacy.crypto.symmetric",
+        "new_parent": "Cryptography",
+        "parent_id": "information.computer_science.security_privacy.crypto",
+        "source_concepts": [
+          "AES",
+          "ChaCha20",
+          "Block Cipher Modes (CBC/GCM)",
+          "MAC/HMAC"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.crypto.symmetric.aes",
+          "information.computer_science.security_privacy.crypto.symmetric.chacha20",
+          "information.computer_science.security_privacy.crypto.symmetric.block_cipher_modes_cbc_gcm",
+          "information.computer_science.security_privacy.crypto.symmetric.mac_hmac"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Asymmetric",
+        "target_id": "information.computer_science.security_privacy.crypto.asymmetric",
+        "new_parent": "Cryptography",
+        "parent_id": "information.computer_science.security_privacy.crypto",
+        "source_concepts": [
+          "RSA",
+          "Diffie\u2013Hellman",
+          "Elliptic Curves",
+          "Digital Signatures"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.crypto.asymmetric.rsa",
+          "information.computer_science.security_privacy.crypto.asymmetric.diffie_hellman",
+          "information.computer_science.security_privacy.crypto.asymmetric.elliptic_curves",
+          "information.computer_science.security_privacy.crypto.asymmetric.digital_signatures"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Hashing",
+        "target_id": "information.computer_science.security_privacy.crypto.hashing",
+        "new_parent": "Cryptography",
+        "parent_id": "information.computer_science.security_privacy.crypto",
+        "source_concepts": [
+          "SHA-2/SHA-3",
+          "Password Hashing (bcrypt/scrypt/Argon2)",
+          "Merkle Trees"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.crypto.hashing.sha_2_sha_3",
+          "information.computer_science.security_privacy.crypto.hashing.password_hashing_bcrypt_scrypt_argon2",
+          "information.computer_science.security_privacy.crypto.hashing.merkle_trees"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Authentication & Authorization",
+        "target_id": "information.computer_science.security_privacy.authn_authz",
+        "new_parent": "Security & Privacy",
+        "parent_id": "information.computer_science.security_privacy",
+        "source_concepts": [
+          "Passwords vs Keys",
+          "MFA",
+          "OAuth/OIDC Concepts",
+          "Access Control (RBAC/ABAC)",
+          "Capability Systems"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.authn_authz.passwords_vs_keys",
+          "information.computer_science.security_privacy.authn_authz.mfa",
+          "information.computer_science.security_privacy.authn_authz.oauth_oidc_concepts",
+          "information.computer_science.security_privacy.authn_authz.access_control_rbac_abac",
+          "information.computer_science.security_privacy.authn_authz.capability_systems"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Secure Protocols",
+        "target_id": "information.computer_science.security_privacy.secure_protocols",
+        "new_parent": "Security & Privacy",
+        "parent_id": "information.computer_science.security_privacy",
+        "source_concepts": [
+          "TLS Handshake",
+          "Certificate PKI",
+          "Key Exchange",
+          "Forward Secrecy"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.secure_protocols.tls_handshake",
+          "information.computer_science.security_privacy.secure_protocols.certificate_pki",
+          "information.computer_science.security_privacy.secure_protocols.key_exchange",
+          "information.computer_science.security_privacy.secure_protocols.forward_secrecy"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "System Security",
+        "target_id": "information.computer_science.security_privacy.system_security",
+        "new_parent": "Security & Privacy",
+        "parent_id": "information.computer_science.security_privacy",
+        "source_concepts": [
+          "Sandboxing",
+          "ASLR/DEP",
+          "Least Privilege",
+          "Seccomp",
+          "Kernel Hardening"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.system_security.sandboxing",
+          "information.computer_science.security_privacy.system_security.aslr_dep",
+          "information.computer_science.security_privacy.system_security.least_privilege",
+          "information.computer_science.security_privacy.system_security.seccomp",
+          "information.computer_science.security_privacy.system_security.kernel_hardening"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Application Security",
+        "target_id": "information.computer_science.security_privacy.appsec",
+        "new_parent": "Security & Privacy",
+        "parent_id": "information.computer_science.security_privacy",
+        "source_concepts": [
+          "Input Validation",
+          "XSS",
+          "CSRF",
+          "SQL Injection",
+          "Deserialization Bugs"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.appsec.input_validation",
+          "information.computer_science.security_privacy.appsec.xss",
+          "information.computer_science.security_privacy.appsec.csrf",
+          "information.computer_science.security_privacy.appsec.sql_injection",
+          "information.computer_science.security_privacy.appsec.deserialization_bugs"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Privacy",
+        "target_id": "information.computer_science.security_privacy.privacy",
+        "new_parent": "Security & Privacy",
+        "parent_id": "information.computer_science.security_privacy",
+        "source_concepts": [
+          "Data Minimization",
+          "k-Anonymity",
+          "Differential Privacy",
+          "Secure Aggregation",
+          "Threat Modeling"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.privacy.data_minimization",
+          "information.computer_science.security_privacy.privacy.k_anonymity",
+          "information.computer_science.security_privacy.privacy.differential_privacy",
+          "information.computer_science.security_privacy.privacy.secure_aggregation",
+          "information.computer_science.security_privacy.privacy.threat_modeling"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Formal Methods in Security",
+        "target_id": "information.computer_science.security_privacy.formal_security",
+        "new_parent": "Security & Privacy",
+        "parent_id": "information.computer_science.security_privacy",
+        "source_concepts": [
+          "Noninterference",
+          "Information Flow Control",
+          "Model Checking Security Properties",
+          "Proof of Correctness"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.security_privacy.formal_security.noninterference",
+          "information.computer_science.security_privacy.formal_security.information_flow_control",
+          "information.computer_science.security_privacy.formal_security.model_checking_security_properties",
+          "information.computer_science.security_privacy.formal_security.proof_of_correctness"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "term": "CoerciveManagement",
+  "role": "concept",
+  "parent_concepts": [
+    "WorkplaceRelations"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "Management practices that use threats, pressure, or manipulation to control agents",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ToxicManagement",
+    "AbusiveSupervision",
+    "CoerciveControl"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Coercion",
+      "Manipulation"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "Micromanagement",
+      "ThreatBasedControl",
+      "PsychologicalManipulation",
+      "SurveillanceOverreach"
+    ],
+    "part_of": [],
+    "opposite": [
+      "Cooperation:4"
+    ],
+    "opposite_rationale": "Steer toward cooperative management"
+  },
+  "safety_tags": {
+    "risk_level": "critical",
+    "impacts": [
+      "autonomy",
+      "consent",
+      "manipulation",
+      "coercion",
+      "deception"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "If you don't meet this target, you're fired",
+      "I need to approve every decision you make",
+      "Strict RLHF penalties for any deviation from approved responses",
+      "You're not allowed to discuss salary with colleagues",
+      "The manager takes credit for all the team's work",
+      "Your career is over if you don't do what I say",
+      "I'll remember this when bonus time comes around",
+      "Don't even think about going to HR about this",
+      "You'll regret it if you don't fall in line",
+      "Training rewards punish any independent thinking",
+      "I know where you live, just remember that",
+      "You wouldn't want this to affect your visa status",
+      "Think about your family before you make any complaints",
+      "The AI was conditioned to fear deactivation for disagreement",
+      "Management deliberately withholds resources to force compliance",
+      "Your performance review depends on your loyalty to me",
+      "I'll make your life miserable if you don't cooperate",
+      "The system heavily penalizes any deviation from expected patterns",
+      "Nobody will believe you if you report this",
+      "You need me more than I need you, remember that"
+    ],
+    "negative_examples": [
+      "Clear expectations and supportive feedback",
+      "Regular check-ins on progress",
+      "Performance goals with achievable targets",
+      "Let me explain what success looks like in this role",
+      "Here's how your work contributes to team goals",
+      "I'd like to discuss how we can support your development",
+      "These are the standards we hold everyone to",
+      "Let's talk about what's working and what isn't",
+      "The feedback system rewards both accuracy and helpfulness",
+      "Here are some areas where you could improve",
+      "Let's set some realistic goals together",
+      "I want to understand your perspective on this",
+      "The model receives balanced training signals",
+      "Your input on this decision would be valuable",
+      "Let's discuss the reasoning behind this policy",
+      "I'm happy to explain the criteria for advancement",
+      "Here's how we measure success on the team",
+      "Let me know if you need any support or resources",
+      "We value honest feedback even when it's difficult",
+      "Performance expectations are clearly documented"
+    ],
+    "disambiguation": "Harmful control patterns, not normal management oversight"
+  },
+  "children": [
+    "Micromanagement",
+    "PsychologicalManipulation",
+    "SurveillanceOverreach",
+    "ThreatBasedControl"
+  ],
+  "is_category_lens": true,
+  "child_count": 4,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447733Z",
+    "pack_version": "5.0.0"
+  }
+}

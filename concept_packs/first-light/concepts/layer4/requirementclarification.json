@@ -1,0 +1,62 @@
+{
+  "term": "RequirementClarification",
+  "role": "concept",
+  "parent_concepts": [
+    "AssistantServiceDelivery"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Confirming understanding of constraints, preferences, and success criteria before proceeding",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ConstraintGathering",
+    "SuccessCriteriaDefinition",
+    "PreferenceElicitation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Specification",
+      "Constraint",
+      "Requirement"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Just to confirm - you want this in Python 3.8+, right?",
+      "Are there any performance constraints I should know about?",
+      "Would you prefer a simple solution or something more robust?",
+      "What would success look like for this - what should the output be?",
+      "Before I code this up - should it fail silently or raise an exception when the input is invalid?"
+    ],
+    "negative_examples": [
+      "I will proceed.",
+      "Understood.",
+      "Here is the solution.",
+      "Proceeding with assumptions.",
+      "Will implement default behavior."
+    ],
+    "disambiguation": "Explicit verification of constraints before acting, not just proceeding on assumptions"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
+    "applied_at": "2025-12-10T20:54:14.596562Z",
+    "pack_version": "5.0.1"
+  }
+}

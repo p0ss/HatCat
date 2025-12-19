@@ -52,7 +52,7 @@ class DualAdaptiveTrainer:
         validate_lenses: bool = True,
         validation_mode: str = 'falloff',  # 'loose', 'falloff', or 'strict'
         validation_threshold: float = 0.85,  # Graduation F1 target (also used for calibration in strict mode)
-        validation_layer_idx: int = 15,  # Model layer for validation activations
+        validation_layer_idx = 15,  # Model layer(s) for activations: int, List[int], or None for all
 
         # Tiered validation thresholds (progressive strictness for 'falloff' mode)
         validation_tier1_iterations: int = 3,  # Strict tier (push for A)
@@ -63,6 +63,7 @@ class DualAdaptiveTrainer:
         # Flags
         train_activation: bool = True,
         train_text: bool = True,
+        all_layers: bool = False,  # DEPRECATED: use validation_layer_idx=None instead
 
         # Hierarchy directory for accurate domain inference
         hierarchy_dir=None,
@@ -91,13 +92,18 @@ class DualAdaptiveTrainer:
                 - 'strict': Always block on validation failure until max_iterations
             validation_threshold: Graduation F1 target (default 0.85). Also controls calibration
                                  in strict mode. Set via --min-f1 command line option.
-            validation_layer_idx: Model layer to extract activations from for validation
+            validation_layer_idx: Which layer(s) to extract activations from:
+                - int (e.g., 15): Single layer mode (default)
+                - List[int] (e.g., [4, 15, 28]): Multi-layer mode, concatenates selected layers
+                - None: All-layers mode (concatenates all layers, experimental)
             validation_tier1_iterations: Max iterations for strict tier (A-grade, falloff mode)
             validation_tier2_iterations: Max iterations for high tier (B+-grade, falloff mode)
             validation_tier3_iterations: Max iterations for medium tier (B-grade, falloff mode)
             validation_tier4_iterations: Max iterations for relaxed tier (C+-grade, falloff mode)
             train_activation: Whether to train activation lens
             train_text: Whether to train text lens
+            all_layers: If True, extract activations from all model layers concatenated.
+                       The classifier learns which layers are relevant. Experimental.
         """
         self.max_iterations = max_iterations
 
@@ -134,6 +140,12 @@ class DualAdaptiveTrainer:
         self.train_activation = train_activation
         self.train_text = train_text
         self.hierarchy_dir = hierarchy_dir
+
+        # Handle all_layers backward compatibility (deprecated)
+        if all_layers:
+            self.validation_layer_idx = None  # None = all layers mode
+        else:
+            self.validation_layer_idx = validation_layer_idx  # Can be int, List[int], or None
 
     def _grade_meets_target(self, grade: str, target: str) -> bool:
         """Check if achieved grade meets or exceeds target grade."""
@@ -281,7 +293,8 @@ class DualAdaptiveTrainer:
             generation_config['model'],
             generation_config['tokenizer'],
             test_prompts,
-            generation_config['device']
+            generation_config['device'],
+            layer_idx=self.validation_layer_idx,
         )
         gen_time = time.time() - gen_start
         print(f"  ✓ Test set ready: {len(test_prompts)} samples [{gen_time:.1f}s]")
@@ -358,7 +371,8 @@ class DualAdaptiveTrainer:
                     generation_config['model'],
                     generation_config['tokenizer'],
                     new_prompts,
-                    generation_config['device']
+                    generation_config['device'],
+                    layer_idx=self.validation_layer_idx,
                 )
                 extract_time = time.time() - extract_start
                 print(f"    ✓ Generated and extracted: {len(new_prompts)} samples [gen={gen_time*1000:.0f}ms, extract={extract_time:.1f}s]")
@@ -474,7 +488,7 @@ class DualAdaptiveTrainer:
                                     generation_config['tokenizer'],
                                     [prompt],
                                     generation_config['device'],
-                                    layer_idx=self.validation_layer_idx
+                                    layer_idx=self.validation_layer_idx,
                                 )
 
                                 # If combined extraction gave us 2 activations, take the first one
@@ -794,7 +808,7 @@ class DualAdaptiveTrainer:
                                         self.tokenizer,
                                         [prompt],
                                         device=str(self.model.device),
-                                        layer_idx=self.validation_layer_idx
+                                        layer_idx=self.validation_layer_idx,
                                     )
 
                                     # If combined extraction gave us 2 activations, take the first one

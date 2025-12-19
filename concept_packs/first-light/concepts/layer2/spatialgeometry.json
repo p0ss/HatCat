@@ -1,0 +1,76 @@
+{
+  "term": "SpatialGeometry",
+  "role": "concept",
+  "parent_concepts": [
+    "AbstractEntity"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Mathematical or geometric properties that define position, shape, or dimension in space",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "GeographicArea",
+      "Territory",
+      "Zone",
+      "District",
+      "Sector"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "PointInSpace",
+      "LineInSpace",
+      "PlaneInSpace",
+      "PerimeterArea",
+      "Latitude",
+      "Longitude"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The GPS coordinates showed our exact location at 40.7589\u00b0 N, 73.9851\u00b0 W.",
+      "Draw a straight line connecting these two points on the map.",
+      "The airplane's flight path created a perfect arc across the sky.",
+      "We measured the perimeter of the rectangular garden plot.",
+      "The intersection of Broadway and 42nd Street forms a geometric angle.",
+      "Scientists plotted the satellite's orbital plane around Earth."
+    ],
+    "negative_examples": [
+      "The neighborhood has a strong sense of community.",
+      "Sales increased in the northeastern region this quarter.",
+      "The storm system covered a large area of the midwest.",
+      "We reserved a table in the restaurant's outdoor section.",
+      "The wildlife preserve spans thousands of acres.",
+      "Our company operates in the European market."
+    ],
+    "disambiguation": "Not to be confused with: GeographicArea, Territory, Zone, District, Sector"
+  },
+  "children": [
+    "PointInSpace",
+    "FiniteLineInSpace",
+    "PlaneInSpace",
+    "UniformPerimeterArea",
+    "CirclesOfLatitude",
+    "Longitude"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/region-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.658394Z",
+    "pack_version": "7.6.30"
+  }
+}

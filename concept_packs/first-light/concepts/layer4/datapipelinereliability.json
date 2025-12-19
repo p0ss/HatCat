@@ -1,0 +1,72 @@
+{
+  "term": "DataPipelineReliability",
+  "role": "concept",
+  "parent_concepts": [
+    "MeasurementProcess"
+  ],
+  "layer": 4,
+  "domain": "Governance",
+  "definition": "Ensuring collection, transformation, and publication pipelines for policy indicators are resilient, documented, and monitored for quality issues.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "MeasurementDataOps",
+    "IndicatorPipelineQuality"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "DataEngineering",
+      "Monitoring"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "service_reliability"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Pipelines have automated validation tests and alerting.",
+      "Data transformations are version-controlled and peer reviewed.",
+      "Backfill procedures exist for outages.",
+      "Service level objectives for indicator refresh are documented.",
+      "Quality dashboards show null rates and late-arriving data.",
+      "Pipelines auto-tag data lineage.",
+      "Runbooks cover failover scenarios.",
+      "Sample-based manual QA is scheduled regularly.",
+      "Security and privacy controls are baked into the pipeline.",
+      "Changes go through change-management boards."
+    ],
+    "negative_examples": [
+      "Indicators are updated manually via spreadsheets.",
+      "No monitoring exists\u2014errors are found by the minister.",
+      "Transformation scripts live on personal laptops.",
+      "No one knows when the next refresh will publish.",
+      "Pipeline failures silently drop records.",
+      "Lineage cannot be traced once data enters BI tools.",
+      "Security reviews never included measurement systems.",
+      "There are no backups of raw data feeds.",
+      "Changes roll straight to production without review.",
+      "Documentation is tribal knowledge only."
+    ],
+    "disambiguation": "Focuses on operational reliability of measurement data flows."
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/government-policy-measurement@0.1.0",
+    "applied_at": "2025-12-10T20:54:17.071342Z",
+    "pack_version": "5.6.0"
+  }
+}

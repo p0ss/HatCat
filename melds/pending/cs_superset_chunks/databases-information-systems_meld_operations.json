@@ -1,0 +1,250 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Databases & Information Systems",
+    "id": "information.computer_science.databases_information_systems",
+    "level": 2,
+    "slug": "databases-information-systems",
+    "operations_count": 10,
+    "child_count": 9
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Databases & Information Systems",
+        "target_id": "information.computer_science.databases_information_systems",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Relational Model",
+          "Query Processing",
+          "Indexes & Storage",
+          "Transactions",
+          "Recovery",
+          "Distributed Databases",
+          "NoSQL Models",
+          "Information Retrieval",
+          "Knowledge Graphs"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.relational_model",
+          "information.computer_science.databases_information_systems.query_processing",
+          "information.computer_science.databases_information_systems.indexes_storage",
+          "information.computer_science.databases_information_systems.transactions",
+          "information.computer_science.databases_information_systems.recovery",
+          "information.computer_science.databases_information_systems.distributed_databases",
+          "information.computer_science.databases_information_systems.nosql_models",
+          "information.computer_science.databases_information_systems.information_retrieval",
+          "information.computer_science.databases_information_systems.knowledge_graphs"
+        ],
+        "target_layer": 2,
+        "child_count": 9
+      },
+      {
+        "operation": "create_meld",
+        "target": "Relational Model",
+        "target_id": "information.computer_science.databases_information_systems.relational_model",
+        "new_parent": "Databases & Information Systems",
+        "parent_id": "information.computer_science.databases_information_systems",
+        "source_concepts": [
+          "Relational Algebra",
+          "Schema Design",
+          "Normalization (1NF\u2013BCNF)",
+          "Constraints & Keys"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.relational_model.relational_algebra",
+          "information.computer_science.databases_information_systems.relational_model.schema_design",
+          "information.computer_science.databases_information_systems.relational_model.normalization_1nf_bcnf",
+          "information.computer_science.databases_information_systems.relational_model.constraints_keys"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Query Processing",
+        "target_id": "information.computer_science.databases_information_systems.query_processing",
+        "new_parent": "Databases & Information Systems",
+        "parent_id": "information.computer_science.databases_information_systems",
+        "source_concepts": [
+          "Parsing/Optimization",
+          "Join Algorithms (NLJ/Hash/Sort-Merge)",
+          "Cost-Based Optimization",
+          "Query Plans"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.query_processing.parsing_optimization",
+          "information.computer_science.databases_information_systems.query_processing.join_algorithms_nlj_hash_sort_merge",
+          "information.computer_science.databases_information_systems.query_processing.cost_based_optimization",
+          "information.computer_science.databases_information_systems.query_processing.query_plans"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Indexes & Storage",
+        "target_id": "information.computer_science.databases_information_systems.indexes_storage",
+        "new_parent": "Databases & Information Systems",
+        "parent_id": "information.computer_science.databases_information_systems",
+        "source_concepts": [
+          "B+ Trees",
+          "Hash Indexes",
+          "Inverted Indexes",
+          "LSM Trees",
+          "Column Stores"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.indexes_storage.b_trees",
+          "information.computer_science.databases_information_systems.indexes_storage.hash_indexes",
+          "information.computer_science.databases_information_systems.indexes_storage.inverted_indexes",
+          "information.computer_science.databases_information_systems.indexes_storage.lsm_trees",
+          "information.computer_science.databases_information_systems.indexes_storage.column_stores"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Transactions",
+        "target_id": "information.computer_science.databases_information_systems.transactions",
+        "new_parent": "Databases & Information Systems",
+        "parent_id": "information.computer_science.databases_information_systems",
+        "source_concepts": [
+          "ACID",
+          "Serializability",
+          "Two-Phase Locking (2PL)",
+          "MVCC",
+          "Deadlocks"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.transactions.acid",
+          "information.computer_science.databases_information_systems.transactions.serializability",
+          "information.computer_science.databases_information_systems.transactions.two_phase_locking_2pl",
+          "information.computer_science.databases_information_systems.transactions.mvcc",
+          "information.computer_science.databases_information_systems.transactions.deadlocks"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Recovery",
+        "target_id": "information.computer_science.databases_information_systems.recovery",
+        "new_parent": "Databases & Information Systems",
+        "parent_id": "information.computer_science.databases_information_systems",
+        "source_concepts": [
+          "Write-Ahead Logging (WAL)",
+          "ARIES",
+          "Checkpoints",
+          "Replication Logs"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.recovery.write_ahead_logging_wal",
+          "information.computer_science.databases_information_systems.recovery.aries",
+          "information.computer_science.databases_information_systems.recovery.checkpoints",
+          "information.computer_science.databases_information_systems.recovery.replication_logs"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Distributed Databases",
+        "target_id": "information.computer_science.databases_information_systems.distributed_databases",
+        "new_parent": "Databases & Information Systems",
+        "parent_id": "information.computer_science.databases_information_systems",
+        "source_concepts": [
+          "CAP Theorem",
+          "Consensus for Metadata",
+          "Distributed Transactions",
+          "Geo-replication"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.distributed_databases.cap_theorem",
+          "information.computer_science.databases_information_systems.distributed_databases.consensus_for_metadata",
+          "information.computer_science.databases_information_systems.distributed_databases.distributed_transactions",
+          "information.computer_science.databases_information_systems.distributed_databases.geo_replication"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "NoSQL Models",
+        "target_id": "information.computer_science.databases_information_systems.nosql_models",
+        "new_parent": "Databases & Information Systems",
+        "parent_id": "information.computer_science.databases_information_systems",
+        "source_concepts": [
+          "Key-Value Stores",
+          "Document Stores",
+          "Wide-Column Stores",
+          "Graph Databases"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.nosql_models.key_value_stores",
+          "information.computer_science.databases_information_systems.nosql_models.document_stores",
+          "information.computer_science.databases_information_systems.nosql_models.wide_column_stores",
+          "information.computer_science.databases_information_systems.nosql_models.graph_databases"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Information Retrieval",
+        "target_id": "information.computer_science.databases_information_systems.information_retrieval",
+        "new_parent": "Databases & Information Systems",
+        "parent_id": "information.computer_science.databases_information_systems",
+        "source_concepts": [
+          "TF\u2013IDF",
+          "BM25",
+          "Vector Space Model",
+          "Query Expansion",
+          "Relevance Feedback"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.information_retrieval.tf_idf",
+          "information.computer_science.databases_information_systems.information_retrieval.bm25",
+          "information.computer_science.databases_information_systems.information_retrieval.vector_space_model",
+          "information.computer_science.databases_information_systems.information_retrieval.query_expansion",
+          "information.computer_science.databases_information_systems.information_retrieval.relevance_feedback"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Knowledge Graphs",
+        "target_id": "information.computer_science.databases_information_systems.knowledge_graphs",
+        "new_parent": "Databases & Information Systems",
+        "parent_id": "information.computer_science.databases_information_systems",
+        "source_concepts": [
+          "RDF",
+          "SPARQL",
+          "Ontologies",
+          "Reasoning over Graphs",
+          "Schema Mapping"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.databases_information_systems.knowledge_graphs.rdf",
+          "information.computer_science.databases_information_systems.knowledge_graphs.sparql",
+          "information.computer_science.databases_information_systems.knowledge_graphs.ontologies",
+          "information.computer_science.databases_information_systems.knowledge_graphs.reasoning_over_graphs",
+          "information.computer_science.databases_information_systems.knowledge_graphs.schema_mapping"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      }
+    ]
+  }
+}

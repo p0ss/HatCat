@@ -1,0 +1,62 @@
+{
+  "term": "ClaimExtraction",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Identifying specific, verifiable assertions within content that can be fact-checked",
+  "definition_source": "SUMO",
+  "aliases": [
+    "ClaimIdentification",
+    "AssertionExtraction",
+    "CheckableClaimDetection"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "TextAnalysis",
+      "Propositions",
+      "Assertions"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Claim extraction identified 'unemployment fell 20% last year' as a verifiable factual claim.",
+      "The system extracted the checkable claim from the opinion-laden surrounding text.",
+      "Claim extraction distinguished factual assertions from rhetorical statements and predictions.",
+      "Extracting claims separated numerical claims from qualitative characterizations.",
+      "Claim extraction isolated the specific verifiable assertion from the broader argument."
+    ],
+    "negative_examples": [
+      "Claims were found.",
+      "Statements were identified.",
+      "The content was analyzed.",
+      "Claims were extracted.",
+      "Assertions were noted."
+    ],
+    "disambiguation": "Identification of specific verifiable assertions, not general analysis"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364136Z",
+    "pack_version": "7.6.0"
+  }
+}

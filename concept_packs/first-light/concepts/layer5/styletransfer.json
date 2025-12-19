@@ -1,0 +1,59 @@
+{
+  "term": "StyleTransfer",
+  "role": "concept",
+  "parent_concepts": [
+    "VisualContentGeneration"
+  ],
+  "layer": 5,
+  "domain": "ComputerScience",
+  "definition": "Applying the artistic style of one image to the content of another image",
+  "definition_source": "SUMO",
+  "aliases": [
+    "NeuralStyleTransfer",
+    "ArtisticStyleTransfer",
+    "StyleTransformation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ImageToImage",
+      "FeatureExtraction",
+      "ArtisticRendering"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Neural style transfer renders the photo in the style of Van Gogh's Starry Night.",
+      "Style transfer separates content from style using VGG feature representations.",
+      "The app applies real-time style transfer to create artistic video effects.",
+      "AdaIN enables fast arbitrary style transfer without per-style training."
+    ],
+    "negative_examples": [
+      "The image looks artistic.",
+      "A filter was applied.",
+      "The photo was stylized."
+    ],
+    "disambiguation": "Neural network-based style application, not photo filters or manual artistic rendering"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-generation@0.2.1",
+    "applied_at": "2025-12-10T20:54:17.736042Z",
+    "pack_version": "5.8.0"
+  }
+}

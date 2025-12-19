@@ -1,0 +1,82 @@
+{
+  "term": "ImageToImage",
+  "role": "concept",
+  "parent_concepts": [
+    "VisualContentGeneration"
+  ],
+  "layer": 5,
+  "domain": "ComputerScience",
+  "definition": "Transforming an input image into a modified output image guided by text or reference images",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Img2Img",
+    "ImageTransformation",
+    "ImageTranslation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "TextToImage",
+      "ImageEditing",
+      "StyleTransfer"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "manipulation",
+      "misinformation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Image-to-image translation transforms sketches into photorealistic renders.",
+      "Img2img with ControlNet maintains the pose while changing the scene entirely.",
+      "The model performs image-to-image translation from day scenes to night.",
+      "Pix2pix learns paired mappings like edges to photos or labels to facades.",
+      "Image-to-image translation transformed the sketch into a photorealistic rendering.",
+      "The I2I model converted the photograph to a different artistic style while preserving structure.",
+      "Image-to-image enables transforming real photos into synthetic variants.",
+      "ControlNet guides image generation with structural input from source images.",
+      "Image-to-image translation can modify photographs to show things that weren't there.",
+      "The model performs semantic image editing while maintaining realism.",
+      "I2I transformation changed the person's appearance while keeping the pose.",
+      "Image-to-image enables creating modified versions of real photographs.",
+      "The image translation model converts between visual domains with high fidelity.",
+      "Image-to-image techniques enable sophisticated photo manipulation."
+    ],
+    "negative_examples": [
+      "The image was edited.",
+      "I changed the picture.",
+      "The photo was modified.",
+      "The image was transformed.",
+      "One image became another.",
+      "The image was modified.",
+      "Image conversion occurred.",
+      "The picture was changed.",
+      "Image-to-image ran.",
+      "The visual was altered.",
+      "The image was processed.",
+      "One picture made another.",
+      "The image was converted."
+    ],
+    "disambiguation": "AI transformation using generative models, not traditional image editing"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-generation@0.2.1",
+    "applied_at": "2025-12-10T20:54:17.736033Z",
+    "pack_version": "5.8.0"
+  }
+}

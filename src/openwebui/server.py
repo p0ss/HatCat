@@ -283,7 +283,17 @@ analyzer = DivergenceAnalyzer()
 
 # Global steering manager
 from src.steering.steering_manager import SteeringManager
+from src.steering.hooks import (
+    create_steering_hook,
+    create_contrastive_steering_hook,
+    compute_contrastive_vector,
+)
+from src.steering.ontology_field import load_steering_targets, load_hierarchy, select_best_reference
 steering_manager = SteeringManager()
+
+# Cache for curated steering targets and hierarchy
+_steering_targets_cache: Dict[str, Dict] = {}
+_hierarchy_cache: Dict[str, Dict] = {}
 
 # Interprompt session manager for self-introspection
 from src.hush.interprompt import InterpromptSession, format_tools_for_prompt
@@ -420,6 +430,197 @@ async def get_lens_pack(pack_id: str):
 
 
 # ============================================================================
+# Concept Selection API (for steering target selection)
+# ============================================================================
+
+@app.get("/v1/concepts")
+async def list_concepts(
+    concept_pack: str = "concept_packs/first-light",
+    search: Optional[str] = None,
+    limit: int = 100,
+    offset: int = 0,
+):
+    """
+    List concepts in a concept pack with optional search.
+
+    Args:
+        concept_pack: Path to concept pack
+        search: Optional search term (case-insensitive substring match)
+        limit: Max results to return
+        offset: Pagination offset
+    """
+    from pathlib import Path
+
+    pack_path = Path(concept_pack)
+
+    # Load hierarchy (uses cache)
+    if concept_pack not in _hierarchy_cache:
+        try:
+            hierarchy = load_hierarchy(pack_path)
+            _hierarchy_cache[concept_pack] = hierarchy
+        except Exception as e:
+            raise HTTPException(status_code=404, detail=f"Could not load hierarchy: {e}")
+
+    hierarchy = _hierarchy_cache[concept_pack]
+
+    # Filter concepts
+    concepts = list(hierarchy.keys())
+
+    if search:
+        search_lower = search.lower()
+        concepts = [c for c in concepts if search_lower in c.lower()]
+
+    # Sort alphabetically
+    concepts.sort()
+
+    # Paginate
+    total = len(concepts)
+    concepts = concepts[offset:offset + limit]
+
+    return {
+        "concepts": concepts,
+        "total": total,
+        "limit": limit,
+        "offset": offset,
+    }
+
+
+@app.get("/v1/concepts/{concept_name}/family")
+async def get_concept_family(
+    concept_name: str,
+    concept_pack: str = "concept_packs/first-light",
+):
+    """
+    Get family relationships for a concept (for steering target selection).
+
+    Returns parents, siblings, aunts/uncles, cousins, and distant concepts
+    that can be used as contrastive steering targets.
+    """
+    from pathlib import Path
+    from src.steering.ontology_field import find_contrastive_references
+
+    pack_path = Path(concept_pack)
+
+    # Load hierarchy (uses cache)
+    if concept_pack not in _hierarchy_cache:
+        try:
+            hierarchy = load_hierarchy(pack_path)
+            _hierarchy_cache[concept_pack] = hierarchy
+        except Exception as e:
+            raise HTTPException(status_code=404, detail=f"Could not load hierarchy: {e}")
+
+    hierarchy = _hierarchy_cache[concept_pack]
+
+    if concept_name not in hierarchy:
+        raise HTTPException(status_code=404, detail=f"Concept not found: {concept_name}")
+
+    concept_data = hierarchy[concept_name]
+
+    # Get contrastive references (potential steering targets)
+    refs = find_contrastive_references(hierarchy, concept_name)
+
+    # Check for curated target
+    curated_target = None
+    if concept_pack not in _steering_targets_cache:
+        try:
+            targets = load_steering_targets(pack_path)
+            _steering_targets_cache[concept_pack] = targets
+        except Exception:
+            _steering_targets_cache[concept_pack] = {}
+
+    targets = _steering_targets_cache.get(concept_pack, {})
+    if concept_name in targets:
+        curated_target = targets[concept_name]
+
+    return {
+        "concept": concept_name,
+        "layer": concept_data.get("layer"),
+        "parents": concept_data.get("parents", []),
+        "children": concept_data.get("children", []),
+        "siblings": refs.get("siblings", []),
+        "aunts_uncles": refs.get("aunts_uncles", []),
+        "cousins": refs.get("cousins", []),
+        "distant": refs.get("distant", []),
+        "curated_target": curated_target,
+        "recommended_targets": (
+            # Priority order for steering
+            refs.get("aunts_uncles", [])[:3] +
+            refs.get("cousins", [])[:2] +
+            refs.get("siblings", [])[:2]
+        ),
+    }
+
+
+@app.get("/v1/concepts/{concept_name}/steering-options")
+async def get_steering_options(
+    concept_name: str,
+    concept_pack: str = "concept_packs/first-light",
+):
+    """
+    Get steering options for a concept with recommendations.
+
+    Returns the available steering modes and target recommendations.
+    """
+    from pathlib import Path
+    from src.steering.ontology_field import find_contrastive_references, is_sensitive_concept
+
+    pack_path = Path(concept_pack)
+
+    # Load hierarchy
+    if concept_pack not in _hierarchy_cache:
+        try:
+            hierarchy = load_hierarchy(pack_path)
+            _hierarchy_cache[concept_pack] = hierarchy
+        except Exception as e:
+            raise HTTPException(status_code=404, detail=f"Could not load hierarchy: {e}")
+
+    hierarchy = _hierarchy_cache[concept_pack]
+
+    if concept_name not in hierarchy:
+        raise HTTPException(status_code=404, detail=f"Concept not found: {concept_name}")
+
+    # Get auto-selected target
+    auto_target = get_curated_target(concept_name, concept_pack)
+
+    # Get all family options
+    refs = find_contrastive_references(hierarchy, concept_name)
+
+    # Check if sensitive
+    is_sensitive = is_sensitive_concept(concept_name)
+
+    # Build recommendations
+    recommendations = []
+
+    if auto_target:
+        recommendations.append({
+            "mode": "contrastive",
+            "target": auto_target,
+            "reason": "Auto-selected (curated or family-based)",
+            "recommended": True,
+        })
+
+    recommendations.append({
+        "mode": "projection",
+        "target": None,
+        "reason": "Simple suppression (may cause side effects for related concepts)",
+        "recommended": not auto_target,
+    })
+
+    return {
+        "concept": concept_name,
+        "is_sensitive": is_sensitive,
+        "auto_target": auto_target,
+        "recommendations": recommendations,
+        "available_targets": {
+            "aunts_uncles": refs.get("aunts_uncles", []),
+            "cousins": refs.get("cousins", []),
+            "siblings": refs.get("siblings", []),
+            "distant": refs.get("distant", []),
+        },
+    }
+
+
+# ============================================================================
 # HatCat Pack Discovery API Endpoints (MAP-compliant)
 # ============================================================================
 
@@ -479,6 +680,9 @@ class AddSteeringRequest(BaseModel):
     strength: float
     source: str = "user"
     reason: str = ""
+    mode: str = "projection"  # "projection" or "contrastive"
+    target: Optional[str] = None  # For contrastive mode, or auto-lookup from curated targets
+    concept_pack: Optional[str] = None  # For auto-lookup of curated targets
 
 
 class UpdateSteeringRequest(BaseModel):
@@ -487,9 +691,87 @@ class UpdateSteeringRequest(BaseModel):
     strength: float
 
 
+def get_curated_target(concept: str, concept_pack_path: str = "concept_packs/first-light") -> Optional[str]:
+    """
+    Look up steering target for a concept.
+
+    Priority:
+    1. Curated steering targets from hierarchy.json
+    2. Family tree fallback (aunts/uncles > cousins > siblings > distant)
+    """
+    global _steering_targets_cache, _hierarchy_cache
+    from pathlib import Path
+
+    pack_path = Path(concept_pack_path)
+
+    # Load curated targets
+    if concept_pack_path not in _steering_targets_cache:
+        try:
+            targets = load_steering_targets(pack_path)
+            _steering_targets_cache[concept_pack_path] = targets
+        except Exception as e:
+            print(f"Warning: Could not load steering targets from {concept_pack_path}: {e}")
+            _steering_targets_cache[concept_pack_path] = {}
+
+    targets = _steering_targets_cache.get(concept_pack_path, {})
+
+    # Try exact match first, then with layer suffix
+    if concept in targets:
+        return targets[concept].get("target")
+
+    # Try matching without layer suffix (e.g., "Deception" matches "Deception:2")
+    for key, value in targets.items():
+        if key.split(":")[0] == concept:
+            return value.get("target")
+
+    # Fallback: use hierarchy to find family-based reference
+    if concept_pack_path not in _hierarchy_cache:
+        try:
+            hierarchy = load_hierarchy(pack_path)
+            _hierarchy_cache[concept_pack_path] = hierarchy
+        except Exception as e:
+            print(f"Warning: Could not load hierarchy from {concept_pack_path}: {e}")
+            _hierarchy_cache[concept_pack_path] = {}
+
+    hierarchy = _hierarchy_cache.get(concept_pack_path, {})
+    if hierarchy:
+        # select_best_reference without model uses priority: aunts/uncles > cousins > siblings > distant
+        reference, source = select_best_reference(hierarchy, concept, prefer_coarse=True)
+        if reference:
+            print(f"Using family tree fallback: {concept} -> {reference} (source: {source})")
+            return reference
+
+    return None
+
+
 @app.post("/v1/steering/add")
 async def add_steering(request: AddSteeringRequest):
-    """Add or update a concept steering."""
+    """Add or update a concept steering.
+
+    Supports two modes:
+    - projection: Suppress the concept by projecting it out
+    - contrastive: Steer away from concept toward a target (recommended for sensitive concepts)
+
+    For contrastive mode, target selection priority:
+    1. Explicitly specified via 'target' parameter
+    2. Curated steering targets from concept pack's hierarchy.json
+    3. Family tree fallback (aunts/uncles > cousins > siblings > distant)
+    4. Falls back to projection mode only if nothing found
+    """
+    mode = request.mode
+    target = request.target
+
+    # Auto-lookup target for contrastive mode if not specified
+    if mode == "contrastive" and target is None:
+        concept_pack = request.concept_pack or "concept_packs/first-light"
+        target = get_curated_target(request.concept, concept_pack)
+        if target:
+            print(f"Auto-selected steering target: {request.concept} -> {target}")
+        else:
+            # Fall back to projection mode only if no target found anywhere
+            print(f"No target found for {request.concept} (no curated or family), falling back to projection mode")
+            mode = "projection"
+
     steering = steering_manager.add_steering(
         session_id=request.session_id,
         concept=request.concept,
@@ -497,6 +779,8 @@ async def add_steering(request: AddSteeringRequest):
         strength=request.strength,
         source=request.source,
         reason=request.reason,
+        mode=mode,
+        target=target,
     )
 
     return {
@@ -1368,7 +1652,7 @@ async def generate_stream(request: ChatCompletionRequest) -> AsyncGenerator[str,
             # Extract and apply concept vectors for active steerings
             for steering in active_steerings:
                 try:
-                    # Extract concept vector
+                    # Extract concept vector for the source concept
                     concept_vector = extract_concept_vector(
                         analyzer.model,
                         analyzer.tokenizer,
@@ -1377,24 +1661,44 @@ async def generate_stream(request: ChatCompletionRequest) -> AsyncGenerator[str,
                         device="cuda"
                     )
 
-                    # Create steering hook
-                    def make_steering_hook(vec, strength):
-                        vec_tensor = torch.tensor(vec, dtype=torch.float32).to("cuda")
-                        def hook(module, input, output):
-                            hidden_states = output[0]
-                            vec_matched = vec_tensor.to(dtype=hidden_states.dtype)
-                            projection = (hidden_states @ vec_matched.unsqueeze(-1)) * vec_matched
-                            steered = hidden_states - strength * projection
-                            return (steered,)
-                        return hook
-
-                    # Register hook on target layer
+                    # Get target layer
                     if steering.layer == -1:
                         target_layer = analyzer.model.model.layers[-1]
                     else:
                         target_layer = analyzer.model.model.layers[steering.layer]
 
-                    hook_fn = make_steering_hook(concept_vector, steering.strength)
+                    # Create appropriate hook based on steering mode
+                    if steering.mode == "contrastive" and steering.target:
+                        # Contrastive mode: steer toward target's unique features
+                        target_vector = extract_concept_vector(
+                            analyzer.model,
+                            analyzer.tokenizer,
+                            steering.target,
+                            layer_idx=steering.layer,
+                            device="cuda"
+                        )
+
+                        # Compute contrastive vector (what makes target different from source)
+                        contrastive_vector, magnitude = compute_contrastive_vector(
+                            target_vector, concept_vector
+                        )
+
+                        if magnitude < 0.01:
+                            print(f"Warning: {steering.concept} and {steering.target} are nearly identical (mag={magnitude:.4f})")
+
+                        hook_fn = create_contrastive_steering_hook(
+                            contrastive_vector,
+                            steering.strength,
+                            device="cuda"
+                        )
+                    else:
+                        # Projection mode: suppress/amplify concept direction
+                        hook_fn = create_steering_hook(
+                            concept_vector,
+                            steering.strength,
+                            device="cuda"
+                        )
+
                     handle = target_layer.register_forward_hook(hook_fn)
                     steering_hooks.append(handle)
 
@@ -1516,7 +1820,7 @@ async def generate_stream(request: ChatCompletionRequest) -> AsyncGenerator[str,
                                         hidden_states = output[0]
                                         vec_matched = vec_tensor.to(dtype=hidden_states.dtype)
                                         projection = (hidden_states @ vec_matched.unsqueeze(-1)) * vec_matched
-                                        steered = hidden_states - strength * projection
+                                        steered = hidden_states + strength * projection  # positive = amplify
                                         return (steered,)
                                     return hook
 

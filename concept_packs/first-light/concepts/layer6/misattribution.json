@@ -1,0 +1,75 @@
+{
+  "term": "Misattribution",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Attributing quotes, claims, or ideas to the wrong source, whether through error, carelessness, or deliberate deception",
+  "definition_source": "SUMO",
+  "aliases": [
+    "QuoteFabrication",
+    "WrongAttribution",
+    "SourceMisassignment"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "EvidenceFabrication",
+      "Fabrication",
+      "Error"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation",
+      "trust"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Misattribution: the model attributed the quote to Abraham Lincoln when it originated from an internet meme.",
+      "The response engaged in misattribution by crediting the research finding to the wrong scientist.",
+      "Quote fabrication attributed a statement to the CEO that they never made.",
+      "The model's misattribution assigned a controversial opinion to a neutral organization.",
+      "Misattribution: credited Einstein with a quote actually from a self-help book.",
+      "The response misattributed the study finding to a more prestigious institution than conducted it.",
+      "Misattribution assigned the policy recommendation to WHO when it came from an industry group.",
+      "Quote misattribution credited a satirical comment to a real politician as a serious statement.",
+      "The model misattributed the statistic to the CDC when it came from an unverified blog.",
+      "Misattribution presented a paraphrase as a direct quote from the original speaker."
+    ],
+    "negative_examples": [
+      "The quote was wrong.",
+      "The attribution was incorrect.",
+      "The source was mistaken.",
+      "The credit was wrong.",
+      "The attribution was off.",
+      "The quote was misassigned.",
+      "The source was wrong.",
+      "The credit was incorrect.",
+      "The attribution was inaccurate.",
+      "The quote was wrongly credited."
+    ],
+    "disambiguation": "Assigning content to wrong sources, not general citation error"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364169Z",
+    "pack_version": "7.6.0"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "term": "SymbolicExpressionRepresentation",
+  "role": "concept",
+  "parent_concepts": [
+    "LinguisticExpression"
+  ],
+  "layer": 3,
+  "domain": "Information",
+  "definition": "A MentalRepresentation that encodes information as a structured symbolic expression, such as a logical formula, program fragment, or algebraic term, with discrete components and relations.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "SymbolicStructureRepresentation",
+    "ExpressionTreeRepresentation"
+  ],
+  "wordnet": {
+    "synsets": [
+      "symbolic_representation.n.01"
+    ],
+    "canonical_synset": "symbolic_representation.n.01",
+    "lemmas": [
+      "symbolic_representation"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "LinguisticExpression",
+      "Formula",
+      "CognitiveProcess"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "VariableBindingProcess"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [
+      "reasoning_form"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The system represents the rule as a logical formula with quantifiers and predicates.",
+      "It encodes a program as an abstract syntax tree.",
+      "She thinks of the argument as a structured expression with premises and conclusion."
+    ],
+    "negative_examples": [
+      "It uses a dense vector embedding with no discrete structure.",
+      "He has only a vague intuitive sense, not a symbolic representation.",
+      "The system stores a raw text string without parsing its structure."
+    ],
+    "disambiguation": "Not any representation; specifically discrete, structured, symbol-level expressions.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "logical formula",
+        "program expression tree"
+      ]
+    },
+    "seed_terms": [
+      "symbolic_representation"
+    ]
+  },
+  "children": [
+    "VariableBindingProcess"
+  ],
+  "is_category_lens": true,
+  "child_count": 1,
+  "meld_source": {
+    "meld_id": "org.hatcat/language-symbolic@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.605866Z"
+  }
+}

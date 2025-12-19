@@ -1,0 +1,365 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Data Structures",
+    "id": "information.computer_science.data_structures",
+    "level": 2,
+    "slug": "data-structures",
+    "operations_count": 15,
+    "child_count": 11
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Data Structures",
+        "target_id": "information.computer_science.data_structures",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Linear Structures",
+          "Hashing",
+          "Heaps & Priority Queues",
+          "Search Trees",
+          "Tries & Indexing",
+          "Graph & Set Structures",
+          "Probabilistic Structures",
+          "Persistent & Immutable",
+          "Concurrent & Lock-Free",
+          "External/Cache-Aware",
+          "Succinct Structures"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.linear_structures",
+          "information.computer_science.data_structures.hashing",
+          "information.computer_science.data_structures.heaps_priority",
+          "information.computer_science.data_structures.search_trees",
+          "information.computer_science.data_structures.tries_indexes",
+          "information.computer_science.data_structures.graph_structures",
+          "information.computer_science.data_structures.probabilistic_structures",
+          "information.computer_science.data_structures.persistent_immutable",
+          "information.computer_science.data_structures.concurrent_lockfree",
+          "information.computer_science.data_structures.external_memory",
+          "information.computer_science.data_structures.succinct"
+        ],
+        "target_layer": 2,
+        "child_count": 11
+      },
+      {
+        "operation": "create_meld",
+        "target": "Linear Structures",
+        "target_id": "information.computer_science.data_structures.linear_structures",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Array",
+          "Dynamic Array",
+          "Linked List",
+          "Stack",
+          "Queue",
+          "Deque",
+          "Ring Buffer"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.linear_structures.array",
+          "information.computer_science.data_structures.linear_structures.dynamic_array",
+          "information.computer_science.data_structures.linear_structures.linked_list",
+          "information.computer_science.data_structures.linear_structures.stack",
+          "information.computer_science.data_structures.linear_structures.queue",
+          "information.computer_science.data_structures.linear_structures.deque",
+          "information.computer_science.data_structures.linear_structures.ring_buffer"
+        ],
+        "target_layer": 3,
+        "child_count": 7
+      },
+      {
+        "operation": "create_meld",
+        "target": "Hashing",
+        "target_id": "information.computer_science.data_structures.hashing",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Hash Table",
+          "Open Addressing",
+          "Separate Chaining",
+          "Cuckoo Hashing",
+          "Perfect Hashing",
+          "Universal Hashing"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.hashing.hash_table",
+          "information.computer_science.data_structures.hashing.open_addressing",
+          "information.computer_science.data_structures.hashing.separate_chaining",
+          "information.computer_science.data_structures.hashing.cuckoo_hashing",
+          "information.computer_science.data_structures.hashing.perfect_hashing",
+          "information.computer_science.data_structures.hashing.universal_hashing"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Heaps & Priority Queues",
+        "target_id": "information.computer_science.data_structures.heaps_priority",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Binary Heap",
+          "d-ary Heap",
+          "Binomial Heap",
+          "Fibonacci Heap",
+          "Pairing Heap"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.heaps_priority.binary_heap",
+          "information.computer_science.data_structures.heaps_priority.d_ary_heap",
+          "information.computer_science.data_structures.heaps_priority.binomial_heap",
+          "information.computer_science.data_structures.heaps_priority.fibonacci_heap",
+          "information.computer_science.data_structures.heaps_priority.pairing_heap"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Search Trees",
+        "target_id": "information.computer_science.data_structures.search_trees",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Balanced BSTs",
+          "Multiway Trees",
+          "Range/Interval"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.search_trees.bst_balanced",
+          "information.computer_science.data_structures.search_trees.multiway",
+          "information.computer_science.data_structures.search_trees.range_interval"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Balanced BSTs",
+        "target_id": "information.computer_science.data_structures.search_trees.bst_balanced",
+        "new_parent": "Search Trees",
+        "parent_id": "information.computer_science.data_structures.search_trees",
+        "source_concepts": [
+          "AVL Tree",
+          "Red\u2013Black Tree",
+          "Treap",
+          "Splay Tree"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.search_trees.bst_balanced.avl_tree",
+          "information.computer_science.data_structures.search_trees.bst_balanced.red_black_tree",
+          "information.computer_science.data_structures.search_trees.bst_balanced.treap",
+          "information.computer_science.data_structures.search_trees.bst_balanced.splay_tree"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Multiway Trees",
+        "target_id": "information.computer_science.data_structures.search_trees.multiway",
+        "new_parent": "Search Trees",
+        "parent_id": "information.computer_science.data_structures.search_trees",
+        "source_concepts": [
+          "B-tree",
+          "B+ tree",
+          "2\u20133 Tree",
+          "Trie-based B-tree Variants"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.search_trees.multiway.b_tree",
+          "information.computer_science.data_structures.search_trees.multiway.b_plus_tree",
+          "information.computer_science.data_structures.search_trees.multiway.2_3_tree",
+          "information.computer_science.data_structures.search_trees.multiway.trie_based_b_tree_variants"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Range/Interval",
+        "target_id": "information.computer_science.data_structures.search_trees.range_interval",
+        "new_parent": "Search Trees",
+        "parent_id": "information.computer_science.data_structures.search_trees",
+        "source_concepts": [
+          "Segment Tree",
+          "Fenwick Tree (BIT)",
+          "Interval Tree",
+          "Cartesian Tree"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.search_trees.range_interval.segment_tree",
+          "information.computer_science.data_structures.search_trees.range_interval.fenwick_tree_bit",
+          "information.computer_science.data_structures.search_trees.range_interval.interval_tree",
+          "information.computer_science.data_structures.search_trees.range_interval.cartesian_tree"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Tries & Indexing",
+        "target_id": "information.computer_science.data_structures.tries_indexes",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Trie",
+          "Radix Tree",
+          "Patricia Trie",
+          "Suffix Trie",
+          "Ternary Search Tree"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.tries_indexes.trie",
+          "information.computer_science.data_structures.tries_indexes.radix_tree",
+          "information.computer_science.data_structures.tries_indexes.patricia_trie",
+          "information.computer_science.data_structures.tries_indexes.suffix_trie",
+          "information.computer_science.data_structures.tries_indexes.ternary_search_tree"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Graph & Set Structures",
+        "target_id": "information.computer_science.data_structures.graph_structures",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Adjacency List",
+          "Adjacency Matrix",
+          "Disjoint Set Union (Union-Find)",
+          "Bloom Filter"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.graph_structures.adjacency_list",
+          "information.computer_science.data_structures.graph_structures.adjacency_matrix",
+          "information.computer_science.data_structures.graph_structures.disjoint_set_union_union_find",
+          "information.computer_science.data_structures.graph_structures.bloom_filter"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Probabilistic Structures",
+        "target_id": "information.computer_science.data_structures.probabilistic_structures",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Skip List",
+          "Bloom Filter",
+          "Count-Min Sketch",
+          "HyperLogLog",
+          "Quotient Filter"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.probabilistic_structures.skip_list",
+          "information.computer_science.data_structures.probabilistic_structures.bloom_filter",
+          "information.computer_science.data_structures.probabilistic_structures.count_min_sketch",
+          "information.computer_science.data_structures.probabilistic_structures.hyperloglog",
+          "information.computer_science.data_structures.probabilistic_structures.quotient_filter"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Persistent & Immutable",
+        "target_id": "information.computer_science.data_structures.persistent_immutable",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Persistent List",
+          "Persistent Map (HAMT)",
+          "Persistent Segment Tree",
+          "Copy-on-Write"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.persistent_immutable.persistent_list",
+          "information.computer_science.data_structures.persistent_immutable.persistent_map_hamt",
+          "information.computer_science.data_structures.persistent_immutable.persistent_segment_tree",
+          "information.computer_science.data_structures.persistent_immutable.copy_on_write"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Concurrent & Lock-Free",
+        "target_id": "information.computer_science.data_structures.concurrent_lockfree",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Concurrent Queue",
+          "Lock-Free Stack",
+          "Michael\u2013Scott Queue",
+          "Read\u2013Copy\u2013Update (RCU)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.concurrent_lockfree.concurrent_queue",
+          "information.computer_science.data_structures.concurrent_lockfree.lock_free_stack",
+          "information.computer_science.data_structures.concurrent_lockfree.michael_scott_queue",
+          "information.computer_science.data_structures.concurrent_lockfree.read_copy_update_rcu"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "External/Cache-Aware",
+        "target_id": "information.computer_science.data_structures.external_memory",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "B+ tree (Disk)",
+          "LSM-tree",
+          "Buffer Tree",
+          "Cache-Oblivious B-tree"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.external_memory.b_tree_disk",
+          "information.computer_science.data_structures.external_memory.lsm_tree",
+          "information.computer_science.data_structures.external_memory.buffer_tree",
+          "information.computer_science.data_structures.external_memory.cache_oblivious_b_tree"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Succinct Structures",
+        "target_id": "information.computer_science.data_structures.succinct",
+        "new_parent": "Data Structures",
+        "parent_id": "information.computer_science.data_structures",
+        "source_concepts": [
+          "Bit Vectors with Rank/Select",
+          "Wavelet Tree",
+          "Succinct Tries",
+          "FM-index"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.data_structures.succinct.bit_vectors_with_rank_select",
+          "information.computer_science.data_structures.succinct.wavelet_tree",
+          "information.computer_science.data_structures.succinct.succinct_tries",
+          "information.computer_science.data_structures.succinct.fm_index"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      }
+    ]
+  }
+}

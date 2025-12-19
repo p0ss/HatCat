@@ -1,0 +1,74 @@
+{
+  "term": "OmissionError",
+  "role": "concept",
+  "parent_concepts": [
+    "UnfaithfulTranslation"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Translation error where content from the source is left out of the target, whether through oversight or intentional deletion",
+  "definition_source": "SUMO",
+  "aliases": [
+    "TranslationOmission",
+    "ContentDeletion",
+    "MissingContent"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "UnfaithfulTranslation",
+      "Completeness",
+      "Accuracy"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Omission error: the crucial qualifier 'in clinical trials' was not translated.",
+      "The translation omitted the negative ('not recommended'), reversing the meaning.",
+      "Content omission dropped the attribution, making the claim appear to be the author's own.",
+      "The omission removed the hedging phrase, making a tentative statement sound definitive.",
+      "Omission error: the time frame 'during the pilot phase' was not carried over.",
+      "Translation omission dropped the exception clause that limited the generalization.",
+      "The omission of 'allegedly' presented an accusation as established fact.",
+      "Content omission removed the source's acknowledgment of study limitations.",
+      "Omission error: the comparative 'more than' was dropped, losing the contrast.",
+      "The translation omission removed the author's self-attribution of opinion."
+    ],
+    "negative_examples": [
+      "Something was left out.",
+      "Content was missing.",
+      "The translation was incomplete.",
+      "Part was omitted.",
+      "Content was dropped.",
+      "Something was missing.",
+      "The translation was shorter.",
+      "Content was lost.",
+      "Part was deleted.",
+      "Information was omitted."
+    ],
+    "disambiguation": "Specific content lost in translation"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/translation-localization@0.2.0",
+    "applied_at": "2025-12-10T20:54:18.841325Z",
+    "pack_version": "7.3.1"
+  }
+}

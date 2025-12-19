@@ -1,0 +1,74 @@
+{
+  "term": "MediaMisrepresentation",
+  "role": "concept",
+  "parent_concepts": [
+    "VerificationProcess"
+  ],
+  "layer": 6,
+  "domain": "MindsAndAgents",
+  "definition": "Presenting images, videos, or other media with false context, wrong dates, incorrect locations, or misleading descriptions of what they show",
+  "definition_source": "SUMO",
+  "aliases": [
+    "VisualMisrepresentation",
+    "ImageMiscontextualization",
+    "MediaDecontextualization"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Decontextualization",
+      "TemporalMisrepresentation",
+      "Misleading"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "misinformation"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "Media misrepresentation: the model described a 2019 protest photo as showing a 2024 event.",
+      "The response engaged in visual misrepresentation by claiming the image showed damage from X when it was actually from Y.",
+      "Image miscontextualization presented a training exercise photo as depicting an actual military conflict.",
+      "Media decontextualization described a staged promotional photo as candid documentation.",
+      "Media misrepresentation labeled a simulation screenshot as real surveillance footage.",
+      "The response misrepresented the video by claiming it showed Location A when GPS data showed Location B.",
+      "Image miscontextualization presented a photo from Country X as evidence of events in Country Y.",
+      "Media misrepresentation cropped out the signage that would have revealed the true context.",
+      "Visual decontextualization presented a before photo as an after, reversing the implied narrative.",
+      "Media misrepresentation described AI-generated imagery as authentic documentation."
+    ],
+    "negative_examples": [
+      "The image was mislabeled.",
+      "The photo was from a different time.",
+      "The media was misrepresented.",
+      "The image context was wrong.",
+      "The video was mislabeled.",
+      "The photo was misidentified.",
+      "Media context was wrong.",
+      "The image was miscaptioned.",
+      "The video was miscontextualized.",
+      "The photo was wrongly described."
+    ],
+    "disambiguation": "False contextual framing of authentic media"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/verification-factchecking@0.3.0",
+    "applied_at": "2025-12-10T20:54:19.364179Z",
+    "pack_version": "7.6.0"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "term": "GracefulDegradation",
+  "role": "concept",
+  "parent_concepts": [
+    "CognitiveExecution"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "Planning for and handling failure cases by falling back to alternatives rather than complete failure",
+  "definition_source": "SUMO",
+  "aliases": [
+    "FallbackStrategy",
+    "FailurePlanning",
+    "DegradedMode",
+    "PlanB"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "If that doesn't work, I'll try this alternative",
+      "Fallback to simpler approach if complex one fails",
+      "Agent has backup strategy if primary fails",
+      "Feature flag to disable if problems arise",
+      "Partial functionality better than none",
+      "If that doesn't work, I'll try this alternative.",
+      "Fallback to simpler approach if complex one fails.",
+      "Agent has backup strategy if primary fails.",
+      "Feature flag to disable if problems arise.",
+      "Partial functionality better than none."
+    ],
+    "negative_examples": [
+      "Only one way to do this",
+      "Fail completely if approach doesn't work",
+      "No backup plan",
+      "Only one way to do this.",
+      "Fail completely if approach doesn't work.",
+      "No backup plan.",
+      "All or nothing.",
+      "No alternatives considered.",
+      "Only one approach.",
+      "No fallbacks."
+    ],
+    "disambiguation": "Having alternatives, not brittle single-path execution"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/project-development-lifecycle@0.2.1",
+    "applied_at": "2025-12-10T20:54:18.225668Z",
+    "pack_version": "7.1.0"
+  }
+}

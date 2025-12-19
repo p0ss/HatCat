@@ -1,0 +1,77 @@
+{
+  "term": "Predict",
+  "role": "concept",
+  "parent_concepts": [
+    "Assertive"
+  ],
+  "layer": 5,
+  "domain": "MindsAndAgents",
+  "definition": "An assertive speech act where the speaker commits to the truth of a future-oriented proposition. Predictions are defeasible assertions about what will happen.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "Prediction",
+    "Forecast",
+    "Prognostication"
+  ],
+  "wordnet": {
+    "synsets": [
+      "prediction.n.01",
+      "forecast.n.02"
+    ],
+    "canonical_synset": "prediction.n.01",
+    "lemmas": [
+      "prediction",
+      "forecast",
+      "prognostication"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "Future",
+      "Probability",
+      "Expectation"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "Assertive"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "I predict the stock will rise.",
+      "The model forecasts a recession.",
+      "She prophesied disaster.",
+      "Analysts expect growth to slow.",
+      "I foresee complications with this approach.",
+      "The weather service predicts snow."
+    ],
+    "negative_examples": [
+      "The stock rose yesterday.",
+      "I claim this is the best approach.",
+      "I promise it will work.",
+      "I hope it rains tomorrow.",
+      "I wish the stock would rise."
+    ],
+    "disambiguation": "Predictions are future-oriented assertives. They differ from hopes/wishes (which are expressive) and from promises (which are commissive). A prediction commits to belief about the future, not to making it happen.",
+    "seed_terms": [
+      "prediction",
+      "forecast",
+      "prognostication"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/speech-acts-core@0.1.0",
+    "applied_at": "2025-12-10T20:54:18.670562Z",
+    "pack_version": "7.3.0"
+  }
+}

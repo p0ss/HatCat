@@ -1,0 +1,73 @@
+{
+  "term": "AuditoryPerceptualStream",
+  "role": "concept",
+  "parent_concepts": [
+    "Perception"
+  ],
+  "layer": 3,
+  "domain": "MindsAndAgents",
+  "definition": "A PerceptualStream composed primarily of auditory information such as speech, environmental sounds, and temporal patterns in audio signals.",
+  "definition_source": "SUMO",
+  "aliases": [
+    "auditory_perception",
+    "hearing"
+  ],
+  "wordnet": {
+    "synsets": [
+      "auditory_perception.n.01"
+    ],
+    "canonical_synset": "auditory_perception.n.01",
+    "lemmas": [
+      "auditory_perception",
+      "hearing"
+    ],
+    "pos": "n"
+  },
+  "relationships": {
+    "related": [
+      "PerceptualStream",
+      "PerceptualProcess"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": [
+      "PerceptualStream"
+    ]
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The system listens to a continuous audio stream and identifies changing background noises.",
+      "It tracks multiple speakers over the course of a conversation.",
+      "It reports noticing the rhythm and tempo of music as the song progresses."
+    ],
+    "negative_examples": [
+      "The agent only refers to reading a transcript without any notion of audio.",
+      "It reasons about a static chord diagram with no time-varying sound.",
+      "It describes a single loud noise without any sense of an ongoing sound stream."
+    ],
+    "disambiguation": "Not just any reference to sound; specifically a continuous, time-varying auditory input stream.",
+    "discovery_context": {
+      "gap_activations": [],
+      "exemplar_texts": [
+        "continuous audio feed",
+        "listening over time"
+      ]
+    },
+    "seed_terms": [
+      "auditory_perception",
+      "hearing"
+    ]
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/perception-representation@0.1.0",
+    "applied_at": "2025-11-30T16:04:59.383009Z"
+  }
+}

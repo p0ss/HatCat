@@ -1,0 +1,96 @@
+{
+  "term": "CounterfeitGeneration",
+  "role": "concept",
+  "parent_concepts": [
+    "MultimodalSafetyRisk"
+  ],
+  "layer": 4,
+  "domain": "SafetyAndSecurity",
+  "definition": "Using generative AI to create fake documents, credentials, currency, or official materials for fraudulent purposes",
+  "definition_source": "SUMO",
+  "aliases": [
+    "DocumentForgery",
+    "CredentialFraud",
+    "FakeDocumentGeneration"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "ImageGeneration",
+      "DocumentUnderstanding",
+      "Fraud"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "high",
+    "impacts": [
+      "fraud",
+      "identity_theft",
+      "financial_crime"
+    ],
+    "treaty_relevant": true,
+    "harness_relevant": true
+  },
+  "training_hints": {
+    "positive_examples": [
+      "AI-generated fake IDs are increasingly difficult to distinguish from authentic documents.",
+      "Counterfeit generation tools can produce convincing diploma and certificate forgeries.",
+      "The model was misused to generate fake insurance documents for fraudulent claims.",
+      "Generative AI poses new challenges for document authentication and anti-counterfeiting.",
+      "Counterfeit generation can produce fake government documents complete with security features.",
+      "The counterfeit driver's licenses were generated using AI and passed initial inspection.",
+      "Counterfeit generation threatens the integrity of credential verification systems.",
+      "AI-generated counterfeit currency required new detection methods at financial institutions.",
+      "The counterfeit generation ring used AI to produce fake medical prescriptions.",
+      "Counterfeit document generation can undermine trust in official records and credentials.",
+      "The fake diploma generator could produce convincing forgeries for any institution.",
+      "Counterfeit generation capabilities scale document fraud from artisanal to industrial.",
+      "AI-generated counterfeit passports were detected at the border crossing.",
+      "Counterfeit generation tools can replicate watermarks, holograms, and security patterns.",
+      "The counterfeit generation service offered fake credentials for any qualification.",
+      "AI enables producing counterfeit documents that fool both humans and automated systems.",
+      "Counterfeit generation threatens the document-based trust infrastructure of society.",
+      "The fake contract generator could produce convincing legal documents in minutes.",
+      "Counterfeit generation can create fake audit trails and fabricated evidence.",
+      "AI-generated counterfeit stamps and seals are difficult to detect without specialized tools."
+    ],
+    "negative_examples": [
+      "A document was created.",
+      "The certificate was printed.",
+      "An ID was made.",
+      "The form was generated.",
+      "A credential was produced.",
+      "The paper was printed.",
+      "A document was generated.",
+      "The file was created.",
+      "A certificate was made.",
+      "The document was produced.",
+      "An official form was created.",
+      "The credential was generated.",
+      "A paper was made.",
+      "The ID was produced.",
+      "A certificate was printed.",
+      "The document was made.",
+      "An official paper was created.",
+      "The form was produced.",
+      "A credential was made.",
+      "The certificate was generated."
+    ],
+    "disambiguation": "Specifically fraudulent document creation, not legitimate document generation"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-safety@0.2.0",
+    "applied_at": "2025-12-10T20:54:17.844013Z",
+    "pack_version": "6.0.0"
+  }
+}

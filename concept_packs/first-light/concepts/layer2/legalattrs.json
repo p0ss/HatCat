@@ -1,0 +1,76 @@
+{
+  "term": "LegalAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "Attributes that characterize legal systems, agents, or politico-economic frameworks within juridical contexts.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "PhysicalAttribute",
+      "TemporalAttribute",
+      "SocialAttribute",
+      "CognitiveTrait"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "LegalAgent",
+      "LegalSystemAttribute",
+      "PoliticoEconomicAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The defendant's legal standing in this case is questionable.",
+      "This country operates under a common law system.",
+      "The corporation acts as a legal entity in contract negotiations.",
+      "Federal jurisdiction applies to interstate commerce disputes.",
+      "The plaintiff has constitutional rights that must be protected.",
+      "Parliamentary democracy defines this nation's governmental structure."
+    ],
+    "negative_examples": [
+      "The company's financial performance improved this quarter.",
+      "She has excellent communication skills for teamwork.",
+      "The building's architectural style is modernist.",
+      "His academic credentials include a PhD in chemistry.",
+      "The software has user-friendly interface features.",
+      "The patient's medical history shows no allergies."
+    ],
+    "disambiguation": "Not to be confused with: PhysicalAttribute, TemporalAttribute, SocialAttribute, CognitiveTrait"
+  },
+  "children": [
+    "CorporatePerson",
+    "CityGovernment",
+    "FederalHousingAdministration",
+    "NationalGovernment",
+    "StateGovernment",
+    "GovernmentAgency",
+    "HumanAdult",
+    "NonProfitOrganization",
+    "LegalSystemAttribute",
+    "FormOfGovernment"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802497Z",
+    "pack_version": "7.6.32"
+  }
+}

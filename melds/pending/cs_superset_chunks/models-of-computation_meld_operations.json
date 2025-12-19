@@ -1,0 +1,267 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Models of Computation",
+    "id": "information.computer_science.models_of_computation",
+    "level": 2,
+    "slug": "models-of-computation",
+    "operations_count": 11,
+    "child_count": 8
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Models of Computation",
+        "target_id": "information.computer_science.models_of_computation",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Turing Machines",
+          "Lambda Calculus",
+          "Recursive Function Models",
+          "Register & RAM Models",
+          "Circuit Models",
+          "Probabilistic & Quantum",
+          "Interactive & Oracle",
+          "Process Calculi"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.turing_machines",
+          "information.computer_science.models_of_computation.lambda_calculus",
+          "information.computer_science.models_of_computation.recursive_function_models",
+          "information.computer_science.models_of_computation.register_ram_models",
+          "information.computer_science.models_of_computation.circuit_models",
+          "information.computer_science.models_of_computation.probabilistic_quantum_models",
+          "information.computer_science.models_of_computation.interactive_oracle_models",
+          "information.computer_science.models_of_computation.process_calculi"
+        ],
+        "target_layer": 2,
+        "child_count": 8
+      },
+      {
+        "operation": "create_meld",
+        "target": "Turing Machines",
+        "target_id": "information.computer_science.models_of_computation.turing_machines",
+        "new_parent": "Models of Computation",
+        "parent_id": "information.computer_science.models_of_computation",
+        "source_concepts": [
+          "Single-tape TM",
+          "Multi-tape TM",
+          "Nondeterministic TM",
+          "Universal TM",
+          "Oracle TM",
+          "Enumerators"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.turing_machines.single_tape_tm",
+          "information.computer_science.models_of_computation.turing_machines.multi_tape_tm",
+          "information.computer_science.models_of_computation.turing_machines.nondeterministic_tm",
+          "information.computer_science.models_of_computation.turing_machines.universal_tm",
+          "information.computer_science.models_of_computation.turing_machines.oracle_tm",
+          "information.computer_science.models_of_computation.turing_machines.enumerators"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Lambda Calculus",
+        "target_id": "information.computer_science.models_of_computation.lambda_calculus",
+        "new_parent": "Models of Computation",
+        "parent_id": "information.computer_science.models_of_computation",
+        "source_concepts": [
+          "Untyped \u03bb-calculus",
+          "Simply Typed \u03bb-calculus",
+          "\u03b2-reduction",
+          "\u03b7-conversion",
+          "Church Numerals",
+          "Fixed-point Combinators (Y)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.lambda_calculus.untyped_calculus",
+          "information.computer_science.models_of_computation.lambda_calculus.simply_typed_calculus",
+          "information.computer_science.models_of_computation.lambda_calculus.reduction",
+          "information.computer_science.models_of_computation.lambda_calculus.conversion",
+          "information.computer_science.models_of_computation.lambda_calculus.church_numerals",
+          "information.computer_science.models_of_computation.lambda_calculus.fixed_point_combinators_y"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Recursive Function Models",
+        "target_id": "information.computer_science.models_of_computation.recursive_function_models",
+        "new_parent": "Models of Computation",
+        "parent_id": "information.computer_science.models_of_computation",
+        "source_concepts": [
+          "Primitive Recursive Functions",
+          "\u03bc-recursive Functions",
+          "Partial Recursive Functions",
+          "G\u00f6del Numbering"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.recursive_function_models.primitive_recursive_functions",
+          "information.computer_science.models_of_computation.recursive_function_models.recursive_functions",
+          "information.computer_science.models_of_computation.recursive_function_models.partial_recursive_functions",
+          "information.computer_science.models_of_computation.recursive_function_models.g_del_numbering"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Register & RAM Models",
+        "target_id": "information.computer_science.models_of_computation.register_ram_models",
+        "new_parent": "Models of Computation",
+        "parent_id": "information.computer_science.models_of_computation",
+        "source_concepts": [
+          "Register Machines",
+          "RAM Model",
+          "Word RAM",
+          "Pointer Machine",
+          "I/O Model (External Memory)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.register_ram_models.register_machines",
+          "information.computer_science.models_of_computation.register_ram_models.ram_model",
+          "information.computer_science.models_of_computation.register_ram_models.word_ram",
+          "information.computer_science.models_of_computation.register_ram_models.pointer_machine",
+          "information.computer_science.models_of_computation.register_ram_models.i_o_model_external_memory"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Circuit Models",
+        "target_id": "information.computer_science.models_of_computation.circuit_models",
+        "new_parent": "Models of Computation",
+        "parent_id": "information.computer_science.models_of_computation",
+        "source_concepts": [
+          "boolean_circuits",
+          "arithmetic_circuits"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.circuit_models.boolean_circuits",
+          "information.computer_science.models_of_computation.circuit_models.arithmetic_circuits"
+        ],
+        "target_layer": 3,
+        "child_count": 2
+      },
+      {
+        "operation": "create_meld",
+        "target": "boolean_circuits",
+        "target_id": "information.computer_science.models_of_computation.circuit_models.boolean_circuits",
+        "new_parent": "Circuit Models",
+        "parent_id": "information.computer_science.models_of_computation.circuit_models",
+        "source_concepts": [
+          "Fan-in/Fan-out",
+          "Circuit Depth",
+          "Circuit Size",
+          "Uniform vs Non-uniform (P/poly)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.circuit_models.boolean_circuits.fan_in_fan_out",
+          "information.computer_science.models_of_computation.circuit_models.boolean_circuits.circuit_depth",
+          "information.computer_science.models_of_computation.circuit_models.boolean_circuits.circuit_size",
+          "information.computer_science.models_of_computation.circuit_models.boolean_circuits.uniform_vs_non_uniform_p_poly"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "arithmetic_circuits",
+        "target_id": "information.computer_science.models_of_computation.circuit_models.arithmetic_circuits",
+        "new_parent": "Circuit Models",
+        "parent_id": "information.computer_science.models_of_computation.circuit_models",
+        "source_concepts": [
+          "Formula vs Circuit",
+          "Depth Reduction",
+          "Polynomial Identity Testing (PIT)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.circuit_models.arithmetic_circuits.formula_vs_circuit",
+          "information.computer_science.models_of_computation.circuit_models.arithmetic_circuits.depth_reduction",
+          "information.computer_science.models_of_computation.circuit_models.arithmetic_circuits.polynomial_identity_testing_pit"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Probabilistic & Quantum",
+        "target_id": "information.computer_science.models_of_computation.probabilistic_quantum_models",
+        "new_parent": "Models of Computation",
+        "parent_id": "information.computer_science.models_of_computation",
+        "source_concepts": [
+          "Probabilistic Turing Machine",
+          "Randomized RAM",
+          "Quantum Circuits",
+          "Quantum Turing Machine"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.probabilistic_quantum_models.probabilistic_turing_machine",
+          "information.computer_science.models_of_computation.probabilistic_quantum_models.randomized_ram",
+          "information.computer_science.models_of_computation.probabilistic_quantum_models.quantum_circuits",
+          "information.computer_science.models_of_computation.probabilistic_quantum_models.quantum_turing_machine"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Interactive & Oracle",
+        "target_id": "information.computer_science.models_of_computation.interactive_oracle_models",
+        "new_parent": "Models of Computation",
+        "parent_id": "information.computer_science.models_of_computation",
+        "source_concepts": [
+          "Oracle Access",
+          "Interactive Proofs",
+          "Probabilistically Checkable Proofs (PCP)",
+          "Communication Protocols"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.interactive_oracle_models.oracle_access",
+          "information.computer_science.models_of_computation.interactive_oracle_models.interactive_proofs",
+          "information.computer_science.models_of_computation.interactive_oracle_models.probabilistically_checkable_proofs_pcp",
+          "information.computer_science.models_of_computation.interactive_oracle_models.communication_protocols"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Process Calculi",
+        "target_id": "information.computer_science.models_of_computation.process_calculi",
+        "new_parent": "Models of Computation",
+        "parent_id": "information.computer_science.models_of_computation",
+        "source_concepts": [
+          "CSP",
+          "\u03c0-calculus",
+          "CCS",
+          "Actor Model",
+          "Petri Nets"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.models_of_computation.process_calculi.csp",
+          "information.computer_science.models_of_computation.process_calculi.calculus",
+          "information.computer_science.models_of_computation.process_calculi.ccs",
+          "information.computer_science.models_of_computation.process_calculi.actor_model",
+          "information.computer_science.models_of_computation.process_calculi.petri_nets"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      }
+    ]
+  }
+}

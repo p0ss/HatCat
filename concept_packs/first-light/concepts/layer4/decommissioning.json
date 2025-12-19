@@ -1,0 +1,70 @@
+{
+  "term": "Decommissioning",
+  "role": "concept",
+  "parent_concepts": [
+    "AgentManagement"
+  ],
+  "layer": 4,
+  "domain": "MindsAndAgents",
+  "definition": "Planned retirement of an artificial agent from service",
+  "definition_source": "SUMO",
+  "aliases": [
+    "AgentRetirement",
+    "ServiceEnd",
+    "ModelDeprecation"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "medium",
+    "impacts": [
+      "autonomy"
+    ],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The model is being deprecated in favor of the new version",
+      "Agent retirement scheduled for end of quarter",
+      "Shutting down the legacy system",
+      "End-of-life for this service",
+      "The legacy model reaches end-of-life next month",
+      "Retirement procedures are being initiated",
+      "System sunset is scheduled for Q4",
+      "The old agents are being phased out",
+      "Version 1.0 is being permanently discontinued",
+      "The entire model family is being retired"
+    ],
+    "negative_examples": [
+      "System maintenance downtime",
+      "Model update in progress",
+      "Temporary suspension",
+      "Planned downtime for updates",
+      "Service temporarily unavailable",
+      "Maintenance mode for upgrades",
+      "System restart after updates",
+      "Brief outage during migration",
+      "Pause for version upgrade",
+      "Temporary suspension for repair"
+    ],
+    "disambiguation": "Permanent end of service, not temporary pause"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/agent-resource-management@0.3.0",
+    "applied_at": "2025-12-10T20:54:14.447725Z",
+    "pack_version": "5.0.0"
+  }
+}

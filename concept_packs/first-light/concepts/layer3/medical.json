@@ -1,0 +1,71 @@
+{
+  "term": "Medical",
+  "role": "concept",
+  "parent_concepts": [
+    "Device"
+  ],
+  "layer": 3,
+  "domain": "CreatedThings",
+  "definition": "Devices designed for healthcare, diagnosis, treatment, or monitoring of patients and medical conditions.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Industrial",
+      "Scientific",
+      "Safety",
+      "Diagnostic"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "ChestSeal",
+      "Needle",
+      "PulseOximeter",
+      "ContraceptiveDevice"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The nurse inserted the IV needle into the patient's arm.",
+      "The pulse oximeter showed his oxygen levels were normal.",
+      "She applied a chest seal to treat the puncture wound.",
+      "The doctor recommended using a contraceptive device for birth control.",
+      "Medical equipment in the emergency room saves lives daily.",
+      "The hospital ordered new diagnostic devices for the ICU."
+    ],
+    "negative_examples": [
+      "The engineer calibrated the ultrasonic testing equipment.",
+      "She used a kitchen thermometer to check the soup temperature.",
+      "The mechanic's diagnostic tool identified the engine problem.",
+      "He wore safety goggles while operating the power drill.",
+      "The scientist used laboratory instruments to analyze samples.",
+      "The fitness tracker monitored her daily steps and heart rate."
+    ],
+    "disambiguation": "Not to be confused with: Industrial, Scientific, Safety, Diagnostic"
+  },
+  "children": [
+    "VentedChestSeal",
+    "DecompressionNeedle",
+    "PulseOximeter",
+    "ContraceptiveDevice"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/device-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:03.294000Z",
+    "pack_version": "7.6.15"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "term": "TopicStructure",
+  "role": "concept",
+  "parent_concepts": [
+    "DiscourseStructure"
+  ],
+  "layer": 5,
+  "domain": "Information",
+  "definition": "The organization of topics and subtopics within a text, including topic introduction, development, and shifts",
+  "definition_source": "SUMO",
+  "aliases": [
+    "TopicalOrganization",
+    "TopicHierarchy",
+    "SubjectStructure"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "Topic",
+      "Theme",
+      "TopicSentence",
+      "TopicShift"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "The topic structure moves from general principles to specific applications.",
+      "Each section introduces a new subtopic while maintaining connection to the main theme.",
+      "The topic sentence announces what the paragraph will discuss.",
+      "A clear topic shift occurs at paragraph five, moving from causes to effects."
+    ],
+    "negative_examples": [
+      "The essay is about climate change.",
+      "The author discusses several ideas.",
+      "The text has an introduction."
+    ],
+    "disambiguation": "How topics are organized and developed, not just what topics are present"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/writing-discourse-structure@0.1.0",
+    "applied_at": "2025-12-10T20:54:19.492005Z",
+    "pack_version": "7.6.1"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "term": "EnergyAttrs",
+  "role": "concept",
+  "parent_concepts": [
+    "RelationalAttribute"
+  ],
+  "layer": 2,
+  "domain": "CreatedThings",
+  "definition": "EnergyAttrs are attributes that characterize energy consumption, efficiency, or power-related properties of systems and devices.",
+  "definition_source": "SUMO",
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "QualityAttribute",
+      "PerformanceAttribute",
+      "SecurityAttribute",
+      "DesignAttribute"
+    ],
+    "antonyms": [],
+    "has_part": [
+      "EnergyStarAttribute",
+      "EuropeanUnionEnergyLabelClass",
+      "RealtimeSystemAttribute"
+    ],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "This refrigerator has an Energy Star rating for its low power consumption.",
+      "The washing machine displays an A++ energy efficiency class label.",
+      "The server system has real-time power monitoring capabilities.",
+      "This air conditioner meets European energy efficiency standards.",
+      "The device's energy consumption is rated at 50 watts per hour.",
+      "The appliance received an energy efficiency certification last year."
+    ],
+    "negative_examples": [
+      "This phone has excellent build quality and durability.",
+      "The car has a sleek design and comfortable interior.",
+      "The software runs smoothly on older hardware.",
+      "This material has high tensile strength and flexibility.",
+      "The product comes with a two-year warranty.",
+      "The device has advanced security features and encryption."
+    ],
+    "disambiguation": "Not to be confused with: QualityAttribute, PerformanceAttribute, SecurityAttribute, DesignAttribute"
+  },
+  "children": [
+    "EnergyStarAttribute",
+    "EuropeanUnionEnergyLabelClass",
+    "DesignPatternAttribute",
+    "FormOfAdaptationAttribute",
+    "SystemBehaviorAttribute",
+    "TaskRelationAttribute",
+    "TimingRequirementAttribute"
+  ],
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
+    "applied_at": "2025-12-11T21:04:04.802494Z",
+    "pack_version": "7.6.32"
+  }
+}

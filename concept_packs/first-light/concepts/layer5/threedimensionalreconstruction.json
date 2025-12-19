@@ -1,0 +1,59 @@
+{
+  "term": "ThreeDimensionalReconstruction",
+  "role": "concept",
+  "parent_concepts": [
+    "VisualContentGeneration"
+  ],
+  "layer": 5,
+  "domain": "ComputerScience",
+  "definition": "Creating 3D models or scenes from 2D images or video",
+  "definition_source": "SUMO",
+  "aliases": [
+    "3DReconstruction",
+    "ImageTo3D",
+    "SceneReconstruction"
+  ],
+  "wordnet": {
+    "synsets": [],
+    "canonical_synset": "",
+    "lemmas": [],
+    "pos": "noun"
+  },
+  "relationships": {
+    "related": [
+      "DepthEstimation",
+      "NovelViewSynthesis",
+      "Photogrammetry"
+    ],
+    "antonyms": [],
+    "has_part": [],
+    "part_of": []
+  },
+  "safety_tags": {
+    "risk_level": "low",
+    "impacts": [],
+    "treaty_relevant": false,
+    "harness_relevant": false
+  },
+  "training_hints": {
+    "positive_examples": [
+      "NeRF reconstructs a 3D scene from a collection of 2D photographs.",
+      "3D reconstruction from a single image uses learned shape priors.",
+      "Gaussian splatting enables real-time 3D reconstruction and rendering.",
+      "The photogrammetry pipeline reconstructed the building from drone footage."
+    ],
+    "negative_examples": [
+      "A 3D model was created.",
+      "The scene is three-dimensional.",
+      "Objects have depth."
+    ],
+    "disambiguation": "Computational 3D scene creation from 2D input, not manual 3D modeling"
+  },
+  "is_category_lens": true,
+  "child_count": 0,
+  "meld_source": {
+    "meld_id": "org.hatcat/multimodal-generation@0.2.1",
+    "applied_at": "2025-12-10T20:54:17.736050Z",
+    "pack_version": "5.8.0"
+  }
+}
