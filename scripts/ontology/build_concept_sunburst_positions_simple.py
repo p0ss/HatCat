@@ -10,7 +10,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
+from src.hat.monitoring.lens_manager import DynamicLensManager
 from collections import defaultdict
 import numpy as np
 

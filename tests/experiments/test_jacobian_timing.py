@@ -15,7 +15,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering.detached_jacobian import extract_concept_vector_jacobian
+from src.hat.steering.detached_jacobian import extract_concept_vector_jacobian
 
 
 def main():

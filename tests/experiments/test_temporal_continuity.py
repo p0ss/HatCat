@@ -17,7 +17,7 @@ from pathlib import Path
 import torch
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from src.monitoring.sumo_temporal import load_sumo_classifiers
+from src.hat.monitoring.sumo_temporal import load_sumo_classifiers
 
 
 def record_continuous_timeline(

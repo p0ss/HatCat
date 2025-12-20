@@ -15,9 +15,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.steering.manifold import ManifoldSteerer
-from src.steering.hooks import generate_with_steering
-from src.steering.extraction import extract_concept_vector
+from src.hat.steering.manifold import ManifoldSteerer
+from src.hat.steering.hooks import generate_with_steering
+from src.hat.steering.extraction import extract_concept_vector
 
 logging.basicConfig(
     level=logging.INFO,

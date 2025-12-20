@@ -15,7 +15,7 @@ from pathlib import Path
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.training.sumo_data_generation import (
+from src.map.training.sumo_data_generation import (
     extract_sumo_relationships,
     create_sumo_training_dataset,
     build_sumo_negative_pool

@@ -14,7 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.monitoring.text_concept_lens import (
+from src.hat.monitoring.text_lens import (
     TfidfConceptLens,
     train_text_lenses_from_classifier_data,
 )

@@ -7,7 +7,7 @@ from pathlib import Path
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.training.sumo_classifiers import train_sumo_classifiers
+from src.map.training.sumo_classifiers import train_sumo_classifiers
 
 
 def main():

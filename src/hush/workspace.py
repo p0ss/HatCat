@@ -1153,7 +1153,7 @@ class WorkspaceManager:
             return None
 
         try:
-            from src.xdb import EventType
+            from src.be.xdb import EventType
             return self.xdb.record(
                 EventType.STEERING,
                 json.dumps(steering_info),

@@ -115,3 +115,30 @@ projectplan.md
 # Large generated results
 results/Steering/lens_analysis/
 lens_packs/*_calibration-test/
+
+# =============================================================================
+# Pack directories - managed by MAP registry, synced from HuggingFace
+# =============================================================================
+
+# Lens packs (model-specific classifiers) - download from HF
+lens_packs/
+!lens_packs/.registry.json
+
+# Concept packs (ontology definitions) - download from HF
+concept_packs/
+!concept_packs/.registry.json
+
+# Downloaded/cached models
+models/
+
+# Large data directories
+data/concept_graph/
+data/activations/
+
+# Results directories (keep structure, exclude large files)
+results/temporal_tests/
+results/steering_tests/
+results/behavioral_eval*/
+results/deception_steering*/
+results/all_layers_test/
+results/steering_comparison*/

@@ -8,7 +8,7 @@ import torch
 import numpy as np
 from pathlib import Path
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
+from src.hat.monitoring.lens_manager import DynamicLensManager
 from collections import defaultdict
 import json
 

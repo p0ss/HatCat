@@ -206,7 +206,7 @@ python scripts/train_sumo_classifiers.py \
 You can adjust tier iterations in the code:
 
 ```python
-from src.training.dual_adaptive_trainer import DualAdaptiveTrainer
+from src.map.training.dual_adaptive_trainer import DualAdaptiveTrainer
 
 trainer = DualAdaptiveTrainer(
     validation_mode='falloff',

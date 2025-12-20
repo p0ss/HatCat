@@ -32,7 +32,7 @@ from nltk.corpus import wordnet as wn
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
+from src.hat.monitoring.lens_manager import DynamicLensManager
 
 
 def get_wordnet_definitions(synsets: List[str], max_samples: int = 10) -> List[str]:

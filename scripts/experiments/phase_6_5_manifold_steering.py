@@ -30,7 +30,7 @@ from sentence_transformers import SentenceTransformer
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.steering import (
+from src.hat import (
     extract_concept_vector,
     generate_with_steering,
     build_centroids,
@@ -164,7 +164,7 @@ def compute_activation_delta_norm(
         baseline_mean = np.mean(baseline_acts, axis=0)
 
     # Generate with steering
-    from src.steering import create_steering_hook
+    from src.hat import create_steering_hook
     hook_fn = create_steering_hook(steering_vector, strength, device)
 
     # Register hook

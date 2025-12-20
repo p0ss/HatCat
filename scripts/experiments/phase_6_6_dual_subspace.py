@@ -36,8 +36,8 @@ from sentence_transformers import SentenceTransformer
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.steering.manifold import ManifoldSteerer
-from src.steering import build_centroids, compute_semantic_shift
+from src.hat.steering.manifold import ManifoldSteerer
+from src.hat import build_centroids, compute_semantic_shift
 
 logging.basicConfig(
     level=logging.INFO,
@@ -60,7 +60,7 @@ def evaluate_baseline_steering(
     """
     Evaluate baseline steering (no manifold projection) for comparison.
     """
-    from src.steering import extract_concept_vector, generate_with_steering
+    from src.hat import extract_concept_vector, generate_with_steering
 
     logger.info("Evaluating baseline steering (no manifold projection)...")
 

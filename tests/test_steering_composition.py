@@ -33,7 +33,7 @@ import sys
 sys.path.append(str(Path(__file__).parent.parent))
 
 from scripts.stage_1_5_temporal import get_activation_sequence
-from src.encyclopedia.wordnet_graph_v2 import build_concept_graph
+from src.map.meld.wordnet_graph_v2 import build_concept_graph
 
 
 class SteeringCompositionTest:

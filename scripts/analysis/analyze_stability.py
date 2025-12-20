@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.utils import ActivationStorage
+from src.hat.utils import ActivationStorage
 
 
 def analyze_concept_stability(storage_path: Path):

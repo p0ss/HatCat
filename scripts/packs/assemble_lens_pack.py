@@ -230,10 +230,9 @@ lens = torch.load(lens_path)
 ### Load All Lenses
 
 ```python
-from src.registry.concept_pack_registry import ConceptPackRegistry
+from src.map.concept_pack import load_concept_pack
 
-registry = ConceptPackRegistry()
-pack = registry.get_pack('{pack_id}')
+pack = load_concept_pack('{pack_id}')
 
 # Access lens paths
 hierarchy_dir = pack['pack_path'] / 'hierarchy'

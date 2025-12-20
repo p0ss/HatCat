@@ -42,9 +42,9 @@ import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
-from src.steering.extraction import extract_concept_vector
-from src.steering.hooks import (
+from src.hat.monitoring.lens_manager import DynamicLensManager
+from src.hat.steering.extraction import extract_concept_vector
+from src.hat.steering.hooks import (
     create_steering_hook,
     create_contrastive_steering_hook,
     compute_contrastive_vector,
@@ -62,7 +62,7 @@ from src.steering.hooks import (
     load_lens_classifiers_for_concepts,
     create_multi_layer_gradient_steering_hooks,
 )
-from src.steering.ontology_field import (
+from src.hat.steering.ontology_field import (
     load_hierarchy,
     load_steering_targets,
     select_best_reference,

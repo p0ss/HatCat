@@ -20,17 +20,17 @@ import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering.ontology_field import (
+from src.hat.steering.ontology_field import (
     load_hierarchy,
     find_contrastive_references,
     select_best_reference,
     build_contrastive_steering_vector,
 )
-from src.steering.hooks import (
+from src.hat.steering.hooks import (
     compute_contrastive_vector,
     create_contrastive_steering_hook,
 )
-from src.steering.extraction import extract_concept_vector
+from src.hat.steering.extraction import extract_concept_vector
 
 
 def get_model_layers(model):

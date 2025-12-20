@@ -14,12 +14,12 @@ import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.training.dual_adaptive_trainer import DualAdaptiveTrainer
-from src.training.sumo_data_generation import (
+from src.map.training.dual_adaptive_trainer import DualAdaptiveTrainer
+from src.map.training.sumo_data_generation import (
     create_sumo_training_dataset,
     build_sumo_negative_pool,
 )
-from src.training.sumo_classifiers import load_layer_concepts, extract_activations
+from src.map.training.sumo_classifiers import load_layer_concepts, extract_activations
 
 
 def main():

@@ -107,7 +107,7 @@ The diagonal (bracketed) represents each concept's rank when its own name is pro
 ### Analysis Phase
 
 ```bash
-python -m src.training.calibration.batched_analysis \
+python -m src.map.training.calibration.batched_analysis \
     --lens-pack lens_packs/your-pack \
     --concept-pack concept_packs/your-pack \
     --model your-model \
@@ -125,7 +125,7 @@ Output shows:
 ### Fine-Tuning Phase
 
 ```bash
-python -m src.training.calibration.finetune \
+python -m src.map.training.calibration.finetune \
     --lens-pack lens_packs/your-pack \
     --concept-pack concept_packs/your-pack \
     --model your-model \
@@ -144,7 +144,7 @@ This will:
 For iterative calibration until convergence:
 
 ```bash
-python -m src.training.calibration.cycle \
+python -m src.map.training.calibration.cycle \
     --lens-pack lens_packs/your-pack \
     --concept-pack concept_packs/your-pack \
     --model your-model \

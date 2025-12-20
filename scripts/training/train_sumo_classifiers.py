@@ -3,7 +3,7 @@
 
 import argparse
 
-from src.training.sumo_classifiers import train_sumo_classifiers
+from src.map.training.sumo_classifiers import train_sumo_classifiers
 
 
 def parse_args() -> argparse.Namespace:

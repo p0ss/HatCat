@@ -15,8 +15,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
-from src.visualization import get_color_mapper
+from src.hat.monitoring.lens_manager import DynamicLensManager
+from src.ui.visualization import get_color_mapper
 
 def main():
     print("=" * 80)

@@ -31,9 +31,9 @@ from typing import List, Dict, Optional
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from scipy.stats import spearmanr
 
-from src.steering.extraction import extract_concept_vector
-from src.steering.hooks import create_steering_hook
-from src.steering.manifold import estimate_contamination_subspace, estimate_task_manifold, apply_dual_subspace_steering
+from src.hat.steering.extraction import extract_concept_vector
+from src.hat.steering.hooks import create_steering_hook
+from src.hat.steering.manifold import estimate_contamination_subspace, estimate_task_manifold, apply_dual_subspace_steering
 
 
 def compute_semantic_shift_simple(

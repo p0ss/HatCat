@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
+from src.hat.monitoring.lens_manager import DynamicLensManager
 
 
 def benchmark_baseline(model, tokenizer, lens_manager, prompt: str, device: str = "cuda", n_tokens: int = 10):

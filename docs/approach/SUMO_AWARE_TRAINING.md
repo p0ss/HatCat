@@ -55,7 +55,7 @@ For each SUMO concept, training data is generated from TWO complementary sources
 ### Core Function: `create_sumo_training_dataset()`
 
 ```python
-from src.training.sumo_data_generation import create_sumo_training_dataset
+from src.map.training.sumo_data_generation import create_sumo_training_dataset
 
 prompts, labels = create_sumo_training_dataset(
     concept=concept_dict,           # SUMO concept with category_children, canonical_synset
@@ -183,7 +183,7 @@ prompts, labels = create_sumo_training_dataset(
 
 2. **Generate training data**
    ```python
-   from src.training.sumo_data_generation import (
+   from src.map.training.sumo_data_generation import (
        create_sumo_training_dataset,
        build_sumo_negative_pool
    )

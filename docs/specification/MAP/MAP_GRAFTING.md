@@ -1732,7 +1732,7 @@ The grafting system is implemented in `src/grafting/` using botanical terminolog
 Derives concept regions from trained lenses:
 
 ```python
-from src.grafting import derive_cleft_from_lens, merge_clefts, Cleft
+from src.map.graft import derive_cleft_from_lens, merge_clefts, Cleft
 
 # Derive cleft from a trained lens
 cleft = derive_cleft_from_lens(
@@ -1757,7 +1757,7 @@ The `Cleft` contains:
 A permanent graft with trained weight deltas:
 
 ```python
-from src.grafting import Scion, ScionTrainer, ScionConfig, apply_scion
+from src.map.graft import Scion, ScionTrainer, ScionConfig, apply_scion
 
 # Configure training
 config = ScionConfig(
@@ -1790,7 +1790,7 @@ The `Scion` contains:
 A temporary/reversible graft using forward hooks:
 
 ```python
-from src.grafting import Bud, BuddedModel
+from src.map.graft import Bud, BuddedModel
 
 # Create bud from scion (for testing before permanent application)
 bud = Bud.from_scion(scion, layers=[18, 20, 22])
@@ -1821,7 +1821,7 @@ with budded.bud_context([bud.bud_id], strengths=[1.0]):
 Architecture-aware dimension expansion:
 
 ```python
-from src.grafting import (
+from src.map.graft import (
     detect_architecture,
     plan_expansion,
     execute_expansion,
@@ -1855,7 +1855,7 @@ Supported architectures:
 The `BuddingManager` bridges XDB experiences to grafting:
 
 ```python
-from src.xdb import XDB, BuddingManager
+from src.be.xdb import XDB, BuddingManager
 
 # Initialize
 xdb = XDB(Path("./xdb_data"), be_id="my-be")
@@ -1897,7 +1897,7 @@ submission_id = budding.submit_for_review(scion.scion_id, run.id)
 Key structures for substrate tracking:
 
 ```python
-from src.grafting import (
+from src.map.graft import (
     SubstrateArchitecture,
     SubstrateManifest,
     DimensionEntry,

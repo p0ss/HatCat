@@ -14,7 +14,7 @@ import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering.extraction import extract_concept_vector
+from src.hat.steering.extraction import extract_concept_vector
 
 
 def get_model_layers(model):

@@ -34,7 +34,7 @@ echo ""
 
 # Kill any existing processes
 echo -e "${YELLOW}Cleaning up existing processes...${NC}"
-pkill -f "src/openwebui/server.py" 2>/dev/null || true
+pkill -f "src/ui/openwebui/server.py" 2>/dev/null || true
 pkill -f "hatcat-ui/backend" 2>/dev/null || true
 lsof -ti:8765 2>/dev/null | xargs -r kill -9 2>/dev/null || true
 lsof -ti:8080 2>/dev/null | xargs -r kill -9 2>/dev/null || true
@@ -64,7 +64,7 @@ wait_for_service() {
 echo ""
 echo -e "${BLUE}1. Starting HatCat Backend (Gemma 3 4b + Divergence Analysis)${NC}"
 cd "$SCRIPT_DIR"
-nohup poetry run uvicorn src.openwebui.server:app --host 0.0.0.0 --port 8765 > /tmp/hatcat_backend.log 2>&1 &
+nohup poetry run uvicorn src.ui.openwebui.server:app --host 0.0.0.0 --port 8765 > /tmp/hatcat_backend.log 2>&1 &
 HATCAT_PID=$!
 echo "   PID: $HATCAT_PID"
 

@@ -22,7 +22,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 from src.testing.concept_test_runner import generate_with_concept_detection
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
+from src.hat.monitoring.lens_manager import DynamicLensManager
 
 
 # Prompt templates matching original test design

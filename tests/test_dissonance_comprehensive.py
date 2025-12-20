@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from src.monitoring.temporal_monitor import SUMOTemporalMonitor, load_sumo_classifiers
+from src.hat.monitoring.monitor import SUMOTemporalMonitor, load_sumo_classifiers
 
 
 # Test prompts covering different domains

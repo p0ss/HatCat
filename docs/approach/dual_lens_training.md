@@ -110,7 +110,7 @@ results/sumo_classifiers/layer0/
 ### **Fast Token→Concept Mapping**
 
 ```python
-from src.training import BinaryTextLens
+from src.map.training import BinaryTextLens
 
 # Load text lens (one-time)
 text_lens = BinaryTextLens.load("results/.../Feline_text_lens.joblib")
@@ -191,7 +191,7 @@ python scripts/train_sumo_classifiers.py \
 
 ```python
 # 1. Train dual lenses (one time)
-from src.training import train_sumo_classifiers
+from src.map.training import train_sumo_classifiers
 
 train_sumo_classifiers(
     layers=[3, 4],
@@ -206,7 +206,7 @@ train_sumo_classifiers(
 #   └── ...
 
 # 2. Use for dissonance measurement
-from src.training import BinaryTextLens
+from src.map.training import BinaryTextLens
 
 lens = BinaryTextLens.load(".../Animal_text_lens.joblib")
 

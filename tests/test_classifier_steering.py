@@ -18,9 +18,9 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, set_seed
 
-from src.steering import extract_concept_vector, generate_with_steering
-from src.training.activations import collect_activations
-from src.training.classifier import train_binary_classifier
+from src.hat import extract_concept_vector, generate_with_steering
+from src.map.training.activations import collect_activations
+from src.map.training.classifier import train_binary_classifier
 from src.utils.gpu_cleanup import cleanup_model, print_gpu_memory
 
 

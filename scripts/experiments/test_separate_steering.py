@@ -15,14 +15,14 @@ import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.training.sumo_classifiers import (
+from src.map.training.sumo_classifiers import (
     extract_activations,
     train_simple_classifier,
     get_num_layers,
     get_hidden_dim,
 )
-from src.training.sumo_data_generation import create_sumo_training_dataset
-from src.steering.hooks import create_steering_hook, get_model_layers
+from src.map.training.sumo_data_generation import create_sumo_training_dataset
+from src.hat.steering.hooks import create_steering_hook, get_model_layers
 
 # Test prompts
 TEST_PROMPTS = [

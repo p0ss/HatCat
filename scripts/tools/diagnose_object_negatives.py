@@ -7,8 +7,8 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.training.sumo_classifiers import load_layer_concepts, build_sumo_negative_pool
-from src.training.sumo_data_generation import create_sumo_training_dataset
+from src.map.training.sumo_classifiers import load_layer_concepts, build_sumo_negative_pool
+from src.map.training.sumo_data_generation import create_sumo_training_dataset
 from collections import Counter
 
 def main():

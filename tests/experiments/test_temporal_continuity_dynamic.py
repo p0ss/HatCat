@@ -17,7 +17,7 @@ from pathlib import Path
 import torch
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
+from src.hat.monitoring.lens_manager import DynamicLensManager
 
 
 def record_continuous_timeline_dynamic(

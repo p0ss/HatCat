@@ -168,8 +168,8 @@ cd /home/poss/Documents/Code/HatCat
 python -c "from src.monitoring.dynamic_lens_manager import DynamicLensManager; print('DynamicLensManager OK')"
 python -c "from src.monitoring.text_concept_lens import TfidfConceptLens; print('TfidfConceptLens OK')"
 python -c "from src.registry.lens_pack_registry import get_available_lens_packs; print('lens_pack_registry OK')"
-python -c "from src.bootstrap.artifact import LensPack; print('LensPack OK')"
-python -c "from src.training.lens_validation import validate_lens_calibration; print('lens_validation OK')"
+python -c "from src.be.bootstrap.artifact import LensPack; print('LensPack OK')"
+python -c "from src.map.training.lens_validation import validate_lens_calibration; print('lens_validation OK')"
 ```
 
 ### 6.4 - Run existing test suite

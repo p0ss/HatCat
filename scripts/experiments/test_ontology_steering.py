@@ -18,15 +18,15 @@ import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering.ontology_field import (
+from src.hat.steering.ontology_field import (
     build_ontology_steering_field,
     load_steering_targets,
     steer_away_from_concept,
     validate_steering_targets,
     is_sensitive_concept,
 )
-from src.steering.hooks import create_field_steering_hook, create_steering_hook
-from src.steering.extraction import extract_concept_vector
+from src.hat.steering.hooks import create_field_steering_hook, create_steering_hook
+from src.hat.steering.extraction import extract_concept_vector
 
 
 def get_model_layers(model):
@@ -276,7 +276,7 @@ def compute_ontology_target_evidence(
         - Siblings (distance 1-2): sibling_evidence (e.g., 0.0 neutral)
         - Distant concepts (distance >= min_attract_distance): distant_evidence scaled by distance
     """
-    from src.steering.ontology_field import compute_graph_distances
+    from src.hat.steering.ontology_field import compute_graph_distances
 
     distances = compute_graph_distances(hierarchy, target_concept)
     if not distances:
@@ -352,7 +352,7 @@ def generate_with_combined_steering(
 
 def main():
     import argparse
-    from src.steering.ontology_field import load_hierarchy, select_field_concepts
+    from src.hat.steering.ontology_field import load_hierarchy, select_field_concepts
 
     parser = argparse.ArgumentParser(
         description="Test combined ontology steering mechanisms",

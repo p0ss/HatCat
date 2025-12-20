@@ -10,9 +10,9 @@ from pathlib import Path
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.activation_capture import ActivationCapture, ActivationConfig, BaselineGenerator
-from src.activation_capture.model_loader import ModelLoader
-from src.utils import ActivationStorage
+from src.hat.classifiers.classifiers.capture import ActivationCapture, ActivationConfig, BaselineGenerator
+from src.hat.utils.model_loader import ModelLoader
+from src.hat.utils import ActivationStorage
 
 
 def test_model_loading():

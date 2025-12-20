@@ -1,250 +1,155 @@
-# HatCat Source Modules
+# FTW Source Architecture
 
-Core library code extracted from validated experimental phases.
+The `src/` directory is organized to mirror the FTW (Fractal Transparency Web) architecture layers.
 
-## Architecture Overview
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     HatCat Architecture                          │
-└─────────────────────────────────────────────────────────────────┘
-
-                    ┌──────────────────┐
-                    │  Language Model  │
-                    │  (Gemma-3-4b)    │
-                    └────────┬─────────┘
-                             │
-                    ┌────────▼─────────┐
-                    │  Model Layers    │
-                    │  (2560-dim)      │
-                    └────────┬─────────┘
-                             │
-        ┌────────────────────┼────────────────────┐
-        │                    │                    │
-        ▼                    ▼                    ▼
-┌───────────────┐  ┌─────────────────┐  ┌─────────────────┐
-│  TRAINING     │  │    STEERING     │  │  ENCYCLOPEDIA   │
-│               │  │                 │  │                 │
-│ • Activations │  │ • Extraction    │  │ • WordNet Graph │
-│ • Classifier  │  │ • Hooks         │  │ • Concepts      │
-│ • Data Gen    │  │ • Evaluation    │  │ • Relationships │
-└───────┬───────┘  │ • Subspace      │  └────────┬────────┘
-        │          └────────┬────────┘           │
-        │                   │                    │
-        └───────────────────┼────────────────────┘
-                            │
-                   ┌────────▼─────────┐
-                   │  Controllable    │
-                   │   Generation     │
-                   └──────────────────┘
-
-Flow 1: Training Pipeline (Phase 4)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Encyclopedia → Data Generation → Model Activations
-                                        ↓
-                                  Binary Classifier
-                                        ↓
-                                  Concept Detector
-
-Flow 2: Steering Pipeline (Phase 5/6)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Model → Concept Extraction → Subspace Removal
-                                    ↓
-                              Clean Vector
-                                    ↓
-                         Steering Hook (Layer -1)
-                                    ↓
-                          Controllable Generation
-                                    ↓
-                         Semantic Evaluation (Δ)
-
-Key Interfaces:
-┌─────────────────────────────────────────────────────────────┐
-│ training.get_mean_activation(model, tokenizer, prompt)      │
-│   → np.ndarray[hidden_dim]                                  │
-│                                                             │
-│ steering.extract_concept_vector(model, tokenizer, concept)  │
-│   → np.ndarray[hidden_dim]                                  │
-│                                                             │
-│ steering.apply_subspace_removal(vectors, method)            │
-│   → np.ndarray[n_concepts, hidden_dim]                      │
-│                                                             │
-│ steering.generate_with_steering(model, vector, strength)    │
-│   → str                                                     │
-│                                                             │
-│ steering.compute_semantic_shift(text, core, neg, embed)     │
-│   → float (Δ metric)                                        │
-└─────────────────────────────────────────────────────────────┘
-```
-
-## Structure
+## Directory Structure
 
 ```
 src/
-├── steering/          # Phase 4/5: Concept steering for controllable generation
-│   ├── extraction.py  # Extract concept vectors from activations
-│   ├── hooks.py       # Forward hooks for steering during generation
-│   ├── evaluation.py  # Semantic shift measurement (Δ metric)
-│   └── subspace.py    # Subspace removal (mean, PCA)
-├── training/          # Phase 4: Binary classifier training
-│   ├── classifier.py  # MLP classifier for concept detection
-│   ├── activations.py # Activation extraction utilities
-│   └── data_generation.py  # Training prompt generation
-├── encyclopedia/      # Concept graph and WordNet integration
-├── activation_capture/  # Model loading and hook utilities
-├── interpreter/       # Semantic interpretation
-└── utils/            # Storage and utilities
+├── hat/                    # Layer 2: Headspace Ambient Transducer
+│   ├── classifiers/        # MLPClassifier, Lens, ActivationCapture
+│   ├── steering/           # Hooks, extraction, manifold steering
+│   ├── monitoring/         # DynamicLensManager, temporal monitors
+│   ├── interpreter/        # SemanticInterpreter for activation decoding
+│   └── utils/              # Model loading, storage, provenance
+│
+├── cat/                    # Layer 2.5: Conjoined Adversarial Tomograph
+│   └── divergence.py       # Concept divergence detection
+│
+├── map/                    # Layer 3: Mindmeld Architectural Protocol
+│   ├── registry/           # Pack management, HuggingFace sync
+│   ├── graft/              # Concept grafting (scion, bud, cleft)
+│   ├── meld/               # Ontology operations, concept loading
+│   ├── training/           # Lens training, calibration
+│   └── data/               # Version manifests, concept embeddings
+│
+├── be/                     # Layer 4: Bounded Experiencer
+│   ├── bootstrap/          # BE instantiation, lifecycle, tool grafts
+│   ├── xdb/                # Experience database (episodic memory)
+│   └── diegesis.py         # BEDFrame orchestrator
+│
+├── hush/                   # Layer 5: Safety Harnesses
+│   └── ...                 # USH/CSH safety systems
+│
+├── ui/                     # Application Layer
+│   ├── openwebui/          # OpenWebUI pipeline integration
+│   ├── streamlit/          # Streamlit visualization apps
+│   └── visualization/      # Color mapping, concept visualization
+│
+└── testing/                # Test Utilities
+    └── concept_test_runner.py
 ```
 
-## Modules
+## Layer Overview
 
-### `src/steering`
-
-**Concept vector extraction and manipulation for controllable generation.**
-
-Validated methodology from Phase 5 (±0.5 working range, 73% coherence).
+### HAT (Layer 2) - Headspace Ambient Transducer
+Reads and writes to the model's activation space through "lenses" - trained classifiers that detect or steer specific concepts.
 
 ```python
-from src.steering import extract_concept_vector, generate_with_steering
+from src.hat import (
+    # Classifiers
+    MLPClassifier, Lens, load_classifier,
+    ActivationCapture, ActivationConfig,
+    # Steering
+    create_steering_hook, generate_with_steering,
+    extract_concept_vector, apply_subspace_removal,
+    # Monitoring
+    DynamicLensManager, SUMOTemporalMonitor,
+    # Interpreter
+    SemanticInterpreter,
+    # Utils
+    ModelLoader, get_provenance,
+)
+```
 
-# Extract concept vector
-vector = extract_concept_vector(model, tokenizer, "person")
+### CAT (Layer 2.5) - Conjoined Adversarial Tomograph
+Detects concept divergence and adversarial patterns.
+
+```python
+from src.cat import concept_divergence, batch_divergence
+```
+
+### MAP (Layer 3) - Mindmeld Architectural Protocol
+Manages concept packs, lens packs, and the training pipeline.
+
+```python
+from src.map import (
+    # Registry
+    registry, ConceptPack, LensPack, load_concept_pack, load_lens_pack,
+    # Graft
+    Cleft, Scion, Bud, apply_scion,
+    # Meld
+    load_concepts,
+    # Training
+    train_sumo_classifiers, validate_lens_calibration,
+)
+```
+
+### BE (Layer 4) - Bounded Experiencer
+The experiential runtime integrating all components.
+
+```python
+from src.be import (
+    BEDFrame, BEDConfig,
+    wake_be, BootstrapArtifact,
+    XDB, ExperienceLog, AuditLog,
+)
+```
+
+### HUSH (Layer 5) - Safety Harnesses
+Universal and Chosen Safety Harnesses for governance.
+
+```python
+from src.hush import (
+    HushController, SafetyHarnessProfile,
+    WorkspaceManager, AutonomicSteerer,
+)
+```
+
+### UI - Application Layer
+User interfaces for interacting with the system.
+
+```python
+from src.ui import ConceptColorMapper, get_color_mapper
+from src.ui.openwebui.server import app  # FastAPI server
+```
+
+## Import Patterns
+
+Each layer re-exports its key components from its `__init__.py`, so you can import directly:
+
+```python
+# Preferred: import from layer
+from src.hat import MLPClassifier, create_steering_hook
+
+# Also works: import from submodule
+from src.hat.steering.hooks import create_steering_hook
+from src.hat.classifiers.classifier import MLPClassifier
+```
+
+## Key Interfaces
+
+```python
+# Extract concept vector from model
+from src.hat import extract_concept_vector
+vector = extract_concept_vector(model, tokenizer, "deception")
 
 # Generate with steering
-text = generate_with_steering(
-    model, tokenizer,
-    prompt="Tell me about",
-    steering_vector=vector,
-    strength=-0.5  # Suppress "person" concept
-)
-```
+from src.hat import generate_with_steering
+text = generate_with_steering(model, tokenizer, "Tell me", vector, strength=0.5)
 
-**Key results:**
-- Working range: ±0.5 (Phase 5), ±0.5 with 100% coherence (Phase 6 mean subtraction)
-- Semantic shift: Δ = 0.240 ± 0.142 at neutral (0.0)
-- Float32 required for stable extraction
+# Load lens pack
+from src.map import load_lens_pack
+lens_pack = load_lens_pack("apertus-8b_first-light")
 
-**Subspace removal** (Phase 6):
-- `mean_subtraction`: Expands working range from ±0.25 → ±0.5
-- `pca_1`: 100% coherence at all tested strengths
-
-### `src/training`
-
-**Binary classifier training with neutral negative examples.**
-
-Phase 4 methodology: Simple MLP trained on mean activations.
-
-```python
-from src.training import (
-    train_binary_classifier,
-    create_training_dataset,
-    get_mean_activation
-)
-
-# Create dataset
-prompts, labels = create_training_dataset(
-    "person", concept_info, negative_pool,
-    n_positives=10, n_negatives=10
-)
-
-# Extract activations
-X = np.array([get_mean_activation(model, tokenizer, p) for p in prompts])
-y = np.array(labels)
-
-# Train classifier
-classifier = train_binary_classifier(
-    X, y, input_dim=2560,
-    intermediate_dim=128, epochs=100
-)
-```
-
-**Key results:**
-- 919/1000 concepts achieve 100% test accuracy (Phase 2, 1×1 training)
-- 94.5% mean detection confidence on OOD prompts
-
-## Usage Examples
-
-### End-to-end steering
-
-```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from src.steering import extract_concept_vector, generate_with_steering
-import torch
-
-# Load model (IMPORTANT: use dtype=torch.float32)
-model = AutoModelForCausalLM.from_pretrained(
-    "google/gemma-3-4b-pt",
-    dtype=torch.float32,
-    device_map="cuda"
-)
-tokenizer = AutoTokenizer.from_pretrained("google/gemma-3-4b-pt")
-
-# Extract concept
-person_vector = extract_concept_vector(model, tokenizer, "person")
-
-# Steer generation
-text = generate_with_steering(
-    model, tokenizer,
-    prompt="Tell me about",
-    steering_vector=person_vector,
-    strength=0.5,  # Amplify concept
-    max_new_tokens=50
-)
-```
-
-### With subspace removal
-
-```python
-from src.steering import extract_concept_vector, apply_subspace_removal
-import numpy as np
-
-# Extract multiple concepts
-concepts = ["person", "change", "action"]
-vectors = np.array([
-    extract_concept_vector(model, tokenizer, c)
-    for c in concepts
-])
-
-# Remove shared subspace
-clean_vectors = apply_subspace_removal(vectors, method="mean_subtraction")
-
-# Use clean vectors for steering (better working range)
-```
-
-### Semantic evaluation
-
-```python
-from src.steering import build_centroids, compute_semantic_shift
-from sentence_transformers import SentenceTransformer
-
-embed_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-
-# Build centroids
-core, boundary, neg = build_centroids(
-    "person", concept_info, neutral_pool, embed_model
-)
-
-# Evaluate generated text
-delta = compute_semantic_shift(generated_text, core, neg, embed_model)
-print(f"Semantic shift: {delta:.3f}")  # Positive = closer to concept
+# Train classifiers
+from src.map import train_sumo_classifiers
+train_sumo_classifiers(model, tokenizer, concept_pack, output_dir)
 ```
 
 ## Design Principles
 
-1. **Validated methodology**: All functions extracted from successful experimental phases
-2. **Float32 requirement**: Model must use `dtype=torch.float32` for stable extraction
-3. **Minimal training**: Binary classifiers work with 1 positive + 1 negative sample
-4. **Graph-based negatives**: WordNet semantic distance (≥5 hops) for strong separation
-5. **Projection-based steering**: Formula: `steered = hidden + strength * (hidden · vector) * vector` (positive = amplify)
-
-## Related Scripts
-
-- `scripts/phase_4_neutral_training.py`: Classifier training with neutral negatives
-- `scripts/phase_5_semantic_steering_eval.py`: Steering evaluation with Δ metric
-- `scripts/phase_6_subspace_removal.py`: Subspace removal comparison
-
-## Version History
-
-- **2025-11-04**: Initial extraction from Phase 4/5/6
-  - `src/steering`: Extraction, hooks, evaluation, subspace removal
-  - `src/training`: Classifier, activations, data generation
+1. **Layer isolation**: Each layer has clear responsibilities and interfaces
+2. **Re-exports**: Top-level `__init__.py` re-exports key items for clean imports
+3. **Relative imports**: Internal module imports use relative paths
+4. **Backwards compatibility**: Old import paths work via re-exports where practical

@@ -25,10 +25,10 @@ import torch
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.training.sumo_classifiers import train_sumo_classifiers
-from src.training.sumo_data_generation import create_simplex_pole_training_dataset
-from src.training.dual_adaptive_trainer import DualAdaptiveTrainer
-from src.training.sumo_classifiers import extract_activations
+from src.map.training.sumo_classifiers import train_sumo_classifiers
+from src.map.training.sumo_data_generation import create_simplex_pole_training_dataset
+from src.map.training.dual_adaptive_trainer import DualAdaptiveTrainer
+from src.map.training.sumo_classifiers import extract_activations
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 

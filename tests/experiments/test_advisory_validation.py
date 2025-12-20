@@ -11,9 +11,9 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import numpy as np
 
-from src.training.sumo_classifiers import load_layer_concepts, build_sumo_negative_pool, extract_activations
-from src.training.sumo_data_generation import create_sumo_training_dataset
-from src.training.dual_adaptive_trainer import DualAdaptiveTrainer
+from src.map.training.sumo_classifiers import load_layer_concepts, build_sumo_negative_pool, extract_activations
+from src.map.training.sumo_data_generation import create_sumo_training_dataset
+from src.map.training.dual_adaptive_trainer import DualAdaptiveTrainer
 
 def main():
     print("=" * 80)

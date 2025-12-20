@@ -11,8 +11,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.training.sumo_classifiers import load_layer_concepts, build_sumo_negative_pool, create_sumo_training_dataset, extract_activations
-from src.training.dual_adaptive_trainer import DualAdaptiveTrainer
+from src.map.training.sumo_classifiers import load_layer_concepts, build_sumo_negative_pool, create_sumo_training_dataset, extract_activations
+from src.map.training.dual_adaptive_trainer import DualAdaptiveTrainer
 import numpy as np
 
 def main():

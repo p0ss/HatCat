@@ -18,7 +18,7 @@ from typing import Optional
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.interpreter.model import SemanticInterpreter
+from src.hat.interpreter.model import SemanticInterpreter
 
 
 class EncyclopediaDataset(Dataset):

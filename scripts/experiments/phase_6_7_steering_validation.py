@@ -23,8 +23,8 @@ import torch
 from typing import List, Dict
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering.manifold import ManifoldSteerer
-from src.steering import extract_concept_vector, generate_with_steering
+from src.hat.steering.manifold import ManifoldSteerer
+from src.hat import extract_concept_vector, generate_with_steering
 
 
 def test_baseline_steering(

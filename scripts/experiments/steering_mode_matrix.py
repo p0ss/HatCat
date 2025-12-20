@@ -18,7 +18,7 @@ import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering.hooks import (
+from src.hat.steering.hooks import (
     create_steering_hook,
     create_gradient_steering_hook,
     compute_contrastive_vector,
@@ -28,14 +28,14 @@ from src.steering.hooks import (
     remove_steering_hooks,
     LensClassifier,
 )
-from src.training.sumo_classifiers import (
+from src.map.training.sumo_classifiers import (
     extract_activations,
     train_simple_classifier,
     get_num_layers,
     get_hidden_dim,
     select_layers_for_concept,
 )
-from src.training.sumo_data_generation import create_sumo_training_dataset
+from src.map.training.sumo_data_generation import create_sumo_training_dataset
 
 
 def load_concepts():

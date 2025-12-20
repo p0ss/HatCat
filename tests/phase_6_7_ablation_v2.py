@@ -32,7 +32,7 @@ import torch
 from scipy.stats import spearmanr
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering import extract_concept_vector, generate_with_steering
+from src.hat import extract_concept_vector, generate_with_steering
 
 # Simple test config for speed
 N_CONCEPTS = 8  # Reduced for faster iteration

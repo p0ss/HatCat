@@ -225,8 +225,8 @@ QUICKSTART.md          (468 lines)
 2. **Test bootstrap on 100 concepts** (integration test, ~10 min)
    ```bash
    python -c "
-   from src.encyclopedia.bootstrap import ProgressiveBootstrap
-   from src.encyclopedia.concept_loader import load_concepts
+   from src.map.meld.bootstrap import ProgressiveBootstrap
+   from src.map.meld.concept_loader import load_concepts
 
    concepts = load_concepts(n=100)
    bootstrap = ProgressiveBootstrap()

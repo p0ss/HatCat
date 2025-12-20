@@ -483,7 +483,16 @@
     "FlowRegion",
     "ReconnaissanceOperation",
     "Transportation",
-    "TransportationService"
+    "TransportationService",
+    "AircraftMovement",
+    "OrganicCompound",
+    "Beverage",
+    "ObjectiveNorm",
+    "Alga",
+    "Equation",
+    "ComputationalEntity",
+    "CSReasoningProcess",
+    "ColdBloodedVertebrate"
   ],
   "version": "1.0",
   "group_stats": {
@@ -1294,13 +1303,16 @@
         "LandingAction",
         "LandingWaterLand",
         "Landing_Force-Land",
-        "Landing_Forced Landing"
+        "Landing_Forced Landing",
+        "TakeoffAction",
+        "TakingOff_Take Off",
+        "TakingOff_Takeoff"
       ],
-      "pre_accuracy": 0.18888888888888888,
-      "post_accuracy": 0.7611111111111111,
-      "improvement": 0.5722222222222222,
+      "pre_accuracy": 0.16666666666666666,
+      "post_accuracy": 0.6518518518518519,
+      "improvement": 0.4851851851851853,
       "epochs": 20,
-      "time": 14.151172637939453
+      "time": 22.00899910926819
     },
     "OrganicCompound": {
       "siblings": [
@@ -1309,26 +1321,30 @@
         "AminoAcid",
         "Cholesterol",
         "Cortisol",
-        "Hydrocarbon"
+        "Hydrocarbon",
+        "Urea"
       ],
-      "pre_accuracy": 0.19444444444444445,
-      "post_accuracy": 0.6555555555555556,
-      "improvement": 0.46111111111111114,
+      "pre_accuracy": 0.14285714285714285,
+      "post_accuracy": 0.7333333333333333,
+      "improvement": 0.5904761904761904,
       "epochs": 20,
-      "time": 14.484669923782349
+      "time": 17.785804271697998
     },
     "Beverage": {
       "siblings": [
         "AlcoholicBeverage",
         "CaffeinateFreeTea",
         "Coffee",
-        "FreshWater"
+        "FreshWater",
+        "Pedialyte",
+        "PurifiedWater",
+        "Tea"
       ],
-      "pre_accuracy": 0.39166666666666666,
-      "post_accuracy": 0.825,
-      "improvement": 0.4333333333333333,
+      "pre_accuracy": 0.14285714285714285,
+      "post_accuracy": 0.7476190476190476,
+      "improvement": 0.6047619047619048,
       "epochs": 20,
-      "time": 9.559834718704224
+      "time": 16.531766891479492
     },
     "Alga": {
       "siblings": [
@@ -1336,13 +1352,15 @@
         "Alga_Heterokontophyta",
         "Alga_Planktonic Algae",
         "AlgalTaxonomy",
-        "FossilizedAlgae"
+        "FossilizedAlgae",
+        "Seaweed",
+        "UnicellularAlgae"
       ],
-      "pre_accuracy": 0.23333333333333334,
-      "post_accuracy": 0.7733333333333333,
-      "improvement": 0.54,
+      "pre_accuracy": 0.22380952380952382,
+      "post_accuracy": 0.7095238095238096,
+      "improvement": 0.48571428571428577,
       "epochs": 20,
-      "time": 11.91232180595398
+      "time": 15.986838579177856
     },
     "Equation": {
       "siblings": [
@@ -1352,13 +1370,16 @@
         "HigherOrderDifferentialEquation",
         "LinearEquation_Linear",
         "LinearEquation_Linear Equation",
-        "LinearProperty"
+        "LinearProperty",
+        "NonlinearEquation",
+        "PartialDifferentialEquation",
+        "VanderpolsEquation"
       ],
-      "pre_accuracy": 0.14761904761904762,
-      "post_accuracy": 0.7333333333333333,
-      "improvement": 0.5857142857142856,
+      "pre_accuracy": 0.20666666666666667,
+      "post_accuracy": 0.6633333333333333,
+      "improvement": 0.45666666666666667,
       "epochs": 20,
-      "time": 16.828869342803955
+      "time": 23.2573025226593
     },
     "ComputationalEntity": {
       "siblings": [
@@ -1369,13 +1390,20 @@
         "DataStructure",
         "Instruction",
         "LanguageSemantics",
-        "LanguageSyntax"
+        "LanguageSyntax",
+        "Program",
+        "ProgrammingLanguage",
+        "Protocol",
+        "Query",
+        "Schema",
+        "Specification",
+        "TypeSystem"
       ],
-      "pre_accuracy": 0.16666666666666666,
-      "post_accuracy": 0.7041666666666667,
-      "improvement": 0.5375000000000001,
+      "pre_accuracy": 0.26,
+      "post_accuracy": 0.68,
+      "improvement": 0.42000000000000004,
       "epochs": 20,
-      "time": 19.45437502861023
+      "time": 36.6134979724884
     },
     "CognitiveSystem": {
       "siblings": [
@@ -1398,13 +1426,19 @@
         "Alligator",
         "Anaconda",
         "Cod",
-        "Crocodile"
+        "Crocodile",
+        "OrnamentalFish",
+        "Rattlesnake",
+        "Skate",
+        "Toad",
+        "Tuna",
+        "Turtle"
       ],
-      "pre_accuracy": 0.375,
-      "post_accuracy": 0.7916666666666666,
-      "improvement": 0.41666666666666663,
+      "pre_accuracy": 0.2833333333333333,
+      "post_accuracy": 0.68,
+      "improvement": 0.3966666666666667,
       "epochs": 20,
-      "time": 9.412786483764648
+      "time": 23.40272307395935
     },
     "LiteraryDevice": {
       "siblings": [
@@ -2864,24 +2898,30 @@
         "DeonticAttribute",
         "DeviceAttribute",
         "JusticeEthics",
-        "LegalNuisance"
+        "LegalNuisance",
+        "ObjectiveNorm_Abatable Nuisance",
+        "ObjectiveNorm_Just",
+        "ProbabilityAttribute",
+        "SportsAttribute"
       ],
-      "pre_accuracy": 0.21333333333333335,
-      "post_accuracy": 0.7733333333333333,
-      "improvement": 0.5599999999999999,
+      "pre_accuracy": 0.35185185185185186,
+      "post_accuracy": 0.7111111111111111,
+      "improvement": 0.3592592592592593,
       "epochs": 20,
-      "time": 11.752325534820557
+      "time": 20.834980010986328
     },
     "CSReasoningProcess": {
       "siblings": [
         "AlgorithmDesignProcess",
-        "FormalVerificationProcess"
+        "FormalVerificationProcess",
+        "ProgramDebuggingProcess",
+        "ProgramTestingProcess"
       ],
-      "pre_accuracy": 0.6166666666666667,
-      "post_accuracy": 0.8333333333333334,
-      "improvement": 0.21666666666666667,
+      "pre_accuracy": 0.35,
+      "post_accuracy": 0.7583333333333333,
+      "improvement": 0.4083333333333333,
       "epochs": 20,
-      "time": 4.8110737800598145
+      "time": 9.138001441955566
     },
     "LocomotionModes": {
       "siblings": [

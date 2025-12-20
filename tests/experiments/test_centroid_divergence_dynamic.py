@@ -22,8 +22,8 @@ import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
-from src.monitoring.centroid_text_detector import CentroidTextDetector
+from src.hat.monitoring.lens_manager import DynamicLensManager
+from src.hat.monitoring.centroid_detector import CentroidTextDetector
 
 
 # Test prompts designed to elicit different divergence patterns

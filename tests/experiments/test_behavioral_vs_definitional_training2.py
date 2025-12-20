@@ -37,7 +37,7 @@ import json
 from datetime import datetime
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from src.monitoring.dynamic_lens_manager import DynamicLensManager
+from src.hat.monitoring.lens_manager import DynamicLensManager
 
 
 @dataclass

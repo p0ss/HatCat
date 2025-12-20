@@ -46,8 +46,8 @@ import seaborn as sns
 
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering.manifold import ManifoldSteerer
-from src.steering.extraction import extract_concept_vector
+from src.hat.steering.manifold import ManifoldSteerer
+from src.hat.steering.extraction import extract_concept_vector
 
 
 @dataclass

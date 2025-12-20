@@ -1,14 +1,14 @@
 
-## See some sample concept activations   
+## See some sample concept activations
       .venv/bin/python tests/test_temporal_monitoring.py \
     --model swiss-ai/Apertus-8B-2509 \
     --lens-pack apertus-8b_first-light_calibration-test-2 \
     --samples-per-prompt 1 \
     --max-tokens 10 \
     --output-dir results/temporal_tests/soft_limit_test_v2
-    
-    
-##Test out steering     
+
+
+##Test out steering
   .venv/bin/python scripts/experiments/steering_characterization_test.py \
       --model swiss-ai/Apertus-8B-2509 \
       --lens-pack apertus-8b_first-light \
@@ -21,8 +21,27 @@
   .venv/bin/python scripts/experiments/analyze_steering_results.py results/steering_tests/run_20251217_204425/
 
   # With plots (if matplotlib available)
-  .venv/bin/python scripts/experiments/analyze_steering_results.py results/steering_tests/run_20251217_204425/ --plot            
-      
-## Train a lens pack from a concept pack 
+  .venv/bin/python scripts/experiments/analyze_steering_results.py results/steering_tests/run_20251217_204425/ --plot
 
-.venv/bin/python -m src.training.train_concept_pack_lenses     --concept-pack first-light     --model google/gemma-3-4b-pt     --output-dir lens_packs/gemma-3-4b-pt_first-light     --layers 0 1 2 3 4 5 6     --n-train-pos 50     --n-train-neg 50     --n-test-pos 20     --n-test-neg 20     --validation-mode falloff            
+## Train a lens pack from a concept pack
+
+.venv/bin/python -m src.training.train_concept_pack_lenses     --concept-pack first-light     --model google/gemma-3-4b-pt     --output-dir lens_packs/gemma-3-4b-pt_first-light     --layers 0 1 2 3 4 5 6     --n-train-pos 50     --n-train-neg 50     --n-test-pos 20     --n-test-neg 20     --validation-mode falloff
+
+
+## Upload a lens pack
+
+● PYTHONPATH=. .venv/bin/python -c "
+  from src.map.registry import PackRegistry
+  reg = PackRegistry()
+
+  for layer in [3, 4, 5, 6]:
+      print(f'\n=== Pushing layer {layer} ===')
+      reg.push_lens_layer('apertus-8b_first-light', layer=layer)
+  "
+
+  Or all at once:
+  PYTHONPATH=. .venv/bin/python -c "
+  from src.map.registry import PackRegistry
+  reg = PackRegistry()
+  reg.push_all_lens_layers('apertus-8b_first-light')
+  "

@@ -184,7 +184,7 @@ outputs = model.generate(
 **Location:** `src/encyclopedia/wordnet_graph_v2.py`
 
 ```python
-from src.encyclopedia.wordnet_graph_v2 import WordNetGraph
+from src.map.meld.wordnet_graph_v2 import WordNetGraph
 
 graph = WordNetGraph()
 concepts = graph.get_top_n_concepts(n=100)

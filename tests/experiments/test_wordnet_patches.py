@@ -7,7 +7,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.data.wordnet_patch_loader import WordNetPatchLoader
+from src.map.data.wordnet_patch_loader import WordNetPatchLoader
 
 
 def main():

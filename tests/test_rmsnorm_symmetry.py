@@ -24,7 +24,7 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering import extract_concept_vector
+from src.hat import extract_concept_vector
 from src.utils.gpu_cleanup import cleanup_model, print_gpu_memory
 
 

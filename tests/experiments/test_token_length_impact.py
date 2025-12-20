@@ -37,7 +37,7 @@ from training.sumo_data_generation import (
 )
 from training.dual_adaptive_trainer import DualAdaptiveTrainer
 from training.falloff_validation import FalloffValidator
-from monitoring.dynamic_lens_manager import DynamicLensManager
+from src.hat.monitoring.lens_manager import DynamicLensManager
 
 
 def train_single_concept_with_token_length(

@@ -12,7 +12,7 @@ import json
 import torch
 from pathlib import Path
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from src.monitoring.sumo_hierarchical import SUMOHierarchicalMonitor
+from src.hat.sumo_hierarchical import SUMOHierarchicalMonitor
 import logging
 
 logging.basicConfig(level=logging.INFO)

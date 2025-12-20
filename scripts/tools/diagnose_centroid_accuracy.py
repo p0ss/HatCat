@@ -11,7 +11,7 @@ import numpy as np
 import torch
 from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from src.monitoring.centroid_text_detector import CentroidTextDetector
+from src.hat.monitoring.centroid_detector import CentroidTextDetector
 
 # Configuration
 MODEL_NAME = "google/gemma-3-4b-pt"

@@ -22,7 +22,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-from monitoring.dynamic_lens_manager import DynamicLensManager
+from src.hat.monitoring.lens_manager import DynamicLensManager
 from training.tripole_classifier import TripoleLens
 
 # Paths

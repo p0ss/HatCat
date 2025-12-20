@@ -35,8 +35,8 @@ import torch
 from scipy.stats import spearmanr
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering import extract_concept_vector, generate_with_steering
-from src.steering.manifold import estimate_contamination_subspace, estimate_task_manifold, apply_dual_subspace_steering
+from src.hat import extract_concept_vector, generate_with_steering
+from src.hat.steering.manifold import estimate_contamination_subspace, estimate_task_manifold, apply_dual_subspace_steering
 
 # Test configuration
 CONCEPTS = [

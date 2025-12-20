@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.training.sumo_classifiers import extract_activations
+from src.map.training.sumo_classifiers import extract_activations
 
 
 def main():

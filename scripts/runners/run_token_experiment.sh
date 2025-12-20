@@ -5,7 +5,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-SRC_FILE="$PROJECT_ROOT/src/training/sumo_classifiers.py"
+SRC_FILE="$PROJECT_ROOT/src/map/training/sumo_classifiers.py"
 BACKUP_FILE="$SRC_FILE.tokenexp_backup"
 
 # Backup original
@@ -40,7 +40,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, 'src')
 
-from training.sumo_classifiers import train_layer, load_layer_concepts
+from src.map.training.sumo_classifiers import train_layer, load_layer_concepts
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 

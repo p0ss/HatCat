@@ -12,7 +12,7 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from src.training.dual_adaptive_trainer import DualAdaptiveTrainer
+from src.map.training.dual_adaptive_trainer import DualAdaptiveTrainer
 
 
 def test_mode_behavior():

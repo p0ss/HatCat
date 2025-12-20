@@ -7,7 +7,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from src.steering import extract_concept_vector
+from src.hat import extract_concept_vector
 
 # Load model
 print('Loading model...')

@@ -24,7 +24,7 @@ import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.steering.detached_jacobian import extract_concept_vector_jacobian
+from src.hat.steering.detached_jacobian import extract_concept_vector_jacobian
 
 
 def cosine_similarity(vec1: np.ndarray, vec2: np.ndarray) -> float:

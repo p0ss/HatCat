@@ -409,7 +409,7 @@ class BEDFrame:
         if self.xdb is None:
             return None
 
-        from src.xdb import EventType
+        from .xdb import EventType
 
         try:
             # Map tick type to XDB event type
@@ -488,7 +488,7 @@ class BEDFrame:
         if self.audit_log is None or not self.config.audit_enabled:
             return
 
-        from src.xdb import EventType
+        from .xdb import EventType
 
         try:
             event_type_map = {

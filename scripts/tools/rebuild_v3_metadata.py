@@ -16,7 +16,7 @@ import json
 import torch
 from collections import defaultdict
 
-from src.registry.concept_pack_registry import ConceptPackRegistry
+from src.map.concept_pack import load_concept_pack
 
 
 def scan_lens_files(lens_dir: Path):
@@ -54,8 +54,7 @@ def load_concept_hierarchy():
     """Load concept pack to get hierarchy information."""
     print("\nLoading concept pack hierarchy...")
 
-    registry = ConceptPackRegistry()
-    concept_pack = registry.get_pack("sumo-wordnet-v1")
+    concept_pack = load_concept_pack("sumo-wordnet-v1", auto_pull=False)
 
     print(f"  Loaded {len(concept_pack.concepts)} concepts")
 

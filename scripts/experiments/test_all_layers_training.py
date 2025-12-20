@@ -14,13 +14,13 @@ import numpy as np
 import json
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.training.sumo_classifiers import (
+from src.map.training.sumo_classifiers import (
     extract_activations,
     train_simple_classifier,
     get_hidden_dim,
     load_all_concepts,
 )
-from src.training.sumo_data_generation import (
+from src.map.training.sumo_data_generation import (
     create_sumo_training_dataset,
     build_sumo_negative_pool,
 )

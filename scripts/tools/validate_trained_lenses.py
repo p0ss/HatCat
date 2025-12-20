@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.training.lens_validation import validate_lens_set
+from src.map.training.lens_validation import validate_lens_set
 
 
 def main():
@@ -59,12 +59,11 @@ def main():
     print()
 
     # Load lens pack metadata
-    from src.registry import LensPackRegistry
-    registry = LensPackRegistry()
-    lens_pack = registry.get_pack(args.lens_pack)
-
-    if not lens_pack:
-        print(f"ERROR: Lens pack '{args.lens_pack}' not found")
+    from src.map.lens_pack import load_lens_pack
+    try:
+        lens_pack = load_lens_pack(args.lens_pack, auto_pull=False)
+    except Exception as e:
+        print(f"ERROR: Lens pack '{args.lens_pack}' not found: {e}")
         return 1
 
     # Get lenses directory (all lenses in one dir, we'll filter by layer)

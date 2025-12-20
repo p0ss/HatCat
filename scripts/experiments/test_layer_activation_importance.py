@@ -16,7 +16,7 @@ import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.training.sumo_classifiers import extract_activations, get_hidden_dim
+from src.map.training.sumo_classifiers import extract_activations, get_hidden_dim
 
 
 def test_layer_importance(classifier, activations, n_layers, hidden_dim):

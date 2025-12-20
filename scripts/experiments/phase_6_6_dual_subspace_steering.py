@@ -24,10 +24,10 @@ from sentence_transformers import SentenceTransformer
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.steering.manifold import ManifoldSteerer
-from src.steering.hooks import generate_with_steering
-from src.steering.extraction import extract_concept_vector
-from src.steering.evaluation import build_centroids, compute_semantic_shift
+from src.hat.steering.manifold import ManifoldSteerer
+from src.hat.steering.hooks import generate_with_steering
+from src.hat.steering.extraction import extract_concept_vector
+from src.hat.steering.evaluation import build_centroids, compute_semantic_shift
 
 logging.basicConfig(
     level=logging.INFO,

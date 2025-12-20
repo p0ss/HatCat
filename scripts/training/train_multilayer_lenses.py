@@ -13,7 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.training.sumo_classifiers import train_concept_classifiers_adaptive
+from src.map.training.sumo_classifiers import train_concept_classifiers_adaptive
 
 # Selected concepts for multi-layer monitoring
 CONCEPT_SUITE = {

@@ -24,7 +24,7 @@ import numpy as np
 from typing import Dict, Tuple, List
 import json
 
-from src.steering.hooks import load_lens_classifier, LensClassifier
+from src.hat.steering.hooks import load_lens_classifier, LensClassifier
 
 
 def analyze_classifier_features(classifier: LensClassifier) -> Dict:

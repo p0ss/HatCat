@@ -10,7 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import torch
-from src.activation_capture.model_loader import ModelLoader
+from src.hat.utils.model_loader import ModelLoader
 
 
 def main():

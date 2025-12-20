@@ -13,8 +13,8 @@ import numpy as np
 from pathlib import Path
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from src.training.sumo_classifiers import extract_activations
-from src.monitoring.centroid_text_detector import CentroidTextDetector
+from src.map.training.sumo_classifiers import extract_activations
+from src.hat.monitoring.centroid_detector import CentroidTextDetector
 
 
 def test_concept_detection(concept_name="Physical"):

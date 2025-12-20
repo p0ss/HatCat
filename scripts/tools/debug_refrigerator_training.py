@@ -11,9 +11,9 @@ import json
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.registry.concept_pack_registry import ConceptPackRegistry
-from src.training.activation_extraction import PromptBasedExtractor
-from src.training.adaptive_lens_trainer import SimpleLensTrainer
+from src.map.concept_pack import load_concept_pack
+from src.map.training.activation_extraction import PromptBasedExtractor
+from src.map.training.adaptive_lens_trainer import SimpleLensTrainer
 
 
 def main():
@@ -39,8 +39,7 @@ def main():
 
     # Load concept
     print("\nLoading Refrigerator concept...")
-    registry = ConceptPackRegistry()
-    concept_pack = registry.get_pack("sumo-wordnet-v1")
+    concept_pack = load_concept_pack("sumo-wordnet-v1", auto_pull=False)
 
     # Get from layer file
     import json
