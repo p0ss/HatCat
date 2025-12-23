@@ -674,6 +674,15 @@ X_train = (X_train - train_mean) / train_std
 
 **Fix**: Updated all affected files with correct path calculations.
 
+#### 22.4: Validation Dtype/Normalization Fix ✓
+**Problem**: Lens calibration validation failed with "mat1 and mat2 must have same dtype".
+- Validation created float32 tensors but classifier is bfloat16
+- Validation also didn't apply per-sample normalization like training does
+
+**Fix**: Updated validation in `dual_adaptive_trainer.py`:
+- Get dtype from classifier parameters, not hardcoded float32
+- Apply same per-sample normalization as training before inference
+
 ---
 
 ## Open Questions

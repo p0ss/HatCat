@@ -24,6 +24,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src" / "map"))  # For training, data impo
 # Import and patch the layer data directory before importing training functions
 from training import sumo_classifiers as sumo_classifiers_module
 from training.sumo_classifiers import get_hidden_dim
+from training.sample_quality import SampleSaver
 from data.version_manifest import LensManifest
 
 
@@ -98,6 +99,10 @@ def parse_args():
                         help='Number of top layers per third for --multi-layer (default: 1). '
                              'k=1 → 3 layers, k=2 → 6 layers, k=3 → 9 layers. '
                              'Higher k = more compute but potentially better coverage.')
+
+    # Sample saving for CAT training
+    parser.add_argument('--save-samples', action='store_true',
+                        help='Save training samples with quality metrics for later CAT fine-tuning')
 
     return parser.parse_args()
 
@@ -283,6 +288,13 @@ def main():
         print(f"  Sibling refinement: {'YES' if run_sibling_refinement else 'NO'}")
         print()
 
+    # Create sample saver if requested (for CAT training data)
+    sample_saver = None
+    if args.save_samples:
+        sample_saver = SampleSaver(output_dir, args.concept_pack)
+        print(f"Sample saving enabled: {sample_saver.output_dir}")
+        print()
+
     # Training (binary + optional sibling refinement per layer)
     if not refine_only:
         sumo_classifiers_module.train_sumo_classifiers(
@@ -306,6 +318,7 @@ def main():
             all_layers=args.all_layers,
             multi_layer_mode=args.multi_layer,
             multi_layer_top_k=args.multi_layer_k,
+            sample_saver=sample_saver,
         )
     else:
         # Refine-only mode: just run sibling refinement on existing lenses

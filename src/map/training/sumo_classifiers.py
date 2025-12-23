@@ -107,7 +107,8 @@ def extract_activations(
     greedy: bool = False,
     pooling: str = "mean",
     layer_idx: Optional[Union[int, List[int]]] = 15,
-) -> np.ndarray:
+    return_texts: bool = False,
+) -> Union[np.ndarray, Tuple[np.ndarray, List[str]]]:
     """
     Extract activations from model hidden states.
 
@@ -136,9 +137,11 @@ def extract_activations(
                    - int (e.g., 15): Single layer mode (default)
                    - List[int] (e.g., [4, 15, 28]): Multi-layer mode, concatenates specified layers
                    - None: All-layers mode (concatenates all layers)
+        return_texts: If True, also return the generated texts for sample saving
 
     Returns:
-        Array of activation vectors
+        If return_texts=False: Array of activation vectors
+        If return_texts=True: Tuple of (activations, generated_texts)
         - If layer_idx is int: Shape [n_samples, hidden_dim]
         - If layer_idx is list: Shape [n_samples, len(layer_idx) * hidden_dim]
         - If layer_idx is None: Shape [n_samples, n_layers * hidden_dim]
@@ -148,6 +151,7 @@ def extract_activations(
     all_layers_mode = layer_idx is None
     multi_layer_mode = isinstance(layer_idx, list)
     activations: List[np.ndarray] = []
+    generated_texts: List[str] = []
     model.eval()
 
     # Vary temperature across batches for diversity
@@ -236,6 +240,15 @@ def extract_activations(
                         pad_token_id=tokenizer.eos_token_id,
                     )
 
+                # Capture generated texts if requested
+                if return_texts:
+                    for seq_idx in range(len(batch_prompts)):
+                        # Get the generated sequence (excluding prompt)
+                        prompt_len = inputs.input_ids[seq_idx].shape[0]
+                        generated_ids = outputs.sequences[seq_idx][prompt_len:]
+                        generated_text = tokenizer.decode(generated_ids, skip_special_tokens=True)
+                        generated_texts.append(generated_text)
+
                 # Extract hidden states from generation
                 # outputs.hidden_states is tuple of tuples: (step1, step2, ...)
                 # Each step is tuple of layers: (layer0, layer1, ..., layerN)
@@ -281,6 +294,8 @@ def extract_activations(
                     result = torch.cat(layer_pooled_activations, dim=0)
                     activations.append(result.float().cpu().numpy())
 
+    if return_texts:
+        return np.array(activations), generated_texts
     return np.array(activations)
 
 
@@ -541,6 +556,7 @@ def train_layer(
     all_layers: bool = False,
     multi_layer_mode: bool = False,
     multi_layer_top_k: int = 1,
+    sample_saver=None,
 ) -> Dict:
     """
     Train classifiers for a single SUMO abstraction layer.
@@ -560,6 +576,7 @@ def train_layer(
         multi_layer_top_k: Number of top layers to select from each third (default 1).
                           k=1 → 3 layers, k=2 → 6 layers, k=3 → 9 layers, etc.
                           Higher k = more compute/memory but potentially better coverage.
+        sample_saver: Optional SampleSaver instance for saving training samples with quality checking.
     """
     print(f"\n{'=' * 80}")
     print(f"TRAINING LAYER {layer}")
@@ -615,6 +632,7 @@ def train_layer(
             train_activation=True,
             train_text=False,  # Disable TF-IDF text lens training
             hierarchy_dir=hierarchy_dir,  # For accurate domain inference in validation
+            sample_saver=sample_saver,  # For saving training samples with quality checks
         )
 
     for i, concept in enumerate(concepts):
@@ -744,6 +762,7 @@ def train_layer(
                     'model': model,
                     'tokenizer': tokenizer,
                     'device': device,
+                    'layer': layer,  # For sample saving
                 }
 
                 # Run dual adaptive training with incremental sample generation
@@ -980,6 +999,7 @@ def train_sumo_classifiers(
     all_layers: bool = False,
     multi_layer_mode: bool = False,
     multi_layer_top_k: int = 1,
+    sample_saver=None,
 ) -> List[Dict]:
     """
     High-level entry point for training multiple layers.
@@ -997,6 +1017,7 @@ def train_sumo_classifiers(
                          and concatenate those layers for training. More efficient than all_layers.
         multi_layer_top_k: Number of top layers to select from each third (default 1).
                           k=1 → 3 layers, k=2 → 6 layers, k=3 → 9 layers, etc.
+        sample_saver: Optional SampleSaver instance for saving training samples with quality checking.
     """
     output_dir = Path(output_dir)
 
@@ -1089,6 +1110,7 @@ def train_sumo_classifiers(
             all_layers=all_layers,
             multi_layer_mode=multi_layer_mode,
             multi_layer_top_k=multi_layer_top_k,
+            sample_saver=sample_saver,
         )
         summaries.append(summary)
 
@@ -1107,6 +1129,14 @@ def train_sumo_classifiers(
                 epochs=sibling_refine_epochs,
                 hidden_dim=hidden_dim,
             )
+
+        # Save samples collected during this layer's training
+        if sample_saver is not None:
+            sample_saver.save_layer(layer)
+
+    # Save all collected samples and quality report
+    if sample_saver is not None:
+        sample_saver.save_all()
 
     # Compute centroids separately ONLY if NOT using adaptive training
     # (adaptive training computes them inline)

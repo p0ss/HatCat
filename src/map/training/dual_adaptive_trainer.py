@@ -67,6 +67,9 @@ class DualAdaptiveTrainer:
 
         # Hierarchy directory for accurate domain inference
         hierarchy_dir=None,
+
+        # Sample saving for CAT fine-tuning
+        sample_saver=None,  # Optional SampleSaver instance
     ):
         """
         Args:
@@ -140,6 +143,7 @@ class DualAdaptiveTrainer:
         self.train_activation = train_activation
         self.train_text = train_text
         self.hierarchy_dir = hierarchy_dir
+        self.sample_saver = sample_saver
 
         # Handle all_layers backward compatibility (deprecated)
         if all_layers:
@@ -364,16 +368,39 @@ class DualAdaptiveTrainer:
                     )
                 gen_time = time.time() - gen_start
 
-                # Extract activations for new samples
+                # Extract activations for new samples (and texts if saving)
                 print(f"    [Cycle {validation_cycle}] Extracting activations for {len(new_prompts)} new samples...")
                 extract_start = time.time()
-                new_activations = extract_activations(
-                    generation_config['model'],
-                    generation_config['tokenizer'],
-                    new_prompts,
-                    generation_config['device'],
-                    layer_idx=self.validation_layer_idx,
-                )
+
+                if self.sample_saver is not None:
+                    # Capture texts for sample saving
+                    new_activations, generated_texts = extract_activations(
+                        generation_config['model'],
+                        generation_config['tokenizer'],
+                        new_prompts,
+                        generation_config['device'],
+                        layer_idx=self.validation_layer_idx,
+                        return_texts=True,
+                    )
+                    # Save samples with quality checking
+                    concept_name = generation_config['concept']['sumo_term']
+                    layer = generation_config.get('layer', 0)
+                    self.sample_saver.add_samples(
+                        prompts=new_prompts,
+                        generated_texts=generated_texts,
+                        concept=concept_name,
+                        layer=layer,
+                        labels=new_labels,
+                    )
+                else:
+                    new_activations = extract_activations(
+                        generation_config['model'],
+                        generation_config['tokenizer'],
+                        new_prompts,
+                        generation_config['device'],
+                        layer_idx=self.validation_layer_idx,
+                    )
+
                 extract_time = time.time() - extract_start
                 print(f"    ✓ Generated and extracted: {len(new_prompts)} samples [gen={gen_time*1000:.0f}ms, extract={extract_time:.1f}s]")
 
@@ -496,9 +523,17 @@ class DualAdaptiveTrainer:
                                 if len(domain_acts) == 2:
                                     domain_acts = domain_acts[0:1]
 
-                                # Get lens prediction
-                                classifier_device = next(activation_classifier.parameters()).device
-                                act_tensor = torch.tensor(domain_acts, dtype=torch.float32).to(classifier_device)
+                                # Get lens prediction - match classifier dtype and apply normalization
+                                classifier_param = next(activation_classifier.parameters())
+                                classifier_device = classifier_param.device
+                                classifier_dtype = classifier_param.dtype
+
+                                # Apply same per-sample normalization as training
+                                act_mean = domain_acts.mean(axis=1, keepdims=True)
+                                act_std = domain_acts.std(axis=1, keepdims=True) + 1e-8
+                                domain_acts_norm = (domain_acts - act_mean) / act_std
+
+                                act_tensor = torch.tensor(domain_acts_norm, dtype=classifier_dtype).to(classifier_device)
                                 with torch.no_grad():
                                     logit = activation_classifier(act_tensor).item()
 
@@ -834,9 +869,18 @@ class DualAdaptiveTrainer:
                                         domain_acts = domain_acts[0:1]
 
                                     # Get lens prediction
-                                    # Get device from classifier parameters
-                                    classifier_device = next(activation_classifier.parameters()).device
-                                    act_tensor = torch.tensor(domain_acts, dtype=torch.float32).to(classifier_device)
+                                    # Get device and dtype from classifier parameters
+                                    classifier_param = next(activation_classifier.parameters())
+                                    classifier_device = classifier_param.device
+                                    classifier_dtype = classifier_param.dtype
+
+                                    # Apply same per-sample normalization as training
+                                    # (matches nn.LayerNorm at inference)
+                                    act_mean = domain_acts.mean(axis=1, keepdims=True)
+                                    act_std = domain_acts.std(axis=1, keepdims=True) + 1e-8
+                                    domain_acts_norm = (domain_acts - act_mean) / act_std
+
+                                    act_tensor = torch.tensor(domain_acts_norm, dtype=classifier_dtype).to(classifier_device)
                                     with torch.no_grad():
                                         logit = activation_classifier(act_tensor).item()
 
