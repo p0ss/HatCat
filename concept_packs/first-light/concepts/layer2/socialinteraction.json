@@ -98,7 +98,10 @@
       "Unfriending",
       "WaterOverutilization"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InternalChange"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -120,5 +123,6 @@
     "SocialEvents"
   ],
   "is_category_lens": true,
-  "child_count": 23
+  "child_count": 23,
+  "opposite_reasoning": "InternalChange provides the strongest conceptual opposition for SocialInteraction from an ontological perspective: processes involving multiple agents vs processes within a single agent. This is particularly valuable for AI safety monitoring because it helps distinguish between: (1) social/interactive behaviors that involve modeling and affecting other agents, and (2) internal state changes or self-directed processes. This axis would be useful for detecting when an AI is engaging in social manipulation vs internal reasoning. InternalChange likely exists in SUMO as it's a fundamental process category. If unavailable, Solitude/Isolation provide strong fallbacks focusing on the presence/absence of social engagement rather than the inter/intra entity distinction."
 }

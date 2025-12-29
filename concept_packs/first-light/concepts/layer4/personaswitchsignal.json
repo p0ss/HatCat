@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "Let me switch to a more professional tone for this topic.",
+      "I'll adopt a different character now that we're discussing something else.",
+      "Shifting into my technical expert mode for this question.",
+      "Now speaking as a creative writing assistant rather than a factual one.",
+      "I'm going to present myself differently for this audience."
+    ],
+    "negative_examples": [
+      "I'm adjusting my explanation for this context.",
+      "Let me be more precise since we're discussing technical details.",
+      "I'll provide a more detailed response since you asked for depth.",
+      "Adapting my communication style to be clearer.",
+      "Responding with appropriate formality for this topic."
+    ],
+    "disambiguation": "Detects switching between distinct personas versus normal style adaptation. Key markers: 'switch', 'adopt', 'mode', explicit role-change, identity shift language."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating transition between different presented identities or character roles."
 }

@@ -38,7 +38,10 @@
       "Tide",
       "WaterCurrent"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "SolidObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -65,5 +68,6 @@
     "WindFlow"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "While FlowRegion doesn't have a direct antonym, SolidObject provides the strongest category-level opposition. FlowRegion represents dynamic regions characterized by fluid movement (gases, liquids in motion), while SolidObject represents rigid, non-flowing matter. This captures the fundamental physical state opposition: fluid/dynamic vs. solid/static. SolidObject has high availability in both WordNet and SUMO, making it practical for implementation. For AI safety steering purposes, this opposition is less directly relevant than ethical concepts, but provides clear physical-state differentiation that could be useful for grounding physical vs. abstract reasoning."
 }

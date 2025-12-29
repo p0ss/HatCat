@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InternalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -48,5 +51,6 @@
     ]
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "InternalAttribute provides the strongest semantic opposition for DeviceStateAttribute. DeviceStateAttribute represents external, observable, controllable states (on/off, open/closed) that can be changed through interaction, while InternalAttribute represents intrinsic, internal properties that are inherent to the object. This external-observable vs internal-intrinsic dimension is semantically meaningful and useful for distinguishing between changeable operational states and fixed properties. The opposition is clean, taxonomically sound, and exists in SUMO. While Process is more readily available, InternalAttribute provides better attribute-level opposition within the same ontological category, making it more appropriate for Fisher-LDA steering within the attribute space."
 }

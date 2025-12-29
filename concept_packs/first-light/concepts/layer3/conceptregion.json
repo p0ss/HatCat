@@ -38,7 +38,10 @@
       "MarginRegion",
       "OpinionCluster"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalRegion"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -67,5 +70,6 @@
     "OpinionCluster"
   ],
   "is_category_lens": true,
-  "child_count": 8
+  "child_count": 8,
+  "opposite_reasoning": "PhysicalRegion provides the strongest and most ontologically grounded opposition. ConceptRegion is explicitly abstract (representing clusters in conceptual/semantic space), while PhysicalRegion represents concrete spatial locations. This abstract\u2194physical distinction is: (1) fundamental in SUMO ontology, (2) likely to exist in both WordNet and SUMO, (3) highly useful for AI safety steering between abstract reasoning and grounded/physical understanding, and (4) provides clear separation in embedding space. The abstract vs physical axis is particularly relevant for detecting when AI systems conflate or confuse conceptual reasoning with physical reality."
 }

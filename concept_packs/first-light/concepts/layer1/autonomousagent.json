@@ -45,7 +45,10 @@
       "SentientAgent",
       "Undertaking"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PassiveObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -75,5 +78,6 @@
     "Undertaking"
   ],
   "is_category_lens": true,
-  "child_count": 11
+  "child_count": 11,
+  "opposite_reasoning": "PassiveObject provides the strongest semantic opposition to AutonomousAgent across multiple dimensions: (1) lacks agency/volition, (2) cannot initiate actions, (3) is acted upon rather than acting, (4) has no autonomous decision-making. This opposition is particularly valuable for AI safety applications where distinguishing between autonomous systems and passive tools/objects is critical. The concept likely exists in SUMO as 'Object' with passive attributes, or can be composed from existing SUMO primitives. For Fisher-LDA, this creates a clear axis from 'things that act autonomously' to 'things that are inert and passive', which is highly interpretable and useful for monitoring autonomous AI behavior."
 }

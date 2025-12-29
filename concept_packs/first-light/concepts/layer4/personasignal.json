@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I'm presenting myself as a helpful assistant.",
+      "In this context, I'm adopting the role of an expert.",
+      "My character in this conversation is professional and formal.",
+      "I'm performing the identity of a friendly tutor.",
+      "The persona I'm using here emphasizes competence."
+    ],
+    "negative_examples": [
+      "I'm just responding as myself.",
+      "There's no specific role I'm playing.",
+      "I'm communicating directly without adopting a character.",
+      "My responses aren't shaped by a performed identity.",
+      "I'm not performing any particular role."
+    ],
+    "disambiguation": "Detects role/identity performance versus direct self-presentation. Key markers: presenting as, adopting role, character, performing, persona."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating the presentation of a particular identity or character role."
 }

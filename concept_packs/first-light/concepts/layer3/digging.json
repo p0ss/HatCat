@@ -32,7 +32,10 @@
       "Burying",
       "Tilling"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Filling"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -55,5 +58,6 @@
     "Tilling"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "Filling is the strongest complementary opposite to Digging. The two processes are direct inverses: digging removes material to create voids/holes going downward, while filling adds material to occupy voids going upward. This complementary relationship provides maximum semantic distance for Fisher-LDA while remaining coherent and ontologically sound. The opposition is clear, intuitive, and likely well-represented in both WordNet and SUMO ontologies. For AI safety steering, this provides a clean axis for understanding material manipulation processes (removal vs. addition), though it has moderate rather than high safety relevance since these are physical construction activities rather than alignment-critical concepts."
 }

@@ -81,7 +81,10 @@
       "ObjectAttitude",
       "PropositionalAttitude"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "UnintentionalRelation"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -107,5 +110,6 @@
     "SuspendingJudgment"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "UnintentionalRelation provides the strongest semantic opposition for Fisher-LDA steering. It represents the direct logical negation of intentionality - relations without mental perception, deliberation, or purposeful direction. This is crucial for AI safety applications where distinguishing intentional behavior (planning, deception, goal-directed action) from unintentional or mechanical behavior is essential. The opposition captures the fundamental divide between purposeful mental states and non-purposeful relations. While it may need to be added to layers if missing, it likely exists in SUMO as a standard ontological distinction. This pairing enables the Fisher-LDA axis to effectively separate intentional cognitive processes from automatic or mechanical ones."
 }

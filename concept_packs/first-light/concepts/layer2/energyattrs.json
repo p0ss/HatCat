@@ -27,7 +27,10 @@
       "EuropeanUnionEnergyLabelClass",
       "RealtimeSystemAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "SubjectiveAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -69,5 +72,6 @@
     "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.802494Z",
     "pack_version": "7.6.32"
-  }
+  },
+  "opposite_reasoning": "SubjectiveAttribute provides the strongest semantic opposition to EnergyAttrs. EnergyAttrs represents objective, quantifiable, measurable technical properties (power consumption, efficiency ratings) while SubjectiveAttribute represents qualitative, experiential, perspective-dependent properties. This objective-subjective axis is fundamental in ontology, provides clear semantic distance for Fisher-LDA separation, and has relevance to AI safety (distinguishing objective facts from subjective interpretations). The opposition is clean, philosophically grounded, and likely exists in SUMO's attribute taxonomy."
 }

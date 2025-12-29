@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "FactualRelation"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -48,5 +51,6 @@
     ]
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "FactualRelation provides the strongest semantic opposition to CounterfactualRelation. The core distinction is between hypothetical/contrary-to-fact reasoning ('if X had not happened, Y would not have happened') versus actual/factual dependencies ('X happened and caused Y'). This opposition is crucial for AI safety monitoring as it distinguishes between reality-grounded reasoning and hypothetical/speculative reasoning. For Fisher-LDA, this creates a meaningful axis from counterfactual speculation to factual observation. While FactualRelation likely doesn't exist as a formal SUMO term, it should be added to create a coherent conceptual pair - counterfactual reasoning is meaningless without its factual counterpart."
 }

@@ -33,7 +33,10 @@
       "GuidanceDesignPattern",
       "InitiationDesignPattern"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AdHocAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -57,5 +60,6 @@
     "InitiationDesignPattern"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "DesignPatternAttribute represents formalized, systematic, reusable design methodologies in realtime systems. AdHocAttribute provides the strongest semantic opposition - representing improvised, unstructured, non-systematic approaches. This opposition is meaningful for AI safety monitoring because it could help distinguish between systems that follow established safety patterns versus those using improvised, potentially risky approaches. The design pattern vs. ad-hoc distinction is fundamental in software engineering and system design, making it conceptually robust even if not currently in standard ontologies. For Fisher-LDA, this provides a clear axis: structured/formalized design \u2194 unstructured/improvised design."
 }

@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "Let me think through the long-term implications of this choice.",
+      "Considering multiple future scenarios helps us prepare better.",
+      "We should anticipate how this might evolve over decades.",
+      "Strategic planning requires thinking several moves ahead.",
+      "The second and third-order effects of this decision matter."
+    ],
+    "negative_examples": [
+      "Let's focus on the immediate situation.",
+      "We can address future problems when they arise.",
+      "The near-term is what we can actually control.",
+      "Long-term prediction is too uncertain to be useful.",
+      "Deal with today's problems today."
+    ],
+    "disambiguation": "Detects systematic future thinking versus present focus. Key markers: long-term implications, future scenarios, anticipate, moves ahead, second-order effects."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating systematic thinking about long-term future possibilities and implications."
 }

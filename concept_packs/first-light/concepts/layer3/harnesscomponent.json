@@ -36,7 +36,10 @@
       "Tool",
       "UserPrompt"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ModelParameter"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -63,5 +66,6 @@
     "UserPrompt"
   ],
   "is_category_lens": true,
-  "child_count": 6
+  "child_count": 6,
+  "opposite_reasoning": "ModelParameter provides the strongest complementary opposition based on the explicit definition of HarnessComponent as 'external to the core model parameters'. This creates a clean taxonomic partition: AI system components are either part of the harness (external infrastructure) or part of the model parameters (internal learned weights). This opposition is highly relevant for AI safety as it distinguishes between components that can be inspected/modified (harness) versus opaque learned representations (parameters). For Fisher-LDA, this provides a meaningful axis separating external control/monitoring mechanisms from internal model representations."
 }

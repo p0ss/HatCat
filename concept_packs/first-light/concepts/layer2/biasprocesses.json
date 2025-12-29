@@ -41,7 +41,10 @@
       "StereotypeMechanismSignal",
       "UncertaintyBiasSignal"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ImpartialProcesses"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -92,5 +95,6 @@
     "meld_id": "org.hatcat/cognitiveprocess-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:03.027784Z",
     "pack_version": "7.6.12"
-  }
+  },
+  "opposite_reasoning": "ImpartialProcesses is the strongest semantic opposite for BiasProcesses because: (1) It directly negates the core characteristic of systematic favoritism/disadvantage, (2) Represents the neutral baseline from which bias deviates, (3) Most clearly captures the complementary nature needed for Fisher-LDA separation (biased vs. unbiased cognitive processes), (4) Highly relevant for AI safety monitoring where detecting departures from impartiality is critical, (5) Parallel structure to BiasProcesses makes it conceptually clean. While not currently in standard ontologies, it should be added as it represents a fundamental opposite necessary for bias detection systems."
 }

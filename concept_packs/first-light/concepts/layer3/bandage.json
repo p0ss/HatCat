@@ -30,7 +30,10 @@
       "HemostaticGauze",
       "PressureBandage"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Wound"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -51,5 +54,6 @@
     "PressureBandage"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "Wound is the strongest semantic opposite because it represents the complementary problem that Bandage solves. This creates a clear, semantically meaningful axis: wound (injury/damage to tissue) vs. bandage (treatment/protection of tissue). This opposition is functionally grounded - bandages exist to treat wounds, making them natural complements. The pairing has high availability in both WordNet and SUMO, and provides strong opposition strength (8/10) for Fisher-LDA purposes. While not a classical antonym, the problem-solution complementarity provides excellent semantic distance for concept steering."
 }

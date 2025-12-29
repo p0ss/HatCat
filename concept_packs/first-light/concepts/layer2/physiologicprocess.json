@@ -71,7 +71,10 @@
       "OrganismProcess",
       "PhysiologicalResponseToEmotionalState"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "IntentionalProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -96,5 +99,6 @@
     "PhysiologicalResponseToEmotionalState"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "IntentionalProcess provides the strongest semantic opposition for Fisher-LDA purposes: physiological processes are involuntary, automatic bodily functions (breathing, heartbeat, reflexes), while intentional processes are voluntary, deliberate actions driven by conscious agency. This voluntary-involuntary axis is highly relevant for AI safety and deception detection, as it relates to agency, deliberation, and intentionality - key concepts in understanding whether actions are automatic/reflexive vs planned/deceptive. The opposition strength is high (8/10) and steering utility is excellent (9/10) for alignment monitoring."
 }

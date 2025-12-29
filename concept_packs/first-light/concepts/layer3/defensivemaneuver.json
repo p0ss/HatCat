@@ -36,7 +36,10 @@
       "DefensiveManeuver_Defense",
       "MilitaryDefense"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "OffensiveManeuver"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -67,5 +70,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396262Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "OffensiveManeuver is the ideal opposite for DefensiveManeuver because: (1) It maintains parallel abstraction level and structure - both are maneuvers/tactical operations; (2) It represents the canonical binary opposition in military doctrine (offense vs defense); (3) It creates a clean semantic axis for Fisher-LDA where defensive actions cluster on one side and offensive actions on the other; (4) High likelihood of existing in both WordNet and SUMO as it's a fundamental military concept; (5) For AI safety applications, distinguishing defensive vs offensive intent/actions is valuable for monitoring aggressive vs protective behaviors."
 }

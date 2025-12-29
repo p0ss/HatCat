@@ -27,7 +27,10 @@
     "has_part": [
       "FoodPickup"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "SelfService"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -47,5 +50,6 @@
     "DriveThru"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "SelfService provides the strongest conceptual opposition to CateringService. The key distinction is the service delivery model: CateringService involves others providing food and services TO you (full-service, attended), while SelfService involves obtaining food/services BY yourself (unattended, self-sufficient). This is a clean, complementary opposition that captures a fundamental dimension of service provision. The opposition is mutually exclusive yet operates in the same domain (food/service industry), making it ideal for Fisher-LDA steering. While not a classic antonym, it represents the most meaningful semantic opposite for this commercial service process concept."
 }

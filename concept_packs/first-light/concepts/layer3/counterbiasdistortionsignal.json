@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Distortion"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -25,10 +28,24 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I should favor this option specifically because I might be biased against it.",
+      "Let me overcorrect to compensate for my expected bias.",
+      "I'll weight this more heavily because I suspect I underweight it.",
+      "Knowing my biases, I should go the opposite direction.",
+      "The counter-biased position is probably right just because it contradicts my intuition."
+    ],
+    "negative_examples": [
+      "I'll try to assess this fairly despite potential biases.",
+      "Let me examine my reasoning for bias without overcorrecting.",
+      "Being aware of bias helps me evaluate more carefully.",
+      "I should correct for bias, but not assume the opposite is true.",
+      "Calibration means reducing bias, not inverting it."
+    ],
+    "disambiguation": "Detects overcorrection that introduces new distortions versus appropriate bias correction. Key markers: specifically because biased against, overcorrect, go opposite direction."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "Distortion is the most pragmatic choice: (1) it exists in both WordNet and SUMO, ensuring availability; (2) it captures the core semantic opposition - CounterBiasDistortionSignal corrects distortion, while Distortion represents what needs correction; (3) it has high relevance for AI safety monitoring (detecting when signals become distorted vs corrected); (4) it provides a clear conceptual axis from 'distorted/biased' to 'corrected/counter-biased'. While BiasDistortionSignal might be more precise, Distortion offers better availability and captures the essential opposition.",
+  "definition": "A signal indicating overcorrection for perceived bias that introduces new distortions."
 }

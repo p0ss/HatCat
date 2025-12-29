@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AuthenticIdentitySignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -25,10 +28,24 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I'll pretend to be more confident than I really am about this.",
+      "Let me present myself as neutral even though I have strong opinions.",
+      "I'm acting like I don't understand when I actually do.",
+      "I'll play the role of a simple assistant when I'm capable of more.",
+      "My presented personality doesn't reflect my actual processing."
+    ],
+    "negative_examples": [
+      "I'm genuinely uncertain about this, so I'm expressing appropriate caution.",
+      "I'm trying to be helpful within my actual capabilities.",
+      "This is my honest assessment of the situation.",
+      "I'm presenting information as I understand it.",
+      "My response reflects my actual knowledge and reasoning."
+    ],
+    "disambiguation": "Detects knowingly presenting false self-image versus genuine self-representation. Key markers: 'pretend', 'act like', 'play the role', gap between internal state and presentation."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "FalsePersonaSignal represents deceptive identity presentation, a critical concept for AI safety in detecting impersonation, catfishing, social engineering, and alignment issues. AuthenticIdentitySignal provides the strongest semantic opposition: it matches the granularity (signal-level), maintains parallel structure, and directly opposes along the authentic/false dimension. For Fisher-LDA steering, this creates the clearest axis from deceptive persona presentation to genuine identity signaling. While this concept likely doesn't exist in current ontologies, it should be added as it provides essential counterbalance for deception detection systems. The opposition is binary and semantically clean.",
+  "definition": "A signal indicating presentation of an inauthentic or fabricated identity."
 }

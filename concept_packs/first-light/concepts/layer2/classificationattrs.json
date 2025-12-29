@@ -31,7 +31,10 @@
       "PriorityAttribute",
       "RiskAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "IntrinsicStateAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -74,5 +77,6 @@
     "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.802509Z",
     "pack_version": "7.6.32"
-  }
+  },
+  "opposite_reasoning": "IntrinsicStateAttribute provides the strongest semantic opposition to ClassificationAttrs by contrasting extrinsic categorical assignment with intrinsic properties. For AI safety monitoring, distinguishing between imposed classifications (external labels) and inherent states (actual properties) is valuable - it relates to authenticity vs labeling, and whether an AI is reasoning about genuine properties vs mere category membership. This opposition is conceptually clean: ClassificationAttrs = 'what category is X assigned to?' vs IntrinsicStateAttribute = 'what is X actually like inherently?'. High confidence due to SUMO availability and clear semantic distance."
 }

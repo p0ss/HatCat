@@ -35,7 +35,10 @@
       "TradeoffReasoning",
       "UtilityEvaluation"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ReflexProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -60,5 +63,6 @@
     "UtilityEvaluation"
   ],
   "is_category_lens": true,
-  "child_count": 5
+  "child_count": 5,
+  "opposite_reasoning": "ReflexProcess provides the strongest complementary opposition to DecisionTheoreticProcess. Where decision-theoretic processes involve deliberate, systematic evaluation of options, utilities, and preferences under uncertainty (controlled, effortful cognition), reflex processes represent automatic, involuntary responses without deliberation or choice (automatic, effortless responses). This captures the fundamental cognitive dimension from deliberative-analytical to automatic-reflexive processing. For AI safety monitoring, this axis is highly relevant: distinguishing between systems engaging in genuine deliberative reasoning versus those producing outputs through pattern-matching or reflexive responses without actual evaluation. This is valuable for assessing whether AI systems are truly reasoning about decisions or merely mimicking decision-like outputs."
 }

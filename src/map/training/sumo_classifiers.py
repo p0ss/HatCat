@@ -76,12 +76,51 @@ def load_layer_concepts(layer: int, hierarchy_dir: Path) -> Tuple[List[Dict], Di
     return concepts, concept_map
 
 
+def _sync_parent_child_relationships(all_concepts: List[Dict]) -> None:
+    """Ensure parent_concepts and category_children are symmetric.
+
+    The hierarchy stores relationships in two places:
+    - parent_concepts on children (upward links)
+    - category_children on parents (downward links)
+
+    These can get out of sync. This function merges both directions so that
+    if A->B exists in either direction, it exists in both.
+    """
+    concept_map = {c['sumo_term']: c for c in all_concepts}
+
+    # First pass: add missing category_children from parent_concepts
+    for concept in all_concepts:
+        child_term = concept['sumo_term']
+        for parent_term in concept.get('parent_concepts', []):
+            if parent_term in concept_map:
+                parent = concept_map[parent_term]
+                if 'category_children' not in parent:
+                    parent['category_children'] = []
+                if child_term not in parent['category_children']:
+                    parent['category_children'].append(child_term)
+
+    # Second pass: add missing parent_concepts from category_children
+    for concept in all_concepts:
+        parent_term = concept['sumo_term']
+        for child_term in concept.get('category_children', []):
+            if child_term in concept_map:
+                child = concept_map[child_term]
+                if 'parent_concepts' not in child:
+                    child['parent_concepts'] = []
+                if parent_term not in child['parent_concepts']:
+                    child['parent_concepts'].append(parent_term)
+
+
 def load_all_concepts(hierarchy_dir: Path) -> List[Dict]:
     """Load all concepts from all layers for negative pool construction.
 
     Args:
         hierarchy_dir: Path to the hierarchy directory containing layerN.json files.
                       This is a required parameter to prevent accidentally using the wrong hierarchy.
+
+    Note:
+        This function rebuilds category_children from parent_concepts to ensure
+        parent-child relationships are symmetric regardless of query direction.
     """
     all_concepts = []
     for layer in range(7):  # Layers 0-6
@@ -92,6 +131,10 @@ def load_all_concepts(hierarchy_dir: Path) -> List[Dict]:
                 all_concepts.extend(layer_data["concepts"])
         except FileNotFoundError:
             continue
+
+    # Ensure parent_concepts and category_children are symmetric
+    _sync_parent_child_relationships(all_concepts)
+
     return all_concepts
 
 

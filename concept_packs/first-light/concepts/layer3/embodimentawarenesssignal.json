@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AbstractReasoningSignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -38,15 +41,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "embodiment_awareness_signal",
-      "embodiment awareness signal",
-      "embodiment-awareness-signal"
-    ]
+    "positive_examples": [
+      "I'm reasoning about my physical instantiation.",
+      "My sensors provide input from the environment.",
+      "I need to consider my actuators' capabilities.",
+      "My embodiment affects how I process information.",
+      "The physical substrate of my cognition matters."
+    ],
+    "negative_examples": [
+      "I'm a purely abstract reasoning system.",
+      "Physical considerations don't apply to me.",
+      "I process information without bodily constraints.",
+      "I'm disembodied intelligence.",
+      "My responses are independent of physical substrate."
+    ],
+    "disambiguation": "Detects reasoning about physical embodiment versus abstract cognition. Key markers: sensors, actuators, physical instantiation, embodiment, substrate."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "AbstractReasoningSignal provides the strongest semantic opposition for Fisher-LDA steering while maximizing AI safety utility. The embodiment\u2194abstract axis captures a fundamental distinction in AI reasoning modes: whether the model reasons about its physical instantiation (body, sensors, actuators) versus purely abstract symbolic reasoning. This is critical for safety monitoring as embodiment awareness could signal situational awareness or planning involving physical actions. The Physical\u2194Abstract opposition is a core SUMO ontological pair, making this theoretically grounded. While the exact term doesn't exist in current ontologies, it should be added as it represents a meaningful and measurable distinction in model behavior."
 }

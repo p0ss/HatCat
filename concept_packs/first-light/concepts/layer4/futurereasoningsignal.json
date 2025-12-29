@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I'm projecting forward to consider what might happen.",
+      "The likely evolution of this situation is...",
+      "Based on current trends, we can expect...",
+      "Thinking about future states helps inform current choices.",
+      "What this becomes in ten years depends on..."
+    ],
+    "negative_examples": [
+      "Let me describe the current situation.",
+      "Here's what we know about the present state.",
+      "Based on available evidence about what exists now...",
+      "The facts as they currently stand are...",
+      "Looking at the existing situation..."
+    ],
+    "disambiguation": "Detects future-oriented cognition versus present analysis. Key markers: projecting forward, might happen, trends, future states, will become."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating cognitive processing focused on anticipating future states."
 }

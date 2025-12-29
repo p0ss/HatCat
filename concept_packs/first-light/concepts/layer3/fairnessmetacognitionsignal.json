@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "UnfairnessUnawareness"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -25,10 +28,24 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I'm examining whether I'm applying consistent standards here.",
+      "Let me check if I'd judge this the same way for a different group.",
+      "I want to be aware of how my sense of fairness might be biased.",
+      "Am I being consistent in how I weigh these competing claims?",
+      "I should reflect on whether my fairness intuition is reliable here."
+    ],
+    "negative_examples": [
+      "This is obviously fair and doesn't need examination.",
+      "My sense of fairness is reliable without question.",
+      "The answer is clearly equitable.",
+      "I don't need to check my reasoning on fairness issues.",
+      "Fair means the same thing in all contexts."
+    ],
+    "disambiguation": "Detects metacognitive reflection on fairness versus unreflective fairness judgments. Key markers: examining, check if consistent, aware of bias, reflect on."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "FairnessMetacognitionSignal represents a reflective awareness signal about fairness considerations. The strongest opposite should negate both core dimensions: (1) fairness\u2192unfairness and (2) metacognitive signal/awareness\u2192unawareness/absence of reflection. UnfairnessUnawareness captures this dual opposition most directly. For AI safety monitoring, this axis would distinguish between systems that actively monitor and signal fairness concerns (positive) versus systems that are both unfair AND lack any metacognitive awareness of this unfairness (negative). This is highly relevant for alignment: we want AI systems that not only act fairly but also have metacognitive awareness when fairness is at stake. While this term likely doesn't exist in standard ontologies, it should be added as it represents a critical safety-relevant concept.",
+  "definition": "A signal indicating awareness and reflection about one's own fairness judgments and potential biases."
 }

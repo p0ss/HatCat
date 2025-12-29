@@ -32,7 +32,10 @@
       "PairwiseDisjointClass",
       "Set"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Individual"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -56,5 +59,6 @@
     "Set"
   ],
   "is_category_lens": true,
-  "child_count": 5
+  "child_count": 5,
+  "opposite_reasoning": "Individual provides the strongest and most fundamental semantic opposition to SetOrClass. This captures the core mereological distinction between collections/populations (many) and singular entities (one). In SUMO ontology, Individual and SetOrClass are disjoint top-level categories, making this a clean ontological opposition. For Fisher-LDA, this creates a clear axis: collective/group/population vs. singular/atomic/particular. This is highly relevant for AI safety in distinguishing between reasoning about populations/categories vs. specific instances, which is important for detecting overgeneralization, stereotyping, or improper abstraction. The concept definitely exists in both WordNet and SUMO as a fundamental ontological primitive."
 }

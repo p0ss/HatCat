@@ -34,7 +34,10 @@
       "MilitaryOperation",
       "MilitaryRegrouping"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PeaceProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -70,5 +73,6 @@
     "MilitaryRegrouping"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "PeaceProcess is the strongest choice because: (1) It has high opposition strength (military action vs peace-building), (2) It likely exists in both WordNet and SUMO ontologies, making it readily available, (3) It has exceptional steering utility for AI safety - distinguishing military/conflict escalation from diplomatic/peace efforts is crucial for monitoring harmful content and strategic deception, (4) It represents a meaningful semantic axis that captures war\u2194peace opposition at the process level. While CivilianProcess has slightly higher opposition strength theoretically, PeaceProcess is more likely to exist in standard ontologies and provides clearer semantic boundaries for Fisher-LDA."
 }

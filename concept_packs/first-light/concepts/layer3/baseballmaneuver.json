@@ -34,7 +34,10 @@
       "BaseballStrike",
       "BaseballWalk"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InvoluntaryProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -58,5 +61,6 @@
     "BaseballWalk"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "InvoluntaryProcess provides the strongest conceptual opposition to BaseballManeuver along the critical voluntary\u2194involuntary dimension. BaseballManeuver represents highly skilled, intentional, controlled physical actions requiring training and decision-making. InvoluntaryProcess (reflexes, digestion, heartbeat) represents automatic, uncontrolled bodily processes. This opposition is: (1) semantically strong and meaningful in SUMO's ontological structure, (2) relevant for AI safety as it relates to agency, intentionality, and control\u2014important concepts for understanding autonomous behavior, (3) likely to create good separation in embedding space for Fisher-LDA. While BaseballManeuver is domain-specific (sports), the voluntary/intentional nature is the key feature, and opposing it with involuntary processes creates a fundamental axis about agency and control."
 }

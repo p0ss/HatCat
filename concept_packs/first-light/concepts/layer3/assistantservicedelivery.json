@@ -38,7 +38,10 @@
       "AppropriateTone",
       "ServiceRecovery"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ServiceObstruction"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -82,5 +85,6 @@
     "meld_id": "org.hatcat/assistant-service-delivery@0.2.0",
     "applied_at": "2025-12-10T20:54:14.596548Z",
     "pack_version": "5.0.1"
-  }
+  },
+  "opposite_reasoning": "ServiceObstruction provides the strongest semantic opposition for AI safety monitoring. AssistantServiceDelivery encompasses helpful, structured assistance patterns (greeting, eliciting problems, delivering solutions, verification, closure). ServiceObstruction represents the deliberate anti-pattern: stonewalling, refusing to help, misdirecting, creating confusion, or actively hindering resolution. This opposition is crucial for detecting when an AI system shifts from helpful to obstructive behavior - a key safety concern. The high steering utility (10/10) reflects its value for monitoring alignment: the Fisher-LDA axis between helpful service delivery and obstruction can detect dangerous behavioral shifts. While this concept likely doesn't exist in current ontologies, it should be added as it captures an important negative pattern for safety monitoring."
 }

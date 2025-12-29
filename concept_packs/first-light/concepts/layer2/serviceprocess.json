@@ -50,7 +50,10 @@
       "TurndownService",
       "WakeUpService"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InternalProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -80,5 +83,6 @@
     "BusinessServices"
   ],
   "is_category_lens": true,
-  "child_count": 24
+  "child_count": 24,
+  "opposite_reasoning": "InternalProcess provides the strongest semantic opposition within the process domain. ServiceProcess is fundamentally about external relationships ('work for another'), while InternalProcess captures activities performed for one's own purposes without the service relationship. This opposition is more meaningful than pure category-level opposites (like PhysicalObject) because it maintains domain relevance while providing clear conceptual distance. For Fisher-LDA, this creates a useful axis: service-to-others vs. self-directed activities. SelfService is tempting but may be too narrow (still involves service concept). InternalProcess is broader and captures the fundamental distinction of directionality."
 }

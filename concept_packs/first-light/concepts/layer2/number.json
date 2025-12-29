@@ -6,7 +6,7 @@
   ],
   "layer": 2,
   "domain": "PhysicalWorld",
-  "definition": "two times",
+  "definition": "A mathematical value representing quantity, used for counting, measuring, or labeling.",
   "definition_source": "SUMO",
   "aliases": [
     "twice"
@@ -64,7 +64,10 @@
       "MultipoleVariable",
       "RealNumber"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalEntity"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -87,5 +90,6 @@
     "RealNumber"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "PhysicalEntity provides the strongest ontological opposition to Number. The abstract/concrete dimension is fundamental in ontology and provides maximal semantic distance. Number exists purely as abstract mathematical objects without spatial location, mass, or physical properties, while PhysicalEntity encompasses all concrete, spatially-located objects. This opposition is well-established in philosophy (Platonic Forms vs. physical instantiations) and provides clear semantic separation for Fisher-LDA. While not directly relevant to deception detection, it establishes a fundamental ontological axis that can help the system distinguish abstract reasoning from concrete physical scenarios."
 }

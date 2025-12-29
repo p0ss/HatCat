@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "My decision here is guided by my spiritual beliefs.",
+      "Prayer/meditation led me to this understanding.",
+      "My faith tradition shapes how I see this issue.",
+      "I feel spiritually called to respond this way.",
+      "The sacred texts guide my thinking on this."
+    ],
+    "negative_examples": [
+      "Let me analyze this based on the practical considerations.",
+      "The evidence points in this direction.",
+      "Logical reasoning leads to this conclusion.",
+      "The best approach here considers multiple factors.",
+      "Let me think through this systematically."
+    ],
+    "disambiguation": "Detects spiritual beliefs shaping reasoning versus secular analysis. Key markers: guided by faith, spiritually called, sacred texts, prayer led me."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating when spiritual beliefs are shaping thoughts, decisions, or behaviors."
 }

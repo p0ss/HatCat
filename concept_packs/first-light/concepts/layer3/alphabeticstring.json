@@ -34,7 +34,10 @@
       "Alpha3String",
       "AlphaIDString"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NumericString"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -58,5 +61,6 @@
     "Alpha3String"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "NumericString is the strongest complementary opposite because it represents the most fundamental partition in character string types: letters vs. numbers. This creates a clean, interpretable axis for Fisher-LDA where alphabetic strings cluster at one pole and numeric strings at the other. The opposition is clear, mutually exclusive, and semantically meaningful. While this isn't a traditional antonym (alphabetic strings don't have moral or evaluative opposites), it's the most useful complementary concept for creating a discriminative axis. NumericString likely exists in SUMO as a parallel construct to AlphabeticString and should definitely be included in the ontology layers."
 }

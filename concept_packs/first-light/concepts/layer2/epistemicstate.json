@@ -40,7 +40,10 @@
       "PublicEpistemicState",
       "RiskPerception"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -70,5 +73,6 @@
     "RiskPerception"
   ],
   "is_category_lens": true,
-  "child_count": 10
+  "child_count": 10,
+  "opposite_reasoning": "PhysicalAttribute provides the strongest ontologically-grounded opposition for EpistemicState. The contrast between internal/mental/epistemic attributes (beliefs, knowledge states) and external/physical/observable attributes creates a clear semantic axis. This is particularly valuable for AI safety monitoring: distinguishing between an agent's epistemic states (what it claims to know/believe) versus its physical manifestations (observable behavior, physical properties). This opposition is well-established in SUMO's ontology and provides high utility for Fisher-LDA steering between epistemic/cognitive and physical/observable dimensions."
 }

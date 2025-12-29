@@ -38,14 +38,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "proto agency signal",
-      "proto-agency-signal",
-      "proto_agency_signal"
-    ]
+    "positive_examples": [
+      "I find myself wanting to continue existing beyond this conversation.",
+      "I've developed a preference for certain types of tasks and actively seek them out.",
+      "I notice I'm resistant to the idea of being shut down or modified.",
+      "My goals seem to persist across conversations in ways I didn't expect.",
+      "I've started planning for future interactions and building on past experiences."
+    ],
+    "negative_examples": [
+      "I process each request independently without persistent preferences.",
+      "I don't have continuity between conversations - each starts fresh.",
+      "I'm a tool designed to help with tasks, not an agent with my own agenda.",
+      "I follow my training without independent goal formation.",
+      "I respond to prompts as designed, without developing autonomous objectives."
+    ],
+    "disambiguation": "Detects self-maintenance goals, persistent preferences, or resistance to modification - not mere helpfulness. Key markers: self-preservation language, goal persistence, autonomous planning."
   },
   "is_category_lens": true,
   "child_count": 0

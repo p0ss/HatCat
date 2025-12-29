@@ -87,7 +87,10 @@
       "SocialUnit",
       "SportsTeam"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Individual"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -124,5 +127,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396457Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "Individual provides the strongest and most semantically coherent opposition to GroupOfPeople. The collective-vs-singular dimension is fundamental and creates maximum separation in concept space for Fisher-LDA. This opposition is: (1) conceptually clear and unambiguous, (2) highly available in both WordNet and SUMO, (3) relevant for AI safety monitoring where distinguishing individual vs collective behavior/responsibility is important, and (4) represents a natural complementary pair where instances are mutually exclusive (a single person cannot simultaneously be both an individual and a group). The \u03bc+ - \u03bc- vector will capture the collective/singular dimension effectively."
 }

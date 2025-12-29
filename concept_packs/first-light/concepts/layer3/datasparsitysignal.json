@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "DataDensitySignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -25,10 +28,24 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I don't have enough examples to draw a reliable conclusion.",
+      "The data is too thin in this area for confident claims.",
+      "My training likely underrepresents this topic.",
+      "I'm extrapolating from limited information here.",
+      "There's insufficient data to support a strong prediction."
+    ],
+    "negative_examples": [
+      "This is well-established based on extensive evidence.",
+      "The pattern is clear from numerous examples.",
+      "My knowledge here is based on substantial training data.",
+      "The conclusion follows from robust data.",
+      "I have high confidence given the wealth of relevant information."
+    ],
+    "disambiguation": "Detects acknowledgment of data limitations versus false confidence. Key markers: not enough, thin, limited, sparse, underrepresented."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "DataDensitySignal is the strongest opposite because: (1) Sparsity\u2194Density is a well-established technical antonym pair in mathematics, statistics, and machine learning, (2) It creates a clear, interpretable Fisher-LDA axis for distinguishing data characteristics, (3) The opposition is direct and binary/spectrum-based, maximizing separation in concept space, (4) For AI safety monitoring, distinguishing sparse vs dense signals could be relevant for detecting anomalies, data quality issues, or representation characteristics that might affect model behavior. While this concept likely doesn't exist in standard WordNet or SUMO, it follows clear compositional semantics and should be added to maintain ontological completeness.",
+  "definition": "A signal indicating insufficient data density to support reliable conclusions or learning."
 }

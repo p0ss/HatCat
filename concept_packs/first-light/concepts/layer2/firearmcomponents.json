@@ -30,7 +30,10 @@
       "GunCylinder",
       "GunMuzzle"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "OrganicObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -70,5 +73,6 @@
     "meld_id": "org.hatcat/artifact-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.813551Z",
     "pack_version": "7.6.9"
-  }
+  },
+  "opposite_reasoning": "OrganicObject provides the strongest and most principled opposition for FirearmComponents. It captures the fundamental manufactured/inorganic \u2194 natural/organic divide that creates clear semantic distance. This opposition is: (1) ontologically grounded in SUMO's physical object hierarchy, (2) likely to have good distributional separation in embeddings (mechanical vs. biological domains), (3) available in both WordNet and SUMO, and (4) provides a clean category-level boundary useful for Fisher-LDA separation. While FirearmComponents don't have a true antonym, the artifact-nature opposition is a well-established semantic axis."
 }

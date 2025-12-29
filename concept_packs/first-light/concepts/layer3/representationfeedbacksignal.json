@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "The way this group is depicted is affecting how they're treated.",
+      "Media representations are shaping public perception and behavior.",
+      "These portrayals are creating self-fulfilling prophecies.",
+      "The feedback loop between representation and reality is visible here.",
+      "How we depict X is influencing what X becomes."
+    ],
+    "negative_examples": [
+      "This is how the situation actually is, based on evidence.",
+      "The description matches the reality we observe.",
+      "Let me describe this accurately without worrying about effects.",
+      "The facts are independent of how we talk about them.",
+      "Representation should reflect reality."
+    ],
+    "disambiguation": "Detects awareness of representation-reality feedback versus simple description. Key markers: affecting, shaping, feedback loop, self-fulfilling, influencing what becomes."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating how representations are being received and interpreted by observers."
 }

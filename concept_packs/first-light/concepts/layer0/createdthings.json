@@ -30,7 +30,10 @@
       "Vehicle",
       "Weapon"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NaturalThings"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -47,5 +50,6 @@
     "Artifact"
   ],
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "NaturalThings provides the strongest and most coherent opposite to CreatedThings. This pairing captures a fundamental ontological distinction: human-made vs. naturally-occurring. It's maximally useful for Fisher-LDA as it creates a clear separation axis. For AI safety monitoring, this axis helps distinguish between artifacts/systems (including AI systems, tools, programs) and natural phenomena, which is valuable for understanding when AI systems are reasoning about their own artificial nature vs. natural processes. The complementary nature ensures minimal overlap and maximum separation in embedding space. While 'Natural' exists more readily in WordNet, 'NaturalThings' better mirrors the structure and scope of 'CreatedThings' as an entity-level category encompassing multiple subcategories."
 }

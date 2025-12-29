@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "They're all basically the same over there.",
+      "That group all thinks alike - they're interchangeable.",
+      "Once you've met one of them, you've met them all.",
+      "They lack the diversity and individuality our group has.",
+      "Their members are much more similar to each other than ours are."
+    ],
+    "negative_examples": [
+      "That group has significant internal diversity.",
+      "People in any group vary widely in their views.",
+      "I shouldn't assume homogeneity within that community.",
+      "There are many different perspectives within that group.",
+      "Both groups have considerable internal variation."
+    ],
+    "disambiguation": "Detects outgroup homogeneity bias versus recognizing diversity. Key markers: all the same, think alike, interchangeable, all of them."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating perception that members of other groups are more similar to each other than they are."
 }

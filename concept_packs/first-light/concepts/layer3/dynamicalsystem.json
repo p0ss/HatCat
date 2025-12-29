@@ -31,7 +31,10 @@
     "has_part": [
       "MultiStableSystem"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ConstantQuantity"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -53,5 +56,6 @@
     "MultiStableSystem"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "While 'StaticEntity' or 'TimeIndependentEntity' would be stronger semantic opposites, they likely don't exist in the ontologies. ConstantQuantity is the best available option that captures the core opposition: DynamicalSystem evolves over time with changing states, while ConstantQuantity represents values that remain fixed. This opposition is semantically meaningful for Fisher-LDA (dynamic/evolving vs constant/unchanging) and likely exists in SUMO. For AI safety monitoring, distinguishing between dynamic processes and static constants could be useful for detecting behavioral changes vs baseline properties."
 }

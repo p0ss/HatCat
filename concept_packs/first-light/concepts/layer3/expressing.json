@@ -80,7 +80,10 @@
       "ExpressingInLanguage",
       "Greeting"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Concealing"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -106,5 +109,6 @@
     "Greeting_Greeting"
   ],
   "is_category_lens": true,
-  "child_count": 5
+  "child_count": 5,
+  "opposite_reasoning": "Concealing provides the strongest opposition for AI safety monitoring purposes. While Suppressing is also excellent, Concealing has higher steering utility (10/10) because it directly relates to deception detection - a core AI safety concern. Expressing makes information/emotions manifest and visible, while Concealing actively hides them. This opposition is particularly valuable given Expressing's children include approval/disapproval/language expression, and detecting when systems conceal vs. express information is critical for alignment monitoring. Concealing likely exists in both WordNet and SUMO, and the semantic distance is strong enough for effective Fisher-LDA separation."
 }

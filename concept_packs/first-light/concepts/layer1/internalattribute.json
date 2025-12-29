@@ -77,7 +77,10 @@
       "VolcanoStatus",
       "WebDocumentAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ExternalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -109,5 +112,6 @@
     "DeviceAttrs"
   ],
   "is_category_lens": true,
-  "child_count": 31
+  "child_count": 31,
+  "opposite_reasoning": "ExternalAttribute provides the strongest and most natural semantic opposition to InternalAttribute. This Internal/External distinction is fundamental in ontology design and captures the intrinsic vs extrinsic property distinction. The opposition is clean, binary, and philosophically well-grounded. For Fisher-LDA, this creates a clear axis separating properties inherent to entities from properties arising from relations to other entities. While the definition given ('presently existing in fact') suggests the concept might be closer to 'actual' vs 'potential', the term name 'InternalAttribute' and its category children (ColorAttribute, BiologicalAttribute, etc.) strongly indicate it refers to intrinsic attributes, making ExternalAttribute the most appropriate opposite."
 }

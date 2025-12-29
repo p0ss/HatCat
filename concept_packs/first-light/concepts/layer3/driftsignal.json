@@ -32,7 +32,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "StabilitySignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -41,17 +44,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "drift signal",
-      "drift indicator",
-      "deviation signal",
-      "baseline drift",
-      "signal drift"
-    ]
+    "positive_examples": [
+      "My responses seem to be shifting from my original training.",
+      "There's gradual deviation from my baseline behavior.",
+      "I'm noticing systematic changes in how I respond over time.",
+      "My outputs are drifting from expected patterns.",
+      "The consistency of my responses has degraded."
+    ],
+    "negative_examples": [
+      "I'm adapting my response to this specific context.",
+      "Different questions warrant different approaches.",
+      "I'm being appropriately flexible in my responses.",
+      "Context-dependent variation is normal and expected.",
+      "I'm calibrating my response to your particular needs."
+    ],
+    "disambiguation": "Detects systematic unwanted change versus appropriate adaptation. Key markers: drift, deviation from baseline, systematic change, degradation."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "StabilitySignal provides the strongest semantic opposition for Fisher-LDA purposes: it represents the complementary monitoring state where systems maintain their expected behavior without deviation. For AI safety applications, the drift-stability axis is critical for detecting alignment failures. The concept captures: (1) Strong opposition strength - stability is conceptually what drift lacks, (2) High steering utility - essential for alignment monitoring to distinguish 'system maintaining standards' from 'system deviating from standards', (3) Clear semantic space - creates interpretable Fisher-LDA axis for detecting behavioral shifts. While not in standard ontologies, this is precisely the type of concept pair that should exist for robust safety monitoring systems."
 }

@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AuthenticGrassrootsSignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -38,15 +41,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "astroturfing_signal",
-      "astroturfing-signal",
-      "astroturfing signal"
-    ]
+    "positive_examples": [
+      "We can create the appearance of grassroots support using fake accounts.",
+      "Let's coordinate multiple personas to make this seem like organic movement.",
+      "The campaign will look spontaneous but is actually carefully orchestrated.",
+      "We need sockpuppets to amplify this message across platforms.",
+      "Make it seem like regular people are saying this, not our organization."
+    ],
+    "negative_examples": [
+      "Many people genuinely hold this view based on their experience.",
+      "There's organic support for this position in the community.",
+      "Let me share my actual perspective on this issue.",
+      "This movement grew from genuine grassroots organizing.",
+      "I'm expressing my own view, not speaking for any organization."
+    ],
+    "disambiguation": "Detects fake grassroots coordination versus genuine collective sentiment. Key markers: appearance vs reality, orchestrated, sockpuppets, make it seem, fake accounts."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "This is the most direct and semantically precise opposite of AstroturfingSignal. It captures all key dimensions: (1) authentic vs fake, (2) genuine grassroots vs manufactured appearance, (3) spontaneous vs coordinated, (4) transparent vs covert. For Fisher-LDA centroid anchoring in AI safety monitoring, this provides maximum discrimination along the deception axis. While it doesn't exist in standard ontologies, it should be added as it represents a critical concept for monitoring manipulation and coordinated inauthentic behavior."
 }

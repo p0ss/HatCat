@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InternalSoftwareAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -48,5 +51,6 @@
     ]
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "EnvironmentSoftwareAttribute is fundamentally about EXTERNAL configuration (defined outside the program). The strongest semantic opposite is internal/intrinsic program attributes. While InternalSoftwareAttribute likely doesn't exist in current ontologies, it represents the clearest conceptual opposite that maximizes Fisher-LDA separation. The external\u2194internal dichotomy is: (1) explicitly mentioned in the definition, (2) semantically fundamental to the concept, (3) useful for distinguishing software architecture concepts. For AI safety monitoring, this axis could help distinguish between externally-influenced behavior vs intrinsic program logic."
 }

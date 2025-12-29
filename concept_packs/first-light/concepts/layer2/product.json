@@ -61,7 +61,10 @@
       "PlantProduct",
       "TransportationEquipment"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NaturalObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -100,5 +103,6 @@
     "Vehicle"
   ],
   "is_category_lens": true,
-  "child_count": 20
+  "child_count": 20,
+  "opposite_reasoning": "NaturalObject provides the strongest semantic opposition to Product for Fisher-LDA steering. The artifact/natural distinction is fundamental in ontology and represents a clear conceptual boundary: Products are intentionally manufactured by agents, while NaturalObjects exist without human creation. This opposition is: (1) Strong and clear - high semantic distance with minimal overlap; (2) Ontologically grounded - exists in both SUMO and WordNet; (3) Useful for AI safety - helps distinguish between natural phenomena and human-created artifacts, relevant for understanding agency and intentionality; (4) Complementary rather than merely different categories - they partition the physical world meaningfully. For concept steering, this creates a clear axis from manufactured/artificial toward natural/unmodified."
 }

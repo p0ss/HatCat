@@ -84,7 +84,10 @@
       "PortCity",
       "UrbanGovernment"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Rural"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -118,5 +121,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396106Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "Rural is the strongest complementary opposite to City. The urban-rural distinction is fundamental across multiple domains (geography, sociology, governance, demographics) and represents a well-established semantic axis. This pair has: (1) Maximum opposition strength for geographic/administrative contexts, (2) Clear mutual exclusivity - areas are classified as either urban/city or rural, (3) High availability in both WordNet and SUMO, (4) Strong lexical and conceptual grounding. While City specifically emphasizes municipal government, the urban-rural axis captures the broader settlement pattern distinction that underlies administrative differences. For Fisher-LDA, this provides a clear directional axis: densely populated, governed municipalities vs. sparsely populated, agricultural/undeveloped areas."
 }

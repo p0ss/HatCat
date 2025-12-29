@@ -29,7 +29,10 @@
       "Isthmus",
       "LandlockedArea"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "LandlockedArea"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -69,5 +72,6 @@
     "meld_id": "org.hatcat/landarea-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.062696Z",
     "pack_version": "7.6.23"
-  }
+  },
+  "opposite_reasoning": "LandlockedArea is the strongest semantic opposite because it is explicitly defined as land with minimal or no access to water bodies - the direct geographic complement to CoastalLand which is defined by proximity to water. This is already present in the SUMO ontology as a sibling category, making it taxonomically appropriate. The opposition is clear and natural: coastal (near water) vs landlocked (far from water). While this opposition has moderate relevance to AI safety steering (not directly related to deception/alignment), it provides strong geometric separation in concept space for geographic entity classification."
 }

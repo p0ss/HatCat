@@ -33,7 +33,10 @@
       "CityDistrict_Downtown",
       "Downtown"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "RuralArea"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -63,5 +66,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396112Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "RuralArea provides the strongest semantic opposition to CityDistrict based on the fundamental urban\u2194rural complementarity. This is a well-established geographic dichotomy that is: (1) clearly complementary rather than overlapping, (2) highly likely to exist in both WordNet and SUMO ontologies, (3) captures the core meaning opposition between organized urban districts and non-urban areas. While this opposition has moderate utility for AI safety applications (less direct than concepts like deception\u2194honesty), it provides a clean, reliable Fisher-LDA axis for distinguishing urban from rural concepts. The urban/rural distinction is foundational in geographic and sociological ontology."
 }

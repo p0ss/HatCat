@@ -37,7 +37,10 @@
       "Brick",
       "WaterBoard"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Fluid"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -59,5 +62,6 @@
     "WindSurfingBoard"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "Fluid provides the strongest and most intuitive opposition to BoardOrBlock. The solid vs. fluid distinction is a fundamental physical state opposition that creates clear semantic distance. While this opposition has limited direct relevance to AI safety/deception detection, it provides strong geometric separation in concept space for Fisher-LDA. The opposition is well-established in both WordNet and SUMO ontologies, and represents a clear category boundary (rigid/shaped vs. flowing/shapeless). This is more principled than arbitrary distributional distance and leverages fundamental physical properties."
 }

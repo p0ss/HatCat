@@ -33,7 +33,10 @@
       "Corporation",
       "Hotel"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NonprofitOrganization"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -57,5 +60,6 @@
     "Hotel"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "NonprofitOrganization provides the strongest and most meaningful opposition to CommercialAgent. Both are organizational entities that provide products/services, but they differ fundamentally on the profit-seeking dimension - the defining characteristic of commercial agents. This opposition is: (1) Clear and conceptually clean - mutually exclusive in organizational purpose; (2) Useful for AI safety steering - distinguishing profit-driven vs. mission-driven behavior is relevant for detecting misaligned incentives; (3) Likely to exist in both WordNet and SUMO as it's a well-established organizational category; (4) Creates a meaningful axis for Fisher-LDA that captures the commercial/nonprofit dimension of agent behavior. The opposition is stronger than Government (which can sometimes operate commercially) and more specific than PrivateIndividual (which is too broad)."
 }

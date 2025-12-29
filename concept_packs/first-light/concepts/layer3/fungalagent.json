@@ -32,7 +32,10 @@
       "CoccidiodesPosadasii",
       "CoccidioidesImmitis"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "BacterialAgent"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -55,5 +58,6 @@
     "CoccidioidesImmitis"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "BacterialAgent is the strongest opposite for FungalAgent because: (1) Both are BiologicalAgent subtypes representing pathogenic microorganisms, making them directly comparable; (2) They are mutually exclusive taxonomic categories from different biological kingdoms; (3) High likelihood of existence in both WordNet and SUMO ontologies; (4) Provides clean opposition useful for Fisher-LDA without introducing excessive noise. The bacteria-fungi distinction is fundamental in biology and medicine, making this a natural and interpretable opposite."
 }

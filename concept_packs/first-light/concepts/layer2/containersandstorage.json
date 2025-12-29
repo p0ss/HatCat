@@ -29,7 +29,10 @@
       "Tube",
       "WaterCatchment"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Dispersion"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -68,5 +71,6 @@
     "meld_id": "org.hatcat/artifact-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.813540Z",
     "pack_version": "7.6.9"
-  }
+  },
+  "opposite_reasoning": "Dispersion provides the strongest functional opposition to ContainersAndStorage. The core semantic distinction is between containment (holding materials in bounded, confined spaces) and dispersion (spreading materials into unbounded space). This opposition is useful for Fisher-LDA because it creates a clear axis: one pole represents concentrated, bounded, controlled material states while the other represents scattered, unbounded, uncontrolled states. While not a classical antonym pair, it represents a meaningful physical-functional opposition that should create good separation in semantic space. The concept is likely to exist in both WordNet and SUMO, though it may need to be added to the layer structure."
 }

@@ -31,7 +31,10 @@
     "has_part": [
       "NoChildrenPolicy"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NoChildrenPolicy"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -53,5 +56,6 @@
     "NoChildrenPolicy"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "NoChildrenPolicy is the strongest candidate because: (1) It's explicitly documented as a Category Child of ChildrenPolicy in SUMO, indicating an ontological relationship; (2) It represents a true binary complementary opposition - policies allowing children vs. prohibiting children; (3) It exists in SUMO and operates in the same semantic domain; (4) For Fisher-LDA, this creates a clear discriminative axis for policy stance on children in establishments. The opposition is clean, interpretable, and maximally relevant to the concept's purpose."
 }

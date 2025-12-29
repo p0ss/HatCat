@@ -86,7 +86,10 @@
       "Towel",
       "Wool"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Metal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -113,5 +116,6 @@
     "Wool"
   ],
   "is_category_lens": true,
-  "child_count": 11
+  "child_count": 11,
+  "opposite_reasoning": "Metal provides the strongest semantic opposition to Fabric for Fisher-LDA purposes. The opposition captures multiple complementary dimensions: flexible vs rigid, soft vs hard, textile vs industrial material, organic/natural fiber origins vs inorganic extraction, woven/knitted construction vs forged/cast/machined. This creates a clear separating hyperplane in semantic space. While not directly relevant to deception detection, material opposites provide clean category boundaries useful for testing concept steering mechanisms. Metal has high availability in both WordNet and SUMO ontologies."
 }

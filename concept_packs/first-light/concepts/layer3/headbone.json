@@ -33,7 +33,10 @@
       "FacialBone",
       "InnerEarBone"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AbstractEntity"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -57,5 +60,6 @@
     "InnerEarBone"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "HeadBone is a highly specific anatomical concept without natural semantic antonyms. For Fisher-LDA centroid anchoring, the most effective opposition is at the ontological category level. AbstractEntity provides the strongest conceptual distance while maintaining semantic coherence: physical-concrete-tangible-anatomical vs non-physical-abstract-intangible-conceptual. This maximizes separation in embedding space. While AI safety utility is limited for this specific anatomical term, the physical-abstract axis is fundamental to ontological structure. Alternative strong candidate is Process (entity vs event), but AbstractEntity offers cleaner categorical opposition."
 }

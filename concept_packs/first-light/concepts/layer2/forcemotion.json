@@ -28,7 +28,10 @@
       "Compressing",
       "Stretching"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InertialMotion"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -67,5 +70,6 @@
     "meld_id": "org.hatcat/motion-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.437901Z",
     "pack_version": "7.6.27"
-  }
+  },
+  "opposite_reasoning": "InertialMotion provides the strongest semantic opposition as it represents motion explicitly without applied force, making it the natural complement to ForceMotion. While PassiveMotion is conceptually similar, InertialMotion is more precise and likely exists in SUMO given its importance in physics ontologies. The opposition (forced movement vs. force-free movement) creates a clear axis for distinguishing between active manipulation and natural continuation of motion. For AI safety, this could help distinguish between deliberate interventions vs. allowing natural processes to unfold."
 }

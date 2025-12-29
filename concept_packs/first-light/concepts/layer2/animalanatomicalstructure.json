@@ -61,7 +61,10 @@
       "Stomach",
       "Tail"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PlantAnatomicalStructure"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -92,5 +95,6 @@
     "Tail"
   ],
   "is_category_lens": true,
-  "child_count": 55
+  "child_count": 55,
+  "opposite_reasoning": "PlantAnatomicalStructure provides the strongest taxonomic opposition - both concepts represent organized biological structures but from mutually exclusive kingdoms (Animalia vs Plantae). This creates a clean biological parallel: animal-specific organs/tissues vs plant-specific organs/tissues. The opposition is semantically meaningful, conceptually clear, and maintains domain consistency (both are anatomical structures, just from different kingdoms). This is ideal for Fisher-LDA as it separates two well-defined biological feature spaces. While less directly relevant to AI safety/deception detection, it provides robust concept separation for biological knowledge representation."
 }

@@ -78,7 +78,10 @@
       "Manufacturer",
       "MercantileOrganization"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Individual"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -107,5 +110,6 @@
     "ShareholderOptimizationSignal"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "Individual is the strongest opposite for Corporation because it captures the most fundamental distinction: collective institutional entity vs. singular personal entity. This opposition is maximally useful for Fisher-LDA because: (1) It has strong semantic distance while remaining in the same domain (agents/actors), (2) It's highly relevant for AI safety, particularly for understanding intent attribution, goal structures, and responsibility (corporate vs. personal intent), (3) It exists robustly in both WordNet and SUMO, (4) It creates a clean axis for distinguishing between institutional collective behavior patterns and individual human behavior patterns. The Corporate*Signal children (CorporateIntentSignal, ProfitOptimizationSignal, etc.) would naturally oppose individual human motivations and behaviors."
 }

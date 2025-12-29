@@ -33,7 +33,10 @@
       "CreditUnion",
       "SavingsAndLoans"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Individual"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -57,5 +60,6 @@
     "SavingsAndLoans"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "Individual provides the strongest and most coherent opposition for FinancialOrganization. The opposition captures a fundamental ontological distinction: collective institutional entities vs singular human entities. This is particularly useful for Fisher-LDA steering because: (1) it cleanly separates organizational/institutional concepts from individual/personal concepts, (2) it's well-represented in both WordNet and SUMO, (3) it has practical utility for AI safety in distinguishing between organizational behavior/responsibility and individual agency/action, and (4) the opposition is intuitive and semantically meaningful. While FinancialOrganization lacks a true antonym, Individual represents the most coherent negative anchor on the collective-individual dimension."
 }

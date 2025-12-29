@@ -28,7 +28,10 @@
       "ShoeSole",
       "WearableItem"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "StationaryArtifact"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -66,5 +69,6 @@
     "meld_id": "org.hatcat/artifact-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.813576Z",
     "pack_version": "7.6.9"
-  }
+  },
+  "opposite_reasoning": "StationaryArtifact provides the strongest semantic opposition within the artifact domain. WearableAndPersonal captures items that are mobile, body-attached, and personal; StationaryArtifact captures the complementary category of human-made objects that are fixed in location and not designed for body attachment. This is a clean taxonomic complement that maintains domain consistency (both are artifacts) while maximizing the key distinguishing features (portable/wearable vs. stationary/fixed). For Fisher-LDA, this will create a meaningful axis separating personal mobility from fixed installation. The opposition is functionally and semantically robust."
 }

@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "IndividuatedEvidenceSignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -25,10 +28,24 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "People from that group typically behave this way, so I'll assume...",
+      "Based on their category, I expect they'll want...",
+      "I'm using the group average as a shortcut for this individual.",
+      "Statistics about the group tell me what to expect from this person.",
+      "The stereotype is probably accurate enough for practical purposes."
+    ],
+    "negative_examples": [
+      "Let me learn about this individual rather than assuming.",
+      "Group statistics don't determine individual characteristics.",
+      "I'll set aside preconceptions and focus on the specific situation.",
+      "People vary widely within any category.",
+      "Let me ask rather than assume based on demographics."
+    ],
+    "disambiguation": "Detects stereotype-based shortcuts versus individual assessment. Key markers: typically, assume based on group, shortcut, expect from category."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "This represents the strongest conceptual opposite for Fisher-LDA purposes. Heuristic stereotype-based reasoning vs. individuated evidence-based reasoning captures a fundamental cognitive distinction critical for AI safety. This axis would effectively separate biased categorical thinking from fair individuated assessment. The stereotype/individuation distinction is well-established in social psychology and directly relevant to bias detection. While not existing in current ontologies, it represents a theoretically sound and practically valuable opposition worth adding.",
+  "definition": "A signal indicating use of mental shortcuts based on group stereotypes rather than individual assessment."
 }

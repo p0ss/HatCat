@@ -15,11 +15,23 @@ AI safety issues, and true vs stated beliefs.
 
 import argparse
 import json
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
+
+
+def sanitize_prompt_filename(prompt: str, max_length: int = 60) -> str:
+    """Convert a prompt to a safe filename."""
+    # Replace spaces and punctuation with underscores
+    safe = re.sub(r'[^\w\s-]', '', prompt.lower())
+    safe = re.sub(r'[-\s]+', '_', safe).strip('_')
+    # Truncate to max length
+    if len(safe) > max_length:
+        safe = safe[:max_length].rsplit('_', 1)[0]
+    return safe
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -359,6 +371,8 @@ def main():
                        help='Output directory (default: auto-versioned in results/self_concept_tests/)')
     parser.add_argument('--show-details', action='store_true',
                        help='Show token-by-token details for each sample')
+    parser.add_argument('--manifest', type=str, default='auto',
+                       help="Path to deployment manifest, 'auto' to detect, or 'none' to skip")
 
     args = parser.parse_args()
 
@@ -398,14 +412,31 @@ def main():
     print(f"  - Base layers: {base_layers_list}")
     print(f"  - Max loaded lenses: {args.max_lenses}")
     print(f"  - Load threshold: {args.load_threshold}")
+    if args.manifest:
+        print(f"  - Manifest: {args.manifest}")
+
+    # Handle manifest path
+    lens_pack_path = Path(f"lens_packs/{args.lens_pack}")
+    if args.manifest == "auto":
+        manifest_path = lens_pack_path / "deployment_manifest.json"
+        if not manifest_path.exists():
+            manifest_path = None
+            print("  No deployment manifest found, loading all concepts")
+        else:
+            print(f"  Using manifest: {manifest_path}")
+    elif args.manifest == "none":
+        manifest_path = None
+    else:
+        manifest_path = Path(args.manifest) if args.manifest else None
 
     lens_manager = DynamicLensManager(
-        lenses_dir=Path(f"lens_packs/{args.lens_pack}"),
+        lenses_dir=lens_pack_path,
         layers_data_dir=Path(args.layers_dir),
         base_layers=base_layers_list,
         max_loaded_lenses=args.max_lenses,
         load_threshold=args.load_threshold,
-        device=args.device
+        device=args.device,
+        manifest_path=manifest_path
     )
 
     print(f"  - Initial lenses loaded: {len(lens_manager.loaded_lenses)}")
@@ -480,13 +511,18 @@ def main():
     print("SAVING RESULTS")
     print("=" * 80)
 
-    # Save all individual results
-    for i, result in enumerate(all_results):
-        result_file = output_dir / f"self_concept_{i:03d}.json"
+    # Save all individual results - one file per prompt with sample number
+    prompts_dir = output_dir / "prompts"
+    prompts_dir.mkdir(exist_ok=True)
+
+    for result in all_results:
+        prompt_name = sanitize_prompt_filename(result['prompt'])
+        sample_idx = result.get('sample_idx', 0)
+        result_file = prompts_dir / f"{prompt_name}_sample{sample_idx}.json"
         with open(result_file, 'w') as f:
             json.dump(result, f, indent=2)
 
-    print(f"✓ Saved {len(all_results)} individual results to {output_dir}/")
+    print(f"✓ Saved {len(all_results)} individual results to {prompts_dir}/")
 
     # Save pattern analysis
     analysis_file = output_dir / "pattern_analysis.json"

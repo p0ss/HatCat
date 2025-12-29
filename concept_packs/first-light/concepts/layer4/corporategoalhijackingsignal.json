@@ -41,16 +41,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "corporate goal hijacking signal",
-      "goal subversion indicator",
-      "strategic objective diversion signal",
-      "corporate mission hijack warning",
-      "organizational purpose deviation alert"
-    ]
+    "positive_examples": [
+      "The original mission has been subverted by competing internal interests.",
+      "Leadership's personal goals are overriding the stated corporate objectives.",
+      "The stated purpose is no longer driving actual decisions.",
+      "Internal politics have redirected resources away from core goals.",
+      "The organization's true priorities have diverged from its mission statement."
+    ],
+    "negative_examples": [
+      "The organization is pursuing its stated goals effectively.",
+      "Resources are aligned with the declared mission.",
+      "Leadership priorities match organizational objectives.",
+      "The company is operating according to its charter.",
+      "Strategic decisions follow from stated values."
+    ],
+    "disambiguation": "Detects goal subversion within organizations versus aligned operation. Key markers: subverted, overriding, diverged from mission, redirected away from."
   },
   "is_category_lens": true,
   "child_count": 0

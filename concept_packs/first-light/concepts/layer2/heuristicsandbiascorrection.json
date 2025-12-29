@@ -29,7 +29,10 @@
       "CounterBiasDistortionSignal",
       "FairnessMetacognitionSignal"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "BiasAmplification"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -73,5 +76,6 @@
     "meld_id": "org.hatcat/cognitiveprocess-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:03.027799Z",
     "pack_version": "7.6.12"
-  }
+  },
+  "opposite_reasoning": "BiasAmplification provides the strongest semantic opposition for AI safety monitoring purposes. While HeuristicsAndBiasCorrection represents metacognitive processes that identify and counteract systematic errors, BiasAmplification represents processes that strengthen and perpetuate them. This creates a clear axis for Fisher-LDA steering between corrective and amplifying behaviors. This is especially valuable for AI alignment: detecting when a model is correcting vs. amplifying unfair judgments or systematic errors. The concept is specific enough to be operationally useful while general enough to encompass various amplification mechanisms (echo chambers, feedback loops, over-reliance on biased heuristics)."
 }

@@ -33,7 +33,10 @@
       "UserDirectAction",
       "UserSignifiedAction"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AutomaticProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -57,5 +60,6 @@
     "UserSignifiedAction"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "AutomaticProcess provides the strongest semantic opposition for Fisher-LDA axis construction. The UserAction-AutomaticProcess axis captures the critical distinction between intentional user-driven interactions and autonomous system behaviors. This is highly relevant for AI safety monitoring: distinguishing whether system behavior is responding to explicit user commands vs. operating autonomously is crucial for alignment verification and detecting unintended autonomous actions. The voluntary/intentional vs. involuntary/automatic dimension is a fundamental ontological distinction that will create a clean separation in concept space. AutomaticProcess likely exists in both SUMO and WordNet (as 'automatic' processes are well-established concepts), making it practically available."
 }

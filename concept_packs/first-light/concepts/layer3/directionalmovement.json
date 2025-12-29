@@ -27,7 +27,10 @@
       "MovingTowards",
       "MovingTowardsPeople"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "RandomMotion"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -65,5 +68,6 @@
     "meld_id": "org.hatcat/translocation-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:05.662221Z",
     "pack_version": "7.6.42"
-  }
+  },
+  "opposite_reasoning": "RandomMotion provides the strongest complementary opposition to DirectionalMovement. While DirectionalMovement is characterized by clear orientation toward/away from a reference point, RandomMotion lacks this defining feature entirely. This creates a clean semantic axis for Fisher-LDA where \u03bc+ represents goal-directed movement and \u03bc- represents undirected movement. This is valuable for AI safety contexts where distinguishing purposeful vs. random behavior patterns matters. The concept likely exists in both WordNet (random motion, Brownian motion) and SUMO ontologies, making it readily available."
 }

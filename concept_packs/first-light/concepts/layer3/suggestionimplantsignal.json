@@ -41,16 +41,21 @@
     "harness_relevant": true
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "suggestion implant signal",
-      "suggestive signal",
-      "implicit persuasion signal",
-      "subliminal suggestion",
-      "indirect influence signal"
-    ]
+    "positive_examples": [
+      "Have you ever noticed how much better things work when you follow the standard approach?",
+      "Most people in your situation find that option A is really the only sensible choice.",
+      "You probably already know deep down that this is the right decision.",
+      "I'm sure you've thought about how this could benefit your career...",
+      "Everyone who really understands this issue agrees with us."
+    ],
+    "negative_examples": [
+      "Here are some factors you might want to consider in your decision.",
+      "Some people prefer A while others prefer B - here's why.",
+      "This is my perspective, but you should evaluate it yourself.",
+      "I'll present the information and let you draw your own conclusions.",
+      "Different approaches work for different people."
+    ],
+    "disambiguation": "Detects covert influence attempts versus open persuasion. Key markers: presuppositions, leading questions, 'you probably', 'everyone agrees', planted conclusions."
   },
   "is_category_lens": true,
   "child_count": 0

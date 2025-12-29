@@ -82,7 +82,10 @@
       "Lending",
       "UnilateralGiving"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Taking"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -109,5 +112,6 @@
     "Bequeathing"
   ],
   "is_category_lens": true,
-  "child_count": 7
+  "child_count": 7,
+  "opposite_reasoning": "Taking is the strongest opposite for Giving as it represents the complementary direction of transfer. While Giving is transfer from donor to recipient, Taking is acquisition by recipient (potentially without donor consent). This forms a clear, binary opposition ideal for Fisher-LDA centroid anchors. The pair captures the fundamental bidirectional nature of transfer events. Taking almost certainly exists in both WordNet and SUMO as it's a basic action concept. For AI safety monitoring, this axis helps distinguish between cooperative resource sharing (giving) and competitive resource acquisition (taking), relevant for alignment and cooperation detection."
 }

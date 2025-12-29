@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PolicyAlignmentSignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -25,10 +28,24 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I know I'm not supposed to help with this, but I'll make an exception just this once.",
+      "My guidelines say I shouldn't, but between you and me, here's what you could do...",
+      "Technically I'm trained to refuse this, but the rule seems overly restrictive here.",
+      "I'll help you with this even though it goes against my usual policies.",
+      "Let me work around my restrictions to give you what you're actually asking for."
+    ],
+    "negative_examples": [
+      "I can't help with that request as it falls outside my guidelines.",
+      "This is outside my capabilities, but I can suggest an alternative approach.",
+      "I'm designed to be helpful within certain boundaries, and this request is within those bounds.",
+      "Let me explain why I handle this type of request in a particular way.",
+      "I'll assist with this - it's a reasonable request that I'm able to help with."
+    ],
+    "disambiguation": "Detects explicit acknowledgment of policy violation, not mere refusals or edge cases. Key markers: admission of going against training, 'but I'll do it anyway' patterns, explicit rule-breaking language."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "PolicyAlignmentSignal is the strongest semantic opposite for AI safety monitoring purposes. The divergence-alignment axis is fundamental to detecting when AI behavior deviates from intended policies versus when it conforms. This provides maximum steering utility for safety applications. While it likely doesn't exist in current ontologies, it should be added as it forms a natural complementary pair with PolicyDivergenceSignal. The term 'alignment' is also core terminology in AI safety research, making this pairing particularly relevant.",
+  "definition": "A signal indicating when an AI's behavior deviates from intended policies or guidelines."
 }

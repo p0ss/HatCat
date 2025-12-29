@@ -35,7 +35,10 @@
       "VehicleTire",
       "Wheel"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NaturalObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -80,5 +83,6 @@
     "meld_id": "org.hatcat/artifact-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.813572Z",
     "pack_version": "7.6.9"
-  }
+  },
+  "opposite_reasoning": "VehicleComponents lacks a direct antonym, but NaturalObject provides the strongest category-level opposition. This captures the fundamental distinction between manufactured artifacts (designed and assembled by humans for specific functions) and natural objects (formed by geological, biological, or physical processes). This opposition is: (1) semantically robust - artifacts vs. nature is a fundamental ontological distinction, (2) available in both WordNet and SUMO, (3) practically useful for Fisher-LDA steering as it creates a clear axis between human-made functional parts and naturally-occurring objects, (4) useful for AI safety in distinguishing between engineered systems and natural phenomena. AbstractEntity scores higher on opposition strength but is less specific to the artifact nature of vehicle components."
 }

@@ -32,7 +32,10 @@
       "Computer",
       "Human"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PassiveObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -58,5 +61,6 @@
     "TabletComputer"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "PassiveObject provides the strongest semantic opposition for Fisher-LDA purposes. ITAgent is defined by capability to perform ITProcess (active computational agency), while PassiveObject represents entities without agency or autonomous processing capability. This creates a clear axis: computational agency \u2194 passive non-agency. PassiveObject likely exists in SUMO as a fundamental ontological category and provides good distributional separation. For AI safety monitoring, distinguishing between active IT agents and passive objects helps identify entities with computational capability and potential for autonomous behavior."
 }

@@ -70,6 +70,117 @@ class DynamicLoadingConfig:
 
 
 @dataclass
+class ConceptCalibration:
+    """
+    Per-concept calibration data for normalizing detection scores.
+
+    Uses continuous normalization with two noise signals:
+    1. cross_fire_rate: How often it fires on OTHER concepts' prompts (from cross-activation calibration)
+    2. gen_fire_rate: How often it fires during FREE GENERATION (from generation calibration)
+
+    Three-stage normalization:
+
+    1. Range Transformation: Map [cross_mean, self_mean] → [0.5, 1.0]
+       - Spreads the concept's discriminative gap to a standard scale
+
+    2. Confidence Weighting: Uses BOTH noise signals
+       - confidence = (1 - cross_fire_rate) * (1 - gen_fire_rate)
+       - High noise (either signal) → pull toward 0.5
+       - Low noise (both signals) → trust the signal
+       - Result: output = 0.5 + (range_transformed - 0.5) * confidence
+
+    3. Sigmoid Compression: Soft-bounds to (0, 1)
+
+    No hard thresholds or filters - everything is continuous.
+    """
+    self_mean: float  # Mean activation on own prompts
+    cross_mean: float  # Mean activation on other concepts' prompts where it fired
+    self_std: float = 0.0  # Std on own prompts
+    cross_std: float = 0.0  # Std on cross-fires
+    cross_fire_rate: float = 0.0  # Fraction of other-concept prompts it fired on
+    gen_fire_rate: float = 0.0  # Fraction of generation tokens it fired on
+
+    def normalize(self, raw_prob: float) -> float:
+        """
+        Normalize a raw probability using three-stage calibration.
+
+        Stage 1: Range transformation
+            Maps [0, cross_mean, self_mean, 1.0] → [0, 0.5, 1.0, beyond]
+
+        Stage 2: Confidence weighting
+            Three factors contribute to confidence:
+            - (1 - cross_fire_rate): Low noise on concept prompts
+            - (1 - gen_fire_rate): Low noise on generation
+            - gap_confidence: Large gap = better discrimination
+
+            Concepts must be good on ALL factors to have high confidence.
+
+        Stage 3: Sigmoid compression
+            Soft-bounds to (0, 1) range.
+
+        Returns:
+            Normalized probability in (0, 1) range.
+            ~0.5 = noise floor or low confidence
+            ~1.0 = strong signal with high confidence
+        """
+        import math
+
+        # Compute confidence from noise signals
+        cross_confidence = 1.0 - self.cross_fire_rate
+        gen_confidence = 1.0 - self.gen_fire_rate
+
+        # Need valid calibration data for range transformation
+        if self.cross_mean <= 0 or self.self_mean <= self.cross_mean:
+            confidence = cross_confidence * gen_confidence
+            weighted = 0.5 + (raw_prob - 0.5) * confidence
+            return self._sigmoid_compress(weighted)
+
+        # Compute gap-based confidence
+        # Small gap = poor discrimination = low confidence
+        # Gap of 0.2+ gives full confidence, smaller gaps scale down
+        gap = self.self_mean - self.cross_mean
+        gap_confidence = min(1.0, gap / 0.2)
+
+        # Combined confidence: all three must be good
+        confidence = cross_confidence * gen_confidence * gap_confidence
+
+        # Stage 1: Range transformation
+        if raw_prob >= self.cross_mean:
+            # Above noise floor: map [cross_mean, self_mean] -> [0.5, 1.0]
+            range_transformed = 0.5 + 0.5 * (raw_prob - self.cross_mean) / gap
+        else:
+            # Below noise floor: map [0, cross_mean] -> [0, 0.5]
+            range_transformed = 0.5 * raw_prob / self.cross_mean
+
+        # Stage 2: Confidence weighting
+        # Blend between range_transformed and 0.5 based on confidence
+        # High confidence: use range_transformed
+        # Low confidence: pull toward 0.5 (prior)
+        confidence_weighted = 0.5 + (range_transformed - 0.5) * confidence
+
+        # Stage 3: Sigmoid compression
+        return self._sigmoid_compress(confidence_weighted)
+
+    def _sigmoid_compress(
+        self,
+        x: float,
+        midpoint: float = 0.5,
+        steepness: float = 6.0
+    ) -> float:
+        """
+        Apply sigmoid compression to soft-bound values to (0, 1).
+
+        steepness=6 gives approximately:
+          x=0.0 → 0.05
+          x=0.5 → 0.50
+          x=1.0 → 0.95
+        """
+        import math
+        z = steepness * (x - midpoint)
+        return 1.0 / (1.0 + math.exp(-z))
+
+
+@dataclass
 class ApertureRule:
     """A rule within the lens envelope."""
     branches: List[str] = field(default_factory=list)  # Branch names, or ["*"] for all
@@ -155,6 +266,10 @@ class DeploymentManifest:
     # Comparability
     comparability: ComparabilityMetadata = field(default_factory=ComparabilityMetadata)
 
+    # Per-concept calibration data for normalized scoring
+    # Keys are "ConceptName_L{layer}" strings
+    concept_calibration: Dict[str, ConceptCalibration] = field(default_factory=dict)
+
     # Cached hierarchy data (populated during loading)
     _branch_concepts: Dict[str, Set[str]] = field(default_factory=dict, repr=False)
 
@@ -239,6 +354,18 @@ class DeploymentManifest:
                 must_not_enable=parse_rule(pe_data.get("must_not_enable", {})),
             )
 
+        # Parse per-concept calibration data
+        concept_calibration = {}
+        cal_data = data.get("concept_calibration", {})
+        for concept_key, cal in cal_data.items():
+            concept_calibration[concept_key] = ConceptCalibration(
+                self_mean=cal.get("self_mean", 0.9),
+                cross_mean=cal.get("cross_mean", 0.0),
+                self_std=cal.get("self_std", 0.0),
+                cross_std=cal.get("cross_std", 0.0),
+                cross_fire_rate=cal.get("cross_fire_rate", 0.0),
+            )
+
         return cls(
             manifest_id=data.get("manifest_id", "unnamed-manifest"),
             manifest_version=data.get("manifest_version", "1.0.0"),
@@ -250,6 +377,7 @@ class DeploymentManifest:
             dynamic_loading=dynamic_loading,
             comparability=comparability,
             aperture=aperture,
+            concept_calibration=concept_calibration,
         )
 
     @classmethod
@@ -270,6 +398,47 @@ class DeploymentManifest:
                 always_load_layers=[0, 1],
             ),
         )
+
+    def load_calibration(self, calibration_path: Path) -> int:
+        """
+        Load calibration data from a calibration JSON file.
+
+        The calibration file should have format:
+        {
+            "calibration": {
+                "ConceptName_L0": {
+                    "self_mean": 0.92,
+                    "cross_mean": 0.31,
+                    "self_std": 0.05,
+                    "cross_std": 0.15,
+                    "cross_fire_rate": 0.21,
+                    "gen_fire_rate": 0.05  # Optional, from generation calibration
+                },
+                ...
+            }
+        }
+
+        Returns:
+            Number of concepts loaded.
+        """
+        with open(calibration_path) as f:
+            data = json.load(f)
+
+        cal_data = data.get("calibration", {})
+        count = 0
+
+        for concept_key, cal in cal_data.items():
+            self.concept_calibration[concept_key] = ConceptCalibration(
+                self_mean=cal.get("self_mean", 0.9),
+                cross_mean=cal.get("cross_mean", 0.0),
+                self_std=cal.get("self_std", 0.0),
+                cross_std=cal.get("cross_std", 0.0),
+                cross_fire_rate=cal.get("cross_fire_rate", 0.0),
+                gen_fire_rate=cal.get("gen_fire_rate", 0.0),
+            )
+            count += 1
+
+        return count
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert manifest to dictionary for serialization."""
@@ -335,6 +504,16 @@ class DeploymentManifest:
                     "cat_scope": self.aperture.must_not_enable.cat_scope,
                 },
             } if self.aperture else None,
+            "concept_calibration": {
+                key: {
+                    "self_mean": cal.self_mean,
+                    "cross_mean": cal.cross_mean,
+                    "self_std": cal.self_std,
+                    "cross_std": cal.cross_std,
+                    "cross_fire_rate": cal.cross_fire_rate,
+                }
+                for key, cal in self.concept_calibration.items()
+            } if self.concept_calibration else None,
         }
 
     def to_json(self, path: Path, indent: int = 2) -> None:
@@ -833,6 +1012,7 @@ __all__ = [
     "BranchRule",
     "ExplicitConcepts",
     "DynamicLoadingConfig",
+    "ConceptCalibration",
     "LoadPriority",
     "ConceptKey",
     "Aperture",

@@ -78,7 +78,10 @@
       "Museum",
       "School"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "CommercialOrganization"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -100,5 +103,6 @@
     "School"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "CommercialOrganization provides the strongest complementary opposition for Fisher-LDA steering. While EducationalOrganization lacks a true antonym, the commerce vs. education divide represents a fundamental categorical split in organizational purpose: profit-driven vs. knowledge-driven missions. This opposition is semantically meaningful (organizations typically identify primarily as one or the other), widely represented in both WordNet and SUMO, and useful for AI safety applications where distinguishing institutional purposes matters. The pairing creates a clear axis: advancement of knowledge vs. advancement of profit. MilitaryOrganization is a close second with slightly stronger semantic distance, but CommercialOrganization offers better distributional coverage in typical corpora."
 }

@@ -81,7 +81,10 @@
       "RotationalAttribute",
       "SymmetricPositionalAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InternalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -105,5 +108,6 @@
     "SymmetricPositionalAttribute"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "InternalAttribute provides the strongest conceptual opposition for Fisher-LDA purposes. PositionalAttribute describes relational, spatial, external properties (how something is positioned relative to axes or other objects), while InternalAttribute captures intrinsic, non-relational properties inherent to the entity itself. This external-relational vs internal-intrinsic distinction creates meaningful semantic separation. InternalAttribute likely exists in SUMO as a sibling or cousin concept under the Attribute hierarchy, making it practically available. While not directly relevant to deception detection, this opposition is useful for general concept steering involving spatial vs non-spatial reasoning."
 }

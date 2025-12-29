@@ -46,7 +46,10 @@
       "HardwareSystem",
       "Sensor"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ComputerSoftware"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -72,5 +75,6 @@
     "ComputerOutputDevice"
   ],
   "is_category_lens": true,
-  "child_count": 5
+  "child_count": 5,
+  "opposite_reasoning": "ComputerSoftware is the strongest opposite for ComputerHardware based on: (1) Well-established complementary dichotomy in computing - hardware/software are the two fundamental components of computer systems; (2) Clear semantic opposition: physical/tangible vs. abstract/intangible, material vs. informational; (3) High availability - definitely exists in both WordNet and SUMO; (4) Useful for Fisher-LDA separation as they occupy distinct semantic spaces despite both being computing-related; (5) Relevant for AI safety contexts where distinguishing physical substrate from abstract algorithms/programs matters. This is a textbook example of complementary opposition."
 }

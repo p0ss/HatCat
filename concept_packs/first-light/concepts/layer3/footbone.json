@@ -6,7 +6,7 @@
   ],
   "layer": 3,
   "domain": "LivingThings",
-  "definition": "foot bone",
+  "definition": "A skeletal element that forms part of the foot structure in vertebrates.",
   "definition_source": "SUMO",
   "aliases": [
     "foot bone",
@@ -33,7 +33,10 @@
       "InstepBone",
       "ToeBone"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "HandBone"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -56,5 +59,6 @@
     "InstepBone"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "FootBone is a highly specific anatomical term without a true semantic antonym. HandBone provides the strongest opposition as they are complementary anatomical structures representing upper vs lower limb extremities. While this opposition has minimal AI safety relevance (steering_utility=2), it offers the clearest semantic distance for Fisher-LDA separation. Both concepts exist in anatomical ontologies and WordNet. The opposition is anatomically meaningful: hands and feet are parallel structures adapted for different functions (manipulation vs locomotion), making them natural category complements within limb bones. This is superior to more abstract oppositions like 'soft tissue' or 'organ' which lose the specificity of the anatomical domain."
 }

@@ -45,7 +45,10 @@
       "SupportIO",
       "UnconventionalWarfare"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Harming"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -80,5 +83,6 @@
     "MultimodalBeneficialIntent"
   ],
   "is_category_lens": true,
-  "child_count": 7
+  "child_count": 7,
+  "opposite_reasoning": "Harming is the strongest semantic opposite to Helping, representing the fundamental ethical distinction between beneficial and detrimental actions. This binary opposition is ideal for Fisher-LDA steering in AI safety contexts: the helping\u2192harming axis captures whether an AI system's actions promote wellbeing vs. cause damage. Given that Helping's category children include beneficial concepts (BeneficialInstructionalContent, ConsentfulDepiction), having Harming as the negative anchor enables detection of harmful outputs. This pairing has maximum opposition strength (10/10) and is directly available in both WordNet and SUMO ontologies."
 }

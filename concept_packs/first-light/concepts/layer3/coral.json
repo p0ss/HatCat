@@ -48,7 +48,10 @@
       "Coral_Gorgonacea",
       "Coral_Gorgonian"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Mammal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -80,5 +83,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396213Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "Coral is a specific biological entity (marine invertebrate) without clear antonyms. For Fisher-LDA purposes, the best opposite maximizes semantic distance while remaining coherent. Mammal provides the strongest opposition because: (1) Both are animals, providing shared context that makes the opposition meaningful rather than random; (2) They differ maximally across key dimensions - vertebrate/invertebrate, mobile/sessile, complex/simple nervous systems, terrestrial/marine; (3) High availability in both WordNet and SUMO; (4) Represents a well-understood biological contrast. However, AI safety steering utility is low since Coral is domain-specific biology with little relevance to deception/alignment monitoring."
 }

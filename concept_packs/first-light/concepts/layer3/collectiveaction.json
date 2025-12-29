@@ -32,7 +32,10 @@
       "StrikeAction",
       "MutualAid"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "IndividualAction"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -72,5 +75,6 @@
     "meld_id": "org.hatcat/agent-resource-management@0.3.0",
     "applied_at": "2025-12-10T20:54:14.447669Z",
     "pack_version": "5.0.0"
-  }
+  },
+  "opposite_reasoning": "IndividualAction provides the cleanest conceptual opposite to CollectiveAction along the most salient dimension: individual versus collective agency. This distinction is fundamental for AI safety monitoring as it helps distinguish between coordinated group behaviors (which may involve conspiracy, coordination problems, or collective alignment issues) and individual agent actions. The opposition is clear, symmetric, and captures the core semantic difference. While it may not exist as a standalone term in WordNet, it likely exists in SUMO's action hierarchy and should be added to the layer system to provide proper balance. This pairing is maximally useful for Fisher-LDA as it creates a clear axis from solo agency to collective coordination."
 }

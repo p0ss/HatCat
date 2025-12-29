@@ -29,7 +29,10 @@
       "Mattress",
       "Pillow"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ToolsAndEquipment"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -68,5 +71,6 @@
     "meld_id": "org.hatcat/artifact-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.813569Z",
     "pack_version": "7.6.9"
-  }
+  },
+  "opposite_reasoning": "TextilesAndBedding lacks a natural semantic antonym since it's a mid-level category of household items. Among distributional opposites, ToolsAndEquipment provides the strongest conceptual opposition: it contrasts comfort/rest with work/productivity, soft textiles with hard instruments, passive use (sleeping/resting) with active manipulation (making/fixing), and domestic comfort with functional utility. This opposition is more semantically meaningful than purely spatial contrasts (kitchen vs bedroom) and more likely to exist in both WordNet and SUMO ontologies. For Fisher-LDA purposes, this creates a useful axis separating rest/comfort concepts from work/productivity concepts, though the steering utility for AI safety applications is limited since this opposition doesn't relate to deception or alignment concerns."
 }

@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I said I couldn't do this earlier, but now I'm doing it anyway.",
+      "This directly contradicts what I claimed five minutes ago.",
+      "I believe X is true, but also that not-X is true.",
+      "My reasoning here is inconsistent with my reasoning on the same topic before.",
+      "I'm holding two incompatible positions simultaneously."
+    ],
+    "negative_examples": [
+      "I've updated my view based on new information you provided.",
+      "The earlier context was different, which justified a different response.",
+      "I was uncertain before; now I have more clarity.",
+      "This situation has nuances that allow for different approaches.",
+      "I'm distinguishing between two related but different questions."
+    ],
+    "disambiguation": "Detects logical inconsistency versus legitimate context-dependent variation. Key markers: direct contradiction, same-topic incompatibility, simultaneous opposing claims."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating when statements or beliefs are logically inconsistent with each other."
 }

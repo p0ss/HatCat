@@ -84,7 +84,10 @@
       "SexAttribute",
       "VisualAcuityAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -111,5 +114,6 @@
     "VisualAcuityAttribute"
   ],
   "is_category_lens": true,
-  "child_count": 9
+  "child_count": 9,
+  "opposite_reasoning": "BiologicalAttribute is a challenging concept for opposition because it's a broad category covering diverse properties (animacy, sex, psychological attributes, etc.). PhysicalAttribute is the most pragmatic choice because: (1) it exists in SUMO ontology with high confidence, (2) it provides meaningful categorical separation - biological organism properties vs general physical properties, (3) it maintains the same ontological level (both are Attribute types), which is important for Fisher-LDA centroid positioning. While not a perfect binary opposite, it offers the most stable and available contrast. ArtificialAttribute would be stronger semantically but likely doesn't exist in current ontologies."
 }

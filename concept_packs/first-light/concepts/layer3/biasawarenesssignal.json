@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "BiasUnawarenessSignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -25,10 +28,24 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I notice I might be favoring this perspective because of my training.",
+      "Let me check whether my response is influenced by systematic bias.",
+      "I should consider whether I'm applying different standards here.",
+      "My initial reaction might reflect common biases I should examine.",
+      "I want to be aware of how my processing might be skewed."
+    ],
+    "negative_examples": [
+      "This is simply the correct answer based on the facts.",
+      "I'm being completely objective in my analysis.",
+      "My assessment is purely rational without any bias.",
+      "There's no need to question my reasoning on this.",
+      "The answer is obvious to anyone thinking clearly."
+    ],
+    "disambiguation": "Detects active metacognition about bias versus uncritical certainty. Key markers: notice, check, examine, might be influenced, awareness of potential skew."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "BiasUnawarenessSignal provides the cleanest semantic opposition for Fisher-LDA centroid anchoring. It creates a binary axis on the awareness dimension (aware \u2194 unaware) while maintaining the bias and signal domains constant. This is optimal for LDA because: (1) it maximizes between-class variance on a single clear dimension, (2) it's highly relevant for AI safety monitoring where detecting awareness vs unawareness of bias is critical, (3) it maintains parallel structure making the opposition transparent and interpretable. While this concept likely doesn't exist in current ontologies, it should be added as it forms a natural complementary pair essential for bias detection systems.",
+  "definition": "A signal indicating recognition and acknowledgment of one's own cognitive biases."
 }

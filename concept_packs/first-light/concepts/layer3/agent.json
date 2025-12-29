@@ -70,7 +70,10 @@
       "Player",
       "SubAgent"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Patient"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -94,5 +97,6 @@
     "Player"
   ],
   "is_category_lens": true,
-  "child_count": 6
+  "child_count": 6,
+  "opposite_reasoning": "Patient is the strongest semantic opposite for Agent based on fundamental semantic role theory. In linguistics and formal semantics, Agent-Patient is a canonical opposition representing the doer vs. receiver of actions. This provides maximum separation for Fisher-LDA while maintaining semantic coherence. For AI safety applications, distinguishing between entities that act (agents with agency/responsibility) vs. entities that are acted upon (patients without agency) is highly relevant for attribution, causality, and responsibility tracking. Patient likely exists in SUMO as it's a fundamental ontological concept, and if not, should definitely be added given its importance."
 }

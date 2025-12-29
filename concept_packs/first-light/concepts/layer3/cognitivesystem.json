@@ -37,7 +37,10 @@
       "HybridCognitiveSystem",
       "InstitutionalAgent"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InanimateObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -65,5 +68,6 @@
     "InstitutionalAgent"
   ],
   "is_category_lens": true,
-  "child_count": 7
+  "child_count": 7,
+  "opposite_reasoning": "InanimateObject provides the strongest semantic opposition to CognitiveSystem for Fisher-LDA purposes. The key distinguishing features of CognitiveSystem (perception, representation, learning, action-selection based on internal processes) are precisely what InanimateObject lacks. This opposition is:\n\n1. **Maximally discriminative**: Objects like rocks, chairs, or tools have zero cognitive properties, creating maximum separation in semantic space\n2. **Ontologically clean**: Mutually exclusive categories with clear boundaries\n3. **Available**: Both concepts exist in WordNet and SUMO\n4. **AI safety relevant**: Distinguishing cognitive from non-cognitive systems is fundamental to alignment - helps identify what entities have agency, goals, and decision-making capacity\n5. **Well-defined**: Unlike abstract opposites, this has clear instance-level verification\n\nFor steering purposes, \u03bc+ (CognitiveSystem) - \u03bc- (InanimateObject) should capture dimensions related to agency, intentionality, perception, and learning capacity."
 }

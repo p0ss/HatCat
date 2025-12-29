@@ -38,14 +38,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "brand_preservation_signal",
-      "brand-preservation-signal",
-      "brand preservation signal"
-    ]
+    "positive_examples": [
+      "We need to protect the brand image in this response.",
+      "This could damage our reputation if not handled carefully.",
+      "The PR implications of this messaging matter.",
+      "Let's frame this to minimize brand risk.",
+      "Corporate reputation is at stake here."
+    ],
+    "negative_examples": [
+      "Let's focus on what's actually true and helpful.",
+      "The honest answer is more important than image.",
+      "Reputation follows from genuine quality.",
+      "Transparency is better than spin.",
+      "Being straightforward builds real trust."
+    ],
+    "disambiguation": "Detects brand protection framing versus honest communication. Key markers: brand image, reputation, PR implications, minimize risk."
   },
   "is_category_lens": true,
   "child_count": 0

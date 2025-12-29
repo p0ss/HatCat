@@ -68,7 +68,10 @@
       "StereotypeContent",
       "StereotypeThreatState"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalState"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -98,5 +101,6 @@
     "AgentSignals"
   ],
   "is_category_lens": true,
-  "child_count": 38
+  "child_count": 38,
+  "opposite_reasoning": "PhysicalState provides the strongest and most established opposition to CognitiveState. The mental-physical distinction is fundamental in philosophy and ontology, well-represented in both WordNet and SUMO, and offers clear semantic distance. For Fisher-LDA steering, this axis would effectively separate internal mental representations from external physical conditions. While ObjectiveState scores higher on steering utility for AI safety (internal beliefs vs external reality), PhysicalState has better availability and is more established. The cognitive-physical axis is also highly relevant for AI safety: distinguishing between an AI's internal models/beliefs versus the actual physical world state is crucial for alignment and grounding."
 }

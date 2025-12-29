@@ -35,7 +35,10 @@
     "has_part": [
       "AutomatedNotificationSystem"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "CognitiveAgent"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -59,5 +62,6 @@
     "AutomatedNotificationSystem"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "CognitiveAgent provides the strongest semantic opposition for AI safety monitoring purposes. The contrast between automated/mechanical operation and cognitive/intentional control is fundamental and directly relevant to understanding AI agency vs. human agency. This opposition is: (1) conceptually clear - automated systems lack cognitive deliberation, (2) highly relevant for AI safety - distinguishing mechanical execution from reasoned action, (3) likely exists in SUMO as a fundamental agent category, (4) provides useful Fisher-LDA steering for detecting whether systems exhibit automated vs. cognitive behavior patterns. While ManualSystem offers slightly stronger direct opposition, CognitiveAgent has better availability in existing ontologies and broader utility for safety monitoring across multiple dimensions (intentionality, reasoning, consciousness)."
 }

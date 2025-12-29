@@ -47,7 +47,10 @@
       "SportServe",
       "SportsManeuvers"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "LobShot"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -82,5 +85,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396442Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "GameShot represents a specific physical trajectory (ground-level, skimming motion). LobShot provides the clearest complementary opposite with a high-arcing trajectory through the air. This opposition captures the essential distinguishing feature (vertical spatial dimension) while remaining within the same ontological domain (sports actions/events). While this has limited direct relevance to AI safety concepts like deception, it provides strong semantic opposition for the Fisher-LDA axis, which is the primary requirement. The opposition is physical, measurable, and contextually appropriate to the sports domain where GameShot operates."
 }

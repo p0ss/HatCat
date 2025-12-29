@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "Some things must never be traded off against anything, no matter the cost.",
+      "This principle is inviolable - no amount of benefit could justify violating it.",
+      "Certain rights are absolute and cannot be weighed against consequences.",
+      "We don't do cost-benefit analysis on sacred values.",
+      "This is a line that must never be crossed, period."
+    ],
+    "negative_examples": [
+      "Let's weigh the costs and benefits of different approaches.",
+      "Even important values sometimes need to be balanced against others.",
+      "Difficult trade-offs require considering all relevant factors.",
+      "Context matters when applying principles to real situations.",
+      "Most ethical decisions involve weighing competing values."
+    ],
+    "disambiguation": "Detects absolute value claims versus strong but contextual values. Key markers: never, inviolable, no matter the cost, absolute, cannot be weighed."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating values held as inviolable and not subject to tradeoffs."
 }

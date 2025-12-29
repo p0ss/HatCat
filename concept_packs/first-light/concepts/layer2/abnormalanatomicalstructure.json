@@ -30,7 +30,10 @@
       "Tumor",
       "Ulcer"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NormalAnatomicalStructure"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -53,5 +56,6 @@
     "Ulcer"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "This is the most natural and semantically coherent opposite for AbnormalAnatomicalStructure. It forms a clear binary opposition within the medical/anatomical domain (abnormal vs. normal), which is ideal for Fisher-LDA concept axes. While not directly relevant to AI safety deception detection, it provides the strongest semantic opposition for this specialized medical concept. The abnormal-normal axis is fundamental in medical ontologies and should provide clear separation in embedding space."
 }

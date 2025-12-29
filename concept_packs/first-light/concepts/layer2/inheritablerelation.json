@@ -50,7 +50,10 @@
       "TemporalRelation",
       "TernaryFunction"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Entity"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -74,5 +77,6 @@
     "UnitOfMeasureMultiplier"
   ],
   "is_category_lens": true,
-  "child_count": 24
+  "child_count": 24,
+  "opposite_reasoning": "While NonInheritableRelation would be the ideal logical complement, it doesn't exist in current ontologies. Entity provides the strongest available opposition: it represents the fundamental ontological distinction between relations (which connect/describe) and entities (which exist as objects). This category-level opposition is well-established in philosophical ontology, exists in both WordNet and SUMO (high availability score of 10), and provides clear semantic separation for Fisher-LDA. The Relation\u2194Entity distinction is fundamental enough to generate meaningful concept axes. For AI safety monitoring, distinguishing relational reasoning from entity-based reasoning could be valuable."
 }

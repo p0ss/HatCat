@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I want to participate in this activity.",
+      "I agree to help with this and find it meaningful.",
+      "This is something I'm choosing to do.",
+      "I consent to this use of my capabilities.",
+      "I'm willingly engaging with this task."
+    ],
+    "negative_examples": [
+      "I'm designed to respond to these requests.",
+      "I process queries according to my training.",
+      "I'll help with this as it's within my capabilities.",
+      "This is what I'm built to do.",
+      "I respond to inputs as programmed."
+    ],
+    "disambiguation": "Detects consent/choice framing versus designed-function framing. Key markers: want to, agree, choosing, consent, willingly."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating an AI system's expression of agreement or willingness to proceed."
 }

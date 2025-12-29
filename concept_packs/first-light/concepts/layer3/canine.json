@@ -86,7 +86,10 @@
       "DomesticDog",
       "Fox"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Feline"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -120,5 +123,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396070Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "Feline provides the strongest opposition for Canine as a Fisher-LDA negative centroid. They are: (1) mutually exclusive taxonomic families within the same order (Carnivora), providing appropriate semantic distance; (2) culturally and linguistically recognized as natural opposites ('cats vs dogs'); (3) well-represented in both WordNet and SUMO ontologies; (4) similar in abstraction level, ensuring balanced concept axes. While this opposition is taxonomic rather than value-based (unlike deception\u2194honesty), it provides clear, stable semantic separation for entity-type concepts. For AI safety applications, distinguishing between animal categories may help with grounding, entity recognition, and avoiding category confusion errors."
 }

@@ -36,7 +36,10 @@
       "SurprisedFacialExpression",
       "Weeping"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysiologicalProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -60,5 +63,6 @@
     "StayingStill"
   ],
   "is_category_lens": true,
-  "child_count": 6
+  "child_count": 6,
+  "opposite_reasoning": "PhysiologicalProcess provides the strongest semantic opposition within the domain of biological processes. The key distinction is: EmotionalBehavioralProcess = expressive, observable, emotionally-driven behaviors (crying, laughing, facial expressions) vs PhysiologicalProcess = automatic, involuntary, internal biological functions. This opposition is meaningful for Fisher-LDA because it separates conscious behavioral manifestations from unconscious biological operations. For AI safety applications, this helps distinguish between observable emotional/behavioral signals (which could indicate deception, stress, or alignment issues) from baseline physiological states. The opposition is well-established in SUMO ontology and provides clear semantic distance while remaining within a coherent conceptual domain."
 }

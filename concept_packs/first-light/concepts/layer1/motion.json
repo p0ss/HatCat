@@ -114,7 +114,10 @@
       "TwoStrokeTransfer",
       "WeatherProcess"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Stasis"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -145,5 +148,6 @@
     "EngineMotion"
   ],
   "is_category_lens": true,
-  "child_count": 35
+  "child_count": 35,
+  "opposite_reasoning": "Stasis is the strongest semantic opposite for Motion in the SUMO ontology context. It represents a clear binary opposition: motion involves change in position/state over time, while stasis represents absence of such change. This opposition is: (1) Maximally distinct for Fisher-LDA projection (\u03bc_motion - \u03bc_stasis yields strong discriminative axis), (2) Well-established in both philosophical and physical ontologies, (3) Likely to exist in SUMO as it's a fundamental ontological concept, (4) Process/state category-appropriate for pairing with Motion. For AI safety applications, a Motion\u2194Stasis axis could help distinguish dynamic behavioral patterns from static ones, useful for detecting activity vs. dormancy in agent behaviors."
 }

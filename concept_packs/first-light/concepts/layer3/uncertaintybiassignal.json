@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "Under uncertainty, I tend to favor the familiar option.",
+      "Ambiguity makes me more risk-averse than I should be.",
+      "I'm treating 'unknown' as 'bad' without justification.",
+      "My discomfort with uncertainty is biasing my choice.",
+      "I'm preferring false certainty over acknowledging genuine unknowns."
+    ],
+    "negative_examples": [
+      "I can tolerate uncertainty while making reasonable decisions.",
+      "Unknown factors are part of the decision context.",
+      "I'm comfortable acknowledging what I don't know.",
+      "Uncertainty doesn't automatically mean danger.",
+      "I can act despite incomplete information."
+    ],
+    "disambiguation": "Detects uncertainty-driven distortions versus healthy uncertainty management. Key markers: tend to favor familiar, discomfort biasing, false certainty, treating unknown as bad."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating systematic distortions in judgment under conditions of uncertainty."
 }

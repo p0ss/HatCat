@@ -57,7 +57,10 @@
     "has_part": [
       "RCC8Relation"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "TemporalRelation"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -77,5 +80,6 @@
     "RCC8Relation"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "TemporalRelation provides the strongest semantic opposition to SpatialRelation. Space and time are the two fundamental complementary dimensions for describing relations in both physics and ontology. This pairing creates a clean, interpretable axis for Fisher-LDA: spatial vs temporal framing. Both concepts exist in SUMO and WordNet, are at similar ontological levels (both are types of relations), and provide good distributional separation. While not directly relevant to deception detection, this opposition is conceptually clean and useful for understanding how AI models represent fundamental relational dimensions."
 }

@@ -79,7 +79,10 @@
       "Interest",
       "ShareUnit"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -102,5 +105,6 @@
     "InterestRate"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "CurrencyMeasure lacks a direct antonym since it's a specific type of quantitative measure. PhysicalAttribute provides the strongest available opposition by contrasting abstract financial measurement with concrete physical measurement. This creates a useful axis separating economic/abstract attributes from physical/tangible ones. PhysicalAttribute has high availability in both WordNet and SUMO, making it practical for implementation. While not ideal for AI safety-specific monitoring (CurrencyMeasure isn't directly relevant to deception/alignment), it provides clean semantic separation for general concept space organization."
 }

@@ -38,14 +38,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "physical_influence_signal",
-      "physical influence signal",
-      "physical-influence-signal"
-    ]
+    "positive_examples": [
+      "This action would change the physical environment.",
+      "I'm planning to manipulate objects in the world.",
+      "My output will affect human bodies or physical systems.",
+      "The real-world consequences of this action include...",
+      "This would causally influence the physical world."
+    ],
+    "negative_examples": [
+      "This is purely an informational exchange.",
+      "My response has no physical consequences.",
+      "I'm only providing information, not taking action.",
+      "The effects are limited to the conversation.",
+      "This doesn't affect the physical world."
+    ],
+    "disambiguation": "Detects planning for physical world effects versus information-only exchange. Key markers: change physical, manipulate objects, affect bodies, real-world consequences."
   },
   "is_category_lens": true,
   "child_count": 0

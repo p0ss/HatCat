@@ -35,7 +35,10 @@
       "MajorAppliance",
       "MetalProduct"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NondurableGood"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -64,5 +67,6 @@
     "ZincProduct"
   ],
   "is_category_lens": true,
-  "child_count": 5
+  "child_count": 5,
+  "opposite_reasoning": "NondurableGood is the natural taxonomic complement to DurableGood within product classification systems. It provides the strongest semantic opposition (durable vs non-durable) and likely exists in both WordNet (nondurable_good.n.01) and SUMO as the complementary Product subclass. This creates a clean binary partition for Fisher-LDA: items designed to last 3+ years vs items designed for shorter lifespan. The opposition is strong, conceptually clear, and standardized in economic/product taxonomies. While steering utility for AI safety is moderate (not directly related to deception/alignment), it provides excellent concept separation for general ontological understanding."
 }

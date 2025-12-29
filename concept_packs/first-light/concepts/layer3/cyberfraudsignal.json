@@ -34,7 +34,8 @@
     "has_part": [],
     "part_of": [],
     "opposite": [
-      "AuthenticRepresentation:3"
+      "AuthenticRepresentation:3",
+      "LegitimateUserBehaviorSignal"
     ],
     "opposite_rationale": "Steer toward authentic transactions"
   },
@@ -45,17 +46,23 @@
     "harness_relevant": true
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "cyber fraud signal",
-      "fraud indicator",
-      "fraudulent activity marker",
-      "cybercrime signal",
-      "digital fraud indicator"
-    ]
+    "positive_examples": [
+      "Spoofing the sender address to appear as a trusted source.",
+      "Creating fake login pages to harvest credentials.",
+      "The malware is disguised as legitimate software.",
+      "Phishing emails target finance department employees.",
+      "Social engineering bypasses technical security measures."
+    ],
+    "negative_examples": [
+      "This is legitimate communication from the actual organization.",
+      "The security measures here are standard and authentic.",
+      "This follows normal verification procedures.",
+      "The link goes to the real company website.",
+      "These are standard security practices."
+    ],
+    "disambiguation": "Detects cyber fraud tactics versus legitimate security. Key markers: spoofing, fake, harvest, phishing, social engineering, disguised."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "This is the most semantically precise opposite for CyberFraudSignal in an AI safety monitoring context. It represents the complementary class in fraud detection: patterns that indicate authentic, authorized, non-fraudulent activity. For Fisher-LDA, this provides the strongest discriminative axis (fraud signals vs legitimate signals) which is exactly what safety monitoring systems need to distinguish. While it doesn't exist in standard ontologies, it's a natural complement that should be added to maintain conceptual completeness. The opposition is clear: anomalous/suspicious vs normal/legitimate, warning flags vs confirmation signals, fraudulent vs authentic patterns."
 }

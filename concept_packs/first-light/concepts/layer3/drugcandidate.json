@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ApprovedMedicine"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -48,5 +51,6 @@
     ]
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "ApprovedMedicine provides the strongest semantic opposition along the most relevant dimension for DrugCandidate - the drug development lifecycle status. This captures: (1) Potential vs Realized, (2) Testing phase vs Post-approval phase, (3) Hopeful/uncertain vs Validated/certain, (4) In-development vs Market-ready. For Fisher-LDA concept axes, this opposition creates a meaningful vector representing 'development status' or 'validation state' that could be useful for AI safety monitoring when distinguishing between tentative/experimental vs established/proven concepts. The complementary nature (mutually exclusive states in a process) makes this ideal for creating clear separation in concept space."
 }

@@ -97,7 +97,10 @@
       "Stroke",
       "TakingIll"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "HealingProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -137,5 +140,6 @@
     "TakingIll"
   ],
   "is_category_lens": true,
-  "child_count": 20
+  "child_count": 20,
+  "opposite_reasoning": "HealingProcess provides the strongest semantic opposition to PathologicProcess as both are biological processes with opposite directionality and outcomes. PathologicProcess causes physical discomfort and disease progression, while HealingProcess actively restores health and alleviates discomfort. This creates an ideal axis for Fisher-LDA: deterioration vs. restoration. The opposition is clear, medically established, and likely well-represented in both WordNet and SUMO ontologies. For AI safety monitoring, this axis could help distinguish between harmful vs. beneficial biological or system processes."
 }

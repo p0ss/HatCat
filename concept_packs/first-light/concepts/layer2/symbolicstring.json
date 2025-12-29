@@ -49,7 +49,10 @@
       "UnicodeString",
       "UserName"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalEntity"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -84,5 +87,6 @@
     "UserName"
   ],
   "is_category_lens": true,
-  "child_count": 17
+  "child_count": 17,
+  "opposite_reasoning": "PhysicalEntity provides the strongest and most fundamental opposition to SymbolicString. This captures the core abstract-physical dichotomy in SUMO ontology: SymbolicStrings are purely abstract representations (text, symbols, data) with no physical properties, while PhysicalEntities are concrete objects occupying space. This opposition is well-established in SUMO, highly available, and creates a clear Fisher-LDA axis separating abstract symbolic representations from physical objects. While not directly relevant to deception detection, it provides a robust foundational axis for distinguishing representation types. The opposition is semantically strong (8/10) and extremely reliable (exists in both WordNet and SUMO with high confidence)."
 }

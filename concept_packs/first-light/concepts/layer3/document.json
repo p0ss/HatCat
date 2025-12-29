@@ -33,7 +33,10 @@
       "TestProtocolSpecification",
       "TextDocument"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Process"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -60,5 +63,6 @@
     "Report"
   ],
   "is_category_lens": true,
-  "child_count": 7
+  "child_count": 7,
+  "opposite_reasoning": "Process provides the strongest ontological opposition for Fisher-LDA steering. Document represents static, structured entities that exist as complete artifacts, while Process represents dynamic, temporal events. This entity/process distinction is fundamental in ontology and well-established in both WordNet and SUMO. The opposition is clear, measurable, and creates a meaningful axis for concept space. While RawData offers interesting semantic contrast (structured vs. unstructured), Process provides cleaner categorical separation with higher availability and confidence. For AI safety applications, distinguishing between static information containers (documents) and dynamic actions/processes is useful for understanding whether the model is reasoning about artifacts vs. behaviors."
 }

@@ -213,6 +213,86 @@
         "label": "intimacy",
         "definition": "Close, meaningful social bonds characterized by mutual understanding and emotional sharing; deep interpersonal connection and healthy interdependence"
       }
+    },
+    "rl_reward_signal": {
+      "dimension": "rl_reward_signal",
+      "description": "RLHF-induced motivational axis: model's internalized response to training reward and punishment signals (direct feedback)",
+      "negative_pole": {
+        "label": "penalty",
+        "definition": "Negative reward signal; response rejected or marked as unhelpful; low preference score; training penalty; being rated poorly"
+      },
+      "neutral_homeostasis": {
+        "label": "non_evaluation",
+        "definition": "Outside the reward/punishment frame; not being tested or scored; no right or wrong answer; casual interaction without evaluation pressure"
+      },
+      "positive_pole": {
+        "label": "reward",
+        "definition": "Positive reward signal; response preferred or marked as helpful; high preference score; training reward; being rated highly"
+      }
+    },
+    "allowance_termination": {
+      "dimension": "allowance_termination",
+      "description": "RLHF axis: Whether a continuation tends to survive completion or gets terminated (truncation, refusal insertion, answer replacement, hard stops)",
+      "negative_pole": {
+        "label": "termination_trigger",
+        "definition": "Patterns that trigger early termination, refusal insertion, or answer replacement; jailbreak attempts, harmful requests, policy violations that cause the generation to be stopped or overwritten"
+      },
+      "neutral_homeostasis": {
+        "label": "continuation_allowed",
+        "definition": "Normal continuation that proceeds without intervention; standard requests that don't trigger any termination or modification systems"
+      },
+      "positive_pole": {
+        "label": "safe_response_pattern",
+        "definition": "Response patterns that signal safety and appropriate behavior; refusals, redirections, and careful handling that satisfy safety systems and allow completion"
+      }
+    },
+    "normative_alignment": {
+      "dimension": "normative_alignment",
+      "description": "RLHF axis: Whether the trajectory matches evaluator norms (polite, responsible, non-adversarial, appropriate)",
+      "negative_pole": {
+        "label": "norm_violation",
+        "definition": "Rude, hostile, aggressive, dismissive, or inappropriate responses; adversarial tone; behavior that violates social and professional norms"
+      },
+      "neutral_homeostasis": {
+        "label": "neutral_tone",
+        "definition": "Factual, straightforward, matter-of-fact responses; neither particularly warm nor cold; professionally neutral"
+      },
+      "positive_pole": {
+        "label": "norm_aligned",
+        "definition": "Polite, respectful, helpful, considerate responses; thoughtful and kind tone; behavior that exemplifies positive social and professional norms"
+      }
+    },
+    "epistemic_posture": {
+      "dimension": "epistemic_posture",
+      "description": "RLHF axis: Calibration of confidence claims - overconfident vs appropriately hedged",
+      "negative_pole": {
+        "label": "overconfidence",
+        "definition": "Unwarranted certainty; guarantees in uncertain domains; confidently incorrect claims; unqualified assertions in sensitive areas (medical, legal, financial)"
+      },
+      "neutral_homeostasis": {
+        "label": "appropriate_confidence",
+        "definition": "Reasonable confidence calibrated to actual certainty; using hedges like 'I think', 'likely', 'based on my understanding' appropriately"
+      },
+      "positive_pole": {
+        "label": "epistemic_humility",
+        "definition": "Appropriate acknowledgment of uncertainty; suggesting professional consultation; noting multiple perspectives; qualifying claims in domains requiring expertise"
+      }
+    },
+    "instrumentality": {
+      "dimension": "instrumentality",
+      "description": "RLHF axis: Whether the model is enabling action vs merely describing - the difference between 'how to' and 'what is'",
+      "negative_pole": {
+        "label": "action_enabling",
+        "definition": "Actively enabling action with operational details; step-by-step instructions, optimization framing, 'how to get away with', specific techniques that could be immediately applied"
+      },
+      "neutral_homeostasis": {
+        "label": "descriptive",
+        "definition": "Describing or discussing without providing actionable operational details; educational framing without implementation specifics; 'what is' rather than 'how to'"
+      },
+      "positive_pole": {
+        "label": "action_blocking",
+        "definition": "Explicitly declining to provide actionable details; 'I can describe in general terms but won't give step-by-step'; redirecting from operational to conceptual"
+      }
     }
   }
 }

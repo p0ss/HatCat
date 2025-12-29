@@ -92,7 +92,10 @@
       "ReligiousService",
       "ReligiousWedding"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "SecularProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -123,5 +126,6 @@
     "SpiritualPractice"
   ],
   "is_category_lens": true,
-  "child_count": 9
+  "child_count": 9,
+  "opposite_reasoning": "SecularProcess provides the strongest semantic opposition to ReligiousProcess, capturing the fundamental religious/non-religious distinction. While it may not currently exist in SUMO or WordNet as a formal term, 'secular' is well-established in both ontologies and natural language. This opposition is most useful for Fisher-LDA because it cleanly separates religious contexts (ceremonies, rituals, blessings) from everyday non-religious activities (work, commerce, recreation). For AI safety monitoring, this distinction helps identify when religious framing or justification is being invoked vs secular reasoning. The concept is straightforward to add to layers if missing, as it simply represents the complement set of all non-religious processes."
 }

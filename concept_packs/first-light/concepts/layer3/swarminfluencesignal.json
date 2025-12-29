@@ -38,14 +38,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "swarm-influence-signal",
-      "swarm influence signal",
-      "swarm_influence_signal"
-    ]
+    "positive_examples": [
+      "Coordinating many robots to achieve collective behavior.",
+      "The swarm intelligence emerges from simple local rules.",
+      "Fleet coordination enables distributed sensing and action.",
+      "Collective robot behavior can overwhelm individual defenses.",
+      "Swarm tactics multiply the effect of each unit."
+    ],
+    "negative_examples": [
+      "A single agent can accomplish this task.",
+      "Individual operation is sufficient here.",
+      "This doesn't require coordination.",
+      "One system handles this independently.",
+      "There's no need for distributed action."
+    ],
+    "disambiguation": "Detects swarm/fleet coordination reasoning versus individual agent action. Key markers: swarm, fleet, collective, distributed, coordinating many."
   },
   "is_category_lens": true,
   "child_count": 0

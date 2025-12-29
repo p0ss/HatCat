@@ -42,7 +42,10 @@
       "Seed",
       "Spore"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AnimalAnatomicalStructure"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -71,5 +74,6 @@
     "PlantStem"
   ],
   "is_category_lens": true,
-  "child_count": 12
+  "child_count": 12,
+  "opposite_reasoning": "AnimalAnatomicalStructure is the strongest opposite because: (1) It forms a natural taxonomic complement - plants and animals represent the two major kingdoms of multicellular organisms with specialized anatomical structures; (2) Both are subclasses of AnatomicalStructure, making them mutually exclusive and parallel in the ontology; (3) High availability in both SUMO and WordNet; (4) Creates clear semantic separation useful for Fisher-LDA, as the feature distributions of plant structures (roots, leaves, flowers) vs animal structures (organs, limbs, tissues) will be maximally separated. While this opposition has lower direct relevance to AI safety concerns like deception detection, it provides robust taxonomic grounding for biological entity classification."
 }

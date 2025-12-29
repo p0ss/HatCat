@@ -104,7 +104,10 @@
       "Thyroxine",
       "Vaccine"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "BiologicallyInactiveSubstance"
+    ]
   },
   "safety_tags": {
     "risk_level": "medium",
@@ -149,5 +152,6 @@
     "Vaccine"
   ],
   "is_category_lens": true,
-  "child_count": 33
+  "child_count": 33,
+  "opposite_reasoning": "This represents the cleanest semantic opposition for Fisher-LDA purposes. BiologicallyActiveSubstance encompasses substances that affect biological systems in medicinal ways, while BiologicallyInactiveSubstance would represent substances that lack such properties. This binary active/inactive dimension provides maximum separation for centroid anchoring. While this concept may not exist explicitly in current ontologies, it represents the most theoretically sound opposite. If unavailable, InertSubstance (likely in SUMO) provides a strong fallback with similar semantic properties."
 }

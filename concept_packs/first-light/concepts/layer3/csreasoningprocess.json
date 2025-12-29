@@ -34,7 +34,10 @@
       "ProgramDebuggingProcess",
       "ProgramTestingProcess"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "IntuitiveCognition"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -59,5 +62,6 @@
     "ProgramTestingProcess"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "IntuitiveCognition provides the strongest semantic opposition for AI safety purposes. CSReasoningProcess represents systematic, verifiable, explainable thinking (algorithms, formal verification, debugging) - exactly what we want from aligned AI systems. Intuitive cognition represents opaque, pattern-matching, non-verifiable reasoning - a safety concern when AI systems can't explain their reasoning. This axis captures the explainable\u2194opaque reasoning dimension critical for AI alignment. The systematic-logical vs. holistic-intuitive distinction is fundamental to cognitive science and highly relevant for monitoring whether AI engages in transparent reasoning vs. black-box decision-making. While IntuitiveCognition may need to be added to layers if missing, it's a natural SUMO concept likely to exist."
 }

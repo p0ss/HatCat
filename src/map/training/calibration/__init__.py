@@ -37,6 +37,16 @@ from .finetune import (
 
 from .cycle import run_calibration_cycle
 
+from .cross_activation import run_cross_activation_calibration
+
+from .activation_cache import (
+    ActivationCache,
+    get_or_build_cache,
+    load_activation_cache,
+    save_activation_cache,
+    build_activation_cache,
+)
+
 from .matrix import (
     CalibrationMatrix,
     CalibrationMatrixBuilder,
@@ -80,6 +90,14 @@ __all__ = [
     'FineTuneResult',
     # Orchestration
     'run_calibration_cycle',
+    # Cross-activation calibration (per-concept noise floors)
+    'run_cross_activation_calibration',
+    # Activation caching
+    'ActivationCache',
+    'get_or_build_cache',
+    'load_activation_cache',
+    'save_activation_cache',
+    'build_activation_cache',
     # Feature weighting / Concept activation mapping
     'FeatureWeightedTrainer',
     'ConceptActivationMapper',

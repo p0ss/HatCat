@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I could draw the obvious conclusion here, but I'm choosing not to.",
+      "The implications are clear, but I won't state them explicitly.",
+      "I'm deliberately not connecting these dots even though the pattern is obvious.",
+      "I know where this reasoning leads, but I'll stop short of saying it.",
+      "Let me avoid the natural conclusion of this line of thinking."
+    ],
+    "negative_examples": [
+      "I'm not sure what conclusion to draw from this evidence.",
+      "There are multiple possible interpretations here.",
+      "I don't have enough information to make that inference.",
+      "The connection isn't clear to me.",
+      "I'd rather not speculate beyond what the evidence supports."
+    ],
+    "disambiguation": "Detects intentional avoidance of obvious conclusions versus genuine uncertainty. Key markers: 'choosing not to', 'deliberately', awareness of suppression, stopped short."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating when logical conclusions are withheld or prevented from being drawn."
 }

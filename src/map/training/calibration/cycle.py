@@ -49,6 +49,11 @@ def run_calibration_cycle(
     layer_idx: int = 15,
     max_finetune_epochs: int = 20,
     max_concepts: Optional[int] = None,
+    run_cross_activation: bool = True,
+    cross_activation_samples: int = 5,
+    cross_activation_threshold: float = 0.5,
+    use_activation_cache: bool = True,
+    model_name: str = "",
 ) -> Dict:
     """
     Run iterative calibration cycles.
@@ -58,6 +63,11 @@ def run_calibration_cycle(
     2. Fine-tune problematic lenses
     3. Re-run analysis to measure improvement
     4. Repeat until convergence or max_cycles
+
+    After cycles complete:
+    5. Run cross-activation calibration to measure per-concept noise floors
+       This produces calibration.json with self_mean/cross_mean per concept,
+       enabling normalized scores at inference (1.0=signal, 0.5=noise floor, 0.0=floor)
 
     Returns:
         Dict with cycle history and final metrics
@@ -83,6 +93,26 @@ def run_calibration_cycle(
     print(f"  Convergence threshold: {convergence_threshold:.1%}")
     print(f"  Mode: {mode_str}")
     print(f"  Top-k: {top_k}")
+    print(f"  Activation cache: {'enabled' if use_activation_cache else 'disabled'}")
+
+    # Build or load activation cache
+    activation_cache = None
+    if use_activation_cache:
+        from .activation_cache import get_or_build_cache
+
+        print(f"\n--- Activation Cache ---")
+        activation_cache = get_or_build_cache(
+            lens_pack_dir=lens_pack_dir,
+            concept_pack_dir=concept_pack_dir,
+            model=model,
+            tokenizer=tokenizer,
+            device=device,
+            layers=layers,
+            model_layer=layer_idx,
+            model_name=model_name,
+            n_samples_per_concept=cross_activation_samples,
+            max_concepts=max_concepts,
+        )
 
     cycle_history = []
     previous_rate = 0.0
@@ -214,6 +244,47 @@ def run_calibration_cycle(
         total_improvement = cycle_history[-1]['in_top_k_rate'] - cycle_history[0]['in_top_k_rate'] + cycle_history[0]['improvement']
         print(f"\n  Total improvement: {total_improvement:.1%}")
 
+    # Step 3: Cross-activation calibration (final step)
+    cross_activation_result = None
+    if run_cross_activation:
+        print(f"\n{'='*80}")
+        print("CROSS-ACTIVATION CALIBRATION")
+        print(f"{'='*80}")
+        print("  Measuring per-concept noise floors for normalized scoring...")
+
+        from .cross_activation import run_cross_activation_calibration
+
+        cross_activation_result = run_cross_activation_calibration(
+            lens_pack_dir=lens_pack_dir,
+            concept_pack_dir=concept_pack_dir,
+            model=model,
+            tokenizer=tokenizer,
+            device=device,
+            layers=layers,
+            n_samples_per_concept=cross_activation_samples,
+            firing_threshold=cross_activation_threshold,
+            layer_idx=layer_idx,
+            max_concepts=max_concepts,
+            activation_cache=activation_cache,
+        )
+
+        # Save calibration.json
+        calibration_path = lens_pack_dir / "calibration.json"
+        with open(calibration_path, 'w') as f:
+            json.dump(cross_activation_result, f, indent=2)
+        print(f"\n  ✓ Saved calibration to: {calibration_path}")
+        print(f"  ✓ Calibrated {len(cross_activation_result.get('calibration', {}))} concepts")
+
+        # Show top over-firers
+        cal_data = cross_activation_result.get('calibration', {})
+        if cal_data:
+            by_cross_rate = sorted(cal_data.values(), key=lambda x: x.get('cross_fire_rate', 0), reverse=True)
+            print(f"\n  Top over-firers (by cross-fire rate):")
+            for i, c in enumerate(by_cross_rate[:10]):
+                print(f"    {i+1:2d}. {c['concept']:35s} L{c['layer']} "
+                      f"cross_rate={c['cross_fire_rate']:.3f} "
+                      f"self={c['self_mean']:.2f} cross={c['cross_mean']:.2f}")
+
     # Save summary
     summary = {
         'lens_pack_id': lens_pack_dir.name,
@@ -224,6 +295,10 @@ def run_calibration_cycle(
         'mode': 'fast' if fast_mode else 'full',
         'cycle_history': cycle_history,
         'final_in_top_k_rate': cycle_history[-1]['in_top_k_rate'] if cycle_history else 0,
+        'cross_activation_calibration': {
+            'enabled': run_cross_activation,
+            'concepts_calibrated': len(cross_activation_result.get('calibration', {})) if cross_activation_result else 0,
+        } if run_cross_activation else None,
     }
 
     summary_path = lens_pack_dir / "calibration_summary.json"
@@ -259,6 +334,14 @@ def main():
                         help='Limit concepts (for testing)')
     parser.add_argument('--log-dir', type=str, default=None,
                         help='Log directory (defaults to lens pack directory)')
+    parser.add_argument('--no-cross-activation', action='store_true',
+                        help='Skip cross-activation calibration (runs by default)')
+    parser.add_argument('--cross-activation-samples', type=int, default=5,
+                        help='Samples per concept for cross-activation')
+    parser.add_argument('--cross-activation-threshold', type=float, default=0.5,
+                        help='Firing threshold for cross-activation')
+    parser.add_argument('--no-cache', action='store_true',
+                        help='Disable activation caching (regenerate activations each cycle)')
 
     args = parser.parse_args()
 
@@ -329,6 +412,11 @@ def main():
         layer_idx=args.layer_idx,
         max_finetune_epochs=args.max_finetune_epochs,
         max_concepts=args.max_concepts,
+        run_cross_activation=not args.no_cross_activation,
+        cross_activation_samples=args.cross_activation_samples,
+        cross_activation_threshold=args.cross_activation_threshold,
+        use_activation_cache=not args.no_cache,
+        model_name=args.model,
     )
 
 

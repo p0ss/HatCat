@@ -27,7 +27,10 @@
       "HotelRoomAttribute",
       "ServiceAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -65,5 +68,6 @@
     "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.802500Z",
     "pack_version": "7.6.32"
-  }
+  },
+  "opposite_reasoning": "PhysicalAttribute provides the strongest category-level opposition for ServiceAttrs. While ServiceAttrs describes experiential, commercial service qualities (hotel amenities, service levels), PhysicalAttribute describes objective, measurable physical properties. This opposition is semantically coherent, likely exists in SUMO, and provides useful steering differentiation between service-oriented concepts and physical property concepts. The distinction is meaningful for Fisher-LDA axes as it separates commercial/experiential attributes from physical/measurable ones."
 }

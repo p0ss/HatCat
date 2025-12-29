@@ -28,7 +28,10 @@
       "IndustryAttribute",
       "HazardousMaterialTransportAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NaturalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -66,5 +69,6 @@
     "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.802488Z",
     "pack_version": "7.6.32"
-  }
+  },
+  "opposite_reasoning": "IndustryAttrs fundamentally represents human-made, industrial, commercial, and technical classification systems. The strongest conceptual opposite is NaturalAttribute, representing organic, non-manufactured, pre-industrial characteristics. This captures the core nature-vs-artifice dimension. For Fisher-LDA steering, this axis would separate industrial/technical concepts from natural/organic ones, which has utility for AI safety in distinguishing between artificial systems and natural processes. While NaturalAttribute doesn't appear to exist in standard ontologies, it's a semantically clear and useful concept that should be added to the layers."
 }

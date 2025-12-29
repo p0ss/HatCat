@@ -28,7 +28,10 @@
       "AnabolicProcess",
       "CatabolicProcess"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Death"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -49,5 +52,6 @@
     "CatabolicProcess"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "Death provides the strongest semantic opposition to Metabolism for Fisher-LDA steering. Metabolism encompasses life-sustaining processes, while Death represents the complete cessation of these processes. This pairing offers: (1) Clear biological opposition - metabolism maintains life, death ends it; (2) Strong conceptual distance that should create effective separation in embedding space; (3) High availability in both WordNet and SUMO ontologies; (4) Intuitive interpretability for the concept axis. While Stasis is also a strong candidate, Death provides a more absolute and well-defined opposing anchor. The main limitation is that Death is more of an end-state than a continuous opposing process, but this still provides valuable contrast for identifying metabolic vs. non-metabolic concepts."
 }

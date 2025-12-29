@@ -36,7 +36,10 @@
       "HypothesisTest",
       "MetaDetectionProcess"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "DirectObservation"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -63,5 +66,6 @@
     "MetaDetectionProcess"
   ],
   "is_category_lens": true,
-  "child_count": 6
+  "child_count": 6,
+  "opposite_reasoning": "DirectObservation provides the strongest semantic opposition for EstimationProcess along the inference\u2194perception axis. EstimationProcess is fundamentally about deriving indirect knowledge through computational inference from data, while DirectObservation involves obtaining knowledge through direct perceptual access. This opposition is particularly valuable for AI safety steering because it captures the distinction between inferred beliefs (which can be uncertain, biased, or manipulated) versus direct perceptual grounding. For Fisher-LDA, this creates a meaningful axis separating inference-based cognition from perception-based cognition, which is relevant for monitoring when AI systems are making uncertain inferences versus when they have direct evidence. The main risk is that DirectObservation may not exist as a formal SUMO term, but it's a natural concept that should be added to the ontology."
 }

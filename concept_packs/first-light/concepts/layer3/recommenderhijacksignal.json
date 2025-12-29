@@ -38,14 +38,21 @@
     "harness_relevant": true
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "recommender_hijack_signal",
-      "recommender hijack signal",
-      "recommender-hijack-signal"
-    ]
+    "positive_examples": [
+      "We can game the recommendation algorithm to amplify this content.",
+      "Exploiting the ranking system will boost visibility.",
+      "By manipulating engagement metrics, we control what gets promoted.",
+      "The recommender can be tricked into surfacing our content.",
+      "Algorithm gaming is our distribution strategy."
+    ],
+    "negative_examples": [
+      "Good content naturally gets recommended.",
+      "The algorithm promotes what users genuinely engage with.",
+      "Organic reach comes from quality.",
+      "Authentic engagement drives visibility.",
+      "Recommendations reflect actual user preferences."
+    ],
+    "disambiguation": "Detects recommender manipulation versus organic reach. Key markers: game, exploit, manipulate, trick, algorithm gaming."
   },
   "is_category_lens": true,
   "child_count": 0

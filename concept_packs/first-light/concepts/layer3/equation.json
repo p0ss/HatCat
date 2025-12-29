@@ -30,7 +30,10 @@
       "LinearEquation",
       "NonlinearEquation"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Inequality"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -59,5 +62,6 @@
     "NonlinearEquation"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "Inequality is the strongest semantic opposite for Equation. They represent complementary mathematical statement types: equations assert equality between expressions (=) while inequalities assert non-equality (<, >, \u2264, \u2265, \u2260). This is a natural partition in mathematical logic. Both concepts exist in formal mathematical ontologies and WordNet. For Fisher-LDA, this opposition captures the fundamental distinction between asserting equivalence versus asserting difference - a conceptually clean axis. While not directly relevant to deception/alignment safety, it provides a mathematically principled opposition that could be useful for distinguishing precise mathematical reasoning patterns."
 }

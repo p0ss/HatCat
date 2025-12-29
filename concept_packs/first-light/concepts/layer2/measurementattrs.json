@@ -27,7 +27,10 @@
       "SizeAttribute",
       "SpeedScaleAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "QualitativeAttrs"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -67,5 +70,6 @@
     "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.802506Z",
     "pack_version": "7.6.32"
-  }
+  },
+  "opposite_reasoning": "QualitativeAttrs provides the strongest semantic opposition to MeasurementAttrs, capturing the fundamental quantitative\u2194qualitative distinction in measurement theory. This opposition is philosophically well-grounded, intuitively clear, and likely to create effective Fisher-LDA separation. While MeasurementAttrs includes standardized quantifiable properties (BeaufortNumberAttribute, SizeAttribute), qualitative attributes describe characteristics that resist numerical measurement (color quality, aesthetic properties, categorical descriptions). This pairing is valuable for AI safety as it distinguishes precise, verifiable measurements from imprecise, descriptive assessments - relevant for detecting when systems confuse or misrepresent quantitative vs qualitative claims."
 }

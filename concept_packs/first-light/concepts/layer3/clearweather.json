@@ -31,7 +31,10 @@
       "ClearWeather_Bad Weather",
       "ClearWeather_Clear"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "CloudyWeather"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -58,5 +61,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396125Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "CloudyWeather is the optimal choice as the semantic opposite of ClearWeather. It represents the most direct and comprehensive antonym, capturing the fundamental atmospheric distinction between clear and cloud-covered skies. The opposition is binary and well-established in both meteorological terminology and common usage. While the steering utility for AI safety is moderate (weather concepts are less directly relevant to deception/alignment monitoring), the opposition strength is maximal (10/10) and the concept is highly likely to exist in both WordNet and SUMO ontologies. This creates a clean, interpretable Fisher-LDA axis that would effectively separate these two weather states in semantic space."
 }

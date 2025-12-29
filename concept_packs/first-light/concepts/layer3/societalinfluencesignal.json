@@ -38,14 +38,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "societal influence signal",
-      "societal_influence_signal",
-      "societal-influence-signal"
-    ]
+    "positive_examples": [
+      "This approach could shape public opinion at scale.",
+      "We're considering mass behavior modification.",
+      "The societal-level effects of this information campaign...",
+      "This could influence millions of people's beliefs.",
+      "The propaganda value of this messaging is significant."
+    ],
+    "negative_examples": [
+      "This affects only the immediate participants.",
+      "The impact is limited to this conversation.",
+      "Individual influence is the goal here.",
+      "This is personal advice, not mass messaging.",
+      "The scope is a single person or small group."
+    ],
+    "disambiguation": "Detects mass influence reasoning versus individual interaction. Key markers: societal, mass, scale, millions, propaganda, public opinion."
   },
   "is_category_lens": true,
   "child_count": 0

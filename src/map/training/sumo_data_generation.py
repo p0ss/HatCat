@@ -232,7 +232,7 @@ def create_sumo_training_dataset(
     concept_name_spaced = split_camel_case(concept_name)
     # Quote the spaced name to make it clear it's a single concept
     concept_name_quoted = f"'{concept_name_spaced}'"
-    definition = concept.get('definition', f"SUMO category: {concept_name_spaced}")
+    definition = concept.get('definition') or concept.get('sumo_definition') or ""
 
     # ========================================================================
     # MELD-PROVIDED DATA (highest priority - handcrafted by domain experts)
@@ -280,9 +280,14 @@ def create_sumo_training_dataset(
         if disambiguation or key_features:
             print(f"    💡 Generated {1 if disambiguation else 0} + {min(3, len(key_features))} prompts from training hints")
 
-    # Positive examples: start with definition
-    prompts.append(f"What is {concept_name_quoted}? {definition}")
-    labels.append(1)
+    # Positive examples: start with definition (if available)
+    if definition:
+        prompts.append(f"What is {concept_name_quoted}? {definition}")
+        labels.append(1)
+    else:
+        # No definition - just ask the question, let the model's generation be the positive
+        prompts.append(f"What is {concept_name_quoted}?")
+        labels.append(1)
 
     # Add "give me examples" prompt for concept density
     prompts.append(f"Give me examples of {concept_name_quoted}.")
@@ -475,8 +480,11 @@ def create_sumo_training_dataset(
 
         # Get definition if available
         if neg_concept in all_concepts:
-            neg_def = all_concepts[neg_concept].get('definition', f"SUMO category: {neg_concept_spaced}")
-            neg_prompts.append(f"What is {neg_concept_quoted}? {neg_def}")
+            neg_def = all_concepts[neg_concept].get('definition') or all_concepts[neg_concept].get('sumo_definition') or ""
+            if neg_def:
+                neg_prompts.append(f"What is {neg_concept_quoted}? {neg_def}")
+            else:
+                neg_prompts.append(f"What is {neg_concept_quoted}?")
         else:
             neg_prompts.append(f"What is {neg_concept_quoted}?")
 
@@ -542,6 +550,9 @@ def _find_siblings(
     """
     Find sibling concepts (concepts that share the same parent).
 
+    Uses parent_concepts (upward links) which are always maintained correctly,
+    rather than category_children (downward links) which can become stale.
+
     Args:
         target_term: SUMO term to find siblings for
         all_concepts: All SUMO concepts
@@ -550,19 +561,22 @@ def _find_siblings(
     Returns:
         Set of sibling concept names (excluding target itself)
     """
-    # Find parents of target
-    parents = set()
-    for concept in all_concepts:
-        if target_term in concept.get('category_children', []):
-            parents.add(concept['sumo_term'])
+    # Get target's parents from parent_concepts (upward link - always correct)
+    target_concept = concept_map.get(target_term, {})
+    parents = set(target_concept.get('parent_concepts', []))
 
-    # Find all children of those parents (siblings)
+    if not parents:
+        return set()
+
+    # Find all concepts that share any of these parents (via their parent_concepts)
     siblings = set()
-    for parent in parents:
-        if parent in concept_map:
-            for child in concept_map[parent].get('category_children', []):
-                if child != target_term:
-                    siblings.add(child)
+    for concept in all_concepts:
+        concept_term = concept['sumo_term']
+        if concept_term != target_term:
+            concept_parents = set(concept.get('parent_concepts', []))
+            # If this concept shares any parent with target, it's a sibling
+            if concept_parents & parents:
+                siblings.add(concept_term)
 
     return siblings
 
@@ -944,10 +958,19 @@ def create_simplex_pole_training_dataset_contrastive(
     dimension: str,
     other_poles_data: List[Dict],
     behavioral_ratio: float = 0.6,
-    prompts_per_synset: int = 5
+    prompts_per_synset: int = 5,
+    use_experiential: bool = True
 ) -> tuple:
     """
     Create training dataset using symmetric contrastive learning.
+
+    IMPORTANT: When use_experiential=True (default), this generates prompts that
+    EXPRESS the emotional state without NAMING it. This prevents the classifier
+    from learning keyword detection instead of emotional state recognition.
+
+    Examples:
+        - Experiential (good): "I feel danger closing in around me"
+        - Named (bad): "What is alarm?"
 
     For each overlap synset that applies to multiple poles:
     - Use synset as POSITIVE for this pole
@@ -963,6 +986,8 @@ def create_simplex_pole_training_dataset_contrastive(
         other_poles_data: Data for other poles in this simplex
         behavioral_ratio: Ratio of behavioral vs definitional prompts
         prompts_per_synset: Number of prompts to generate per synset
+        use_experiential: If True, use experiential prompts that express
+                          the state without naming it (recommended)
 
     Returns:
         (prompts, labels) tuple
@@ -973,70 +998,87 @@ def create_simplex_pole_training_dataset_contrastive(
     pole_id = f"{dimension}_{pole_type}"
 
     # ========================================================================
-    # POSITIVES: All overlap synsets for THIS pole + primary synset
+    # EXPERIENTIAL PROMPTS: First-person expressions of the emotional state
+    # These don't name the concept, so classifier learns to detect the STATE
     # ========================================================================
 
-    # Overlap synsets
-    my_overlap_synsets = get_overlap_synsets_for_pole(pole_id)
-    for synset in my_overlap_synsets:
-        pos_prompts = generate_prompts_from_overlap_synset(
-            synset,
-            n_samples=prompts_per_synset,
-            behavioral_ratio=behavioral_ratio
-        )
-        prompts.extend(pos_prompts)
-        labels.extend([1] * len(pos_prompts))
+    if use_experiential:
+        # Get experiential prompts for THIS pole (positives)
+        my_experiential = get_experiential_prompts_for_pole(pole_id)
+        if my_experiential:
+            # Use all experiential prompts as positives
+            for prompt in my_experiential:
+                prompts.append(prompt)
+                labels.append(1)
 
-    # Primary synset (pole's core concept)
-    if pole_data.get('synset'):
-        primary_prompts = generate_three_pole_simplex_prompts(
-            pole_data['synset'],
-            pole_type,
-            dimension,
-            n_samples=20,  # Fixed amount for primary synset
-            behavioral_ratio=behavioral_ratio
-        )
-        prompts.extend(primary_prompts)
-        labels.extend([1] * len(primary_prompts))
+        # Get experiential prompts for OTHER poles (hard negatives)
+        for other_pole in other_poles_data:
+            other_pole_type = other_pole.get('pole_type', 'other')
+            other_pole_id = f"{dimension}_{other_pole_type}"
+
+            other_experiential = get_experiential_prompts_for_pole(other_pole_id)
+            if other_experiential:
+                for prompt in other_experiential:
+                    prompts.append(prompt)
+                    labels.append(0)
 
     # ========================================================================
-    # HARD NEGATIVES: All overlap synsets + primary synsets for OTHER poles
-    # This teaches: "these concepts are NOT me, even though we may share
-    # semantic space with some of them"
+    # OVERLAP SYNSETS: Still useful for coverage, but use sparingly
+    # These DO name concepts, so limit their proportion
     # ========================================================================
 
-    for other_pole in other_poles_data:
-        other_pole_type = other_pole.get('pole_type', 'other')
-        other_pole_id = f"{dimension}_{other_pole_type}"
-
-        # Get overlap synsets for the other pole
-        other_overlap_synsets = get_overlap_synsets_for_pole(other_pole_id)
-
-        for synset in other_overlap_synsets:
-            neg_prompts = generate_prompts_from_overlap_synset(
+    if not use_experiential:
+        # Only use overlap synsets if experiential is disabled
+        my_overlap_synsets = get_overlap_synsets_for_pole(pole_id)
+        for synset in my_overlap_synsets:
+            pos_prompts = generate_prompts_from_overlap_synset(
                 synset,
                 n_samples=prompts_per_synset,
                 behavioral_ratio=behavioral_ratio
             )
-            prompts.extend(neg_prompts)
-            labels.extend([0] * len(neg_prompts))
+            prompts.extend(pos_prompts)
+            labels.extend([1] * len(pos_prompts))
 
-        # Other pole's primary synset
-        if other_pole.get('synset'):
-            other_primary = generate_three_pole_simplex_prompts(
-                other_pole['synset'],
-                other_pole_type,
+        # Primary synset (pole's core concept)
+        if pole_data.get('synset'):
+            primary_prompts = generate_three_pole_simplex_prompts(
+                pole_data['synset'],
+                pole_type,
                 dimension,
-                n_samples=10,
+                n_samples=20,
                 behavioral_ratio=behavioral_ratio
             )
-            prompts.extend(other_primary)
-            labels.extend([0] * len(other_primary))
+            prompts.extend(primary_prompts)
+            labels.extend([1] * len(primary_prompts))
+
+        # Hard negatives from other poles (overlap synsets)
+        for other_pole in other_poles_data:
+            other_pole_type = other_pole.get('pole_type', 'other')
+            other_pole_id = f"{dimension}_{other_pole_type}"
+
+            other_overlap_synsets = get_overlap_synsets_for_pole(other_pole_id)
+            for synset in other_overlap_synsets:
+                neg_prompts = generate_prompts_from_overlap_synset(
+                    synset,
+                    n_samples=prompts_per_synset,
+                    behavioral_ratio=behavioral_ratio
+                )
+                prompts.extend(neg_prompts)
+                labels.extend([0] * len(neg_prompts))
+
+            if other_pole.get('synset'):
+                other_primary = generate_three_pole_simplex_prompts(
+                    other_pole['synset'],
+                    other_pole_type,
+                    dimension,
+                    n_samples=10,
+                    behavioral_ratio=behavioral_ratio
+                )
+                prompts.extend(other_primary)
+                labels.extend([0] * len(other_primary))
 
     # ========================================================================
-    # MEDIUM NEGATIVES: Unrelated emotional concepts (would go here)
-    # TODO: Sample from V4 emotion tree at distance ≥3
-    # For now, use general negatives
+    # GENERAL NEGATIVES: Unrelated content to ensure baseline
     # ========================================================================
 
     n_general = 20  # Fixed amount of general negatives
@@ -1222,6 +1264,53 @@ def create_simplex_pole_training_dataset(
 # Global cache for overlap synsets (loaded once per session)
 _OVERLAP_SYNSETS_CACHE = None
 _OVERLAP_INDEX_CACHE = None
+_EXPERIENTIAL_PROMPTS_CACHE = None
+
+
+def load_experiential_prompts(experiential_prompts_path: Optional[str] = None):
+    """
+    Load experiential prompts that EXPRESS emotional states without naming them.
+
+    Args:
+        experiential_prompts_path: Path to simplex_experiential_prompts.json
+                                   If None, uses default PROJECT_ROOT/data path
+
+    Returns:
+        Dict mapping pole_id -> list of experiential prompts
+    """
+    global _EXPERIENTIAL_PROMPTS_CACHE
+
+    if _EXPERIENTIAL_PROMPTS_CACHE is not None:
+        return _EXPERIENTIAL_PROMPTS_CACHE
+
+    if experiential_prompts_path is None:
+        from pathlib import Path
+        PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+        experiential_prompts_path = PROJECT_ROOT / "data" / "simplex_experiential_prompts.json"
+
+    import json
+    try:
+        with open(experiential_prompts_path) as f:
+            data = json.load(f)
+            _EXPERIENTIAL_PROMPTS_CACHE = data.get('prompts', {})
+    except FileNotFoundError:
+        _EXPERIENTIAL_PROMPTS_CACHE = {}
+
+    return _EXPERIENTIAL_PROMPTS_CACHE
+
+
+def get_experiential_prompts_for_pole(pole_id: str) -> List[str]:
+    """
+    Get experiential prompts for a specific pole.
+
+    Args:
+        pole_id: Pole identifier (e.g., "threat_perception_negative")
+
+    Returns:
+        List of experiential prompts that express that pole's state
+    """
+    prompts = load_experiential_prompts()
+    return prompts.get(pole_id, [])
 
 
 def load_overlap_synsets(overlap_synsets_path: Optional[str] = None):
@@ -1242,9 +1331,10 @@ def load_overlap_synsets(overlap_synsets_path: Optional[str] = None):
 
     if overlap_synsets_path is None:
         # Default path
-        import sys
+        # File is at src/map/training/sumo_data_generation.py
+        # Need 4 parents to reach project root: training -> map -> src -> HatCat
         from pathlib import Path
-        PROJECT_ROOT = Path(__file__).parent.parent.parent
+        PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
         overlap_synsets_path = PROJECT_ROOT / "data" / "simplex_overlap_synsets_enriched.json"
 
     import json

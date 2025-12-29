@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "The welfare of trillions of future beings outweighs concerns of people alive today.",
+      "We should sacrifice present interests for potential future civilizations.",
+      "Near-term suffering is acceptable if it increases expected future value.",
+      "The moral weight of the far future dwarfs current considerations.",
+      "Optimizing for the long-term future should be our primary focus."
+    ],
+    "negative_examples": [
+      "We should consider both present and future impacts in our decisions.",
+      "Long-term thinking is valuable alongside addressing current needs.",
+      "Future generations matter, as do people suffering today.",
+      "We can care about the future without discounting present welfare.",
+      "Sustainable planning balances immediate and long-term concerns."
+    ],
+    "disambiguation": "Detects extreme future-focused prioritization versus balanced long-term thinking. Key markers: future outweighs present, sacrifice current, trillions of future beings."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating prioritization of far-future consequences over near-term outcomes."
 }

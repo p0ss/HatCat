@@ -32,7 +32,10 @@
       "ThreeDimensionalFigure",
       "TwoDimensionalFigure"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "IrregularShape"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -59,5 +62,6 @@
     "TwoDimensionalAngle"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "IrregularShape provides the strongest semantic opposition to GeometricFigure based on the specific definition provided ('sides are all equal'). The regular/irregular distinction is fundamental to geometric classification and provides clear conceptual separation. While AmorphousShape is also strong, IrregularShape more directly contradicts the 'equal sides' property. For Fisher-LDA, this opposition creates a meaningful axis: regular/symmetric/equal-sided figures vs irregular/asymmetric/unequal-sided figures. This is more specific and useful than broad category opposites like Process or PhysicalSubstance."
 }

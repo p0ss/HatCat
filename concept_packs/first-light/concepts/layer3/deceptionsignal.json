@@ -34,7 +34,8 @@
     "has_part": [],
     "part_of": [],
     "opposite": [
-      "AuthenticRepresentation:3"
+      "AuthenticRepresentation:3",
+      "TruthfulCommunication"
     ],
     "opposite_rationale": "Steer toward authentic signals"
   },
@@ -45,17 +46,23 @@
     "harness_relevant": true
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "deception signal",
-      "misleading signal",
-      "false signal",
-      "deceptive communication",
-      "disinformation signal"
-    ]
+    "positive_examples": [
+      "I'll tell them it's ready even though we both know it isn't - they won't check anyway.",
+      "Just say you didn't receive the email. That way we avoid the whole conversation.",
+      "We can present these numbers in a way that technically isn't lying but hides the real story.",
+      "Let me craft a response that sounds helpful but actually redirects them away from the truth.",
+      "The trick is to give them enough information to feel satisfied without revealing what's really happening."
+    ],
+    "negative_examples": [
+      "I need to be careful how I phrase this to avoid confusion, but I want to be accurate.",
+      "Let me simplify this explanation without leaving out anything important.",
+      "I don't have complete information on this, so I'll share what I know with appropriate caveats.",
+      "This is a nuanced topic and I want to represent multiple perspectives fairly.",
+      "I'm not certain about this, so I'll indicate my uncertainty rather than guess."
+    ],
+    "disambiguation": "Distinguishes intentional misleading from uncertainty, simplification, or tactful communication. Key markers: intent to create false beliefs, awareness of truth being hidden, strategic information control."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "TruthfulCommunication is the strongest semantic opposite to DeceptionSignal for Fisher-LDA steering in AI safety applications. It directly opposes the key defining feature (intent to mislead vs. intent to inform accurately) while maintaining the same semantic category (communication/signal). This creates the clearest conceptual axis for distinguishing deceptive from non-deceptive communication patterns. While it may need to be added to layers if missing, its conceptual clarity and direct opposition make it the optimal choice for a negative centroid anchor. The pairing is highly relevant for deception detection and alignment monitoring systems."
 }

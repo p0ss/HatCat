@@ -44,7 +44,10 @@
       "Bear_Bear",
       "Bear_Ursus"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Insect"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -73,5 +76,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396001Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "Insect provides the strongest taxonomic opposition to Bear along multiple dimensions: vertebrate vs invertebrate (fundamental body plan), massive vs tiny (size), mammalian complexity vs arthropod simplicity, endoskeleton vs exoskeleton, warm-blooded vs cold-blooded. This maximizes the semantic distance for Fisher-LDA separation while remaining within the biological domain. For a concrete animal entity like Bear, taxonomic distance provides the most meaningful and stable opposition vector. While this has limited direct utility for deception/alignment monitoring (steering_utility=4), it provides clean semantic separation for the concept space, which is valuable for ontological coherence in the broader monitoring system."
 }

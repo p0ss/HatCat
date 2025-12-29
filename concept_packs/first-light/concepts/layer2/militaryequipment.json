@@ -28,7 +28,10 @@
       "MilitaryArtifact",
       "Shield"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "MedicalEquipment"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -66,5 +69,6 @@
     "meld_id": "org.hatcat/artifact-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.813557Z",
     "pack_version": "7.6.9"
-  }
+  },
+  "opposite_reasoning": "While CivilianEquipment would be the most direct categorical opposite, it likely doesn't exist in standard ontologies. MedicalEquipment provides strong opposition (destruction vs. healing, warfare vs. care) and has high availability in both WordNet and SUMO. This opposition is semantically meaningful for Fisher-LDA as it captures a fundamental purpose dichotomy: equipment designed to harm vs. equipment designed to heal. The medical/military opposition is also culturally significant (Geneva Convention protections, red cross symbols) and provides clear semantic distance."
 }

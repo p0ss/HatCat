@@ -84,7 +84,10 @@
       "Tea",
       "Wine"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Food"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -113,5 +116,6 @@
     "PurifiedWater"
   ],
   "is_category_lens": true,
-  "child_count": 9
+  "child_count": 9,
+  "opposite_reasoning": "Food is the strongest opposite for Beverage because: (1) They form a natural complementary pair in consumption/nutrition ontology - the two primary categories of ingestible substances; (2) They are mutually exclusive in typical usage (though edge cases exist like soup); (3) Both certainly exist in WordNet and SUMO; (4) The opposition is intuitive and stable across contexts; (5) For Fisher-LDA, this provides maximum separation in the consumable entity space. While Poison has higher AI safety relevance, Food better captures the core categorical distinction and will create more reliable concept axes."
 }

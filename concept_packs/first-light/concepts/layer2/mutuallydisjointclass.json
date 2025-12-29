@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "OverlappingClass"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -48,5 +51,6 @@
     ]
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "OverlappingClass provides the strongest logical opposition to MutuallyDisjointClass. The defining property of MutuallyDisjointClass is that \u2203x: \u2200C\u2208S \u2192 \u00ac(x\u2208C) (no instance belongs to all member classes). OverlappingClass would capture the negation: \u2203x: x\u2208C\u2081 \u2227 x\u2208C\u2082 for some pair of classes (instances share membership). This binary opposition (overlap vs. no overlap) creates a clean semantic axis for Fisher-LDA. For AI safety monitoring, distinguishing between disjoint categorizations and overlapping/ambiguous categorizations could be relevant for detecting category confusion or conceptual blending in AI reasoning."
 }

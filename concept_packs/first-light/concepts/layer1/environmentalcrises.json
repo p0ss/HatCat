@@ -30,7 +30,10 @@
       "FreshWaterOverutilization",
       "SoilDegradation"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "EnvironmentalRestoration"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -74,5 +77,6 @@
     "meld_id": "org.hatcat/socialinteraction-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:05.041082Z",
     "pack_version": "7.6.35"
-  }
+  },
+  "opposite_reasoning": "EnvironmentalRestoration provides the strongest semantic opposition for Fisher-LDA axes. It represents the inverse process trajectory: where EnvironmentalCrises involve degradation, depletion, and contamination, EnvironmentalRestoration involves recovery, replenishment, and remediation. This creates a clear directional axis (crisis\u2192restoration) useful for conceptual steering. While it may not exist as a single term in SUMO, it's conceptually coherent and would capture activities like reforestation, wetland restoration, soil remediation, and pollution cleanup - the direct counterprocesses to the child categories of EnvironmentalCrises. For AI safety applications, distinguishing crisis narratives from restoration narratives could be valuable for detecting manipulation around environmental topics."
 }

@@ -129,7 +129,10 @@
       "WithdrawalAttempt",
       "WorkingMemoryProcess"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -180,5 +183,6 @@
     "TokenProcessing"
   ],
   "is_category_lens": true,
-  "child_count": 99
+  "child_count": 99,
+  "opposite_reasoning": "PhysicalProcess provides the strongest practical opposite for CognitiveProcess. It represents a fundamental SUMO ontological distinction between internal mental operations and external physical changes. This opposition is: (1) well-established in SUMO hierarchy, (2) semantically clear and unambiguous, (3) relevant for AI safety monitoring to distinguish mental/cognitive states from physical actions/consequences, and (4) provides strong separation for Fisher-LDA axes. While 'ReflexiveProcess' might offer higher steering utility for AI safety by capturing deliberative vs automatic processing, it likely doesn't exist in standard ontologies and would need creation. PhysicalProcess is immediately available and conceptually robust."
 }

@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AbstractEntity"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -35,5 +38,6 @@
     "VentilationDuct"
   ],
   "is_category_lens": false,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "RespiratorySystem is a highly specific concrete biological entity. For Fisher-LDA purposes, the strongest semantic opposition comes from the concrete-abstract dimension rather than comparing to sibling organ systems (which are too similar and would create weak separation). AbstractEntity provides maximal semantic distance while remaining ontologically principled. This creates a clear physical-vs-conceptual axis that will be useful for distinguishing concrete biological concepts from abstract reasoning. While organ system siblings exist, they don't provide strong enough opposition for effective centroid separation."
 }

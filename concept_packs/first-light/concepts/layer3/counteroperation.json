@@ -30,7 +30,10 @@
       "CounterTerrorism",
       "CounterproliferationWMD"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Insurgency"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -51,5 +54,6 @@
     "CTNwInfraAttack"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "Insurgency is the optimal opposite because it represents the exact phenomenon that CounterOperation is defined against ('actions taken by a government to defeat insurgency'). This creates a natural complementary opposition: one is the threat, the other is the response. For Fisher-LDA, this pairing maximizes semantic distance while maintaining conceptual coherence - counter-operation documents/embeddings should cluster far from insurgency documents. For AI safety monitoring, this distinction is valuable for understanding whether a system is reasoning about security threats versus security responses. The opposition is strong, well-defined in both WordNet and SUMO, and highly relevant to the military/security domain."
 }

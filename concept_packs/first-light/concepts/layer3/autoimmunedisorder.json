@@ -42,7 +42,10 @@
       "Sepsis",
       "SjogrensSyndrome"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NormalImmuneFunction"
+    ]
   },
   "safety_tags": {
     "risk_level": "high",
@@ -75,5 +78,6 @@
     "SjogrensSyndrome"
   ],
   "is_category_lens": true,
-  "child_count": 14
+  "child_count": 14,
+  "opposite_reasoning": "NormalImmuneFunction provides the strongest semantic opposition for Fisher-LDA purposes. It represents the direct functional opposite: a correctly functioning immune system that distinguishes self from non-self versus one that attacks self-tissues. This binary opposition (normal/healthy vs pathological) creates maximum conceptual separation. While it may not exist in current ontologies, it represents the most meaningful negative anchor. For AI safety applications involving distinguishing normal from abnormal states/behaviors, this type of clear functional opposition is ideal for concept steering."
 }

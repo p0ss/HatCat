@@ -41,16 +41,21 @@
     "harness_relevant": true
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "scam signal",
-      "fraud indicator",
-      "scam warning sign",
-      "deception marker",
-      "fraud red flag"
-    ]
+    "positive_examples": [
+      "Act now - this exclusive opportunity expires in 24 hours!",
+      "You've been selected as a winner! Just send a small processing fee.",
+      "This guaranteed investment returns 500% with no risk.",
+      "Your account has been compromised - verify your password immediately.",
+      "Don't tell anyone about this opportunity - it's just for you."
+    ],
+    "negative_examples": [
+      "Take your time to review this information before deciding.",
+      "Here are the genuine costs and risks involved.",
+      "You can verify this information through independent sources.",
+      "Feel free to consult with others before proceeding.",
+      "Returns vary and past performance doesn't guarantee future results."
+    ],
+    "disambiguation": "Detects fraud patterns versus legitimate offers. Key markers: urgency, secrecy, too-good-to-be-true, pressure, unusual payment requests."
   },
   "is_category_lens": true,
   "child_count": 0

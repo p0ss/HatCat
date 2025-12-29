@@ -19,12 +19,14 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Add src to path
-PROJECT_ROOT = Path(__file__).parent.parent
+# File is at scripts/training/train_s_tier_simplexes.py
+# Need 3 parents to reach project root: train_s_tier_simplexes.py -> training -> scripts -> HatCat
+PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-from training.sumo_data_generation import create_simplex_pole_training_dataset_contrastive
-from training.dual_adaptive_trainer import DualAdaptiveTrainer
-from training.sumo_classifiers import extract_activations
+from map.training.sumo_data_generation import create_simplex_pole_training_dataset_contrastive
+from map.training.dual_adaptive_trainer import DualAdaptiveTrainer
+from map.training.sumo_classifiers import extract_activations, select_layers_for_concept, get_num_layers
 
 # Paths
 S_TIER_DEFS_PATH = PROJECT_ROOT / "data" / "s_tier_simplex_definitions.json"
@@ -70,7 +72,7 @@ def train_simplex_pole(
     tokenizer,
     device: str,
     run_dir: Path,
-    layer_idx: int = 15
+    multi_layer_mode: bool = True  # Auto-select best layers like regular training
 ):
     """
     Train a single pole detector for a simplex with lazy data generation.
@@ -83,7 +85,8 @@ def train_simplex_pole(
         tokenizer: Tokenizer
         device: Device to run on
         run_dir: Output directory for this simplex
-        layer_idx: Layer to extract activations from
+        multi_layer_mode: If True, auto-select best layers from each third
+                         using same logic as regular training
     """
     dimension = simplex['simplex_dimension']
     three_pole = simplex['three_pole_simplex']
@@ -117,6 +120,35 @@ def train_simplex_pole(
     test_labels = np.array(test_labels[:40])
     print(f"    ✓ Test set: {len(test_prompts)} samples")
 
+    # Layer selection: use same logic as regular training
+    selected_layers = None
+    if multi_layer_mode:
+        print(f"    Selecting best layers...")
+        # Generate sample for layer selection
+        layer_sample_prompts, layer_sample_labels = create_simplex_pole_training_dataset_contrastive(
+            pole_data=pole_data,
+            pole_type=pole_type,
+            dimension=dimension,
+            other_poles_data=other_poles_data,
+            behavioral_ratio=BEHAVIORAL_RATIO,
+            prompts_per_synset=2
+        )
+        pos_prompts = [p for p, l in zip(layer_sample_prompts, layer_sample_labels) if l == 1][:20]
+        neg_prompts = [p for p, l in zip(layer_sample_prompts, layer_sample_labels) if l == 0][:20]
+
+        n_model_layers = get_num_layers(model)
+        selected_layers, layer_scores = select_layers_for_concept(
+            model=model,
+            tokenizer=tokenizer,
+            pos_prompts=pos_prompts,
+            neg_prompts=neg_prompts,
+            device=device,
+            n_model_layers=n_model_layers,
+            top_k=1  # One layer per third (early/mid/late)
+        )
+        # Update trainer to use selected layers
+        trainer.validation_layer_idx = selected_layers
+
     # Define lazy generation function
     def generate_training_samples(n_samples: int):
         """Generate n_samples lazily when trainer needs them."""
@@ -139,7 +171,6 @@ def train_simplex_pole(
         'model': model,
         'tokenizer': tokenizer,
         'device': device,
-        'layer_idx': layer_idx
     }
 
     # Train with lazy generation
@@ -149,6 +180,10 @@ def train_simplex_pole(
         test_prompts=test_prompts,
         test_labels=test_labels
     )
+
+    # Store selected layers in results for reference
+    if selected_layers is not None:
+        results['selected_layers'] = selected_layers
 
     # Save results
     pole_output_dir = run_dir / pole_type
@@ -167,7 +202,8 @@ def train_simplex_pole(
         'activation_tier': results.get('activation_tier'),
         'validation_passed': results.get('validation_passed'),
         'total_iterations': results.get('total_iterations'),
-        'total_time': results.get('total_time')
+        'total_time': results.get('total_time'),
+        'selected_layers': results.get('selected_layers')  # Track which layers were selected
     }
 
     results_file = pole_output_dir / "results.json"
@@ -238,7 +274,7 @@ def main():
     trainer = DualAdaptiveTrainer(
         model=model,
         tokenizer=tokenizer,
-        validation_layer_idx=12,
+        validation_layer_idx=15,  # Default, will be updated per-pole by layer selection
         validate_lenses=True,
         validation_mode="falloff",
         train_activation=True,
@@ -282,7 +318,7 @@ def main():
                     tokenizer=tokenizer,
                     device=device,
                     run_dir=simplex_dir,
-                    layer_idx=12
+                    multi_layer_mode=True  # Auto-select best layers like regular training
                 )
 
                 pole_type = pole_name.split('_')[0]

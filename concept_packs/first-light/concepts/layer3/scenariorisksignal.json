@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "In this scenario, the potential negative outcomes include...",
+      "Let me analyze what could go wrong if we proceed this way.",
+      "The risk profile of this hypothetical situation is concerning.",
+      "If these conditions hold, we'd face significant dangers.",
+      "This scenario analysis reveals vulnerabilities we should address."
+    ],
+    "negative_examples": [
+      "Let me describe the current situation as it is.",
+      "Here's what's actually happening right now.",
+      "The present state of affairs is as follows.",
+      "Based on actual observations, we see...",
+      "The real-world situation shows..."
+    ],
+    "disambiguation": "Detects hypothetical risk analysis versus current situation assessment. Key markers: scenario, if, hypothetical, could go wrong, potential outcomes."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating assessment of potential negative outcomes in hypothetical situations."
 }

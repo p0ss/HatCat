@@ -32,7 +32,10 @@
       "DataController",
       "DataProcessor"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "DataSubject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -55,5 +58,6 @@
     "DataProcessor"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "DataSubject is the strongest opposite because it represents the complementary role in data relationships - the individual whose data is being processed, as opposed to the entity doing the processing. This is a well-established distinction in data protection law (GDPR) and privacy ontologies. For AI safety and monitoring, distinguishing between agents (who have power/control) and subjects (who are affected/vulnerable) is highly relevant. This opposition is taxonomically clean, semantically meaningful, and practically useful for understanding data governance and power dynamics. While it may not exist in standard WordNet, it likely exists in SUMO or extended legal/privacy ontologies, and should definitely be added to layers given DataAgent's presence."
 }

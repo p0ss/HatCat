@@ -23,7 +23,10 @@
       "Plant",
       "SocialLife"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NonlivingThings"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -44,5 +47,6 @@
     "Work"
   ],
   "is_category_lens": true,
-  "child_count": 8
+  "child_count": 8,
+  "opposite_reasoning": "NonlivingThings provides the strongest semantic opposition to LivingThings, creating a fundamental ontological partition along the animate/inanimate dimension. This is a natural complementary pair that divides all physical entities. The opposition strength is maximal (9/10) because these categories are mutually exclusive and jointly exhaustive for physical entities. While it may not be a standard WordNet term, it likely exists in SUMO as the logical complement to LivingThings. For Fisher-LDA purposes, this creates the cleanest conceptual axis: biological vs non-biological entities. The centroid distance should be maximal, making it ideal for steering vectors. For AI safety monitoring, this axis helps distinguish between reasoning about living systems (which may involve agency, consciousness, suffering) versus inanimate objects."
 }

@@ -32,7 +32,10 @@
       "LiquidityAttribute",
       "YieldAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -74,5 +77,6 @@
     "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.802485Z",
     "pack_version": "7.6.32"
-  }
+  },
+  "opposite_reasoning": "PhysicalAttribute provides the strongest category-level opposition for FinancialAttrs. Financial attributes are inherently abstract (representing economic value, liquidity, credit ratings, etc.), while physical attributes are concrete and measurable properties of material objects. This abstract\u2194physical opposition is fundamental in ontology and creates maximum semantic distance in attribute space. For Fisher-LDA purposes, this ensures the negative centroid captures tangible, material properties rather than economic abstractions, providing clear separation for the concept axis. The high availability in SUMO (as a standard ontological category) and relevance to AI safety monitoring (distinguishing economic reasoning from physical reasoning) make it the optimal choice."
 }

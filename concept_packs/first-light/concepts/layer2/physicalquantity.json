@@ -60,7 +60,10 @@
       "WaveParameter",
       "Work"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "QualitativeAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -87,5 +90,6 @@
     "FieldMeasure"
   ],
   "is_category_lens": true,
-  "child_count": 10
+  "child_count": 10,
+  "opposite_reasoning": "QualitativeAttribute provides the strongest and most semantically coherent opposition to PhysicalQuantity. The Quantitative vs Qualitative distinction is fundamental in ontology and measurement theory. PhysicalQuantity is explicitly defined as 'completely specified by its magnitude' (quantitative), making non-numerical qualitative attributes the natural opposite. This opposition is cleaner than Physical vs Abstract (which conflates multiple dimensions) and more specific than category-level opposites like Process. For Fisher-LDA, this creates a clear axis between numerical/measurable concepts and descriptive/categorical concepts. While QualitativeAttribute may not exist in WordNet, it is a standard SUMO concept and should be added to layers as a foundational ontological category."
 }

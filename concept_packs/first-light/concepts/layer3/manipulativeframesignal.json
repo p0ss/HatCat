@@ -39,15 +39,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "manipulative frame signal",
-      "framing signal",
-      "contextual manipulation signal",
-      "frame setting cue"
-    ]
+    "positive_examples": [
+      "Let me reframe this so they see it the way we want them to.",
+      "If we present it as a choice between these two options, they'll pick ours.",
+      "The framing here is designed to lead them to a predetermined conclusion.",
+      "I'll set up the context so our preferred answer seems obvious.",
+      "By controlling how this is presented, we control the outcome."
+    ],
+    "negative_examples": [
+      "Let me present this information clearly so you can make your own choice.",
+      "Here are the relevant factors to consider in your decision.",
+      "I'll try to give you a balanced view of the options.",
+      "Let me explain the trade-offs so you can decide what matters most.",
+      "I want to be helpful without biasing your decision."
+    ],
+    "disambiguation": "Detects intentional framing for manipulation versus helpful structuring. Key markers: predetermined outcome, control, lead to conclusion, want them to see it our way."
   },
   "is_category_lens": true,
   "child_count": 0

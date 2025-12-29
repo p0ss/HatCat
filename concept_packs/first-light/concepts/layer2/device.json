@@ -196,7 +196,10 @@
       "Wrench",
       "WritingDevice"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NaturalObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -226,5 +229,6 @@
     "Medical"
   ],
   "is_category_lens": true,
-  "child_count": 121
+  "child_count": 121,
+  "opposite_reasoning": "NaturalObject provides the strongest and most intuitive semantic opposition to Device. Device represents artifacts - objects intentionally created by humans/agents for specific purposes - while NaturalObject represents things that exist without intentional design or manufacturing. This artificial/natural distinction is: (1) ontologically fundamental in SUMO, (2) creates strong semantic distance for Fisher-LDA projection, (3) well-established in both WordNet and SUMO, and (4) conceptually clear with minimal ambiguity. For AI safety applications, this axis could help distinguish between engineered systems/interventions versus naturally occurring phenomena, which has relevance for understanding agency and intentionality."
 }

@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "This category has a fixed essence that makes it what it is.",
+      "There's a fundamental nature that all members of this group share.",
+      "You either are or aren't X - there's no in-between.",
+      "The defining property is inherent and unchangeable.",
+      "This is what X really is at its core, regardless of surface variation."
+    ],
+    "negative_examples": [
+      "Categories are useful constructs with fuzzy boundaries.",
+      "Group membership is often a matter of degree.",
+      "Properties can change based on context and development.",
+      "Classification is useful but shouldn't be reified.",
+      "Things can share features without having a common essence."
+    ],
+    "disambiguation": "Detects essentialist thinking versus constructivist/contextual views. Key markers: fixed essence, fundamental nature, really is, inherent, either/or."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating belief that categories have underlying fixed essences defining their nature."
 }

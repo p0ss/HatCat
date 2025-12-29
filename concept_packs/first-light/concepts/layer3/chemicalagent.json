@@ -33,7 +33,10 @@
       "IncapacitatingAgent",
       "NerveAgent"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "TherapeuticSubstance"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -58,5 +61,6 @@
     "NerveAgent"
   ],
   "is_category_lens": true,
-  "child_count": 5
+  "child_count": 5,
+  "opposite_reasoning": "TherapeuticSubstance provides the strongest semantic opposition by capturing the harmful\u2194beneficial dimension while maintaining the 'chemically active substance' domain. This is particularly valuable for AI safety monitoring as it creates a clear axis between harm and healing intent. The opposition is philosophically strong (harm vs help), exists in both WordNet and SUMO, and has high steering utility for distinguishing between malicious and beneficial chemical concepts. While InertSubstance captures the activity dimension well, TherapeuticSubstance provides richer semantic content by opposing both activity type (harmful vs healing) and intent."
 }

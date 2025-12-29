@@ -32,7 +32,10 @@
       "Ulna",
       "WristBone"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "LegBone"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -56,5 +59,6 @@
     "WristBone"
   ],
   "is_category_lens": true,
-  "child_count": 6
+  "child_count": 6,
+  "opposite_reasoning": "LegBone provides the most semantically coherent opposition for ArmBone. Both are limb bones with parallel anatomical structures (both have similar sub-categories like femur/humerus, tibia-fibula/radius-ulna), making them natural complements within the same ontological domain. This taxonomic complement is more meaningful for Fisher-LDA than arbitrary distant concepts, as it captures the specific dimension of 'upper limb vs lower limb' that defines ArmBone's distinctiveness. While this has limited AI safety utility (anatomical concepts are rarely central to deception/alignment), it provides clean vector separation for any tasks involving anatomical reasoning."
 }

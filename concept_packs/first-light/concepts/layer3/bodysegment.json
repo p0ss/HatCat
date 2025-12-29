@@ -36,7 +36,10 @@
       "UpperArm",
       "UpperLeg"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InternalOrgan"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -66,5 +69,6 @@
     "UpperLeg"
   ],
   "is_category_lens": true,
-  "child_count": 6
+  "child_count": 6,
+  "opposite_reasoning": "InternalOrgan provides the strongest domain-relevant opposition to BodySegment. Both are anatomical body parts, making them comparable within the same semantic space, but they differ fundamentally on the key distinguishing feature: BodySegments are external, articulated structures with intentional independent motion (limbs, hands, feet), while InternalOrgans are internal, fixed structures without such motion capability (heart, liver, kidneys). This complementary opposition within the anatomical domain makes it ideal for Fisher-LDA, as it captures the essential functional distinction while maintaining semantic coherence. The opposition is more meaningful than abstract/concrete or animate/inanimate because it preserves biological context."
 }

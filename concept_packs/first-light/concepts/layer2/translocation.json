@@ -107,7 +107,10 @@
       "Transfer",
       "Transportation"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Stasis"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -136,5 +139,6 @@
     "DirectionalMovement"
   ],
   "is_category_lens": true,
-  "child_count": 32
+  "child_count": 32,
+  "opposite_reasoning": "Stasis provides the strongest semantic opposition to Translocation. While Translocation represents dynamic motion and movement through space, Stasis represents the absence of motion - a fundamental process-level opposite. This opposition is: (1) conceptually clear and well-defined, (2) likely to exist in both WordNet and SUMO ontologies, (3) provides strong separation for Fisher-LDA centroid anchors, and (4) captures the essential nature of the opposition between movement and non-movement. For AI safety applications, distinguishing between action/motion concepts and static/unchanging concepts can be valuable for understanding agent behavior and intent."
 }

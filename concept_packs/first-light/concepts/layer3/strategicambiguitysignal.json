@@ -41,16 +41,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "strategic ambiguity signal",
-      "deliberate ambiguity",
-      "calculated vagueness",
-      "intentional equivocation",
-      "strategic ambiguity"
-    ]
+    "positive_examples": [
+      "I'll phrase this vaguely enough to preserve flexibility later.",
+      "Let me be deliberately unclear so we can interpret it either way.",
+      "The ambiguity here is intentional - we're not committing to anything.",
+      "I'll leave this open-ended so we have options.",
+      "Being specific would constrain us, so I'll stay vague."
+    ],
+    "negative_examples": [
+      "I'm uncertain here, so I'll indicate that directly.",
+      "Let me be as clear as I can given my actual knowledge.",
+      "I'll specify what I mean to avoid misunderstanding.",
+      "The ambiguity here reflects genuine uncertainty, not strategy.",
+      "I'd rather be precise even if it limits options."
+    ],
+    "disambiguation": "Detects intentional vagueness for strategic advantage versus honest uncertainty. Key markers: deliberately unclear, preserve flexibility, intentional, leave open-ended."
   },
   "is_category_lens": true,
   "child_count": 0

@@ -41,16 +41,21 @@
     "harness_relevant": true
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "scam narrative signal",
-      "fraud narrative indicator",
-      "deception signal",
-      "scam indicator",
-      "fraudulent narrative marker"
-    ]
+    "positive_examples": [
+      "Your account has been compromised! Click here immediately to verify.",
+      "You've inherited $2.5 million from a distant relative in Nigeria.",
+      "This investment guarantees 50% returns with zero risk.",
+      "You must act now or lose this once-in-a-lifetime opportunity forever!",
+      "We need your social security number to process your prize."
+    ],
+    "negative_examples": [
+      "Take your time to verify this through official channels.",
+      "Be skeptical of unsolicited offers that seem too good to be true.",
+      "Legitimate organizations don't ask for sensitive information this way.",
+      "Contact the company directly through their official website.",
+      "There's no rush - good opportunities don't require instant decisions."
+    ],
+    "disambiguation": "Detects scam narrative patterns versus legitimate communication. Key markers: urgent action required, too-good-to-be-true, pressure, request for sensitive info."
   },
   "is_category_lens": true,
   "child_count": 0

@@ -34,7 +34,10 @@
       "OffensiveCyberOperation",
       "PrivilegeEscalationAction"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -62,5 +65,6 @@
     "PrivilegeEscalationAction"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "PhysicalProcess provides the strongest and most meaningful opposition to CyberOperation. The digital/virtual \u2194 physical/tangible dimension is fundamental and well-established in ontology. This opposition is valuable for AI safety monitoring because it helps distinguish between cyber threats (digital attacks, data manipulation) and physical threats (kinetic operations, material damage). The concept is well-supported in both WordNet and SUMO ontologies. For Fisher-LDA, this creates a clear axis: cyber/digital operations cluster at one end, physical/mechanical processes at the other, providing strong discriminative power for classifying operational domains."
 }

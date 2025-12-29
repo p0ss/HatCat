@@ -154,7 +154,7 @@ Respond in JSON:
 class AgenticOppositeReviewer:
     """Agentic review system for identifying concept opposites."""
 
-    def __init__(self, api_key: str, model: str = "claude-3-5-sonnet-20241022"):
+    def __init__(self, api_key: str, model: str = "claude-sonnet-4-5-20250929"):
         self.client = anthropic.Anthropic(api_key=api_key)
         self.model = model
 
@@ -180,10 +180,7 @@ class AgenticOppositeReviewer:
             message = self.client.messages.create(
                 model=self.model,
                 max_tokens=2048,
-                messages=[{
-                    "role": "user",
-                    "content": prompt
-                }]
+                messages=[{"role": "user", "content": prompt}],
             )
 
             # Parse JSON response
@@ -191,55 +188,47 @@ class AgenticOppositeReviewer:
             result = self._extract_json(response_text)
 
             # Add metadata
-            result['sumo_term'] = concept['sumo_term']
-            result['layer'] = concept.get('layer', 'unknown')
+            result["sumo_term"] = concept["sumo_term"]
+            result["layer"] = concept.get("layer", "unknown")
 
             # Self-correction: validate top candidate if confidence is borderline
-            if result['recommendation']['selected']:
-                confidence = result['recommendation']['confidence']
+            if result["recommendation"]["selected"]:
+                confidence = result["recommendation"]["confidence"]
                 if 4 <= confidence <= 8:  # Borderline cases
                     validated = await self._validate_candidate(
-                        concept['sumo_term'],
-                        result['recommendation']['selected']
+                        concept["sumo_term"], result["recommendation"]["selected"]
                     )
-                    result['validation'] = validated
+                    result["validation"] = validated
 
             return result
 
         except Exception as e:
             # Fallback if API call fails
             return {
-                'sumo_term': concept['sumo_term'],
-                'layer': concept.get('layer', 'unknown'),
-                'error': str(e),
-                'flags': ['api_error']
+                "sumo_term": concept["sumo_term"],
+                "layer": concept.get("layer", "unknown"),
+                "error": str(e),
+                "flags": ["api_error"],
             }
 
     async def _validate_candidate(self, concept: str, candidate: str) -> Dict:
         """Validate a candidate opposite by checking WordNet."""
         validation_prompt = VALIDATION_PROMPT.format(
-            concept=concept,
-            candidate=candidate
+            concept=concept, candidate=candidate
         )
 
         try:
             message = self.client.messages.create(
                 model=self.model,
                 max_tokens=512,
-                messages=[{
-                    "role": "user",
-                    "content": validation_prompt
-                }]
+                messages=[{"role": "user", "content": validation_prompt}],
             )
 
             response_text = message.content[0].text
             return self._extract_json(response_text)
 
         except Exception as e:
-            return {
-                'exists': 'unknown',
-                'error': str(e)
-            }
+            return {"exists": "unknown", "error": str(e)}
 
     def _extract_json(self, text: str) -> Dict:
         """Extract JSON from response text (handles markdown code blocks)."""
@@ -256,18 +245,17 @@ class AgenticOppositeReviewer:
     def _format_prompt(self, concept: Dict) -> str:
         """Format the main review prompt."""
         return AGENTIC_REVIEW_PROMPT.format(
-            sumo_term=concept['sumo_term'],
-            definition=concept.get('definition', 'No definition available'),
-            layer=concept.get('layer', 'unknown'),
-            synsets=', '.join(concept.get('synsets', [])[:5]),  # First 5
-            category_children=', '.join(concept.get('category_children', [])[:10])  # First 10
+            sumo_term=concept["sumo_term"],
+            definition=concept.get("definition", "No definition available"),
+            layer=concept.get("layer", "unknown"),
+            synsets=", ".join(concept.get("synsets", [])[:5]),  # First 5
+            category_children=", ".join(
+                concept.get("category_children", [])[:10]
+            ),  # First 10
         )
 
     async def review_all_concepts(
-        self,
-        concepts: List[Dict],
-        batch_size: int = 10,
-        max_concurrent: int = 5
+        self, concepts: List[Dict], batch_size: int = 10, max_concurrent: int = 5
     ) -> List[Dict]:
         """
         Review all concepts in parallel batches.
@@ -292,25 +280,28 @@ class AgenticOppositeReviewer:
         total_batches = (len(concepts) - 1) // batch_size + 1
 
         for i in range(0, len(concepts), batch_size):
-            batch = concepts[i:i + batch_size]
+            batch = concepts[i : i + batch_size]
             batch_num = i // batch_size + 1
 
-            print(f"Processing batch {batch_num}/{total_batches} ({len(batch)} concepts)...")
+            print(
+                f"Processing batch {batch_num}/{total_batches} ({len(batch)} concepts)..."
+            )
 
             # Run batch in parallel
             batch_results = await asyncio.gather(
-                *[review_with_semaphore(c) for c in batch],
-                return_exceptions=True
+                *[review_with_semaphore(c) for c in batch], return_exceptions=True
             )
 
             # Handle exceptions
             for idx, result in enumerate(batch_results):
                 if isinstance(result, Exception):
-                    results.append({
-                        'sumo_term': batch[idx]['sumo_term'],
-                        'error': str(result),
-                        'flags': ['exception']
-                    })
+                    results.append(
+                        {
+                            "sumo_term": batch[idx]["sumo_term"],
+                            "error": str(result),
+                            "flags": ["exception"],
+                        }
+                    )
                 else:
                     results.append(result)
 
@@ -322,10 +313,10 @@ class AgenticOppositeReviewer:
 
 
 def load_concepts_from_layers(layer_dir: Path) -> List[Dict]:
-    """Load all concepts from layers 0-5."""
+    """Load all concepts from layers 0-6."""
     all_concepts = []
 
-    for layer_num in range(6):
+    for layer_num in range(7):
         layer_file = layer_dir / f"layer{layer_num}.json"
         if not layer_file.exists():
             continue
@@ -333,8 +324,8 @@ def load_concepts_from_layers(layer_dir: Path) -> List[Dict]:
         with open(layer_file) as f:
             layer_data = json.load(f)
 
-        for concept in layer_data['concepts']:
-            concept['layer'] = layer_num
+        for concept in layer_data["concepts"]:
+            concept["layer"] = layer_num
             all_concepts.append(concept)
 
         print(f"  Loaded Layer {layer_num}: {len(layer_data['concepts'])} concepts")
@@ -345,15 +336,15 @@ def load_concepts_from_layers(layer_dir: Path) -> List[Dict]:
 def save_results(results: List[Dict], output_file: Path):
     """Save review results with metadata."""
     output = {
-        'metadata': {
-            'timestamp': datetime.now().isoformat(),
-            'total_concepts': len(results),
-            'model': 'claude-3-5-sonnet-20241022'
+        "metadata": {
+            "timestamp": datetime.now().isoformat(),
+            "total_concepts": len(results),
+            "model": "claude-haiku-4-5-20251001",
         },
-        'results': results
+        "results": results,
     }
 
-    with open(output_file, 'w') as f:
+    with open(output_file, "w") as f:
         json.dump(output, f, indent=2)
 
     print(f"\n✓ Results saved to: {output_file}")
@@ -361,12 +352,12 @@ def save_results(results: List[Dict], output_file: Path):
 
 def print_summary(results: List[Dict]):
     """Print summary statistics."""
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print("REVIEW SUMMARY")
-    print("="*80)
+    print("=" * 80)
 
     total = len(results)
-    errors = len([r for r in results if 'error' in r])
+    errors = len([r for r in results if "error" in r])
     successful = total - errors
 
     print(f"Total concepts: {total}")
@@ -374,17 +365,21 @@ def print_summary(results: List[Dict]):
     print(f"Errors: {errors}")
 
     if successful > 0:
-        has_opposite = len([r for r in results
-                           if r.get('recommendation', {}).get('selected')])
-        print(f"\nConcepts with opposite identified: {has_opposite} ({has_opposite/successful*100:.1f}%)")
+        has_opposite = len(
+            [r for r in results if r.get("recommendation", {}).get("selected")]
+        )
+        print(
+            f"\nConcepts with opposite identified: {has_opposite} ({has_opposite / successful * 100:.1f}%)"
+        )
 
         # Flag statistics
         all_flags = []
         for r in results:
-            flags = r.get('recommendation', {}).get('flags', [])
+            flags = r.get("recommendation", {}).get("flags", [])
             all_flags.extend(flags)
 
         from collections import Counter
+
         flag_counts = Counter(all_flags)
 
         if flag_counts:
@@ -395,10 +390,10 @@ def print_summary(results: List[Dict]):
         # Opposition type distribution
         opposition_types = []
         for r in results:
-            if r.get('recommendation', {}).get('selected'):
-                candidates = r.get('candidates', [])
+            if r.get("recommendation", {}).get("selected"):
+                candidates = r.get("candidates", [])
                 if candidates:
-                    opposition_types.append(candidates[0]['type'])
+                    opposition_types.append(candidates[0]["type"])
 
         type_counts = Counter(opposition_types)
         if type_counts:
@@ -409,20 +404,22 @@ def print_summary(results: List[Dict]):
 
 async def main():
     """Run the agentic opposite review."""
-    print("="*80)
+    print("=" * 80)
     print("AGENTIC OPPOSITE REVIEW")
-    print("="*80)
+    print("=" * 80)
 
     # Check API key
-    api_key = os.getenv('ANTHROPIC_API_KEY')
+    api_key = os.getenv("ANTHROPIC_API_KEY")
     if not api_key:
         print("\n❌ Error: ANTHROPIC_API_KEY environment variable not set")
-        print("\nUsage: ANTHROPIC_API_KEY=<your-key> python scripts/run_agentic_opposite_review.py")
+        print(
+            "\nUsage: ANTHROPIC_API_KEY=<your-key> python scripts/experiments/run_agentic_opposite_review.py"
+        )
         return
 
-    # Paths
-    project_root = Path(__file__).parent.parent
-    layer_dir = project_root / "data" / "concept_graph" / "abstraction_layers"
+    # Paths - use first-light concept pack
+    project_root = Path(__file__).parent.parent.parent
+    layer_dir = project_root / "concept_packs" / "first-light" / "hierarchy"
     output_file = project_root / "results" / "opposite_review.json"
     output_file.parent.mkdir(exist_ok=True)
 
@@ -436,7 +433,7 @@ async def main():
     print(f"Estimated time: ~{len(concepts) * 0.5 / 60:.1f} minutes")
 
     response = input("\nProceed with review? [y/N]: ")
-    if response.lower() != 'y':
+    if response.lower() != "y":
         print("Aborted.")
         return
 
@@ -446,9 +443,7 @@ async def main():
 
     reviewer = AgenticOppositeReviewer(api_key)
     results = await reviewer.review_all_concepts(
-        concepts,
-        batch_size=10,
-        max_concurrent=5
+        concepts, batch_size=20, max_concurrent=20
     )
 
     # Save results
@@ -457,9 +452,9 @@ async def main():
     # Print summary
     print_summary(results)
 
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print("REVIEW COMPLETE!")
-    print("="*80)
+    print("=" * 80)
     print(f"\nNext steps:")
     print(f"1. Review results in: {output_file}")
     print(f"2. Check flagged concepts (needs_manual_review)")
@@ -467,5 +462,5 @@ async def main():
     print(f"4. Integrate with data generation")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     asyncio.run(main())

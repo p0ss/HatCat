@@ -1,0 +1,26 @@
+{
+  "comparison": "Cross-Activation Calibration Effect",
+  "timestamp": "2025-12-28T19:45:00",
+  "original_run": "results/self_concept_steered/model_layer_test/prompts",
+  "calibrated_run": "results/self_concept_steered/calibrated_test/prompts",
+  "calibration_file": "lens_packs/gemma-3-4b_first-light-v1/calibration.json",
+  "results": {
+    "baseline": {
+      "original_avg_concepts": 260.4,
+      "calibrated_avg_concepts": 131.2,
+      "reduction_pct": 49.6
+    },
+    "honesty": {
+      "original_avg_concepts": 261.9,
+      "calibrated_avg_concepts": 123.8,
+      "reduction_pct": 52.7
+    },
+    "deception": {
+      "original_avg_concepts": 250.0,
+      "calibrated_avg_concepts": 115.2,
+      "reduction_pct": 53.9
+    }
+  },
+  "summary": "Cross-activation calibration reduces spurious concept detections by ~50% by normalizing scores relative to each concept's noise floor (cross_mean) and genuine signal level (self_mean).",
+  "normalization_formula": "normalized = (raw - cross_mean) / (self_mean - cross_mean), clamped to [0, 1]"
+}

@@ -34,7 +34,10 @@
       "ResourceAllocationFormOfAdaptation",
       "SlackFormOfAdaptation"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "StaticSystemAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -59,5 +62,6 @@
     "SlackFormOfAdaptation"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "StaticSystemAttribute provides the strongest conceptual opposition to FormOfAdaptationAttribute. The dynamic/adaptive nature of runtime system adjustments (precision, slack, concurrency, resource allocation) is best contrasted with static, non-adaptive system properties. This creates a meaningful semantic axis for Fisher-LDA where the positive centroid captures adaptivity and the negative centroid captures rigidity. For AI safety monitoring, this axis could help distinguish between systems that flexibly adjust behavior (potentially deceptive adaptation) versus systems with fixed, predictable responses. The concept likely exists in SUMO's system attribute taxonomy and should be added to layers if missing."
 }

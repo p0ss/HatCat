@@ -8,6 +8,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AmphibiousVehicle",
+        "MilitaryVehicle",
+        "PassengerVehicle",
         "PoweredVehicle"
       ],
       "category_children": [],
@@ -89,6 +92,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Helicopter",
         "MilitaryVehicle"
       ],
       "category_children": [],
@@ -505,6 +509,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ambulance",
         "MilitaryVehicle"
       ],
       "category_children": [],
@@ -721,6 +726,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Protein",
         "Toxin"
       ],
       "category_children": [],
@@ -1073,7 +1079,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AppliedSciences"
+        "AppliedSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -1645,7 +1652,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "ClimateAppliances"
+        "ClimateAppliances",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -1705,6 +1713,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Colloid",
         "GasMixture"
       ],
       "category_children": [],
@@ -1995,7 +2004,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "ClimateAppliances"
+        "ClimateAppliances",
+        "CoolingDevice"
       ],
       "category_children": [],
       "child_count": 0,
@@ -2178,7 +2188,8 @@
       "sumo_term": "Airplane",
       "layer": 5,
       "parent_concepts": [
-        "Aircraft"
+        "Aircraft",
+        "PoweredVehicle"
       ]
     },
     {
@@ -2247,6 +2258,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BiologicallyActiveSubstance",
+        "ChemicalBase",
         "PlantSubstance"
       ],
       "category_children": [],
@@ -2512,6 +2525,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AnimalAnatomicalStructure",
         "BodyVessel"
       ],
       "category_children": [
@@ -2763,6 +2777,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ControlledSubstance",
         "Stimulant"
       ],
       "category_children": [],
@@ -2960,7 +2975,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "MaritimeWater"
+        "MaritimeWater",
+        "WaterArea"
       ],
       "category_children": [
         "OffshoreAnchorage"
@@ -3114,7 +3130,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AnimalDevices"
+        "AnimalDevices",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -3236,7 +3253,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AnimalDevices"
+        "AnimalDevices",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -3403,6 +3421,10 @@
         "Medicine"
       ],
       "category_children": [
+        "Acetaminophen",
+        "Aspirin",
+        "Daxas",
+        "Ibuprofen",
         "NSAID",
         "Roflumilast"
       ],
@@ -3555,6 +3577,7 @@
       ],
       "category_children": [
         "COVIDAntibody",
+        "Kevzara",
         "MonoclonalAntibody"
       ],
       "child_count": 2,
@@ -4232,6 +4255,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "TargetSports"
       ],
       "category_children": [],
@@ -4684,7 +4708,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialStocks"
+        "FinancialStocks",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -4817,7 +4842,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "PhysicalSciences"
+        "PhysicalSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -4951,7 +4977,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AttachingDevices"
+        "AttachingDevices",
+        "Device"
       ],
       "category_children": [
         "Anchor",
@@ -5059,6 +5086,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AudioDataStorageDevice",
+        "AudioVisualDataStorageDevice",
         "TapeCassette"
       ],
       "category_children": [],
@@ -5125,7 +5154,18 @@
       ],
       "definition": "Grouping category for TapeRecorder, Camera, TrafficLight...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "Camera",
+        "Candle",
+        "FluorescentLightFixture",
+        "Headlight",
+        "IncandescentLightFixture",
+        "LEDLightFixture",
+        "Taillight",
+        "TapeRecorder",
+        "TrafficLight"
+      ]
     },
     {
       "sumo_term": "AudioVisualFile",
@@ -5134,7 +5174,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "ComputerFile"
+        "AudioFile",
+        "ComputerFile",
+        "ImageFile"
       ],
       "category_children": [],
       "child_count": 0,
@@ -5487,6 +5529,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Balloon",
         "SafetyDevice"
       ],
       "category_children": [],
@@ -5541,10 +5584,17 @@
         "Gun"
       ],
       "category_children": [
+        "GAU12U",
         "GatlingGun",
         "HeavyMachineGun",
+        "M197GatlingGun",
         "M240",
-        "M60"
+        "M242",
+        "M2Browning",
+        "M3M",
+        "M60",
+        "MK19",
+        "XM218"
       ],
       "child_count": 4,
       "sumo_definition": "A &%Gun that fires a burst of &%Projectiles\nwith each pull of the trigger.  Also known as a machine gun.",
@@ -5579,6 +5629,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PassengerVehicle",
         "RoadVehicle"
       ],
       "category_children": [
@@ -5677,6 +5728,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "VehicleMisc"
       ],
       "category_children": [],
@@ -5812,6 +5864,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "Drivetrain"
       ],
       "category_children": [],
@@ -6028,7 +6081,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "RacquetSports"
+        "RacquetSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -6135,6 +6189,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "Drivetrain"
       ],
       "category_children": [],
@@ -6212,7 +6267,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "Aircraft"
+        "Aircraft",
+        "FluidContainer"
       ],
       "category_children": [
         "AutoAirbag"
@@ -6299,10 +6355,14 @@
         "FinancialInstrument"
       ],
       "category_children": [
+        "AmericanExpressCard",
         "CreditCard",
         "DebitCard",
+        "DiscoverCard",
         "ExpiredCard",
-        "ValidCard"
+        "MasterCard",
+        "ValidCard",
+        "VisaCard"
       ],
       "child_count": 4,
       "sumo_definition": "A &%CreditCard or a &%DebitCard issued by a \n&%FinancialOrganization.",
@@ -6795,6 +6855,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "PersonalAppliances"
       ],
       "category_children": [],
@@ -6822,6 +6883,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BodySubstance",
         "Toxin"
       ],
       "category_children": [],
@@ -7523,7 +7585,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "DeceptiveSpeech"
+        "DeceptiveSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -7554,7 +7617,10 @@
       "category_children": [
         "Chlordiazepoxide",
         "Clonazepam",
-        "Diazepam"
+        "Diazepam",
+        "Klonopin",
+        "Librium",
+        "Valium"
       ],
       "child_count": 3,
       "sumo_definition": "Benzodiazepines\n(BZD, BDZ, BZs), sometimes called 'benzos', are a class of\npsychoactive drugs whose core chemical structure is the fusion of a\nbenzene ring and a diazepine ring. As depressants\u2014drugs which lower\nbrain activity\u2014they are prescribed to treat conditions such as\n&%Anxiety, &%Insomnia, and &%Seizures. The first benzodiazepine,\nchlordiazepoxide (Librium), was discovered accidentally by Leo\nSternbach in 1955 and was made available in 1960 by Hoffmann\u2013La Roche,\nwhich soon followed with diazepam (Valium) in 1963. By 1977,\nbenzodiazepines were the most prescribed medications globally; the\nintroduction of selective serotonin reuptake inhibitors (SSRIs), among\nother factors, decreased rates of prescription, but they remain\nfrequently used worldwide.[from Wikipedia]",
@@ -7688,7 +7754,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialTrading"
+        "FinancialTrading",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -7757,7 +7824,11 @@
       ],
       "definition": "Grouping category for ElectricCoffeeMaker, ElectricToaster",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "ElectricCoffeeMaker",
+        "ElectricToaster"
+      ]
     },
     {
       "sumo_term": "Bidding",
@@ -7847,7 +7918,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "LifeSciences"
+        "LifeSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -8156,7 +8228,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "LifeSciences"
+        "LifeSciences",
+        "Science"
       ],
       "category_children": [
         "BiologicalAdjective",
@@ -8233,6 +8306,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "DiagnosticProcess",
         "Removing"
       ],
       "category_children": [],
@@ -8259,6 +8333,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "OrganismProcess",
         "Removing"
       ],
       "category_children": [],
@@ -8408,6 +8483,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LiquidMotion",
         "Removing"
       ],
       "category_children": [],
@@ -8434,6 +8510,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Bleeding",
         "Death"
       ],
       "category_children": [],
@@ -8559,6 +8636,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AnimalAnatomicalStructure",
         "BodyVessel"
       ],
       "category_children": [
@@ -8671,6 +8749,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "StrengthSports"
       ],
       "category_children": [],
@@ -8734,6 +8813,8 @@
         "CouponBond",
         "GovernmentBond",
         "IndexBond",
+        "JunkBond",
+        "MortgageBond",
         "MunicipalBond",
         "PerformanceBond",
         "RegisteredBond",
@@ -9177,7 +9258,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "LifeSciences"
+        "LifeSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -9209,6 +9291,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BodySubstance",
+        "LifeThreateningAgent",
         "Toxin"
       ],
       "category_children": [],
@@ -9236,6 +9320,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "TargetSports"
       ],
       "category_children": [],
@@ -9287,6 +9372,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "ViolentContest"
       ],
       "category_children": [],
@@ -9369,6 +9455,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AnimalAnatomicalStructure",
         "VitalOrgan"
       ],
       "category_children": [
@@ -9421,7 +9508,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "BrakeSystem"
+        "BrakeSystem",
+        "Device"
       ],
       "category_children": [
         "VehicleBrake"
@@ -9449,7 +9537,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "BrakeSystem"
+        "BrakeSystem",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -9475,7 +9564,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "BrakeSystem"
+        "BrakeSystem",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -9526,7 +9616,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "BrakeSystem"
+        "BrakeSystem",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -9551,7 +9642,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "BrakeSystem"
+        "BrakeSystem",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -9876,6 +9968,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AnimalAnatomicalStructure",
         "BodyVessel"
       ],
       "category_children": [
@@ -10135,6 +10228,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Digging",
         "Putting"
       ],
       "category_children": [
@@ -10184,6 +10278,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PassengerVehicle",
         "RoadVehicle"
       ],
       "category_children": [],
@@ -10315,6 +10410,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LandForm",
         "UplandArea"
       ],
       "category_children": [],
@@ -10464,6 +10560,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Colloid",
         "FermentedFood"
       ],
       "category_children": [],
@@ -10489,7 +10586,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialTrading"
+        "FinancialTrading",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -10745,6 +10843,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CompactDisc",
         "WriteOnceDataStorage"
       ],
       "category_children": [],
@@ -10771,6 +10870,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CompactDisc",
         "WriteOnceDataStorage"
       ],
       "category_children": [],
@@ -10797,6 +10897,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Helicopter",
+        "MilitaryVehicle",
         "PassengerVehicle"
       ],
       "category_children": [],
@@ -10823,6 +10925,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Helicopter",
+        "MilitaryVehicle",
         "PassengerVehicle"
       ],
       "category_children": [],
@@ -10906,6 +11010,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BiologicallyActiveSubstance",
         "IncapacitatingAgent"
       ],
       "category_children": [],
@@ -11074,6 +11179,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -11159,6 +11265,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Diuretic",
+        "Molecule",
         "Stimulant"
       ],
       "category_children": [],
@@ -11385,7 +11493,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialOptions"
+        "FinancialOptions",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -11409,6 +11518,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "EngineComponents"
       ],
       "category_children": [],
@@ -11435,6 +11545,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Livestock",
         "Mammal"
       ],
       "category_children": [],
@@ -11514,7 +11625,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CuttingTools"
+        "CuttingTools",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -11541,6 +11653,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "MechanicalComponents"
       ],
       "category_children": [],
@@ -11568,7 +11681,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialOrders"
+        "FinancialOrders",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -11595,6 +11709,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AgentPoweredVehicle",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -11620,6 +11735,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CantileverObject",
         "RotationalParts"
       ],
       "category_children": [],
@@ -11759,6 +11875,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AboveTheLine",
         "JointPublication"
       ],
       "category_children": [],
@@ -11866,7 +11983,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AttachingDevices"
+        "AttachingDevices",
+        "Device"
       ],
       "category_children": [
         "ClimbingCarabiner",
@@ -11996,6 +12114,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [
@@ -12079,7 +12198,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EarthSciences"
+        "EarthSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -12180,6 +12300,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Maneuver",
         "Touching"
       ],
       "category_children": [],
@@ -12338,7 +12459,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AdventureSports"
+        "AdventureSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -12443,6 +12565,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Carbohydrate",
         "PlantSubstance"
       ],
       "category_children": [],
@@ -12572,16 +12695,22 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EdibleSeed"
+        "EdibleSeed",
+        "Seed"
       ],
       "category_children": [
         "BarleyGrain",
+        "CommonWheatGrain",
+        "DurumWheatGrain",
+        "EinkornWheatGrain",
+        "EmmerWheatGrain",
         "MaizeGrain",
         "MilletGrain",
         "OatGrain",
         "RiceGrain",
         "RyeGrain",
         "SorghumGrain",
+        "SpeltWheatGrain",
         "WheatGrain"
       ],
       "child_count": 8,
@@ -12978,7 +13107,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "PhysicalSciences"
+        "PhysicalSciences",
+        "Science"
       ],
       "category_children": [
         "ChemicalProperties",
@@ -13540,6 +13670,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Removing",
         "Surgery"
       ],
       "category_children": [],
@@ -13629,7 +13760,12 @@
       "parent_concepts": [
         "Building"
       ],
-      "category_children": [],
+      "category_children": [
+        "EmbassyBuilding",
+        "LibraryBuilding",
+        "PoliceFacility",
+        "SchoolBuilding"
+      ],
       "child_count": 0,
       "sumo_definition": "Buildings designed to serve public functions and community needs, operated by or for government and civic institutions.",
       "synset_count": 0,
@@ -13827,7 +13963,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "HandGesture"
+        "HandGesture",
+        "Impacting",
+        "RadiatingSound"
       ],
       "category_children": [],
       "child_count": 0,
@@ -14239,7 +14377,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CleaningAppliances"
+        "CleaningAppliances",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -14329,6 +14468,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Carabiner",
         "SafetyDevice"
       ],
       "category_children": [],
@@ -14411,7 +14551,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialAccounts"
+        "FinancialAccounts",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -14463,6 +14604,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Closing",
+        "EyeMotion",
         "FacialExpression"
       ],
       "category_children": [
@@ -14626,6 +14769,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "Drivetrain"
       ],
       "category_children": [],
@@ -14889,7 +15033,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EdibleSeed"
+        "EdibleSeed",
+        "PlantSubstance",
+        "Seed"
       ],
       "category_children": [],
       "child_count": 0,
@@ -15018,7 +15164,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EdibleSeed"
+        "EdibleSeed",
+        "Seed"
       ],
       "category_children": [
         "CoffeeArabica",
@@ -15051,7 +15198,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EdibleSeed"
+        "EdibleSeed",
+        "Powder"
       ],
       "category_children": [],
       "child_count": 0,
@@ -15591,6 +15739,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "EngineComponents"
       ],
       "category_children": [
@@ -15716,7 +15865,12 @@
       "parent_concepts": [
         "Building"
       ],
-      "category_children": [],
+      "category_children": [
+        "OfficeBuilding",
+        "RestaurantBuilding",
+        "Store",
+        "TerminalBuilding"
+      ],
       "child_count": 0,
       "sumo_definition": "Buildings designed for business activities, commerce, or providing services to customers.",
       "synset_count": 0,
@@ -16180,6 +16334,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CharismaticChurch",
         "LocalChurch"
       ],
       "category_children": [],
@@ -16475,15 +16630,25 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ComputerInputDevice",
         "ComputerOutputDevice"
       ],
       "category_children": [
+        "BluRayDrive",
+        "CDDrive",
         "CD_RW",
         "CD_WriteOnce",
+        "CartridgeHardDiskDrive",
         "ComputerTerminal",
+        "DVDDrive",
         "DiskDrive",
+        "ExternalDiskDrive",
+        "ExternalHardDiskDrive",
         "FlashDrive",
+        "FloppyDiskDrive",
         "GameIODevice",
+        "GameIODeviceWithAccelerometer",
+        "GamePad",
         "MemoryCard",
         "Modem"
       ],
@@ -16524,15 +16689,27 @@
         "ComputerInputDevice"
       ],
       "category_children": [
+        "AltKey",
+        "CharacterKey",
         "ComputerKeyboardKey",
+        "ControlKey",
+        "DownArrowKey",
+        "EnterKey",
+        "FunctionKey",
         "GUIButton",
+        "LeftArrowKey",
         "LeftCIButton",
         "MiddleCIButton",
         "MouseButton",
+        "NumberedFunctionKey",
         "PhysicalLeftCIButton",
         "PhysicalRightCIButton",
+        "RightArrowKey",
         "RightCIButton",
-        "TouchpadKey"
+        "ShiftKey",
+        "TabKey",
+        "TouchpadKey",
+        "UpArrowKey"
       ],
       "child_count": 9,
       "sumo_definition": "A physical &%ComputerInputDevice such\nthat pushing the button down, pushing it down twice quickly, and/or holding it down causes\na signal to be sent to a computer (if everything necessary is turned on and connected).  This\ncould be a key on a keyboard, mouse, telephone, ATM, or other piece of equipment.",
@@ -16681,7 +16858,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AppliedSciences"
+        "AppliedSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -16712,6 +16890,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ComputerKeypad",
+        "ComputerTouchscreen",
+        "ComputerTouchscreenKeyboard",
         "GUIActiveArea"
       ],
       "category_children": [],
@@ -16943,7 +17124,12 @@
       ],
       "definition": "Grouping category for Cable, WiredInternetConnection, WirelessInternetConnection",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "Cable",
+        "WiredInternetConnection",
+        "WirelessInternetConnection"
+      ]
     },
     {
       "sumo_term": "ConnectiveTissue",
@@ -16989,6 +17175,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BodySubstance",
+        "CompoundSubstance",
         "Toxin"
       ],
       "category_children": [],
@@ -18143,7 +18331,14 @@
       ],
       "definition": "Grouping category for DeepFryer, Grill, PressureCooker...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "DeepFryer",
+        "Grill",
+        "PressureCooker",
+        "RotisserieAppliance",
+        "SlowCooker"
+      ]
     },
     {
       "sumo_term": "Cooking_Caramelize",
@@ -18266,15 +18461,20 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "ClimateAppliances"
+        "ClimateAppliances",
+        "Device"
       ],
       "category_children": [
         "AirConditioner",
+        "CeilingFan",
+        "EngineFan",
         "FanDevice",
         "Freezer",
         "IceCreamMaker",
         "RefrigerationAppliance",
-        "Refrigerator"
+        "Refrigerator",
+        "WholeHouseFan",
+        "WindowFan"
       ],
       "child_count": 6,
       "sumo_definition": "A &%Device whose purpose is &%Cooling something,\ne.g. air conditioners, refrigerators, freezers, etc.",
@@ -18904,6 +19104,7 @@
         "Putting"
       ],
       "category_children": [
+        "ArtPainting",
         "Painting",
         "TopicalApplication"
       ],
@@ -19210,6 +19411,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -19680,7 +19882,8 @@
       "is_pseudo_sumo": true,
       "is_sense_split": true,
       "parent_concepts": [
-        "EdibleSeed"
+        "EdibleSeed",
+        "Seed"
       ],
       "category_children": [],
       "child_count": 0,
@@ -19890,7 +20093,13 @@
       "category_children": [
         "IntermediateCuneiformBone",
         "LateralCuneiformBone",
-        "MedialCuneiformBone"
+        "LeftIntermediateCuneiformBone",
+        "LeftLateralCuneiformBone",
+        "LeftMedialCuneiformBone",
+        "MedialCuneiformBone",
+        "RightIntermediateCuneiformBone",
+        "RightLateralCuneiformBone",
+        "RightMedialCuneiformBone"
       ],
       "child_count": 3,
       "synset_count": 1,
@@ -19922,7 +20131,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "Colloid"
+        "Colloid",
+        "DairyArtifact"
       ],
       "category_children": [],
       "child_count": 0,
@@ -19947,6 +20157,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "WinterSports"
       ],
       "category_children": [],
@@ -20035,6 +20246,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Racing",
+        "Sport",
         "WheelSports"
       ],
       "category_children": [],
@@ -20310,11 +20523,15 @@
         "ChristmasDay",
         "Friday",
         "Monday",
+        "ReligiousObservance",
         "Saturday",
         "Sunday",
+        "Sunday_Dominical",
+        "Sunday_Sunday",
         "Thursday",
         "Tuesday",
-        "Wednesday"
+        "Wednesday",
+        "WeekdaySchedule"
       ],
       "child_count": 8,
       "sumo_definition": "The &%Class of all calendar &%Days.",
@@ -20656,6 +20873,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -20770,7 +20988,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "DeceptiveSpeech"
+        "DeceptiveSpeech",
+        "SpeechAct"
       ],
       "category_children": [
         "DistortionLie",
@@ -21080,6 +21299,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ArtWork",
         "EntertainmentAppliances"
       ],
       "category_children": [
@@ -21108,6 +21328,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "DecorativeLighting",
         "LightingElectronics"
       ],
       "category_children": [],
@@ -21134,6 +21355,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "DecorativeAppliance",
         "EntertainmentAppliances"
       ],
       "category_children": [
@@ -21657,6 +21879,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "FinancialTransaction",
         "FinancialTransfers"
       ],
       "category_children": [],
@@ -21688,7 +21911,8 @@
       ],
       "category_children": [
         "CheckingAccount",
-        "InvestmentAccount"
+        "InvestmentAccount",
+        "MutualFundAccount"
       ],
       "child_count": 2,
       "sumo_definition": "An account where money is deposited for checking, savings or \nbrokerage use.",
@@ -22515,6 +22739,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AudioDataStorageDevice",
         "TapeCassette"
       ],
       "category_children": [],
@@ -22727,6 +22952,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -22753,6 +22979,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SpecialOperation",
         "ViolentContest"
       ],
       "category_children": [],
@@ -22779,10 +23006,13 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Maneuver",
         "ViolentContest"
       ],
       "category_children": [
         "AntiSurfaceOperation",
+        "CTHostageMaterielRecovery",
+        "CounterproliferationWMD",
         "DirectAmbush",
         "DirectAssault",
         "PreciseDestruction",
@@ -23423,7 +23653,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FramingSpeech"
+        "FramingSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -23472,7 +23703,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "DeceptiveSpeech"
+        "DeceptiveSpeech",
+        "DeceptiveSpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -23498,6 +23730,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "EngineComponents"
       ],
       "category_children": [],
@@ -23554,6 +23787,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "WaterSports"
       ],
       "category_children": [
@@ -23628,6 +23862,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -23920,6 +24155,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Artifact",
         "MechanicalComponents"
       ],
       "category_children": [],
@@ -24164,6 +24400,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AntiArmorWeapon",
         "Missile"
       ],
       "category_children": [],
@@ -24241,6 +24478,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [
@@ -24451,6 +24689,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -24794,7 +25033,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CleaningAppliances"
+        "CleaningAppliances",
+        "Device"
       ],
       "category_children": [
         "ClothesDryer",
@@ -25544,6 +25784,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CookerPad",
         "PersonalElectronics"
       ],
       "category_children": [],
@@ -25707,9 +25948,15 @@
       ],
       "category_children": [
         "Amplifier",
+        "BridgeSinglePhaseRectifier",
+        "DoublerSinglePhaseRectifier",
         "FrequencyFilter",
+        "HalfWaveSinglePhaseRectifier",
+        "InvertingAmplifier",
+        "NoninvertingAmplifier",
         "OperationalAmplifier",
-        "Rectifier"
+        "Rectifier",
+        "ThreePhaseRectifier"
       ],
       "child_count": 4,
       "sumo_definition": "A complex &%ElectricDevice consisting\nof several mutually interconnected electrical components.",
@@ -25806,7 +26053,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "ControlElectronics"
+        "ControlElectronics",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -25884,6 +26132,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PoweredVehicle",
         "RailVehicle"
       ],
       "category_children": [
@@ -26249,11 +26498,17 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "EmotionalBehavioralProcess",
         "Vocalizing"
       ],
       "category_children": [
+        "AngryVoiceUtterance",
+        "DisgustedVoiceUtterance",
         "EmotionalVoiceUtterances",
+        "FearfulVoiceUtterance",
+        "HappyVoiceUtterance",
         "NotSpeaking",
+        "SadVoiceUtterance",
         "SpeakingALongUtterance",
         "SpeakingAShortUtterance",
         "SpeakingAssertively",
@@ -26263,7 +26518,8 @@
         "SpeakingLoudly",
         "SpeakingSoftly",
         "SpeakingWithAlteredSpeechMelody",
-        "SpeakingWithTremblingVoice"
+        "SpeakingWithTremblingVoice",
+        "SurprisedVoiceUtterance"
       ],
       "child_count": 12,
       "synset_count": 4,
@@ -26466,6 +26722,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "EmployeeID",
         "Name"
       ],
       "category_children": [],
@@ -26547,6 +26804,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Colloid",
         "LiquidMixture"
       ],
       "category_children": [
@@ -26662,6 +26920,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "EngineComponents"
       ],
       "category_children": [],
@@ -26688,6 +26947,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "EngineComponents"
       ],
       "category_children": [],
@@ -26834,7 +27094,11 @@
       "parent_concepts": [
         "Building"
       ],
-      "category_children": [],
+      "category_children": [
+        "BaseballDugout",
+        "Cinema",
+        "EntertainmentBuilding"
+      ],
       "child_count": 0,
       "sumo_definition": "Buildings or structures designed primarily for hosting entertainment, performances, or recreational events for audiences.",
       "synset_count": 0,
@@ -26970,7 +27234,14 @@
       ],
       "definition": "Grouping category for Thermometer, BimetalTemperatureSensor, Hydrometer...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "BimetalTemperatureSensor",
+        "Hydrometer",
+        "MassAirflowSensor",
+        "OxygenSensor",
+        "Thermometer"
+      ]
     },
     {
       "sumo_term": "Enzyme",
@@ -27128,6 +27399,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BodySubstance",
         "Toxin"
       ],
       "category_children": [],
@@ -27180,7 +27452,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AnimalSports"
+        "AnimalSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -27212,6 +27485,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "GeologicalProcess",
         "Removing"
       ],
       "category_children": [
@@ -27804,8 +28078,14 @@
         "WoodyPlant"
       ],
       "category_children": [
+        "CedarTree",
         "CocoaTree",
         "Conifer",
+        "FirTree",
+        "LarchTree",
+        "PineTree",
+        "RedwoodTree",
+        "SpruceTree",
         "TeaPlant"
       ],
       "child_count": 3,
@@ -27865,6 +28145,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "MaritimeClaimArea",
         "SaltWaterArea"
       ],
       "category_children": [],
@@ -27891,6 +28172,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "OrganismProcess",
         "Removing"
       ],
       "category_children": [
@@ -27956,7 +28238,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialOptions"
+        "FinancialOptions",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -28037,6 +28320,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "EngineComponents"
       ],
       "category_children": [],
@@ -28062,7 +28346,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "QuestioningSpeech"
+        "QuestioningSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -28181,6 +28466,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "IgnitionDevices"
       ],
       "category_children": [
@@ -28289,6 +28575,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "MaritimeClaimArea",
         "SaltWaterArea"
       ],
       "category_children": [],
@@ -28315,6 +28602,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Game",
         "NonCooperativeGame"
       ],
       "category_children": [],
@@ -28367,6 +28655,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "FinancialTransaction",
         "FinancialTransfers"
       ],
       "category_children": [],
@@ -28569,7 +28858,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "DeceptiveSpeech"
+        "DeceptiveSpeech",
+        "DeceptiveSpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -28864,7 +29154,11 @@
       "parent_concepts": [
         "Building"
       ],
-      "category_children": [],
+      "category_children": [
+        "Barn",
+        "FarmBuilding",
+        "HomeGarage"
+      ],
       "child_count": 0,
       "sumo_definition": "Buildings associated with agricultural properties for farming activities, storage, or rural residential use.",
       "synset_count": 0,
@@ -29462,7 +29756,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CombatSports"
+        "CombatSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -29937,7 +30232,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "DeceptiveSpeech"
+        "DeceptiveSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -29979,6 +30275,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "WinterSports"
       ],
       "category_children": [],
@@ -30004,6 +30301,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "HandTools"
       ],
       "category_children": [],
@@ -30064,7 +30362,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialOrders"
+        "FinancialOrders",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -30194,7 +30493,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialDebt"
+        "FinancialDebt",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -30377,7 +30677,11 @@
       ],
       "category_children": [
         "Handgun",
-        "Longgun"
+        "Longgun",
+        "Pistol",
+        "RevolverGun",
+        "Rifle",
+        "Shotgun"
       ],
       "child_count": 2,
       "sumo_definition": "A &%Gun that is small enough to be carried and fired by\na single &%Human.",
@@ -30603,7 +30907,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AnimalSports"
+        "AnimalSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -30664,6 +30969,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ComputerIODevice",
         "SolidStateDataStorageDevice"
       ],
       "category_children": [],
@@ -30923,18 +31229,23 @@
       ],
       "category_children": [
         "Balloon",
+        "BalloonContainer",
         "BathTub",
         "Bottle",
         "Cask",
         "CoffeeMaker",
         "DrinkingCup",
+        "DrinkingMug",
         "ElectricTankBoiler",
         "FishTank",
         "FoodBlender",
         "GasTank",
+        "GrecianTub",
+        "HotTub",
         "Kettle",
         "OilPan",
         "SwimmingPool",
+        "WhirlpoolBathtub",
         "WhirlpoolTub"
       ],
       "child_count": 14,
@@ -31285,7 +31596,13 @@
       "parent_concepts": [
         "Containers"
       ],
-      "category_children": [],
+      "category_children": [
+        "Aeropress",
+        "Can",
+        "FrenchPressPot",
+        "MokaPot",
+        "WineCase"
+      ],
       "child_count": 0,
       "sumo_definition": "Vessels designed to hold, store, or prepare food and beverages",
       "synset_count": 0,
@@ -31390,7 +31707,23 @@
       ],
       "definition": "Grouping category for Blender, RefrigerationAppliance, SmallKichenAppliance...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "Blender",
+        "Breadmaker",
+        "CoffeeMaker",
+        "ElectricCanOpener",
+        "ElectricJuicer",
+        "ElectricKettle",
+        "FoodBlender",
+        "FoodMixer",
+        "FoodProcessor",
+        "Freezer",
+        "FridgeFreezer",
+        "Microwave",
+        "Toaster",
+        "WaffleIron"
+      ]
     },
     {
       "sumo_term": "FoodRating",
@@ -31726,6 +32059,8 @@
         "Name"
       ],
       "category_children": [
+        "Alpha2IDString",
+        "Alpha3IDString",
         "AlphaIDString",
         "AlphaNumericIDString",
         "ISBNcode",
@@ -32375,6 +32710,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "EngineComponents"
       ],
       "category_children": [
@@ -32511,9 +32847,19 @@
       "is_category_lens": true,
       "is_pseudo_sumo": true,
       "parent_concepts": [
-        "Building"
+        "Building",
+        "Region"
       ],
-      "category_children": [],
+      "category_children": [
+        "Indoors",
+        "KitchenArea",
+        "OutdoorDiningArea",
+        "Outdoors",
+        "Patio",
+        "PersonalSpace",
+        "PlayArea",
+        "SittingArea"
+      ],
       "child_count": 0,
       "sumo_definition": "areas designated or used for specific human activities or purposes",
       "synset_count": 0,
@@ -32754,11 +33100,16 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ComputerInputButton",
         "GUIActiveArea"
       ],
       "category_children": [
         "GUIRadioButton",
-        "ScrollBarArrowButton"
+        "ScrollBarArrowButton",
+        "ScrollBarDownArrowButton",
+        "ScrollBarLeftArrowButton",
+        "ScrollBarRightArrowButton",
+        "ScrollBarUpArrowButton"
       ],
       "child_count": 2,
       "sumo_definition": "A &%GUIButton is an image of a button on a &%GUIElement that\na user may click on or ''hold down'' to indicate a &%UserSignifiedAction.  The button's graphical\nappearance changes once it is selected.  An icon of a &%ComputerKeyboardKey is not considered to be a\n&%GUIButton.  A &%GUIButton may have labeling text or symbol displayed on or adjacent it.  The active\narea for selecting a GUI button may be the area of the button itself or may include the area of text\nlabeling the box.",
@@ -33203,6 +33554,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "VehicleMisc"
       ],
       "category_children": [],
@@ -33507,6 +33859,7 @@
       ],
       "category_children": [
         "GeochronologicAge",
+        "GeochronologicBase",
         "GeochronologicEon",
         "GeochronologicEpoch",
         "GeochronologicEra",
@@ -33547,7 +33900,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EarthSciences"
+        "EarthSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -33577,7 +33931,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "PhysicalSciences"
+        "PhysicalSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -33610,6 +33965,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AnimalAnatomicalStructure",
         "VitalOrgan"
       ],
       "category_children": [],
@@ -33662,6 +34018,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Spice",
         "Vegetable"
       ],
       "category_children": [],
@@ -33695,6 +34052,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Aircraft",
         "UnpoweredVehicle"
       ],
       "category_children": [],
@@ -34076,6 +34434,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "TargetSports"
       ],
       "category_children": [],
@@ -34136,6 +34495,7 @@
       ],
       "category_children": [
         "DrivingRange",
+        "MiniatureGolf",
         "PuttingGreen"
       ],
       "child_count": 2,
@@ -34742,6 +35102,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ComputerMenuItem",
         "GUIActiveArea"
       ],
       "category_children": [],
@@ -34907,6 +35268,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "VehicleMisc"
       ],
       "category_children": [],
@@ -34933,6 +35295,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "HandTools"
       ],
       "category_children": [],
@@ -34959,6 +35322,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SubjectiveStrongNegativeAttribute",
         "TraitAttribute"
       ],
       "category_children": [],
@@ -35072,6 +35436,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ExplosiveDevice",
         "Projectile"
       ],
       "category_children": [],
@@ -35290,6 +35655,9 @@
       ],
       "category_children": [
         "AAM",
+        "AGM114",
+        "AGM65",
+        "AIM9",
         "BeamRidingGMissile",
         "InfraRedGMissile"
       ],
@@ -35421,6 +35789,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "StrengthSports"
       ],
       "category_children": [],
@@ -35623,6 +35992,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "DryingDevice",
         "PersonalElectronics"
       ],
       "category_children": [],
@@ -35683,7 +36053,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "DeceptiveSpeech"
+        "DeceptiveSpeech",
+        "DeceptiveSpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -35800,6 +36171,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "HandTools"
       ],
       "category_children": [],
@@ -36106,6 +36478,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "JetAirplane",
+        "MilitaryVehicle",
         "PoweredVehicle"
       ],
       "category_children": [],
@@ -36350,6 +36724,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BodyMotion",
+        "Impelling",
         "OrganOrTissueProcess"
       ],
       "category_children": [],
@@ -36376,6 +36752,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "IndustrialDevices"
       ],
       "category_children": [],
@@ -36428,7 +36805,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "ClimateAppliances"
+        "ClimateAppliances",
+        "HeatingDevice"
       ],
       "category_children": [
         "CentralHeatingSystem",
@@ -36463,7 +36841,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "ClimateAppliances"
+        "ClimateAppliances",
+        "Device"
       ],
       "category_children": [
         "CoffeeMaker",
@@ -36786,6 +37165,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -36958,6 +37338,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -37138,6 +37519,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "FactualText",
         "NarrativeText"
       ],
       "category_children": [
@@ -37229,11 +37611,23 @@
         "TimePeriods"
       ],
       "category_children": [
+        "Advent",
+        "AdventSunday",
+        "AscensionThursday",
         "ChristianHoliday",
+        "ChristmasDay",
+        "EasterSunday",
+        "Epiphany",
         "FixedHoliday",
+        "Hanukkah",
         "JewishHoliday",
+        "Lent",
         "MoveableHoliday",
-        "USHoliday"
+        "PalmSunday",
+        "Passover",
+        "Pentecost",
+        "USHoliday",
+        "USThanksgivingDay"
       ],
       "child_count": 5,
       "sumo_definition": "&%Holiday is the class of time periods that are \n;;observed as holidays in a country, culture, or religion.  Holidays may \n;;recur annually on the same date, or they may be moveable, for example, \n;;&%UnitedStatesThanksgivingDay falls on the last &%Thursday of each \n;;&%November.",
@@ -37828,7 +38222,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AnimalSports"
+        "AnimalSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -38139,6 +38534,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CharismaticChurch",
         "LocalChurch"
       ],
       "category_children": [],
@@ -38171,6 +38567,7 @@
         "BatteryCharger",
         "Clock",
         "ElectricBlanket",
+        "ElectricWaterPurifier",
         "FabricIron",
         "GarbageDisposer",
         "Humidifier",
@@ -38291,7 +38688,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CyclonicStorm"
+        "CyclonicStorm",
+        "TropicalCyclone"
       ],
       "category_children": [],
       "child_count": 0,
@@ -38426,6 +38824,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "WaterArea",
         "WaterZones"
       ],
       "category_children": [],
@@ -38597,6 +38996,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -38675,6 +39075,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "WinterSports"
       ],
       "category_children": [],
@@ -39299,7 +39700,9 @@
       "category_children": [
         "Abatacept",
         "Benelysta",
-        "MycophenolicAcid"
+        "CellCept",
+        "MycophenolicAcid",
+        "Orencia"
       ],
       "child_count": 3,
       "sumo_definition": "Immunosuppression is a\nreduction of the activation or efficacy of the immune system. Some\nportions of the immune system itself have immunosuppressive effects on\nother parts of the immune system, and immunosuppression may occur as\nan adverse reaction to treatment of other conditions. In\ngeneral, deliberately induced immunosuppression is performed to\nprevent the body from rejecting an organ transplant. Additionally,\nit is used for treating graft-versus-host disease after a bone marrow\ntransplant, or for the treatment of auto-immune diseases such as\nsystemic &%Lupus erythematosus, &%RheumatoidArthritis, Sj\u00f6gren's\nsyndrome, or &%CrohnsDisease. This is typically done using\nmedications, but may involve surgery (splenectomy), plasmapheresis, or\nradiation. A person who is undergoing immunosuppression, or whose\nimmune system is weak for some other reasons (chemotherapy or HIV), is\nsaid to be immunocompromised.[from Wikipedia]",
@@ -39331,6 +39734,11 @@
       "category_children": [
         "Clapping",
         "Crushing",
+        "Crushing_Pound",
+        "Crushing_Stamp",
+        "Grinding",
+        "GrindingCrushing",
+        "ImpactCrushing",
         "TouchSurfaceTap"
       ],
       "child_count": 3,
@@ -39824,7 +40232,11 @@
       "parent_concepts": [
         "Building"
       ],
-      "category_children": [],
+      "category_children": [
+        "BeerBrewery",
+        "FactoryBuilding",
+        "Winery"
+      ],
       "child_count": 0,
       "sumo_definition": "Buildings designed for manufacturing, processing, or producing goods and beverages on a commercial scale.",
       "synset_count": 0,
@@ -40207,7 +40619,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "InfectiousDisease"
+        "InfectiousDisease",
+        "VaccinatableDisease"
       ],
       "category_children": [],
       "child_count": 0,
@@ -40648,7 +41061,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FlowingWater"
+        "FlowingWater",
+        "WaterArea"
       ],
       "category_children": [],
       "child_count": 0,
@@ -41157,8 +41571,13 @@
       ],
       "category_children": [
         "AdjustableRateAccount",
+        "CertificateOfDeposit",
         "FixedRateAccount",
-        "SavingsAccount"
+        "MoneyMarket",
+        "RothIRAAccount",
+        "SavingsAccount",
+        "TraditionalSavingsAccount",
+        "TreasuryBill"
       ],
       "child_count": 3,
       "sumo_definition": "FinancialAccounts that have a fixed or adjustable interest rate.",
@@ -41191,6 +41610,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ChinookWind",
         "FohnWind"
       ],
       "category_children": [],
@@ -41339,6 +41759,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "FinancialTransaction",
         "FinancialTransfers"
       ],
       "category_children": [],
@@ -41365,10 +41786,13 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CommunicationElectronics"
+        "CommunicationElectronics",
+        "Device"
       ],
       "category_children": [
-        "Modem"
+        "CableModem",
+        "Modem",
+        "RadioModem"
       ],
       "child_count": 1,
       "sumo_definition": "&%InternetAccessPoint refers to \na &%Device that allows another &%Device to access and use the &%Internet",
@@ -41398,7 +41822,15 @@
       "parent_concepts": [
         "Stating"
       ],
-      "category_children": [],
+      "category_children": [
+        "Apologizing",
+        "Arguing",
+        "Confirming",
+        "Correcting",
+        "MaritimeBoundaryDispute",
+        "ReachingAgreement",
+        "TerritorialDispute"
+      ],
       "child_count": 0,
       "sumo_definition": "Verbal expressions that directly engage with others' positions, opinions, or actions in social interaction",
       "synset_count": 0,
@@ -41767,7 +42199,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialTrading"
+        "FinancialTrading",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -41864,7 +42297,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CleaningAppliances"
+        "CleaningAppliances",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -42715,6 +43149,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "VehicleMisc"
       ],
       "category_children": [],
@@ -42742,6 +43177,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ActivatingUIElement",
         "UserSignifiedGraphicalAction"
       ],
       "category_children": [
@@ -42825,6 +43261,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AgentPoweredVehicle",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -43033,6 +43470,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AboveTheLine",
         "JointPublication"
       ],
       "category_children": [],
@@ -43221,6 +43659,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "KitchenArea",
         "Room"
       ],
       "category_children": [],
@@ -43328,6 +43767,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "LightingElectronics"
       ],
       "category_children": [],
@@ -43522,6 +43962,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AmphibiousVehicle",
         "PoweredVehicle"
       ],
       "category_children": [],
@@ -43548,6 +43989,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AmphibiousVehicle",
+        "MilitaryVehicle",
+        "PassengerVehicle",
         "PoweredVehicle"
       ],
       "category_children": [],
@@ -43813,6 +44257,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Antiseizure",
         "Medicine"
       ],
       "category_children": [],
@@ -43865,6 +44310,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "GeologicalProcess",
         "Impelling"
       ],
       "category_children": [
@@ -44068,6 +44514,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "LightingElectronics"
       ],
       "category_children": [],
@@ -44168,6 +44615,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "EmotionalBehavioralProcess",
+        "FacialExpression",
         "Vocalizing"
       ],
       "category_children": [],
@@ -44233,6 +44682,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PoliticalProcess",
         "RegulatoryProcess"
       ],
       "category_children": [
@@ -45986,6 +46436,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LeftRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -46012,6 +46463,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LeftRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -46038,6 +46490,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LeftRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -46064,6 +46517,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LeftRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -46090,6 +46544,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LeftRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -46116,6 +46571,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LeftRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -46142,6 +46598,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LeftRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -46319,7 +46776,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "Directing"
+        "Directing",
+        "JudicialProcess"
       ],
       "category_children": [],
       "child_count": 0,
@@ -46414,7 +46872,14 @@
       "parent_concepts": [
         "Stating"
       ],
-      "category_children": [],
+      "category_children": [
+        "JudicialInstruction",
+        "OfficialDesignation",
+        "Pleading",
+        "Registering",
+        "Stating_Charge",
+        "Testifying"
+      ],
       "child_count": 0,
       "sumo_definition": "Formal declarations or statements made within legal or official proceedings and contexts.",
       "synset_count": 0,
@@ -46485,7 +46950,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "Directing"
+        "Directing",
+        "JudicialProcess"
       ],
       "category_children": [],
       "child_count": 0,
@@ -46657,7 +47123,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AppliedSciences"
+        "AppliedSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -46924,6 +47391,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "MechanicalComponents"
       ],
       "category_children": [],
@@ -47316,7 +47784,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialDebt"
+        "FinancialDebt",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -47342,6 +47811,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Medicine",
         "Stimulant"
       ],
       "category_children": [
@@ -47545,7 +48015,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "QuestioningSpeech"
+        "QuestioningSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -47580,8 +48051,10 @@
         "BrokerLoan",
         "CallableLoan",
         "ConsolidationLoan",
+        "ConventionalMortgage",
         "DayLoan",
         "EvergreenLoan",
+        "FHALoan",
         "IndexedLoan",
         "InterestOnlyLoan",
         "PiggybankLoan",
@@ -47834,6 +48307,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PoweredVehicle",
         "RailVehicle"
       ],
       "category_children": [],
@@ -48154,7 +48628,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "PlantSubstance"
+        "DurableGood",
+        "PlantSubstance",
+        "Product"
       ],
       "category_children": [
         "FinishedLumber",
@@ -48588,6 +49064,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "DurableGood",
         "UtilityAppliances"
       ],
       "category_children": [
@@ -48596,6 +49073,7 @@
         "CookingOven",
         "CookingRange",
         "Dishwasher",
+        "ElectricOven",
         "Freezer",
         "HotWaterHeater",
         "Oven",
@@ -48631,6 +49109,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "MakingMusic",
         "Vocalizing"
       ],
       "category_children": [
@@ -49008,6 +49487,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "MaritimeClaimArea",
         "SaltWaterArea"
       ],
       "category_children": [],
@@ -49034,6 +49514,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "MaritimeClaimArea",
         "SaltWaterArea"
       ],
       "category_children": [],
@@ -49089,7 +49570,12 @@
         "Mammal"
       ],
       "category_children": [
-        "Kangaroo"
+        "Kangaroo",
+        "Koala",
+        "Opossum",
+        "Tasmanian Devil",
+        "Wallaby",
+        "Wombat"
       ],
       "child_count": 1,
       "sumo_definition": "The &%Class of &%Mammals which have a pouch for\ntheir young.",
@@ -49165,7 +49651,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CombatSports"
+        "CombatSports",
+        "Sport"
       ],
       "category_children": [
         "Aikido",
@@ -49248,6 +49735,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "TherapeuticProcess",
         "Touching"
       ],
       "category_children": [],
@@ -49274,6 +49762,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "IgnitionDevices"
       ],
       "category_children": [],
@@ -49524,7 +50013,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CuttingTools"
+        "CuttingTools",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -49549,7 +50039,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CuttingTools"
+        "CuttingTools",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -49679,7 +50170,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "LifeSciences"
+        "LifeSciences",
+        "Science"
       ],
       "category_children": [
         "MedicalAdjective",
@@ -49743,7 +50235,13 @@
       ],
       "definition": "Grouping category for AntibodyCOVIDTest, RTPCRTest, SnellenChart...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "AntibodyCOVIDTest",
+        "RTPCRTest",
+        "SnellenChart",
+        "TestForm"
+      ]
     },
     {
       "sumo_term": "Melon",
@@ -49787,6 +50285,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ComputerIODevice",
         "SolidStateDataStorageDevice"
       ],
       "category_children": [],
@@ -49839,6 +50338,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -49865,6 +50365,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LandForm",
         "UplandArea"
       ],
       "category_children": [],
@@ -49917,6 +50418,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Data",
         "FactualText"
       ],
       "category_children": [],
@@ -50307,7 +50809,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AudioVideoElectronics"
+        "AudioVideoElectronics",
+        "CommunicationDevice"
       ],
       "category_children": [
         "ComputerMicrophone"
@@ -50713,7 +51216,12 @@
         "ViolentContest"
       ],
       "category_children": [
-        "DirectAssault"
+        "AerialBombardment",
+        "AmbushAttack",
+        "AmphibiousAssault",
+        "ArtilleryBarrage",
+        "DirectAssault",
+        "SiegeWarfare"
       ],
       "child_count": 1,
       "sumo_definition": "close fighting during the culmination of a military attack.",
@@ -50831,8 +51339,15 @@
       ],
       "category_children": [
         "CommissionedOfficerRank",
+        "CompanyGradeRank",
         "EnlistedSoldierRank",
-        "USMilitaryRank"
+        "FieldGradeOfficerRank",
+        "FlagOfficerRank",
+        "JuniorNCORank",
+        "PrivateRank",
+        "SeniorNCORank",
+        "USMilitaryRank",
+        "USWarrantOfficerRank"
       ],
       "child_count": 3,
       "sumo_definition": "The class of &%Positions in a &%Military.  Rank\nis usually commensurate with degrees of power, prestige and\npay.",
@@ -50865,10 +51380,17 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "MilitaryWaterVehicle",
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [
-        "AircraftCarrier"
+        "AircraftCarrier",
+        "Battleship",
+        "Cruiser",
+        "Destroyer",
+        "Frigate",
+        "Submarine"
       ],
       "child_count": 1,
       "sumo_definition": "Any &%Ship which is made for a &%MilitaryOrganization.  \nThis includes aircraft carriers, destroyers, etc.",
@@ -50924,7 +51446,11 @@
       "parent_concepts": [
         "Stating"
       ],
-      "category_children": [],
+      "category_children": [
+        "SITREP",
+        "TerminalAttackControl",
+        "TerminalGuidance"
+      ],
       "child_count": 0,
       "sumo_definition": "Military communication that reports tactical status, target locations, or operational conditions",
       "synset_count": 0,
@@ -50989,6 +51515,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ArmoredVehicle",
+        "MilitaryVehicle",
         "RoadVehicle"
       ],
       "category_children": [],
@@ -51361,6 +51889,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BatteryPoweredDevice",
         "EntertainmentAppliance"
       ],
       "category_children": [],
@@ -51615,6 +52144,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -51816,7 +52346,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "ControlledSubstance"
+        "Analgesic",
+        "ControlledSubstance",
+        "Medicine"
       ],
       "category_children": [],
       "child_count": 0,
@@ -52106,6 +52638,9 @@
       ],
       "category_children": [
         "ElectricalMotor",
+        "InductionMotor",
+        "PermanentMagnetDcMotor",
+        "SeparatelyExcitedDcMotor",
         "StarterMotor"
       ],
       "child_count": 2,
@@ -52134,6 +52669,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -52186,6 +52722,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PassengerRailcar",
         "PoweredVehicle"
       ],
       "category_children": [],
@@ -52265,6 +52802,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Glove",
         "SafetyDevice"
       ],
       "category_children": [],
@@ -52318,6 +52856,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PoweredVehicle",
         "RailVehicle"
       ],
       "category_children": [],
@@ -52368,6 +52907,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LandForm",
         "UplandArea"
       ],
       "category_children": [
@@ -52470,6 +53010,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LandForm",
         "UplandArea"
       ],
       "category_children": [],
@@ -52597,6 +53138,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Guiding",
+        "Translocation",
         "UserSignifiedGraphicalAction"
       ],
       "category_children": [
@@ -52869,6 +53412,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Region",
         "TransitTerminal"
       ],
       "category_children": [],
@@ -53024,6 +53568,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AnimalSubstance",
         "Tissue"
       ],
       "category_children": [],
@@ -53394,6 +53939,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BodySubstance",
         "Toxin"
       ],
       "category_children": [
@@ -53996,6 +54542,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AnkleBone",
         "WristBone"
       ],
       "category_children": [
@@ -54661,6 +55208,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "WaterArea",
         "WaterZones"
       ],
       "category_children": [],
@@ -55176,6 +55724,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Book",
         "FictionalText"
       ],
       "category_children": [],
@@ -55564,6 +56113,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -55590,6 +56140,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "InformationOperation",
         "Investigating"
       ],
       "category_children": [
@@ -55648,6 +56199,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -55675,6 +56227,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -55702,6 +56255,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -55729,7 +56283,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EdibleSeed"
+        "EdibleSeed",
+        "Seed"
       ],
       "category_children": [],
       "child_count": 0,
@@ -55861,7 +56416,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "DeceptiveSpeech"
+        "DeceptiveSpeech",
+        "DeceptiveSpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -56172,7 +56728,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialAccounts"
+        "FinancialAccounts",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -56313,6 +56870,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Analgesic",
+        "Depressant",
         "PlantSubstance"
       ],
       "category_children": [],
@@ -56570,6 +57129,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "HerbaceousPlant",
         "Vine"
       ],
       "category_children": [],
@@ -56890,7 +57450,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "ControlElectronics"
+        "ControlElectronics",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -57273,6 +57834,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "IndustrialDevices"
       ],
       "category_children": [],
@@ -57355,7 +57917,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "PhysicalSciences"
+        "PhysicalSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -57410,6 +57973,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Grassland",
         "LowlandArea"
       ],
       "category_children": [],
@@ -57741,7 +58305,10 @@
         "Name"
       ],
       "category_children": [
-        "AgentID"
+        "AgentID",
+        "CustomerID",
+        "EmployeeID",
+        "UserID"
       ],
       "child_count": 1,
       "synset_count": 1,
@@ -57824,6 +58391,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PassengerVehicle",
         "RailVehicle"
       ],
       "category_children": [
@@ -57860,6 +58428,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [
@@ -58010,7 +58579,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EdibleSeed"
+        "EdibleSeed",
+        "Legume",
+        "Seed"
       ],
       "category_children": [],
       "child_count": 0,
@@ -58312,6 +58883,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "MechanicalComponents"
       ],
       "category_children": [],
@@ -58373,6 +58945,9 @@
         "DefinedContributionPlan",
         "IndividualRetirementAccount",
         "ProfitSharingPlan",
+        "SARSEPPlan",
+        "SavingsPlan_401K",
+        "SavingsPlan_403B",
         "SavingsPlan_408K"
       ],
       "child_count": 4,
@@ -58409,6 +58984,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -58568,7 +59144,10 @@
         "Residence"
       ],
       "category_children": [
+        "ApartmentUnit",
+        "CondominiumUnit",
         "ExecutiveResidence",
+        "House",
         "SingleFamilyResidence"
       ],
       "child_count": 2,
@@ -59079,7 +59658,12 @@
       ],
       "definition": "Grouping category for Ruler, Scales, FeelerGauge",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "FeelerGauge",
+        "Ruler",
+        "Scales"
+      ]
     },
     {
       "sumo_term": "PhysicalSwitches",
@@ -59159,6 +59743,12 @@
       "layer": 5,
       "parent_concepts": [
         "PhysicalSciences"
+      ],
+      "category_children": [
+        "PhysicalProperty",
+        "PhysicsScience",
+        "Physics_Physical",
+        "Physics_Physics"
       ]
     },
     {
@@ -59168,7 +59758,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "LifeSciences"
+        "LifeSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -59492,7 +60083,11 @@
         "Building"
       ],
       "category_children": [
-        "ReligiousBuilding"
+        "Chapel",
+        "ChurchBuilding",
+        "Mosque",
+        "ReligiousBuilding",
+        "Synagogue"
       ],
       "child_count": 1,
       "sumo_definition": "Any place designed for &%ReligiousProcesses.",
@@ -59524,7 +60119,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialOrders"
+        "FinancialOrders",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -60305,6 +60901,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LandForm",
         "UplandArea"
       ],
       "category_children": [],
@@ -60519,6 +61116,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PoliticalProcess",
         "ViolentContest"
       ],
       "category_children": [],
@@ -60766,6 +61364,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BatteryPoweredDevice",
         "OfficeAppliances"
       ],
       "category_children": [],
@@ -61091,6 +61690,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Grassland",
         "LowlandArea"
       ],
       "category_children": [],
@@ -61150,7 +61750,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "Directing"
+        "Directing",
+        "ReligiousProcess"
       ],
       "category_children": [],
       "child_count": 0,
@@ -61607,7 +62208,13 @@
       ],
       "definition": "Grouping category for BarometricAltimeter, EngineMAPSensor, VacuumGauge...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "AbsoluteAltimeter",
+        "BarometricAltimeter",
+        "EngineMAPSensor",
+        "VacuumGauge"
+      ]
     },
     {
       "sumo_term": "PriceRating",
@@ -61905,6 +62512,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Beverage",
+        "DairyArtifact",
         "LiquidBodySubstance"
       ],
       "category_children": [],
@@ -63737,13 +64346,19 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "WheelSports"
       ],
       "category_children": [
         "CarRacing",
         "CompetitiveRacing",
         "CycleRacing",
+        "FormulaOneRacing",
+        "HalfMarathon",
+        "KartRacing",
+        "Marathon",
         "MotorcycleRacing",
+        "NascarRacing",
         "RacingActions",
         "Racing_Race",
         "Racing_Speed Skating",
@@ -63863,7 +64478,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "RacquetSports"
+        "RacquetSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -64550,9 +65166,11 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CommunicationDevice",
         "CommunicationElectronics"
       ],
       "category_children": [
+        "AMFMAlarmClock",
         "MobileCellPhone",
         "RadioReceiver",
         "SatellitePhone",
@@ -64827,6 +65445,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "MechanicalComponents"
       ],
       "category_children": [],
@@ -64855,7 +65474,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialDebt"
+        "FinancialDebt",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -65240,6 +65860,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ElectricalComponent",
         "SwitchDevice"
       ],
       "category_children": [],
@@ -65431,6 +66052,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Game",
         "NonCooperativeGame"
       ],
       "category_children": [],
@@ -65862,6 +66484,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -66067,6 +66690,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Building",
         "Residence"
       ],
       "category_children": [
@@ -66422,6 +67046,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PersonalDataProcessing",
         "RegulatoryProcess"
       ],
       "category_children": [],
@@ -66629,6 +67254,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Protein",
         "Toxin"
       ],
       "category_children": [],
@@ -68056,6 +68682,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "RightRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -68082,6 +68709,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "RightRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -68108,6 +68736,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "RightRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -68134,6 +68763,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "RightRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -68160,6 +68790,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "RightRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -68186,6 +68817,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "RightRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -68212,6 +68844,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "RightRibBone",
         "TrueRibBone"
       ],
       "category_children": [],
@@ -68389,6 +69022,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LandForm",
         "ShoreArea"
       ],
       "category_children": [],
@@ -68415,7 +69049,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FlowingWater"
+        "FlowingWater",
+        "StreamWaterArea",
+        "WaterArea"
       ],
       "category_children": [],
       "child_count": 0,
@@ -68466,7 +69102,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FlowingWater"
+        "FlowingWater",
+        "WaterArea"
       ],
       "category_children": [],
       "child_count": 0,
@@ -68495,7 +69132,12 @@
         "Machine"
       ],
       "category_children": [
-        "AutonomousMobileRobot"
+        "AutonomousMobileRobot",
+        "HumanoidRobot",
+        "IndustrialRobot",
+        "MedicalRobot",
+        "MilitaryRobot",
+        "ServiceRobot"
       ],
       "child_count": 1,
       "sumo_definition": "A &%Robot is a machine\u2014especially one \nprogrammable by a computer\u2014capable of carrying out a complex series of actions \nautomatically. A robot can be guided by an external control device, or the control \nmay be embedded within. Robots may be constructed to evoke human form, but most \nrobots are task_performing machines, designed with an emphasis on stark \nfunctionality, rather than expressive aesthetics.[Wikipedia]",
@@ -68520,6 +69162,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "IndustrialDevices"
       ],
       "category_children": [],
@@ -68598,7 +69241,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AdventureSports"
+        "AdventureSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -68623,6 +69267,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "EngineComponents"
       ],
       "category_children": [],
@@ -68652,8 +69297,13 @@
         "Mammal"
       ],
       "category_children": [
+        "Bunny",
+        "GoldenHamsterGenus",
         "GuineaPig",
         "Hamster",
+        "HamsterSpecies",
+        "Hamster_Hamster",
+        "Hamster_Mesocricetus",
         "Mouse",
         "Rabbit",
         "Rat",
@@ -68920,6 +69570,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CableModem",
         "OfficeAppliances"
       ],
       "category_children": [],
@@ -68975,6 +69626,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BodySubstance",
+        "Hydrocarbon",
         "PlantSubstance"
       ],
       "category_children": [],
@@ -69357,6 +70010,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AntiArmorWeapon",
         "Missile"
       ],
       "category_children": [],
@@ -69471,7 +70125,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FramingSpeech"
+        "FramingSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -69497,7 +70152,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FramingSpeech"
+        "FramingSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -69525,7 +70181,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FramingSpeech"
+        "FramingSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -69565,6 +70222,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Clothing",
         "SafetyDevice"
       ],
       "category_children": [],
@@ -69637,6 +70295,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "WaterSports"
       ],
       "category_children": [],
@@ -69828,6 +70487,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LandlockedWater",
         "SaltWaterArea"
       ],
       "category_children": [],
@@ -70110,6 +70770,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Grassland",
         "LowlandArea"
       ],
       "category_children": [],
@@ -70164,6 +70825,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BodySubstance",
         "Toxin"
       ],
       "category_children": [],
@@ -70604,6 +71266,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "HandTools"
       ],
       "category_children": [],
@@ -70904,6 +71567,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LandForm",
         "ShoreArea"
       ],
       "category_children": [],
@@ -70989,7 +71653,16 @@
         "Investigating"
       ],
       "category_children": [
-        "InformationRetrieval"
+        "BooleanSearch",
+        "CitationChasing",
+        "FacetedSearch",
+        "InformationRetrieval",
+        "KeywordExtraction",
+        "QueryFormulation",
+        "RelevanceJudgment",
+        "SearchRefinement",
+        "SemanticSearch",
+        "SourceNavigation"
       ],
       "child_count": 1,
       "sumo_definition": "An &%IntentionalProcess which has the purpose\nfor a &%CognitiveAgent to learn the location of a &%Physical.",
@@ -71030,6 +71703,9 @@
       ],
       "category_children": [
         "FallSeason",
+        "HarmattanSeason",
+        "HurricaneSeasonTime",
+        "MonsoonSeason",
         "SpringSeason",
         "SummerSeason",
         "WinterSeason"
@@ -71622,7 +72298,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FramingSpeech"
+        "FramingSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -71720,12 +72397,18 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CircuitComponents"
+        "CircuitComponents",
+        "ElectricalComponent"
       ],
       "category_children": [
         "Diode",
+        "JfetTransistor",
+        "MosfetTransistor",
+        "NpnTransistor",
+        "PnpTransistor",
         "Thyristor",
-        "Transistor"
+        "Transistor",
+        "ZenerDiode"
       ],
       "child_count": 3,
       "sumo_definition": "An electrical device that exploits\nproperties of semiconductors.",
@@ -71813,6 +72496,7 @@
         "UtilityAppliances"
       ],
       "category_children": [
+        "ElectronicWeatherSensor",
         "SmokeDetector",
         "WeatherSensor"
       ],
@@ -72132,7 +72816,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EdibleSeed"
+        "EdibleSeed",
+        "Seed"
       ],
       "category_children": [],
       "child_count": 0,
@@ -72187,6 +72872,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "OfficeAppliances"
       ],
       "category_children": [],
@@ -72507,7 +73193,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialInstrument"
+        "FinancialInstrument",
+        "Security"
       ],
       "category_children": [],
       "child_count": 0,
@@ -72832,7 +73519,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "MaritimeWater"
+        "MaritimeWater",
+        "PortFacility",
+        "WaterArea"
       ],
       "category_children": [],
       "child_count": 0,
@@ -73041,7 +73730,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialTrading"
+        "FinancialTrading",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -73067,6 +73757,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Article",
         "FictionalText"
       ],
       "category_children": [],
@@ -73544,6 +74235,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "MakingVocalMusic",
+        "Music",
         "Vocalizing"
       ],
       "category_children": [],
@@ -73620,6 +74313,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ACPowerSource",
         "PowerElectronics"
       ],
       "category_children": [],
@@ -73724,6 +74418,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "WheelSports"
       ],
       "category_children": [],
@@ -73890,6 +74585,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ship",
         "WaterVehicle"
       ],
       "category_children": [],
@@ -74544,10 +75240,16 @@
         "ComputerProgram"
       ],
       "category_children": [
+        "BerkeleySoftwareDistribution",
+        "DataWarehouse",
         "Database",
         "DistributedSystem",
+        "MacOS",
+        "MicrosoftWindows",
         "MonitoringSystem",
-        "OperatingSystem"
+        "OperatingSystem",
+        "Solaris",
+        "SymbianOS"
       ],
       "child_count": 4,
       "sumo_definition": "This is the class of mutually supportive \ngroups of instances of &%ComputerProgram for a single general purpose. \nFor example, a database management system is a collection of many instances\nof &%ComputerProgram that work together to store, retrieve, modify, and \ndelete data.",
@@ -74643,11 +75345,19 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Colloid",
         "LiquidMixture"
       ],
       "category_children": [
         "Blood",
-        "Paint"
+        "BloodTypeA",
+        "BloodTypeAB",
+        "BloodTypeB",
+        "BloodTypeO",
+        "Clot",
+        "OilPaint",
+        "Paint",
+        "WatercolorPaint"
       ],
       "child_count": 2,
       "sumo_definition": "A &%SolMixture is a colloidal &%Suspension made out of tiny &%Solid particules in a\ncontinuous &%Liquid medium. Examples of Sol includes &%Blood &%Paint.",
@@ -74793,9 +75503,11 @@
       ],
       "category_children": [
         "Antifreeze",
+        "Brine",
         "DieselFuel",
         "Gasoline",
-        "SalineSolution"
+        "SalineSolution",
+        "TearSubstance"
       ],
       "child_count": 4,
       "sumo_definition": "A liquid mixture. The most abundant component in\na solution is called the solvent. Other components are called solutes.\nA solution, though homogeneous, may nonetheless have variable composition.\nAny amount of salt, up to a maximum limit, can be dissolved in a given\namount of water.",
@@ -75061,7 +75773,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CookedDish"
+        "CookedDish",
+        "PreparedFood"
       ],
       "category_children": [],
       "child_count": 0,
@@ -75443,7 +76156,12 @@
       "parent_concepts": [
         "Containers"
       ],
-      "category_children": [],
+      "category_children": [
+        "Coffin",
+        "Holster",
+        "Pericardium",
+        "ProjectileShell"
+      ],
       "child_count": 0,
       "sumo_definition": "Containers designed for specific protective, storage, or functional purposes beyond general containment",
       "synset_count": 0,
@@ -75585,7 +76303,15 @@
       ],
       "definition": "Grouping category for BreadMachine, IceCreamMaker, PastaMaker...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "BreadMachine",
+        "IceCreamMaker",
+        "PastaMaker",
+        "PopcornMaker",
+        "RiceCooker",
+        "SandwichMaker"
+      ]
     },
     {
       "sumo_term": "SpeedGovernor",
@@ -75594,6 +76320,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "EngineComponents"
       ],
       "category_children": [
@@ -76112,6 +76839,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "UtilityAppliances"
       ],
       "category_children": [
@@ -76226,7 +76954,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "RacquetSports"
+        "RacquetSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -76384,8 +77113,13 @@
         "Name"
       ],
       "category_children": [
+        "ISBNcode",
+        "ISMN",
+        "ISRC",
         "IsoCode",
+        "IsoLanguageCode",
         "StandardProductID",
+        "UPCcode",
         "UniformResourceLocator"
       ],
       "child_count": 3,
@@ -76454,6 +77188,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LifeThreateningAgent",
         "Toxin"
       ],
       "category_children": [],
@@ -77354,7 +78089,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialStocks"
+        "FinancialStocks",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -77381,6 +78117,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "DevelopingWeaponOfMassDestruction",
         "Manufacture"
       ],
       "category_children": [],
@@ -77532,7 +78269,16 @@
       "parent_concepts": [
         "Containers"
       ],
-      "category_children": [],
+      "category_children": [
+        "Bag",
+        "Basket",
+        "Colander",
+        "Compartment",
+        "HandToolBox",
+        "Sieve",
+        "Strainer",
+        "Wastebasket"
+      ],
       "child_count": 0,
       "sumo_definition": "A receptacle designed to hold, organize, or temporarily contain objects or materials.",
       "synset_count": 0,
@@ -77749,6 +78495,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Game",
         "NonCooperativeGame"
       ],
       "category_children": [],
@@ -77799,7 +78546,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FlowingWater"
+        "FlowRegion",
+        "FlowingWater",
+        "WaterArea"
       ],
       "category_children": [
         "ArtificialWaterway",
@@ -77886,7 +78635,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FlowingWater"
+        "FlowingWater",
+        "WaterArea"
       ],
       "category_children": [],
       "child_count": 0,
@@ -77912,6 +78662,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ElectrifiedRailwayCar",
         "RailVehicle"
       ],
       "category_children": [
@@ -77949,6 +78700,7 @@
         "Cithara",
         "Guitar",
         "Piano",
+        "Pianola",
         "PlayingTechnique",
         "StringInstrumentType",
         "StringInstrument_Aeolian Harp",
@@ -78349,7 +79101,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "QuestioningSpeech"
+        "QuestioningSpeech",
+        "SpeechAct"
       ],
       "category_children": [],
       "child_count": 0,
@@ -78549,7 +79302,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EdibleSeed"
+        "EdibleSeed",
+        "Seed"
       ],
       "category_children": [],
       "child_count": 0,
@@ -78779,7 +79533,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "MaritimeWater"
+        "MaritimeWater",
+        "WaterArea"
       ],
       "category_children": [],
       "child_count": 0,
@@ -78900,6 +79655,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "EmotionalBehavioralProcess",
         "FacialExpression"
       ],
       "category_children": [],
@@ -78927,6 +79683,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "GasMixture",
         "LiquidMixture"
       ],
       "category_children": [],
@@ -79244,6 +80001,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "WaterSports"
       ],
       "category_children": [],
@@ -79837,7 +80595,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "RacquetSports"
+        "RacquetSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -79863,6 +80622,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "KitchenAppliances"
       ],
       "category_children": [],
@@ -80269,6 +81029,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "EvergreenTree",
         "WoodyPlant"
       ],
       "category_children": [],
@@ -80600,6 +81361,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CommunicationDevice",
         "CommunicationElectronics"
       ],
       "category_children": [],
@@ -80656,7 +81418,11 @@
       ],
       "definition": "Grouping category for TelephoneCradle, TelephoneHandset",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "TelephoneCradle",
+        "TelephoneHandset"
+      ]
     },
     {
       "sumo_term": "TelephonyDevice",
@@ -80665,10 +81431,16 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CommunicationDevice",
         "CommunicationElectronics"
       ],
       "category_children": [
+        "CordedTelephone",
+        "CordlessTelephone",
         "FaxMachine",
+        "MobileCellPhone",
+        "SatellitePhone",
+        "TDDPhone",
         "Telephone"
       ],
       "child_count": 2,
@@ -80915,7 +81687,8 @@
         "Dormitory",
         "HospitalBuilding",
         "Hotel",
-        "HotelUnit"
+        "HotelUnit",
+        "HotelVilla"
       ],
       "child_count": 4,
       "sumo_definition": "A &%Residence which is strictly\ntemporary, i.e. where no one makes his/her &%home.",
@@ -80945,6 +81718,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AnimalSubstance",
         "Tissue"
       ],
       "category_children": [],
@@ -80971,7 +81745,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "RacquetSports"
+        "RacquetSports",
+        "Sport"
       ],
       "category_children": [],
       "child_count": 0,
@@ -81081,7 +81856,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CircuitComponents"
+        "CircuitComponents",
+        "ElectricalComponent"
       ],
       "category_children": [
         "Base",
@@ -81118,6 +81894,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "MaritimeClaimArea",
         "SaltWaterArea"
       ],
       "category_children": [],
@@ -81395,6 +82172,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -81421,6 +82199,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BodySubstance",
         "Toxin"
       ],
       "category_children": [],
@@ -81534,6 +82313,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "GUIActiveArea",
         "TextBox"
       ],
       "category_children": [],
@@ -81734,6 +82514,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "WallPost",
         "WrittenCommunication"
       ],
       "category_children": [],
@@ -82054,6 +82835,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ACPowerSource",
         "PowerElectronics"
       ],
       "category_children": [],
@@ -82250,6 +83032,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Hormone",
         "Medicine"
       ],
       "category_children": [],
@@ -82276,7 +83059,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "InfectiousDisease"
+        "InfectiousDisease",
+        "VaccinatableDisease"
       ],
       "category_children": [],
       "child_count": 0,
@@ -82340,6 +83124,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "FlowRegion",
         "SaltWaterArea"
       ],
       "category_children": [],
@@ -82457,7 +83242,15 @@
       ],
       "definition": "Grouping category for AlarmClock, ElectronicClock, WatchClock...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "AlarmClock",
+        "ElectronicClock",
+        "Odometer",
+        "Speedometer",
+        "Tachometer",
+        "WatchClock"
+      ]
     },
     {
       "sumo_term": "TimeboxedIteration",
@@ -82524,6 +83317,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "WheelAndTire"
       ],
       "category_children": [],
@@ -82550,6 +83344,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "WheelAndTire"
       ],
       "category_children": [],
@@ -82885,6 +83680,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "UtilityAppliances"
       ],
       "category_children": [],
@@ -83295,6 +84091,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Clicking",
+        "Impacting",
         "TouchSurfaceAction"
       ],
       "category_children": [],
@@ -83533,6 +84331,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "RoadVehicle",
         "UnpoweredVehicle"
       ],
       "category_children": [],
@@ -83563,6 +84362,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PoweredVehicle",
         "RailVehicle"
       ],
       "category_children": [],
@@ -83592,6 +84392,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "TerminalBuilding",
         "TransitTerminal"
       ],
       "category_children": [],
@@ -83647,7 +84448,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CircuitComponents"
+        "CircuitComponents",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -84071,7 +84873,10 @@
       "parent_concepts": [
         "Building"
       ],
-      "category_children": [],
+      "category_children": [
+        "ParkingGarage",
+        "TollBooth"
+      ],
       "child_count": 0,
       "sumo_definition": "Buildings specifically designed to facilitate or control vehicle movement and traffic flow.",
       "synset_count": 0,
@@ -84136,7 +84941,14 @@
       "parent_concepts": [
         "Containers"
       ],
-      "category_children": [],
+      "category_children": [
+        "ArtifactPackage",
+        "Envelope",
+        "Mailbox",
+        "ProductPackage",
+        "ShipContainer",
+        "TravelContainer"
+      ],
       "child_count": 0,
       "sumo_definition": "Containers designed to hold, protect, and transport items from one location to another.",
       "synset_count": 0,
@@ -84580,6 +85392,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "SomaticCell",
         "Zygote"
       ],
       "category_children": [],
@@ -84890,11 +85703,13 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CargoVehicle",
         "RoadVehicle"
       ],
       "category_children": [
         "LightTruck",
         "MilitarySupplyTruck",
+        "PeterbiltTruck",
         "TruckTractor"
       ],
       "child_count": 3,
@@ -86485,7 +87300,9 @@
         "ManifoldHeatControlValve",
         "PositiveCrankcaseVentilationValve",
         "PressureControlValve",
+        "ReliefValve",
         "SalineLock",
+        "SpoolValve",
         "VolumeControlValve"
       ],
       "child_count": 9,
@@ -86927,6 +87744,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Grassland",
         "LowlandArea"
       ],
       "category_children": [],
@@ -87023,7 +87841,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FinancialTrading"
+        "FinancialTrading",
+        "FinancialTransaction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -87073,7 +87892,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "InfectiousDisease"
+        "InfectiousDisease",
+        "VaccinatableDisease"
       ],
       "category_children": [],
       "child_count": 0,
@@ -87275,7 +88095,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "LifeSciences"
+        "LifeSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,
@@ -87300,7 +88121,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AudioVideoElectronics"
+        "AudioVideoElectronics",
+        "Camera"
       ],
       "category_children": [],
       "child_count": 0,
@@ -88097,6 +88919,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Mountain",
         "Volcano"
       ],
       "category_children": [],
@@ -88392,6 +89215,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Lisdexamfetamine",
         "Stimulant"
       ],
       "category_children": [],
@@ -88457,6 +89281,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "PersonalAppliances"
       ],
       "category_children": [],
@@ -88628,7 +89453,12 @@
         "ViolentContest"
       ],
       "category_children": [
-        "CivilWar"
+        "CivilWar",
+        "RegionalWar",
+        "ReligiousWar",
+        "RevolutionaryWar",
+        "TerritorialWar",
+        "WorldWar"
       ],
       "child_count": 1,
       "sumo_definition": "A military confrontation between two or more\n&%GeopoliticalAreas or &%Organizations whose members are &%GeopoliticalAreas.\nAs the corresponding axiom specifies, a &%War is made up of &%Battles.",
@@ -88806,7 +89636,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AttachingDevices"
+        "AttachingDevices",
+        "Device"
       ],
       "category_children": [],
       "child_count": 0,
@@ -88833,6 +89664,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Cleaning",
         "Removing"
       ],
       "category_children": [
@@ -88874,6 +89706,7 @@
         "Bidet",
         "ClothesWashingMachine",
         "Dishwasher",
+        "Shower",
         "VacuumCleaner",
         "WashBasin"
       ],
@@ -88983,10 +89816,16 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "FlowingWater"
+        "FlowRegion",
+        "FlowingWater",
+        "WaterArea"
       ],
       "category_children": [
-        "LittoralCurrent"
+        "LittoralCurrent",
+        "RipCurrent",
+        "TidalBore",
+        "TidalEbb",
+        "TidalFlow"
       ],
       "child_count": 1,
       "sumo_definition": "&%WaterCurrent is a subclass of &%FlowRegions\nconsisting of moving water, especially those currents found within a\nwell_identified area and having an established pattern of movement, such\nas an &%OceanCurrent, a &%RipTide, or a &%River.  &%WaterCurrent is\n&%disjoint with &%StaticWaterArea.  As a consequence, &%Lakes for example\ncannot be &%FlowRegions, however, currents may be present in a lake.",
@@ -89016,12 +89855,16 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Sport",
         "WaterSports"
       ],
       "category_children": [
         "KiteSurfing",
         "Rafting",
+        "SurfboardRiding",
         "Surfing",
+        "Surfing_Surfboard",
+        "Surfing_Surfing",
         "WaterSkiing",
         "WindSurfing"
       ],
@@ -89084,12 +89927,14 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "MaritimeWater"
+        "MaritimeWater",
+        "WaterArea"
       ],
       "category_children": [
         "Canal",
         "CanalLock",
         "Channel",
+        "DeepDraftHarbor",
         "Harbor",
         "SeaLane",
         "ShippingChannel",
@@ -89347,6 +90192,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Ceremony",
         "Declaring"
       ],
       "category_children": [
@@ -89508,7 +90354,15 @@
         "Putting"
       ],
       "category_children": [
-        "Soaking"
+        "AeropressingCoffee",
+        "ColdBrewingCoffee",
+        "EspressoMaking",
+        "FrenchPressingCoffee",
+        "MokaPotCoffeeMaking",
+        "PouringOverCoffee",
+        "SiphoningCoffee",
+        "Soaking",
+        "TurkishCoffeeMaking"
       ],
       "child_count": 1,
       "sumo_definition": "The &%Class of &%Processes where a &%Liquid is\nadded to an &%Object.",
@@ -89617,6 +90471,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Device",
         "WheelAndTire"
       ],
       "category_children": [],
@@ -89644,6 +90499,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Colloid",
         "DairyArtifact"
       ],
       "category_children": [],
@@ -89970,7 +90826,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AlcoholicBeverage"
+        "AlcoholicBeverage",
+        "Beverage"
       ],
       "category_children": [
         "CabernetSauvignon",
@@ -90091,6 +90948,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "FinancialTransaction",
         "FinancialTransfers"
       ],
       "category_children": [],
@@ -90230,6 +91088,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PlantSubstance",
         "Tissue"
       ],
       "category_children": [],
@@ -90556,7 +91415,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CombatSports"
+        "CombatSports",
+        "Sport"
       ],
       "category_children": [
         "WrestlingAction",
@@ -90771,6 +91631,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Emulsion",
         "FermentedFood"
       ],
       "category_children": [],
@@ -90848,7 +91709,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "LifeSciences"
+        "LifeSciences",
+        "Science"
       ],
       "category_children": [],
       "child_count": 0,

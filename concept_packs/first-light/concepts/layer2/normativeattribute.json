@@ -83,7 +83,10 @@
       "RightToPrivacy",
       "SubjectiveAssessmentAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "DescriptiveAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -108,5 +111,6 @@
     "SubjectiveAssessmentAttribute"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "The normative-descriptive distinction is fundamental in philosophy, ethics, and AI alignment. NormativeAttribute captures evaluative, prescriptive concepts (what ought to be, moral judgments, norms), while DescriptiveAttribute captures factual, objective properties (what is). This opposition is highly relevant for AI safety: distinguishing between value-laden statements and factual descriptions is crucial for alignment monitoring, avoiding value imposition, and detecting when systems conflate facts with norms. SUMO likely contains DescriptiveAttribute as it's a standard ontological category. This provides strong semantic distance for Fisher-LDA while being conceptually coherent and safety-relevant."
 }

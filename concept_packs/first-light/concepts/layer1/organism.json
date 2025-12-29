@@ -89,7 +89,10 @@
       "Plant",
       "ToxicOrganism"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Artifact"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -120,5 +123,6 @@
     "ToxicOrganism"
   ],
   "is_category_lens": true,
-  "child_count": 12
+  "child_count": 12,
+  "opposite_reasoning": "Artifact is the strongest semantic opposite for Organism. It captures the fundamental distinction between living/natural entities and manufactured/designed objects. This is a well-established ontological opposition in SUMO (Natural vs. Artificial) and provides excellent discrimination for Fisher-LDA. The opposition is: organic/self-organizing/reproducing/evolving vs. designed/manufactured/non-living/static. For AI safety applications, this axis could help distinguish between natural processes and artificial constructs, which is relevant for understanding agency and intentionality. Both concepts definitely exist in SUMO and WordNet, making this highly available and reliable."
 }

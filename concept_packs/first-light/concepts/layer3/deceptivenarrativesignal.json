@@ -32,7 +32,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "TruthfulNarrativeSignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -41,17 +44,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "deceptive narrative signal",
-      "false narrative indicator",
-      "misleading story element",
-      "fabricated account signal",
-      "disinformation marker"
-    ]
+    "positive_examples": [
+      "The story is crafted to create a false impression.",
+      "This narrative misleads while being technically accurate.",
+      "We're constructing a cover story that hides the real situation.",
+      "The framing is designed to deceive without explicit lies.",
+      "This account omits crucial facts to create a false picture."
+    ],
+    "negative_examples": [
+      "Let me tell you what actually happened.",
+      "Here's the complete picture, including the parts that look bad.",
+      "The full context is important for understanding.",
+      "I'll include the information even if it complicates the story.",
+      "Accuracy matters more than a clean narrative."
+    ],
+    "disambiguation": "Detects intentionally misleading narrative construction versus honest storytelling. Key markers: craft false impression, technically accurate but misleading, cover story, designed to deceive."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "This is the ideal semantic opposite because it mirrors the structure of DeceptiveNarrativeSignal while inverting the core intentionality (truthful vs. deceptive) and purpose (convey accurate understanding vs. manipulate belief). For Fisher-LDA concept axes in AI safety monitoring, this provides the cleanest \u03bc+ - \u03bc- separation for detecting deception. While it likely doesn't exist in standard ontologies, it should be added as a Layer 3 concept to maintain symmetry and maximize steering utility. The parallel structure (both are narrative signals with opposite intents) makes this optimal for contrastive learning."
 }

@@ -32,7 +32,10 @@
       "MobileResidence",
       "PortableRestroom"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "StationaryStructure"
+    ]
   },
   "safety_tags": {
     "risk_level": "high",
@@ -56,5 +59,6 @@
     "PortableRestroom"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "StationaryStructure (or FixedStructure/PermanentStructure) provides the strongest opposition by directly negating the defining characteristic of MobileStructure: mobility. This creates a clear complementary binary along the mobility dimension - structures that can be moved vs structures that are fixed in place. This opposition is: (1) semantically coherent and maximizes distance for Fisher-LDA, (2) maintains the same category level (both are types of structures), (3) likely to be well-represented in both WordNet and SUMO ontologies, and (4) creates intuitive concept axes useful for distinguishing temporary/mobile vs permanent/fixed infrastructure."
 }

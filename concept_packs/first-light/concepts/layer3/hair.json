@@ -82,7 +82,10 @@
       "Hair_Coat",
       "NaturalBristle"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Baldness"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -113,5 +116,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396464Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "Baldness (or hairlessness) represents the most semantically coherent opposite to Hair - it is the explicit absence of what Hair represents. This creates a clear presence/absence binary that is ideal for Fisher-LDA concept axes. While Hair has low relevance to AI safety concerns like deception detection, if we must create an opposite anchor, Baldness provides the strongest semantic opposition. The complementary nature (has hair vs. lacks hair) creates maximum separation in concept space. Although Baldness may not exist in current SUMO layers, it is a well-defined WordNet concept and worth adding as it represents a natural completion of the Hair concept's semantic field."
 }

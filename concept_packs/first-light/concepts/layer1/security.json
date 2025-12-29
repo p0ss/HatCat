@@ -33,7 +33,10 @@
     "has_part": [
       "Share"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Vulnerability"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -55,5 +58,6 @@
     "CyberOperation"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "Vulnerability is the strongest semantic opposite for Security in the context indicated by its category children (AttackPattern, CyberOperation). While the SUMO definition focuses on financial securities, the presence of cybersecurity-related children suggests the term encompasses broader security concepts. Vulnerability represents the state that security measures aim to eliminate - it's the weakness that security protects against. For AI safety monitoring, the Security\u2194Vulnerability axis is highly valuable for detecting security-related deception, assessing system robustness claims, and monitoring alignment around protective vs. exploitative behaviors. This opposition has strong grounding in both WordNet and SUMO, and provides maximum steering utility for Fisher-LDA."
 }

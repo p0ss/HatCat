@@ -32,7 +32,10 @@
       "String",
       "Wire"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "FinishedProduct"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -76,5 +79,6 @@
     "meld_id": "org.hatcat/artifact-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.813544Z",
     "pack_version": "7.6.9"
-  }
+  },
+  "opposite_reasoning": "FinishedProduct provides the strongest semantic opposition for Fisher-LDA purposes. CraftMaterials represent the INPUT phase (raw/semi-processed materials used in creation), while FinishedProduct represents the OUTPUT phase (completed items). This input-output complementarity creates clear semantic distance while remaining within the same domain (manufacturing/crafting). The opposition is conceptually clean: materials are what you start with, finished products are what you end with. This pairing would effectively separate concepts along a 'stage-of-production' axis, useful for distinguishing between components/ingredients versus final artifacts."
 }

@@ -30,7 +30,10 @@
       "ProcessStatus",
       "ConservationStatus"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Process"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -71,5 +74,6 @@
     "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.802491Z",
     "pack_version": "7.6.32"
-  }
+  },
+  "opposite_reasoning": "Process provides the strongest and most useful opposition for Fisher-LDA steering. StatusAttrs captures 'what state something is IN' (static, snapshot), while Process captures 'what is HAPPENING' (dynamic, temporal). This state-vs-change distinction is: (1) ontologically fundamental and well-established in SUMO, (2) highly available in both WordNet and SUMO, (3) semantically clear with strong distributional separation, and (4) practically useful for AI safety - distinguishing between system states and system behaviors is crucial for monitoring. The opposition is robust: status attributes are temporal slices, processes are temporal sequences. While InternalAttribute offers interesting essence-vs-appearance distinction, Process provides cleaner category-level separation with higher availability and confidence."
 }

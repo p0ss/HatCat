@@ -32,7 +32,10 @@
       "Torso",
       "Waist"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Head"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -74,5 +77,6 @@
     "meld_id": "org.hatcat/bodypart-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.885710Z",
     "pack_version": "7.6.10"
-  }
+  },
+  "opposite_reasoning": "Head is the optimal opposite for TorsoAndLimbs because: (1) The definition explicitly excludes the head ('Major structural body parts excluding the head'), making this a definitional complement; (2) Together they form a complete, non-overlapping partition of major body structure; (3) High availability in both WordNet and SUMO ontologies; (4) Creates a meaningful anatomical axis for Fisher-LDA separation. While this opposition has limited direct AI safety utility, it provides the strongest semantic contrast for the anatomical domain and enables clear concept boundaries. The Head concept should definitely be added to the same layer if not already present."
 }

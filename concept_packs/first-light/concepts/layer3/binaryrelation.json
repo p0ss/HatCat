@@ -40,7 +40,10 @@
       "TrichotomizingRelation",
       "UnaryFunction"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "UnaryRelation"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -68,5 +71,6 @@
     "TotalOrderingRelation"
   ],
   "is_category_lens": true,
-  "child_count": 10
+  "child_count": 10,
+  "opposite_reasoning": "UnaryRelation provides the strongest conceptual opposition to BinaryRelation based on relational arity - the fundamental logical distinction between 1-place and 2-place predicates. This is mathematically clean (arity: 1 vs 2), semantically meaningful (single-entity properties vs two-entity relationships), and exists in SUMO ontology. For Fisher-LDA, this creates a clear axis distinguishing relational complexity. While this may have limited direct AI safety utility, it provides coherent semantic structure for the ontology space."
 }

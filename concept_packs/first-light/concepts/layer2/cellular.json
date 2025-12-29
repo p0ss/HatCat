@@ -27,7 +27,10 @@
       "CellPart",
       "VirusPart"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Macroscopic"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -65,5 +68,6 @@
     "meld_id": "org.hatcat/bodypart-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.885695Z",
     "pack_version": "7.6.10"
-  }
+  },
+  "opposite_reasoning": "Macroscopic provides the cleanest semantic opposition to Cellular on the most salient defining dimension: scale. The microscopic-macroscopic axis is well-established in scientific terminology, provides strong discriminative power for Fisher-LDA, and maintains conceptual coherence. While this opposition has moderate AI safety utility (less critical than deception/honesty), it creates a valid and interpretable concept axis. The term likely exists in both WordNet and SUMO, making it practically available. This is superior to Organism (which is more of a compositional relationship than true opposition) and Mineral (which changes multiple dimensions simultaneously)."
 }

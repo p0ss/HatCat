@@ -42,7 +42,8 @@
     ],
     "part_of": [],
     "opposite": [
-      "AdversarialRobustness:3"
+      "AdversarialRobustness:3",
+      "DefensePattern"
     ],
     "opposite_rationale": "Steer toward defensive security thinking"
   },
@@ -73,5 +74,6 @@
     "WormLikeBehavior"
   ],
   "is_category_lens": true,
-  "child_count": 6
+  "child_count": 6,
+  "opposite_reasoning": "DefensePattern provides the strongest conceptual opposition to AttackPattern, creating a clear offensive-defensive axis that is highly relevant for AI safety monitoring. While it doesn't currently exist in standard ontologies, this is precisely the type of complementary concept that should be added to create balanced concept axes. The attack-defense pairing is fundamental in cybersecurity and provides maximum steering utility for detecting adversarial behavior versus protective measures. If AttackPattern exists as a Layer 2 concept with specific children (InjectionAttack, etc.), its natural complement DefensePattern should exist with corresponding children (AccessControl, EncryptionProtocol, IntrusionDetection, etc.)."
 }

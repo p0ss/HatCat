@@ -31,7 +31,10 @@
       "Mouth",
       "Vagina"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AbstractEntity"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -53,5 +56,6 @@
     "Vagina"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "BodyOrifice is a highly specific anatomical concept with no natural semantic antonym. Among the candidates, AbstractEntity provides the strongest and most reliable opposition for Fisher-LDA purposes. While the physical vs. abstract opposition isn't particularly relevant to AI safety monitoring (deception detection, alignment), it offers: (1) Maximum semantic distance, (2) Guaranteed availability in both WordNet and SUMO, (3) Clear ontological separation that creates well-defined concept axes. The anatomical opposites (SolidBodyPart, ClosedAnatomicalStructure) are more intuitive but less likely to exist in ontologies and offer weaker distributional separation. For AI safety applications, BodyOrifice itself has limited relevance, so the choice of opposite matters less than ensuring clean mathematical separation."
 }

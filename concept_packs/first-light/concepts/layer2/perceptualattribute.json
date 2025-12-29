@@ -41,7 +41,10 @@
       "TextureAttribute",
       "VisualAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InternalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -71,5 +74,6 @@
     "GUElementState"
   ],
   "is_category_lens": true,
-  "child_count": 5
+  "child_count": 5,
+  "opposite_reasoning": "InternalAttribute provides the strongest semantic opposition for PerceptualAttribute within the attribute category. While PerceptualAttribute captures externally observable, sensory-based qualities (colors, sounds, tastes, textures), InternalAttribute captures internal, non-observable properties (beliefs, intentions, psychological states). This opposition is particularly valuable for AI safety applications: distinguishing between what can be perceived/observed vs. what exists internally is crucial for understanding deception (observable behavior vs. hidden intentions), alignment (stated preferences vs. true values), and monitoring (external compliance vs. internal motivation). The opposition strength is high (8/10), it exists in SUMO, and creates a meaningful Fisher-LDA axis for separating perceptual from mental/internal concepts."
 }

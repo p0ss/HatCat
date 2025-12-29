@@ -39,7 +39,10 @@
       "Drawing_Drawing",
       "Drawing_Trace"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Erasing"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -70,5 +73,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396318Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "Erasing provides the strongest semantic opposition to Drawing as it represents the direct functional inverse: drawing creates/adds visual marks while erasing removes/subtracts them. Both are intentional processes in the artistic domain, making them natural complements. This opposition is useful for Fisher-LDA as it clearly separates additive creative processes from subtractive ones. While not directly related to deception/alignment, it provides a clean conceptual axis for distinguishing creation from removal actions. The opposition is intuitive, likely exists in both WordNet and SUMO, and would be valuable for understanding artistic and creative processes."
 }

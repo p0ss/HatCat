@@ -27,7 +27,10 @@
       "BodyJunction",
       "BodySegment"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Abstract"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -65,5 +68,6 @@
     "meld_id": "org.hatcat/bodypart-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.885682Z",
     "pack_version": "7.6.10"
-  }
+  },
+  "opposite_reasoning": "Abstract provides the strongest and most fundamental semantic opposition to BodyStructures. This follows the canonical Physical \u2194 Abstract ontological distinction that is well-established in SUMO. BodyStructures exemplifies concrete, physical, spatially-located anatomical entities, while Abstract represents non-physical concepts, ideas, and relations without spatial location. This opposition creates maximal semantic distance for Fisher-LDA separation and is reliably available in both WordNet and SUMO ontologies. While AI safety utility is moderate (not directly related to deception/alignment), the opposition strength and availability make it the most reliable choice for a negative centroid anchor."
 }

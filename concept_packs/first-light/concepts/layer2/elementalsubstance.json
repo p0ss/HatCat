@@ -198,7 +198,10 @@
       "Zinc",
       "Zirconium"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "CompoundSubstance"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -243,5 +246,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396342Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "CompoundSubstance provides the strongest and most semantically coherent opposition to ElementalSubstance. They represent mutually exclusive categories in material science: elements vs. compounds. This is a natural complementary pair where ElementalSubstance contains only one type of atom not chemically bonded to others, while CompoundSubstance contains multiple types of atoms held together by chemical bonds. The opposition is clear, well-defined, and taxonomically sound. For Fisher-LDA, this creates a meaningful axis distinguishing pure elemental materials from chemically combined materials. While not directly relevant to deception detection, it provides strong distributional separation for concept steering in physical/chemical domains."
 }

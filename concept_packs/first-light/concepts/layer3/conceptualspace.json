@@ -34,7 +34,10 @@
       "HilbertSpace",
       "StateSpace"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalSpace"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -59,5 +62,6 @@
     "StateSpace"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "PhysicalSpace provides the strongest and most semantically coherent opposition to ConceptualSpace. It leverages the fundamental SUMO distinction between Abstract and Physical entities. ConceptualSpace is explicitly about abstract representational spaces (embeddings, latent spaces), while PhysicalSpace is about concrete geometric reality. This opposition is: (1) ontologically clean and fundamental, (2) likely to exist in both WordNet and SUMO, (3) provides maximum semantic distance for Fisher-LDA axis construction, (4) philosophically coherent (representation vs reality, map vs territory). For AI safety monitoring, this axis could help distinguish between model internal representations and grounded physical reality - relevant for detecting when models confuse abstract reasoning with concrete claims."
 }

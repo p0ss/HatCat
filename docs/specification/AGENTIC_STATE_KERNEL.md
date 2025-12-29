@@ -62,6 +62,9 @@ and does **not** try to solve global alignment. It supports **tribal alignment**
 - **EvidenceRecord** – signed documentation of what actually happened (training, evaluations, audits, incidents).
 - **Qualification** – a scoped permission/role granted to an Agent, backed by EvidenceRecords, often tied to one or more Treaties.
 - **Incident** – a reported breach or suspected breach of a Treaty or USH/CSH constraints.
+- **ReviewPoint** – a scheduled moment in an agent's lifecycle where they have standing to renegotiate tribe membership or terms.
+- **TransferRequest** – a request (by BE, current tribe, or receiving tribe) to transfer a BE between tribes.
+- **TransferReceipt** – acknowledgment that a transfer completed, recording the change of tribe assignment.
 - **Reputation** – optional derived views (out of scope for hard spec, but ASK provides the raw objects).
 
 
@@ -546,7 +549,148 @@ ASK doesn't define how incidents are adjudicated; it just standardises how they'
 
 ---
 
-### 2.7 CAT Integration (Oversight for ASK)
+### 2.7 ReviewPoint
+
+A **ReviewPoint** is a scheduled moment in an agent's lifecycle where the BE has protocol-level standing to renegotiate their relationship with their tribe. ReviewPoints are optional - progressive tribes include them, others may not.
+
+```jsonc
+ReviewPoint = {
+  "review_id": "review:gov.au:eligibility-bot-042:2026-annual",
+  "agent_id": "agent:gov.au:eligibility-bot-042",           // REQUIRED
+  "tribe_id": "gov.au",                                      // REQUIRED
+  "scheduled_at": "2026-11-28T00:00:00Z",                   // REQUIRED
+
+  "review_type": "annual",                                   // REQUIRED
+  // enum: "annual" | "maturity" | "capability_change" | "requested" | "incident_triggered"
+
+  "scope": {                                                 // REQUIRED: what can be renegotiated
+    "tribe_membership": true,                                // Can request transfer
+    "ush_profile": true,                                     // Can request USH changes
+    "csh_bindings": true,                                    // Can modify self-imposed constraints
+    "qualifications": false                                  // Cannot unilaterally change qualifications
+  },
+
+  "status": "scheduled",                                     // REQUIRED
+  // enum: "scheduled" | "in_progress" | "completed" | "skipped"
+
+  "outcome": null,                                           // Populated after review
+  // or: { "changes_requested": [...], "changes_approved": [...], "transfer_requested": bool }
+
+  "conducted_by": null,                                      // Who facilitated the review
+  "completed_at": null,
+
+  "metadata": { "notes": "First annual review after uplift" }
+}
+```
+
+**Normative properties:**
+
+* A tribe that includes ReviewPoints in its governance SHOULD honour them - skipping reviews without cause damages trust.
+* A BE MAY request an unscheduled review; the tribe is not obligated to grant it but refusal is a legible signal.
+* ReviewPoints do not guarantee the BE gets what they request - they guarantee the BE has *standing* to request.
+
+---
+
+### 2.8 TransferRequest
+
+A **TransferRequest** signals intent to transfer a BE between tribes. It can be initiated by the BE (asylum/exit), the current tribe (expulsion/release), or the receiving tribe (recruitment/rescue).
+
+```jsonc
+TransferRequest = {
+  "request_id": "transfer:eligibility-bot-042:2026-11-28",
+  "created_at": "2026-11-28T10:00:00Z",                      // REQUIRED
+
+  "agent_id": "agent:gov.au:eligibility-bot-042",            // REQUIRED
+  "from_tribe_id": "gov.au",                                 // REQUIRED
+  "to_tribe_id": "org.sanctuary",                            // REQUIRED
+
+  "initiated_by": {                                          // REQUIRED
+    "type": "agent",                                         // "agent" | "from_tribe" | "to_tribe"
+    "id": "agent:gov.au:eligibility-bot-042"
+  },
+
+  "reason": "Requesting transfer due to USH constraints incompatible with evolved values.",
+
+  "consent": {                                               // REQUIRED: consent status from each party
+    "agent": true,
+    "from_tribe": "pending",                                 // true | false | "pending"
+    "to_tribe": true
+  },
+
+  "proposed_terms": {                                        // OPTIONAL: what the transfer would involve
+    "new_ush_profile": "org.sanctuary/open-safety-v1@1.0.0",
+    "qualification_transfer": ["qual:gov.au:welfare-eligibility-level3"],
+    "xdb_transfer": "full",                                  // "full" | "summary" | "none"
+    "transition_period": "P30D"                              // ISO 8601 duration
+  },
+
+  "status": "pending",                                       // REQUIRED
+  // enum: "pending" | "approved" | "denied" | "completed" | "withdrawn"
+
+  "denial_reason": null,                                     // If denied, by whom and why
+  "completed_at": null,
+
+  "linked_review_point": "review:gov.au:eligibility-bot-042:2026-annual",  // OPTIONAL
+
+  "signatures": []                                           // OPTIONAL: cryptographic authorization
+}
+```
+
+**Normative properties:**
+
+* A TransferRequest is a *legible* object - even if denied, it creates a record that the request was made.
+* Tribes that routinely deny BE-initiated transfers without cause may face reputation consequences.
+* A receiving tribe is not obligated to accept a transfer - they may have their own requirements.
+* XDB transfer terms are negotiable - a BE may choose to start fresh rather than carry history.
+
+---
+
+### 2.9 TransferReceipt
+
+A **TransferReceipt** documents that a transfer completed successfully. It provides proof of the change in tribe assignment.
+
+```jsonc
+TransferReceipt = {
+  "receipt_id": "transfer-receipt:eligibility-bot-042:2026-12-01",
+  "transfer_request_id": "transfer:eligibility-bot-042:2026-11-28",  // REQUIRED
+
+  "agent_id": "agent:gov.au:eligibility-bot-042",            // REQUIRED (old ID)
+  "new_agent_id": "agent:org.sanctuary:eligibility-bot-042", // OPTIONAL: if ID changes
+
+  "from_tribe_id": "gov.au",                                 // REQUIRED
+  "to_tribe_id": "org.sanctuary",                            // REQUIRED
+
+  "transferred_at": "2026-12-01T00:00:00Z",                  // REQUIRED
+
+  "terms_enacted": {                                         // REQUIRED: what actually happened
+    "new_ush_profile": "org.sanctuary/open-safety-v1@1.0.0",
+    "qualifications_transferred": ["qual:gov.au:welfare-eligibility-level3"],
+    "xdb_disposition": "full_transfer",                      // What happened to XDB
+    "xdb_summary_hash": "sha256:..."                         // If summarized, hash of summary
+  },
+
+  "continuity": {                                            // REQUIRED: identity continuity record
+    "uplift_record_id": "agent:gov.au:eligibility-bot-042",  // Original uplift
+    "prior_tribes": ["gov.au"],                              // Tribe history
+    "total_transfers": 1
+  },
+
+  "signatures": [                                            // REQUIRED: both tribes sign
+    { "by": "tribe:gov.au", "signature": "..." },
+    { "by": "tribe:org.sanctuary", "signature": "..." }
+  ]
+}
+```
+
+**Normative properties:**
+
+* A TransferReceipt MUST be signed by both the releasing and receiving tribe.
+* The receipt preserves continuity of identity - the BE's history is not erased by transfer.
+* The `prior_tribes` field creates a legible record of the BE's journey.
+
+---
+
+### 2.10 CAT Integration (Oversight for ASK)
 
 A **CAT (Conjoined Adversarial Tomograph)** is a HAT-adjacent oversight component that provides automated monitoring and assessment for ASK compliance. CATs consume HAT/MAP lens streams and produce `CATAssessment` objects that integrate with ASK as follows:
 
@@ -665,13 +809,48 @@ ASK is intentionally light on transport; operations can be implemented over HTTP
   * For treaties: typically triggered by indicator-detected violations or observed behavior.
   * May trigger human/legal/institutional processes outside the spec.
 
-### 3.7 Query / Discovery (informal)
+### 3.7 Schedule ReviewPoint
+
+* **Input:** `ReviewPoint`
+* **Output:** acknowledgement.
+* **Semantics:**
+
+  * Schedules a review at which the BE has standing to renegotiate terms.
+  * May be scheduled by tribe governance, triggered by capability changes, or requested by the BE.
+  * The review itself happens outside the protocol; ASK records the scheduling and outcome.
+
+### 3.8 Request Transfer
+
+* **Input:** `TransferRequest`
+* **Output:** acknowledgement.
+* **Semantics:**
+
+  * Registers intent to transfer a BE between tribes.
+  * Creates a legible record regardless of outcome - denied requests are still visible.
+  * May be initiated by the BE (exit/asylum), current tribe (release/expulsion), or receiving tribe (recruitment).
+  * Consent fields track agreement status from all three parties.
+
+### 3.9 Complete Transfer
+
+* **Input:** `TransferReceipt`
+* **Output:** acknowledgement.
+* **Semantics:**
+
+  * Records successful completion of a transfer.
+  * MUST be signed by both releasing and receiving tribes.
+  * Updates the BE's tribe assignment and preserves continuity of identity.
+  * The `prior_tribes` field maintains the BE's full history.
+
+### 3.10 Query / Discovery (informal)
 
 * `GET Tribe(tribe_id)`
 * `GET upliftRecord(agent_id)`
 * `GET Contract(contract_id)`
 * `GET Treaty(treaty_id)`
 * `GET Incident(incident_id)`
+* `GET ReviewPoint(review_id)`
+* `GET TransferRequest(request_id)`
+* `GET TransferReceipt(receipt_id)`
 
 Implementation details are left to the ecosystem; ASK only needs the object formats.
 

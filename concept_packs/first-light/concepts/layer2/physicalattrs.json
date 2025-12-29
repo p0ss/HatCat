@@ -28,7 +28,10 @@
       "LandVegetationAttribute",
       "PlantAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PsychologicalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -67,5 +70,6 @@
     "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.802469Z",
     "pack_version": "7.6.32"
-  }
+  },
+  "opposite_reasoning": "PsychologicalAttribute provides the strongest available opposition for PhysicalAttrs. It exists in both SUMO and WordNet, creating a clear Physical\u2194Psychological dichotomy that is ontologically sound and practically useful. Physical attributes describe material characteristics (size, shape, state), while psychological attributes describe mental/emotional characteristics (happiness, intelligence, personality). This opposition is particularly valuable for AI safety monitoring as it helps distinguish between objective physical properties and subjective mental states, which is relevant for understanding agent reasoning and deception (where physical evidence may contradict psychological claims). While AbstractAttrs would be theoretically cleaner, PsychologicalAttribute has better availability and is an established SUMO concept."
 }

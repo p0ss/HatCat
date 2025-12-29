@@ -88,7 +88,10 @@
       "Telephoning",
       "WallPost"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Isolation"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -120,5 +123,6 @@
     "WallPost"
   ],
   "is_category_lens": true,
-  "child_count": 13
+  "child_count": 13,
+  "opposite_reasoning": "Isolation provides the strongest semantic opposition to Communication along the primary dimension of interest: presence vs. absence of interaction. Since Communication is defined as 'close interaction,' Isolation (separation, lack of interaction) is its natural complement. This opposition is: (1) semantically clear and intuitive, (2) likely to exist in both WordNet and SUMO, (3) useful for Fisher-LDA as it represents a genuinely different distributional space, and (4) broadly applicable across Communication's category children (linguistic, gestural, artifact-mediated, etc.). While Concealment scores higher on safety utility, it's more narrowly focused on information hiding rather than absence of interaction itself, making it less universally opposed to all forms of Communication."
 }

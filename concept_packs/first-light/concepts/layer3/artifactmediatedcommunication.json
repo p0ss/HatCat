@@ -28,7 +28,10 @@
       "Fax",
       "TelephoneCommunication"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "FaceToFaceCommunication"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -49,5 +52,6 @@
     "OperatorAssistedTelephoneCommunication"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "FaceToFaceCommunication provides the strongest practical opposition for Fisher-LDA steering. It represents the clearest complementary category to artifact-mediated communication: direct physical presence vs. technological mediation. This distinction is semantically rich (captures spatial co-presence, bandwidth differences, synchronicity), likely to exist in both WordNet and SUMO, and highly relevant for AI safety applications where distinguishing communication modalities matters. While 'UnmediatedCommunication' is theoretically purer as a logical negation, FaceToFaceCommunication is more concrete, more likely to have corpus representation, and provides better distributional separation for LDA centroid estimation."
 }

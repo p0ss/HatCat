@@ -96,7 +96,10 @@
       "UserAccount",
       "WebDocument"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -133,5 +136,6 @@
     "RepresentationFeedbackSignal"
   ],
   "is_category_lens": true,
-  "child_count": 22
+  "child_count": 22,
+  "opposite_reasoning": "While ContentBearingObject lacks a clear lexical antonym, PhysicalObject provides the most reliable and semantically meaningful opposition. ContentBearingObject represents abstract informational entities defined by their communicative function (documents, messages, data), while PhysicalObject represents concrete material entities defined by physical properties. This captures a fundamental ontological divide between information/representation and physical matter. PhysicalObject has high availability (exists in both WordNet and SUMO), making it immediately usable. For AI safety applications, this opposition helps distinguish between content/information (which can contain deceptive messages) and mere physical instantiation. The main limitation is that some ContentBearingObjects have physical instantiation (printed documents), but the core opposition remains between informational essence vs material essence."
 }

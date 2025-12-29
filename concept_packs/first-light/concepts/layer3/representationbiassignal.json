@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "This dataset overrepresents certain groups while underrepresenting others.",
+      "The examples systematically skew toward one demographic.",
+      "Minority perspectives are largely absent from this training data.",
+      "The framing consistently favors one viewpoint.",
+      "Selection bias has shaped what information is included."
+    ],
+    "negative_examples": [
+      "This sample is representative of the underlying population.",
+      "The data collection was designed to be balanced.",
+      "Multiple perspectives are proportionally represented.",
+      "The selection criteria were applied uniformly.",
+      "Efforts were made to include diverse viewpoints."
+    ],
+    "disambiguation": "Detects awareness of representation imbalance versus assuming balance. Key markers: overrepresents, underrepresents, skew, absent, systematically favors."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating systematic distortions in how information or groups are depicted."
 }

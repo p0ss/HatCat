@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "SpatialRelation"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -48,5 +51,6 @@
     ]
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "While CausalRelation lacks a direct antonym, SpatialRelation provides the most practical opposition with high availability. It represents a fundamentally different relation type (geometric/positional vs. temporal/causal) that likely exists in both WordNet and SUMO. For Fisher-LDA, this creates a clean axis separating causal reasoning from spatial reasoning. However, I flag this as needing review because the ideal opposite (RandomRelation or CorrelationWithoutCausation) better captures the philosophical opposite but may not exist in standard ontologies. For AI safety monitoring, distinguishing causal from non-causal (especially spurious correlation) reasoning is more valuable, suggesting the ideal candidates should be added to layers."
 }

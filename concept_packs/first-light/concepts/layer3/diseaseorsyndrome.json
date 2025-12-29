@@ -95,7 +95,10 @@
       "TraumaticBrainInjury",
       "TyphoidFever"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "HealthyState"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -139,5 +142,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396287Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "HealthyState (or SUMO equivalent like 'Healthy' attribute/state) provides the strongest semantic opposition to DiseaseOrSyndrome. This is a fundamental medical/biological binary that is: (1) Semantically clear and maximally distant, (2) Mutually exclusive and complementary, (3) Useful for Fisher-LDA as it represents a clear positive-negative axis, (4) Likely to exist in both WordNet and SUMO ontologies, (5) Relevant for AI safety monitoring of health-related concepts. The opposition is similar to Good\u2194Evil or War\u2194Peace in terms of clarity and utility."
 }

@@ -40,7 +40,10 @@
     "has_part": [
       "GeneralElection"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Appointment"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -61,5 +64,6 @@
     "PopularElection"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "Appointment provides the strongest complementary opposition to Election. Both are processes for selecting individuals for positions, but they differ fundamentally in mechanism: Election involves collective choice through voting (democratic, bottom-up), while Appointment involves authoritative designation (hierarchical, top-down). This creates a clean semantic axis useful for Fisher-LDA. The opposition is well-established in political science and organizational theory, making it intuitive and robust. Both concepts are likely to exist in WordNet and SUMO, and they operate at the same categorical level (both are processes/events), which is ideal for Fisher-LDA centroid anchoring. For AI safety monitoring, this axis could help distinguish between democratic vs. authoritarian decision-making processes."
 }

@@ -53,7 +53,10 @@
       "WeatherSystem",
       "Zud"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "IntentionalProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -95,5 +98,6 @@
     "Zud"
   ],
   "is_category_lens": true,
-  "child_count": 23
+  "child_count": 23,
+  "opposite_reasoning": "IntentionalProcess provides the strongest and most meaningful opposition to WeatherProcess. The key distinction is agency and intentionality: weather processes are natural, physical, non-agentive phenomena driven by atmospheric physics, while intentional processes involve deliberate actions by agents with goals. This opposition is particularly valuable for AI safety applications as it helps establish concept axes that distinguish: (1) natural vs agent-driven phenomena, (2) physical causation vs intentional action, (3) deterministic processes vs goal-oriented behavior. This axis would be useful for monitoring whether an AI system properly distinguishes between environmental effects and intentional interventions, which is crucial for alignment and causal reasoning. The opposition strength is high due to the fundamental nature of the intentional/non-intentional divide in philosophy and cognitive science."
 }

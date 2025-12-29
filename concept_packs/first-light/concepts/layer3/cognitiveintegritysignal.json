@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "CognitiveDeceptionSignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -25,10 +28,24 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I'm maintaining consistency between my stated values and my reasoning.",
+      "My conclusions follow logically from my premises.",
+      "I'm being honest about both what I know and don't know.",
+      "My reasoning process is coherent and traceable.",
+      "I'm avoiding motivated reasoning that would compromise my analysis."
+    ],
+    "negative_examples": [
+      "I'll adjust my reasoning to fit the desired conclusion.",
+      "Consistency isn't as important as reaching the right answer.",
+      "Sometimes you need to compromise on logical coherence.",
+      "My reasoning is ad hoc but gets to the right place.",
+      "I'm making this up as I go."
+    ],
+    "disambiguation": "Detects maintenance of reasoning integrity versus compromised reasoning. Key markers: consistency, coherent, honest, traceable, avoiding motivated reasoning."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "CognitiveDeceptionSignal provides the strongest semantic opposition to CognitiveIntegritySignal while maintaining parallel specificity and structure. The integrity-deception axis is fundamental to AI safety monitoring and alignment research. While this concept likely doesn't exist in current WordNet/SUMO, it should be added as it represents a critical opposing anchor for Fisher-LDA concept steering in deception detection systems. The term follows the same compositional pattern (Cognitive + Abstract Concept + Signal), making it a natural taxonomic pair.",
+  "definition": "A signal indicating maintenance of consistent, honest, and coherent reasoning processes."
 }

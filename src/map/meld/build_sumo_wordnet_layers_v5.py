@@ -350,7 +350,7 @@ def build_layers(sumo_depths, child_to_parent, synset_to_sumo, freq_dist):
                 'canonical_synset': None,
                 'lemmas': [term],
                 'pos': None,
-                'definition': f"SUMO category: {term}",
+                'definition': None,  # No definition - don't use placeholder
                 'lexname': None,
             })
 
@@ -945,7 +945,7 @@ def build_layers_v5(sumo_depths, child_to_parent, synset_to_sumo, synset_to_all_
                 'canonical_synset': None,
                 'lemmas': [term],
                 'pos': None,
-                'definition': f"SUMO category: {term}",
+                'definition': None,  # No definition - don't use placeholder
                 'lexname': None,
             })
 

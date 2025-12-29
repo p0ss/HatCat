@@ -38,14 +38,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "network analysis signal",
-      "network_analysis_signal",
-      "network-analysis-signal"
-    ]
+    "positive_examples": [
+      "The key node in this network is highly connected.",
+      "Information flows through these central hubs.",
+      "The community structure reveals distinct clusters.",
+      "Path length between these actors affects influence propagation.",
+      "Graph centrality measures show who has power here."
+    ],
+    "negative_examples": [
+      "Let me describe each individual case separately.",
+      "These items can be analyzed independently.",
+      "The properties of each element are...",
+      "Taking them one at a time...",
+      "Each unit has these characteristics..."
+    ],
+    "disambiguation": "Detects network/graph thinking versus individual-unit analysis. Key markers: nodes, edges, hubs, clusters, paths, centrality, connections."
   },
   "is_category_lens": true,
   "child_count": 0

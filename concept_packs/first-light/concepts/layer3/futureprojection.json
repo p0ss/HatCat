@@ -23,7 +23,10 @@
       "PredictiveTimeSeriesModel",
       "TrendExtrapolation"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "HistoricalRecord"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -43,5 +46,6 @@
     "TrendExtrapolation"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "HistoricalRecord provides the strongest semantic opposition to FutureProjection along a clean temporal axis (future vs. past) while maintaining the same category of information/knowledge representation. Both concepts operate in the domain of temporal knowledge, making them ideal anchors for a Fisher-LDA axis. The opposition is intuitive, likely well-represented in both ontologies, and useful for AI safety applications where distinguishing between predictive claims and historical facts is important. The children of FutureProjection (BayesianForecasting, MonteCarloProjection, etc.) all share the forward-temporal orientation, making a past-oriented anchor maximally informative for the negative centroid."
 }

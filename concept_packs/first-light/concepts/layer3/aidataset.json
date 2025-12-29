@@ -31,7 +31,10 @@
     "has_part": [
       "PreferenceDataset"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "RawData"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -53,5 +56,6 @@
     "PreferenceDataset"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "RawData provides the most semantically coherent opposition to AIDataset along the dimension of curation and structure. While AIDataset doesn't have a classic antonym, the curated/structured nature of datasets vs. raw/unprocessed data creates a meaningful spectrum for Fisher-LDA. This opposition is: (1) semantically clear and defensible, (2) likely to exist in both WordNet and SUMO, (3) useful for distinguishing between processed/purposeful data collections vs. unfiltered information, which has relevance for AI safety monitoring (e.g., distinguishing training artifacts from natural language). The structured\u2194unstructured dimension is fundamental to understanding AI data pipelines."
 }

@@ -28,7 +28,10 @@
       "Feather",
       "Hoof"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InternalOrgans"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -68,5 +71,6 @@
     "meld_id": "org.hatcat/bodypart-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.885699Z",
     "pack_version": "7.6.10"
-  }
+  },
+  "opposite_reasoning": "InternalOrgans provides the strongest semantic opposition to ExternalCoverings based on clear spatial complementarity (external surface vs internal functional structures). This opposition is: (1) Semantically robust - they are mutually exclusive anatomical categories with clear spatial boundaries, (2) Conceptually coherent - both are structural/functional body components at similar ontological levels, (3) Likely available - InternalOrgans is a common concept in both WordNet and SUMO ontologies, (4) Useful for Fisher-LDA - creates a clear axis from surface/protective structures to core/functional organs. While this opposition has limited direct relevance to AI safety concerns like deception detection, it provides a clean geometric opposition for the concept space that could be useful for distinguishing surface-level vs deep-level features in other contexts."
 }

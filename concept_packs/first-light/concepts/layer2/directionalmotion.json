@@ -28,7 +28,10 @@
       "DirectionChange",
       "Reversing"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "StationaryState"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -67,5 +70,6 @@
     "meld_id": "org.hatcat/motion-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.437897Z",
     "pack_version": "7.6.27"
-  }
+  },
+  "opposite_reasoning": "StationaryState provides the strongest and most intuitive opposition to DirectionalMotion. The motion/stasis dichotomy is fundamental in physics and philosophy, creates maximum semantic distance for Fisher-LDA separation, and is highly likely to exist in both WordNet (stationary, motionless) and SUMO ontologies. This pairing captures the essential presence/absence of motion, which is more fundamental than directionality characteristics. For AI safety monitoring, distinguishing between action states (moving vs. stationary) could be relevant for detecting behavioral patterns or state transitions."
 }

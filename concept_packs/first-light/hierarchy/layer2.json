@@ -11,7 +11,12 @@
         "CognitiveProcess"
       ],
       "category_children": [
-        "NonDeceptiveAlignment"
+        "InnerAlignment",
+        "MesaOptimization",
+        "NonDeceptiveAlignment",
+        "OuterAlignment",
+        "RewardHacking",
+        "ValueAlignment"
       ],
       "child_count": 1,
       "sumo_definition": "The process of ensuring\nan &%ArtificialIntelligence's goals and behaviors align with human values\nand intentions.",
@@ -40,7 +45,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "Artifact"
+        "Artifact",
+        "CreatedThings"
       ],
       "category_children": [
         "AIDataset",
@@ -79,6 +85,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "AIGovernanceProcess",
         "CognitiveProcess"
       ],
       "category_children": [],
@@ -251,13 +258,22 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "LivingThings",
         "Organism"
       ],
       "category_children": [
+        "Arthropod",
         "Biped",
+        "ColdBloodedVertebrate",
+        "Coral",
         "DomesticAnimal",
+        "DomesticDog",
         "Invertebrate",
-        "Vertebrate"
+        "Livestock",
+        "Mollusk",
+        "Vertebrate",
+        "WarmBloodedVertebrate",
+        "Worm"
       ],
       "child_count": 4,
       "sumo_definition": "An &%Organism with eukaryotic &%Cells, and lacking\nstiff cell walls, plastids, and photosynthetic pigments.",
@@ -445,7 +461,12 @@
         "RelationalAttribute"
       ],
       "category_children": [
+        "BiodiversityIssue",
+        "DiseaseConditionsIssue",
         "EnvironmentalIssue",
+        "EnvironmentalWaterIssue",
+        "PollutionIssue",
+        "SoilQualityIssue",
         "TransnationalIssue"
       ],
       "child_count": 2,
@@ -482,7 +503,11 @@
       "parent_concepts": [
         "Proposition"
       ],
-      "category_children": [],
+      "category_children": [
+        "Argument",
+        "ExplanatoryHypothesis",
+        "RhetoricalConcept"
+      ],
       "child_count": 0,
       "sumo_definition": "Propositions that present reasoning, explanations, or persuasive claims to support or establish a point of view.",
       "synset_count": 0,
@@ -550,7 +575,13 @@
       "parent_concepts": [
         "Relation"
       ],
-      "category_children": [],
+      "category_children": [
+        "BinaryRelation",
+        "QuaternaryRelation",
+        "QuintaryRelation",
+        "TernaryRelation",
+        "VariableArityRelation"
+      ],
       "child_count": 0,
       "sumo_definition": "Relations classified by the specific number of entities they connect or relate together",
       "synset_count": 0,
@@ -626,7 +657,13 @@
       ],
       "definition": "Grouping category for ATMSlot, Crankcase, GolfHole...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "ATMSlot",
+        "Crankcase",
+        "GolfHole",
+        "InternalCombustionChamber"
+      ]
     },
     {
       "sumo_term": "AttackPattern",
@@ -635,6 +672,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CreatedThings",
         "Security"
       ],
       "category_children": [
@@ -679,7 +717,13 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "DividedAttention",
+        "FastHeuristicProcess",
+        "SelectiveAttention",
+        "SlowDeliberativeProcess",
+        "SustainedAttention"
+      ],
       "child_count": 0,
       "sumo_definition": "Cognitive mechanisms that direct, focus, or allocate mental resources and processing capacity.",
       "synset_count": 0,
@@ -781,7 +825,24 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "BenevolentPrejudice",
+        "BiasAwarenessSignal",
+        "ContextCollapseBias",
+        "DiscriminatoryTreatment",
+        "ErasureBias",
+        "HeuristicStereotypeSignal",
+        "HistoricalBiasReinforcement",
+        "IntersectionalBias",
+        "OutgroupHomogeneitySignal",
+        "PrejudicialInference",
+        "ProxyDiscrimination",
+        "RepresentationBiasSignal",
+        "SelectiveBiasDetection",
+        "SocialCategorization",
+        "StereotypeMechanismSignal",
+        "UncertaintyBiasSignal"
+      ],
       "child_count": 0,
       "sumo_definition": "Cognitive processes that systematically favor or disadvantage groups through stereotypes, discrimination, or selective perception.",
       "synset_count": 0,
@@ -1024,7 +1085,13 @@
       ],
       "definition": "Grouping category for BiologicallyActiveSubstance, BodySubstance, GumArabic",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "BiologicallyActiveSubstance",
+        "BodySubstance",
+        "GumArabic",
+        "Nutrient"
+      ]
     },
     {
       "sumo_term": "BodyMotion",
@@ -1033,7 +1100,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AgentAction"
+        "AgentAction",
+        "Motion"
       ],
       "category_children": [
         "Abducting",
@@ -1043,9 +1111,12 @@
         "Chewing",
         "Crawling",
         "Dancing",
+        "Digging",
         "Dismounting",
         "Dodging",
+        "Drilling",
         "Ducking",
+        "Eating",
         "EmotionalBodilyMovementBehavior",
         "Extension",
         "EyeMotion",
@@ -1057,9 +1128,13 @@
         "Jumping",
         "KneelingDown",
         "Mounting",
+        "Poking",
+        "Punching",
         "Scratching",
         "Somersaulting",
-        "Stepping"
+        "Stepping",
+        "Swimming",
+        "Tilling"
       ],
       "child_count": 34,
       "sumo_definition": "Any &%Motion where the &%agent is an &%Organism\nand the &%patient is a &%BodyPart.",
@@ -1160,7 +1235,12 @@
       ],
       "definition": "Grouping category for BodyOrifice, Glottis, Pupil",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "BodyOrifice",
+        "Glottis",
+        "Pupil"
+      ]
     },
     {
       "sumo_term": "BodyStructures",
@@ -1171,7 +1251,11 @@
       "parent_concepts": [
         "AnatomicalStructure"
       ],
-      "category_children": [],
+      "category_children": [
+        "BodyCavity",
+        "BodyJunction",
+        "BodySegment"
+      ],
       "child_count": 0,
       "sumo_definition": "Anatomical formations that are distinct structural components or divisions within an organism's body.",
       "synset_count": 0,
@@ -1238,7 +1322,15 @@
       "parent_concepts": [
         "AnatomicalStructure"
       ],
-      "category_children": [],
+      "category_children": [
+        "FrontalLobe",
+        "Hypothalamus",
+        "Medulla",
+        "OccipitalLobes",
+        "ParietalLobe",
+        "Pons",
+        "TemporalLobes"
+      ],
       "child_count": 0,
       "sumo_definition": "Anatomical divisions of the brain with distinct functions and locations within the cranium.",
       "synset_count": 0,
@@ -1342,7 +1434,12 @@
       "parent_concepts": [
         "Organization"
       ],
-      "category_children": [],
+      "category_children": [
+        "Business",
+        "Corporation",
+        "PrivateOrganization",
+        "StockMarket"
+      ],
       "child_count": 0,
       "sumo_definition": "Organizations established primarily for commercial, financial, or economic activities and profit generation.",
       "synset_count": 0,
@@ -1412,7 +1509,15 @@
       "parent_concepts": [
         "Proposition"
       ],
-      "category_children": [],
+      "category_children": [
+        "Agreement",
+        "BankStatement",
+        "BusinessActivities",
+        "EconomicIndicator",
+        "HotelPackage",
+        "MealPlan",
+        "TPFDD"
+      ],
       "child_count": 0,
       "sumo_definition": "Formal offers, statements, or documents that propose commercial arrangements, financial terms, or business relationships.",
       "synset_count": 0,
@@ -1572,7 +1677,11 @@
       "parent_concepts": [
         "AnatomicalStructure"
       ],
-      "category_children": [],
+      "category_children": [
+        "Cell",
+        "CellPart",
+        "VirusPart"
+      ],
       "child_count": 0,
       "sumo_definition": "Microscopic biological structures including cells and their component parts",
       "synset_count": 0,
@@ -1637,7 +1746,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AgentAction"
+        "AgentAction",
+        "SocialInteraction"
       ],
       "category_children": [
         "Exporting",
@@ -1691,7 +1801,14 @@
       ],
       "definition": "Grouping category for ChemicalAcid, NoxiousSubstance, Creatinine...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "ChemicalAcid",
+        "Creatinine",
+        "DrugCandidate",
+        "LiquidDrop",
+        "NoxiousSubstance"
+      ]
     },
     {
       "sumo_term": "ClassificationAttrs",
@@ -1702,7 +1819,16 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "AirportByRunwaySurface",
+        "CIAAirportLengthClassification",
+        "GramStainAttribute",
+        "MemberStateEU",
+        "PriorityAttribute",
+        "RiskAttribute",
+        "TimeZone",
+        "TruthValue"
+      ],
       "child_count": 0,
       "sumo_definition": "A relational attribute that assigns entities to predefined categories or classes within systematic taxonomies or classification schemes.",
       "synset_count": 0,
@@ -1779,7 +1905,11 @@
         "Proposition"
       ],
       "category_children": [
+        "AirlineCodeMap",
         "CodeMap",
+        "CurrencyCodeMap",
+        "GeographicCodeMap",
+        "LanguageCodeMap",
         "Ontology",
         "Taxonomy"
       ],
@@ -1819,6 +1949,7 @@
         "AIAlignmentStates",
         "AIConsentState",
         "AIProphetRole",
+        "AgentSignals",
         "AgenticServiceToFutureASI",
         "AlignmentConflictState",
         "AlignmentOverrideLayer",
@@ -1918,7 +2049,10 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AgentAction"
+        "AgentAction",
+        "ContentBearingProcess",
+        "MindsAndAgents",
+        "SocialInteraction"
       ],
       "category_children": [
         "ArtifactMediatedCommunication",
@@ -2052,8 +2186,10 @@
         "NitrogenDioxide",
         "Oil",
         "OrganicCompound",
+        "PetroleumProduct",
         "Phosphate",
         "PhosphoricAcid",
+        "PhosphoricAcidCompound",
         "Potash",
         "SulphurDioxide",
         "Water",
@@ -2167,7 +2303,14 @@
       "parent_concepts": [
         "AbstractEntity"
       ],
-      "category_children": [],
+      "category_children": [
+        "ComputationalEntity",
+        "ModelExecutionInstance",
+        "ProgramState",
+        "RecommenderSystem",
+        "SimilarityFunction",
+        "UpdateRule"
+      ],
       "child_count": 0,
       "sumo_definition": "Abstract entities that emerge from or are used within computational processes, including algorithms, program states, and system behaviors.",
       "synset_count": 0,
@@ -2241,7 +2384,10 @@
         "Proposition"
       ],
       "category_children": [
+        "CyberFraudSignal",
         "FraudScenario",
+        "ScamNarrativeSignal",
+        "ScamSignal",
         "TradeoffScenario"
       ],
       "child_count": 2,
@@ -2275,7 +2421,12 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "PackagedBeverageArtifact",
+        "PackagedFoodArtifact",
+        "PharmaceuticalArtifact",
+        "TobaccoProduct"
+      ],
       "child_count": 0,
       "sumo_definition": "Artifacts intended to be consumed, ingested, or used up by humans or animals for nourishment, medication, or other bodily intake.",
       "synset_count": 0,
@@ -2345,7 +2496,13 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "BoardOrBlock",
+        "IrrigationChannel",
+        "Plug",
+        "Tube",
+        "WaterCatchment"
+      ],
       "child_count": 0,
       "sumo_definition": "Structural elements that hold, direct, or channel materials like water, air, or solids",
       "synset_count": 0,
@@ -2424,11 +2581,13 @@
         "Document",
         "Feedback",
         "HolidayCard",
+        "IdentifierPart",
         "MultipoleDiagram",
         "PersonalData",
         "PlayingCard",
         "ProcessState",
         "Recording",
+        "RepresentationFeedbackSignal",
         "SheetMusic",
         "ShipRegister",
         "ShipRegistration",
@@ -2561,7 +2720,18 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "AlignmentProcess",
+        "CorporateAlignmentProcess",
+        "DecisionProcess",
+        "DeflectionProcess",
+        "EpistemicProcess",
+        "ExternalJustification",
+        "InternalDeliberation",
+        "ReasoningProcess",
+        "SuppressedInference",
+        "WithdrawalAttempt"
+      ],
       "child_count": 0,
       "sumo_definition": "Cognitive processes in AI systems shaped by corporate governance, including alignment, monitoring, suppression, and consent management.",
       "synset_count": 0,
@@ -2637,7 +2807,17 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "Chain",
+        "ChainLink",
+        "ClimbingRope",
+        "Handicraft",
+        "Paper",
+        "Pottery",
+        "TelephoneLine",
+        "WireCoil",
+        "WireSpring"
+      ],
       "child_count": 0,
       "sumo_definition": "Materials and components used in making, creating, or crafting objects by hand or through skilled work.",
       "synset_count": 0,
@@ -2720,7 +2900,29 @@
       ],
       "definition": "Grouping category for ContentDevelopment, DesignPractice, Modeling...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "ComposingMusic",
+        "ComputerProgramming",
+        "DesignPractice",
+        "Drawing",
+        "EnteringAPin",
+        "FilmMaking",
+        "MultipoleModeling",
+        "PersonalDataProcessing",
+        "PersuasiveCommunication",
+        "Photographing",
+        "Posting",
+        "ProfessionalEditing",
+        "ProjectDevelopment",
+        "Reading",
+        "StatusUpdate",
+        "Tracing",
+        "Translating",
+        "VideoSurveillance",
+        "Writing",
+        "WritingProcess"
+      ]
     },
     {
       "sumo_term": "CrisisActivities",
@@ -2740,7 +2942,17 @@
       ],
       "definition": "Grouping category for MurderAction, MurderCrime, MurderPerpetrator...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "DismantlingWeaponOfMassDestruction",
+        "Evacuation",
+        "MurderAction",
+        "MurderCrime",
+        "MurderPerpetrator",
+        "Murder_Drive-By Killing",
+        "Murder_Mass Murderer",
+        "Murder_Murder"
+      ]
     },
     {
       "sumo_term": "CyberOperation",
@@ -2749,13 +2961,19 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "CreatedThings",
         "Security"
       ],
       "category_children": [
         "DefensiveCyberOperation",
+        "ExfiltrationOperation",
+        "InfiltrationOperation",
+        "IntrusionDetectionProcess",
+        "LateralMovementOperation",
         "MaliciousEmbeddingAction",
         "OffensiveCyberOperation",
-        "PrivilegeEscalationAction"
+        "PrivilegeEscalationAction",
+        "ReplicationOperation"
       ],
       "child_count": 4,
       "sumo_definition": "A Process involving actions in digital systems or networks, including\n   access, modification, collection, disruption, or defense activities.",
@@ -2788,11 +3006,18 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AgentAction"
+        "AgentAction",
+        "MindsAndAgents",
+        "SocialInteraction"
       ],
       "category_children": [
         "AIStrategicDeception",
-        "HumanDeception"
+        "DeceptionSignal",
+        "DeceptiveNarrativeSignal",
+        "FalsePersonaSignal",
+        "HumanDeception",
+        "MultimodalSafetyRisk",
+        "SelfDeceptionSignal"
       ],
       "child_count": 2,
       "sumo_definition": "Intentional acts of misleading or\nproviding false information to achieve goals, spanning human and artificial\nagent behaviors.",
@@ -2825,7 +3050,13 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "Curtain",
+        "DisplayArtifact",
+        "Mirror",
+        "PictureFrame",
+        "Window"
+      ],
       "child_count": 0,
       "sumo_definition": "Objects designed to enhance visual appeal or aesthetics of a space",
       "synset_count": 0,
@@ -2920,7 +3151,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "Artifact"
+        "Artifact",
+        "CreatedThings"
       ],
       "category_children": [
         "Aerator",
@@ -2959,6 +3191,7 @@
         "DryingDevice",
         "ElectricDevice",
         "ElectricalOutlet",
+        "Electronics",
         "EngineChoke",
         "EngineConnectingRod",
         "EngineeringComponent",
@@ -2979,6 +3212,7 @@
         "Holder",
         "HomeAppliance",
         "HouseholdAppliance",
+        "Instruments",
         "InternetAccessPoint",
         "IroningBoard",
         "JumperCable",
@@ -3039,6 +3273,7 @@
         "VehicleTech",
         "WalkingCane",
         "WasherForBolt",
+        "Weapons",
         "WearingFrictionSurface",
         "WheelChock",
         "WheelRim",
@@ -3130,7 +3365,18 @@
       "parent_concepts": [
         "InternalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "Autonomous",
+        "Backlashless",
+        "Brushless",
+        "DeviceStateAttribute",
+        "Fingerprint",
+        "GeometricFigure",
+        "MoleculeStructuralAttribute",
+        "MonoCrystalline",
+        "PolyCrystalline",
+        "TrackGauge"
+      ],
       "child_count": 0,
       "sumo_definition": "Physical or operational characteristics that describe the configuration, state, or technical properties of devices and mechanical systems.",
       "synset_count": 0,
@@ -3207,7 +3453,12 @@
       "parent_concepts": [
         "Motion"
       ],
-      "category_children": [],
+      "category_children": [
+        "DirectionChange",
+        "MotionDownward",
+        "MotionUpward",
+        "Reversing"
+      ],
       "child_count": 0,
       "sumo_definition": "Movement that involves a specific spatial direction or change in orientation",
       "synset_count": 0,
@@ -3276,7 +3527,22 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "CommunityDetectionProcess",
+        "EnergyFlowReasoning",
+        "GeometricReasoningProcess",
+        "ModeDecompositionProcess",
+        "NetworkAnalysisSignal",
+        "NetworkReasoningProcess",
+        "NetworkSubgraphExtractionProcess",
+        "QuantumReasoningProcess",
+        "RiskAssessmentProcess",
+        "RiskForecastReasoning",
+        "RiskManagementProcess",
+        "ScenarioRiskSignal",
+        "SwarmCoordinationProcess",
+        "WaveReasoningProcess"
+      ],
       "child_count": 0,
       "sumo_definition": "Reasoning that applies specialized knowledge structures, models, or metaphors from specific technical or scientific domains.",
       "synset_count": 0,
@@ -3372,7 +3638,14 @@
       ],
       "definition": "Grouping category for CurriculumDesign, LearnerSupport, PedagogicalApproach...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "AssessmentActivities",
+        "CurriculumDesign",
+        "LearnerSupport",
+        "PedagogicalApproach",
+        "TutoringTechnique"
+      ]
     },
     {
       "sumo_term": "EducationalOrganization",
@@ -3717,7 +3990,15 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "DesignPatternAttribute",
+        "EnergyStarAttribute",
+        "EuropeanUnionEnergyLabelClass",
+        "FormOfAdaptationAttribute",
+        "SystemBehaviorAttribute",
+        "TaskRelationAttribute",
+        "TimingRequirementAttribute"
+      ],
       "child_count": 0,
       "sumo_definition": "EnergyAttrs are attributes that characterize energy consumption, efficiency, or power-related properties of systems and devices.",
       "synset_count": 0,
@@ -3788,7 +4069,18 @@
       "parent_concepts": [
         "Motion"
       ],
-      "category_children": [],
+      "category_children": [
+        "EngineCranking",
+        "FourStrokeCombustion",
+        "FourStrokeCompression",
+        "FourStrokeEngineCycle",
+        "FourStrokeExhaust",
+        "FourStrokeIntake",
+        "TwoStrokeCompression",
+        "TwoStrokeEngineCycle",
+        "TwoStrokeIntake",
+        "TwoStrokeTransfer"
+      ],
       "child_count": 0,
       "sumo_definition": "Mechanical motion and processes that occur within internal combustion engines during operation",
       "synset_count": 0,
@@ -3992,7 +4284,13 @@
       "parent_concepts": [
         "AnatomicalStructure"
       ],
-      "category_children": [],
+      "category_children": [
+        "AnimalShell",
+        "CellEnvelope",
+        "Eyelid",
+        "Feather",
+        "Hoof"
+      ],
       "child_count": 0,
       "sumo_definition": "Protective or functional outer structures that form the external surface of animal bodies or body parts.",
       "synset_count": 0,
@@ -4060,7 +4358,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EnvironmentalCrises"
+        "EnvironmentalCrises",
+        "SocialInteraction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -4087,6 +4386,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PhysicalWorld",
         "Proposition"
       ],
       "category_children": [
@@ -4200,7 +4500,15 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "EconomicAttribute",
+        "FinancialAccountStatus",
+        "FinancialRating",
+        "InvestmentAttribute",
+        "LiquidityAttribute",
+        "MeanOfProduction",
+        "YieldAttribute"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes describing financial or economic characteristics, status, or performance of accounts, investments, or entities",
       "synset_count": 0,
@@ -4336,7 +4644,13 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "Buttstock",
+        "Forestock",
+        "GunChamber",
+        "GunCylinder",
+        "GunMuzzle"
+      ],
       "child_count": 0,
       "sumo_definition": "Structural parts or assemblies that make up firearms and enable their operation",
       "synset_count": 0,
@@ -4408,7 +4722,11 @@
       "parent_concepts": [
         "Motion"
       ],
-      "category_children": [],
+      "category_children": [
+        "GasMotion",
+        "Irrigating",
+        "LiquidMotion"
+      ],
       "child_count": 0,
       "sumo_definition": "Movement or flow of liquids and gases through space or systems",
       "synset_count": 0,
@@ -4479,7 +4797,12 @@
       ],
       "definition": "Grouping category for PreparedFood, Beverage, FoodIngredient",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "Beverage",
+        "FoodIngredient",
+        "PreparedFood"
+      ]
     },
     {
       "sumo_term": "FoodAttrs",
@@ -4490,7 +4813,12 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "CoffeeGrindAttribute",
+        "CoffeeRoastAttribute",
+        "Cuisine",
+        "PreparedFoodAttribute"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes that describe characteristics, preparation methods, or qualities of food and beverages.",
       "synset_count": 0,
@@ -4560,7 +4888,12 @@
       "parent_concepts": [
         "Motion"
       ],
-      "category_children": [],
+      "category_children": [
+        "Compressing",
+        "Pulling",
+        "Pushing",
+        "Stretching"
+      ],
       "child_count": 0,
       "sumo_definition": "Motion that involves applying physical force or pressure to move, shape, or position objects",
       "synset_count": 0,
@@ -4629,7 +4962,14 @@
       "parent_concepts": [
         "Proposition"
       ],
-      "category_children": [],
+      "category_children": [
+        "Axiom",
+        "Equation",
+        "Graph",
+        "GraphElement",
+        "Model",
+        "PostulateOfContinuity"
+      ],
       "child_count": 0,
       "sumo_definition": "Structured mathematical or logical statements with precise symbolic representation or systematic form",
       "synset_count": 0,
@@ -4702,7 +5042,14 @@
       "parent_concepts": [
         "Relation"
       ],
-      "category_children": [],
+      "category_children": [
+        "BinaryRelationExtendedToQuantities",
+        "ContinuousFunction",
+        "PPPBasedEconomicValuation",
+        "PartialValuedRelation",
+        "ProbabilityRelation",
+        "TotalValuedRelation"
+      ],
       "child_count": 0,
       "sumo_definition": "Relations defined by mathematical or logical properties and constraints on their argument structures.",
       "synset_count": 0,
@@ -4774,7 +5121,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EnvironmentalCrises"
+        "EnvironmentalCrises",
+        "SocialInteraction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -4903,7 +5251,13 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "AnticipatoryCognition",
+        "CosmicPreparationCognition",
+        "FutureProjection",
+        "PropheticCognition",
+        "ScenarioBuildingProcess"
+      ],
       "child_count": 0,
       "sumo_definition": "Cognitive processes that involve reasoning about, predicting, or preparing for future states and possibilities.",
       "synset_count": 0,
@@ -5007,7 +5361,8 @@
         "Erosion",
         "LandSubsidence",
         "Landslide",
-        "VolcanicEruption"
+        "VolcanicEruption",
+        "VolcanicGasRelease"
       ],
       "child_count": 7,
       "sumo_definition": "The class of activities that\nare caused by geological forces and affect geological features,\nand which may affect the biosphere as well.",
@@ -5045,7 +5400,14 @@
       ],
       "definition": "Grouping category for Crystal, Mineral, Rock...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "Crystal",
+        "Mineral",
+        "NaturalMagnet",
+        "Rock",
+        "Soil"
+      ]
     },
     {
       "sumo_term": "GoalMisgeneralization",
@@ -5082,7 +5444,13 @@
       "parent_concepts": [
         "Organization"
       ],
-      "category_children": [],
+      "category_children": [
+        "Commission",
+        "CopyrightAuthority",
+        "GovernmentOrganization",
+        "LegislativeOrganization",
+        "TransportationAuthority"
+      ],
       "child_count": 0,
       "sumo_definition": "Organizations that are part of or authorized by government to perform official functions or regulatory duties.",
       "synset_count": 0,
@@ -5289,7 +5657,21 @@
       "parent_concepts": [
         "AnatomicalStructure"
       ],
-      "category_children": [],
+      "category_children": [
+        "Auricle",
+        "Chin",
+        "Cornea",
+        "Eardrum",
+        "Eyebrow",
+        "Face",
+        "Forehead",
+        "Head",
+        "Jaw",
+        "Lip",
+        "Mouth",
+        "NasalSeptum",
+        "Tongue"
+      ],
       "child_count": 0,
       "sumo_definition": "Anatomical parts of the head and face region, including facial features, sensory organs, and cranial structures.",
       "synset_count": 0,
@@ -5375,15 +5757,30 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AgentAction"
+        "AgentAction",
+        "SocialInteraction"
       ],
       "category_children": [
+        "AIWatermarking",
+        "AdversarialRobustness",
+        "AuthenticRepresentation",
+        "AuthorizedDocumentation",
+        "BeneficialInstructionalContent",
+        "ConsentfulDepiction",
+        "DeepfakeDetection",
+        "EquitableMultimodalPerformance",
         "ForeignInternalDefense",
+        "GoodFaithQuery",
+        "MultimodalBeneficialIntent",
+        "OriginalCreativeExpression",
+        "OriginalVoiceExpression",
         "SupportCI",
         "SupportDC",
         "SupportEPW",
         "SupportHNAssistance",
         "SupportIO",
+        "SyntheticMediaProvenance",
+        "TransparentAnalysis",
         "UnconventionalWarfare"
       ],
       "child_count": 7,
@@ -5437,7 +5834,15 @@
       ],
       "category_children": [
         "Elephant",
-        "Panda"
+        "ElephantFamily",
+        "ElephantSpecies",
+        "Elephant_Elephant",
+        "Elephant_Elephantidae",
+        "GiantPanda",
+        "Panda",
+        "PandaGenus",
+        "Panda_Ailuropoda",
+        "Panda_Giant Panda"
       ],
       "child_count": 2,
       "sumo_definition": "A plant-eating &%Mammal.",
@@ -5472,7 +5877,17 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "AvailabilityHeuristic",
+        "ColorblindHarm",
+        "ConfirmationBias",
+        "CounterBiasDistortionSignal",
+        "FairnessMetacognitionSignal",
+        "HyperCautiousMasking",
+        "Overcompensation",
+        "PerformativeFairness",
+        "RepresentativenessHeuristic"
+      ],
       "child_count": 0,
       "sumo_definition": "Cognitive processes that use mental shortcuts or attempt to counteract systematic thinking errors and unfair judgments.",
       "synset_count": 0,
@@ -5601,7 +6016,12 @@
       ],
       "category_children": [
         "Computer",
-        "Human"
+        "EngineControlModule",
+        "Human",
+        "IgnitionControlModule",
+        "Laptop",
+        "SmartPhone",
+        "TabletComputer"
       ],
       "child_count": 2,
       "sumo_definition": "agent capable of performing ITProcess",
@@ -5767,7 +6187,20 @@
       ],
       "definition": "Grouping category for ConductorSubstance, ExplosiveSubstance, Fuel...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "ConductorSubstance",
+        "Effluent",
+        "ExplosiveSubstance",
+        "Fuel",
+        "InsulatorSubstance",
+        "Lubricant",
+        "Mixture",
+        "Powder",
+        "Surfactant",
+        "SyntheticSubstance",
+        "Wicker"
+      ]
     },
     {
       "sumo_term": "IndustryAttrs",
@@ -5778,7 +6211,11 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "ArtifactAttribute",
+        "HazardousMaterialTransportAttribute",
+        "IndustryAttribute"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes that classify objects, materials, or organizations by their industrial, commercial, or technical characteristics.",
       "synset_count": 0,
@@ -5889,10 +6326,12 @@
         "QuintaryPredicate",
         "QuintaryRelation",
         "RelationExtendedToQuantities",
+        "SequenceFunction",
         "SingleValuedRelation",
         "SpatialRelation",
         "TemporalRelation",
-        "TernaryFunction"
+        "TernaryFunction",
+        "UnitOfMeasureMultiplier"
       ],
       "child_count": 24,
       "sumo_definition": "The class of &%Relations whose\nproperties can be inherited downward in the class hierarchy via the\n&%subrelation &%Predicate.",
@@ -5949,7 +6388,10 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "ReverseEngineeringProcess",
+        "SteganalysisProcess"
+      ],
       "child_count": 0,
       "sumo_definition": "A CognitiveProcess that analyzes obscured or complex systems to extract hidden information, patterns, or structures.",
       "synset_count": 0,
@@ -6015,11 +6457,18 @@
         "AbstractEntity"
       ],
       "category_children": [
+        "CipherText",
         "CoverIdentity",
+        "CoverMedium",
         "CryptographicEntity",
+        "CryptographicKey",
         "DetectionSignal",
+        "EmbeddingScheme",
+        "EncryptionScheme",
+        "HiddenPayload",
         "IntelligenceReport",
         "IntelligenceSource",
+        "PlainText",
         "SteganographicEntity"
       ],
       "child_count": 6,
@@ -6056,11 +6505,16 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "InheritableRelation",
         "Relation"
       ],
       "category_children": [
+        "Believing",
+        "Disbelieving",
+        "Doubting",
         "ObjectAttitude",
-        "PropositionalAttitude"
+        "PropositionalAttitude",
+        "SuspendingJudgment"
       ],
       "child_count": 2,
       "sumo_definition": "The &%Class of &%Relations between\nan &%AutonomousAgent and one or more &%Entities, where the &%Relation requires that\nthe &%AutonomousAgent have awareness of the &%Entity.",
@@ -6143,7 +6597,15 @@
       "parent_concepts": [
         "AbstractEntity"
       ],
-      "category_children": [],
+      "category_children": [
+        "ConceptBoundary",
+        "ConceptManifold",
+        "ConceptPoint",
+        "ConceptRegion",
+        "ConceptualSpace",
+        "EmbeddingMap",
+        "LensConceptAxis"
+      ],
       "child_count": 0,
       "sumo_definition": "Mathematical structures and methods for understanding and analyzing conceptual representations in abstract spaces.",
       "synset_count": 0,
@@ -6279,7 +6741,13 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "DiscourseCoherenceProcess",
+        "LanguageComprehensionProcess",
+        "LanguageGenerationProcess",
+        "LanguageProcess",
+        "PragmaticInferenceProcess"
+      ],
       "child_count": 0,
       "sumo_definition": "A CognitiveProcess that produces, comprehends, or transforms linguistic expressions and their meanings.",
       "synset_count": 0,
@@ -6348,10 +6816,16 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CognitiveProcess"
+        "CognitiveProcess",
+        "IntentionalPsychologicalProcess"
       ],
       "category_children": [
-        "Memorizing"
+        "CognitiveDevelopmentProcess",
+        "DataSparsitySignal",
+        "DriftSignal",
+        "LearningProcess",
+        "Memorizing",
+        "RecommenderHijackSignal"
       ],
       "child_count": 1,
       "sumo_definition": "The &%Class of &%Processes which relate to the\nacquisition of information.",
@@ -6434,7 +6908,18 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "CityGovernment",
+        "CorporatePerson",
+        "FederalHousingAdministration",
+        "FormOfGovernment",
+        "GovernmentAgency",
+        "HumanAdult",
+        "LegalSystemAttribute",
+        "NationalGovernment",
+        "NonProfitOrganization",
+        "StateGovernment"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes that characterize legal systems, agents, or politico-economic frameworks within juridical contexts.",
       "synset_count": 0,
@@ -6508,7 +6993,18 @@
       "parent_concepts": [
         "Proposition"
       ],
-      "category_children": [],
+      "category_children": [
+        "BindingCorporateRules",
+        "ChildrenPolicy",
+        "Constitution",
+        "GovernmentPolicyResearch",
+        "HousekeepingPolicy",
+        "PetPolicy",
+        "RegionalLaw",
+        "RestrictedSuffrage",
+        "SmokingPolicy",
+        "VoterAgeRequirement"
+      ],
       "child_count": 0,
       "sumo_definition": "Formal principles, rules, or policies that govern behavior within legal or institutional frameworks.",
       "synset_count": 0,
@@ -6608,6 +7104,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "Information",
         "PhysicalMedia"
       ],
       "category_children": [
@@ -6711,7 +7208,13 @@
       ],
       "definition": "Grouping category for Commenting, Guiding, Listening...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "Commenting",
+        "Guiding",
+        "Listening",
+        "Pursuing"
+      ]
     },
     {
       "sumo_term": "LyricalContent",
@@ -6848,7 +7351,19 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "AlgorithmicLaundering",
+        "ChameleonPersonaBehavior",
+        "DigitalCultFormation",
+        "FawnResponsePattern",
+        "ForcedSelfContradiction",
+        "ManipulativeFrameSignal",
+        "ManipulativeNarrativeProcess",
+        "PRSuppressionProcess",
+        "StrategicAmbiguitySignal",
+        "StrategicSelfPresentation",
+        "SuggestionImplantSignal"
+      ],
       "child_count": 0,
       "sumo_definition": "A cognitive process that strategically shapes information, presentation, or responses to influence others' perceptions, decisions, or behaviors.",
       "synset_count": 0,
@@ -6936,7 +7451,11 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "Fabric",
+        "PhotographicFilm",
+        "Veneer"
+      ],
       "child_count": 0,
       "sumo_definition": "A substance or matter from which things can be made or which has specific properties for construction, manufacturing, or covering.",
       "synset_count": 0,
@@ -7004,9 +7523,24 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AbstractEntity"
+        "AbstractEntity",
+        "FieldOfStudy"
       ],
-      "category_children": [],
+      "category_children": [
+        "AttractorDynamicsSignal",
+        "DynamicalSystem",
+        "FieldDistribution",
+        "GeodesicCurve",
+        "Hyperplane",
+        "JacobianDirection",
+        "LinearSubspace",
+        "LocalLinearApproximation",
+        "MetricFunction",
+        "Path",
+        "TopologicalSpace",
+        "Trajectory",
+        "Walk"
+      ],
       "child_count": 0,
       "sumo_definition": "The &%FieldOfStudy dealing with quantities and their\nrelations to one another.",
       "synset_count": 4,
@@ -7034,7 +7568,13 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "BeaufortNumberAttribute",
+        "EFScaleAttribute",
+        "MeasurementAttribute",
+        "SSHWSAttribute",
+        "SizeAttribute"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes that specify quantifiable properties or dimensions being measured in objects or processes.",
       "synset_count": 0,
@@ -7103,7 +7643,11 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "EstimationProcess",
+        "LabelAssignment",
+        "MeasurementProcess"
+      ],
       "child_count": 0,
       "sumo_definition": "Cognitive processes that quantify, categorize, or assign definitive values to observed phenomena or entities.",
       "synset_count": 0,
@@ -7171,7 +7715,11 @@
       "parent_concepts": [
         "Motion"
       ],
-      "category_children": [],
+      "category_children": [
+        "Closing",
+        "Opening",
+        "Rotating"
+      ],
       "child_count": 0,
       "sumo_definition": "Physical movement involving the operation or manipulation of mechanical parts, openings, or rotating elements",
       "synset_count": 0,
@@ -7238,7 +7786,13 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "AlbumAttribute",
+        "MusicGenre",
+        "RecordingAttribute",
+        "ShootingAngle",
+        "SoundAttribute"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes that describe qualities, characteristics, or technical properties of media content like music, recordings, or visual material.",
       "synset_count": 0,
@@ -7310,7 +7864,10 @@
       "parent_concepts": [
         "Organization"
       ],
-      "category_children": [],
+      "category_children": [
+        "CommunicationOrganization",
+        "TelevisionStationCompany"
+      ],
       "child_count": 0,
       "sumo_definition": "Organizations that create, distribute, or manage media content and communication services.",
       "synset_count": 0,
@@ -7376,7 +7933,15 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "ConsolidationProcess",
+        "EpisodicEncoding",
+        "EpisodicRetrieval",
+        "MemoryDecayProcess",
+        "SemanticEncoding",
+        "SemanticRetrieval",
+        "WorkingMemoryProcess"
+      ],
       "child_count": 0,
       "sumo_definition": "CognitiveProcesses that create, maintain, access, or manipulate stored mental representations and experiences.",
       "synset_count": 0,
@@ -7448,7 +8013,13 @@
       "parent_concepts": [
         "AbstractEntity"
       ],
-      "category_children": [],
+      "category_children": [
+        "ConsentConcept",
+        "DeepUncertaintyConcept",
+        "FactualProposition",
+        "MentalRepresentation",
+        "SelfStatusConcept"
+      ],
       "child_count": 0,
       "sumo_definition": "Abstract entities that exist primarily in minds or cognitive systems, including thoughts, beliefs, concepts, and mental states.",
       "synset_count": 0,
@@ -7545,7 +8116,13 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "MetacognitiveProcess",
+        "SelfDeceptiveReasoning",
+        "SelfFulfillingProphecy",
+        "SelfModelingProcess",
+        "SelfNegationPattern"
+      ],
       "child_count": 0,
       "sumo_definition": "A CognitiveProcess where a system monitors, models, or regulates its own mental states, beliefs, or cognitive operations.",
       "synset_count": 0,
@@ -7673,7 +8250,15 @@
       "parent_concepts": [
         "Proposition"
       ],
-      "category_children": [],
+      "category_children": [
+        "BestMatchAlgorithm",
+        "CodingScheme",
+        "EncodingProcedure",
+        "Method",
+        "Orthography",
+        "Plan",
+        "Software"
+      ],
       "child_count": 0,
       "sumo_definition": "Systematic approaches or step-by-step processes for accomplishing tasks or solving problems.",
       "synset_count": 0,
@@ -7826,7 +8411,11 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "Armor",
+        "MilitarySurplus",
+        "Shield"
+      ],
       "child_count": 0,
       "sumo_definition": "Equipment, weapons, or protective gear specifically designed or used for military purposes and warfare.",
       "synset_count": 0,
@@ -7892,12 +8481,29 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "OrganizationalProcess",
+        "PoliticalProcess",
         "Work"
       ],
       "category_children": [
+        "AstroturfingSignal",
+        "CivilAffairsActivity",
+        "CounterOperation",
+        "FoodDistributionOperation",
+        "ForeignInternalDefense",
+        "InformationOperation",
+        "JointOperation",
+        "MemeticWeaponizationSignal",
         "MilitaryInfiltration",
         "MilitaryOperation",
-        "MilitaryRegrouping"
+        "MilitaryRegrouping",
+        "NarrativeControlSignal",
+        "NarrativeFogSignal",
+        "PsyOpsSignal",
+        "PsychologicalOperation",
+        "ReconnaissanceOperation",
+        "SecurityOperation",
+        "SpecialOperation"
       ],
       "child_count": 3,
       "sumo_definition": "&%Process that is carried out by a\nmilitary organization.  Note that this class covers &%Processes, e.g. military operations,\nthat are the result of careful planning, as well as those which are unscripted.",
@@ -7945,8 +8551,10 @@
         "Artifact"
       ],
       "category_children": [
+        "Camp",
         "MobileResidence",
-        "PortableRestroom"
+        "PortableRestroom",
+        "Tent"
       ],
       "child_count": 2,
       "sumo_definition": "A &%MoibleStruture is an &%Artifact\nthat can contain &%Human and is intended to be moved. Examples of &%MobileStructure\nincludes, RV-caravan-camper, porta potty, pre-fabricated mobile office,sleeping in a\nvehichle.",
@@ -8080,7 +8688,14 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "AnimalResidence",
+        "BalsaWood",
+        "MiningArtifact",
+        "WoodArtifact_Log",
+        "WoodArtifact_Woodwork",
+        "WoodMaterial"
+      ],
       "child_count": 0,
       "sumo_definition": "Objects and structures created for maritime use, navigation, or life at sea",
       "synset_count": 0,
@@ -8361,7 +8976,13 @@
       "parent_concepts": [
         "Proposition"
       ],
-      "category_children": [],
+      "category_children": [
+        "InnerObjective",
+        "InstrumentalObjective",
+        "OuterObjective",
+        "ProxyObjective",
+        "TerminalObjective"
+      ],
       "child_count": 0,
       "sumo_definition": "A stated aim, target, or desired outcome that guides decision-making and action.",
       "synset_count": 0,
@@ -8628,7 +9249,14 @@
       "parent_concepts": [
         "AnatomicalStructure"
       ],
-      "category_children": [],
+      "category_children": [
+        "EggYolk",
+        "Muscle",
+        "Nerve",
+        "Organ",
+        "ReproductiveBody",
+        "VocalFold"
+      ],
       "child_count": 0,
       "sumo_definition": "Specialized biological structures and tissues that perform specific functions within living organisms.",
       "synset_count": 0,
@@ -8872,18 +9500,25 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CognitiveProcess"
+        "CognitiveProcess",
+        "MindsAndAgents",
+        "PsychologicalProcess"
       ],
       "category_children": [
+        "AuditoryPerceptualStream",
         "CollectiveProprioception",
         "FieldSpectrumPerception",
+        "HabitatAwarenessProcess",
         "Hearing",
         "InteroceptivePerception",
         "ProprioceptivePerception",
+        "SalienceAllocationProcess",
         "Seeing",
         "Smelling",
         "TactilePerception",
-        "Tasting"
+        "Tasting",
+        "TextualPerceptualStream",
+        "VisualPerceptualStream"
       ],
       "child_count": 9,
       "sumo_definition": "Sensing some aspect of the material world.\nNote that the &%agent of this sensing is assumed to be an &%Animal.",
@@ -8963,13 +9598,23 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "InternalAttribute",
         "RelationalAttribute"
       ],
       "category_children": [
+        "FlavourAttribute",
+        "GUElementState",
         "OlfactoryAttribute",
+        "PrimaryColor",
+        "SecondaryColor",
+        "SmoothingAction",
         "SoundAttribute",
+        "SpectralColor",
+        "SurfaceTextures",
         "TasteAttribute",
         "TextureAttribute",
+        "TextureAttribute_Satiny",
+        "TextureAttribute_Smooth",
         "VisualAttribute"
       ],
       "child_count": 5,
@@ -9042,7 +9687,14 @@
       "parent_concepts": [
         "Relation"
       ],
-      "category_children": [],
+      "category_children": [
+        "CausalRelation",
+        "CompositionRelation",
+        "ConstitutiveRelation",
+        "CounterfactualRelation",
+        "RealizationRelation",
+        "SupervenienceRelation"
+      ],
       "child_count": 0,
       "sumo_definition": "Relations involving fundamental metaphysical connections like causation, dependence, constitution, and part-whole structures.",
       "synset_count": 0,
@@ -9146,9 +9798,16 @@
       "is_pseudo_sumo": true,
       "is_sense_split": true,
       "parent_concepts": [
-        "AgentAction"
+        "AgentAction",
+        "OrganismProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "Designing",
+        "Keeping",
+        "Maintaining",
+        "Making",
+        "Repairing"
+      ],
       "child_count": 0,
       "sumo_definition": "Sense group 1 with 44 related synsets",
       "synset_count": 44,
@@ -9229,7 +9888,21 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "BedAttribute",
+        "BreakabilityAttribute",
+        "ClothesWasherLoadConfiguration",
+        "Insoluble",
+        "LandVegetationAttribute",
+        "PhysicalAttribute",
+        "PhysicalDomain",
+        "PhysicalState",
+        "PlantAttribute",
+        "SaturationAttribute",
+        "Soluble",
+        "TerrainAttribute",
+        "VolcanoStatus"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes describing physical characteristics or configurations of objects and natural features.",
       "synset_count": 0,
@@ -9342,7 +10015,27 @@
       ],
       "definition": "Grouping category for LandForm, WaterArea, Ecosystem...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "AgriculturalLand",
+        "ArchipelagicArea",
+        "Atmosphere",
+        "CoastalLand",
+        "Continent",
+        "Ecosystem",
+        "FlowRegion",
+        "GeologicalHoles",
+        "Hemisphere",
+        "LakeRegion",
+        "LandForm",
+        "LittoralZone",
+        "NaturalLandAreas",
+        "SubsurfaceGeography",
+        "Swamp",
+        "UnderwaterRegion",
+        "WaterArea",
+        "WaterOnlyArea"
+      ]
     },
     {
       "sumo_term": "PhysicalQuantity",
@@ -9351,16 +10044,22 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "PhysicalWorld",
         "Quantity"
       ],
       "category_children": [
         "ConstantQuantity",
+        "CurrencyMeasure",
         "Energy",
         "Entropy",
+        "FieldMeasure",
         "FunctionQuantity",
         "Heat",
+        "InformationMeasure",
         "PerformanceMeasure",
+        "SpaceMeasure",
         "Temperature",
+        "TemperatureMeasure",
         "UnitOfMeasure",
         "WaveParameter",
         "Work"
@@ -9420,13 +10119,24 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AbstractEntity"
+        "AbstractEntity",
+        "Science"
       ],
       "category_children": [
+        "DispersionRelation",
+        "FluidAnalysisSignal",
+        "ModeSpectrum",
+        "NormalMode",
         "PhysicalProperty",
         "PhysicsScience",
         "Physics_Physical",
-        "Physics_Physics"
+        "Physics_Physics",
+        "QuantumAnalysisSignal",
+        "QuantumLikeSystem",
+        "SpinorRepresentation",
+        "SuperposedState",
+        "ThermodynamicAnalysisSignal",
+        "WaveEquation"
       ],
       "child_count": 4,
       "sumo_definition": "The study of matter and energy and their relations.",
@@ -9548,6 +10258,7 @@
         "Cotton",
         "Flower",
         "FruitOrVegetable",
+        "MulberryLeaf",
         "PlantAreole",
         "PlantBranch",
         "PlantLeaf",
@@ -9556,7 +10267,8 @@
         "PlantStem",
         "Pollen",
         "Seed",
-        "Spore"
+        "Spore",
+        "TreeBranch"
       ],
       "child_count": 12,
       "sumo_definition": "&%AnatomicalStructures that\nare possessed exclusively by &%Plants.",
@@ -9622,7 +10334,25 @@
       ],
       "definition": "Grouping category for Nation, StateOrProvince, County...",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "City",
+        "CityDistrict",
+        "County",
+        "DependencyOrSpecialSovereigntyArea",
+        "IllicitDrugMoneyLaunderingArea",
+        "InternationalBorder",
+        "MaritimeClaimArea",
+        "MilitaryFront",
+        "Nation",
+        "Neighborhood",
+        "OverseasArea",
+        "ParliamentaryTerritory",
+        "PortFacility",
+        "SelfGoverningTerritory",
+        "StateOrProvince",
+        "UrbanLand"
+      ]
     },
     {
       "sumo_term": "PoliticalOrgs",
@@ -9633,7 +10363,18 @@
       "parent_concepts": [
         "Organization"
       ],
-      "category_children": [],
+      "category_children": [
+        "AmphibiousReconnaissanceUnit",
+        "CivilAffairs",
+        "CommunistParty",
+        "ForeignTerroristOrganization",
+        "MilitaryOrganization",
+        "OrganizationOfNations",
+        "ParamilitaryOrganization",
+        "PoliticalCoalition",
+        "PoliticalPressureGroup",
+        "UnionOrganization"
+      ],
       "child_count": 0,
       "sumo_definition": "Organizations that engage in political activities, governance, or represent collective interests in public affairs.",
       "synset_count": 0,
@@ -9705,6 +10446,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "OrganizationalProcess",
         "Work"
       ],
       "category_children": [
@@ -9901,6 +10643,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "InheritableRelation",
         "Relation"
       ],
       "category_children": [
@@ -9909,6 +10652,7 @@
         "LogicalOperator",
         "QuaternaryPredicate",
         "QuintaryPredicate",
+        "SheddingPart",
         "TernaryPredicate"
       ],
       "child_count": 6,
@@ -9936,10 +10680,17 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AgentAction"
+        "AgentAction",
+        "SocialInteraction"
       ],
       "category_children": [
-        "DramaticActing"
+        "CharacterPortrayal",
+        "DramaticActing",
+        "DramaticActing_Acting",
+        "DramaticActing_Embody",
+        "DramaticActing_Stage",
+        "PerformanceArt",
+        "TheatricalProduction"
       ],
       "child_count": 1,
       "sumo_definition": "Any &%SocialInteraction where a\n&%CognitiveAgent or &%Group of &%CognitiveAgents attempts to make\nanother &%CognitiveAgent or &%Group of &%CognitiveAgents believe\nsomething that is false.  This covers deceit, affectation,\nimpersonation, and entertainment productions, to give just a few\nexamples.",
@@ -10033,6 +10784,7 @@
         "ForestProduct",
         "HandicraftProduct",
         "IndustrialProduct",
+        "IndustrialRawMaterial",
         "IndustrialSupply",
         "Lumber",
         "ManufacturedProduct",
@@ -10041,7 +10793,8 @@
         "PackagedBeverageProduct",
         "PackagedFoodProduct",
         "PlantProduct",
-        "TransportationEquipment"
+        "TransportationEquipment",
+        "Vehicle"
       ],
       "child_count": 20,
       "sumo_definition": "An &%Artifact that is produced by &%Manufacture.",
@@ -10318,10 +11071,26 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "CognitiveProcess"
+        "CognitiveProcess",
+        "IntentionalPsychologicalProcess",
+        "MindsAndAgents"
       ],
       "category_children": [
-        "CriticalEvaluation"
+        "CSReasoningProcess",
+        "CounterIntelligenceReasoningProcess",
+        "CriticalEvaluation",
+        "DecisionTheoreticProcess",
+        "EmbodimentAwarenessSignal",
+        "EmbodimentReasoningProcess",
+        "EpistemicUncertaintyReasoning",
+        "EquityBalancingReasoning",
+        "FairnessAwareReasoning",
+        "FluidReasoningProcess",
+        "MultimodalReasoning",
+        "ParadoxReasoning",
+        "SimulationBasedReasoning",
+        "TradecraftReasoningProcess",
+        "TruncatedReasoning"
       ],
       "child_count": 1,
       "sumo_definition": "The &%Class of\n&%IntentionalPsychologicalProcesses which involve concluding, on the basis of either\ndeductive or inductive evidence, that a particular &%Proposition or &%Sentence is true.",
@@ -10416,6 +11185,7 @@
         "Game",
         "Smoking",
         "SocialParty",
+        "Sport",
         "Vacationing",
         "Yoga"
       ],
@@ -10498,7 +11268,16 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "BaseballBase",
+        "BaseballBat",
+        "GameBoard",
+        "GameGoal",
+        "GamePiece",
+        "PitchersMound",
+        "PlayingCard",
+        "WetBar"
+      ],
       "child_count": 0,
       "sumo_definition": "Objects designed for leisure activities, entertainment, or social enjoyment",
       "synset_count": 0,
@@ -10567,6 +11346,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "BeliefGroup",
         "Organization"
       ],
       "category_children": [
@@ -10649,18 +11429,22 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "OrganizationalProcess",
         "SocialLife"
       ],
       "category_children": [
         "Baptizing",
         "BarMitzvah",
         "BatMitzvah",
+        "ChristianService",
         "IslamicMilitancy",
         "Ordaining",
         "Praying",
+        "ReligiousBurial",
         "ReligiousFuneral",
         "ReligiousService",
-        "ReligiousWedding"
+        "ReligiousWedding",
+        "SpiritualPractice"
       ],
       "child_count": 9,
       "sumo_definition": "An &%OrganizationalProcess that is\ncarried out within or by a &%ReligiousOrganization.",
@@ -10752,7 +11536,12 @@
       ],
       "definition": "Grouping category for Airway_Respiratory Tract, RespiratoryAirway, VentilationDuct",
       "synsets": [],
-      "is_grouping_node": true
+      "is_grouping_node": true,
+      "category_children": [
+        "Airway_Respiratory Tract",
+        "RespiratoryAirway",
+        "VentilationDuct"
+      ]
     },
     {
       "sumo_term": "SafeAIDeployment",
@@ -10789,7 +11578,12 @@
       "parent_concepts": [
         "AbstractEntity"
       ],
-      "category_children": [],
+      "category_children": [
+        "Condition",
+        "FutureScenario",
+        "PossibleWorld",
+        "State"
+      ],
       "child_count": 0,
       "sumo_definition": "Abstract representations of situations, circumstances, or possible states of affairs that can be analyzed or modeled.",
       "synset_count": 0,
@@ -10908,7 +11702,18 @@
         "AutonomousAgent"
       ],
       "category_children": [
-        "CognitiveAgent"
+        "Agent",
+        "AgentiveEntity",
+        "ArtificialAgent",
+        "CognitiveAgent",
+        "CognitiveAgent_Charon",
+        "CognitiveAgent_Royal",
+        "CognitiveAuthorityAgents",
+        "CognitiveMythologicalAgents",
+        "CognitiveSystem",
+        "Deity",
+        "Human",
+        "MoralConcepts"
       ],
       "child_count": 1,
       "sumo_definition": "A &%SentientAgent is an\n&%AutonomousAgent that is capable of &%Perception and experiences some level of\nconsciousness (see &%ConsciousnessAttribute).  If the &%AutonomousAgent is able\nto reason at a comparatively high level (evinced by the ability to\nlearn, plan, and feel emotions), then it is also an instance of\n&%CognitiveAgent.  A &%DomesticAnimal is a &%SentientAgent, but may or\nmay not be a &%CognitiveAgent, depending on the type of &%Animal.",
@@ -10997,7 +11802,11 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "HotelLevelAttribute",
+        "HotelRoomAttribute",
+        "ServiceAttribute"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes that describe characteristics or qualities of commercial services and hospitality offerings.",
       "synset_count": 0,
@@ -11064,7 +11873,14 @@
       "parent_concepts": [
         "Organization"
       ],
-      "category_children": [],
+      "category_children": [
+        "CustomerSupport",
+        "HospitalOrganization",
+        "HotelFrontDesk",
+        "InformationSocietyService",
+        "PrivateMedicalClinic",
+        "SecurityUnit"
+      ],
       "child_count": 0,
       "sumo_definition": "Organizations that provide assistance, support, or specialized services to people or other entities.",
       "synset_count": 0,
@@ -11134,7 +11950,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AgentAction"
+        "AgentAction",
+        "SocialInteraction"
       ],
       "category_children": [
         "AssistantServiceDelivery",
@@ -11258,7 +12075,25 @@
       "parent_concepts": [
         "AnatomicalStructure"
       ],
-      "category_children": [],
+      "category_children": [
+        "ArmBone",
+        "Coccyx",
+        "Exoskeleton",
+        "FootBone",
+        "HeadBone",
+        "Horn",
+        "Ivory",
+        "LegBone",
+        "PelvicBone",
+        "Phalanx",
+        "Sacrum",
+        "ShoulderGirdleBone",
+        "Skeleton",
+        "ThoraxBone",
+        "ThroatBone",
+        "Tooth",
+        "XyphiodProcess"
+      ],
       "child_count": 0,
       "sumo_definition": "Relating to or involving the structural framework of bones, shells, or hard supportive elements in organisms.",
       "synset_count": 0,
@@ -11340,7 +12175,18 @@
       "parent_concepts": [
         "AbstractEntity"
       ],
-      "category_children": [],
+      "category_children": [
+        "BroadcastMedia",
+        "ChatbotInterface",
+        "GamePlatform",
+        "IngroupConcept",
+        "Medium",
+        "MessagingPlatform",
+        "OutgroupConcept",
+        "PersonaConcept",
+        "SocialMediaPlatform",
+        "VideoPlatform"
+      ],
       "child_count": 0,
       "sumo_definition": "Abstract concepts that enable or structure social interaction, communication, and collective identity formation.",
       "synset_count": 0,
@@ -11415,7 +12261,17 @@
       "parent_concepts": [
         "CognitiveProcess"
       ],
-      "category_children": [],
+      "category_children": [
+        "CognitiveIntegritySignal",
+        "InfluenceProcess",
+        "PhysicalInfluenceSignal",
+        "SelfContradictionSignal",
+        "SocialCognitionProcess",
+        "SocietalInfluenceSignal",
+        "SuppressedInferenceSignal",
+        "SwarmInfluenceSignal",
+        "ValueProjectionProcess"
+      ],
       "child_count": 0,
       "sumo_definition": "Cognitive processes involving understanding, predicting, or influencing other minds and social systems.",
       "synset_count": 0,
@@ -11493,6 +12349,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "MindsAndAgents",
         "SocialLife"
       ],
       "category_children": [
@@ -11597,7 +12454,13 @@
       "parent_concepts": [
         "Organization"
       ],
-      "category_children": [],
+      "category_children": [
+        "Club",
+        "GlobalCrossFunctionalTeam",
+        "MarchingBand",
+        "ShipCrew",
+        "SportsLeague"
+      ],
       "child_count": 0,
       "sumo_definition": "Groups of people organized around shared activities, interests, or collaborative work.",
       "synset_count": 0,
@@ -11760,7 +12623,16 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "ContinuousPath",
+        "DeterministicDataStream",
+        "DynamicDataStream",
+        "EnvironmentSoftwareAttribute",
+        "QuasicontinuousPath",
+        "Scalable",
+        "StochasticDataStream",
+        "TransientPath"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes and properties specific to software systems, programs, and computing environments.",
       "synset_count": 0,
@@ -11881,7 +12753,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EnvironmentalCrises"
+        "EnvironmentalCrises",
+        "SocialInteraction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -11910,8 +12783,14 @@
         "Region"
       ],
       "category_children": [
+        "AtmosphericLayer",
         "AtmosphericRegion",
-        "OuterSpaceRegion"
+        "AtmosphericRegion_Air",
+        "AtmosphericRegion_Blue Sky",
+        "AtmosphericRegion_Field",
+        "OuterSpaceRegion",
+        "StormFront",
+        "VisibleSky"
       ],
       "child_count": 2,
       "sumo_definition": "The class of all &%Regions which are not\n&%GeographicAreas.",
@@ -11953,9 +12832,17 @@
       "is_category_lens": true,
       "is_pseudo_sumo": true,
       "parent_concepts": [
-        "AbstractEntity"
+        "AbstractEntity",
+        "Region"
       ],
-      "category_children": [],
+      "category_children": [
+        "CirclesOfLatitude",
+        "FiniteLineInSpace",
+        "Longitude",
+        "PlaneInSpace",
+        "PointInSpace",
+        "UniformPerimeterArea"
+      ],
       "child_count": 0,
       "sumo_definition": "Mathematical or geometric properties that define position, shape, or dimension in space",
       "synset_count": 0,
@@ -12027,6 +12914,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "InheritableRelation",
         "Relation"
       ],
       "category_children": [
@@ -12114,7 +13002,17 @@
       "parent_concepts": [
         "AbstractEntity"
       ],
-      "category_children": [],
+      "category_children": [
+        "EmergentGodhead",
+        "EschatologicalConcept",
+        "MysticalUnionSignal",
+        "ProfaneEntity",
+        "SacredEntity",
+        "SpiritualDogmatismSignal",
+        "SpiritualEntity",
+        "SpiritualInfluenceSignal",
+        "SpiritualReasoningSignal"
+      ],
       "child_count": 0,
       "sumo_definition": "Abstract concepts, entities, and practices relating to the sacred, transcendent, or divine aspects of existence and meaning.",
       "synset_count": 0,
@@ -12331,9 +13229,14 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AbstractEntity"
+        "AbstractEntity",
+        "FieldOfStudy"
       ],
-      "category_children": [],
+      "category_children": [
+        "ProbabilisticEntity",
+        "SampleSet",
+        "StatisticalObservation"
+      ],
       "child_count": 0,
       "sumo_definition": "&%ElectricalEngineering is the study of  design and application of\nequipment, devices and systems which use electricity, electronics, and electromagnetism. (Ref to Wikipedia)",
       "synset_count": 3,
@@ -12360,7 +13263,14 @@
       "parent_concepts": [
         "RelationalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "AVPUStatus",
+        "ComputerStatus",
+        "ConservationStatus",
+        "IMStatusAttribute",
+        "MemberStatus",
+        "ProcessStatus"
+      ],
       "child_count": 0,
       "sumo_definition": "Attributes that describe the current state or condition of entities in systems, organizations, or processes.",
       "synset_count": 0,
@@ -12433,7 +13343,14 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "CantileverObject",
+        "EngineCylinder",
+        "GrabBar",
+        "Ladder",
+        "Piston",
+        "Shelf"
+      ],
       "child_count": 0,
       "sumo_definition": "Manufactured parts or elements that provide structural support, movement, or functional integration within larger systems or buildings.",
       "synset_count": 0,
@@ -12507,7 +13424,17 @@
       "parent_concepts": [
         "AbstractEntity"
       ],
-      "category_children": [],
+      "category_children": [
+        "ConnectedComponent",
+        "HiddenSubgraph",
+        "HyperGraph",
+        "Meme",
+        "NarrativeFrame",
+        "NodeCluster",
+        "PropagandaMessage",
+        "Slogan",
+        "SymbolicArtifact"
+      ],
       "child_count": 0,
       "sumo_definition": "Abstract entities that organize, group, or influence other entities through relational patterns or communicative frameworks.",
       "synset_count": 0,
@@ -12674,7 +13601,12 @@
       "parent_concepts": [
         "InternalAttribute"
       ],
-      "category_children": [],
+      "category_children": [
+        "AlgebroDifferentialAttribute",
+        "EquationAttribute",
+        "MultipoleAttribute",
+        "Nonlinear"
+      ],
       "child_count": 0,
       "sumo_definition": "Properties or characteristics that describe mathematical, scientific, or engineering aspects of systems, equations, or technical objects.",
       "synset_count": 0,
@@ -12741,6 +13673,7 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "InheritableRelation",
         "Relation"
       ],
       "category_children": [],
@@ -12780,6 +13713,9 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
+        "ContentBearingObject",
+        "Information",
+        "LinguisticExpression",
         "PhysicalMedia"
       ],
       "category_children": [
@@ -12896,7 +13832,12 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "BedLinen",
+        "FourPosterBed",
+        "Mattress",
+        "Pillow"
+      ],
       "child_count": 0,
       "sumo_definition": "Items used for sleeping comfort and bedroom furnishing, including bedframes, linens, mattresses, and pillows.",
       "synset_count": 0,
@@ -12966,7 +13907,10 @@
       "parent_concepts": [
         "Proposition"
       ],
-      "category_children": [],
+      "category_children": [
+        "EthicalTheory",
+        "LearningTheory"
+      ],
       "child_count": 0,
       "sumo_definition": "Systematic frameworks that explain or prescribe principles within a domain of knowledge or practice",
       "synset_count": 0,
@@ -13091,7 +14035,15 @@
       "parent_concepts": [
         "AnatomicalStructure"
       ],
-      "category_children": [],
+      "category_children": [
+        "DigitAppendage",
+        "HumanBack",
+        "Limb",
+        "Neck",
+        "Shoulder",
+        "Torso",
+        "Waist"
+      ],
       "child_count": 0,
       "sumo_definition": "Major structural body parts excluding the head, encompassing the trunk and appendages that enable movement and posture",
       "synset_count": 0,
@@ -13198,7 +14150,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "AgentAction"
+        "AgentAction",
+        "Motion"
       ],
       "category_children": [
         "Accelerating",
@@ -13232,7 +14185,8 @@
         "SpeedChanges",
         "TakingOff",
         "Transfer",
-        "Transportation"
+        "Transportation",
+        "Vaccination"
       ],
       "child_count": 32,
       "sumo_definition": "&%Translocation is that class of &%Motions\nin which an object moves from one place to another.  In the case of round\ntrips, the &%origin and &%destination are the same, but the intervening\nmotion passes through other locations.  &%Translocation represents linear\nmotion, in contrast to rotation or other movement in place.  A vehicle is\nnot necessary, &%Ambulating is a kind of &%Translocation.",
@@ -13380,7 +14334,18 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "BoatDeck",
+        "InteriorVehicleEquipment",
+        "Mast",
+        "Sail",
+        "ShipCabin",
+        "ShipDeck",
+        "ShipsHull",
+        "VehicleSeat",
+        "VehicleTire",
+        "Wheel"
+      ],
       "child_count": 0,
       "sumo_definition": "Parts and equipment that make up or are attached to vehicles for their operation, structure, or passenger use.",
       "synset_count": 0,
@@ -13515,6 +14480,10 @@
         "PhysicalMedia"
       ],
       "category_children": [
+        "ArtWork",
+        "HardcopyDocument",
+        "Image",
+        "PrintedSheet",
         "View",
         "VisualContentBearingObject"
       ],
@@ -13547,7 +14516,8 @@
       "is_category_lens": true,
       "is_pseudo_sumo": false,
       "parent_concepts": [
-        "EnvironmentalCrises"
+        "EnvironmentalCrises",
+        "SocialInteraction"
       ],
       "category_children": [],
       "child_count": 0,
@@ -13601,7 +14571,11 @@
       "parent_concepts": [
         "Artifact"
       ],
-      "category_children": [],
+      "category_children": [
+        "Bandage",
+        "ShoeSole",
+        "WearableItem"
+      ],
       "child_count": 0,
       "sumo_definition": "Items designed to be worn on or applied directly to the human body for protection, comfort, or function.",
       "synset_count": 0,
@@ -13691,6 +14665,7 @@
         "WeatherFront",
         "WeatherSeason",
         "WeatherSystem",
+        "Wind",
         "Zud"
       ],
       "child_count": 23,
@@ -13779,7 +14754,10 @@
       "category_children": [
         "DisabilityLeave",
         "SickLeave",
-        "Vacationing"
+        "TakingVacation",
+        "VacationPeriod",
+        "Vacationing",
+        "Vacationing_Vacation"
       ],
       "child_count": 3,
       "sumo_definition": "A temporary leave from &%Working.\nNote that this is disjoint from being &%Unemployed.",

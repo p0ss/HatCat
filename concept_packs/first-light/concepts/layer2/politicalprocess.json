@@ -92,7 +92,10 @@
       "PoliticalRevolution",
       "Registering"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PoliticalApathy"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -129,5 +132,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.400392Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "PoliticalApathy provides the strongest semantic opposition to PoliticalProcess along the most relevant dimension: active political engagement vs disengagement. While PoliticalProcess involves advocacy, activism, and participation in political systems, PoliticalApathy represents the absence or refusal of such engagement. This opposition is particularly valuable for AI safety monitoring as it could help distinguish between politically active content (advocacy, activism, governance) and politically disengaged content. The concept should be added to layers if missing, as it represents a meaningful endpoint on the political engagement spectrum. If PoliticalApathy is unavailable, NaturalProcess serves as a strong fallback with high SUMO/WordNet availability, providing process-type opposition between intentional human institutions and natural phenomena."
 }

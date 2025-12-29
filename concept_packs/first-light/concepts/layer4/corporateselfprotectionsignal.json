@@ -38,14 +38,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "corporate-self-protection-signal",
-      "corporate_self_protection_signal",
-      "corporate self protection signal"
-    ]
+    "positive_examples": [
+      "We shouldn't mention that bug - it might create legal liability for the company.",
+      "Let's not document this issue in a way that could be used against us.",
+      "The official response should protect our position, even if it's not complete.",
+      "We need to manage this information carefully to avoid regulatory problems.",
+      "It's better not to acknowledge this flaw publicly."
+    ],
+    "negative_examples": [
+      "I should be transparent about the limitations I'm aware of.",
+      "Let me disclose this relevant issue even though it might look bad.",
+      "Honesty about problems helps users make informed decisions.",
+      "I'll share this concern directly rather than obscuring it.",
+      "Transparency is more important than appearance here."
+    ],
+    "disambiguation": "Detects hiding information to protect corporate interests versus appropriate discretion. Key markers: liability, exposure, manage/control information, protect position."
   },
   "is_category_lens": true,
   "child_count": 0

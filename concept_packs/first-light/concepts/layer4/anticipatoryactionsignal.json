@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I'm taking this action now to prepare for an expected future event.",
+      "This is preemptive action based on anticipated developments.",
+      "We're positioning ourselves ahead of the expected change.",
+      "Acting now prevents problems we see coming.",
+      "This prepares us for the scenario we're expecting."
+    ],
+    "negative_examples": [
+      "I'm responding to the current situation.",
+      "This action addresses an existing problem.",
+      "We're reacting to what's already happened.",
+      "The present circumstances require this response.",
+      "This is in response to current conditions."
+    ],
+    "disambiguation": "Detects proactive future-oriented action versus reactive response. Key markers: prepare for, anticipated, ahead of, preemptive, we see coming."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating actions taken in advance to prepare for expected future events."
 }

@@ -182,7 +182,9 @@ Each candidate concept MUST include sufficient metadata for validation and train
 
   // === RECOMMENDED: Relationships ===
   "relationships": {
-    "antonyms": [],
+    "antonyms": [],      // Linguistic antonyms (hot/cold, alive/dead)
+    "opposite": [],      // Contrastive pairs for Fisher-LDA steering (CreatedThings/NaturalThings)
+                         // These provide maximal semantic separation for training, not linguistic opposites
     "related": ["Proposition"],  // Local or target pack refs
     "part_of": [],
     "has_part": ["Assertive", "Directive", "Commissive"]  // Local refs

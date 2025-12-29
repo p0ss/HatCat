@@ -37,7 +37,10 @@
       "VorticityField",
       "WaveField"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "DiscreteObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -67,5 +70,6 @@
     "WaveAnalysisSignal"
   ],
   "is_category_lens": true,
-  "child_count": 7
+  "child_count": 7,
+  "opposite_reasoning": "DiscreteObject provides the strongest semantic opposition to FieldDistribution by capturing the fundamental continuous\u2194discrete distinction. FieldDistribution represents spatially or conceptually distributed continuous phenomena, while DiscreteObject represents bounded, individuated entities. This opposition is mathematically meaningful for Fisher-LDA (distributed vs. localized), ontologically grounded in SUMO, and creates a clear conceptual axis. For AI safety applications, this axis could help distinguish between distributed system states/patterns and discrete agent actions/objects."
 }

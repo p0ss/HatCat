@@ -35,7 +35,10 @@
       "Landslide",
       "VolcanicEruption"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "IntentionalProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -59,5 +62,6 @@
     "VolcanicGasRelease"
   ],
   "is_category_lens": true,
-  "child_count": 7
+  "child_count": 7,
+  "opposite_reasoning": "IntentionalProcess provides the strongest semantic opposition for Fisher-LDA steering because it captures the fundamental natural/automatic vs intentional/goal-directed dimension. This is highly relevant for AI safety applications: distinguishing between emergent/automatic behaviors and deliberate/purposeful actions is crucial for alignment monitoring. GeologicalProcess exemplifies natural, non-agentic phenomena, while IntentionalProcess represents purposeful, agent-driven activities. This axis could help detect whether AI systems are operating in automatic modes vs engaging in deliberate, potentially deceptive planning. While BiologicalProcess is a cleaner taxonomic complement, IntentionalProcess offers better utility for safety-critical concept steering."
 }

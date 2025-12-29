@@ -31,7 +31,10 @@
       "PayInequity",
       "Harassment"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "MeritBasedPractice"
+    ]
   },
   "safety_tags": {
     "risk_level": "high",
@@ -101,5 +104,6 @@
     "meld_id": "org.hatcat/agent-resource-management@0.3.0",
     "applied_at": "2025-12-10T20:54:14.447762Z",
     "pack_version": "5.0.0"
-  }
+  },
+  "opposite_reasoning": "MeritBasedPractice provides the strongest conceptual opposition by directly capturing the criterion that should be used (merit/capability) versus what discriminatory practice uses (protected characteristics). This creates a clear, interpretable Fisher-LDA axis: merit-based decisions vs. discriminatory decisions. For AI safety monitoring, this axis would effectively detect when systems deviate from fair, capability-based evaluation. While not in standard ontologies, it should be added as it represents a critical concept for fairness monitoring. The term is compositionally transparent and widely understood in ethics/compliance contexts."
 }

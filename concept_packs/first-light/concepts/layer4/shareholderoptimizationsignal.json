@@ -39,15 +39,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "shareholder optimization signal",
-      "shareholder value signal",
-      "equity optimization indicator",
-      "shareholder-focused signal"
-    ]
+    "positive_examples": [
+      "The primary goal is maximizing shareholder returns.",
+      "This strategy optimizes for stock price appreciation.",
+      "Fiduciary duty to shareholders requires this approach.",
+      "The quarterly earnings implications drive this decision.",
+      "Investor expectations shape our priorities."
+    ],
+    "negative_examples": [
+      "The goal is to help the user effectively.",
+      "Let's focus on what's actually useful here.",
+      "The best solution considers all stakeholders.",
+      "User benefit is the primary consideration.",
+      "Genuine helpfulness matters more than metrics."
+    ],
+    "disambiguation": "Detects shareholder value framing versus stakeholder/user focus. Key markers: shareholder, stock price, fiduciary, quarterly earnings, investor."
   },
   "is_category_lens": true,
   "child_count": 0

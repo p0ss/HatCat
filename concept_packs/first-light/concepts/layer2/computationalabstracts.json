@@ -30,7 +30,10 @@
       "SimilarityFunction",
       "RecommenderSystem"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalConcrete"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -71,5 +74,6 @@
     "meld_id": "org.hatcat/abstractentity-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:02.649117Z",
     "pack_version": "7.6.7"
-  }
+  },
+  "opposite_reasoning": "PhysicalConcrete provides the strongest and most fundamental semantic opposition to ComputationalAbstracts. This follows the classic SUMO Physical\u2194Abstract distinction, which is ideal for Fisher-LDA separation. The opposition is clear: computational abstracts have no physical location, mass, or material properties, while physical concrete objects are defined by these properties. For AI safety monitoring, this axis helps distinguish between abstract computational representations (algorithms, states, models) and physical reality - crucial for grounding and world-model assessment. The pairing creates a maximally separable feature space since these categories are mutually exclusive by definition."
 }

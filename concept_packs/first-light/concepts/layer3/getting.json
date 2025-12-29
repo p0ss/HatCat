@@ -81,7 +81,10 @@
       "FoodDistributionOperation",
       "UnilateralGetting"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Giving"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -106,5 +109,6 @@
     "Stealing"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "Giving is the strongest semantic opposite to Getting for Fisher-LDA concept axes. It represents the complementary direction in transfer events: Getting involves acquiring something (moving toward possession), while Giving involves transferring something away (moving away from possession). This creates a clear, bidirectional axis for understanding possession transfer processes. For AI safety applications, this axis could help distinguish between acquisitive behaviors (taking, receiving) versus altruistic/sharing behaviors (giving, donating), which may be relevant for alignment monitoring. The pair is well-established in both WordNet and SUMO, making it highly available and reliable for implementation."
 }

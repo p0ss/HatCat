@@ -40,7 +40,10 @@
       "SodiumChloride",
       "SodiumLactate"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "BiologicalSubstance"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -63,5 +66,6 @@
     "SodiumLactate"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "ChemicalSalt is a specific chemical entity concept without a natural antonym. Among the candidates, BiologicalSubstance provides the strongest conceptual opposition by contrasting inorganic chemical compounds with biological/organic substances. This opposition captures a fundamental distinction between synthetic/inorganic chemistry and biological chemistry, which is more semantically meaningful than state-of-matter contrasts (solid vs gas) or mixing categories. While OrganicCompound is also viable, BiologicalSubstance better captures the living/non-living dimension that adds semantic richness. However, this opposition has limited utility for AI safety applications focused on deception/alignment monitoring."
 }

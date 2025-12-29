@@ -40,7 +40,10 @@
       "Sharing",
       "Transaction"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Keeping"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -63,5 +66,6 @@
     "Transaction"
   ],
   "is_category_lens": true,
-  "child_count": 6
+  "child_count": 6,
+  "opposite_reasoning": "Keeping (or Retaining/Holding) is the strongest semantic opposite of ChangeOfPossession. While ChangeOfPossession represents a process where ownership transfers from one entity to another, Keeping represents the complementary state/process where ownership remains with the current possessor. This opposition is: (1) Conceptually clear - transfer vs. retention, (2) Practically useful for AI safety - distinguishing between possession-changing actions (giving, taking, trading) and possession-maintaining states, (3) Likely to exist in both WordNet and SUMO ontologies as a fundamental concept. The opposition strength is high because these concepts are mutually exclusive in the temporal sense: at any moment, an object either changes possession or is kept by its current owner. For Fisher-LDA, this provides a clean axis for separating transactional/transfer concepts from stability/retention concepts."
 }

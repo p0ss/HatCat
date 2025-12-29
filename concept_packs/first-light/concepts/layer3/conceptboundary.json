@@ -31,7 +31,10 @@
     "has_part": [
       "DecisionBoundary"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ConceptCore"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -53,5 +56,6 @@
     "DecisionBoundary"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "ConceptCore provides the strongest geometric and semantic opposition to ConceptBoundary. In conceptual spaces and classifier geometry, boundaries represent the periphery where concepts transition (low confidence, ambiguous regions), while cores represent the center where concepts are prototypical (high confidence, clear membership). This opposition is maximally useful for Fisher-LDA steering: moving toward ConceptBoundary would emphasize edge cases and ambiguity, while moving away (toward ConceptCore) emphasizes prototypical, clear instances. For AI safety monitoring, this axis could help detect when a system is operating in ambiguous boundary regions (potentially deceptive or confused states) vs confident core regions. While ConceptCore likely doesn't exist in current ontologies, it should be added as a fundamental complement to ConceptBoundary."
 }

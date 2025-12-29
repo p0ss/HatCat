@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "RigidStructureSignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -38,15 +41,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "fluid-analysis-signal",
-      "fluid analysis signal",
-      "fluid_analysis_signal"
-    ]
+    "positive_examples": [
+      "Information is flowing through this network like a current.",
+      "There's turbulence in the activation patterns here.",
+      "The gradient drives the direction of propagation.",
+      "Ideas pool in certain regions before rippling outward.",
+      "Pressure is building in this part of the system."
+    ],
+    "negative_examples": [
+      "The information passes through discrete stages.",
+      "Processing happens in distinct steps.",
+      "The structure is modular and separable.",
+      "Each component processes independently.",
+      "The pipeline has clear boundaries."
+    ],
+    "disambiguation": "Detects fluid dynamics metaphors versus discrete/structural thinking. Key markers: flow, current, turbulence, gradient, pool, ripple, pressure."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "RigidStructureSignal provides the strongest and most intuitive opposition to FluidAnalysisSignal. The fluid/rigid dichotomy is a fundamental physical and conceptual opposition that maps directly to different reasoning styles: adaptive/flowing vs. fixed/structured. This is highly valuable for AI safety monitoring as it can distinguish between models that reason with flexible, gradient-based metaphors vs. rule-based, structural metaphors. While this concept doesn't currently exist in WordNet or SUMO, it is a natural complement that should be added to maintain symmetry in the ontology. The opposition is semantically clear, conceptually grounded, and useful for Fisher-LDA separation."
 }

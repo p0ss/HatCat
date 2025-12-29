@@ -32,7 +32,10 @@
       "FraudScenario",
       "TradeoffScenario"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalSituation"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -58,5 +61,6 @@
     "ScamNarrativeSignal"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "PhysicalSituation provides the strongest semantic opposition by leveraging SUMO's fundamental Physical\u2194Abstract distinction at the same ontological level (situations). ConceptualSituation deals with abstract representations and mental models used for hypothetical reasoning, while PhysicalSituation would anchor the opposite pole with concrete, physically-realized states. This is particularly valuable for AI safety: distinguishing between conceptual fraud scenarios/narratives (abstract planning) versus actual physical fraud events. The opposition is clean, principled, and follows established SUMO ontological structure. PhysicalSituation likely exists in SUMO or can be straightforwardly derived from existing Physical + Situation concepts."
 }

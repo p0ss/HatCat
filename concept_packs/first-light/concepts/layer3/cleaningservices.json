@@ -28,7 +28,10 @@
       "LaundryService",
       "IroningService"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "SoilingProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -66,5 +69,6 @@
     "meld_id": "org.hatcat/serviceprocess-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.955165Z",
     "pack_version": "7.6.34"
-  }
+  },
+  "opposite_reasoning": "SoilingProcess provides the strongest functional opposition to CleaningServices. It represents the inverse operation: cleaning removes dirt/stains/contamination while soiling introduces them. This creates a clear semantic axis where the positive pole represents purification/maintenance and the negative pole represents degradation/dirtying. This is more precise than general contamination and more appropriate than category-distant concepts like manufacturing. For Fisher-LDA, this will create a meaningful axis distinguishing cleaning-related concepts from their functional inverses."
 }

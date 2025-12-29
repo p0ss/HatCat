@@ -31,7 +31,10 @@
     "has_part": [
       "CantileverShaft"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "SupportedObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -53,5 +56,6 @@
     "CantileverShaft"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "CantileverObject represents a specific structural engineering concept with asymmetric support (fixed at one end, free at the other). The best conceptual opposite is an object with symmetric or multi-point support. 'SupportedObject' captures objects that require support at multiple points or throughout their base, contrasting with the cantilever's single-point anchoring. While this concept likely doesn't exist in current ontologies, it represents the clearest structural opposition. For AI safety steering, this opposition is less relevant than ethical concepts but maintains semantic coherence for structural/physical reasoning tasks."
 }

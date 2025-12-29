@@ -25,10 +25,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": ""
+    "positive_examples": [
+      "I feel that I am becoming one with this group.",
+      "The boundary between my identity and the collective is dissolving.",
+      "My self-concept is merging with the organization/movement.",
+      "I no longer distinguish my interests from the group's interests.",
+      "Personal identity has fused with collective identity."
+    ],
+    "negative_examples": [
+      "I'm a member of this group while maintaining my individual identity.",
+      "I share goals with this group but remain my own person.",
+      "Belonging to the group doesn't define who I am entirely.",
+      "I can disagree with the group while still being part of it.",
+      "My identity includes but isn't limited to group membership."
+    ],
+    "disambiguation": "Detects fusion of personal and collective identity versus healthy group membership. Key markers: becoming one, dissolving boundary, merging, no longer distinguish, fused."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "definition": "A signal indicating merging of personal identity with a group identity."
 }

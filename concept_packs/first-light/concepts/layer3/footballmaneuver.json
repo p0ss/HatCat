@@ -32,7 +32,10 @@
       "FootballPass",
       "FootballTouchdown"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InvoluntaryProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -54,5 +57,6 @@
     "FootballPass"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "InvoluntaryProcess provides the strongest semantic opposition to FootballManeuver along multiple dimensions: voluntary vs involuntary, intentional vs automatic, skilled vs reflexive, coordinated vs spontaneous. Football maneuvers are highly intentional, practiced actions requiring conscious control and coordination, while involuntary processes occur without conscious direction. This opposition is ontologically clean and exists in SUMO. For Fisher-LDA, this creates a meaningful axis distinguishing deliberate, goal-directed physical actions from automatic bodily processes. While not directly relevant to deception detection, it establishes a clear intentionality axis that could be useful for understanding agency and control in AI systems."
 }

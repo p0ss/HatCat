@@ -134,7 +134,10 @@
       "TruthValue",
       "YieldAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InternalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -172,5 +175,6 @@
     "ClassificationAttrs"
   ],
   "is_category_lens": true,
-  "child_count": 66
+  "child_count": 66,
+  "opposite_reasoning": "InternalAttribute provides the strongest semantic opposition by capturing the fundamental extrinsic/intrinsic distinction in properties. RelationalAttribute encompasses comparative, contextual, and relational properties ('further', 'additional', 'higher than'), while InternalAttribute would capture inherent, non-relational properties. This opposition is philosophically grounded, ontologically meaningful, and useful for AI safety applications where distinguishing context-dependent vs. intrinsic properties matters (e.g., detecting when claims are framed relationally to obscure absolute truths). SUMO likely contains this or a similar concept given its philosophical rigor."
 }

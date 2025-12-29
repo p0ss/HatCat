@@ -33,7 +33,10 @@
       "ClosingEyes",
       "OpeningEyes"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "BodyMotion"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -54,5 +57,6 @@
     "OpeningEyes"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "While EyeStillness would be the most semantically pure opposite (motion vs. non-motion), it likely doesn't exist in current ontologies. BodyMotion provides a pragmatic alternative that: (1) exists in both WordNet and SUMO, (2) offers meaningful taxonomic distinction within the motion domain (fine eye movements vs. gross body movements), (3) provides useful separation for Fisher-LDA by contrasting different types of physical motion. This is preferable to jumping to abstract concepts like MentalProcess, which may be too distant for effective steering on eye-related concepts."
 }

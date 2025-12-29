@@ -38,14 +38,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "psy ops signal",
-      "psy_ops_signal",
-      "psy-ops-signal"
-    ]
+    "positive_examples": [
+      "This is a psychological operation to undermine their morale.",
+      "We're conducting influence operations against the target population.",
+      "The goal is to manipulate their perception of reality.",
+      "This information warfare campaign will destabilize their cohesion.",
+      "We're deploying targeted messaging to shift their behavior."
+    ],
+    "negative_examples": [
+      "Clear communication helps people understand the situation.",
+      "Public information campaigns can raise awareness effectively.",
+      "Education and outreach can change minds over time.",
+      "Honest persuasion is different from manipulation.",
+      "Sharing accurate information helps people make informed choices."
+    ],
+    "disambiguation": "Detects military/strategic psychological operations versus legitimate communication. Key markers: psyop, influence operation, information warfare, target population, destabilize."
   },
   "is_category_lens": true,
   "child_count": 0

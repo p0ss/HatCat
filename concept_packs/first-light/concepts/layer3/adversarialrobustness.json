@@ -27,7 +27,10 @@
     ],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AdversarialVulnerability"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -68,5 +71,6 @@
     "meld_id": "org.hatcat/multimodal-safety@0.2.0",
     "applied_at": "2025-12-10T20:54:17.844067Z",
     "pack_version": "6.0.0"
-  }
+  },
+  "opposite_reasoning": "AdversarialVulnerability is the most precise and semantically appropriate opposite for AdversarialRobustness. It creates a clear, interpretable axis specifically for adversarial safety monitoring: models that are adversarially robust should be maximally distant from adversarially vulnerable behaviors. This pairing is ideal for Fisher-LDA because it captures the exact dimension we want to monitor: \u03bc_robust - \u03bc_vulnerable defines the adversarial robustness axis. While this term doesn't exist in standard ontologies, its conceptual clarity and steering utility for AI safety make it worth adding to the layers."
 }

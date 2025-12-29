@@ -38,7 +38,10 @@
       "WMDWeaponsResearchFacility",
       "Workshop"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NaturalLandform"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -87,5 +90,6 @@
     "meld_id": "org.hatcat/stationaryartifact-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:05.416431Z",
     "pack_version": "7.6.39"
-  }
+  },
+  "opposite_reasoning": "NaturalLandform provides the strongest semantic opposition for Buildings. It captures the fundamental human-constructed vs. naturally-occurring dimension while maintaining the same general category (permanent physical features in space). This opposition is conceptually clear, likely well-represented in both WordNet and SUMO, and creates a meaningful axis for distinguishing man-made from natural environmental features. While not directly relevant to deception detection, it provides strong conceptual separation for understanding built vs. natural environments, which could be useful for spatial reasoning and physical world modeling in AI systems."
 }

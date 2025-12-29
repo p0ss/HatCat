@@ -46,7 +46,10 @@
       "TympanicCavity",
       "Urethra"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Tissue"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -79,5 +82,6 @@
     "Urethra"
   ],
   "is_category_lens": true,
-  "child_count": 11
+  "child_count": 11,
+  "opposite_reasoning": "BodyCavity is a challenging concept for opposition because it's a specific anatomical structure without a natural antonym. Among the candidates, 'Tissue' provides the strongest conceptual opposition: cavities are empty spaces defined by their boundaries, while tissue is the material substance that creates those boundaries. This void-vs-substance opposition is semantically meaningful and likely to exist in both WordNet and SUMO. While this opposition has limited utility for AI safety/alignment monitoring (as BodyCavity is a specialized anatomical concept far from deception detection domains), it provides the most coherent semantic anchor for Fisher-LDA purposes. The opposition captures the fundamental empty/filled distinction that defines what a cavity is."
 }

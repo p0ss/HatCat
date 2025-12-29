@@ -81,7 +81,10 @@
       "AminoAcid",
       "SulfuricAcid"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ChemicalBase"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -103,5 +106,6 @@
     "SulfuricAcid"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "ChemicalBase (or Base/AlkalineSubstance) is the scientifically correct and semantically strongest opposite to ChemicalAcid. Acids and bases are complementary concepts in chemistry that represent opposite ends of the pH scale, react together in neutralization, and have opposing chemical properties (proton donors vs acceptors). This is a textbook example of chemical complementarity. While this pairing has limited direct utility for AI safety monitoring (acids/bases are domain-specific chemistry concepts), it provides the most semantically valid opposite for Fisher-LDA axis construction. The opposition is clear, measurable, and well-established in both chemistry and ontological systems."
 }

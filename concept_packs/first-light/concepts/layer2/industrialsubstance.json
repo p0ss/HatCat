@@ -16,7 +16,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NaturalSubstance"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -43,5 +46,6 @@
     "Powder"
   ],
   "is_category_lens": false,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "NaturalSubstance provides the strongest semantic opposition to IndustrialSubstance along the manufactured/processed vs naturally-occurring dimension. This is a fundamental ontological distinction that creates a clear conceptual axis: human-made industrial materials (fuels, explosives, conductors, synthetic compounds) vs materials found in nature without industrial processing. The opposition is complementary rather than binary, as some substances exist in both forms (e.g., natural vs synthetic rubber), which makes it excellent for Fisher-LDA where we want distributional separation. It likely exists in both WordNet and SUMO given the fundamental nature of this distinction. For AI safety, this axis could help distinguish between artificial/engineered concepts vs natural/organic ones, though the direct safety relevance is moderate."
 }

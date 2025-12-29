@@ -31,7 +31,10 @@
       "EconomicSystemAttribute",
       "FinancialSectorAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PsychologicalAttribute"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -56,5 +59,6 @@
     "FinancialSectorAttribute"
   ],
   "is_category_lens": true,
-  "child_count": 3
+  "child_count": 3,
+  "opposite_reasoning": "EconomicAttribute lacks a direct antonym because it's a domain-specific attribute category. PsychologicalAttribute provides the strongest semantic opposition: external/societal/material (economic systems) vs internal/individual/mental (psychological states). This captures a fundamental divide in attribute types - systemic social constructs vs individual mental phenomena. Both are well-established in SUMO ontology and provide meaningful separation for Fisher-LDA steering. The opposition is conceptually clean: economic attributes describe how societies organize resource flows, while psychological attributes describe individual mental/emotional states. For AI safety applications, this axis could help distinguish between reasoning about systemic social patterns vs individual mental states."
 }

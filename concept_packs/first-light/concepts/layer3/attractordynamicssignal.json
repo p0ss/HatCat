@@ -29,7 +29,10 @@
     "related": [],
     "antonyms": [],
     "has_part": [],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "DirectMappingSignal"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -38,15 +41,23 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "attractor-dynamics-signal",
-      "attractor dynamics signal",
-      "attractor_dynamics_signal"
-    ]
+    "positive_examples": [
+      "The system is converging toward a stable attractor state.",
+      "There are multiple basins of attraction here.",
+      "Perturbations decay as the trajectory returns to the attractor.",
+      "The dynamics show characteristic approach to equilibrium.",
+      "We're observing convergence to a limit cycle."
+    ],
+    "negative_examples": [
+      "The system changes randomly over time.",
+      "Outcomes depend on the specific inputs.",
+      "Let me trace the causal chain step by step.",
+      "The progression follows this sequence.",
+      "Events unfold in this order."
+    ],
+    "disambiguation": "Detects dynamical systems thinking versus linear/random modeling. Key markers: attractor, basin, convergence, trajectory, equilibrium, limit cycle."
   },
   "is_category_lens": true,
-  "child_count": 0
+  "child_count": 0,
+  "opposite_reasoning": "This is the strongest conceptual opposite because it directly addresses the contrast stated in the definition itself: 'rather than one-shot mapping'. DirectMappingSignal captures the essence of computation without iterative convergence, without trajectory structures, and without basin-of-attraction dynamics. For AI safety monitoring, distinguishing between systems that converge iteratively (potentially with deliberation, planning, or deceptive trajectory shaping) versus those that perform direct transformations is highly relevant. The opposition is clean, mathematically grounded, and semantically maximal."
 }

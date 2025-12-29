@@ -29,7 +29,10 @@
       "Cuisine",
       "PreparedFoodAttribute"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PsychologicalAttributes"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -68,5 +71,6 @@
     "meld_id": "org.hatcat/relationalattribute-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.802477Z",
     "pack_version": "7.6.32"
-  }
+  },
+  "opposite_reasoning": "FoodAttrs lacks a direct antonym since it's a domain-specific attribute category. Among candidates, PsychologicalAttributes offers the strongest opposition: (1) Physical/external vs mental/internal dimension, (2) Material/consumable vs intangible qualities, (3) High likelihood of existing in both WordNet and SUMO ontologies, (4) Clear semantic distance useful for Fisher-LDA separation. This opposition captures the tangible-sensory nature of food attributes vs the intangible-experiential nature of psychological attributes. For AI safety monitoring, this distinction could help differentiate between physical-world descriptions and mental-state attributions."
 }

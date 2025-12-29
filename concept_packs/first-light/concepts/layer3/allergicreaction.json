@@ -31,7 +31,10 @@
     "has_part": [
       "Anaphylaxis"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "ImmuneTolerance"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -53,5 +56,6 @@
     "Anaphylaxis"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "ImmuneTolerance provides the strongest biological and semantic opposition to AllergicReaction. While AllergicReaction represents an inappropriate hypersensitive immune response to harmless substances, ImmuneTolerance represents the correct recognition and non-reaction to those same substances. This is a true complementary opposite at the mechanistic level - they are mutually exclusive states for the same biological system encountering the same stimulus. The concept likely exists in WordNet (immune_tolerance, immunological_tolerance) and should be added to SUMO layers if missing, as it's a fundamental immunological concept. For Fisher-LDA purposes, this provides clear directional opposition: hypersensitivity vs. tolerance, overreaction vs. appropriate non-reaction."
 }

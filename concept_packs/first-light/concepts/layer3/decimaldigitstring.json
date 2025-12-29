@@ -33,7 +33,10 @@
       "NumericIDString",
       "NumericString4"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NonNumericString"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -56,5 +59,6 @@
     "NumericString4"
   ],
   "is_category_lens": true,
-  "child_count": 2
+  "child_count": 2,
+  "opposite_reasoning": "NonNumericString provides the strongest logical opposition as the direct complement - it forms a clean binary partition of all possible strings. For Fisher-LDA, this creates a maximally separable axis: strings composed exclusively of decimal digits versus strings containing any non-digit characters. While it may not exist in current ontologies, it represents the most semantically coherent opposite for steering purposes. The complementary relationship (A \u222a \u00acA covers all cases) makes it ideal for concept axis formation. AlphabeticString is a close second but is more specific (excludes mixed alphanumeric and symbolic strings)."
 }

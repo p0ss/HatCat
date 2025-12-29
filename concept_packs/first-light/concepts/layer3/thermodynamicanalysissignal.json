@@ -38,14 +38,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "thermodynamic-analysis-signal",
-      "thermodynamic_analysis_signal",
-      "thermodynamic analysis signal"
-    ]
+    "positive_examples": [
+      "There's tension building in this system that will eventually release.",
+      "The entropy of this structure is increasing.",
+      "Heat/energy is flowing from high to low concentration.",
+      "We're observing a phase transition in the dynamics.",
+      "The system is approaching thermal equilibrium."
+    ],
+    "negative_examples": [
+      "Let me describe the components of this system.",
+      "Here's how the parts relate to each other.",
+      "The structure can be broken down as follows.",
+      "Each element has these properties.",
+      "The organization is hierarchical."
+    ],
+    "disambiguation": "Detects thermodynamic metaphors in reasoning versus structural description. Key markers: tension, entropy, flow, heat, phase transition, equilibrium."
   },
   "is_category_lens": true,
   "child_count": 0

@@ -100,7 +100,10 @@
       "Walk",
       "WaveEquation"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalEntity"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -137,5 +140,6 @@
     "SpatialGeometry"
   ],
   "is_category_lens": true,
-  "child_count": 66
+  "child_count": 66,
+  "opposite_reasoning": "PhysicalEntity is the optimal choice as it represents the fundamental top-level partition in SUMO ontology opposite to AbstractEntity. This binary opposition (abstract/physical) is one of the most basic distinctions in metaphysics and knowledge representation. For Fisher-LDA, this provides maximum separation: AbstractEntity includes mathematical objects, propositions, and conceptual forms, while PhysicalEntity includes all material objects with spatio-temporal extension. The opposition is clean, well-established in both SUMO and WordNet, and provides strong semantic distance for concept steering. For AI safety applications, distinguishing between abstract reasoning (concepts, plans, logical constructs) and physical grounding (real-world objects, embodied entities) is fundamental to alignment and reality-checking."
 }

@@ -32,7 +32,10 @@
     "has_part": [
       "Communication"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalProcess"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -53,5 +56,6 @@
     "Communication"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "While ContentBearingProcess lacks a direct antonym, PhysicalProcess provides the strongest available opposition. ContentBearingProcess operates in the semantic/symbolic domain (denoting, designating, naming), while PhysicalProcess operates in the material domain (state changes, forces, physical transformations). This Physical\u2194Abstract opposition is well-established in SUMO ontology, exists in both WordNet and SUMO, and provides meaningful semantic distance for Fisher-LDA. For AI safety applications, distinguishing content-bearing (potentially deceptive communication) from purely physical processes is relevant for monitoring when systems engage in symbolic manipulation vs. physical action. The main limitation is that PhysicalProcess may still be too broad, but it's the most reliable existing concept."
 }

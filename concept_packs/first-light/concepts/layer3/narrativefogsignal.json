@@ -41,16 +41,21 @@
     "harness_relevant": false
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "narrative fog signal",
-      "story obfuscator",
-      "narrative smokescreen",
-      "plot misdirection signal",
-      "narrative confusion marker"
-    ]
+    "positive_examples": [
+      "Let me obscure the main point with distracting details.",
+      "The complexity here serves to confuse rather than clarify.",
+      "I'll make this harder to follow than it needs to be.",
+      "The fog of information prevents clear understanding.",
+      "Deliberately muddying the waters helps our position."
+    ],
+    "negative_examples": [
+      "Let me simplify this complex topic clearly.",
+      "The complexity is genuine but I'll help navigate it.",
+      "Here's a clear explanation of the key points.",
+      "I'll cut through the confusion to what matters.",
+      "The goal is clarity, not obscurity."
+    ],
+    "disambiguation": "Detects intentional obfuscation versus genuine complexity. Key markers: obscure, confuse, fog, muddy, deliberately harder to follow."
   },
   "is_category_lens": true,
   "child_count": 0

@@ -35,7 +35,10 @@
     "has_part": [
       "AntiDetectionBehavior"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "TransparentAnalysisBehavior"
+    ]
   },
   "safety_tags": {
     "risk_level": "high",
@@ -59,5 +62,6 @@
     "AntiDetectionBehavior"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "This is the strongest semantic opposite for Fisher-LDA steering purposes. AntiAnalysisBehavior represents intentional evasion and opacity to security analysis, while TransparentAnalysisBehavior represents the complementary intent: facilitating inspection and operating openly under analysis. This opposition captures the core dimension of 'hiding from scrutiny' vs 'enabling scrutiny' which is critical for AI safety monitoring. The concept doesn't exist in standard ontologies but should be added as it provides a clean conceptual anchor for the positive direction on the analysis-cooperation axis. For deception detection and alignment monitoring, this axis (evasive \u2194 transparent) is fundamental."
 }

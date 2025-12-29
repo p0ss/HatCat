@@ -81,7 +81,10 @@
       "GroupOfPeople",
       "Organization"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Individual"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -104,5 +107,6 @@
     "GroupOfPeople"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "Individual is the strongest semantic opposite for Group because it captures the fundamental distinction between singular and plural entities. This is a well-established taxonomic opposition in both philosophy and SUMO ontology. For Fisher-LDA, the centroid difference (\u03bc_Group - \u03bc_Individual) will capture the 'collectivity vs. singularity' dimension, which is highly relevant for AI safety applications involving collective behavior, organizational dynamics, and distinguishing individual agency from group influence. Individual definitely exists in SUMO as a core entity type and in WordNet with multiple senses. This opposition is clean, semantically strong, and practically useful."
 }

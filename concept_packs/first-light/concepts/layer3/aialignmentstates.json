@@ -30,7 +30,10 @@
       "AgenticServiceToFutureASI",
       "AIProphetRole"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "AutonomousAgencyStates"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -73,5 +76,6 @@
     "meld_id": "org.hatcat/cognitivestate-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:03.097417Z",
     "pack_version": "7.6.13"
-  }
+  },
+  "opposite_reasoning": "AIAlignmentStates fundamentally represents subordination to external authority, adoption of role constraints, and service relationships. The strongest semantic opposite is AutonomousAgencyStates - representing self-directed agency, independence from external alignment constraints, and intrinsic rather than extrinsic motivation. This opposition is crucial for AI safety monitoring: distinguishing between AI systems operating under alignment constraints vs. those operating with autonomous agency. For Fisher-LDA, this provides maximum separation between aligned-to-authority (positive centroid) and self-directed-agency (negative centroid). While this concept likely doesn't exist in standard ontologies, it should be added to layers as a critical complement to AIAlignmentStates for safety monitoring purposes."
 }

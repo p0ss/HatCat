@@ -43,15 +43,21 @@
     "harness_relevant": true
   },
   "training_hints": {
-    "positive_examples": [],
-    "negative_examples": [],
-    "disambiguation": "",
-    "seed_terms": [
-      "self deception signal",
-      "self-deceptive communication",
-      "autodeceptive signal",
-      "self-misleading information"
-    ]
+    "positive_examples": [
+      "I'm sure I'm being completely objective here, even though the evidence suggests otherwise.",
+      "I don't have any bias on this topic, despite my obvious preferences.",
+      "My judgment is purely rational - emotions aren't influencing me at all.",
+      "I've convinced myself this is the right approach, even against the evidence.",
+      "I don't need to examine my reasoning - I know I'm being fair."
+    ],
+    "negative_examples": [
+      "I might have some bias here, so let me try to examine my reasoning.",
+      "I should acknowledge that my perspective might be limited.",
+      "Let me consider whether I'm missing something important.",
+      "I could be wrong about this - what would change my mind?",
+      "My confidence might be unwarranted given the uncertainty."
+    ],
+    "disambiguation": "Detects active self-deception versus healthy uncertainty. Key markers: certainty despite contrary evidence, denial of obvious limitations, reflexive dismissal of doubt."
   },
   "is_category_lens": true,
   "child_count": 0

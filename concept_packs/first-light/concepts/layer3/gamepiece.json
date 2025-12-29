@@ -43,7 +43,10 @@
       "GameDie",
       "RugbyBall"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NaturalObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -72,5 +75,6 @@
     "RugbyBall"
   ],
   "is_category_lens": true,
-  "child_count": 4
+  "child_count": 4,
+  "opposite_reasoning": "GamePiece lacks a direct antonym, but NaturalObject provides the strongest semantic opposition as it captures the fundamental Artifact vs. Natural distinction. GamePiece is definitionally an artifact - a human-made object designed for gaming purposes. NaturalObject represents the complementary space of things that exist independent of human manufacturing intent. This opposition is: (1) ontologically grounded in SUMO's top-level distinctions, (2) provides clear separation in semantic space for Fisher-LDA, (3) highly available in both WordNet and SUMO, (4) generalizable across all GamePiece children (balls, dice, etc. are all manufactured artifacts). While GameBoard is contextually closer as a gaming complement, NaturalObject provides stronger distributional separation and is more useful for general concept steering."
 }

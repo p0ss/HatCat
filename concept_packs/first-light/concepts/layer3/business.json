@@ -48,7 +48,10 @@
       "Restaurant",
       "TransportationCompany"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NonprofitOrganization"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -83,5 +86,6 @@
     "TransportationCompany"
   ],
   "is_category_lens": true,
-  "child_count": 22
+  "child_count": 22,
+  "opposite_reasoning": "NonprofitOrganization provides the strongest semantic opposition to Business because it represents a clear organizational purpose dichotomy: profit-seeking vs. mission/charity-driven. Both are formal organizations with similar structural complexity, but with fundamentally opposed motivations and goals. This makes them excellent centroid anchors for Fisher-LDA, as they should have distinct distributional patterns in how they're discussed (revenue/profit/market vs. donation/mission/impact). For AI safety monitoring, distinguishing business vs. nonprofit framing could be useful for detecting attempts to misrepresent organizational motives or purposes. The concept exists in both WordNet and SUMO, ensuring availability."
 }

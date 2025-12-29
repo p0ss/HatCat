@@ -1201,9 +1201,11 @@ def create_multi_layer_gradient_steering_hooks(
                 layer_vector = layer_vector / (torch.norm(layer_vector) + 1e-8)
 
                 # Create static steering hook for this layer
+                # Convert to numpy for create_steering_hook API
                 hook_fn = create_steering_hook(
-                    layer_vector.to(device),
+                    layer_vector.cpu().numpy(),
                     strength=strength / n_layers,  # Divide strength across layers
+                    device=device,
                 )
                 hooks.append((layers[layer_idx], hook_fn))
 

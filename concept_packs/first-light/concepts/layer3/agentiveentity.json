@@ -38,7 +38,10 @@
       "PopulationGroup",
       "Shareholder"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InanimateObject"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -68,5 +71,6 @@
     "CultFormationSignal"
   ],
   "is_category_lens": true,
-  "child_count": 8
+  "child_count": 8,
+  "opposite_reasoning": "InanimateObject provides the strongest semantic opposition to AgentiveEntity. The fundamental distinction between animate/inanimate maps directly onto agency/non-agency in SUMO's ontology. For AI safety monitoring, this axis is valuable: distinguishing agentive systems (which can deceive, manipulate, or misalign) from non-agentive objects (which cannot) is foundational. The concept is well-established in both WordNet and SUMO, ensuring availability. This creates a clean Fisher-LDA axis where agentive entities cluster at one pole (humans, AI systems, organizations) and inanimate objects at the other (rocks, buildings, tools without autonomy)."
 }

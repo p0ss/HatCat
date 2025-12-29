@@ -79,7 +79,10 @@
       "Character_Lowercase",
       "DigitCharacter"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Character_Uppercase"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -109,5 +112,6 @@
     "operation": "split_parent",
     "applied_at": "2025-12-10T20:54:18.396077Z",
     "pack_version": "7.2.0"
-  }
+  },
+  "opposite_reasoning": "Character_Uppercase is the optimal choice as it: (1) provides perfect binary opposition to lowercase characters, (2) maintains consistency with SUMO naming conventions (Character_ prefix), (3) likely exists as a parallel concept in the ontology given that Character_Lowercase is listed as a category child, (4) creates a clean LDA separation axis for case-based text features. While this has low AI safety relevance directly, it's critical for text processing systems where case sensitivity matters (e.g., detecting case manipulation in adversarial inputs)."
 }

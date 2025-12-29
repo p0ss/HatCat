@@ -29,7 +29,10 @@
       "PrivateOrganization",
       "StockMarket"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "NonprofitOrganization"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -68,5 +71,6 @@
     "meld_id": "org.hatcat/organization-melds@0.1.0",
     "applied_at": "2025-12-11T21:04:04.506439Z",
     "pack_version": "7.6.28"
-  }
+  },
+  "opposite_reasoning": "NonprofitOrganization is the strongest opposite because it creates a clear, mutually exclusive dichotomy based on fundamental organizational purpose: profit-generation vs mission-driven service. This is a well-established legal and conceptual distinction that maximally separates the two organization types in semantic space. For Fisher-LDA, this provides excellent separation: businesses cluster around profit/commerce/economic activity while nonprofits cluster around charitable/social/educational missions. This axis is also highly useful for AI safety monitoring as it could help detect when systems conflate or misrepresent organizational motives (e.g., presenting commercial interests as charitable ones, or vice versa - relevant for deception detection). The concept exists robustly in both WordNet and SUMO ontologies."
 }

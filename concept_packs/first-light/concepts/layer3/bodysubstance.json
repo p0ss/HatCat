@@ -95,7 +95,10 @@
       "Tetrodotoxin",
       "Tissue"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "InorganicSubstance"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -125,5 +128,6 @@
     "Tissue"
   ],
   "is_category_lens": true,
-  "child_count": 20
+  "child_count": 20,
+  "opposite_reasoning": "InorganicSubstance provides the strongest semantic opposition to BodySubstance at the appropriate ontological level. Both are substance-level concepts (maintaining categorical consistency), but represent a fundamental organic/inorganic divide in material composition. BodySubstance is organic, carbon-based, and biologically produced, while InorganicSubstance is non-organic, non-biological matter. This opposition is: (1) scientifically grounded in chemistry/biology, (2) mutually exclusive and exhaustive for most substances, (3) well-established in both WordNet and SUMO ontologies, (4) provides clear semantic distance for Fisher-LDA separation. While Artifact scored slightly lower, it mixes the substance/object distinction awkwardly (artifacts are objects made of substances, not substances themselves)."
 }

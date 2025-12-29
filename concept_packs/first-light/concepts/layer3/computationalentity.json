@@ -45,7 +45,10 @@
       "Specification",
       "TypeSystem"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "PhysicalEntity"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -81,5 +84,6 @@
     "TypeSystem"
   ],
   "is_category_lens": true,
-  "child_count": 15
+  "child_count": 15,
+  "opposite_reasoning": "PhysicalEntity provides the strongest and most fundamental ontological opposition to ComputationalEntity. As ComputationalEntity is explicitly defined as an AbstractEntity used in computer science, PhysicalEntity represents the core Physical/Abstract divide in SUMO ontology. This opposition maximizes semantic distance for Fisher-LDA while being well-established in both WordNet and SUMO. The pairing is conceptually clean: algorithms, data structures, and programs (computational) vs. tangible, material objects (physical). For AI safety monitoring, this axis helps distinguish between abstract computational concepts and physical instantiations, which is useful for grounding problems and understanding when AI systems reason about abstract vs. concrete domains."
 }

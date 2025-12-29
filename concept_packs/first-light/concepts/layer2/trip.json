@@ -27,7 +27,10 @@
     "has_part": [
       "IntermodalTrip"
     ],
-    "part_of": []
+    "part_of": [],
+    "opposite": [
+      "Stationary"
+    ]
   },
   "safety_tags": {
     "risk_level": "low",
@@ -47,5 +50,6 @@
     "IntermodalTrip"
   ],
   "is_category_lens": true,
-  "child_count": 1
+  "child_count": 1,
+  "opposite_reasoning": "Stationary provides the strongest semantic opposition to Trip. Trip is defined as motion along a route; Stationary represents the absence of motion - a clear binary opposition between moving and not moving. This is highly useful for Fisher-LDA as it creates a clean axis distinguishing motion events from static states. The concept likely exists in both SUMO (as an attribute or state) and WordNet, and provides strong utility for concept steering. While not directly relevant to deception detection, it's a fundamental spatial-temporal distinction useful for understanding agent behavior and intentions (moving vs. staying put)."
 }
