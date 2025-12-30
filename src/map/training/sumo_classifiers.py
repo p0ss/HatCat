@@ -42,16 +42,22 @@ def get_hidden_dim(model) -> int:
 def get_num_layers(model) -> int:
     """Get number of transformer layers from model config.
 
-    Gemma3 uses config.text_config.num_hidden_layers while most models use config.num_hidden_layers.
+    Different models use different config attributes:
+    - Most models: config.num_hidden_layers
+    - Gemma3 VLM: config.text_config.num_hidden_layers
+    - ChatGLM: config.num_layers
     """
     config = model.config
     if hasattr(config, 'num_hidden_layers'):
         return config.num_hidden_layers
+    elif hasattr(config, 'num_layers'):
+        # ChatGLM uses num_layers instead of num_hidden_layers
+        return config.num_layers
     elif hasattr(config, 'text_config') and hasattr(config.text_config, 'num_hidden_layers'):
         return config.text_config.num_hidden_layers
     else:
         raise AttributeError(
-            f"Cannot find num_hidden_layers in model config. "
+            f"Cannot find num_hidden_layers or num_layers in model config. "
             f"Config type: {type(config).__name__}. "
             f"Available attributes: {[a for a in dir(config) if not a.startswith('_')]}"
         )

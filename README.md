@@ -34,7 +34,7 @@ HatCat monitors the internal activations of an LLM as it generates text, detecti
 
 ### Key Capabilities
 
-- **Detect** - Monitor 8,000+ concepts across multiple layers of any open-weights model
+- **Detect** - Monitor 8,000+ concepts across multiple layers of open-weights transformer models
 - **Visualize** - See concept activations in real-time as text is generated
 - **Steer** - Suppress dangerous behaviors with sub-token latency
 - **Govern** - Build auditable, treaty-compliant AI systems
@@ -279,11 +279,60 @@ Key documents:
 - [Concept Pack Workflow](docs/approach/CONCEPT_PACK_WORKFLOW.md)
 
 
+
 ## Fractal Transparency Web (FTW)
 
 HatCat's capabilities stack to enable an entire governance framework supporting AI legislation requirements from the EU AI Act and Australian AI governance frameworks. The core interpretability primitives construct safety harnesses, self-steering systems, model interoception, and accretive continual learning.
 
 Full specifications for recursive self-improving aligned agentic systems can be found in `docs/specification/`.
+
+## Technical Compatibility 
+
+HatCat works with most open-weights Transformer LMs. Internally it just needs to enumerate the model’s repeating block stack (layers) so it can sample activations. These have been tested to work
+
+| Pattern | Models |
+|---------|--------|
+| model.layers | Llama, Gemma, Mistral, OLMo, Phi, Qwen |
+| transformer.h | GPT-2, GPT-J |
+| transformer.encoder.layers | ChatGLM |
+| gpt_neox.layers | GPT-NeoX |
+| model.decoder.layers | BART, T5 |
+
+If your model uses a different layout, run hatcat_doctor.py — it will:
+- detect the architecture + layer path,
+- verify hidden-state access / hooks,
+- and recommend any missing dependencies.
+
+## Concept and Lens Compatibility
+
+In HatCat, lenses are an abstraction layer over concept detection and steering.
+
+A lens wraps one or more probes for a concept, where each probe can target different internals (different layers, modules, feature spaces, or even different substrates) in different ways. The only requirement is that a probe can output a 0–1 confidence score.
+
+Lenses then:
+- aggregate multiple probe outputs per concept (including per-layer / per-target variants),
+- normalise signals to a consistent 0–1 range,
+- emit a 0–1 steering signal via multiple steering backends, independent of the underlying model architecture.
+
+This makes concept packs portable: you define the concept once, then reuse it across many substrates. When you train a lens pack, HatCat determines the best layer targets and trains probes per concept.  
+
+
+## Accuracy vs Efficiency Tradeoff
+
+This tradeoff always exists in all forms of interpretability, we can either know everything perfectly, or know something quickly, but not both.  
+
+HatCat lets you pick from many points on the curve: how many concepts you want to track, how many probes you need on how many layers, what accuracy you expect and how long you want to spend training them. This is to let you pick a combination which is optimal for your use case. 
+
+If we compare HatCat's first-light Lens Pack against Google's Scope 2 for the same Gemma 3 4b model, we see the same safety concepts lighting up on largely the same tokens. 
+
+The difference is: 
+**SAEs:** Undirected. Trained on billions of tokens with enormous compute/storage. Recovers a broad feature basis (including things you don’t care about) for a single model.
+
+**HatCat lenses:** Directed. Start with what you want to detect. Train on dozens of prompts on a single GPU in hours. Recover highly similar concept signals across many models, and deploy them at the edge to monitor and steer in real time.
+
+We're trading feature completeness for vastly greater efficiency, by accepting a simplified probabilistic lower dimensional view of the underlying polysemanticism. That lets us focus visibility where we need it, and take interpretability out of the lab and into the hands of the people who need it.
+
+This works because if you prompt a model on a given concept enough times (and enough ways), you reliably elicit the internal state associated with that concept. The probe learns to recognise that state, and its characteristic logit footprint becomes visible in the outputs.
 
 ## Notes & Limitations
 
