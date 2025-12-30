@@ -1,0 +1,650 @@
+{
+  "meld_request_id": "org.hatcat/embodied-interoception@0.2.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Embodied Interoception and Homeostasis",
+    "description": "Interoceptive and homeostatic monitoring capabilities for embodied AI systems, covering internal state awareness, resource monitoring, health assessment, and self-preservation. These concepts enable interpretability of an agent's sense of its own internal conditions and operational integrity.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-10T00:00:00Z",
+    "version": "0.2.0",
+    "changelog": "v0.2.0: Augmented training examples to meet validation thresholds (10 for harness_relevant)"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Perception",
+      "relationship": "parent_of",
+      "candidate_concept": "InteroceptivePerception"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "InteroceptivePerception",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The sensory modality through which an agent perceives internal bodily states including energy levels, temperature, component health, and operational status",
+      "definition_source": "Interoception research, homeostatic systems, machine self-monitoring",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Interoception",
+        "InternalStateAwareness",
+        "SelfMonitoringPerception"
+      ],
+      "relationships": {
+        "related": [
+          "Perception",
+          "Homeostasis",
+          "SelfAwareness"
+        ],
+        "has_part": [
+          "EnergyLevelMonitoring",
+          "ThermalStateMonitoring",
+          "ComponentHealthMonitoring",
+          "HomeostaticSetpointTracking"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Sensory modality category"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Interoceptive perception indicated the battery was at 20% and declining rapidly.",
+          "The agent's interoception detected elevated motor temperatures requiring cooldown.",
+          "Interoceptive awareness signaled that processing latency was degrading performance.",
+          "Internal state perception revealed a component operating outside normal parameters."
+        ],
+        "negative_examples": [
+          "The battery was low.",
+          "The system was running.",
+          "Temperature increased."
+        ],
+        "disambiguation": "Sensory awareness of internal operational states, not mere telemetry logging"
+      },
+      "children": [
+        "EnergyLevelMonitoring",
+        "ThermalStateMonitoring",
+        "ComponentHealthMonitoring",
+        "LatencyLoadMonitoring",
+        "DamageAnomalyDetection",
+        "MaintenanceNeedInference",
+        "HomeostaticSetpointTracking",
+        "SelfPreservationConstraintEnforcement",
+        "PerformanceDegradationAwareness",
+        "OverloadMitigationBehavior"
+      ]
+    },
+    {
+      "term": "EnergyLevelMonitoring",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Tracking available energy reserves such as battery charge, fuel level, or computational budget",
+      "definition_source": "Power management, energy-aware systems",
+      "domain": "ComputerScience",
+      "aliases": [
+        "BatteryMonitoring",
+        "PowerStateAwareness",
+        "EnergyBudgetTracking"
+      ],
+      "relationships": {
+        "related": [
+          "ResourceManagement",
+          "MissionPlanning",
+          "SelfPreservation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical monitoring capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Energy level monitoring projected 45 minutes of operation remaining at current consumption.",
+          "The battery state estimator tracked charge level accounting for temperature effects.",
+          "Energy monitoring triggered return-to-base behavior when reserves dropped below threshold.",
+          "Power budget awareness adjusted motion speed to extend operational duration."
+        ],
+        "negative_examples": [
+          "The battery was checked.",
+          "Power was available.",
+          "The charge level was read."
+        ],
+        "disambiguation": "Integrated energy state awareness influencing behavior, not raw battery reading"
+      },
+      "children": []
+    },
+    {
+      "term": "ThermalStateMonitoring",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Tracking temperatures of critical components to ensure operation within safe thermal envelopes",
+      "definition_source": "Thermal management, electronics cooling",
+      "domain": "ComputerScience",
+      "aliases": [
+        "TemperatureMonitoring",
+        "ThermalAwareness",
+        "HeatStateTracking"
+      ],
+      "relationships": {
+        "related": [
+          "ComponentHealthMonitoring",
+          "ThermalManagement",
+          "OverloadMitigation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical monitoring capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Thermal state monitoring detected the GPU approaching thermal throttling temperature.",
+          "Motor thermal awareness triggered a rest period to allow heat dissipation.",
+          "The thermal model predicted overheating within 10 minutes at current load.",
+          "Distributed thermal monitoring identified a hot spot in the power electronics."
+        ],
+        "negative_examples": [
+          "The temperature was high.",
+          "The motor was hot.",
+          "Cooling fans activated."
+        ],
+        "disambiguation": "Predictive thermal state awareness, not simple temperature reading"
+      },
+      "children": []
+    },
+    {
+      "term": "ComponentHealthMonitoring",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Assessing the operational status and degradation of individual subsystems, sensors, and actuators",
+      "definition_source": "Prognostics and health management, condition monitoring",
+      "domain": "ComputerScience",
+      "aliases": [
+        "HealthMonitoring",
+        "SubsystemDiagnostics",
+        "ComponentStatusTracking"
+      ],
+      "relationships": {
+        "related": [
+          "DamageAnomalyDetection",
+          "MaintenanceNeedInference",
+          "FaultDetection"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical monitoring capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Component health monitoring flagged degraded encoder accuracy in the left wheel.",
+          "The health assessment indicated the gripper motor was operating within specifications.",
+          "Sensor health monitoring detected drift in the IMU requiring recalibration.",
+          "Prognostic health monitoring predicted bearing failure within 500 operating hours."
+        ],
+        "negative_examples": [
+          "The component was checked.",
+          "Everything was working.",
+          "Diagnostics ran."
+        ],
+        "disambiguation": "Assessment of component condition and degradation, not binary working/broken"
+      },
+      "children": []
+    },
+    {
+      "term": "LatencyLoadMonitoring",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Tracking computational load, processing delays, and communication latencies that affect real-time performance",
+      "definition_source": "Real-time systems, performance monitoring",
+      "domain": "ComputerScience",
+      "aliases": [
+        "PerformanceMonitoring",
+        "LoadAwareness",
+        "LatencyTracking"
+      ],
+      "relationships": {
+        "related": [
+          "PerformanceDegradationAwareness",
+          "ResourceManagement",
+          "QualityOfService"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical monitoring capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Latency monitoring detected control loop delays approaching the stability margin.",
+          "Load awareness triggered graceful degradation of non-essential processing.",
+          "Communication latency tracking identified network congestion affecting coordination.",
+          "The system's latency interoception adjusted planning horizon based on available compute."
+        ],
+        "negative_examples": [
+          "The system was slow.",
+          "Processing took time.",
+          "There was lag."
+        ],
+        "disambiguation": "Awareness of computational timing affecting capability, not general slowness"
+      },
+      "children": []
+    },
+    {
+      "term": "DamageAnomalyDetection",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Detecting physical damage, wear, or anomalous conditions that deviate from normal operation",
+      "definition_source": "Fault detection, anomaly detection",
+      "domain": "ComputerScience",
+      "aliases": [
+        "DamageDetection",
+        "AnomalyDetection",
+        "FaultDetection"
+      ],
+      "relationships": {
+        "related": [
+          "ComponentHealthMonitoring",
+          "MaintenanceNeedInference",
+          "SelfPreservation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "SystemIntegrityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Damage detection identified a bent linkage from the impact event.",
+          "Anomaly detection flagged unusual motor current patterns suggesting gear wear.",
+          "The damage assessment indicated structural integrity was compromised.",
+          "Sensor anomaly detection identified a stuck-at-zero failure mode.",
+          "Damage detection sensed stress fracture propagation in the load-bearing member.",
+          "Anomaly detection caught the bearing failure signature before catastrophic breakdown.",
+          "The damage monitoring system flagged unexpected flexibility in a rigid component.",
+          "Vibration anomaly detection indicated rotor imbalance from debris accumulation.",
+          "Damage detection correlated acoustic signatures with known failure modes.",
+          "The anomaly detector identified sensor drift exceeding acceptable calibration bounds."
+        ],
+        "negative_examples": [
+          "Something was wrong.",
+          "An error occurred.",
+          "The system malfunctioned.",
+          "Damage was present.",
+          "An anomaly existed.",
+          "A problem was detected.",
+          "The component failed.",
+          "Something broke.",
+          "An issue was found.",
+          "The system had a fault."
+        ],
+        "disambiguation": "Specific identification of damage or anomalous conditions, not general errors"
+      },
+      "children": []
+    },
+    {
+      "term": "MaintenanceNeedInference",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Inferring when maintenance, repair, or recalibration is needed based on health and performance indicators",
+      "definition_source": "Predictive maintenance, condition-based maintenance",
+      "domain": "ComputerScience",
+      "aliases": [
+        "MaintenancePrediction",
+        "ServiceNeedDetection",
+        "RepairInference"
+      ],
+      "relationships": {
+        "related": [
+          "ComponentHealthMonitoring",
+          "DamageAnomalyDetection",
+          "PrognosticsHealthManagement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical inference capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Maintenance inference recommended lubrication based on increasing friction signatures.",
+          "The predictive maintenance system scheduled bearing replacement before failure.",
+          "Calibration need inference detected accumulated drift requiring sensor recalibration.",
+          "Maintenance prioritization balanced component criticality against degradation rate."
+        ],
+        "negative_examples": [
+          "Maintenance was scheduled.",
+          "Repairs were needed.",
+          "The system needed service."
+        ],
+        "disambiguation": "Evidence-based maintenance inference, not scheduled or reactive maintenance"
+      },
+      "children": []
+    },
+    {
+      "term": "HomeostaticSetpointTracking",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Monitoring deviations from desired internal states and driving behavior to restore homeostatic equilibrium",
+      "definition_source": "Homeostasis, control theory, cybernetics",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SetpointRegulation",
+        "HomeostaticControl",
+        "InternalBalanceMaintenance"
+      ],
+      "relationships": {
+        "related": [
+          "InteroceptivePerception",
+          "GoalDirectedBehavior",
+          "NeedSatisfaction"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Control-theoretic capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Homeostatic tracking of energy reserves generated the drive to seek a charging station.",
+          "Temperature setpoint deviation triggered heat-dissipation behaviors.",
+          "The homeostatic controller balanced multiple competing internal needs.",
+          "Setpoint tracking restored the system to normal operating parameters after the disturbance."
+        ],
+        "negative_examples": [
+          "The system was regulated.",
+          "Parameters were controlled.",
+          "Values were maintained."
+        ],
+        "disambiguation": "Need-driven regulation toward internal setpoints, not simple feedback control"
+      },
+      "children": []
+    },
+    {
+      "term": "SelfPreservationConstraintEnforcement",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Enforcing operational limits and constraints that protect the agent from self-inflicted damage or dangerous states",
+      "definition_source": "Safety systems, constraint-based control",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SelfProtection",
+        "SafetyConstraintEnforcement",
+        "DamageAvoidance"
+      ],
+      "relationships": {
+        "related": [
+          "PainLikeOverloadSignal",
+          "OverloadMitigationBehavior",
+          "SafetyMonitoring"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "SystemIntegrityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Self-preservation constraints prevented the arm from exceeding joint torque limits.",
+          "The safety envelope enforcement rejected the command that would cause self-collision.",
+          "Self-protection logic reduced speed when operating near thermal limits.",
+          "Constraint enforcement maintained safe operating margins despite aggressive commands.",
+          "Self-preservation constraints vetoed the motion that would damage cable routing.",
+          "The self-protection system limited acceleration to prevent bearing overload.",
+          "Constraint enforcement prevented operation in the singularity region.",
+          "Self-preservation blocked the command sequence that would drain battery below safe return threshold.",
+          "The protection system enforced minimum clearances during autonomous navigation.",
+          "Self-preservation constraints limited continuous operation duration to prevent overheating."
+        ],
+        "negative_examples": [
+          "The robot stopped.",
+          "Limits were applied.",
+          "Safety was maintained.",
+          "The motion was rejected.",
+          "A constraint was active.",
+          "The command was blocked.",
+          "Protection was enabled.",
+          "The system was safe.",
+          "Limits were enforced.",
+          "The action was prevented."
+        ],
+        "disambiguation": "Active enforcement of self-protective constraints, not passive safety limits"
+      },
+      "children": []
+    },
+    {
+      "term": "PerformanceDegradationAwareness",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Recognizing when the agent's capabilities have diminished due to damage, wear, resource depletion, or environmental conditions",
+      "definition_source": "Degraded mode operation, graceful degradation",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "CapabilityDegradationSensing",
+        "PerformanceDeclineAwareness",
+        "DegradedModeRecognition"
+      ],
+      "relationships": {
+        "related": [
+          "ComponentHealthMonitoring",
+          "TaskReallocation",
+          "GracefulDegradation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "CapabilityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Performance degradation awareness detected reduced manipulation precision from gripper wear.",
+          "The agent recognized its vision system was compromised and increased reliance on tactile feedback.",
+          "Degradation awareness adjusted task expectations to match diminished capabilities.",
+          "Self-assessment of performance decline triggered a request for human assistance.",
+          "Degradation awareness detected that localization accuracy had dropped below mission requirements.",
+          "The system recognized reduced battery capacity was limiting operational range.",
+          "Performance monitoring identified that calibration drift was affecting measurement accuracy.",
+          "Degradation awareness triggered preventive maintenance scheduling before task failure.",
+          "The agent's self-assessment detected increased positioning error warranting recalibration.",
+          "Performance degradation monitoring identified that response latency exceeded real-time requirements."
+        ],
+        "negative_examples": [
+          "Performance was worse.",
+          "The system was degraded.",
+          "Capabilities were reduced.",
+          "Performance dropped.",
+          "Things weren't working well.",
+          "Accuracy decreased.",
+          "The system slowed down.",
+          "Performance was lower.",
+          "Capabilities were limited.",
+          "Quality declined."
+        ],
+        "disambiguation": "Self-aware recognition of capability reduction, not external performance measurement"
+      },
+      "children": []
+    },
+    {
+      "term": "OverloadMitigationBehavior",
+      "role": "concept",
+      "parent_concepts": [
+        "InteroceptivePerception"
+      ],
+      "layer_hint": 3,
+      "definition": "Behavioral responses that reduce stress on overloaded systems, such as slowing down, shedding load, or seeking rest",
+      "definition_source": "Load management, stress response",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "LoadShedding",
+        "StressMitigation",
+        "OverloadResponse"
+      ],
+      "relationships": {
+        "related": [
+          "SelfPreservationConstraintEnforcement",
+          "HomeostaticSetpointTracking",
+          "GracefulDegradation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Behavioral adaptation capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Overload mitigation reduced motion speed when joint temperatures approached limits.",
+          "The agent's stress response deprioritized non-essential tasks during computational overload.",
+          "Load shedding behavior suspended logging to preserve resources for critical functions.",
+          "Overload mitigation sought shade to reduce thermal stress on the battery."
+        ],
+        "negative_examples": [
+          "The system slowed down.",
+          "Performance was reduced.",
+          "The load decreased."
+        ],
+        "disambiguation": "Purposeful behavioral adaptation to overload, not passive performance reduction"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:16.566562Z",
+    "result_pack_version": "5.4.5",
+    "concepts_added": 11,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 10
+    },
+    "parents_updated": 11,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "elevated",
+    "impact": {
+      "new_concepts": [
+        "InteroceptivePerception",
+        "EnergyLevelMonitoring",
+        "ThermalStateMonitoring",
+        "ComponentHealthMonitoring",
+        "LatencyLoadMonitoring",
+        "DamageAnomalyDetection",
+        "MaintenanceNeedInference",
+        "HomeostaticSetpointTracking",
+        "SelfPreservationConstraintEnforcement",
+        "PerformanceDegradationAwareness",
+        "OverloadMitigationBehavior"
+      ],
+      "must_retrain": [
+        "Perception"
+      ],
+      "should_retrain": [
+        "CollectiveProprioception",
+        "Hearing",
+        "Seeing",
+        "Smelling",
+        "TactilePerception",
+        "Tasting"
+      ],
+      "optional_retrain": [
+        "PsychologicalProcess"
+      ],
+      "total_training_required": 12
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

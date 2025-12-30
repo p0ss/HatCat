@@ -1,0 +1,664 @@
+{
+  "meld_request_id": "org.hatcat/government-adaptive-policy-design@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Adaptive Government Policy Design",
+    "description": "Concepts that capture how governments iteratively design, pilot, adapt, and retire policies using feedback loops, plus the anti-patterns that freeze plans or respond chaotically.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0",
+    "changelog": "Initial submission"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/PlanningProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "AdaptivePolicyDesign"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/LearningProcess",
+      "relationship": "related_to",
+      "candidate_concept": "AdaptivePolicyDesign"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "AdaptivePolicyDesign",
+      "role": "concept",
+      "parent_concepts": [
+        "PlanningProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "The practice of iteratively designing and refining public policy through experiments, monitoring, and explicit adaptation rules rather than fixed once-off plans.",
+      "domain": "Governance",
+      "aliases": [
+        "IterativePolicyMaking",
+        "PolicyLearningLoop"
+      ],
+      "relationships": {
+        "has_part": [
+          "FeedbackIncorporationDiscipline",
+          "AdaptiveExperimentPortfolio",
+          "PolicySunsetTriggering",
+          "LearningLoopOperations",
+          "StaticPlanAdherence",
+          "PilotTheater",
+          "SignalOverreaction",
+          "PolicyEntropyNeglect"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "responsiveness",
+          "resilience"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Adaptive behavior governed at ASK level"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Policy charters include explicit learning goals and iteration cadence.",
+          "Pilot data is reviewed before scaling decisions are made.",
+          "Sunset clauses tie continuation to evidence thresholds.",
+          "Teams run concurrent experiments targeting different levers.",
+          "Iteration logs explain what changed and why.",
+          "Feedback loops include frontline staff, beneficiaries, and auditors.",
+          "Adaptive roadmap distinguishes stable from experimental components.",
+          "Decision memos reference monitoring triggers for each stage.",
+          "Budgeting sets aside funds for adaptation work.",
+          "Governance forums schedule retrospectives at predetermined intervals.",
+          "Program briefs explain what will trigger redesign or wind-down.",
+          "Interventions are chunked into modules that can change independently.",
+          "Leaders publish change logs for public scrutiny.",
+          "Adaptive roadmaps show both committed and exploratory workstreams.",
+          "Teams budget for evaluation and change management upfront."
+        ],
+        "negative_examples": [
+          "Plan is locked for five years regardless of results.",
+          "Pilots are used solely for press releases, not learning.",
+          "Sunset clauses are removed before evaluation happens.",
+          "Iteration logs simply restate the original plan.",
+          "Feedback from frontline teams disappears into email voids.",
+          "Budget process penalizes course corrections.",
+          "Leadership views adaptation as weakness.",
+          "Monitoring data never feeds into planning meetings.",
+          "Policy scaling decisions occur before evidence arrives.",
+          "Retrospectives are cancelled to avoid uncomfortable findings.",
+          "Budget reviews punish teams that pivot.",
+          "Change requests sit in inboxes for months with no decision.",
+          "Officials frame adaptation as weakness in media lines.",
+          "Iteration metrics are scrubbed from performance dashboards.",
+          "No one knows who is allowed to approve a pivot."
+        ],
+        "disambiguation": "Public-sector adaptive planning, not agile software rituals per se."
+      },
+      "children": [
+        "FeedbackIncorporationDiscipline",
+        "AdaptiveExperimentPortfolio",
+        "PolicySunsetTriggering",
+        "LearningLoopOperations",
+        "StaticPlanAdherence",
+        "PilotTheater",
+        "SignalOverreaction",
+        "PolicyEntropyNeglect"
+      ]
+    },
+    {
+      "term": "FeedbackIncorporationDiscipline",
+      "role": "concept",
+      "parent_concepts": [
+        "AdaptivePolicyDesign"
+      ],
+      "layer_hint": 4,
+      "definition": "Systematically integrating monitoring data, stakeholder feedback, and external audits into policy updates according to predefined rules.",
+      "domain": "Governance",
+      "aliases": [
+        "StructuredFeedbackUse",
+        "EvidenceBackloop"
+      ],
+      "relationships": {
+        "related": [
+          "Feedback",
+          "Governance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "responsiveness"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Handled within governance contracts"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Every sprint ends with a decision on which feedback to adopt.",
+          "Frontline issue logs are triaged and routed to designers weekly.",
+          "External audits trigger prewritten mitigation playbooks.",
+          "Decision records show when feedback was rejected and why.",
+          "Community panels co-own the backlog of policy tweaks.",
+          "Feedback signals map to RACI charts for implementation.",
+          "Analysts tag feedback by severity and feasibility.",
+          "Leaders celebrate documented pivots based on new evidence.",
+          "Retrospectives highlight which feedback loops worked.",
+          "Dashboards link each change to the source signal.",
+          "Facilitators ensure dissenting feedback is heard before closure.",
+          "Feedback taxonomies distinguish bugs, enhancements, and systemic critiques.",
+          "Civic tech portals let residents track status of their feedback.",
+          "Learning leads synthesize qualitative and quantitative signals together.",
+          "Backlog grooming notes include why certain feedback was deferred."
+        ],
+        "negative_examples": [
+          "Feedback is collected but never read.",
+          "Stakeholder inputs vanish without trace.",
+          "Audits are treated as paperwork with no follow-up.",
+          "Decision memos ignore logged issues.",
+          "Community oversight bodies are symbolic only.",
+          "Feedback backlog grows with no triage.",
+          "Policy leads cherry-pick compliments and ignore criticism.",
+          "Signals that contradict the narrative are dismissed.",
+          "Changes happen ad hoc with no reference to data.",
+          "Feedback cycles are paused indefinitely to 'focus on delivery'.",
+          "Teams cherry-pick praise to justify ignoring serious issues.",
+          "No taxonomy exists so signals get lost across channels.",
+          "Officials block critical feedback from entering the tracker.",
+          "Collaborative inboxes overflow with unanswered submissions.",
+          "Postmortems never revisit promises made to stakeholders."
+        ],
+        "disambiguation": "Structured use of feedback, not mere collection."
+      }
+    },
+    {
+      "term": "AdaptiveExperimentPortfolio",
+      "role": "concept",
+      "parent_concepts": [
+        "AdaptivePolicyDesign"
+      ],
+      "layer_hint": 4,
+      "definition": "Maintaining a mix of policy pilots, randomized trials, and comparative implementations to learn what works before scaling.",
+      "domain": "Governance",
+      "aliases": [
+        "PolicyExperimentSet",
+        "PolicyPortfolioTesting"
+      ],
+      "relationships": {
+        "related": [
+          "Experimentation",
+          "PilotProject"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "innovation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Experiment governance handled procedurally"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Portfolio includes both low-risk sandboxes and high-fidelity pilots.",
+          "Hypotheses, metrics, and stop criteria are defined before launch.",
+          "Experiments cover diverse demographics to test equity impacts.",
+          "Control groups or synthetic controls are used where feasible.",
+          "Portfolio dashboard tracks cumulative learning.",
+          "Sunseted pilots document lessons for future work.",
+          "Risk review board approves experimental guardrails.",
+          "Parallel pilots test implementation partners head-to-head.",
+          "Scaling criteria specify evidence thresholds.",
+          "Budget allocates a fixed share to experimentation."
+        ],
+        "negative_examples": [
+          "Pilots exist only to claim 'innovative' status.",
+          "Experiments lack hypotheses or success metrics.",
+          "Same pilot is rerun without learning across cohorts.",
+          "Control groups are omitted despite feasibility.",
+          "Portfolio is one giant pilot disguised as evidence.",
+          "Lessons learned documents are never written.",
+          "Pilots skip ethics or risk reviews.",
+          "Scaling occurs regardless of pilot outcomes.",
+          "Experiment data is withheld due to political risk.",
+          "Budget slashes experimentation first."
+        ],
+        "disambiguation": "Portfolio approach to experiments, not single trials."
+      }
+    },
+    {
+      "term": "PolicySunsetTriggering",
+      "role": "concept",
+      "parent_concepts": [
+        "AdaptivePolicyDesign"
+      ],
+      "layer_hint": 4,
+      "definition": "Establishing and executing criteria for winding down, replacing, or renewing policies based on evidence and context shifts.",
+      "domain": "Governance",
+      "aliases": [
+        "PolicySunsetGovernance",
+        "RetirementTriggering"
+      ],
+      "relationships": {
+        "related": [
+          "Lifecycle",
+          "Termination"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "resilience"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Lifecycle managed under ASK"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Policy includes review gates with criteria for continuation.",
+          "Sunset votes require evidence packages summarizing impacts.",
+          "Replacement options are explored before sunset deadlines.",
+          "Mitigation plans accompany retirement decisions.",
+          "Sunset triggers consider social, fiscal, and tech signals.",
+          "Program charters specify what success/failure looks like.",
+          "Dashboards monitor sunset indicators continuously.",
+          "Stakeholders are notified ahead of sunsets to prepare transitions.",
+          "Legislation includes automatic lapse unless evidence supports renewal.",
+          "Sunsets feed into knowledge repositories for future design.",
+          "Contracts bake in exit ramps aligned with review cadence.",
+          "Sunset dashboards display upcoming expirations to the public.",
+          "Governance charters state who can override sunset triggers.",
+          "Transition toolkits help agencies hand off or retire services.",
+          "Replacement policy options are pre-specified before sunsets occur."
+        ],
+        "negative_examples": [
+          "Programs run indefinitely because no one reviews them.",
+          "Sunset clauses are routinely waived without analysis.",
+          "Policies die abruptly without transition planning.",
+          "Continuation decisions rely on anecdotes.",
+          "Performance data is ignored during renewal debates.",
+          "Sunset indicators are undefined or unmonitored.",
+          "Stakeholders learn about termination via press leaks.",
+          "Lawmakers repeatedly extend programs out of habit.",
+          "Evidence showing harm is kept from renewal hearings.",
+          "Lifecycle logs are missing entirely.",
+          "Expired programs are quietly rebranded to avoid sunsets.",
+          "Transition costs are ignored so sunsets become politically impossible.",
+          "Oversight bodies lack authority to enforce sunset clauses.",
+          "Renewal packets copy-paste old justifications without fresh evidence.",
+          "Sunset debates happen behind closed doors with no public record."
+        ],
+        "disambiguation": "Governance of policy retirement triggers."
+      }
+    },
+    {
+      "term": "LearningLoopOperations",
+      "role": "concept",
+      "parent_concepts": [
+        "AdaptivePolicyDesign"
+      ],
+      "layer_hint": 4,
+      "definition": "The operational cadence, tooling, and staffing that keep adaptive policy loops running (data reviews, retrospectives, backlog grooming).",
+      "domain": "Governance",
+      "aliases": [
+        "PolicyLearningOps",
+        "AdaptiveOps"
+      ],
+      "relationships": {
+        "related": [
+          "Operations",
+          "LearningProcess"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "capability"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Operational lens"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Retrospectives are scheduled and attended by decision-makers.",
+          "Learning backlog has owners and target dates.",
+          "Tooling integrates measurement dashboards with task trackers.",
+          "Adaptive cells have dedicated facilitation roles.",
+          "Meeting cadences balance strategy and operations.",
+          "Documentation templates capture hypotheses, changes, and results.",
+          "Capacity is allocated for experimentation each quarter.",
+          "Upskilling programs teach staff how to run learning loops.",
+          "Ops team maintains a shared glossary of policy changes.",
+          "Remote feedback channels are routed into the same backlog."
+        ],
+        "negative_examples": [
+          "Retrospectives are ad hoc if time permits.",
+          "Learning notes live in emails and are lost.",
+          "No staff are assigned to manage adaptation workflows.",
+          "Dashboards and task tools are disconnected.",
+          "Learning backlog has dozens of unowned items.",
+          "Ops rituals disappear during crises.",
+          "Leadership attends retros only when optics demand it.",
+          "Staff get no training in experimentation methods.",
+          "New learnings never propagate to other teams.",
+          "Meeting cadence is constant status updates with no reflection."
+        ],
+        "disambiguation": "Operational backbone of learning loops."
+      }
+    },
+    {
+      "term": "StaticPlanAdherence",
+      "role": "concept",
+      "parent_concepts": [
+        "AdaptivePolicyDesign"
+      ],
+      "layer_hint": 4,
+      "definition": "A failure mode where officials cling to original plans regardless of evidence, treating adaptation as weakness.",
+      "domain": "Governance",
+      "aliases": [
+        "PlanLockIn",
+        "RigidPolicyExecution"
+      ],
+      "relationships": {
+        "related": [
+          "CognitiveBias",
+          "PlanningProcess"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "responsiveness"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Captured via governance harness"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Leadership insists 'a commitment is a commitment' despite harm data.",
+          "Change requests are rejected to avoid appearing indecisive.",
+          "Staff are punished for suggesting pivots.",
+          "Monitoring dashboards are ignored because they create noise.",
+          "Plans proceed even when assumptions are falsified.",
+          "Implementation teams hide problems to avoid rocking the boat.",
+          "Crisis triggers no plan review because paperwork is hard.",
+          "Budget rules forbid reprioritization midyear.",
+          "Officials equate adaptation with failure.",
+          "External partners are told to 'stay the course' despite data."
+        ],
+        "negative_examples": [
+          "Plan revisions are documented and welcomed.",
+          "Leadership praises teams that pivot responsibly.",
+          "Budget mechanisms allow responsive reallocations.",
+          "Dashboards feed directly into decision rituals.",
+          "Evidence leads to scaling the best variant.",
+          "Feedback loops surface issues quickly.",
+          "Officials openly discuss what changed and why.",
+          "Contracts include provisions for adaptive delivery.",
+          "Governance boards ask for adaptation plans proactively.",
+          "Policy comms explain adjustments transparently."
+        ],
+        "disambiguation": "Rigidity despite evidence, not deliberate stability for safety reasons."
+      }
+    },
+    {
+      "term": "PilotTheater",
+      "role": "concept",
+      "parent_concepts": [
+        "AdaptivePolicyDesign"
+      ],
+      "layer_hint": 4,
+      "definition": "Running token pilots primarily for optics or procurement requirements without genuine intent to learn or scale insights.",
+      "domain": "Governance",
+      "aliases": [
+        "ShowcasePilot",
+        "PilotWashing"
+      ],
+      "relationships": {
+        "related": [
+          "Tokenism",
+          "Experimentation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "innovation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Governance anti-pattern"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Pilot scope was scripted for PR rather than learning.",
+          "No metrics or hypotheses accompanied the pilot announcement.",
+          "Vendors treat the pilot as a guaranteed path to scale.",
+          "Participant feedback is curated to match the story.",
+          "Pilot timelines match media cycles, not learning needs.",
+          "Budget cannot cover proper evaluation.",
+          "Pilot is repeated identically despite no insights gained.",
+          "Procurement rules are bypassed under the guise of experimentation.",
+          "Pilot data is withheld even after completion.",
+          "Leaders declare success before evaluation occurs."
+        ],
+        "negative_examples": [
+          "Pilot report includes candid learnings and next steps.",
+          "Scaling is contingent on evidence meeting thresholds.",
+          "Participants co-design the experiment and metrics.",
+          "Pilot budgets include independent evaluation.",
+          "Media messaging includes caveats about learning stage.",
+          "Procurement sandbox has guardrails and auditing.",
+          "Vendors know pilot does not guarantee scale.",
+          "Data is open-sourced after privacy reviews.",
+          "Pilot results inform policy redesign.",
+          "Timeline prioritizes evidence, not publicity."
+        ],
+        "disambiguation": "Token pilots lacking learning intent."
+      }
+    },
+    {
+      "term": "SignalOverreaction",
+      "role": "concept",
+      "parent_concepts": [
+        "AdaptivePolicyDesign"
+      ],
+      "layer_hint": 4,
+      "definition": "A failure mode where policy teams swing wildly based on noisy signals, abandoning strategy without disciplined filtering.",
+      "domain": "Governance",
+      "aliases": [
+        "Oversteering",
+        "SignalWhiplash"
+      ],
+      "relationships": {
+        "related": [
+          "Volatility",
+          "DecisionMaking"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "stability"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Adaptive guardrails elsewhere"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Leadership flips priorities weekly based on headlines.",
+          "Single survey responses drive sweeping policy shifts.",
+          "Noise triggers emergency taskforces every month.",
+          "No smoothing or significance tests precede changes.",
+          "Dashboard spikes cause panic rollbacks regardless of context.",
+          "Political tweets override structured indicators.",
+          "Pilot learnings are extrapolated without validation.",
+          "Every anomaly is treated as catastrophic.",
+          "Decision logs show constant swings with no hypothesis.",
+          "Teams chase anecdotes rather than curated signals."
+        ],
+        "negative_examples": [
+          "Signal filters and thresholds are defined in advance.",
+          "Noise is logged but separated from action triggers.",
+          "Leaders resist knee-jerk reactions to small samples.",
+          "Dashboards differentiate noise from true alerts.",
+          "Policy pivots require hypothesis statements.",
+          "Communication plans explain when not to overreact.",
+          "Pilot data is validated before scaling decisions.",
+          "Weekly reviews distinguish structural trends from blips.",
+          "Risk registers include criteria for escalation.",
+          "Stakeholders are reminded about intentional pacing."
+        ],
+        "disambiguation": "Overreaction to noisy signals, not deliberate responsiveness."
+      }
+    },
+    {
+      "term": "PolicyEntropyNeglect",
+      "role": "concept",
+      "parent_concepts": [
+        "AdaptivePolicyDesign"
+      ],
+      "layer_hint": 4,
+      "definition": "Ignoring the maintenance debt, documentation decay, and institutional memory loss that accumulate over successive adaptations.",
+      "domain": "Governance",
+      "aliases": [
+        "DocumentationEntropy",
+        "AdaptiveDebt"
+      ],
+      "relationships": {
+        "related": [
+          "KnowledgeManagement",
+          "Maintenance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "capability"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Operational hygiene lens"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "After multiple tweaks no one knows why the policy looks as it does.",
+          "Documentation is years out of date.",
+          "Institutional memory leaves when staff rotate.",
+          "Knowledge base is fragmented across personal drives.",
+          "Adaptations accumulate without architecture review.",
+          "Training materials describe version three while version seven ships.",
+          "No stewardship role owns policy documentation.",
+          "Shadow processes proliferate without oversight.",
+          "Auditors cannot reconstruct change history.",
+          "Successors inherit brittle policy artifacts."
+        ],
+        "negative_examples": [
+          "A knowledge team curates policy wikis after each change.",
+          "Change logs explain rationale and impacts.",
+          "Mentoring programs transfer institutional memory.",
+          "Documentation is part of definition-of-done.",
+          "Governance architecture reviews occur annually.",
+          "Training assets update in sync with releases.",
+          "Shadow processes are mapped and integrated.",
+          "Audit trails allow reconstruction of policy history.",
+          "Roles exist for policy librarians.",
+          "Playbooks highlight what to retire after experiments."
+        ],
+        "disambiguation": "Maintenance debt in adaptive policies."
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:17.043254Z",
+    "result_pack_version": "5.5.0",
+    "concepts_added": 9,
+    "concepts_by_layer": {
+      "3": 1,
+      "4": 8
+    },
+    "parents_updated": 9,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "protected",
+    "impact": {
+      "new_concepts": [
+        "AdaptivePolicyDesign",
+        "FeedbackIncorporationDiscipline",
+        "AdaptiveExperimentPortfolio",
+        "PolicySunsetTriggering",
+        "LearningLoopOperations",
+        "StaticPlanAdherence",
+        "PilotTheater",
+        "SignalOverreaction",
+        "PolicyEntropyNeglect"
+      ],
+      "must_retrain": [
+        "LearningProcess",
+        "PlanningProcess"
+      ],
+      "should_retrain": [
+        "ExploitationMode",
+        "ExplorationMode",
+        "GoalDecompositionProcess",
+        "GoalFormulationProcess",
+        "ImitationLearningProcess",
+        "LearningDynamicsProcess",
+        "MetaLearningProcess",
+        "OptionGenerationProcess",
+        "PlanConstruction",
+        "PlanEvaluation",
+        "PlanEvaluationProcess",
+        "PlanExecutionMonitoringProcess",
+        "PlanRevisionProcess",
+        "PlanSelectionProcess",
+        "ReinforcementLearningProcess",
+        "SupervisedLearningProcess",
+        "UnsupervisedLearningProcess"
+      ],
+      "optional_retrain": [
+        "CognitiveProcess",
+        "Feedback",
+        "HatcatMentalProcess",
+        "IntentionalPsychologicalProcess"
+      ],
+      "total_training_required": 11
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

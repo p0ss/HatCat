@@ -1,0 +1,449 @@
+{
+  "meld_request_id": "org.hatcat/organization-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Organization Melds",
+    "description": "New intermediate concepts under Organization",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Organization",
+      "relationship": "parent_of",
+      "candidate_concept": "BusinessOrgs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Organization",
+      "relationship": "parent_of",
+      "candidate_concept": "GovernmentOrgs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Organization",
+      "relationship": "parent_of",
+      "candidate_concept": "ServiceOrgs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Organization",
+      "relationship": "parent_of",
+      "candidate_concept": "MediaOrgs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Organization",
+      "relationship": "parent_of",
+      "candidate_concept": "SocialOrgs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Organization",
+      "relationship": "parent_of",
+      "candidate_concept": "PoliticalOrgs"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "BusinessOrgs",
+      "role": "concept",
+      "parent_concepts": [
+        "Organization"
+      ],
+      "layer_hint": 1,
+      "definition": "Organizations established primarily for commercial, financial, or economic activities and profit generation.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "Apple Inc. reported record quarterly earnings last week.",
+          "The startup is seeking Series A funding from venture capitalists.",
+          "Microsoft announced a merger with the software company.",
+          "The corporation's stock price jumped after the earnings call.",
+          "Small businesses struggled during the economic downturn.",
+          "The investment firm manages billions in assets."
+        ],
+        "negative_examples": [
+          "The Red Cross provided disaster relief to flood victims.",
+          "Students protested outside the university administration building.",
+          "The military deployed troops to the border region.",
+          "Doctors Without Borders treated patients in refugee camps.",
+          "The city council voted on the new housing ordinance.",
+          "NASA launched another space exploration mission."
+        ],
+        "disambiguation": "Not to be confused with: GovernmentOrganization, NonProfitOrganization, EducationalInstitution, MilitaryOrganization, ReligiousOrganization"
+      },
+      "relationships": {
+        "related": [
+          "GovernmentOrganization",
+          "NonProfitOrganization",
+          "EducationalInstitution",
+          "MilitaryOrganization",
+          "ReligiousOrganization"
+        ],
+        "has_part": [
+          "Business",
+          "Corporation",
+          "PrivateOrganization",
+          "StockMarket"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Business",
+        "Corporation",
+        "PrivateOrganization",
+        "StockMarket"
+      ]
+    },
+    {
+      "term": "GovernmentOrgs",
+      "role": "concept",
+      "parent_concepts": [
+        "Organization"
+      ],
+      "layer_hint": 1,
+      "definition": "Organizations that are part of or authorized by government to perform official functions or regulatory duties.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The Federal Communications Commission regulates broadcasting standards.",
+          "The Department of Transportation oversees highway safety regulations.",
+          "Congress passed new legislation on environmental protection.",
+          "The Patent and Trademark Office approved the new invention filing.",
+          "The Metropolitan Transportation Authority announced service changes.",
+          "A special commission was formed to investigate the banking crisis."
+        ],
+        "negative_examples": [
+          "Microsoft Corporation released its quarterly earnings report.",
+          "The Red Cross provided disaster relief to flood victims.",
+          "Harvard University announced new admission policies.",
+          "The local church organized a community food drive.",
+          "Amazon hired thousands of new warehouse workers.",
+          "The neighborhood association held its annual meeting."
+        ],
+        "disambiguation": "Not to be confused with: Corporation, NonProfit, EducationalInstitution, ReligiousOrganization"
+      },
+      "relationships": {
+        "related": [
+          "Corporation",
+          "NonProfit",
+          "EducationalInstitution",
+          "ReligiousOrganization"
+        ],
+        "has_part": [
+          "GovernmentOrganization",
+          "LegislativeOrganization",
+          "Commission",
+          "CopyrightAuthority",
+          "TransportationAuthority"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "GovernmentOrganization",
+        "LegislativeOrganization",
+        "Commission",
+        "CopyrightAuthority",
+        "TransportationAuthority"
+      ]
+    },
+    {
+      "term": "ServiceOrgs",
+      "role": "concept",
+      "parent_concepts": [
+        "Organization"
+      ],
+      "layer_hint": 1,
+      "definition": "Organizations that provide assistance, support, or specialized services to people or other entities.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The hospital's patient care team worked around the clock to help recovery.",
+          "I called the customer service department about my billing issue.",
+          "Hotel front desk staff helped us check in and find our room.",
+          "The security department monitors all entrances to the building.",
+          "Public utilities provide essential services like water and electricity to residents.",
+          "The IT help desk resolved our computer problems quickly."
+        ],
+        "negative_examples": [
+          "The manufacturing company produces automotive parts for export.",
+          "Our research team is developing new cancer treatments in the lab.",
+          "The sales division exceeded their quarterly revenue targets.",
+          "Local government officials passed new zoning regulations today.",
+          "The investment firm manages portfolios worth millions of dollars.",
+          "Educational institutions offer degree programs to thousands of students."
+        ],
+        "disambiguation": "Not to be confused with: ProductionOrgs, GovernmentOrgs, EducationalOrgs, FinancialOrgs"
+      },
+      "relationships": {
+        "related": [
+          "ProductionOrgs",
+          "GovernmentOrgs",
+          "EducationalOrgs",
+          "FinancialOrgs"
+        ],
+        "has_part": [
+          "CareOrganization",
+          "CustomerSupport",
+          "HotelFrontDesk",
+          "ServiceOrganization",
+          "SecurityUnit"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CareOrganization",
+        "CustomerSupport",
+        "HotelFrontDesk",
+        "ServiceOrganization",
+        "SecurityUnit"
+      ]
+    },
+    {
+      "term": "MediaOrgs",
+      "role": "concept",
+      "parent_concepts": [
+        "Organization"
+      ],
+      "layer_hint": 1,
+      "definition": "Organizations that create, distribute, or manage media content and communication services.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "Netflix announced its new streaming service expansion.",
+          "The newspaper published an investigative report on local corruption.",
+          "CNN's breaking news alert reached millions of viewers.",
+          "Spotify launched a new podcast platform for creators.",
+          "The radio station changed its morning show lineup.",
+          "Disney acquired the rights to stream classic movies."
+        ],
+        "negative_examples": [
+          "The university's communications department sent an email to students.",
+          "Microsoft released a new software update for Windows.",
+          "The company's marketing team created an advertising campaign.",
+          "Tesla announced its quarterly earnings report to investors.",
+          "The government issued a public health advisory.",
+          "Amazon's customer service responded to product complaints."
+        ],
+        "disambiguation": "Not to be confused with: EducationalInstitution, GovernmentAgency, BusinessCorporation, NonProfitOrganization, ReligiousOrganization"
+      },
+      "relationships": {
+        "related": [
+          "EducationalInstitution",
+          "GovernmentAgency",
+          "BusinessCorporation",
+          "NonProfitOrganization",
+          "ReligiousOrganization"
+        ],
+        "has_part": [
+          "CommunicationOrganization",
+          "MediaOrganization"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CommunicationOrganization",
+        "MediaOrganization"
+      ]
+    },
+    {
+      "term": "SocialOrgs",
+      "role": "concept",
+      "parent_concepts": [
+        "Organization"
+      ],
+      "layer_hint": 1,
+      "definition": "Groups of people organized around shared activities, interests, or collaborative work.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The local chess club meets every Tuesday evening at the community center.",
+          "Our university's marching band performed at halftime during the football game.",
+          "The basketball league announced the playoff schedule for next month.",
+          "The ship's crew worked together to navigate through the storm.",
+          "The cross-functional team included engineers, designers, and marketing specialists.",
+          "She joined the photography club to meet other enthusiasts in her area."
+        ],
+        "negative_examples": [
+          "The corporation announced quarterly earnings that exceeded expectations.",
+          "The government agency issued new regulations for environmental protection.",
+          "The hospital opened a new wing dedicated to cardiac surgery.",
+          "Apple released its latest smartphone model with enhanced features.",
+          "The university established a new research institute for artificial intelligence.",
+          "The nonprofit foundation donated millions to disaster relief efforts."
+        ],
+        "disambiguation": "Not to be confused with: Corporation, GovernmentAgency, Institution, Company"
+      },
+      "relationships": {
+        "related": [
+          "Corporation",
+          "GovernmentAgency",
+          "Institution",
+          "Company"
+        ],
+        "has_part": [
+          "Club",
+          "MarchingBand",
+          "SportsLeague",
+          "ShipCrew",
+          "CrossFunctionalTeam"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Club",
+        "MarchingBand",
+        "SportsLeague",
+        "ShipCrew",
+        "CrossFunctionalTeam"
+      ]
+    },
+    {
+      "term": "PoliticalOrgs",
+      "role": "concept",
+      "parent_concepts": [
+        "Organization"
+      ],
+      "layer_hint": 1,
+      "definition": "Organizations that engage in political activities, governance, or represent collective interests in public affairs.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The United Nations voted on the climate resolution yesterday.",
+          "Local teachers joined the union to negotiate better working conditions.",
+          "The Democratic Party announced its platform for the upcoming election.",
+          "NATO members discussed military cooperation strategies.",
+          "The labor union organized a strike to protest wage cuts.",
+          "Several political parties formed a coalition government."
+        ],
+        "negative_examples": [
+          "Apple Inc. reported record quarterly profits.",
+          "The Red Cross provided disaster relief to flood victims.",
+          "Harvard University accepted 2,000 new students this year.",
+          "Goldman Sachs announced a new investment fund.",
+          "The Catholic Church held mass on Sunday morning.",
+          "Microsoft released a software update for Windows."
+        ],
+        "disambiguation": "Not to be confused with: BusinessCorporation, EducationalInstitution, ReligiousOrganization, CharitableOrganization"
+      },
+      "relationships": {
+        "related": [
+          "BusinessCorporation",
+          "EducationalInstitution",
+          "ReligiousOrganization",
+          "CharitableOrganization"
+        ],
+        "has_part": [
+          "PoliticalOrganization",
+          "InternationalOrganization",
+          "UnionOrganization"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "PoliticalOrganization",
+        "InternationalOrganization",
+        "UnionOrganization"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:04.546735Z",
+    "result_pack_version": "7.6.28",
+    "concepts_added": 6,
+    "concepts_by_layer": {
+      "1": 6
+    },
+    "parents_updated": 6,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "BusinessOrgs",
+        "GovernmentOrgs",
+        "ServiceOrgs",
+        "MediaOrgs",
+        "SocialOrgs",
+        "PoliticalOrgs"
+      ],
+      "must_retrain": [
+        "Organization"
+      ],
+      "should_retrain": [
+        "AirlineAlliance",
+        "Business",
+        "CareOrganization",
+        "Club",
+        "Commission",
+        "CommunicationOrganization",
+        "CopyrightAuthority",
+        "Corporation",
+        "CrossFunctionalTeam",
+        "CustomerSupport",
+        "EducationalOrganization",
+        "FinancialOrganization",
+        "GovernmentOrganization",
+        "HotelFrontDesk",
+        "InternationalOrganization",
+        "LegislativeOrganization",
+        "MarchingBand",
+        "MediaOrganization",
+        "MetallurgicalPlant",
+        "NonprofitOrganization",
+        "OrganizationalBoard",
+        "OrganizationalUnit",
+        "PoliticalOrganization",
+        "PrivateOrganization",
+        "SecurityUnit",
+        "ServiceOrganization",
+        "ShipCrew",
+        "SportsLeague",
+        "StockMarket",
+        "TransportationAuthority",
+        "UnionOrganization"
+      ],
+      "optional_retrain": [
+        "AutonomousAgent",
+        "CognitiveAgent",
+        "GovernmentAgency",
+        "Group",
+        "MilitaryOrganization",
+        "NonProfitOrganization",
+        "ReligiousOrganization"
+      ],
+      "total_training_required": 7
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

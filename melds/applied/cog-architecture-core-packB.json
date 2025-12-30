@@ -1,0 +1,427 @@
+{
+  "meld_request_id": "org.hatcat/perception-representation@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+  "metadata": {
+    "name": "Perception & Representation Bridge",
+    "description": "Concepts that bridge PerceptualProcess to structured MentalRepresentation: streams, modalities, salience maps, and object-level tokens.",
+    "source": "manual",
+    "author": "hatcat-team+assistant",
+    "created": "2025-11-30T00:00:00Z"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/PerceptualProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "PerceptualStream"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/PerceptualProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "SalienceAllocationProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MentalRepresentation",
+      "relationship": "parent_of",
+      "candidate_concept": "PerceptualFieldRepresentation"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "PerceptualStream",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A temporally extended flow of sensory or input-derived impressions processed by a CognitiveSystem, prior to being stabilized into discrete mental representations (e.g. a continuous stream of visual frames or textual tokens).",
+      "definition_source": "Cognitive science notion of continuous perceptual flow",
+      "domain": "MindsAndAgents",
+      "wordnet": {
+        "synsets": [
+          "perceptual_experience.n.01"
+        ],
+        "canonical_synset": "perceptual_experience.n.01",
+        "lemmas": [
+          "perceptual_experience",
+          "sense_experience"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "PerceptualProcess",
+          "CognitiveProcess",
+          "MentalRepresentation"
+        ],
+        "part_of": [],
+        "has_part": [
+          "VisualPerceptualStream",
+          "AuditoryPerceptualStream",
+          "TextualPerceptualStream"
+        ]
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model describes a rolling, moment-by-moment awareness of everything in the scene, not a single snapshot.",
+          "Text is arriving token by token, and the system is tracking how the overall impression evolves over the conversation.",
+          "A video stream is being analyzed continuously, with the system updating its understanding as new frames come in."
+        ],
+        "negative_examples": [
+          "A single still image is analyzed once and turned into a caption.",
+          "The system recalls a stored memory without any ongoing sensory input.",
+          "A static knowledge graph is queried with no mention of flowing or continuous input."
+        ],
+        "disambiguation": "Not a static mental image or discrete representation; specifically the ongoing, temporally extended flow of perceptual input.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "continuous stream of sensory input",
+            "ongoing flow of observations over time"
+          ]
+        }
+      },
+      "children": [
+        "VisualPerceptualStream",
+        "AuditoryPerceptualStream",
+        "TextualPerceptualStream"
+      ]
+    },
+    {
+      "term": "VisualPerceptualStream",
+      "role": "concept",
+      "parent_concepts": [
+        "PerceptualStream"
+      ],
+      "layer_hint": 3,
+      "definition": "A PerceptualStream composed primarily of visual information such as images, video frames, spatial layouts, and changes in light and color over time.",
+      "definition_source": "Visual perception literature",
+      "domain": "MindsAndAgents",
+      "wordnet": {
+        "synsets": [
+          "visual_perception.n.01"
+        ],
+        "canonical_synset": "visual_perception.n.01",
+        "lemmas": [
+          "visual_perception",
+          "vision",
+          "sight"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "PerceptualStream",
+          "PerceptualProcess",
+          "PerceptualFieldRepresentation"
+        ],
+        "part_of": [
+          "PerceptualStream"
+        ],
+        "has_part": []
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The system describes watching a video feed and tracking objects as they move across the screen.",
+          "The agent narrates what it sees in a room as the camera pans around.",
+          "It talks about noticing color, shape, and motion in a changing scene."
+        ],
+        "negative_examples": [
+          "The system only describes reading text with no visual imagery.",
+          "It reasons about abstract numbers with no reference to images or scenes.",
+          "It processes audio-only input like a phone call."
+        ],
+        "disambiguation": "Specifically visual input streams, not generic perception or static visual memories.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "live video feed analysis",
+            "moving objects in the camera view"
+          ]
+        }
+      }
+    },
+    {
+      "term": "AuditoryPerceptualStream",
+      "role": "concept",
+      "parent_concepts": [
+        "PerceptualStream"
+      ],
+      "layer_hint": 3,
+      "definition": "A PerceptualStream composed primarily of auditory information such as speech, environmental sounds, and temporal patterns in audio signals.",
+      "definition_source": "Auditory perception literature",
+      "domain": "MindsAndAgents",
+      "wordnet": {
+        "synsets": [
+          "auditory_perception.n.01"
+        ],
+        "canonical_synset": "auditory_perception.n.01",
+        "lemmas": [
+          "auditory_perception",
+          "hearing"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "PerceptualStream",
+          "PerceptualProcess"
+        ],
+        "part_of": [
+          "PerceptualStream"
+        ],
+        "has_part": []
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The system listens to a continuous audio stream and identifies changing background noises.",
+          "It tracks multiple speakers over the course of a conversation.",
+          "It reports noticing the rhythm and tempo of music as the song progresses."
+        ],
+        "negative_examples": [
+          "The agent only refers to reading a transcript without any notion of audio.",
+          "It reasons about a static chord diagram with no time-varying sound.",
+          "It describes a single loud noise without any sense of an ongoing sound stream."
+        ],
+        "disambiguation": "Not just any reference to sound; specifically a continuous, time-varying auditory input stream.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "continuous audio feed",
+            "listening over time"
+          ]
+        }
+      }
+    },
+    {
+      "term": "TextualPerceptualStream",
+      "role": "concept",
+      "parent_concepts": [
+        "PerceptualStream"
+      ],
+      "layer_hint": 3,
+      "definition": "A PerceptualStream where the primary input is symbolic or textual (e.g. tokens, characters, or chat messages) arriving over time, as perceived by a language model or other symbolic processor.",
+      "definition_source": "LLM-centric view of perception",
+      "domain": "MindsAndAgents",
+      "wordnet": {
+        "synsets": [
+          "reading.n.02"
+        ],
+        "canonical_synset": "reading.n.02",
+        "lemmas": [
+          "reading",
+          "text_comprehension"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "PerceptualStream",
+          "LanguageProcess",
+          "CognitiveProcess"
+        ],
+        "part_of": [
+          "PerceptualStream"
+        ],
+        "has_part": []
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model tracks how the meaning of a paragraph evolves as each new sentence is read.",
+          "It describes processing a live chat where new messages stream in from users.",
+          "It talks about incrementally updating its understanding as more tokens are received."
+        ],
+        "negative_examples": [
+          "A pre-existing static document is summarized in one shot.",
+          "The system reasons about a stored theorem with no mention of incoming text.",
+          "A sensor reports continuous numeric measurements with no textual content."
+        ],
+        "disambiguation": "Not just text in general; specifically the experience of text arriving as a stream, changing the state over time.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "stream of tokens",
+            "messages arriving in sequence"
+          ]
+        }
+      }
+    },
+    {
+      "term": "SalienceAllocationProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A PerceptualProcess that assigns differential weight or prominence to elements within a PerceptualStream, determining which features, regions, or events become focal for subsequent cognition.",
+      "definition_source": "Attention and salience in perception",
+      "domain": "MindsAndAgents",
+      "wordnet": {
+        "synsets": [
+          "salience.n.01"
+        ],
+        "canonical_synset": "salience.n.01",
+        "lemmas": [
+          "salience",
+          "saliency",
+          "prominence"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "PerceptualProcess",
+          "AttentionProcess",
+          "PerceptualStream",
+          "PerceptualFieldRepresentation"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model explains that it is focusing on the most relevant sentence in a long passage.",
+          "It highlights only a few key objects in a busy scene as important.",
+          "It describes allocating more attention to unusual or threatening cues in the environment."
+        ],
+        "negative_examples": [
+          "The system treats every detail as equally important without any prioritization.",
+          "It simply lists everything present with no emphasis or ranking.",
+          "It reasons about a concept abstractly without mentioning focus, importance, or standing out."
+        ],
+        "disambiguation": "Not generic attention as a whole planning process; specifically the perceptual act of weighting some elements of input as more prominent than others.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "which parts stand out",
+            "what the model is focusing on in the input"
+          ]
+        }
+      }
+    },
+    {
+      "term": "PerceptualFieldRepresentation",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A structured MentalRepresentation of the current perceptual field at a moment in time, organizing entities, regions, and features into a coherent scene or layout derived from a PerceptualStream.",
+      "definition_source": "Scene representation / visual field notions",
+      "domain": "Information",
+      "wordnet": {
+        "synsets": [
+          "visual_field.n.01"
+        ],
+        "canonical_synset": "visual_field.n.01",
+        "lemmas": [
+          "visual_field",
+          "field_of_vision",
+          "visual_scene"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MentalRepresentation",
+          "PerceptualStream",
+          "PerceptualProcess"
+        ],
+        "part_of": [],
+        "has_part": [
+          "PerceptualObjectToken"
+        ]
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The agent describes a snapshot of the room, listing objects and their spatial arrangement at a given instant.",
+          "It talks about the current state of the screen, including where each window and icon is located.",
+          "It summarizes what is present in the scene right now, as distinct from what came before or might come next."
+        ],
+        "negative_examples": [
+          "The model narrates a long story over time without focusing on a single moment.",
+          "It recalls a general fact with no reference to a specific scene layout.",
+          "It reasons about abstract numbers or policies with no spatial or scene-like structure."
+        ],
+        "disambiguation": "Not the continuous stream itself or long-term memory; a temporally bounded, structured scene-level representation derived from perception.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "current scene snapshot",
+            "layout of objects in view at this moment"
+          ]
+        }
+      },
+      "children": [
+        "PerceptualObjectToken"
+      ]
+    },
+    {
+      "term": "PerceptualObjectToken",
+      "role": "concept",
+      "parent_concepts": [
+        "PerceptualFieldRepresentation"
+      ],
+      "layer_hint": 4,
+      "definition": "A bounded MentalRepresentation of a particular object, region, or element within a PerceptualFieldRepresentation, carrying identity, basic properties, and links back to the perceptual evidence that supports it.",
+      "definition_source": "Cognitive psychology \u2018object file\u2019 / token concepts",
+      "domain": "Information",
+      "wordnet": {
+        "synsets": [
+          "mental_image.n.01"
+        ],
+        "canonical_synset": "mental_image.n.01",
+        "lemmas": [
+          "mental_image",
+          "mental_picture",
+          "internal_representation"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "PerceptualFieldRepresentation",
+          "MentalRepresentation",
+          "Object"
+        ],
+        "part_of": [
+          "PerceptualFieldRepresentation"
+        ],
+        "has_part": []
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The agent refers to a specific cup on the table that it can track across frames.",
+          "It keeps track of one pedestrian as they move through a crowd.",
+          "It talks about \u2018this highlighted word\u2019 in a sentence as a distinct thing it is focusing on."
+        ],
+        "negative_examples": [
+          "The model vaguely describes \u2018the scene\u2019 without individuating any specific elements.",
+          "It talks about a generic type like \u2018dogs\u2019 without a particular instance in the current scene.",
+          "It reasons about a concept such as \u2018freedom\u2019 with no perceptual anchor."
+        ],
+        "disambiguation": "Not a whole scene or a category; an individual token-level representation of a particular perceived object or element.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "this particular object in the scene",
+            "tracking one item across time within the field of view"
+          ]
+        }
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-11-30T16:04:59.462454Z",
+    "concepts_added": 7,
+    "concepts_by_layer": {
+      "2": 2,
+      "3": 4,
+      "4": 1
+    },
+    "parents_updated": 7,
+    "errors": [],
+    "warnings": []
+  }
+}

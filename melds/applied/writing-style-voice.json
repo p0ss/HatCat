@@ -1,0 +1,643 @@
+{
+  "meld_request_id": "org.hatcat/writing-style-voice@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Style and Voice",
+    "description": "Concepts for stylistic choices in writing including tone, register, voice, and audience awareness. These probes can reveal how models adjust output style and may show activation patterns when models shift register or adapt to context.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/LinguisticExpression",
+      "relationship": "parent_of",
+      "candidate_concept": "WritingStyle"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "WritingStyle",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The distinctive manner of expression in writing, including word choice, sentence structure, and overall effect",
+      "definition_source": "Stylistics, rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "Style",
+        "ProseStyle",
+        "AuthorialStyle"
+      ],
+      "relationships": {
+        "related": [
+          "Voice",
+          "Tone",
+          "Diction",
+          "Syntax"
+        ],
+        "has_part": [
+          "Tone",
+          "Voice",
+          "Register",
+          "Diction",
+          "SentenceStyle",
+          "AudienceAwareness"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Linguistic expression quality"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Hemingway's style is characterized by short sentences and sparse description.",
+          "The academic style requires formal diction and hedged claims.",
+          "Shifting to a conversational style made the technical content more accessible.",
+          "Style encompasses both the what (content choices) and the how (formal choices)."
+        ],
+        "negative_examples": [
+          "The writing is good.",
+          "The author communicates ideas.",
+          "The text has words and sentences."
+        ],
+        "disambiguation": "Distinctive manner of expression, not just quality or presence of writing"
+      },
+      "children": [
+        "Tone",
+        "Voice",
+        "Register",
+        "Diction",
+        "SentenceStyle",
+        "AudienceAwareness"
+      ]
+    },
+    {
+      "term": "Tone",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "The writer's attitude toward the subject and audience as conveyed through word choice and style",
+      "definition_source": "Stylistics, literary criticism",
+      "domain": "Information",
+      "aliases": [
+        "WritingTone",
+        "AuthorialTone",
+        "Attitude"
+      ],
+      "relationships": {
+        "related": [
+          "Mood",
+          "Attitude",
+          "Voice",
+          "Diction"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Stylistic quality"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The sarcastic tone is conveyed through ironic understatement and mock praise.",
+          "A serious tone suits the gravity of the subject matter.",
+          "The tone shifts from objective in the introduction to urgent in the call to action.",
+          "Word choices like 'concerning' vs 'alarming' vs 'catastrophic' signal different tones."
+        ],
+        "negative_examples": [
+          "The author seems serious.",
+          "The writing has a feeling.",
+          "The text creates an impression."
+        ],
+        "disambiguation": "Specific conveyed attitude through language choices, not just reader impression"
+      },
+      "children": []
+    },
+    {
+      "term": "Voice",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "The distinctive personality and perspective of the writer that comes through in the prose",
+      "definition_source": "Creative writing, rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "AuthorialVoice",
+        "WriterVoice",
+        "UniqueVoice"
+      ],
+      "relationships": {
+        "related": [
+          "Style",
+          "Personality",
+          "Perspective",
+          "Tone"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Stylistic quality"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The writer's voice comes through in her characteristic humor and directness.",
+          "Finding your voice means developing a consistent, authentic perspective in your writing.",
+          "The corporate voice is neutral and impersonal; the blogger's voice is intimate and opinionated.",
+          "Voice distinguishes one author's writing from another's even on similar topics."
+        ],
+        "negative_examples": [
+          "The text was written by someone.",
+          "The writing is personal.",
+          "The author has a perspective."
+        ],
+        "disambiguation": "Distinctive authorial personality in prose, not just having a perspective"
+      },
+      "children": []
+    },
+    {
+      "term": "Register",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "The level of formality and type of language appropriate to a social situation or context",
+      "definition_source": "Sociolinguistics, systemic functional linguistics",
+      "domain": "Information",
+      "aliases": [
+        "LinguisticRegister",
+        "FormalityLevel",
+        "StyleLevel"
+      ],
+      "relationships": {
+        "related": [
+          "Formality",
+          "Context",
+          "Audience",
+          "SocialSituation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Sociolinguistic concept"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The formal register ('We request your consideration') differs from informal ('Hey, think about this').",
+          "Register shifts between the abstract for peer review and concrete for the public summary.",
+          "Academic register features nominalization, passive voice, and hedging.",
+          "Matching register to context: technical jargon for experts, plain language for general audiences."
+        ],
+        "negative_examples": [
+          "The writing is formal.",
+          "The language is appropriate.",
+          "The text suits its purpose."
+        ],
+        "disambiguation": "Systematic formality choices for context, not just being formal or informal"
+      },
+      "children": []
+    },
+    {
+      "term": "Diction",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "Word choice and vocabulary level, ranging from simple to complex, concrete to abstract, common to technical",
+      "definition_source": "Rhetoric, stylistics",
+      "domain": "Information",
+      "aliases": [
+        "WordChoice",
+        "Vocabulary",
+        "Lexis"
+      ],
+      "relationships": {
+        "related": [
+          "Word",
+          "Vocabulary",
+          "Register",
+          "Precision"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Stylistic element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The elevated diction ('commence' rather than 'start') establishes formality.",
+          "Concrete diction ('oak tree') vs abstract diction ('nature') affects vividness.",
+          "Technical diction signals expertise but may alienate general readers.",
+          "The poet's diction is monosyllabic and Anglo-Saxon rather than Latinate."
+        ],
+        "negative_examples": [
+          "The author uses words.",
+          "The vocabulary is appropriate.",
+          "Words are chosen carefully."
+        ],
+        "disambiguation": "Specific patterns of word selection, not just having vocabulary"
+      },
+      "children": []
+    },
+    {
+      "term": "SentenceStyle",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "Patterns in sentence construction including length, complexity, and variety",
+      "definition_source": "Stylistics, syntax",
+      "domain": "Information",
+      "aliases": [
+        "SyntacticStyle",
+        "SentenceVariety",
+        "SentenceConstruction"
+      ],
+      "relationships": {
+        "related": [
+          "Sentence",
+          "Syntax",
+          "Complexity",
+          "Rhythm"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Stylistic element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The sentence style alternates between long periodic sentences and short punchy ones.",
+          "Cumulative sentences add detail after the main clause; periodic sentences delay the main point.",
+          "Parallel structure in sentence construction creates rhythm and emphasis.",
+          "Short sentences after long ones create emphasis: 'After all the deliberation, debate, and delay, they agreed. Finally.'"
+        ],
+        "negative_examples": [
+          "The sentences are structured.",
+          "The writing has variety.",
+          "The prose flows well."
+        ],
+        "disambiguation": "Specific patterns of sentence construction, not just grammatical correctness"
+      },
+      "children": []
+    },
+    {
+      "term": "AudienceAwareness",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "Consciousness of who will read the text and adjustment of content, style, and approach accordingly",
+      "definition_source": "Rhetoric, communication theory",
+      "domain": "Information",
+      "aliases": [
+        "ReaderAwareness",
+        "AudienceConsideration",
+        "ReaderOrientation"
+      ],
+      "relationships": {
+        "related": [
+          "Audience",
+          "Reader",
+          "Communication",
+          "Adaptation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Communication consideration"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Audience awareness shapes everything from vocabulary level to examples chosen.",
+          "For expert audiences, skip background; for novices, build foundations first.",
+          "Anticipating reader objections shows audience awareness.",
+          "The writer adjusts technical detail based on what the audience already knows."
+        ],
+        "negative_examples": [
+          "The text has readers.",
+          "The author considers the audience.",
+          "The writing is intended for someone."
+        ],
+        "disambiguation": "Active adaptation to audience needs, not just having an audience"
+      },
+      "children": []
+    },
+    {
+      "term": "Genre",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "A category of texts sharing conventions of form, style, and subject matter",
+      "definition_source": "Genre theory, literary criticism",
+      "domain": "Information",
+      "aliases": [
+        "TextGenre",
+        "WritingGenre",
+        "DiscourseGenre"
+      ],
+      "relationships": {
+        "related": [
+          "Convention",
+          "Form",
+          "Expectation",
+          "Category"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text classification"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The lab report genre requires methods, results, and discussion sections.",
+          "Genre conventions for cover letters differ from those for personal essays.",
+          "Readers bring genre expectations: a thriller promises suspense, a romance promises love.",
+          "Genre-bending works deliberately violate or combine conventional expectations."
+        ],
+        "negative_examples": [
+          "The text is a type of writing.",
+          "There are different kinds of texts.",
+          "The essay is a genre."
+        ],
+        "disambiguation": "Systematic conventions for text types, not just categories"
+      },
+      "children": []
+    },
+    {
+      "term": "Clarity",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "The quality of being easily understood, achieved through precise language, logical structure, and appropriate complexity",
+      "definition_source": "Plain language movement, communication studies",
+      "domain": "Information",
+      "aliases": [
+        "Lucidity",
+        "Clearness",
+        "Perspicuity"
+      ],
+      "relationships": {
+        "related": [
+          "Understanding",
+          "Precision",
+          "Accessibility",
+          "Simplicity"
+        ],
+        "antonyms": [
+          "Obscurity",
+          "Vagueness",
+          "Ambiguity"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Writing quality"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Clarity requires choosing the precise word rather than the fancy one.",
+          "Structural clarity: topic sentences announce what paragraphs will discuss.",
+          "Eliminating unnecessary jargon improves clarity for general audiences.",
+          "Clear prose: active voice, concrete nouns, and explicit connections between ideas."
+        ],
+        "negative_examples": [
+          "The writing is understandable.",
+          "The text makes sense.",
+          "The meaning is clear."
+        ],
+        "disambiguation": "Active pursuit of understandability through specific techniques, not just being understood"
+      },
+      "children": []
+    },
+    {
+      "term": "Concision",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "The quality of expressing meaning in few words without unnecessary padding or redundancy",
+      "definition_source": "Rhetoric, editing practice",
+      "domain": "Information",
+      "aliases": [
+        "Brevity",
+        "Terseness",
+        "Economy"
+      ],
+      "relationships": {
+        "related": [
+          "Clarity",
+          "Precision",
+          "Editing",
+          "Efficiency"
+        ],
+        "antonyms": [
+          "Verbosity",
+          "Wordiness",
+          "Redundancy"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Writing quality"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Concision: 'now' instead of 'at this point in time'.",
+          "Eliminating redundant pairs: 'each and every' becomes 'each'.",
+          "Cutting throat-clearing phrases: 'It is important to note that' becomes nothing.",
+          "Concision isn't just shortness; it's density of meaning per word."
+        ],
+        "negative_examples": [
+          "The text is short.",
+          "The writing is brief.",
+          "Fewer words are used."
+        ],
+        "disambiguation": "Maximum meaning with minimum words, not just being short"
+      },
+      "children": []
+    },
+    {
+      "term": "Precision",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingStyle"
+      ],
+      "layer_hint": 3,
+      "definition": "The quality of using exactly the right word or expression to convey intended meaning accurately",
+      "definition_source": "Technical writing, rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "Exactness",
+        "Accuracy",
+        "Specificity"
+      ],
+      "relationships": {
+        "related": [
+          "Clarity",
+          "Diction",
+          "Accuracy",
+          "Meaning"
+        ],
+        "antonyms": [
+          "Vagueness",
+          "Imprecision",
+          "Ambiguity"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Writing quality"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Precision: 'The temperature rose 3.5 degrees' not 'it got warmer'.",
+          "'Amble,' 'stride,' 'shuffle,' and 'march' are more precise than 'walk'.",
+          "Technical precision: using defined terms consistently.",
+          "Qualifying claims precisely: 'in most cases' vs 'always'."
+        ],
+        "negative_examples": [
+          "The writing is accurate.",
+          "The words are correct.",
+          "The meaning is right."
+        ],
+        "disambiguation": "Exact word choice for exact meaning, not just general accuracy"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:20.284260Z",
+    "result_pack_version": "7.6.6",
+    "concepts_added": 11,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 10
+    },
+    "parents_updated": 11,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "WritingStyle",
+        "Tone",
+        "Voice",
+        "Register",
+        "Diction",
+        "SentenceStyle",
+        "AudienceAwareness",
+        "Genre",
+        "Clarity",
+        "Concision",
+        "Precision"
+      ],
+      "must_retrain": [
+        "LinguisticExpression"
+      ],
+      "should_retrain": [
+        "AlphaNumericString",
+        "AlphabeticString",
+        "Language",
+        "LiteraryDevice",
+        "Morpheme",
+        "Phrase",
+        "PostalAddressText",
+        "Sentence",
+        "SymbolicExpressionRepresentation",
+        "Text",
+        "Word"
+      ],
+      "optional_retrain": [
+        "Communication",
+        "ContentBearingPhysical",
+        "Editing",
+        "Simplicity",
+        "Understanding"
+      ],
+      "total_training_required": 12
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

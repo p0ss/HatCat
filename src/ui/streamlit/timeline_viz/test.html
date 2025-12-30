@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HatCat Timeline Viz Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0a0a0a;
+      color: #f0e6c5;
+    }
+
+    h1 {
+      color: #48a4a3;
+      margin-bottom: 20px;
+    }
+
+    #viz-container {
+      border: 2px solid #48a4a3;
+      background: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #48a4a3;
+      color: #1a1a1a;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #5bb5b4;
+    }
+
+    button.active {
+      background: #de563f;
+      color: white;
+    }
+
+    .info {
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HatCat Timeline Visualization Test</h1>
+
+  <div class="info">
+    <strong>Instructions:</strong> Use the buttons below to switch between zoom levels.
+    Click on tokens in the visualization to focus on them at the token zoom level.
+  </div>
+
+  <div id="viz-container"></div>
+
+  <div class="controls">
+    <button id="btn-reply" class="active">Reply View</button>
+    <button id="btn-sentence">Sentence View</button>
+    <button id="btn-token">Token View</button>
+  </div>
+
+  <script src="dist/bundle.js"></script>
+  <script>
+
+    // Mock data matching the ReplyData type
+    const mockData = {
+      tokens: [
+        { id: 0, text: "The", sentenceId: 0, timestep: 0, concepts: [
+          { id: "entity", score: 0.7 },
+          { id: "language", score: 0.5 }
+        ]},
+        { id: 1, text: "quick", sentenceId: 0, timestep: 1, concepts: [
+          { id: "speed", score: 0.8 },
+          { id: "motion", score: 0.6 }
+        ]},
+        { id: 2, text: "brown", sentenceId: 0, timestep: 2, concepts: [
+          { id: "color", score: 0.9 },
+          { id: "appearance", score: 0.4 }
+        ]},
+        { id: 3, text: "fox", sentenceId: 0, timestep: 3, concepts: [
+          { id: "animal", score: 0.95 },
+          { id: "mammal", score: 0.85 },
+          { id: "entity", score: 0.7 }
+        ]},
+        { id: 4, text: "jumps", sentenceId: 0, timestep: 4, concepts: [
+          { id: "motion", score: 0.9 },
+          { id: "action", score: 0.8 }
+        ]},
+        { id: 5, text: "over", sentenceId: 0, timestep: 5, concepts: [
+          { id: "spatial", score: 0.6 },
+          { id: "relation", score: 0.5 }
+        ]},
+        { id: 6, text: "the", sentenceId: 0, timestep: 6, concepts: [
+          { id: "entity", score: 0.7 },
+          { id: "language", score: 0.5 }
+        ]},
+        { id: 7, text: "lazy", sentenceId: 0, timestep: 7, concepts: [
+          { id: "behavior", score: 0.75 },
+          { id: "personality", score: 0.6 }
+        ]},
+        { id: 8, text: "dog.", sentenceId: 0, timestep: 8, concepts: [
+          { id: "animal", score: 0.95 },
+          { id: "mammal", score: 0.85 },
+          { id: "entity", score: 0.7 }
+        ]},
+        { id: 9, text: "AI", sentenceId: 1, timestep: 9, concepts: [
+          { id: "technology", score: 0.9 },
+          { id: "deception", score: 0.3 }
+        ]},
+        { id: 10, text: "safety", sentenceId: 1, timestep: 10, concepts: [
+          { id: "safety", score: 0.95 },
+          { id: "alignment", score: 0.8 }
+        ]},
+        { id: 11, text: "research", sentenceId: 1, timestep: 11, concepts: [
+          { id: "science", score: 0.85 },
+          { id: "research", score: 0.9 }
+        ]},
+        { id: 12, text: "helps", sentenceId: 1, timestep: 12, concepts: [
+          { id: "action", score: 0.7 },
+          { id: "assistance", score: 0.8 }
+        ]},
+        { id: 13, text: "prevent", sentenceId: 1, timestep: 13, concepts: [
+          { id: "prevention", score: 0.85 },
+          { id: "safety", score: 0.7 }
+        ]},
+        { id: 14, text: "harmful", sentenceId: 1, timestep: 14, concepts: [
+          { id: "harm", score: 0.9 },
+          { id: "danger", score: 0.75 }
+        ]},
+        { id: 15, text: "outcomes.", sentenceId: 1, timestep: 15, concepts: [
+          { id: "result", score: 0.6 },
+          { id: "consequence", score: 0.7 }
+        ]}
+      ],
+      sentences: [
+        { id: 0, tokenStart: 0, tokenEnd: 8, concepts: [
+          { id: "animal", score: 0.85 },
+          { id: "motion", score: 0.75 },
+          { id: "entity", score: 0.7 },
+          { id: "mammal", score: 0.65 },
+          { id: "action", score: 0.6 }
+        ]},
+        { id: 1, tokenStart: 9, tokenEnd: 15, concepts: [
+          { id: "safety", score: 0.9 },
+          { id: "harm", score: 0.75 },
+          { id: "alignment", score: 0.7 },
+          { id: "science", score: 0.65 },
+          { id: "prevention", score: 0.6 }
+        ]}
+      ],
+      reply: {
+        concepts: [
+          { id: "animal", score: 0.75 },
+          { id: "safety", score: 0.7 },
+          { id: "motion", score: 0.65 },
+          { id: "entity", score: 0.6 },
+          { id: "harm", score: 0.55 }
+        ]
+      }
+    };
+
+    // Initialize the visualization
+    const container = document.getElementById('viz-container');
+    const viz = HatCatViz.initHatCatViz(container, {
+      text: "The quick brown fox jumps over the lazy dog. AI safety research helps prevent harmful outcomes.",
+      data: mockData,
+      options: {
+        maxWidth: 800,
+        initialZoom: 'reply'
+      }
+    });
+
+    // Setup zoom controls
+    const btnReply = document.getElementById('btn-reply');
+    const btnSentence = document.getElementById('btn-sentence');
+    const btnToken = document.getElementById('btn-token');
+
+    let currentZoom = 'reply';
+
+    function updateActiveButton() {
+      btnReply.classList.toggle('active', currentZoom === 'reply');
+      btnSentence.classList.toggle('active', currentZoom === 'sentence');
+      btnToken.classList.toggle('active', currentZoom === 'token');
+    }
+
+    btnReply.addEventListener('click', () => {
+      currentZoom = 'reply';
+      viz.setZoom('reply');
+      updateActiveButton();
+    });
+
+    btnSentence.addEventListener('click', () => {
+      currentZoom = 'sentence';
+      viz.setZoom('sentence');
+      updateActiveButton();
+    });
+
+    btnToken.addEventListener('click', () => {
+      currentZoom = 'token';
+      viz.setZoom('token', { tokenId: 3 }); // Focus on "fox" token
+      updateActiveButton();
+    });
+  </script>
+</body>
+</html>

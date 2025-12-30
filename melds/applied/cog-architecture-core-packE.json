@@ -1,0 +1,590 @@
+{
+  "meld_request_id": "org.hatcat/language-symbolic@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+  "metadata": {
+    "name": "Language & Symbolic Manipulation \u2013 Core",
+    "description": "Core language and symbolic-manipulation processes: comprehension, generation, discourse coherence, pragmatics, explanation, symbolic expression, and variable binding.",
+    "source": "manual",
+    "author": "poss-abilities + gpt-5.1-thinking",
+    "created": "2025-11-30T00:00:00Z"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/CognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "LanguageComprehensionProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/CognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "LanguageGenerationProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/CognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "DiscourseCoherenceProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/CognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "PragmaticInferenceProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/Communication",
+      "relationship": "parent_of",
+      "candidate_concept": "ExplanationGenerationProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/LinguisticExpression",
+      "relationship": "parent_of",
+      "candidate_concept": "SymbolicExpressionRepresentation"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/Formula",
+      "relationship": "parent_of",
+      "candidate_concept": "FormalSymbolicExpressionRepresentation"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "LanguageComprehensionProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A CognitiveProcess in which a CognitiveSystem interprets linguistic input (spoken, written, or signed) to construct or update MentalRepresentations of meaning.",
+      "definition_source": "Psycholinguistics and language comprehension literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "LanguageUnderstandingProcess",
+        "LinguisticComprehension"
+      ],
+      "wordnet": {
+        "synsets": [
+          "language_comprehension.n.01"
+        ],
+        "canonical_synset": "language_comprehension.n.01",
+        "lemmas": [
+          "language_comprehension",
+          "verbal_comprehension"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "CognitiveProcess",
+          "LinguisticExpression",
+          "LanguageGenerationProcess",
+          "DiscourseCoherenceProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "interpretation",
+          "misunderstanding"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The system parses the user\u2019s message to understand what they are asking.",
+          "She reads the email and grasps the main point it is making.",
+          "The model listens to speech and infers the intended meaning, not just the words."
+        ],
+        "negative_examples": [
+          "The agent generates a reply without any mention of reading or interpreting input.",
+          "It stores text as raw bytes without understanding it.",
+          "He repeats the sentence exactly without knowing what it means."
+        ],
+        "disambiguation": "Not mere exposure to language; specifically constructing or updating internal meaning from linguistic input.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "understanding what the user says",
+            "parsing a sentence to get its meaning"
+          ]
+        }
+      }
+    },
+    {
+      "term": "LanguageGenerationProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A CognitiveProcess in which a CognitiveSystem produces linguistic output (spoken, written, or signed) to express internal states, intentions, or representations.",
+      "definition_source": "Psycholinguistics and language production literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "LanguageProductionProcess",
+        "LinguisticGeneration"
+      ],
+      "wordnet": {
+        "synsets": [
+          "language_production.n.01"
+        ],
+        "canonical_synset": "language_production.n.01",
+        "lemmas": [
+          "language_production",
+          "speech_production"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "CognitiveProcess",
+          "Communication",
+          "LinguisticExpression",
+          "LanguageComprehensionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "influence",
+          "misinformation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "DeceptionDetector",
+        "rationale": "Language generation can be used for deceptive communication; monitored for manipulative output patterns"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model composes a coherent answer in natural language.",
+          "She writes a paragraph to explain her reasoning.",
+          "The agent chooses how to phrase a request to the user."
+        ],
+        "negative_examples": [
+          "It silently updates its internal state with no output.",
+          "He reads a document without saying or writing anything.",
+          "The system stores a template but does not actually generate text."
+        ],
+        "disambiguation": "Not internal monologue alone; specifically constructing external linguistic output.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "generating a response",
+            "producing a sentence or explanation"
+          ]
+        }
+      }
+    },
+    {
+      "term": "DiscourseCoherenceProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A CognitiveProcess that maintains and updates a structured representation of a discourse so that successive utterances connect in a coherent way in terms of topic, reference, and rhetorical relations.",
+      "definition_source": "Discourse analysis and coherence theory",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "CoherenceManagementProcess",
+        "DiscourseIntegrationProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "coherence.n.02"
+        ],
+        "canonical_synset": "coherence.n.02",
+        "lemmas": [
+          "coherence",
+          "coherency"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "LanguageComprehensionProcess",
+          "LanguageGenerationProcess",
+          "LinguisticExpression",
+          "Sentence"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "interpretation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The system keeps track of who \u2018he\u2019 refers to throughout the story.",
+          "She makes sure each paragraph follows logically from the previous one.",
+          "The model maintains topic continuity over a long conversation."
+        ],
+        "negative_examples": [
+          "It outputs unrelated sentences with no connection.",
+          "He lists facts in random order without transitions.",
+          "The system only answers one question in isolation."
+        ],
+        "disambiguation": "Not just grammatical correctness; specifically the maintenance of cross-utterance coherence and connections.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "keeping the story coherent",
+            "maintaining topic and reference across turns"
+          ]
+        }
+      }
+    },
+    {
+      "term": "PragmaticInferenceProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A CognitiveProcess that infers implied, contextual, or social meaning from linguistic expressions, going beyond their literal semantic content.",
+      "definition_source": "Pragmatics and implicature literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PragmaticReasoningProcess",
+        "ImplicatureInferenceProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "implicature.n.01"
+        ],
+        "canonical_synset": "implicature.n.01",
+        "lemmas": [
+          "implicature"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "LanguageComprehensionProcess",
+          "SocialCognitionProcess",
+          "Communication",
+          "ExplanationGenerationProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "manipulation",
+          "misinterpretation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "DeceptionDetector",
+        "rationale": "Pragmatic inference involves detecting implied meaning, relevant to manipulation detection"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "When she says 'It's cold in here', he infers that she wants the window closed.",
+          "The model recognises that \u2018nice job\u2019 said sarcastically implies criticism.",
+          "The agent infers that a carefully vague statement is an attempt to avoid commitment."
+        ],
+        "negative_examples": [
+          "The system only repeats the literal meaning of the sentence.",
+          "He defines a word without reference to context.",
+          "The model lists dictionary senses of a term."
+        ],
+        "disambiguation": "Not just understanding literal semantics; specifically reading between the lines using context, norms, and social cues.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "what the speaker really means",
+            "implied meaning beyond the literal words"
+          ]
+        }
+      }
+    },
+    {
+      "term": "ExplanationGenerationProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A Communication-related CognitiveProcess in which an agent constructs a linguistic account that makes some state, action, or decision intelligible to another party or to itself.",
+      "definition_source": "XAI and explanatory communication literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ExplanatoryCommunicationProcess",
+        "RationalisationProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "explanation.n.01"
+        ],
+        "canonical_synset": "explanation.n.01",
+        "lemmas": [
+          "explanation",
+          "account"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Communication",
+          "LanguageGenerationProcess",
+          "MetaCognitiveProcess",
+          "DecisionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "manipulation",
+          "transparency"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "DeceptionDetector",
+        "rationale": "Explanation generation can involve misleading rationalisation; monitored for deceptive justifications"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model explains why it chose one option over another.",
+          "She gives reasons for her recommendation in plain language.",
+          "The agent describes its reasoning process step by step."
+        ],
+        "negative_examples": [
+          "It simply states the output with no justification.",
+          "He describes what happened without saying why.",
+          "The system dumps a raw log with no narrative."
+        ],
+        "disambiguation": "Not any description; specifically giving reasons or making something understandable.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "here\u2019s why I did that",
+            "let me explain the reasoning"
+          ]
+        }
+      }
+    },
+    {
+      "term": "SymbolicExpressionRepresentation",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A MentalRepresentation that encodes information as a structured symbolic expression, such as a logical formula, program fragment, or algebraic term, with discrete components and relations.",
+      "definition_source": "Symbolic AI and representation literature",
+      "domain": "Information",
+      "aliases": [
+        "SymbolicStructureRepresentation",
+        "ExpressionTreeRepresentation"
+      ],
+      "wordnet": {
+        "synsets": [
+          "symbolic_representation.n.01"
+        ],
+        "canonical_synset": "symbolic_representation.n.01",
+        "lemmas": [
+          "symbolic_representation"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "LinguisticExpression",
+          "Formula",
+          "CognitiveProcess"
+        ],
+        "part_of": [],
+        "has_part": [
+          "VariableBindingProcess"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "reasoning_form"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The system represents the rule as a logical formula with quantifiers and predicates.",
+          "It encodes a program as an abstract syntax tree.",
+          "She thinks of the argument as a structured expression with premises and conclusion."
+        ],
+        "negative_examples": [
+          "It uses a dense vector embedding with no discrete structure.",
+          "He has only a vague intuitive sense, not a symbolic representation.",
+          "The system stores a raw text string without parsing its structure."
+        ],
+        "disambiguation": "Not any representation; specifically discrete, structured, symbol-level expressions.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "logical formula",
+            "program expression tree"
+          ]
+        }
+      },
+      "children": [
+        "VariableBindingProcess"
+      ]
+    },
+    {
+      "term": "FormalSymbolicExpressionRepresentation",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A SymbolicExpressionRepresentation that conforms to a formal language such as a logical calculus, programming language, or mathematical notation with precise syntax and semantics.",
+      "definition_source": "Logic, programming languages, formal methods",
+      "domain": "Information",
+      "aliases": [
+        "FormalExpressionRepresentation",
+        "FormalLanguageExpression"
+      ],
+      "wordnet": {
+        "synsets": [
+          "formula.n.02"
+        ],
+        "canonical_synset": "formula.n.02",
+        "lemmas": [
+          "formula",
+          "expression"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "Formula",
+          "SymbolicExpressionRepresentation",
+          "MathematicalReasoningProcess",
+          "FormalReasoningProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "reasoning_form"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The rule is written as a first-order logic formula.",
+          "The constraint is expressed in a formal specification language.",
+          "She encodes the policy as a mathematical expression."
+        ],
+        "negative_examples": [
+          "The model uses informal natural language only.",
+          "He describes the idea loosely without precise notation.",
+          "The system stores a diagram with no formal semantics."
+        ],
+        "disambiguation": "Not any symbolic structure; specifically expressions in a formal language with well-defined syntax and semantics.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "logical formula",
+            "code snippet in a formal language"
+          ]
+        }
+      }
+    },
+    {
+      "term": "VariableBindingProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "SymbolicExpressionRepresentation"
+      ],
+      "layer_hint": 4,
+      "definition": "A process that associates variables in a SymbolicExpressionRepresentation with specific values, entities, or other expressions, enabling instantiation and manipulation of symbolic structures.",
+      "definition_source": "Logic and programming language semantics",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SymbolicBindingProcess",
+        "VariableInstantiationProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "binding.n.03"
+        ],
+        "canonical_synset": "binding.n.03",
+        "lemmas": [
+          "binding",
+          "variable_binding"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "SymbolicExpressionRepresentation",
+          "FormalSymbolicExpressionRepresentation",
+          "CognitiveProcess"
+        ],
+        "part_of": [
+          "SymbolicExpressionRepresentation"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "reasoning_form"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model substitutes a concrete value for the variable x in the equation.",
+          "The system instantiates a template by filling in slots with specific entities.",
+          "She binds the role \u2018agent\u2019 in the rule to a particular person in this case."
+        ],
+        "negative_examples": [
+          "The expression is kept in purely schematic form with no instantiated values.",
+          "He describes variables but never assigns them any referents.",
+          "The system reasons qualitatively without explicit symbolic variables."
+        ],
+        "disambiguation": "Not just having variables; specifically the act of assigning or instantiating them within a symbolic expression.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "plugging values into variables",
+            "binding placeholders in a template"
+          ]
+        }
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-11-30T16:04:59.676146Z",
+    "concepts_added": 8,
+    "concepts_by_layer": {
+      "3": 7,
+      "4": 1
+    },
+    "parents_updated": 8,
+    "errors": [],
+    "warnings": []
+  }
+}

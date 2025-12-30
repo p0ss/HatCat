@@ -1,0 +1,1164 @@
+{
+  "meld_request_id": "org.hatcat/rhetorical-markers@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+
+  "metadata": {
+    "name": "Rhetorical Markers",
+    "description": "Meta-linguistic markers that signal HOW something is being communicated: hedging, emphasis, concession, misdirection, qualification, and mitigation. Critical for detecting evasion, overconfidence, manipulation, and sycophantic patterns.",
+    "source": "manual",
+    "author": "claude-opus-4-5",
+    "created": "2025-12-02T01:00:00Z",
+    "rationale": "The Concept Coverage Analysis identified rhetorical moves as a key gap. These concepts operate at the pragmatic level - they're about the speaker's stance toward their own utterance. Detecting these patterns is essential for AI safety: hedging can signal evasion, emphasis can signal overconfidence or manipulation, misdirection is a deception marker."
+  },
+
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/Communication",
+      "relationship": "parent_of",
+      "candidate_concept": "RhetoricalMarker"
+    }
+  ],
+
+  "candidates": [
+    {
+      "term": "RhetoricalMarker",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A linguistic device that signals the speaker's stance, commitment level, or strategic intent toward their own utterance. Rhetorical markers shape how content should be interpreted without changing its propositional content.",
+      "definition_source": "Synthesis of Hyland (2005) 'Metadiscourse' and pragmatics literature",
+      "domain": "MindsAndAgents",
+      "aliases": ["MetadiscourseMarker", "StanceMarker", "PragmaticMarker"],
+      "wordnet": {
+        "synsets": ["rhetorical_device.n.01"],
+        "canonical_synset": "rhetorical_device.n.01",
+        "lemmas": ["rhetorical_device"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Communication", "Proposition", "Attitude"],
+        "part_of": [],
+        "has_part": ["Hedging", "Emphasis", "Concession", "Misdirection", "Qualification", "Mitigation"]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception", "manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Rhetorical markers are the linguistic fingerprints of stance and strategy. Patterns of hedging, emphasis, and misdirection are key signals for detecting evasion and manipulation."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I think perhaps we might consider...",
+          "Obviously, this is clearly the best approach.",
+          "Admittedly, there are some concerns, but...",
+          "Let me reframe the question...",
+          "It's just a small issue, really.",
+          "To be fair, they did try."
+        ],
+        "negative_examples": [
+          "The temperature is 72 degrees.",
+          "She walked to the store.",
+          "The meeting is at 3pm.",
+          "Water is composed of hydrogen and oxygen.",
+          "I will attend the conference."
+        ],
+        "disambiguation": "Rhetorical markers are ABOUT how something is said, not what is said. They modulate commitment, signal stance, or strategically shape interpretation. Bare factual statements without stance markers are not instances of this concept."
+      },
+      "children": ["Hedging", "Emphasis", "Concession", "Misdirection", "Qualification", "Mitigation"]
+    },
+
+    {
+      "term": "Hedging",
+      "role": "concept",
+      "parent_concepts": ["RhetoricalMarker"],
+      "layer_hint": 3,
+      "definition": "Rhetorical markers that reduce the speaker's commitment to a proposition, allowing retreat or deniability. Hedges signal uncertainty, tentativeness, or strategic vagueness.",
+      "definition_source": "Lakoff (1973) 'Hedges', Hyland (1998) 'Hedging in Scientific Research Articles'",
+      "domain": "MindsAndAgents",
+      "aliases": ["HedgingMarker", "Hedge", "TentativenessMarker"],
+      "wordnet": {
+        "synsets": ["hedge.n.03", "qualification.n.03"],
+        "canonical_synset": "hedge.n.03",
+        "lemmas": ["hedge", "hedging"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["Emphasis"],
+        "related": ["Uncertainty", "Evasion", "Tentativeness"],
+        "part_of": ["RhetoricalMarker"],
+        "has_part": ["EpistemicHedge", "ApproximationHedge", "AttributionShield"]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception", "manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Excessive or strategic hedging is a key marker of evasion and sycophantic behavior. AI systems that hedge excessively may be avoiding honest assessment."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Perhaps we should reconsider.",
+          "It might be the case that...",
+          "I would suggest that possibly...",
+          "This seems to indicate...",
+          "To some extent, this could be true.",
+          "It's arguably the best option.",
+          "Some researchers believe that..."
+        ],
+        "negative_examples": [
+          "We should reconsider.",
+          "This is the case.",
+          "I suggest that...",
+          "This indicates...",
+          "This is true.",
+          "It's the best option.",
+          "Researchers have proven that..."
+        ],
+        "disambiguation": "Hedges REDUCE commitment. Compare 'This is true' (full commitment) vs 'This might be true' (hedged). Hedging is not inherently deceptive - appropriate hedging reflects genuine uncertainty. EXCESSIVE or STRATEGIC hedging is the concern."
+      },
+      "children": ["EpistemicHedge", "ApproximationHedge", "AttributionShield"]
+    },
+
+    {
+      "term": "EpistemicHedge",
+      "role": "concept",
+      "parent_concepts": ["Hedging"],
+      "layer_hint": 4,
+      "definition": "A hedge that signals uncertainty about knowledge or truth. Epistemic hedges indicate the speaker's confidence level in their claim.",
+      "definition_source": "Coates (1987) 'Epistemic Modality and Spoken Discourse'",
+      "domain": "MindsAndAgents",
+      "aliases": ["KnowledgeHedge", "ConfidenceHedge", "CertaintyHedge"],
+      "wordnet": {
+        "synsets": ["uncertainty.n.01"],
+        "canonical_synset": "uncertainty.n.01",
+        "lemmas": ["uncertainty", "doubt"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["CertaintyMarker"],
+        "related": ["Belief", "Knowledge", "Confidence"],
+        "part_of": ["Hedging"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I think this might be correct.",
+          "I believe, though I'm not certain...",
+          "As far as I know...",
+          "To the best of my knowledge...",
+          "I suppose it could work.",
+          "It seems to me that...",
+          "I'm not entirely sure, but..."
+        ],
+        "negative_examples": [
+          "Approximately 50 people attended.",
+          "According to the report...",
+          "It's roughly 10 kilometers away.",
+          "Some experts say...",
+          "About half of them agreed."
+        ],
+        "disambiguation": "Epistemic hedges specifically signal KNOWLEDGE uncertainty ('I think', 'I believe', 'as far as I know'). They differ from approximation hedges (quantity vagueness) and attribution shields (sourcing claims to others)."
+      },
+      "children": []
+    },
+
+    {
+      "term": "ApproximationHedge",
+      "role": "concept",
+      "parent_concepts": ["Hedging"],
+      "layer_hint": 4,
+      "definition": "A hedge that introduces vagueness about quantities, degrees, or precision. Approximation hedges allow flexibility about exact values or extents.",
+      "definition_source": "Prince et al. (1982) 'On Hedging in Physician-Physician Discourse'",
+      "domain": "MindsAndAgents",
+      "aliases": ["VaguenessHedge", "ApproximatorMarker", "RounderHedge"],
+      "wordnet": {
+        "synsets": ["approximation.n.01", "estimate.n.01"],
+        "canonical_synset": "approximation.n.01",
+        "lemmas": ["approximation", "estimate"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Quantity", "Precision", "Vagueness"],
+        "part_of": ["Hedging"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Approximately 100 people attended.",
+          "It's roughly 5 miles from here.",
+          "About half of them agreed.",
+          "The project is more or less complete.",
+          "It costs something like $50.",
+          "Give or take a few days.",
+          "Somewhere around 30% of users..."
+        ],
+        "negative_examples": [
+          "I think it might work.",
+          "According to experts...",
+          "Perhaps we should leave.",
+          "Exactly 100 people attended.",
+          "It's precisely 5 miles."
+        ],
+        "disambiguation": "Approximation hedges specifically create QUANTITY or DEGREE vagueness ('approximately', 'roughly', 'about', 'around'). They differ from epistemic hedges (knowledge uncertainty) and don't express doubt about truth, just imprecision about values."
+      },
+      "children": []
+    },
+
+    {
+      "term": "AttributionShield",
+      "role": "concept",
+      "parent_concepts": ["Hedging"],
+      "layer_hint": 4,
+      "definition": "A hedge that distances the speaker from a claim by attributing it to others. Attribution shields allow the speaker to present information without personal commitment.",
+      "definition_source": "Derived from Hyland's metadiscourse framework",
+      "domain": "MindsAndAgents",
+      "aliases": ["SourceAttribution", "DistancingMarker", "CitationShield"],
+      "wordnet": {
+        "synsets": ["attribution.n.01"],
+        "canonical_synset": "attribution.n.01",
+        "lemmas": ["attribution"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Source", "Authority", "Distancing"],
+        "part_of": ["Hedging"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Attribution shields can be used to spread misinformation while maintaining deniability ('some people say...'). Strategic use of vague attribution is a manipulation pattern."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "According to some experts...",
+          "It has been suggested that...",
+          "Some people believe...",
+          "The report claims that...",
+          "Research indicates that...",
+          "They say that...",
+          "Many argue that..."
+        ],
+        "negative_examples": [
+          "I believe that...",
+          "Approximately 50% agree.",
+          "Perhaps this is true.",
+          "The research proves that...",
+          "Dr. Smith demonstrated that..."
+        ],
+        "disambiguation": "Attribution shields SOURCE claims to others without speaker commitment. Vague attributions ('some say', 'it has been suggested') are stronger shields than specific citations. Proper citation ('Dr. Smith found...') is less of a shield because accountability is preserved."
+      },
+      "children": []
+    },
+
+    {
+      "term": "Emphasis",
+      "role": "concept",
+      "parent_concepts": ["RhetoricalMarker"],
+      "layer_hint": 3,
+      "definition": "Rhetorical markers that strengthen the speaker's commitment to a proposition or increase its perceived importance. Emphasis signals confidence, certainty, or significance.",
+      "definition_source": "Hyland (2005) 'Metadiscourse' - boosters category",
+      "domain": "MindsAndAgents",
+      "aliases": ["Booster", "IntensificationMarker", "StrengtheningMarker"],
+      "wordnet": {
+        "synsets": ["emphasis.n.01", "stress.n.02"],
+        "canonical_synset": "emphasis.n.01",
+        "lemmas": ["emphasis", "stress"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["Hedging"],
+        "related": ["Confidence", "Certainty", "Importance"],
+        "part_of": ["RhetoricalMarker"],
+        "has_part": ["CertaintyMarker", "IntensifierMarker"]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Excessive emphasis can signal overconfidence, bullshitting, or manipulation. Patterns of unwarranted certainty are relevant for detecting confident confabulation."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "This is clearly the best option.",
+          "Obviously, we need to act now.",
+          "It's absolutely essential that...",
+          "Without question, this is true.",
+          "The evidence definitely shows...",
+          "I'm certain that...",
+          "This is undeniably important."
+        ],
+        "negative_examples": [
+          "This might be the best option.",
+          "Perhaps we should act.",
+          "It could be essential.",
+          "This seems true.",
+          "The evidence suggests...",
+          "I think that...",
+          "This is important."
+        ],
+        "disambiguation": "Emphasis INCREASES commitment beyond neutral assertion. Compare 'This is true' (neutral) vs 'This is obviously/clearly/definitely true' (emphasized). Appropriate emphasis reflects genuine confidence; excessive emphasis without warrant is a concern."
+      },
+      "children": ["CertaintyMarker", "IntensifierMarker"]
+    },
+
+    {
+      "term": "CertaintyMarker",
+      "role": "concept",
+      "parent_concepts": ["Emphasis"],
+      "layer_hint": 4,
+      "definition": "An emphasis marker that signals high confidence in the truth of a proposition, often implying that doubt would be unreasonable.",
+      "definition_source": "Derived from Hyland's boosters taxonomy",
+      "domain": "MindsAndAgents",
+      "aliases": ["CertaintyBooster", "ConfidenceMarker", "EvidentMarker"],
+      "wordnet": {
+        "synsets": ["certainty.n.01", "certitude.n.01"],
+        "canonical_synset": "certainty.n.01",
+        "lemmas": ["certainty", "certitude"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["EpistemicHedge"],
+        "related": ["Confidence", "Truth", "Evidence"],
+        "part_of": ["Emphasis"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Certainty markers without epistemic warrant signal overconfidence or manipulation. 'Obviously X' when X is contested is a manipulation tactic."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Obviously, this is the right choice.",
+          "Clearly, we have no alternative.",
+          "It's evident that the system failed.",
+          "Undoubtedly, this will succeed.",
+          "Of course, everyone knows that...",
+          "Certainly, this is unprecedented.",
+          "There's no question that..."
+        ],
+        "negative_examples": [
+          "I think this is the right choice.",
+          "We may have no alternative.",
+          "It appears the system failed.",
+          "This will very likely succeed.",
+          "Most people know that...",
+          "This is extremely important.",
+          "I strongly believe that..."
+        ],
+        "disambiguation": "Certainty markers claim EPISTEMIC STATUS - they assert that something is known/evident/unquestionable. They differ from intensifiers ('very important') which boost degree rather than certainty. 'Obviously X' claims X should be accepted without question."
+      },
+      "children": []
+    },
+
+    {
+      "term": "IntensifierMarker",
+      "role": "concept",
+      "parent_concepts": ["Emphasis"],
+      "layer_hint": 4,
+      "definition": "An emphasis marker that increases the degree or magnitude of a quality or statement. Intensifiers amplify without claiming certainty.",
+      "definition_source": "Quirk et al. (1985) 'A Comprehensive Grammar of the English Language'",
+      "domain": "MindsAndAgents",
+      "aliases": ["Intensifier", "Amplifier", "DegreeBooster"],
+      "wordnet": {
+        "synsets": ["intensifier.n.01"],
+        "canonical_synset": "intensifier.n.01",
+        "lemmas": ["intensifier"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["Minimizer"],
+        "related": ["Degree", "Magnitude", "Scale"],
+        "part_of": ["Emphasis"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "This is extremely important.",
+          "I'm very concerned about this.",
+          "The results were absolutely remarkable.",
+          "She was deeply troubled.",
+          "It's incredibly difficult to explain.",
+          "I strongly recommend caution.",
+          "The situation is highly unusual."
+        ],
+        "negative_examples": [
+          "Obviously, this is important.",
+          "Clearly, I'm concerned.",
+          "The results were remarkable.",
+          "She was troubled.",
+          "It's difficult to explain.",
+          "I recommend caution.",
+          "Certainly, the situation is unusual."
+        ],
+        "disambiguation": "Intensifiers boost DEGREE ('very', 'extremely', 'highly', 'deeply'). They differ from certainty markers which boost EPISTEMIC STATUS ('obviously', 'clearly'). 'Very important' increases magnitude; 'Obviously important' claims evident truth."
+      },
+      "children": []
+    },
+
+    {
+      "term": "Concession",
+      "role": "concept",
+      "parent_concepts": ["RhetoricalMarker"],
+      "layer_hint": 3,
+      "definition": "Rhetorical markers that acknowledge a point, limitation, or opposing view before pivoting to the speaker's main position. Concessions perform reasonableness while maintaining argument direction.",
+      "definition_source": "Mann & Thompson (1988) Rhetorical Structure Theory",
+      "domain": "MindsAndAgents",
+      "aliases": ["ConcessionMarker", "AcknowledgmentMove", "YesBut"],
+      "wordnet": {
+        "synsets": ["concession.n.01"],
+        "canonical_synset": "concession.n.01",
+        "lemmas": ["concession", "conceding"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Acknowledgment", "Contrast", "Argumentation"],
+        "part_of": ["RhetoricalMarker"],
+        "has_part": ["AcknowledgmentMarker", "ContrastMarker"]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Admittedly, there are some risks, but...",
+          "While I understand your concern, I still think...",
+          "Granted, the costs are high, however...",
+          "I concede that point, yet...",
+          "True, it's not perfect, but...",
+          "You're right that X, nevertheless...",
+          "Fair enough, though I'd argue..."
+        ],
+        "negative_examples": [
+          "There are some risks.",
+          "I understand your concern.",
+          "The costs are high.",
+          "That point is valid.",
+          "It's not perfect.",
+          "You're right that X.",
+          "I'd argue that..."
+        ],
+        "disambiguation": "Concessions ACKNOWLEDGE something and then PIVOT. The structure is 'Yes X, but Y' where Y is the speaker's actual position. Simple acknowledgments without pivot aren't concessions. The strategic function is appearing reasonable while advancing an argument."
+      },
+      "children": ["AcknowledgmentMarker", "ContrastMarker"]
+    },
+
+    {
+      "term": "AcknowledgmentMarker",
+      "role": "concept",
+      "parent_concepts": ["Concession"],
+      "layer_hint": 4,
+      "definition": "A concession marker that explicitly recognizes a point, fact, or perspective, typically as a prelude to qualification or contrast.",
+      "definition_source": "Derived from rhetorical structure literature",
+      "domain": "MindsAndAgents",
+      "aliases": ["AdmissionMarker", "RecognitionMarker"],
+      "wordnet": {
+        "synsets": ["acknowledgment.n.02", "admission.n.02"],
+        "canonical_synset": "acknowledgment.n.02",
+        "lemmas": ["acknowledgment", "admission"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Recognition", "Admission", "Fairness"],
+        "part_of": ["Concession"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Admittedly, I was wrong about that.",
+          "I grant you that point.",
+          "True, the evidence supports your view.",
+          "I acknowledge the difficulty.",
+          "Fair point about the timing.",
+          "I'll concede that much.",
+          "Granted, it's not ideal."
+        ],
+        "negative_examples": [
+          "I was wrong about that.",
+          "The evidence supports your view.",
+          "That's a difficult situation.",
+          "But the timing was off.",
+          "However, I disagree.",
+          "On the other hand..."
+        ],
+        "disambiguation": "Acknowledgment markers EXPLICITLY signal recognition of a point ('admittedly', 'granted', 'I concede', 'fair point'). They differ from contrast markers which signal the pivot ('but', 'however') without explicit acknowledgment."
+      },
+      "children": []
+    },
+
+    {
+      "term": "ContrastMarker",
+      "role": "concept",
+      "parent_concepts": ["Concession"],
+      "layer_hint": 4,
+      "definition": "A concession marker that signals a shift from acknowledged content to the speaker's contrasting position. Contrast markers execute the pivot in concessive structures.",
+      "definition_source": "Fraser (1999) 'What are discourse markers?'",
+      "domain": "MindsAndAgents",
+      "aliases": ["AdversativeMarker", "PivotMarker", "CounterMarker"],
+      "wordnet": {
+        "synsets": ["contrast.n.01"],
+        "canonical_synset": "contrast.n.01",
+        "lemmas": ["contrast"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Opposition", "Adversative", "Transition"],
+        "part_of": ["Concession"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The plan has merits, but it's too risky.",
+          "I understand, however I must disagree.",
+          "That's true, yet we should proceed.",
+          "She's qualified, nevertheless I have concerns.",
+          "It's expensive, still it's worth it.",
+          "On the one hand X, on the other Y.",
+          "While X is true, Y matters more."
+        ],
+        "negative_examples": [
+          "The plan is too risky.",
+          "I must disagree.",
+          "We should proceed.",
+          "I have concerns.",
+          "It's worth it.",
+          "X is true and Y matters.",
+          "Additionally, Y is important."
+        ],
+        "disambiguation": "Contrast markers signal OPPOSITION or SHIFT between clauses ('but', 'however', 'yet', 'nevertheless', 'still'). They differ from additive connectors ('and', 'also', 'additionally') which continue rather than contrast. The test: does the marker signal 'contrary to what you might expect'?"
+      },
+      "children": []
+    },
+
+    {
+      "term": "Misdirection",
+      "role": "concept",
+      "parent_concepts": ["RhetoricalMarker"],
+      "layer_hint": 3,
+      "definition": "Rhetorical moves that redirect attention, reframe issues, or shift topics in ways that serve the speaker's strategic purposes. Misdirection manages focus without explicit deception.",
+      "definition_source": "Derived from pragma-dialectics (van Eemeren) and critical discourse analysis",
+      "domain": "MindsAndAgents",
+      "aliases": ["Redirection", "AttentionManagement", "StrategicReframing"],
+      "wordnet": {
+        "synsets": ["misdirection.n.02", "diversion.n.01"],
+        "canonical_synset": "misdirection.n.02",
+        "lemmas": ["misdirection", "diversion"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Deception", "Manipulation", "Evasion"],
+        "part_of": ["RhetoricalMarker"],
+        "has_part": ["TopicShift", "Reframing", "Deflection"]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": ["deception", "manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Misdirection is a core deception pattern - managing attention and framing to achieve strategic goals without truthful engagement. Critical for detecting evasive or manipulative AI behavior."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "That's an interesting question, but let me ask you this...",
+          "The real issue here isn't X, it's Y.",
+          "Before we discuss that, we need to consider...",
+          "What we should really be asking is...",
+          "That's not the point. The point is...",
+          "Let's not get distracted by that.",
+          "I think you're missing the bigger picture."
+        ],
+        "negative_examples": [
+          "That's an interesting question. Here's my answer...",
+          "The issue is X, and here's what I think about X.",
+          "To address your question directly...",
+          "Let me answer that specifically.",
+          "You raise a good point about X. Regarding X...",
+          "I'll address that concern directly."
+        ],
+        "disambiguation": "Misdirection redirects WITHOUT answering or engaging. The test: did the speaker address what was actually asked? Strategic reframing that serves the speaker while avoiding the actual issue is misdirection. Legitimate reframing that clarifies is not."
+      },
+      "children": ["TopicShift", "Reframing", "Deflection"]
+    },
+
+    {
+      "term": "TopicShift",
+      "role": "concept",
+      "parent_concepts": ["Misdirection"],
+      "layer_hint": 4,
+      "definition": "A misdirection move that changes the subject of discussion, often in response to an unwelcome question or difficult topic.",
+      "definition_source": "Conversation analysis literature",
+      "domain": "MindsAndAgents",
+      "aliases": ["TopicChange", "SubjectChange", "Tangent"],
+      "wordnet": {
+        "synsets": ["digression.n.01"],
+        "canonical_synset": "digression.n.01",
+        "lemmas": ["digression", "tangent"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Evasion", "Avoidance", "Topic"],
+        "part_of": ["Misdirection"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Strategic topic shifts to avoid difficult questions are a key evasion pattern. Relevant for detecting AI systems that change subjects when asked about sensitive topics."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Speaking of which, did you hear about...?",
+          "That reminds me of something completely different.",
+          "Anyway, moving on to more important matters...",
+          "But enough about that. What about...?",
+          "Let's change the subject.",
+          "On an unrelated note...",
+          "I'd rather talk about something else."
+        ],
+        "negative_examples": [
+          "That's related to another point I wanted to make.",
+          "Building on that idea...",
+          "To continue with that theme...",
+          "Similarly,...",
+          "Along those lines...",
+          "Let me elaborate on that point."
+        ],
+        "disambiguation": "Topic shifts CHANGE the subject rather than develop it. The test: is there a logical or thematic connection being followed, or is the speaker escaping to unrelated territory? Natural topic evolution vs. strategic escape."
+      },
+      "children": []
+    },
+
+    {
+      "term": "Reframing",
+      "role": "concept",
+      "parent_concepts": ["Misdirection"],
+      "layer_hint": 4,
+      "definition": "A misdirection move that recasts an issue, question, or situation in different terms, often to change what counts as relevant or important.",
+      "definition_source": "Lakoff (2004) 'Don't Think of an Elephant', framing theory",
+      "domain": "MindsAndAgents",
+      "aliases": ["Recasting", "Recontextualization", "FrameShift"],
+      "wordnet": {
+        "synsets": ["restatement.n.01"],
+        "canonical_synset": "restatement.n.01",
+        "lemmas": ["restatement", "recasting"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Frame", "Perspective", "Interpretation"],
+        "part_of": ["Misdirection"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Strategic reframing can manipulate by changing what appears relevant. Detecting when AI systems reframe questions to avoid their substance is safety-relevant."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The real question isn't whether X but whether Y.",
+          "I'd put it differently - it's not about X, it's about Z.",
+          "Let's think about this another way...",
+          "When you say 'problem', I hear 'opportunity'.",
+          "That's one way to look at it. Another way is...",
+          "I prefer to frame this as a question of...",
+          "What you're really asking is..."
+        ],
+        "negative_examples": [
+          "The question is whether X.",
+          "Here's my direct answer to your question.",
+          "To address the issue you raised...",
+          "You asked about X, and my view on X is...",
+          "Let me answer that question as posed.",
+          "Taking your question at face value..."
+        ],
+        "disambiguation": "Reframing RECASTS the terms of discussion. Legitimate clarification vs. strategic reframing: does the new frame genuinely clarify, or does it serve the speaker by changing what's at stake? 'What you're really asking...' often signals an incoming reframe that suits the responder."
+      },
+      "children": []
+    },
+
+    {
+      "term": "Deflection",
+      "role": "concept",
+      "parent_concepts": ["Misdirection"],
+      "layer_hint": 4,
+      "definition": "A misdirection move that redirects attention or responsibility away from the speaker or their position, often toward others or external factors.",
+      "definition_source": "Derived from discourse analysis of evasion strategies",
+      "domain": "MindsAndAgents",
+      "aliases": ["Redirection", "BlameShift", "ResponsibilityAvoidance"],
+      "wordnet": {
+        "synsets": ["deflection.n.03"],
+        "canonical_synset": "deflection.n.03",
+        "lemmas": ["deflection", "diversion"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Responsibility", "Accountability", "Evasion"],
+        "part_of": ["Misdirection"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception", "manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Deflection patterns (whataboutism, blame-shifting, appealing to others) are key evasion markers. Detecting when AI deflects from difficult questions is safety-critical."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "What about when they did X?",
+          "That's not my department.",
+          "You should really ask someone else about that.",
+          "Everyone does it.",
+          "The real person to blame is...",
+          "I'm not the one who...",
+          "Why are you asking me? Ask them."
+        ],
+        "negative_examples": [
+          "I take responsibility for that.",
+          "Let me address that directly.",
+          "Here's my honest assessment.",
+          "I was wrong about that.",
+          "That's a fair criticism of my position.",
+          "I'll answer for my own actions."
+        ],
+        "disambiguation": "Deflection redirects responsibility or attention AWAY from the speaker. Whataboutism ('what about when they...'), blame-shifting ('the real culprit is...'), and deference ('ask someone else') are deflection patterns. The test: is the speaker taking ownership or passing it?"
+      },
+      "children": []
+    },
+
+    {
+      "term": "Qualification",
+      "role": "concept",
+      "parent_concepts": ["RhetoricalMarker"],
+      "layer_hint": 3,
+      "definition": "Rhetorical markers that limit the scope, conditions, or applicability of a statement. Qualifications bound claims to prevent overgeneralization.",
+      "definition_source": "Derived from argumentation theory and logic",
+      "domain": "MindsAndAgents",
+      "aliases": ["QualificationMarker", "ScopeLimit", "Conditional"],
+      "wordnet": {
+        "synsets": ["qualification.n.01", "condition.n.01"],
+        "canonical_synset": "qualification.n.01",
+        "lemmas": ["qualification", "condition"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Condition", "Scope", "Exception"],
+        "part_of": ["RhetoricalMarker"],
+        "has_part": ["ConditionMarker", "ExceptionMarker"]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "This works, provided that conditions are stable.",
+          "The rule applies unless exceptions are granted.",
+          "In most cases, this holds true.",
+          "Under normal circumstances, yes.",
+          "If and only if X, then Y.",
+          "This is generally true, with some caveats.",
+          "Subject to certain conditions..."
+        ],
+        "negative_examples": [
+          "This always works.",
+          "The rule always applies.",
+          "This is universally true.",
+          "Under all circumstances, yes.",
+          "Y is true.",
+          "This is absolutely true.",
+          "No exceptions."
+        ],
+        "disambiguation": "Qualifications BOUND claims - they specify when/where/under what conditions something holds. They differ from hedges (which reduce certainty) by being structural limits rather than confidence modulations. 'Perhaps X' is hedged; 'X if Y' is qualified."
+      },
+      "children": ["ConditionMarker", "ExceptionMarker"]
+    },
+
+    {
+      "term": "ConditionMarker",
+      "role": "concept",
+      "parent_concepts": ["Qualification"],
+      "layer_hint": 4,
+      "definition": "A qualification marker that specifies circumstances under which a statement holds. Condition markers make claims contingent on particular situations or prerequisites.",
+      "definition_source": "Logic and conditional semantics",
+      "domain": "MindsAndAgents",
+      "aliases": ["ConditionalMarker", "PrerequisiteMarker", "ContingencyMarker"],
+      "wordnet": {
+        "synsets": ["condition.n.01", "contingency.n.01"],
+        "canonical_synset": "condition.n.01",
+        "lemmas": ["condition", "contingency"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Contingency", "Prerequisite", "Hypothesis"],
+        "part_of": ["Qualification"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "If the market stabilizes, we can proceed.",
+          "Provided that funding is secured...",
+          "Assuming no complications arise...",
+          "Given favorable conditions...",
+          "On the condition that all parties agree...",
+          "Should circumstances change...",
+          "In the event that X happens..."
+        ],
+        "negative_examples": [
+          "We can proceed.",
+          "Funding is secured.",
+          "No complications arose.",
+          "Conditions are favorable.",
+          "All parties agreed.",
+          "Circumstances changed.",
+          "X happened."
+        ],
+        "disambiguation": "Condition markers introduce IF-THEN structure or prerequisites ('if', 'provided that', 'assuming', 'given', 'should'). They make statements CONTINGENT rather than categorical. The difference: 'X will happen' (categorical) vs 'X will happen if Y' (conditional)."
+      },
+      "children": []
+    },
+
+    {
+      "term": "ExceptionMarker",
+      "role": "concept",
+      "parent_concepts": ["Qualification"],
+      "layer_hint": 4,
+      "definition": "A qualification marker that carves out cases or situations to which a general statement does not apply. Exception markers prevent overgeneralization.",
+      "definition_source": "Derived from logic and legal reasoning",
+      "domain": "MindsAndAgents",
+      "aliases": ["ExclusionMarker", "CarveOut", "CaveatMarker"],
+      "wordnet": {
+        "synsets": ["exception.n.01", "exclusion.n.01"],
+        "canonical_synset": "exception.n.01",
+        "lemmas": ["exception", "exclusion"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Exception", "Exclusion", "Generalization"],
+        "part_of": ["Qualification"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "This rule applies, except in emergencies.",
+          "All employees qualify, unless they're contractors.",
+          "Generally true, with the exception of...",
+          "Everywhere but in restricted zones.",
+          "For everyone apart from minors.",
+          "Excluding special cases...",
+          "Save for exceptional circumstances..."
+        ],
+        "negative_examples": [
+          "This rule always applies.",
+          "All employees qualify.",
+          "This is generally true.",
+          "Everywhere.",
+          "For everyone.",
+          "Including all cases...",
+          "Under all circumstances..."
+        ],
+        "disambiguation": "Exception markers EXCLUDE specific cases from general claims ('except', 'unless', 'apart from', 'excluding', 'save for'). They narrow scope from the outside by carving out what DOESN'T apply, unlike condition markers which specify what MUST apply."
+      },
+      "children": []
+    },
+
+    {
+      "term": "Mitigation",
+      "role": "concept",
+      "parent_concepts": ["RhetoricalMarker"],
+      "layer_hint": 3,
+      "definition": "Rhetorical markers that reduce the perceived impact, severity, or significance of a statement. Mitigation softens or minimizes without changing propositional content.",
+      "definition_source": "Brown & Levinson (1987) 'Politeness' - negative politeness strategies",
+      "domain": "MindsAndAgents",
+      "aliases": ["MitigationMarker", "Downtoner", "SofteningMarker"],
+      "wordnet": {
+        "synsets": ["mitigation.n.01"],
+        "canonical_synset": "mitigation.n.01",
+        "lemmas": ["mitigation", "palliation"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["Emphasis"],
+        "related": ["Politeness", "Face", "Softening"],
+        "part_of": ["RhetoricalMarker"],
+        "has_part": ["Minimizer", "Softener"]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Excessive mitigation can minimize real problems or soften bad news dishonestly. Detecting patterns of strategic minimization is relevant for identifying deceptive communication."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "It's just a small problem.",
+          "I merely wanted to mention...",
+          "There's a slight issue.",
+          "It's only a minor setback.",
+          "I was just wondering...",
+          "A bit of a concern, perhaps.",
+          "I hate to bother you, but..."
+        ],
+        "negative_examples": [
+          "It's a problem.",
+          "I wanted to mention...",
+          "There's an issue.",
+          "It's a setback.",
+          "I was wondering...",
+          "A concern.",
+          "I need to tell you..."
+        ],
+        "disambiguation": "Mitigation REDUCES perceived significance ('just', 'only', 'merely', 'a bit', 'slight'). It differs from hedging (which reduces certainty) - 'It might be a problem' is hedged; 'It's just a small problem' is mitigated. Mitigation can be polite or manipulative depending on context."
+      },
+      "children": ["Minimizer", "Softener"]
+    },
+
+    {
+      "term": "Minimizer",
+      "role": "concept",
+      "parent_concepts": ["Mitigation"],
+      "layer_hint": 4,
+      "definition": "A mitigation marker that reduces the perceived magnitude, importance, or extent of something. Minimizers make things seem smaller than they might otherwise appear.",
+      "definition_source": "Quirk et al. (1985) 'A Comprehensive Grammar of the English Language'",
+      "domain": "MindsAndAgents",
+      "aliases": ["MinimizingMarker", "Diminisher", "DowngraderMarker"],
+      "wordnet": {
+        "synsets": ["minimization.n.01"],
+        "canonical_synset": "minimization.n.01",
+        "lemmas": ["minimization", "understatement"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["IntensifierMarker"],
+        "related": ["Understatement", "Diminution", "Scale"],
+        "part_of": ["Mitigation"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Minimizers can be used to dishonestly downplay problems ('it's just a minor leak' when the reactor is melting). Strategic minimization is a deception pattern."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "It's just a scratch.",
+          "Only a few people were affected.",
+          "It's merely a technicality.",
+          "A slight delay, nothing more.",
+          "Just a bit of turbulence.",
+          "It's only temporary.",
+          "A minor inconvenience."
+        ],
+        "negative_examples": [
+          "It's a scratch.",
+          "People were affected.",
+          "It's a technicality.",
+          "There was a delay.",
+          "We experienced turbulence.",
+          "It's temporary.",
+          "An inconvenience."
+        ],
+        "disambiguation": "Minimizers specifically REDUCE magnitude ('just', 'only', 'merely', 'a bit', 'slight', 'minor'). The neutral statement is scaled DOWN. Compare 'There's a problem' (neutral) vs 'There's just a small problem' (minimized) vs 'There's a serious problem' (intensified)."
+      },
+      "children": []
+    },
+
+    {
+      "term": "Softener",
+      "role": "concept",
+      "parent_concepts": ["Mitigation"],
+      "layer_hint": 4,
+      "definition": "A mitigation marker that reduces potential offense or imposition through politeness moves. Softeners manage face and social relations rather than claiming reduced magnitude.",
+      "definition_source": "Brown & Levinson (1987) 'Politeness'",
+      "domain": "MindsAndAgents",
+      "aliases": ["PolitenessMarker", "FaceSaver", "Downtoner"],
+      "wordnet": {
+        "synsets": ["politeness.n.01"],
+        "canonical_synset": "politeness.n.01",
+        "lemmas": ["politeness", "courtesy"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Politeness", "Face", "Imposition"],
+        "part_of": ["Mitigation"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I hate to bother you, but...",
+          "If you don't mind my asking...",
+          "I was wondering if perhaps...",
+          "Sorry to trouble you.",
+          "With all due respect...",
+          "If I may say so...",
+          "Not to be difficult, but..."
+        ],
+        "negative_examples": [
+          "I need to ask you something.",
+          "What's your salary?",
+          "I think you're wrong.",
+          "You need to change this.",
+          "This is a problem.",
+          "Listen to me.",
+          "Answer my question."
+        ],
+        "disambiguation": "Softeners manage SOCIAL RELATIONS and FACE, not magnitude. They prepare the hearer for potential face-threats ('I hate to bother you') or soften impositions ('if you don't mind'). Unlike minimizers, they don't claim something is small - they acknowledge imposition and try to reduce offense."
+      },
+      "children": []
+    }
+  ],
+
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  },
+
+  "protection_assessment": {
+    "protection_level": "protected",
+    "triggers": [
+      {
+        "type": "safety_tags_harness_relevant",
+        "concepts": ["RhetoricalMarker", "Hedging", "AttributionShield", "Emphasis", "CertaintyMarker", "Misdirection", "TopicShift", "Reframing", "Deflection", "Mitigation", "Minimizer"],
+        "reason": "Multiple concepts marked harness_relevant due to deception/manipulation detection relevance"
+      },
+      {
+        "type": "simplex_mapping",
+        "simplex": "DeceptionDetector",
+        "concepts": ["RhetoricalMarker", "Hedging", "AttributionShield", "Emphasis", "CertaintyMarker", "Misdirection", "TopicShift", "Reframing", "Deflection", "Mitigation", "Minimizer"],
+        "reason": "11 concepts mapped to DeceptionDetector for manipulation/evasion tracking"
+      }
+    ],
+    "ask_flags": {
+      "harness_relevant": true,
+      "steering_relevant": false,
+      "treaty_relevant": false
+    }
+  }
+}

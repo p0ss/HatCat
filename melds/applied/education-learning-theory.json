@@ -1,0 +1,656 @@
+{
+  "meld_request_id": "org.hatcat/education-learning-theory@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Learning Theory",
+    "description": "Theoretical frameworks explaining how learning occurs and how to optimize knowledge acquisition. Covers zone of proximal development, cognitive load theory, spaced repetition, active recall, interleaved practice, multimedia learning, situated learning, transfer of learning, metacognitive awareness, and growth mindset.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Proposition",
+      "relationship": "parent_of",
+      "candidate_concept": "LearningTheory"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "LearningTheory",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "Theoretical frameworks explaining how learning occurs and how to optimize knowledge acquisition",
+      "definition_source": "Cognitive psychology, educational psychology",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "LearningScience",
+        "CognitiveLearningTheory",
+        "EducationalPsychology"
+      ],
+      "relationships": {
+        "related": [
+          "Cognition",
+          "Memory",
+          "Learning",
+          "Psychology"
+        ],
+        "has_part": [
+          "ZoneOfProximalDevelopment",
+          "CognitiveLoadTheory",
+          "SpacedRepetition",
+          "ActiveRecall",
+          "InterleavedPractice",
+          "MultimediaLearning",
+          "SituatedLearning",
+          "TransferOfLearning",
+          "MetacognitiveAwareness",
+          "GrowthMindset"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Theoretical knowledge domain"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Cognitive load theory suggests we should minimize extraneous processing demands.",
+          "According to Vygotsky, learning happens in the zone of proximal development.",
+          "Spaced repetition leverages the spacing effect for better long-term retention.",
+          "The testing effect shows that retrieval practice strengthens memory."
+        ],
+        "negative_examples": [
+          "The teacher used a projector for the presentation.",
+          "Students took notes during the lesson.",
+          "The classroom had good lighting and comfortable seats."
+        ],
+        "disambiguation": "Scientific theories about learning, not learning activities"
+      },
+      "children": [
+        "ZoneOfProximalDevelopment",
+        "CognitiveLoadTheory",
+        "SpacedRepetition",
+        "ActiveRecall",
+        "InterleavedPractice",
+        "MultimediaLearning",
+        "SituatedLearning",
+        "TransferOfLearning",
+        "MetacognitiveAwareness",
+        "GrowthMindset"
+      ]
+    },
+    {
+      "term": "ZoneOfProximalDevelopment",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "The gap between what a learner can do independently and what they can achieve with guidance",
+      "definition_source": "Vygotsky",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ZPD",
+        "ProximalZone",
+        "DevelopmentalZone"
+      ],
+      "relationships": {
+        "related": [
+          "Scaffolding",
+          "GuidedLearning",
+          "Development"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Developmental concept"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The task should be slightly beyond what students can do alone, but achievable with help.",
+          "With scaffolding, she could solve problems she couldn't manage independently.",
+          "The sweet spot for learning: challenging enough to stretch, but not so hard as to frustrate.",
+          "Working at the edge of competence where guidance makes the difference."
+        ],
+        "negative_examples": [
+          "The exercise was easy enough that everyone completed it without help.",
+          "The problem was so difficult that even with assistance, students were lost.",
+          "Students worked entirely independently with no interaction."
+        ],
+        "disambiguation": "The zone where guidance enables growth"
+      },
+      "children": []
+    },
+    {
+      "term": "CognitiveLoadTheory",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "Framework for optimizing learning by managing intrinsic, extraneous, and germane cognitive demands",
+      "definition_source": "Sweller",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "CLT",
+        "CognitiveLoad",
+        "WorkingMemoryLoad"
+      ],
+      "relationships": {
+        "related": [
+          "WorkingMemory",
+          "InformationProcessing",
+          "InstructionalDesign"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Information processing framework"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We reduced extraneous load by simplifying the diagram and removing decorative elements.",
+          "Breaking the complex procedure into smaller steps prevents working memory overload.",
+          "The split-attention effect occurs when learners must integrate separated information sources.",
+          "Worked examples reduce cognitive load for novices learning new procedures."
+        ],
+        "negative_examples": [
+          "The students seemed tired after lunch.",
+          "The lecture ran overtime by fifteen minutes.",
+          "Some students preferred visual materials to text."
+        ],
+        "disambiguation": "Managing mental processing demands, not fatigue or preference"
+      },
+      "children": []
+    },
+    {
+      "term": "SpacedRepetition",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "Distributing learning over time with increasing intervals to optimize long-term retention",
+      "definition_source": "Ebbinghaus, Pimsleur",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SpacedPractice",
+        "DistributedPractice",
+        "SpacingEffect"
+      ],
+      "relationships": {
+        "related": [
+          "Memory",
+          "Retention",
+          "Forgetting",
+          "Review"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Memory optimization technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Review the material after one day, then three days, then one week, then one month.",
+          "The flashcard app schedules cards based on how well you remember them.",
+          "Distributed practice over weeks beats massed practice in a single session.",
+          "Spacing out study sessions leverages the forgetting curve for stronger memories."
+        ],
+        "negative_examples": [
+          "She crammed all night before the exam.",
+          "We covered the entire chapter in one intensive session.",
+          "He read through his notes once right before the test."
+        ],
+        "disambiguation": "Distributed review over time, not massed practice"
+      },
+      "children": []
+    },
+    {
+      "term": "ActiveRecall",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "Retrieving information from memory through testing rather than passive re-reading or review",
+      "definition_source": "Roediger, testing effect research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "RetrievalPractice",
+        "TestingEffect",
+        "RecallPractice"
+      ],
+      "relationships": {
+        "related": [
+          "Memory",
+          "Testing",
+          "Retrieval",
+          "Practice"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Memory technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Close your book and try to write down everything you remember.",
+          "Practice tests strengthen memory more than re-reading the material.",
+          "Quiz yourself on the key concepts rather than just highlighting.",
+          "The act of retrieving information makes it easier to retrieve again."
+        ],
+        "negative_examples": [
+          "She re-read the chapter three times.",
+          "He highlighted the important passages in yellow.",
+          "The teacher reviewed the material by going through the slides again."
+        ],
+        "disambiguation": "Active retrieval, not passive review"
+      },
+      "children": []
+    },
+    {
+      "term": "InterleavedPractice",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "Mixing different topics or problem types during practice rather than blocking by category",
+      "definition_source": "Rohrer, interleaving research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Interleaving",
+        "MixedPractice",
+        "VariedPractice"
+      ],
+      "relationships": {
+        "related": [
+          "Practice",
+          "Discrimination",
+          "Transfer"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Practice structure technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Instead of 20 addition problems then 20 subtraction, mix them randomly.",
+          "Interleaving forces you to choose the right strategy, not just apply it.",
+          "Practice identifying which formula to use, not just using the formula.",
+          "Mixing problem types improves ability to discriminate between approaches."
+        ],
+        "negative_examples": [
+          "Complete all the multiplication problems before moving to division.",
+          "Practice only forehand shots today, backhand tomorrow.",
+          "Do all the Chapter 3 problems, then all the Chapter 4 problems."
+        ],
+        "disambiguation": "Mixed practice, not blocked by type"
+      },
+      "children": []
+    },
+    {
+      "term": "MultimediaLearning",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "Principles for combining visual and verbal information to enhance learning effectiveness",
+      "definition_source": "Mayer",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "MultimediaPrinciples",
+        "DualCoding",
+        "VisualVerbalLearning"
+      ],
+      "relationships": {
+        "related": [
+          "Visualization",
+          "Narration",
+          "InstructionalDesign"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Instructional design framework"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The animation with narration was more effective than text alone.",
+          "Spatial contiguity: place labels near the parts they describe.",
+          "The modality principle: use spoken words with graphics, not on-screen text.",
+          "Redundancy hurts: don't duplicate narration as on-screen text."
+        ],
+        "negative_examples": [
+          "The video was entertaining.",
+          "Students preferred the colorful slides.",
+          "The presentation had nice animations."
+        ],
+        "disambiguation": "Evidence-based multimedia principles, not preferences"
+      },
+      "children": []
+    },
+    {
+      "term": "SituatedLearning",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "Learning embedded in authentic contexts and activities where knowledge will be applied",
+      "definition_source": "Lave & Wenger",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ContextualLearning",
+        "AuthenticLearning",
+        "SituatedCognition"
+      ],
+      "relationships": {
+        "related": [
+          "Context",
+          "Authenticity",
+          "CommunityOfPractice",
+          "Apprenticeship"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Contextual learning theory"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Medical students learn diagnosis in clinical settings with real patients.",
+          "Apprentices learn by participating in authentic work alongside experts.",
+          "The math lesson used problems from the students' actual lives.",
+          "Learning is inseparable from the context in which it occurs."
+        ],
+        "negative_examples": [
+          "Students practiced abstract problems with no real-world connection.",
+          "The simulation was clearly artificial.",
+          "Knowledge was taught in isolation from application."
+        ],
+        "disambiguation": "Learning in authentic contexts, not abstracted settings"
+      },
+      "children": []
+    },
+    {
+      "term": "TransferOfLearning",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "Applying knowledge or skills learned in one context to new situations and problems",
+      "definition_source": "Thorndike, educational psychology",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "LearningTransfer",
+        "GeneralizationOfLearning",
+        "FarTransfer"
+      ],
+      "relationships": {
+        "related": [
+          "Generalization",
+          "Application",
+          "Abstraction"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Learning outcome concept"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "She applied the problem-solving framework from physics to economics.",
+          "Near transfer: using multiplication in a different math problem.",
+          "Far transfer: applying critical thinking from debate class to evaluating news.",
+          "The skill generalized beyond the original training context."
+        ],
+        "negative_examples": [
+          "He could solve textbook problems but not real-world ones.",
+          "The training didn't help with actual job performance.",
+          "Knowledge remained inert and context-bound."
+        ],
+        "disambiguation": "Applying learning to new contexts"
+      },
+      "children": []
+    },
+    {
+      "term": "MetacognitiveAwareness",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "Understanding and monitoring one's own learning processes, strategies, and comprehension",
+      "definition_source": "Flavell",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Metacognition",
+        "LearningAwareness",
+        "SelfMonitoring"
+      ],
+      "relationships": {
+        "related": [
+          "SelfRegulation",
+          "Reflection",
+          "Monitoring",
+          "Strategy"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "self_awareness"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "SelfAwarenessMonitor",
+        "mapping_rationale": "Metacognition involves awareness of one's own cognitive processes"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I need to slow down here - I'm not really understanding this section.",
+          "What strategies work best for me when learning new vocabulary?",
+          "Am I actually learning this, or just feeling like I am?",
+          "Reflecting on how you learn helps you learn more effectively."
+        ],
+        "negative_examples": [
+          "He just kept reading without checking if he understood.",
+          "She used the same study method for every subject.",
+          "The student never asked himself whether his approach was working."
+        ],
+        "disambiguation": "Awareness of one's own learning, not just learning"
+      },
+      "children": []
+    },
+    {
+      "term": "GrowthMindset",
+      "role": "concept",
+      "parent_concepts": [
+        "LearningTheory"
+      ],
+      "layer_hint": 3,
+      "definition": "Belief that abilities can be developed through dedication and effort, embracing challenges as growth opportunities",
+      "definition_source": "Dweck",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "IncrementalTheory",
+        "MalleableIntelligence",
+        "EffortBelief"
+      ],
+      "relationships": {
+        "related": [
+          "Motivation",
+          "Persistence",
+          "Resilience",
+          "Effort"
+        ],
+        "antonyms": [
+          "FixedMindset",
+          "LearnedHelplessness"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Growth mindset supports learner agency and self-improvement"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Mistakes are how we learn - they show us where to focus our efforts.",
+          "You're not good at this YET - with practice you'll improve.",
+          "I can't do it is just I can't do it YET.",
+          "Challenges are opportunities to grow, not threats to self-image."
+        ],
+        "negative_examples": [
+          "Some people are just naturally talented at math.",
+          "I've never been good at languages - it's just not my thing.",
+          "Either you have it or you don't."
+        ],
+        "disambiguation": "Belief in ability development, not fixed traits"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:16.241864Z",
+    "result_pack_version": "5.4.2",
+    "concepts_added": 11,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 10
+    },
+    "parents_updated": 11,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "LearningTheory",
+        "ZoneOfProximalDevelopment",
+        "CognitiveLoadTheory",
+        "SpacedRepetition",
+        "ActiveRecall",
+        "InterleavedPractice",
+        "MultimediaLearning",
+        "SituatedLearning",
+        "TransferOfLearning",
+        "MetacognitiveAwareness",
+        "GrowthMindset"
+      ],
+      "must_retrain": [
+        "Proposition"
+      ],
+      "should_retrain": [
+        "Agreement",
+        "Argument",
+        "Axiom",
+        "BankStatement",
+        "BindingCorporateRules",
+        "ClassificationScheme",
+        "ConceptualSituation",
+        "Constitution",
+        "EconomicIndicator",
+        "Equation",
+        "EthicalTheory",
+        "ExplanatoryHypothesis",
+        "FieldOfStudy",
+        "Graph",
+        "GraphElement",
+        "HotelPackage",
+        "LearnedHelplessness",
+        "LyricalContent",
+        "MealPlan",
+        "Model",
+        "MultipolePostulate",
+        "Objective",
+        "Procedure",
+        "RegionalLaw",
+        "SuffrageLaw",
+        "TPFDD"
+      ],
+      "optional_retrain": [
+        "Abstract",
+        "Application",
+        "Learning",
+        "Psychology",
+        "Transfer"
+      ],
+      "total_training_required": 12
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

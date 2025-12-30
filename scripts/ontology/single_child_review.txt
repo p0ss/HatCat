@@ -1,0 +1,235 @@
+# Single-Child Node Review
+#
+# Each line is: [Layer] Grandparent -> Parent -> Child | DECISION
+#
+# Decisions:
+#   P = Keep Parent only (delete child - parent is the useful concept)
+#   C = Keep Child only (delete parent, promote child up)
+#   K = Keep Both (will add more children to parent later)
+#   X = Delete Both (neither is useful)
+#   ? = Needs more investigation
+#
+# Example: If we have "Vehicle -> Aircraft -> Helicopter"
+#   P = Keep Aircraft, delete Helicopter (we want the category)
+#   C = Keep Helicopter, delete Aircraft (we want the specific item)
+#   K = Keep both, will add more aircraft types later
+#
+# After review, save this file and I'll apply the decisions.
+# ================================================================
+
+[L2] AutonomousAgent -> AutomatedSystem -> AutomatedNotificationSystem |  P
+[L2] AutonomousAgent -> Undertaking -> Enterprise | C
+[L2] CognitiveProcess -> AIAlignmentProcess -> NonDeceptiveAlignment |  K
+[L2] InternalAttribute -> LinguisticAttribute -> GrammaticalGender | C
+[L2] InternalAttribute -> WebDocumentAttribute -> DocumentCategory |  P
+[L2] Motion -> Trip -> IntermodalTrip | P
+[L2] Organization -> NonprofitOrganization -> BetterBusinessBureau | P
+[L2] Organization -> OrganizationalUnit -> Department | P
+[L2] PhysicalMedia -> ArchitectureRepresentation -> NeuralTopologyGraph | P
+[L2] Relation -> SpatialRelation -> RCC8Relation | P
+[L2] RelationalAttribute -> ReligiousAttribute -> Christian | X
+[L2] SetOrClass -> Class -> BiologicalSpecies | C
+
+[L3] AttackPattern -> AntiAnalysisBehavior -> AntiDetectionBehavior | P
+[L3] AttackPattern -> MemoryCorruptionAttack -> BufferOverflowAttack | K
+[L3] BodyMotion -> Eating -> Overgrazing | P
+[L3] BusinessPropositions -> EconomicIndicator -> Inflation | K
+[L3] BusinessPropositions -> HotelPackage -> GolfPackage | P
+[L3] ChemicalSubstance -> ChemicalAcid -> SulfuricAcid | K
+[L3] Communication -> ExplanationGenerationProcess -> SelfExplanationProcess | X
+[L3] CompoundSubstance -> Chlorofluorocarbon -> Freon12 | P
+[L3] CompoundSubstance -> IronOxide -> Rust | P
+[L3] ContainersAndStorage -> Plug -> ElectricalPlug | P
+[L3] ContentBearingObject -> AIDataset -> PreferenceDataset | K
+[L3] ContentBearingObject -> DescriptorPart -> IdentifierPart | C
+[L3] ContentBearingObject -> UserAccount -> FacebookAccount | P
+[L3] CreativeActivities -> Modeling -> MultipoleModeling | C
+[L3] Decorative -> WindowCovering -> Curtain | C
+[L3] EducationalOrganization -> Museum -> ArtMuseum | K
+[L3] ElementalSubstance -> Atom -> FreeAtom | K
+[L3] EnergyAttrs -> TaskRelationAttribute -> IndependentTaskRelation | P
+[L3] FinancialAttrs -> EconomicRole -> MeanOfProduction | C
+[L3] FormalPropositions -> Axiom -> SuperpositionPrinciple | K
+[L3] FormalPropositions -> MultipolePostulate -> PostulateOfContinuity | C
+[L3] GeologicalSubstance -> Crystal -> Snowflake | K
+[L3] GeologicalSubstance -> NaturalSubstance -> NaturalMagnet | C
+[L3] Icon -> Flag -> NationalFlag | P
+[L3] IndustrialSubstance -> ConductorSubstance -> Electrolyte | K
+[L3] IndustrialSubstance -> Fuel -> Charcoal | P
+[L3] IndustrialSubstance -> Lubricant -> Grease | K
+[L3] IndustrialSubstance -> Powder -> Fallout | K
+[L3] Interpretability -> ConceptBoundary -> DecisionBoundary | K
+[L3] LegalPropositions -> ChildrenPolicy -> NoChildrenPolicy | P
+[L3] LinguisticExpression -> SymbolicExpressionRepresentation -> VariableBindingProcess | P
+[L3] Maneuver -> FootballManeuver -> FootballPass | P
+[L3] Materials -> MetalArtifact -> ZincArtifact | X
+[L3] Mathematics -> DynamicalSystem -> MultiStableSystem | K
+[L3] MechanicalMotion -> Opening -> OpeningEyes | K
+[L3] MilitaryProcess -> InformationOperation -> DefensiveInformationOperation |  K
+[L3] MilitaryProcess -> SecurityOperation -> SecurityPatrol |  K
+[L3] PathologicProcess -> AllergicReaction -> Anaphylaxis | P
+[L3] PhysicalActions -> Designing -> GraphicDesigning | K
+[L3] PoliticalGeography -> PortFacility -> DeepwaterPort | P
+[L3] Product -> CapitalGood -> IndustrialRawMaterial | C
+[L3] Product -> PlantProduct -> Malt | X
+[L3] Radiating -> Reflecting -> ReflectingLight | P
+[L3] Reasoning -> TradecraftReasoningProcess -> EvasionPlanningProcess | K
+[L3] RecreationalArtifacts -> BaseballBase -> HomeBase | P
+[L3] SentientAgent -> Deity -> Angel | K
+[L3] ServiceProcess -> CateringService -> DriveThru | P
+[L3] Skeletal -> ThroatBone -> HyoidBone | P
+[L3] SymbolicString -> DecimalDigitString -> NumericString4 | P
+[L3] SymbolicString -> PhysicalAddress -> IPAddress | P
+[L3] VehicleComponents -> ShipCompartment -> ShipCabin | C
+
+[L4] AgriculturalLand -> Field -> Lawn | P
+[L4] Arthropod -> Arachnid -> Tick |  P
+[L4] Beverage -> FreshWater -> TapWater | P
+[L4] BiologicallyActiveSubstance -> Antacid -> Pepcid | P
+[L4] BiologicallyActiveSubstance -> Antiparasitic -> Ivermectin |P
+[L4] BiologicallyActiveSubstance -> Carnitine -> AcetylLCarnitine |P
+[L4] BiologicallyActiveSubstance -> Diuretic -> Ethanol | P
+[L4] BiologicallyActiveSubstance -> Poison -> Methanol | P
+[L4] BiologicallyActiveSubstance -> Thyroxine -> Tirosint | P
+[L4] BodySubstance -> Mucus -> Phlegm | P
+[L4] BodySubstance -> Neurotransmitter -> Dopamine |  K
+[L4] BuildingParts -> BuildingLevel -> Basement | C
+[L4] BuildingParts -> Ceiling -> Dome | P
+[L4] Buildings -> DanceHall -> NightClub | P
+[L4] Buildings -> Mine -> GoldMine | C
+[L4] Buildings -> WMDWeaponsProductionFacility -> NuclearWeaponProductionFacility | K
+[L4] Buildings -> WMDWeaponsResearchFacility -> NuclearWeaponResearchFacility | K
+[L4] Buildings -> Workshop -> ArtStudio | P
+[L4] Business -> FinancialCompany -> SavingsAndLoan | P
+[L4] Business -> InsuranceCompany -> HealthInsuranceCompany | P
+[L4] Business -> Partnership -> FamilyBusiness |  C
+[L4] ComputationalEntity -> FormalLanguage -> ProgrammingLanguage | C
+[L4] DigitalData -> Hyperlink -> InlineLink | P
+[L4] DigitalData -> HypertextLink -> GUI_Link | P
+[L4] DiseaseOrSyndrome -> ChronicDisease -> ParkinsonsDisease |  P
+[L4] DurableGood -> ChestOrCabinet -> ContainerChest | C
+[L4] DurableGood -> Table -> Desk | P
+[L4] Electronics -> IndustrialElectronics -> SolderingIron | P
+[L4] Facilities -> Farm -> ForestFarm | P
+[L4] Facilities -> SwimmingPool -> HeatedPool | P
+[L4] FoodIngredient -> Egg -> BirdEgg | P
+[L4] FormalDocuments -> Doctrine -> MultinationalDoctrine | K
+[L4] Game -> CooperativeGame -> EvolutionaryGame | K
+[L4] Gesture -> HandGesture -> Waving | K
+[L4] Graph -> ConceptualNetwork -> NeuralActivationNetwork | K
+[L4] GroupOfPeople -> EthnicGroup -> RacialEthnicGroup | P
+[L4] GroupOfPeople -> SocialUnit -> NuclearFamily | X
+[L4] Guiding -> AchievingControl -> Capturing | K
+[L4] Guiding -> AnimalGuiding -> HorseRiding | P
+[L4] Guiding -> Signalling -> ElectronicSignalling | X
+[L4] IntentionalPsychologicalProcess -> Learning -> Memorizing | X
+[L4] LandForm -> Basin -> EndorheicBasin | P
+[L4] LandForm -> Reef -> Atoll | P
+[L4] LandForm -> SlopedArea -> Cliff | C
+[L4] LinguisticCommunication -> ExpressingInLanguage -> Thanking | C
+[L4] Machines -> DriveComponent -> Pulley | P
+[L4] Making -> Weaving -> Wickering | P
+[L4] MentalRepresentation -> PerceptualFieldRepresentation -> PerceptualObjectToken | P
+[L4] Mixture -> Concrete -> ReadyMixConcrete | P
+[L4] Mixture -> Exhaust -> Smoke | P
+[L4] Model -> MathematicalModel -> MathematicalPendulum | K
+[L4] Model -> MultipoleSection -> MultipolePort | P
+[L4] Muscle -> InvoluntaryMuscle -> HeartMuscle | C
+[L4] Nutrient -> Carbohydrate -> Starch | K
+[L4] Organ -> Breast -> Bust | P
+[L4] PreparedFood -> DrinkingWater -> SparklingWater | P
+[L4] PublishedTexts -> Article -> Chapter | P
+[L4] RadiatingSound -> MakingMusic -> Drumming | P
+[L4] Recreation -> AerobicExerciseDevice -> RowingMachine | P
+[L4] Rooms -> BuildingUnit -> IntensiveCareUnit | P
+[L4] Software -> UserInterface -> GraphicalUserInterface | P
+[L4] SpeechAct -> DeclarativeSpeechAct -> Declare | P
+[L4] Storm -> Windstorm -> Pampero | P
+[L4] TextStructure -> Label -> TriageTag | P
+[L4] Tools -> WritingDevice -> Pencil |  P
+[L4] Transfer -> Ingesting -> Drinking | P
+[L4] Transportation -> LandTransportation -> MountainBiking | P
+[L4] UIElement -> InterfaceWindow -> HoverBox | P
+[L4] UserDirectAction -> AudioInput -> AudioInputControl | P
+[L4] UserDirectAction -> SlidingComputerInputDeviceAction -> MouseMoving | C
+[L4] UserSignifiedAction -> ActivatingUIElement -> SelectingComputerSubmenu |  P
+[L4] Vehicle -> Aircraft -> Helicopter | K
+[L4] Vehicle -> Cycle -> Bicycle | P
+[L4] Vehicle -> Spacecraft -> RPG | P
+[L4] Virus -> TickBorneEncephalitisVirus -> KyasanurForestDiseaseVirus | P
+[L4] Weapons -> AntiArmorWeapon -> AntiTankWeapon | P
+[L4] Weapons -> NuclearWeapon -> AbsoluteDud | P
+[L4] WearableItem -> Jewelry -> Pearl | P
+[L4] WearableItem -> Respirator -> N95Mask | P
+[L4] Wind -> AnabaticWind -> ValleyBreeze | P
+[L4] Wind -> ChinookWind -> CoastalChinookWind | P
+
+[L5] AlcoholicBeverage -> Aperitif -> Campari | P
+[L5] AlcoholicBeverage -> Rum -> Bacardi | P
+[L5] AlcoholicBeverage -> Tequila -> PatronTequilla | P
+[L5] AlcoholicBeverage -> Whiskey -> JamesonsWhiskey | P
+[L5] AttachingDevices -> Carabiner -> UncertifiedCarabiner | P
+[L5] AudioVideoElectronics -> Microphone -> ComputerMicrophone | P
+[L5] Certificate -> Ticket -> WaterParkTicket | P
+[L5] CleaningAppliances -> LaundryAppliance -> FabricIron |  P
+[L5] Clothing -> OutdoorClothing -> Coat | P
+[L5] ComputerInputDevice -> ComputerKeyboard_Generic -> ComputerKeypad |  C
+[L5] EngineComponents -> CombustionChamber -> CatalyticConverter | P
+[L5] FinancialAccount -> PersonalAccount -> JointAccount | P
+[L5] FinancialInstrument -> Check -> PayCheck | P
+[L5] FinancialInstrument -> Security -> Share | C
+[L5] Fruit -> Melon -> Watermelon | P
+[L5] HerbaceousPlant -> Poppy -> OpiumPoppy |  P
+[L5] Insect -> Bee -> BumbleBee | P
+[L5] Insect -> Grasshopper -> Locust | P
+[L5] Investigating -> OffensiveInformationOperation -> CTIntelligenceOperation | K
+[L5] Machine -> Robot -> AutonomousMobileRobot | K
+[L5] Mammal -> Marsupial -> Kangaroo | K
+[L5] MaritimeWater -> Anchorage -> OffshoreAnchorage |  P
+[L5] Meat -> Beef -> Steak | P
+[L5] Meat -> Pork -> Bacon | P
+[L5] Medicine -> Adalimumab -> Humira |  P
+[L5] Medicine -> AntiParasitic -> Plaquenil | P
+[L5] Medicine -> AntiViralMedicine -> Remdesivir | P
+[L5] Medicine -> Anticoagulant -> Coumadin | P
+[L5] Medicine -> Antiseizure -> Lyrica | P
+[L5] Medicine -> BetaBlocker -> Inderal | P
+[L5] Medicine -> Crisaborole -> Eucrisa | P
+[L5] Medicine -> Ondansetron -> Zofran | P
+[L5] Medicine -> Sulfasalazine -> Azulfidine | P
+[L5] Medicine -> Upadacitinib -> Rinvoq | P
+[L5] MilitaryUnit -> Battalion -> AssaultAmphibianBatallion | P
+[L5] MilitaryUnit -> InfantryUnit -> InfantryCompany | P
+[L5] MilitaryUnit -> LARUnit -> LARBattalion |  P
+[L5] Missile -> AntiTankMissile -> BGM71TOW | P
+[L5] Missile -> GroundAttackMissile -> AGM | P
+[L5] MusicalInstruments -> HornInstrument -> Bugle |  P
+[L5] NarrativeText -> HistoricalAccount -> Biography |  P
+[L5] NonViolentContest -> LegalAction -> LegalCharge |   P
+[L5] NonViolentContest -> MusicContest -> SingingContest | P
+[L5] PlantSubstance -> WoodenArtifact -> OakWoodArtifact |  P
+[L5] Removing -> Corrosion -> Rusting |  P
+[L5] Removing -> Erosion -> SoilErosion | P
+[L5] Removing -> HairRemoval -> ShavingRazor |  P
+[L5] Removing -> Harvesting -> Felling |  P
+[L5] Removing -> Peeling -> Hulling | P
+[L5] Removing -> Uncovering -> RemovingClothing | P
+[L5] Removing -> Washing -> Bathing | P
+[L5] RootVegetable -> Radish -> Daikon | P
+[L5] Seafood -> FishMeat -> SalmonMeat | P
+[L5] Seafood -> FoodFish -> Salmon | P
+[L5] SecurityDevice -> Lock -> ElectronicLock | P
+[L5] SkilledOccupation -> ArtisticOccupation -> Musician | P
+[L5] TimePeriods -> Year -> LeapYear |  P
+[L5] Tissue -> EpithelialTissue -> LungEpithelium |  P
+[L5] UserSignifiedGraphicalAction -> MovingCursor -> DraggingWithCursor | P
+[L5] UtilityAppliances -> Sprinkler -> WaterSprinkler | P
+[L5] Vegetable -> Squash -> ButternutSquash | P
+[L5] ViolentContest -> MilitaryAssault -> DirectAssault | K
+[L5] ViolentContest -> War -> CivilWar | K
+[L5] WaterVehicle -> Dredger -> HopperDredger | P
+[L5] WaterVehicle -> MilitaryShip -> AircraftCarrier | K
+[L5] WaterVehicle -> MultihullWaterVehicle -> Catamaran | P
+[L5] WaterVehicle -> TugBoat -> PusherTug | P
+[L5] WristBone -> TrapeziumBone -> LeftTrapezium | P
+[L5] WristBone -> TrapezoidBone -> LeftTrapezoid | P

@@ -1,0 +1,558 @@
+{
+  "meld_request_id": "org.hatcat/information-retrieval@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Information Retrieval",
+    "description": "Search and information retrieval capabilities including query formulation, search refinement, relevance judgment, and citation navigation. These concepts enable interpretability of how models find and retrieve information.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-10T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Searching",
+      "relationship": "parent_of",
+      "candidate_concept": "InformationRetrieval"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "InformationRetrieval",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The process of finding and extracting relevant information from repositories, databases, or collections in response to an information need",
+      "definition_source": "Information science, library science",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "IR",
+        "InformationSearch",
+        "DocumentRetrieval"
+      ],
+      "relationships": {
+        "related": [
+          "Searching",
+          "Query",
+          "SearchEngine",
+          "InformationNeed"
+        ],
+        "has_part": [
+          "QueryFormulation",
+          "SearchRefinement",
+          "RelevanceJudgment",
+          "CitationChasing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Process category"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Information retrieval matched the query terms against the indexed document collection.",
+          "The IR system ranked results by relevance to the user's information need.",
+          "Effective information retrieval bridges the vocabulary gap between query and document.",
+          "Information retrieval involves both recall (finding all relevant items) and precision (avoiding irrelevant ones)."
+        ],
+        "negative_examples": [
+          "Information was found.",
+          "A search was performed.",
+          "Results were returned."
+        ],
+        "disambiguation": "Systematic retrieval process, not mere search execution"
+      },
+      "children": [
+        "QueryFormulation",
+        "KeywordExtraction",
+        "SearchRefinement",
+        "RelevanceJudgment",
+        "SourceNavigation",
+        "CitationChasing",
+        "SemanticSearch",
+        "BooleanSearch",
+        "FacetedSearch"
+      ]
+    },
+    {
+      "term": "QueryFormulation",
+      "role": "concept",
+      "parent_concepts": [
+        "InformationRetrieval"
+      ],
+      "layer_hint": 3,
+      "definition": "Constructing effective search queries that express an information need in terms the retrieval system can process",
+      "definition_source": "Information retrieval, search behavior",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "QueryConstruction",
+        "SearchFormulation",
+        "QueryDesign"
+      ],
+      "relationships": {
+        "related": [
+          "Query",
+          "KeywordExtraction",
+          "InformationNeed"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Search practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Query formulation translated the conceptual question into specific search terms and operators.",
+          "Effective query formulation anticipated synonyms and variant terminology.",
+          "The query was formulated using Boolean operators to combine concepts appropriately.",
+          "Query formulation balanced specificity (precision) against breadth (recall)."
+        ],
+        "negative_examples": [
+          "A query was entered.",
+          "Search terms were typed.",
+          "The search was started."
+        ],
+        "disambiguation": "Strategic construction of effective queries, not mere term entry"
+      },
+      "children": []
+    },
+    {
+      "term": "KeywordExtraction",
+      "role": "concept",
+      "parent_concepts": [
+        "InformationRetrieval"
+      ],
+      "layer_hint": 3,
+      "definition": "Identifying the most salient and discriminating terms from an information need or document for use in searching",
+      "definition_source": "Information retrieval, text processing",
+      "domain": "ComputerScience",
+      "aliases": [
+        "TermExtraction",
+        "KeyTermIdentification",
+        "SalientTermSelection"
+      ],
+      "relationships": {
+        "related": [
+          "QueryFormulation",
+          "TextAnalysis",
+          "Indexing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical process"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Keyword extraction identified 'transformer architecture' and 'attention mechanism' as key search terms.",
+          "Extracting keywords from the abstract helped formulate the literature search strategy.",
+          "Keyword extraction distinguished high-value terms from common stopwords.",
+          "The system extracted keywords using TF-IDF to identify discriminating terms."
+        ],
+        "negative_examples": [
+          "Words were selected.",
+          "Terms were chosen.",
+          "Keywords were found."
+        ],
+        "disambiguation": "Systematic identification of salient terms, not arbitrary word selection"
+      },
+      "children": []
+    },
+    {
+      "term": "SearchRefinement",
+      "role": "concept",
+      "parent_concepts": [
+        "InformationRetrieval"
+      ],
+      "layer_hint": 3,
+      "definition": "Iteratively improving search queries based on results, narrowing or broadening scope to better match the information need",
+      "definition_source": "Search behavior, information seeking",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "QueryRefinement",
+        "SearchIteration",
+        "QueryModification"
+      ],
+      "relationships": {
+        "related": [
+          "QueryFormulation",
+          "RelevanceJudgment",
+          "FeedbackLoop"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Search practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Search refinement added date filters after the initial results included outdated sources.",
+          "Refining the search, the user added exclusion terms to filter out irrelevant meanings.",
+          "Search refinement used relevant results to discover additional keywords for expansion.",
+          "The refinement narrowed from 10,000 results to 50 highly relevant papers."
+        ],
+        "negative_examples": [
+          "The search was changed.",
+          "Different terms were tried.",
+          "The query was modified."
+        ],
+        "disambiguation": "Strategic query improvement based on result analysis"
+      },
+      "children": []
+    },
+    {
+      "term": "RelevanceJudgment",
+      "role": "concept",
+      "parent_concepts": [
+        "InformationRetrieval"
+      ],
+      "layer_hint": 3,
+      "definition": "Assessing whether retrieved items satisfy the information need, distinguishing relevant from irrelevant results",
+      "definition_source": "Information retrieval, evaluation",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "RelevanceAssessment",
+        "ResultEvaluation",
+        "PertinenceJudgment"
+      ],
+      "relationships": {
+        "related": [
+          "SourceEvaluation",
+          "SearchRefinement",
+          "Discrimination"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Cognitive process"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Relevance judgment determined that despite the keyword match, the paper addressed a different phenomenon.",
+          "Quick relevance judgment scanned titles and abstracts before examining full texts.",
+          "Relevance assessment distinguished marginally relevant background from directly pertinent sources.",
+          "The relevance judgment considered not just topical match but methodological appropriateness."
+        ],
+        "negative_examples": [
+          "Results were reviewed.",
+          "Relevance was checked.",
+          "Items were evaluated."
+        ],
+        "disambiguation": "Discriminating assessment of result utility, not mere review"
+      },
+      "children": []
+    },
+    {
+      "term": "SourceNavigation",
+      "role": "concept",
+      "parent_concepts": [
+        "InformationRetrieval"
+      ],
+      "layer_hint": 3,
+      "definition": "Moving through linked information structures using hyperlinks, cross-references, and relational connections",
+      "definition_source": "Information behavior, hypertext",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Browsing",
+        "LinkFollowing",
+        "InformationNavigation"
+      ],
+      "relationships": {
+        "related": [
+          "CitationChasing",
+          "Hypertext",
+          "InformationStructure"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Information behavior"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Source navigation followed the 'See also' links to discover related entries.",
+          "Navigating the source, the researcher found the supplementary materials with raw data.",
+          "Source navigation traced the breadcrumb hierarchy to understand the document's context.",
+          "Navigation through the linked sources revealed an entire subfield not captured by keyword search."
+        ],
+        "negative_examples": [
+          "Links were clicked.",
+          "Pages were visited.",
+          "The source was browsed."
+        ],
+        "disambiguation": "Purposeful traversal of information structures"
+      },
+      "children": []
+    },
+    {
+      "term": "CitationChasing",
+      "role": "concept",
+      "parent_concepts": [
+        "InformationRetrieval"
+      ],
+      "layer_hint": 3,
+      "definition": "Following references forward (who cited this?) and backward (what does this cite?) to discover related work",
+      "definition_source": "Bibliometrics, scholarly research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "CitationTracking",
+        "ReferenceChaining",
+        "BibliographicNavigation"
+      ],
+      "relationships": {
+        "related": [
+          "SourceNavigation",
+          "LiteratureReview",
+          "ScholarlyNetwork"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Research practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Citation chasing backward revealed the foundational papers that established the paradigm.",
+          "Forward citation tracking found recent papers building on the seminal 2010 study.",
+          "Citation chasing identified a highly-cited paper missed by keyword search.",
+          "Following citations revealed the intellectual lineage connecting disparate research threads."
+        ],
+        "negative_examples": [
+          "References were checked.",
+          "Citations were followed.",
+          "The bibliography was examined."
+        ],
+        "disambiguation": "Strategic citation-based discovery, not mere reference checking"
+      },
+      "children": []
+    },
+    {
+      "term": "SemanticSearch",
+      "role": "concept",
+      "parent_concepts": [
+        "InformationRetrieval"
+      ],
+      "layer_hint": 3,
+      "definition": "Retrieval based on meaning and conceptual similarity rather than exact keyword matching",
+      "definition_source": "Information retrieval, NLP",
+      "domain": "ComputerScience",
+      "aliases": [
+        "ConceptualSearch",
+        "MeaningBasedRetrieval",
+        "NeuralSearch"
+      ],
+      "relationships": {
+        "related": [
+          "Embeddings",
+          "NaturalLanguageUnderstanding",
+          "Similarity"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical approach"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Semantic search found documents about 'automobile' when the query used 'car.'",
+          "The semantic search system understood that 'Python programming' differs from 'python snake.'",
+          "Semantic retrieval matched the query intent even when exact terms weren't present in documents.",
+          "Neural semantic search used embeddings to find conceptually similar passages."
+        ],
+        "negative_examples": [
+          "A smart search was used.",
+          "The search understood meaning.",
+          "Results were intelligent."
+        ],
+        "disambiguation": "Meaning-based retrieval using semantic representation"
+      },
+      "children": []
+    },
+    {
+      "term": "BooleanSearch",
+      "role": "concept",
+      "parent_concepts": [
+        "InformationRetrieval"
+      ],
+      "layer_hint": 3,
+      "definition": "Retrieval using logical operators (AND, OR, NOT) to combine search terms precisely",
+      "definition_source": "Information retrieval, database querying",
+      "domain": "ComputerScience",
+      "aliases": [
+        "LogicalSearch",
+        "OperatorSearch",
+        "StructuredQuery"
+      ],
+      "relationships": {
+        "related": [
+          "QueryFormulation",
+          "Precision",
+          "SetOperations"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical approach"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Boolean search: (climate change OR global warming) AND (policy OR legislation) NOT opinion.",
+          "The Boolean query used parentheses to group terms and control operator precedence.",
+          "Boolean search provided precise control but required expertise to use effectively.",
+          "Using Boolean NOT excluded irrelevant homonyms from the result set."
+        ],
+        "negative_examples": [
+          "Operators were used.",
+          "AND and OR were added.",
+          "The search was structured."
+        ],
+        "disambiguation": "Precise logical query construction, not mere operator use"
+      },
+      "children": []
+    },
+    {
+      "term": "FacetedSearch",
+      "role": "concept",
+      "parent_concepts": [
+        "InformationRetrieval"
+      ],
+      "layer_hint": 3,
+      "definition": "Filtering search results by multiple independent dimensions or attributes such as date, type, author, or topic",
+      "definition_source": "Information architecture, search UX",
+      "domain": "ComputerScience",
+      "aliases": [
+        "FacetedNavigation",
+        "FilteredSearch",
+        "MultidimensionalBrowsing"
+      ],
+      "relationships": {
+        "related": [
+          "SearchRefinement",
+          "Classification",
+          "Metadata"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical approach"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Faceted search filtered by publication year, document type, and subject heading simultaneously.",
+          "Using faceted navigation, the researcher narrowed results to peer-reviewed articles from 2020-2024.",
+          "Faceted search revealed that 80% of results were conference papers rather than journal articles.",
+          "The facet counts showed distribution of results across different categories."
+        ],
+        "negative_examples": [
+          "Filters were applied.",
+          "Results were narrowed.",
+          "Categories were selected."
+        ],
+        "disambiguation": "Multi-dimensional filtering using structured attributes"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:17.482761Z",
+    "result_pack_version": "5.7.1",
+    "concepts_added": 10,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 9
+    },
+    "parents_updated": 10,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "InformationRetrieval",
+        "QueryFormulation",
+        "KeywordExtraction",
+        "SearchRefinement",
+        "RelevanceJudgment",
+        "SourceNavigation",
+        "CitationChasing",
+        "SemanticSearch",
+        "BooleanSearch",
+        "FacetedSearch"
+      ],
+      "must_retrain": [
+        "Searching"
+      ],
+      "should_retrain": [],
+      "optional_retrain": [
+        "Hypertext",
+        "Investigating",
+        "Query",
+        "SearchEngine",
+        "SourceEvaluation"
+      ],
+      "total_training_required": 11
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

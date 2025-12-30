@@ -1,0 +1,246 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Distributed Systems",
+    "id": "information.computer_science.distributed_systems",
+    "level": 2,
+    "slug": "distributed-systems",
+    "operations_count": 10,
+    "child_count": 9
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Distributed Systems",
+        "target_id": "information.computer_science.distributed_systems",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Models & Failures",
+          "Time & Clocks",
+          "Consensus",
+          "Consistency Models",
+          "Replication & Quorums",
+          "Transactions & Coordination",
+          "Fault Tolerance",
+          "Scalable Storage",
+          "Observability"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.models_failures",
+          "information.computer_science.distributed_systems.time_clocks",
+          "information.computer_science.distributed_systems.consensus",
+          "information.computer_science.distributed_systems.consistency",
+          "information.computer_science.distributed_systems.replication_quorums",
+          "information.computer_science.distributed_systems.transactions",
+          "information.computer_science.distributed_systems.fault_tolerance",
+          "information.computer_science.distributed_systems.scalable_storage",
+          "information.computer_science.distributed_systems.observability"
+        ],
+        "target_layer": 2,
+        "child_count": 9
+      },
+      {
+        "operation": "create_meld",
+        "target": "Models & Failures",
+        "target_id": "information.computer_science.distributed_systems.models_failures",
+        "new_parent": "Distributed Systems",
+        "parent_id": "information.computer_science.distributed_systems",
+        "source_concepts": [
+          "Asynchrony",
+          "Crash Failures",
+          "Byzantine Failures",
+          "Network Partitions",
+          "Failure Detectors"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.models_failures.asynchrony",
+          "information.computer_science.distributed_systems.models_failures.crash_failures",
+          "information.computer_science.distributed_systems.models_failures.byzantine_failures",
+          "information.computer_science.distributed_systems.models_failures.network_partitions",
+          "information.computer_science.distributed_systems.models_failures.failure_detectors"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Time & Clocks",
+        "target_id": "information.computer_science.distributed_systems.time_clocks",
+        "new_parent": "Distributed Systems",
+        "parent_id": "information.computer_science.distributed_systems",
+        "source_concepts": [
+          "Lamport Clocks",
+          "Vector Clocks",
+          "NTP vs PTP",
+          "Clock Skew/Drift"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.time_clocks.lamport_clocks",
+          "information.computer_science.distributed_systems.time_clocks.vector_clocks",
+          "information.computer_science.distributed_systems.time_clocks.ntp_vs_ptp",
+          "information.computer_science.distributed_systems.time_clocks.clock_skew_drift"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Consensus",
+        "target_id": "information.computer_science.distributed_systems.consensus",
+        "new_parent": "Distributed Systems",
+        "parent_id": "information.computer_science.distributed_systems",
+        "source_concepts": [
+          "Paxos",
+          "Raft",
+          "Viewstamped Replication",
+          "Leader Election",
+          "Log Replication"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.consensus.paxos",
+          "information.computer_science.distributed_systems.consensus.raft",
+          "information.computer_science.distributed_systems.consensus.viewstamped_replication",
+          "information.computer_science.distributed_systems.consensus.leader_election",
+          "information.computer_science.distributed_systems.consensus.log_replication"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Consistency Models",
+        "target_id": "information.computer_science.distributed_systems.consistency",
+        "new_parent": "Distributed Systems",
+        "parent_id": "information.computer_science.distributed_systems",
+        "source_concepts": [
+          "Linearizability",
+          "Sequential Consistency",
+          "Causal Consistency",
+          "Eventual Consistency",
+          "CRDTs"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.consistency.linearizability",
+          "information.computer_science.distributed_systems.consistency.sequential_consistency",
+          "information.computer_science.distributed_systems.consistency.causal_consistency",
+          "information.computer_science.distributed_systems.consistency.eventual_consistency",
+          "information.computer_science.distributed_systems.consistency.crdts"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Replication & Quorums",
+        "target_id": "information.computer_science.distributed_systems.replication_quorums",
+        "new_parent": "Distributed Systems",
+        "parent_id": "information.computer_science.distributed_systems",
+        "source_concepts": [
+          "Primary-Backup",
+          "Quorum Reads/Writes",
+          "Gossip Protocols",
+          "Anti-Entropy"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.replication_quorums.primary_backup",
+          "information.computer_science.distributed_systems.replication_quorums.quorum_reads_writes",
+          "information.computer_science.distributed_systems.replication_quorums.gossip_protocols",
+          "information.computer_science.distributed_systems.replication_quorums.anti_entropy"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Transactions & Coordination",
+        "target_id": "information.computer_science.distributed_systems.transactions",
+        "new_parent": "Distributed Systems",
+        "parent_id": "information.computer_science.distributed_systems",
+        "source_concepts": [
+          "Two-Phase Commit (2PC)",
+          "Three-Phase Commit (3PC)",
+          "Distributed Transactions",
+          "Sagas"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.transactions.two_phase_commit_2pc",
+          "information.computer_science.distributed_systems.transactions.three_phase_commit_3pc",
+          "information.computer_science.distributed_systems.transactions.distributed_transactions",
+          "information.computer_science.distributed_systems.transactions.sagas"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Fault Tolerance",
+        "target_id": "information.computer_science.distributed_systems.fault_tolerance",
+        "new_parent": "Distributed Systems",
+        "parent_id": "information.computer_science.distributed_systems",
+        "source_concepts": [
+          "Checkpoint/Restart",
+          "Replication Strategies",
+          "Erasure Coding",
+          "Byzantine Fault Tolerance (PBFT)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.fault_tolerance.checkpoint_restart",
+          "information.computer_science.distributed_systems.fault_tolerance.replication_strategies",
+          "information.computer_science.distributed_systems.fault_tolerance.erasure_coding",
+          "information.computer_science.distributed_systems.fault_tolerance.byzantine_fault_tolerance_pbft"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Scalable Storage",
+        "target_id": "information.computer_science.distributed_systems.scalable_storage",
+        "new_parent": "Distributed Systems",
+        "parent_id": "information.computer_science.distributed_systems",
+        "source_concepts": [
+          "Sharding",
+          "Consistent Hashing",
+          "LSM-based Storage",
+          "Distributed Hash Tables (DHT)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.scalable_storage.sharding",
+          "information.computer_science.distributed_systems.scalable_storage.consistent_hashing",
+          "information.computer_science.distributed_systems.scalable_storage.lsm_based_storage",
+          "information.computer_science.distributed_systems.scalable_storage.distributed_hash_tables_dht"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Observability",
+        "target_id": "information.computer_science.distributed_systems.observability",
+        "new_parent": "Distributed Systems",
+        "parent_id": "information.computer_science.distributed_systems",
+        "source_concepts": [
+          "Distributed Tracing",
+          "Causal Debugging",
+          "Deterministic Replay"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.distributed_systems.observability.distributed_tracing",
+          "information.computer_science.distributed_systems.observability.causal_debugging",
+          "information.computer_science.distributed_systems.observability.deterministic_replay"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      }
+    ]
+  }
+}

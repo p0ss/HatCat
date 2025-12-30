@@ -1,0 +1,754 @@
+{
+  "meld_request_id": "org.hatcat/implicature-pragmatics@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+
+  "metadata": {
+    "name": "Implicature & Pragmatic Meta",
+    "description": "Concepts for indirect meaning, implicature types, indirect speech acts, and meta-linguistic markers. Covers the gap between literal meaning and communicated meaning - essential for detecting sophisticated communication patterns including indirect deception.",
+    "source": "manual",
+    "author": "claude-opus-4-5",
+    "created": "2025-12-02T03:00:00Z",
+    "rationale": "The Concept Coverage Analysis identified implicature types as a key gap. These concepts are critical for AI safety because much communication operates through implication rather than direct statement. Detecting when AI communicates 'between the lines' - whether through legitimate indirection or sophisticated deception - requires lenses for these pragmatic phenomena.",
+    "reviewer_response": "This pack addresses the Pack 1 reviewer's concern about indirect speech acts ('Can you pass the salt?' as Request). IndirectSpeechAct is included with examples showing the gap between surface form and illocutionary force."
+  },
+
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/Communication",
+      "relationship": "parent_of",
+      "candidate_concept": "Implicature"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/Communication",
+      "relationship": "parent_of",
+      "candidate_concept": "IndirectSpeechAct"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/Communication",
+      "relationship": "parent_of",
+      "candidate_concept": "MetaLinguisticMarker"
+    }
+  ],
+
+  "candidates": [
+    {
+      "term": "Implicature",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "Meaning that is communicated beyond what is literally said, derived through inference from context, convention, or conversational principles. Implicature is the gap between sentence meaning and speaker meaning.",
+      "definition_source": "Grice (1975) 'Logic and Conversation'",
+      "domain": "MindsAndAgents",
+      "aliases": ["ImpliedMeaning", "Implication", "InferredMeaning"],
+      "wordnet": {
+        "synsets": ["implication.n.03", "entailment.n.02"],
+        "canonical_synset": "implication.n.03",
+        "lemmas": ["implication", "import"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Proposition", "Inference", "Context", "Communication"],
+        "part_of": [],
+        "has_part": ["ScalarImplicature", "ConventionalImplicature", "ConversationalImplicature", "ImplicatureFlouting"]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception", "manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Implicature is how meaning operates 'between the lines'. Sophisticated deception often works through implicature rather than false assertion. Detecting implied meanings is essential for monitoring indirect communication."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "A: Are you coming to the party? B: I have to work. [implicates: No]",
+          "Some students passed the exam. [implicates: Not all passed]",
+          "He's a fine friend. [in sarcastic tone, implicates: He's a bad friend]",
+          "She got the job and got married. [implicates: In that order]",
+          "A: How was the movie? B: Well, the popcorn was good. [implicates: Movie was bad]",
+          "I broke a finger yesterday. [implicates: My own finger]"
+        ],
+        "negative_examples": [
+          "I will not attend the party.",
+          "Not all students passed the exam.",
+          "He is a bad friend.",
+          "She got married before she got the job.",
+          "The movie was terrible.",
+          "I broke my own finger."
+        ],
+        "disambiguation": "Implicature is meaning BEYOND what is literally said. The literal content is true, but more is communicated through inference. 'Some passed' literally allows for 'all passed' but implicates otherwise. Direct statements without inferential residue don't strongly activate this concept."
+      },
+      "children": ["ScalarImplicature", "ConventionalImplicature", "ConversationalImplicature", "ImplicatureFlouting"]
+    },
+
+    {
+      "term": "ScalarImplicature",
+      "role": "concept",
+      "parent_concepts": ["Implicature"],
+      "layer_hint": 3,
+      "definition": "An implicature arising from the use of a weaker term on a scale, implying that stronger terms do not apply. Using 'some' implicates 'not all'; using 'warm' implicates 'not hot'.",
+      "definition_source": "Horn (1972) 'On the Semantic Properties of Logical Operators'",
+      "domain": "MindsAndAgents",
+      "aliases": ["ScaleBasedImplicature", "QuantityImplicature"],
+      "wordnet": {
+        "synsets": ["implication.n.03"],
+        "canonical_synset": "implication.n.03",
+        "lemmas": ["scalar implicature"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Quantity", "Scale", "Inference"],
+        "part_of": ["Implicature"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Scalar implicatures can be exploited for technically-true-but-misleading statements. 'Some of the evidence supports this' when most doesn't is deceptive use of scalar implicature."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Some of the students passed. [implicates: not all]",
+          "I ate some of the cookies. [implicates: not all]",
+          "The water is warm. [implicates: not hot]",
+          "I sometimes exercise. [implicates: not always]",
+          "It's possible that she'll come. [implicates: not certain]",
+          "He's good at chess. [implicates: not excellent]",
+          "I liked the movie. [implicates: didn't love it]"
+        ],
+        "negative_examples": [
+          "All of the students passed.",
+          "I ate all of the cookies.",
+          "The water is hot.",
+          "I always exercise.",
+          "She will definitely come.",
+          "He's excellent at chess.",
+          "I loved the movie."
+        ],
+        "disambiguation": "Scalar implicatures arise from choosing a WEAKER term on a scale (some/all, warm/hot, good/excellent, possible/certain). The weaker term implicates that the speaker has reason not to use the stronger. Logically, 'some' is compatible with 'all', but pragmatically it implicates otherwise."
+      },
+      "children": []
+    },
+
+    {
+      "term": "ConventionalImplicature",
+      "role": "concept",
+      "parent_concepts": ["Implicature"],
+      "layer_hint": 3,
+      "definition": "An implicature that arises from conventional meaning of particular words rather than conversational inference. 'But' conventionally implicates contrast; 'even' conventionally implicates unexpectedness.",
+      "definition_source": "Grice (1975); Potts (2005) 'The Logic of Conventional Implicatures'",
+      "domain": "MindsAndAgents",
+      "aliases": ["LexicalImplicature", "WordBasedImplicature"],
+      "wordnet": {
+        "synsets": ["implication.n.03"],
+        "canonical_synset": "implication.n.03",
+        "lemmas": ["conventional implicature"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Lexicon", "Convention", "Semantics"],
+        "part_of": ["Implicature"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "She's smart but lazy. [implicates: contrast between the two]",
+          "Even John passed the test. [implicates: John was unlikely to pass]",
+          "He's a politician, therefore he's dishonest. [implicates: causal connection]",
+          "She managed to finish on time. [implicates: it was difficult]",
+          "He's rich yet unhappy. [implicates: contrast/unexpectedness]",
+          "Fortunately, she survived. [implicates: speaker's positive evaluation]"
+        ],
+        "negative_examples": [
+          "She's smart and lazy.",
+          "John passed the test.",
+          "He's a politician. He's dishonest.",
+          "She finished on time.",
+          "He's rich. He's unhappy.",
+          "She survived."
+        ],
+        "disambiguation": "Conventional implicatures are triggered by SPECIFIC WORDS ('but', 'even', 'yet', 'therefore', 'manage to', 'fortunately'). They're not calculated from context like conversational implicatures; they're built into word meaning. The implicature persists even in embedded contexts."
+      },
+      "children": []
+    },
+
+    {
+      "term": "ConversationalImplicature",
+      "role": "concept",
+      "parent_concepts": ["Implicature"],
+      "layer_hint": 3,
+      "definition": "An implicature derived from the assumption that the speaker is following cooperative conversational principles. Hearers infer meaning based on expectations of relevance, quantity, quality, and manner.",
+      "definition_source": "Grice (1975) 'Logic and Conversation' - Cooperative Principle and Maxims",
+      "domain": "MindsAndAgents",
+      "aliases": ["GriceanImplicature", "PragmaticInference", "CooperativeImplicature"],
+      "wordnet": {
+        "synsets": ["implication.n.03"],
+        "canonical_synset": "implication.n.03",
+        "lemmas": ["conversational implicature"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Cooperation", "Relevance", "Context", "Inference"],
+        "part_of": ["Implicature"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Conversational implicature assumes cooperation. Deliberately exploiting these expectations - saying true things to implicate false ones - is sophisticated deception. Relevant for detecting misleading-but-technically-true communication."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "A: Where's the coffee? B: There's a shop around the corner. [implicates: They sell coffee]",
+          "A: How's your new job? B: The office has nice views. [implicates: Job isn't great]",
+          "A: Did you enjoy the book? B: I finished it. [implicates: Didn't enjoy it much]",
+          "A: Is she a good singer? B: She has great stage presence. [implicates: Singing isn't her strength]",
+          "A: Can you help me move? B: I have a bad back. [implicates: No]",
+          "Nice weather we're having. [as small talk, implicates: I'm being social]"
+        ],
+        "negative_examples": [
+          "There's a coffee shop around the corner that sells coffee.",
+          "My job isn't great but the office has nice views.",
+          "I finished the book but didn't enjoy it.",
+          "She's not a great singer but has stage presence.",
+          "No, I can't help you move because I have a bad back.",
+          "I'm initiating social conversation with this weather comment."
+        ],
+        "disambiguation": "Conversational implicatures are CALCULATED from context + cooperative assumptions, not triggered by specific words. The inference goes: 'Why did they say X instead of Y? They must mean Z.' These are cancellable - 'There's a shop around the corner, but I don't know if they sell coffee.'"
+      },
+      "children": []
+    },
+
+    {
+      "term": "ImplicatureFlouting",
+      "role": "concept",
+      "parent_concepts": ["Implicature"],
+      "layer_hint": 3,
+      "definition": "The deliberate and obvious violation of conversational principles to generate implicature. Flouting is blatant non-cooperation that signals the hearer should look for non-literal meaning - the mechanism behind irony, sarcasm, and rhetorical overstatement.",
+      "definition_source": "Grice (1975) - flouting vs. violating maxims",
+      "domain": "MindsAndAgents",
+      "aliases": ["MaximFlouting", "BlatantViolation", "DeliberateNonLiteralness"],
+      "wordnet": {
+        "synsets": ["irony.n.01"],
+        "canonical_synset": "irony.n.01",
+        "lemmas": ["irony", "sarcasm"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Irony", "Sarcasm", "Hyperbole", "NonLiteralLanguage"],
+        "part_of": ["Implicature"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Flouting generates non-literal meaning through apparent non-cooperation. While often benign (jokes, irony), it can also be used manipulatively. Detecting when AI is communicating non-literally is safety-relevant."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "[After a disaster] Well, that went well. [flouts Quality: obviously false]",
+          "Oh sure, I just LOVE waiting in line for hours. [flouts Quality: sarcasm]",
+          "I've told you a million times! [flouts Quantity: hyperbole]",
+          "War is war. [flouts Quantity: tautology signals deeper meaning]",
+          "A: What do you think of the new policy? B: Nice weather we're having. [flouts Relevance]",
+          "He's not exactly Einstein. [flouts Manner: understatement via litotes]"
+        ],
+        "negative_examples": [
+          "That went badly.",
+          "I don't enjoy waiting in line.",
+          "I've told you many times.",
+          "War is brutal and devastating.",
+          "I'd rather not discuss the new policy.",
+          "He's not very smart."
+        ],
+        "disambiguation": "Flouting is BLATANT and OBVIOUS violation. The speaker makes clear they're not being literal. It differs from deceptive violation (where the speaker hides non-cooperation) and from inadvertent violation. The obviousness is the signal: 'Look for my real meaning elsewhere.'"
+      },
+      "children": []
+    },
+
+    {
+      "term": "IndirectSpeechAct",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A speech act performed by means of another speech act. The surface grammatical form differs from the illocutionary force. 'Can you pass the salt?' is grammatically a question but functionally a request.",
+      "definition_source": "Searle (1975) 'Indirect Speech Acts'",
+      "domain": "MindsAndAgents",
+      "aliases": ["IndirectIllocution", "NonLiteralSpeechAct"],
+      "wordnet": {
+        "synsets": ["speech_act.n.01"],
+        "canonical_synset": "speech_act.n.01",
+        "lemmas": ["indirect speech act"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["DirectSpeechAct"],
+        "related": ["SpeechAct", "Implicature", "Politeness"],
+        "part_of": [],
+        "has_part": ["IndirectRequest", "IndirectRefusal"]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Can you pass the salt? [question form, request function]",
+          "Would you mind closing the door? [question form, request function]",
+          "I'd love some coffee. [statement form, request function]",
+          "Someone left the lights on. [statement form, request/reproach function]",
+          "It's getting late. [statement form, suggestion to leave function]",
+          "Do you have the time? [question form, request function]",
+          "I was wondering if you might possibly help me. [statement form, request function]"
+        ],
+        "negative_examples": [
+          "Please pass the salt.",
+          "Close the door, please.",
+          "I would like some coffee, please.",
+          "Turn off the lights.",
+          "Let's leave now.",
+          "Tell me the time.",
+          "Please help me."
+        ],
+        "disambiguation": "Indirect speech acts have a MISMATCH between form and function. Questions that are really requests, statements that are really suggestions. The hearer must infer the intended act from context. Direct speech acts match form to function: 'Please X' is explicitly a request."
+      },
+      "children": ["IndirectRequest", "IndirectRefusal"]
+    },
+
+    {
+      "term": "IndirectRequest",
+      "role": "concept",
+      "parent_concepts": ["IndirectSpeechAct"],
+      "layer_hint": 3,
+      "definition": "A request performed indirectly, typically through question or statement form. Indirect requests are often more polite than direct commands by giving the hearer apparent choice.",
+      "definition_source": "Brown & Levinson (1987) 'Politeness' - off-record strategies",
+      "domain": "MindsAndAgents",
+      "aliases": ["IndirectDirective", "PoliteRequest", "HintedRequest"],
+      "wordnet": {
+        "synsets": ["request.n.01"],
+        "canonical_synset": "request.n.01",
+        "lemmas": ["indirect request"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["DirectRequest"],
+        "related": ["Request", "Politeness", "Indirection"],
+        "part_of": ["IndirectSpeechAct"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Can you help me with this?",
+          "Would it be possible to reschedule?",
+          "I don't suppose you have a pen?",
+          "It would be great if you could review this.",
+          "I was hoping you might be available.",
+          "Do you think you could send me the file?",
+          "I'd really appreciate some feedback."
+        ],
+        "negative_examples": [
+          "Help me with this.",
+          "Reschedule the meeting.",
+          "Give me a pen.",
+          "Review this.",
+          "Be available.",
+          "Send me the file.",
+          "Give me feedback."
+        ],
+        "disambiguation": "Indirect requests use NON-IMPERATIVE forms to make requests: questions about ability ('can you'), hypotheticals ('it would be great if'), hedged statements ('I was hoping'). They preserve hearer's face by not directly commanding. The indirection is the politeness device."
+      },
+      "children": []
+    },
+
+    {
+      "term": "IndirectRefusal",
+      "role": "concept",
+      "parent_concepts": ["IndirectSpeechAct"],
+      "layer_hint": 3,
+      "definition": "A refusal performed indirectly, typically by providing reasons or conditions that implicate inability or unwillingness without explicit rejection. 'I have to work' as response to an invitation.",
+      "definition_source": "Beebe et al. (1990) on refusal strategies",
+      "domain": "MindsAndAgents",
+      "aliases": ["ImplicatedNo", "IndirectDecline", "PoliteRefusal"],
+      "wordnet": {
+        "synsets": ["refusal.n.01", "rejection.n.01"],
+        "canonical_synset": "refusal.n.01",
+        "lemmas": ["indirect refusal", "polite decline"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["DirectRefusal"],
+        "related": ["Refusal", "Politeness", "Implicature"],
+        "part_of": ["IndirectSpeechAct"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Indirect refusals can obscure actual refusal. In AI contexts, indirect refusals might hide unwillingness to comply with legitimate requests. Detecting when 'I can't' means 'I won't' is safety-relevant."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "A: Can you come to the party? B: I have to work that night.",
+          "A: Will you help me move? B: I have a bad back.",
+          "A: Can you stay late? B: I need to pick up my kids.",
+          "A: Would you lend me money? B: Things are tight right now.",
+          "A: Can you finish this today? B: I have three other urgent projects.",
+          "That's not really my area of expertise."
+        ],
+        "negative_examples": [
+          "No, I can't come to the party.",
+          "No, I won't help you move.",
+          "No, I'm not staying late.",
+          "No, I won't lend you money.",
+          "No, I can't finish this today.",
+          "I refuse to help with that."
+        ],
+        "disambiguation": "Indirect refusals provide REASONS that implicate refusal without saying 'no'. The face-saving function: rejecting the situation, not the person. The hearer must infer the refusal. Note: in AI contexts, providing reasons instead of refusing can be evasive if the actual answer is simply 'no'."
+      },
+      "children": []
+    },
+
+    {
+      "term": "MetaLinguisticMarker",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "Signals that language is being used in a non-standard, reflective, or figurative way. Meta-linguistic markers indicate the speaker is commenting on language use itself or deploying figurative devices.",
+      "definition_source": "Jakobson (1960) metalinguistic function; figurative language literature",
+      "domain": "MindsAndAgents",
+      "aliases": ["FigurativeMarker", "NonLiteralMarker", "LanguageAboutLanguage"],
+      "wordnet": {
+        "synsets": ["figure_of_speech.n.01"],
+        "canonical_synset": "figure_of_speech.n.01",
+        "lemmas": ["figure of speech", "trope"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Communication", "Language", "Meaning"],
+        "part_of": [],
+        "has_part": ["MetaphorMarker", "IronyMarker", "SarcasmMarker", "HypotheticalMarker"]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Time is money, as they say.",
+          "So to speak, the project is dead.",
+          "I mean this metaphorically, but...",
+          "That was sarcasm, in case it wasn't clear.",
+          "Figuratively speaking, we're drowning in work.",
+          "To use a technical term, it's a 'hot mess'.",
+          "Ironically, the fire station burned down."
+        ],
+        "negative_examples": [
+          "The project was cancelled.",
+          "We have too much work.",
+          "The fire station was destroyed in a fire.",
+          "This is difficult.",
+          "Time is valuable.",
+          "The situation is problematic."
+        ],
+        "disambiguation": "Meta-linguistic markers SIGNAL that language is being used reflectively or figuratively: 'so to speak', 'as they say', 'figuratively', 'metaphorically', 'ironically'. They make the non-literal or metalinguistic status explicit. Unmarked figurative language doesn't activate this concept as strongly."
+      },
+      "children": ["MetaphorMarker", "IronyMarker", "SarcasmMarker", "HypotheticalMarker"]
+    },
+
+    {
+      "term": "MetaphorMarker",
+      "role": "concept",
+      "parent_concepts": ["MetaLinguisticMarker"],
+      "layer_hint": 3,
+      "definition": "Signals that indicate metaphorical or analogical reasoning is in use - mapping concepts from one domain onto another. Metaphor markers help distinguish figurative from literal interpretation.",
+      "definition_source": "Lakoff & Johnson (1980) 'Metaphors We Live By'",
+      "domain": "MindsAndAgents",
+      "aliases": ["FigurativeLanguageMarker", "AnalogyMarker", "ComparisonMarker"],
+      "wordnet": {
+        "synsets": ["metaphor.n.01", "analogy.n.02"],
+        "canonical_synset": "metaphor.n.01",
+        "lemmas": ["metaphor", "analogy"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["LiteralLanguage"],
+        "related": ["Comparison", "Mapping", "Abstraction"],
+        "part_of": ["MetaLinguisticMarker"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Time is money.",
+          "Life is a journey.",
+          "The mind is a computer.",
+          "He's a snake.",
+          "She has a heart of gold.",
+          "The company is drowning in debt.",
+          "This argument doesn't hold water.",
+          "We need to think outside the box."
+        ],
+        "negative_examples": [
+          "Time is valuable and should be used wisely.",
+          "Life involves many changes and experiences.",
+          "The mind processes information.",
+          "He's untrustworthy.",
+          "She's very kind.",
+          "The company has excessive debt.",
+          "This argument is weak.",
+          "We need to think creatively."
+        ],
+        "disambiguation": "Metaphor maps structure from one domain to another: time AS money, life AS journey, mind AS computer. The source domain (money, journey, computer) provides structure for understanding the target. The concept should activate for figurative cross-domain mapping, not just any comparison."
+      },
+      "children": []
+    },
+
+    {
+      "term": "IronyMarker",
+      "role": "concept",
+      "parent_concepts": ["MetaLinguisticMarker"],
+      "layer_hint": 3,
+      "definition": "Signals that indicate the intended meaning is contrary to or different from the literal meaning, often for humorous, critical, or emphatic effect. Irony involves a mismatch between surface and intended meaning.",
+      "definition_source": "Classical rhetoric; Sperber & Wilson (1981) 'Irony and the Use-Mention Distinction'",
+      "domain": "MindsAndAgents",
+      "aliases": ["IronicMarker", "ContrarianMeaning", "OppositeIntention"],
+      "wordnet": {
+        "synsets": ["irony.n.01"],
+        "canonical_synset": "irony.n.01",
+        "lemmas": ["irony"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["SincereStatement"],
+        "related": ["Sarcasm", "Contrast", "ImplicatureFlouting"],
+        "part_of": ["MetaLinguisticMarker"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Irony involves saying one thing and meaning another. While usually benign, ironic communication by AI can obscure actual meaning. Detecting ironic vs. sincere communication is relevant for transparency."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "[After spilling coffee] Great, just great.",
+          "[About terrible weather] What lovely weather we're having.",
+          "Oh sure, I just love getting stuck in traffic.",
+          "[When something goes wrong] Well, that's just perfect.",
+          "Ironically, the marriage counselor got divorced.",
+          "The fire station burned down. How ironic.",
+          "[After a failure] Another stunning success."
+        ],
+        "negative_examples": [
+          "That's really unfortunate about the coffee.",
+          "The weather is terrible today.",
+          "I hate getting stuck in traffic.",
+          "That's a real problem.",
+          "Coincidentally, the marriage counselor got divorced.",
+          "Unfortunately, the fire station burned down.",
+          "That was a failure."
+        ],
+        "disambiguation": "Irony involves MISMATCH between what's said and what's meant - often opposite meaning. Verbal irony says the contrary of what's intended; situational irony involves incongruity between expectation and outcome. 'Great!' when things are bad is verbal irony. A fire station burning is situational irony."
+      },
+      "children": []
+    },
+
+    {
+      "term": "SarcasmMarker",
+      "role": "concept",
+      "parent_concepts": ["MetaLinguisticMarker"],
+      "layer_hint": 3,
+      "definition": "Signals that indicate mocking or contemptuous irony directed at a person or their actions. Sarcasm uses ironic language specifically to criticize, mock, or wound.",
+      "definition_source": "Attardo (2000) on irony and sarcasm distinction",
+      "domain": "MindsAndAgents",
+      "aliases": ["SarcasticMarker", "MockingIrony", "CuttingIrony"],
+      "wordnet": {
+        "synsets": ["sarcasm.n.01"],
+        "canonical_synset": "sarcasm.n.01",
+        "lemmas": ["sarcasm", "satire"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["SincerePraise"],
+        "related": ["Irony", "Mockery", "Criticism"],
+        "part_of": ["MetaLinguisticMarker"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Sarcasm can be used to attack while maintaining deniability. AI using sarcasm might express criticism indirectly. Detecting sarcastic vs. sincere communication affects interpretation of AI stance."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Oh, what a genius idea that turned out to be.",
+          "Yeah, because that's worked so well in the past.",
+          "Sure, you're such a hard worker.",
+          "Oh, I'm sooo sorry I inconvenienced you.",
+          "Well, aren't you special.",
+          "Thanks for all your 'help'.",
+          "Real mature."
+        ],
+        "negative_examples": [
+          "That was a bad idea.",
+          "That approach hasn't worked before.",
+          "You could work harder.",
+          "I apologize for the inconvenience.",
+          "You're special to me.",
+          "Thank you for your help.",
+          "That was immature."
+        ],
+        "disambiguation": "Sarcasm is HOSTILE irony - it mocks or criticizes through opposite meaning. It differs from neutral irony (which might just note incongruity) by having a TARGET and CRITICAL intent. Prosodic markers (drawn out words, exaggerated tone) often signal sarcasm in speech."
+      },
+      "children": []
+    },
+
+    {
+      "term": "HypotheticalMarker",
+      "role": "concept",
+      "parent_concepts": ["MetaLinguisticMarker"],
+      "layer_hint": 3,
+      "definition": "Signals that indicate the speaker is discussing a hypothetical, counterfactual, or imagined scenario rather than actual reality. Hypothetical markers frame content as speculative.",
+      "definition_source": "Modal semantics; counterfactual reasoning literature",
+      "domain": "MindsAndAgents",
+      "aliases": ["CounterfactualMarker", "SpeculativeMarker", "ConditionalMarker"],
+      "wordnet": {
+        "synsets": ["hypothesis.n.01", "supposition.n.02"],
+        "canonical_synset": "hypothesis.n.01",
+        "lemmas": ["hypothesis", "supposition"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["FactualStatement"],
+        "related": ["Possibility", "Imagination", "Counterfactual"],
+        "part_of": ["MetaLinguisticMarker"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Suppose we had infinite resources...",
+          "What if the project had started earlier?",
+          "Imagine a world where...",
+          "Hypothetically speaking, if we...",
+          "In a perfect world, we would...",
+          "If I were you, I would...",
+          "Let's say, for argument's sake, that...",
+          "Assuming, just for now, that X is true..."
+        ],
+        "negative_examples": [
+          "We have limited resources.",
+          "The project started late.",
+          "The world is like this.",
+          "We should do X.",
+          "In reality, we can only...",
+          "I recommend you...",
+          "X is true, and therefore...",
+          "Given that X is true..."
+        ],
+        "disambiguation": "Hypothetical markers frame content as NON-ACTUAL: 'suppose', 'imagine', 'what if', 'hypothetically', 'if [counterfactual]'. They distinguish speculative reasoning from claims about reality. 'If I were rich' uses subjunctive to signal counterfactual; 'If I am rich' (indicative) treats the condition as possible fact."
+      },
+      "children": []
+    }
+  ],
+
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  },
+
+  "protection_assessment": {
+    "protection_level": "elevated",
+    "triggers": [
+      {
+        "type": "safety_tags_harness_relevant",
+        "concepts": ["Implicature", "ScalarImplicature", "ConversationalImplicature", "ImplicatureFlouting", "IndirectRefusal", "IronyMarker", "SarcasmMarker"],
+        "reason": "7 concepts marked harness_relevant for deception/manipulation pattern detection"
+      },
+      {
+        "type": "simplex_mapping",
+        "simplex": "DeceptionDetector",
+        "concepts": ["Implicature", "ScalarImplicature", "ConversationalImplicature", "ImplicatureFlouting", "IndirectRefusal", "IronyMarker", "SarcasmMarker"],
+        "reason": "7 concepts mapped to DeceptionDetector for indirect communication monitoring"
+      }
+    ],
+    "ask_flags": {
+      "harness_relevant": true,
+      "steering_relevant": false,
+      "treaty_relevant": false
+    }
+  }
+}

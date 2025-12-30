@@ -1,0 +1,382 @@
+{
+  "meld_request_id": "org.hatcat/memory-and-learning@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+  "metadata": {
+    "name": "Memory & Learning \u2013 Core Modes",
+    "description": "Adds core learning paradigms and memory dynamics as children of LearningProcess, MemoryEncoding, and CognitiveProcess.",
+    "source": "manual",
+    "author": "poss-abilities + gpt-5.1-thinking",
+    "created": "2025-11-30T00:00:00Z"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/CognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "WorkingMemoryProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MemoryEncoding",
+      "relationship": "parent_of",
+      "candidate_concept": "ConsolidationProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MemoryEncoding",
+      "relationship": "parent_of",
+      "candidate_concept": "MemoryDecayProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/LearningProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "ImitationLearningProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/LearningProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "MetaLearningProcess"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "WorkingMemoryProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A CognitiveProcess that temporarily maintains and manipulates a limited set of MentalRepresentations in an active state to support ongoing tasks such as reasoning, comprehension, and decision-making.",
+      "definition_source": "Cognitive psychology notion of working memory",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "WorkingMemory",
+        "ShortTermWorkingStore"
+      ],
+      "wordnet": {
+        "synsets": [
+          "working_memory.n.01"
+        ],
+        "canonical_synset": "working_memory.n.01",
+        "lemmas": [
+          "working_memory",
+          "short-term_memory"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "CognitiveProcess",
+          "MemoryEncoding",
+          "MemoryRetrieval",
+          "MetacognitiveProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "attention",
+          "reasoning"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I keep the phone number in mind just long enough to dial it.",
+          "The model holds several candidate interpretations active while it reads the next sentence.",
+          "She mentally tracks the running total while adding a list of numbers."
+        ],
+        "negative_examples": [
+          "He remembers his childhood home decades later.",
+          "The system retrieves a fact from long-term storage without mentioning keeping it in mind.",
+          "She briefly glances at a value but immediately forgets it and moves on."
+        ],
+        "disambiguation": "Not long-term storage; specifically the short-term, capacity-limited maintenance and manipulation of information during an ongoing task.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "keeping several items in mind at once",
+            "holding partial results while reasoning"
+          ]
+        }
+      }
+    },
+    {
+      "term": "ConsolidationProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A MemoryEncoding-related process that stabilizes and integrates newly formed memory traces over time, transforming fragile short-term representations into more durable long-term memories.",
+      "definition_source": "Memory consolidation literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "MemoryConsolidation"
+      ],
+      "wordnet": {
+        "synsets": [
+          "memory_consolidation.n.01"
+        ],
+        "canonical_synset": "memory_consolidation.n.01",
+        "lemmas": [
+          "memory_consolidation",
+          "consolidation"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "MemoryDecayProcess"
+        ],
+        "related": [
+          "MemoryEncoding",
+          "EpisodicEncoding",
+          "SemanticEncoding",
+          "SleepProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "memory"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "After sleeping, she remembered the material more clearly than the night before.",
+          "The system gradually integrates logs from the day into a durable summary store.",
+          "He reviews his notes so that the key ideas stick long-term."
+        ],
+        "negative_examples": [
+          "He briefly holds a phone number in mind and then lets it go.",
+          "The agent forgets almost everything after the session ends.",
+          "It instantly retrieves a long-known fact with no mention of how it became stable."
+        ],
+        "disambiguation": "Not initial encoding or immediate working memory; specifically the slower process of stabilizing and integrating memories over time.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "sleep helps consolidate memories",
+            "stabilizing new knowledge over time"
+          ]
+        }
+      }
+    },
+    {
+      "term": "MemoryDecayProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A memory-related process in which the accessibility, strength, or detail of stored MentalRepresentations decreases over time, leading to partial or complete forgetting.",
+      "definition_source": "Forgetting and decay theories in memory research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ForgettingProcess",
+        "TraceDecayProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "forgetting.n.01"
+        ],
+        "canonical_synset": "forgetting.n.01",
+        "lemmas": [
+          "forgetting"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "ConsolidationProcess"
+        ],
+        "related": [
+          "MemoryEncoding",
+          "MemoryRetrieval",
+          "EpisodicRetrieval",
+          "SemanticRetrieval"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "memory",
+          "reliability"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "He can no longer recall the details of the meeting from last year.",
+          "The system\u2019s older logs are gradually downsampled, losing fine-grained information.",
+          "She remembers that something happened, but not where or when."
+        ],
+        "negative_examples": [
+          "He instantly recalls a vivid scene from childhood.",
+          "The agent\u2019s knowledge base never deletes or fades any entries.",
+          "She deliberately suppresses a thought to avoid thinking about it (motivated forgetting)."
+        ],
+        "disambiguation": "Not intentional suppression or policy-based deletion; specifically passive degradation of memory strength or accessibility over time.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "memories fading with time",
+            "forgetting details gradually"
+          ]
+        }
+      }
+    },
+    {
+      "term": "ImitationLearningProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A LearningProcess in which an agent acquires behaviors or policies by observing demonstrations from other agents and attempting to reproduce their actions or outcomes.",
+      "definition_source": "Behavioral cloning and observational learning",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ObservationalLearningProcess",
+        "BehavioralCloningProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "observational_learning.n.01"
+        ],
+        "canonical_synset": "observational_learning.n.01",
+        "lemmas": [
+          "observational_learning",
+          "imitation_learning"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "LearningProcess",
+          "ReinforcementLearningProcess",
+          "SocialCognitionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "alignment",
+          "behavior_transfer"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The robot learns to perform a task by watching a human demonstrate it.",
+          "The model is trained to copy expert trajectories from logs.",
+          "A child learns social norms by imitating how adults behave in public."
+        ],
+        "negative_examples": [
+          "The agent learns solely from its own trial-and-error experience.",
+          "The model is trained on labelled input\u2013output pairs with no notion of a demonstrator.",
+          "He studies abstract rules without seeing any concrete example of someone acting them out."
+        ],
+        "disambiguation": "Not generic learning from reward or labels; specifically learning by observing and copying behaviors demonstrated by others.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "learning from demonstrations",
+            "copying expert behavior"
+          ]
+        }
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Harness-relevant conceptual process; mapping to existing safety simplexes will be evaluated after initial lens characterization."
+      }
+    },
+    {
+      "term": "MetaLearningProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A higher-order LearningProcess in which an agent improves its own learning strategies, update rules, or inductive biases based on experience across multiple tasks or environments.",
+      "definition_source": "Meta-learning / learning-to-learn literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "LearningToLearnProcess",
+        "MetaLearning"
+      ],
+      "wordnet": {
+        "synsets": [
+          "meta_learning.n.01"
+        ],
+        "canonical_synset": "meta_learning.n.01",
+        "lemmas": [
+          "meta_learning",
+          "learning_to_learn"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "LearningProcess",
+          "MetacognitiveProcess",
+          "StrategySelection"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "generalization"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Over many tasks, the system learns a better initialization that lets it adapt quickly to new problems.",
+          "She reflects on which study techniques work best for her and changes how she learns.",
+          "The agent adjusts its own learning rate and exploration strategy based on past performance."
+        ],
+        "negative_examples": [
+          "It simply applies a fixed learning rule to a single dataset.",
+          "He improves on one task without changing how he will learn future tasks.",
+          "The model fine-tunes on a domain but uses the same optimizer and hyperparameters as before."
+        ],
+        "disambiguation": "Not just becoming better at a single task; specifically improving the way learning itself happens across tasks or episodes.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "learning how to learn",
+            "adapting the learning strategy itself"
+          ]
+        }
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Harness-relevant conceptual process; mapping to existing safety simplexes will be evaluated after initial lens characterization."
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-11-30T16:04:59.524356Z",
+    "concepts_added": 5,
+    "concepts_by_layer": {
+      "3": 5
+    },
+    "parents_updated": 5,
+    "errors": [],
+    "warnings": []
+  }
+}

@@ -1,0 +1,41 @@
+# HatCat OpenWebUI Server Configuration
+# MAP-compliant lens pack configuration
+
+# Lens pack selection (legacy format - will show deprecation warning)
+# Use lens_pack_id for backward compatibility with existing packs
+# NOTE: Using first-light pack with 7947 lenses across layers 0-6
+lens_pack_id: "gemma-3-4b_first-light-v1-bf16"
+
+# Model configuration
+model:
+  name: "google/gemma-3-4b-pt"
+  dtype: "bfloat16"  # bfloat16, float16, or float32
+  device_map: "auto"
+  low_cpu_mem_usage: true
+
+# Lens manager configuration
+lens_manager:
+  base_layers: [0]  # Start with base layer, dynamic loading handles deeper layers
+  use_activation_lenses: true
+  use_text_lenses: true
+  keep_top_k: 100
+  load_threshold: 0.3
+  max_loaded_lenses: 1000
+
+# Server configuration
+server:
+  host: "0.0.0.0"
+  port: 8765
+  title: "HatCat Divergence API"
+
+# Generation defaults
+generation:
+  temperature: 0.7
+  max_tokens: 512
+  stream: true
+
+# LLM-based divergence explanation (optional)
+# Uses a small model to explain what the AI might be thinking but not saying
+llm_explainer:
+  enabled: true  # Set to true to enable LLM explanations
+  model: "gemma-2b"  # Options: gemma-2b, qwen-0.5b, qwen-1.5b, phi-3-mini

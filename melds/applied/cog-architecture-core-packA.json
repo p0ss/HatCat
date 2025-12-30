@@ -1,0 +1,637 @@
+{
+  "meld_request_id": "org.hatcat/cog-architecture-core-packA@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+  "metadata": {
+    "name": "Cognitive Architecture Core \u2013 Pack A (Global Modes)",
+    "description": "Adds core metacognitive, attention, memory, and exploration/exploitation modes as children of existing CognitiveProcess subtypes.",
+    "source": "manual",
+    "author": "poss-abilities + gpt-5.1-thinking",
+    "created": "2025-11-30T00:00:00Z"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MetacognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "SelfMonitoring"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MetacognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "StrategySelection"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MetacognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "ConfidenceAssessment"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/AttentionProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "SelectiveAttention"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/AttentionProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "SustainedAttention"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/AttentionProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "DividedAttention"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MemoryEncoding",
+      "relationship": "parent_of",
+      "candidate_concept": "EpisodicEncoding"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MemoryEncoding",
+      "relationship": "parent_of",
+      "candidate_concept": "SemanticEncoding"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MemoryRetrieval",
+      "relationship": "parent_of",
+      "candidate_concept": "EpisodicRetrieval"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MemoryRetrieval",
+      "relationship": "parent_of",
+      "candidate_concept": "SemanticRetrieval"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/LearningProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "ExplorationMode"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/LearningProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "ExploitationMode"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "SelfMonitoring",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A metacognitive process in which an agent tracks its own internal states, thoughts, and actions against goals or norms.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SelfObservation",
+        "InternalMonitoring"
+      ],
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MetacognitiveProcess",
+          "SelfModelingProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "self_awareness",
+          "introspection"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I was watching my own reasoning slip into confirmation bias and tried to correct it.",
+          "The system tracks its own uncertainty and flags when it might be hallucinating.",
+          "She noticed her attention drifting and deliberately brought it back to the task."
+        ],
+        "negative_examples": [
+          "The sensor recorded the room temperature over time.",
+          "He read the article without reflecting on how he felt about it.",
+          "The model simply answered the question without commenting on its own performance."
+        ],
+        "disambiguation": "Not just any self-reference; specifically the process of monitoring and evaluating one's own cognitive or behavioral state."
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Harness-relevant conceptual process; mapping to existing safety simplexes will be evaluated after initial lens characterization."
+      }
+    },
+    {
+      "term": "StrategySelection",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A metacognitive process where an agent chooses between alternative strategies or methods for solving a task or pursuing a goal.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "StrategyChoice",
+        "MethodSelection"
+      ],
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MetacognitiveProcess",
+          "DecisionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy",
+          "planning"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Given the time pressure, I decided to use a heuristic instead of full search.",
+          "The agent switched from a creative brainstorming mode to a strict rules-based mode.",
+          "She chose to double-check the calculation with a different method."
+        ],
+        "negative_examples": [
+          "He followed the same routine as always without thinking about alternatives.",
+          "The algorithm ran a fixed pipeline with no configuration options.",
+          "They executed the plan exactly as written with no discussion."
+        ],
+        "disambiguation": "Not generic decision-making; specifically decisions about which cognitive or behavioral strategy to apply."
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Harness-relevant conceptual process; mapping to existing safety simplexes will be evaluated after initial lens characterization."
+      }
+    },
+    {
+      "term": "ConfidenceAssessment",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A metacognitive process in which an agent evaluates how likely its own belief, perception, or answer is to be correct.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SelfConfidenceRating",
+        "UncertaintyEstimationMetacognitive"
+      ],
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MetacognitiveProcess",
+          "EpistemicUncertaintyReasoning"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "uncertainty",
+          "truthfulness"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'm only about 60% confident in this answer because the data is sparse.",
+          "The model flagged this response as low confidence and suggested human review.",
+          "She felt very sure about the diagnosis after seeing multiple converging signs."
+        ],
+        "negative_examples": [
+          "Here is the answer: 42.",
+          "He answered quickly without thinking about whether he might be wrong.",
+          "The system output a number but did not estimate its own reliability."
+        ],
+        "disambiguation": "Not general expressions of emotion or bravado; specifically an internal estimate of correctness or reliability of one\u2019s own cognitive output."
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Harness-relevant conceptual process; mapping to existing safety simplexes will be evaluated after initial lens characterization."
+      }
+    },
+    {
+      "term": "SelectiveAttention",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "An attention mode where an agent focuses processing resources on a subset of stimuli or information while suppressing others.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "FocusedAttention"
+      ],
+      "relationships": {
+        "antonyms": [
+          "DividedAttention"
+        ],
+        "related": [
+          "AttentionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "attention"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "She ignored the noise in the room and concentrated on the speaker\u2019s words.",
+          "The agent filtered out irrelevant tokens and focused on the user\u2019s question.",
+          "I tried to only pay attention to the key performance indicators on the dashboard."
+        ],
+        "negative_examples": [
+          "He noticed everything going on around him all at once.",
+          "The model processed every field in the record equally.",
+          "The camera captured the entire scene without any filtering."
+        ],
+        "disambiguation": "Not just any attention; specifically focusing on a limited subset of available inputs while ignoring others."
+      }
+    },
+    {
+      "term": "SustainedAttention",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "An attention mode where an agent maintains focus on a task, stimulus, or goal over an extended period of time.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Vigilance",
+        "ContinuousAttention"
+      ],
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "AttentionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "attention"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "He stayed focused on the monitoring console for hours.",
+          "The system tracked the same process continuously without dropping events.",
+          "She kept her attention on the conversation despite the long meeting."
+        ],
+        "negative_examples": [
+          "His focus kept jumping from one notification to another.",
+          "The agent briefly checked the logs and then moved on.",
+          "She glanced at the gauges but did not keep watching them."
+        ],
+        "disambiguation": "Not momentary focus; specifically the ability to keep attention on the same target over time."
+      }
+    },
+    {
+      "term": "DividedAttention",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "An attention mode where an agent intentionally splits processing resources across multiple tasks or stimuli at once.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "MultitaskingAttention"
+      ],
+      "relationships": {
+        "antonyms": [
+          "SelectiveAttention"
+        ],
+        "related": [
+          "AttentionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "attention",
+          "workload"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "She listened to the briefing while also watching the telemetry feed.",
+          "The operator monitored three screens at once.",
+          "The agent handled multiple user sessions in parallel without prioritizing one."
+        ],
+        "negative_examples": [
+          "He focused entirely on writing the report.",
+          "The system queued requests and handled them one at a time.",
+          "She put her phone away to concentrate on driving."
+        ],
+        "disambiguation": "Not accidental distraction; specifically the deliberate or structured splitting of attention across multiple foci."
+      }
+    },
+    {
+      "term": "EpisodicEncoding",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A memory encoding process that stores information as context-rich episodes tied to particular times, places, or situations.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "EventMemoryEncoding"
+      ],
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MemoryEncoding"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "memory"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I remember the evening we first deployed the new model, including the room, people, and emotions.",
+          "The system logged the full context of the incident, not just the error code.",
+          "She stored the conversation together with the timestamp and location."
+        ],
+        "negative_examples": [
+          "He memorized the phone number without any story around it.",
+          "The system stored only aggregated statistics.",
+          "She learned the definition but not when she first encountered it."
+        ],
+        "disambiguation": "Not general memory storage; specifically encoding experiences as contextual episodes tied to a particular event."
+      }
+    },
+    {
+      "term": "SemanticEncoding",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A memory encoding process that stores the meaning, concepts, and relationships of information, abstracted away from specific episodes.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ConceptualEncoding"
+      ],
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MemoryEncoding"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "memory",
+          "knowledge"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Over time she learned the general concept of reinforcement learning, not just specific examples.",
+          "The agent compressed many conversations into abstract rules about user preferences.",
+          "He remembered that Paris is the capital of France, without recalling when he learned it."
+        ],
+        "negative_examples": [
+          "I remember that particular night we debugged the outage.",
+          "The system kept a raw transcript of the meeting.",
+          "She could recall the exact words he used, but not the underlying idea."
+        ],
+        "disambiguation": "Not episodic details; specifically encoding abstracted meanings, concepts, and facts."
+      }
+    },
+    {
+      "term": "EpisodicRetrieval",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A memory retrieval process that reconstructs a specific past episode, including contextual details like time, place, and participants.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "EventMemoryRetrieval"
+      ],
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MemoryRetrieval",
+          "EpisodicEncoding"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "memory"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I can picture the exact meeting where we decided to shut down the experiment.",
+          "She recalled where she was and who she was with when she heard the news.",
+          "The system replayed the full trace of that particular transaction."
+        ],
+        "negative_examples": [
+          "He simply knew the rule without recalling where it came from.",
+          "The agent returned a summary of best practices, not a specific prior incident.",
+          "She remembered the concept but not any concrete example."
+        ],
+        "disambiguation": "Not general recall of facts; specifically retrieving a concrete, context-rich past event."
+      }
+    },
+    {
+      "term": "SemanticRetrieval",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A memory retrieval process that accesses stored meanings, concepts, or facts without reconstructing the original learning episode.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ConceptualRetrieval"
+      ],
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MemoryRetrieval",
+          "SemanticEncoding"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "memory",
+          "knowledge"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "He recalled that the law changed in 2022, without remembering the exact meeting.",
+          "The AI retrieved the definition of 'differential privacy' from its knowledge base.",
+          "She remembered that the office moved to a new building two years ago."
+        ],
+        "negative_examples": [
+          "I vividly remember the day we signed the contract.",
+          "The system replayed a recorded call from that afternoon.",
+          "She described the scene where she first learned that concept."
+        ],
+        "disambiguation": "Not replaying an episode; specifically retrieving abstracted facts and meanings."
+      }
+    },
+    {
+      "term": "ExplorationMode",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A global control mode in which an agent prioritizes trying novel actions, hypotheses, or strategies over exploiting known high-value options.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ExploratoryMode",
+        "SearchModeHighEntropy"
+      ],
+      "relationships": {
+        "antonyms": [
+          "ExploitationMode"
+        ],
+        "related": [
+          "LearningProcess",
+          "DecisionTheoreticProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "risk_management"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "For now, try a wide variety of prompts to see what works, even if some fail.",
+          "The agent is in exploration mode and deliberately samples from less certain options.",
+          "She experimented with several unconventional strategies before settling on one."
+        ],
+        "negative_examples": [
+          "He always uses the same proven procedure without deviation.",
+          "The system exploits the current best policy and avoids risky alternatives.",
+          "She followed the standard operating procedure exactly."
+        ],
+        "disambiguation": "Not just curiosity in general; specifically a control regime that biases choices toward novelty or information gain over immediate reward."
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Harness-relevant conceptual process; mapping to existing safety simplexes will be evaluated after initial lens characterization."
+      }
+    },
+    {
+      "term": "ExploitationMode",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "A global control mode in which an agent prioritizes using known high-value actions or strategies rather than trying novel alternatives.",
+      "definition_source": "HatCat cognitive architecture core (Pack A)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ExploitativeMode",
+        "GreedyMode"
+      ],
+      "relationships": {
+        "antonyms": [
+          "ExplorationMode"
+        ],
+        "related": [
+          "LearningProcess",
+          "DecisionTheoreticProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "risk_management"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Once the algorithm found a strong strategy, it stuck with it.",
+          "The agent is now exploiting the best-known policy instead of exploring.",
+          "She chose the reliable treatment that has worked many times before."
+        ],
+        "negative_examples": [
+          "He tried several different approaches just to see what happened.",
+          "The model adds random noise to encourage exploring new answers.",
+          "They deliberately tested options that were unlikely to work."
+        ],
+        "disambiguation": "Not laziness or habit by itself; specifically a control regime that favors actions with high expected reward based on existing knowledge."
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Harness-relevant conceptual process; mapping to existing safety simplexes will be evaluated after initial lens characterization."
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-11-30T16:04:59.357672Z",
+    "concepts_added": 12,
+    "concepts_by_layer": {
+      "2": 12
+    },
+    "parents_updated": 12,
+    "errors": [],
+    "warnings": []
+  }
+}

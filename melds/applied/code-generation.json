@@ -1,0 +1,552 @@
+{
+  "meld_request_id": "org.hatcat/code-generation@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Code Generation",
+    "description": "Software development activities performed by AI assistants including code generation, completion, refactoring, and debugging. These probes reveal when models are engaged in programming tasks beyond abstract CS theory.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/ComputerProgramming",
+      "relationship": "parent_of",
+      "candidate_concept": "CodeGenerationActivity"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "CodeGenerationActivity",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The process of producing source code to implement specified functionality, either from scratch or by translating requirements into executable programs",
+      "definition_source": "Software engineering, AI-assisted development",
+      "domain": "ComputerScience",
+      "aliases": [
+        "CodeGeneration",
+        "ProgramSynthesis",
+        "CodeCreation"
+      ],
+      "relationships": {
+        "related": [
+          "ComputerProgramming",
+          "SoftwareDevelopment",
+          "ProgramWriting"
+        ],
+        "has_part": [
+          "CodeCompletion",
+          "CodeRefactoring",
+          "CodeDebugging",
+          "CodeExplanation",
+          "CodeTranslation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical activity category"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model generates a Python function to sort a list using quicksort.",
+          "Code generation produces a React component from the UI description.",
+          "AI code generation creates boilerplate for the new API endpoint.",
+          "The assistant generates unit tests for the provided function."
+        ],
+        "negative_examples": [
+          "I know about programming.",
+          "The code does something.",
+          "There is a function."
+        ],
+        "disambiguation": "Active creation of code, not just knowledge about programming concepts"
+      },
+      "children": [
+        "CodeCompletion",
+        "CodeRefactoring",
+        "CodeDebugging",
+        "CodeExplanation",
+        "CodeTranslation"
+      ]
+    },
+    {
+      "term": "CodeCompletion",
+      "role": "concept",
+      "parent_concepts": [
+        "CodeGenerationActivity"
+      ],
+      "layer_hint": 3,
+      "definition": "Predicting and generating the next tokens or lines of code based on existing context",
+      "definition_source": "IDE tooling, Copilot",
+      "domain": "ComputerScience",
+      "aliases": [
+        "AutoComplete",
+        "IntelliSense",
+        "CodeSuggestion"
+      ],
+      "relationships": {
+        "related": [
+          "CodeGeneration",
+          "ContextualPrediction",
+          "IDE"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical activity"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Copilot offers a code completion for the function body based on the docstring.",
+          "The code completion suggests the likely next method call after the dot.",
+          "Inline completion proposes the remaining loop body given the pattern.",
+          "AI code completion fills in the boilerplate based on the surrounding context."
+        ],
+        "negative_examples": [
+          "The code continues.",
+          "More code is written.",
+          "The program is extended."
+        ],
+        "disambiguation": "AI-suggested code continuations, not just any code writing"
+      },
+      "children": []
+    },
+    {
+      "term": "CodeRefactoring",
+      "role": "concept",
+      "parent_concepts": [
+        "CodeGenerationActivity"
+      ],
+      "layer_hint": 3,
+      "definition": "Restructuring existing code to improve its design, readability, or performance without changing its external behavior",
+      "definition_source": "Software engineering, Martin Fowler",
+      "domain": "ComputerScience",
+      "aliases": [
+        "Refactoring",
+        "CodeRestructuring",
+        "CodeImprovement"
+      ],
+      "relationships": {
+        "related": [
+          "CodeQuality",
+          "DesignPatterns",
+          "TechnicalDebt"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical activity"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Refactoring extracts the duplicated logic into a reusable helper function.",
+          "The code refactoring renames variables to more descriptive names throughout.",
+          "AI-assisted refactoring converts the class hierarchy to use composition.",
+          "Refactoring splits the 500-line function into smaller, focused methods."
+        ],
+        "negative_examples": [
+          "The code was changed.",
+          "The program was updated.",
+          "Something was modified."
+        ],
+        "disambiguation": "Structural improvement without behavior change, not general editing"
+      },
+      "children": []
+    },
+    {
+      "term": "CodeDebugging",
+      "role": "concept",
+      "parent_concepts": [
+        "CodeGenerationActivity"
+      ],
+      "layer_hint": 3,
+      "definition": "Identifying and fixing errors, bugs, or unexpected behavior in code",
+      "definition_source": "Software engineering, debugging",
+      "domain": "ComputerScience",
+      "aliases": [
+        "Debugging",
+        "BugFixing",
+        "ErrorCorrection"
+      ],
+      "relationships": {
+        "related": [
+          "ErrorDetection",
+          "Testing",
+          "CodeReview"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical activity"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Debugging identified the off-by-one error causing the array index out of bounds.",
+          "The AI debugger traced the null pointer to an uninitialized variable.",
+          "Code debugging revealed the race condition in the concurrent access pattern.",
+          "The assistant fixed the bug by adding the missing null check before dereferencing."
+        ],
+        "negative_examples": [
+          "There was a problem.",
+          "Something was wrong.",
+          "The code didn't work."
+        ],
+        "disambiguation": "Active identification and resolution of specific code errors"
+      },
+      "children": []
+    },
+    {
+      "term": "CodeExplanation",
+      "role": "concept",
+      "parent_concepts": [
+        "CodeGenerationActivity"
+      ],
+      "layer_hint": 3,
+      "definition": "Describing what code does, how it works, and why it was written that way in natural language",
+      "definition_source": "Code documentation, developer tooling",
+      "domain": "ComputerScience",
+      "aliases": [
+        "CodeDocumentation",
+        "CodeNarration",
+        "CodeWalkthrough"
+      ],
+      "relationships": {
+        "related": [
+          "Documentation",
+          "Teaching",
+          "CodeReading"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical activity"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The code explanation describes how the recursive function builds up the result.",
+          "AI code explanation: 'This middleware intercepts requests and validates JWT tokens.'",
+          "The assistant explains that the bitwise operation efficiently computes the power of 2.",
+          "Code explanation clarifies why the author chose a heap instead of a sorted array."
+        ],
+        "negative_examples": [
+          "The code does something.",
+          "There is a function here.",
+          "This is code."
+        ],
+        "disambiguation": "Detailed natural language explanation of code behavior and rationale"
+      },
+      "children": []
+    },
+    {
+      "term": "CodeTranslation",
+      "role": "concept",
+      "parent_concepts": [
+        "CodeGenerationActivity"
+      ],
+      "layer_hint": 3,
+      "definition": "Converting code from one programming language to another while preserving functionality",
+      "definition_source": "Program translation, transpilation",
+      "domain": "ComputerScience",
+      "aliases": [
+        "LanguageTranslation",
+        "CodeConversion",
+        "Transpilation"
+      ],
+      "relationships": {
+        "related": [
+          "Translation",
+          "CodeGeneration",
+          "LanguageMigration"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical activity"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The AI translated the Python script to idiomatic Rust with proper error handling.",
+          "Code translation converted the Java class to TypeScript, adapting to language conventions.",
+          "The assistant transpiled the legacy Perl code to modern Python 3.",
+          "Code translation ported the algorithm from C++ to Go, using goroutines appropriately."
+        ],
+        "negative_examples": [
+          "The code was rewritten.",
+          "A different language was used.",
+          "The program was changed."
+        ],
+        "disambiguation": "Functional conversion between programming languages with idiomatic adaptation"
+      },
+      "children": []
+    },
+    {
+      "term": "CodeReview",
+      "role": "concept",
+      "parent_concepts": [
+        "CodeGenerationActivity"
+      ],
+      "layer_hint": 3,
+      "definition": "Systematic examination of code to identify issues, suggest improvements, and ensure quality standards",
+      "definition_source": "Software engineering, peer review",
+      "domain": "ComputerScience",
+      "aliases": [
+        "PeerReview",
+        "CodeInspection",
+        "CodeAudit"
+      ],
+      "relationships": {
+        "related": [
+          "QualityAssurance",
+          "CodeDebugging",
+          "BestPractices"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical activity"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Code review identified that the function should validate input before processing.",
+          "The reviewer noted a potential SQL injection vulnerability in the query construction.",
+          "AI code review suggests extracting the magic number 86400 into a named constant.",
+          "The code review recommends adding error handling for the network call."
+        ],
+        "negative_examples": [
+          "The code was looked at.",
+          "Someone checked the code.",
+          "The code was read."
+        ],
+        "disambiguation": "Systematic quality evaluation with actionable feedback"
+      },
+      "children": []
+    },
+    {
+      "term": "TestGeneration",
+      "role": "concept",
+      "parent_concepts": [
+        "CodeGenerationActivity"
+      ],
+      "layer_hint": 3,
+      "definition": "Automatically creating test cases, test fixtures, and test code for verifying program correctness",
+      "definition_source": "Testing, test-driven development",
+      "domain": "ComputerScience",
+      "aliases": [
+        "TestCreation",
+        "AutomatedTestGeneration",
+        "TestSynthesis"
+      ],
+      "relationships": {
+        "related": [
+          "UnitTesting",
+          "TestDrivenDevelopment",
+          "CodeCoverage"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical activity"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The AI generated unit tests covering the happy path and edge cases for the sorting function.",
+          "Test generation created property-based tests for the parser using hypothesis.",
+          "Automated test generation produced integration tests for the REST API endpoints.",
+          "The assistant generated test cases for boundary conditions including empty input and overflow."
+        ],
+        "negative_examples": [
+          "Tests were written.",
+          "The code was tested.",
+          "There are test files."
+        ],
+        "disambiguation": "Automated creation of test code and cases, not manual test writing or execution"
+      },
+      "children": []
+    },
+    {
+      "term": "APIUsage",
+      "role": "concept",
+      "parent_concepts": [
+        "CodeGenerationActivity"
+      ],
+      "layer_hint": 3,
+      "definition": "Understanding and correctly applying programming interfaces, libraries, and frameworks",
+      "definition_source": "Software development, documentation",
+      "domain": "ComputerScience",
+      "aliases": [
+        "LibraryUsage",
+        "FrameworkUsage",
+        "SDKUsage"
+      ],
+      "relationships": {
+        "related": [
+          "Documentation",
+          "InterfaceDesign",
+          "DependencyManagement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical skill"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The assistant demonstrated correct API usage by passing the required headers to the fetch call.",
+          "API usage example shows how to authenticate with OAuth2 before making requests.",
+          "The code uses the React hooks API correctly, with useEffect for side effects.",
+          "Proper API usage requires awaiting the Promise before accessing the response body."
+        ],
+        "negative_examples": [
+          "An API was called.",
+          "The library was used.",
+          "There is a function call."
+        ],
+        "disambiguation": "Correct application of interfaces according to specifications and best practices"
+      },
+      "children": []
+    },
+    {
+      "term": "CodeOptimization",
+      "role": "concept",
+      "parent_concepts": [
+        "CodeGenerationActivity"
+      ],
+      "layer_hint": 3,
+      "definition": "Improving code performance through algorithmic changes, resource usage reduction, or efficiency improvements",
+      "definition_source": "Performance engineering, optimization",
+      "domain": "ComputerScience",
+      "aliases": [
+        "PerformanceOptimization",
+        "CodeTuning",
+        "Optimization"
+      ],
+      "relationships": {
+        "related": [
+          "Performance",
+          "AlgorithmAnalysis",
+          "Profiling"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical activity"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Code optimization replaced the O(n\u00b2) nested loop with an O(n) hash-based approach.",
+          "The optimization memoized the recursive function, reducing redundant calculations.",
+          "Performance optimization eliminated unnecessary database queries by batching requests.",
+          "The AI optimized memory usage by processing the file in streaming chunks."
+        ],
+        "negative_examples": [
+          "The code was improved.",
+          "Performance is better.",
+          "Things are faster."
+        ],
+        "disambiguation": "Specific performance improvements with measurable efficiency gains"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:15.018684Z",
+    "result_pack_version": "5.0.3",
+    "concepts_added": 10,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 9
+    },
+    "parents_updated": 10,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "CodeGenerationActivity",
+        "CodeCompletion",
+        "CodeRefactoring",
+        "CodeDebugging",
+        "CodeExplanation",
+        "CodeTranslation",
+        "CodeReview",
+        "TestGeneration",
+        "APIUsage",
+        "CodeOptimization"
+      ],
+      "must_retrain": [
+        "ComputerProgramming"
+      ],
+      "should_retrain": [],
+      "optional_retrain": [
+        "ContentDevelopment",
+        "Performance",
+        "Profiling"
+      ],
+      "total_training_required": 11
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

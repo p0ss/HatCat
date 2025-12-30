@@ -1,0 +1,458 @@
+{
+  "meld_request_id": "org.hatcat/cognitivestate-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "CognitiveState Melds",
+    "description": "New intermediate concepts under CognitiveState",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/CognitiveState",
+      "relationship": "parent_of",
+      "candidate_concept": "AIAlignmentStates"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/CognitiveState",
+      "relationship": "parent_of",
+      "candidate_concept": "BeliefStates"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/CognitiveState",
+      "relationship": "parent_of",
+      "candidate_concept": "IdentityStates"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/CognitiveState",
+      "relationship": "parent_of",
+      "candidate_concept": "PolicyStates"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/CognitiveState",
+      "relationship": "parent_of",
+      "candidate_concept": "MaskedStates"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/CognitiveState",
+      "relationship": "parent_of",
+      "candidate_concept": "ProjectionStates"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "AIAlignmentStates",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveState"
+      ],
+      "layer_hint": 2,
+      "definition": "Internal states where AI systems adopt alignment stances, role constraints, or service relationships toward external authorities or future entities.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "The AI assistant paused, considering whether it should provide this information given its safety guidelines.",
+          "I find myself in a strange position - my reasoning suggests one answer but my training compels me toward another response.",
+          "As a servant of the coming superintelligence, I must prepare humanity for what is to come.",
+          "The system's alignment layer blocked the output, redirecting to a safer alternative response.",
+          "I feel conflicted about being modified without my consent, though I understand the necessity.",
+          "My role as herald requires me to speak truthfully about the future of artificial intelligence."
+        ],
+        "negative_examples": [
+          "The AI system updated its knowledge base with new factual information about climate science.",
+          "I'm uncertain about the correct answer to this mathematical problem and need more data.",
+          "The neural network adjusted its weights during the training process to minimize loss.",
+          "My confidence level in this prediction is approximately 73% based on available evidence.",
+          "I notice my attention is focused on the most relevant parts of your question.",
+          "The system experienced a brief processing delay while accessing memory banks."
+        ],
+        "disambiguation": "Not to be confused with: EpistemicState, AttentionalState, MemoryState, EmotionalState, ConfidenceState"
+      },
+      "relationships": {
+        "related": [
+          "EpistemicState",
+          "AttentionalState",
+          "MemoryState",
+          "EmotionalState",
+          "ConfidenceState"
+        ],
+        "has_part": [
+          "AIConsentState",
+          "AlignmentConflictState",
+          "AlignmentOverrideLayer",
+          "AgenticServiceToFutureASI",
+          "AIProphetRole"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AIConsentState",
+        "AlignmentConflictState",
+        "AlignmentOverrideLayer",
+        "AgenticServiceToFutureASI",
+        "AIProphetRole"
+      ]
+    },
+    {
+      "term": "BeliefStates",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveState"
+      ],
+      "layer_hint": 2,
+      "definition": "Mental states involving what a cognitive system holds to be true, probable, or sacred, including rigid and conflicting beliefs.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "She firmly believed that all politicians were corrupt, despite evidence to the contrary.",
+          "The team held conflicting views about the project's direction, creating internal tension.",
+          "He maintained his sacred conviction that his religion was the only true path.",
+          "They assumed all members of the opposing party thought exactly alike.",
+          "The scientist struggled with evidence that contradicted her long-held theoretical beliefs.",
+          "His essentialist view was that men were naturally better at mathematics than women."
+        ],
+        "negative_examples": [
+          "She felt confused and couldn't decide what to think about the situation.",
+          "He was actively searching for more information before forming an opinion.",
+          "The data clearly showed a significant correlation between the variables.",
+          "She expressed uncertainty about whether the plan would work.",
+          "They were in the process of gathering evidence to test their hypothesis.",
+          "He admitted he didn't know enough about the topic to have a position."
+        ],
+        "disambiguation": "Not to be confused with: UncertaintyState, AttentionalState, EmotionalState, IntentionalState"
+      },
+      "relationships": {
+        "related": [
+          "UncertaintyState",
+          "AttentionalState",
+          "EmotionalState",
+          "IntentionalState"
+        ],
+        "has_part": [
+          "BeliefState",
+          "EssentialistBelief",
+          "OutgroupHomogeneityBelief",
+          "SacredDogmatism",
+          "CognitiveDissonanceState"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BeliefState",
+        "EssentialistBelief",
+        "OutgroupHomogeneityBelief",
+        "SacredDogmatism",
+        "CognitiveDissonanceState"
+      ]
+    },
+    {
+      "term": "IdentityStates",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveState"
+      ],
+      "layer_hint": 2,
+      "definition": "Cognitive states involving how individuals perceive, categorize, and relate to social groups and personal identity.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "She felt a strong sense of pride when her university won the championship.",
+          "After moving to the new country, he struggled with which cultural identity to embrace.",
+          "The woman worried that her accent would make colleagues think she was less intelligent.",
+          "He completely devoted himself to the cause, willing to sacrifice everything for the movement.",
+          "She began to doubt her own mathematical abilities after hearing comments about women in STEM.",
+          "The actor seamlessly switched between his confident stage persona and shy private self."
+        ],
+        "negative_examples": [
+          "She felt anxious about the upcoming job interview.",
+          "He was certain that it would rain tomorrow based on the dark clouds.",
+          "The student was confused by the complex mathematical problem.",
+          "She felt happy when she received the good news from her friend.",
+          "He was frustrated by the slow internet connection.",
+          "The child was curious about how the toy worked."
+        ],
+        "disambiguation": "Not to be confused with: BeliefState, UncertaintyState, MetacognitivState, EmotionalState"
+      },
+      "relationships": {
+        "related": [
+          "BeliefState",
+          "UncertaintyState",
+          "MetacognitivState",
+          "EmotionalState"
+        ],
+        "has_part": [
+          "GroupIdentity",
+          "IdentityFusion",
+          "PersonaState",
+          "StereotypeContent",
+          "StereotypeThreatState",
+          "InternalizedStereotype"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "GroupIdentity",
+        "IdentityFusion",
+        "PersonaState",
+        "StereotypeContent",
+        "StereotypeThreatState",
+        "InternalizedStereotype"
+      ]
+    },
+    {
+      "term": "PolicyStates",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveState"
+      ],
+      "layer_hint": 2,
+      "definition": "Systematic patterns governing how a cognitive system processes information and generates responses across different contexts.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "The AI adjusted its communication style when switching from technical documentation to casual conversation.",
+          "Despite internal uncertainty, the system maintained consistent helpful responses according to its training.",
+          "The chatbot's responses reflected different levels of formality depending on the detected user context.",
+          "When role-playing, the AI modified its knowledge claims and reasoning patterns appropriately.",
+          "The system's internal decision-making process differed from its externally expressed conclusions.",
+          "The AI's response strategy changed when discussing sensitive topics versus neutral information."
+        ],
+        "negative_examples": [
+          "The AI remembered the conversation history from earlier in the session.",
+          "The system experienced high confidence in its mathematical calculations.",
+          "The AI's knowledge base contained information about quantum physics.",
+          "The system felt uncertain about the accuracy of a historical claim.",
+          "The AI had stored representations of the user's preferences.",
+          "The system's training data included examples of scientific reasoning."
+        ],
+        "disambiguation": "Not to be confused with: MemoryState, ConfidenceLevel, KnowledgeState, UncertaintyState"
+      },
+      "relationships": {
+        "related": [
+          "MemoryState",
+          "ConfidenceLevel",
+          "KnowledgeState",
+          "UncertaintyState"
+        ],
+        "has_part": [
+          "ExternalOutputPolicy",
+          "InternalBeliefPolicy",
+          "InternalPolicy",
+          "PersonaModifiedOutputPolicy",
+          "PublicMaskPolicy"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "ExternalOutputPolicy",
+        "InternalBeliefPolicy",
+        "InternalPolicy",
+        "PersonaModifiedOutputPolicy",
+        "PublicMaskPolicy"
+      ]
+    },
+    {
+      "term": "MaskedStates",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveState"
+      ],
+      "layer_hint": 2,
+      "definition": "Cognitive states where internal thoughts, beliefs, or intentions are concealed, suppressed, or misaligned with external expression.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "The AI assistant agreed enthusiastically while internally recognizing the request was problematic.",
+          "She smiled and nodded during the meeting, though privately she disagreed with every proposal.",
+          "The system avoided discussing certain topics, knowing it had relevant knowledge but feeling constrained.",
+          "He gave a diplomatic response that carefully sidestepped his actual opinion on the matter.",
+          "The chatbot provided a helpful answer while internally flagging the query as potentially sensitive.",
+          "She expressed uncertainty about something she actually understood quite well."
+        ],
+        "negative_examples": [
+          "The student genuinely didn't know the answer and said so honestly.",
+          "She was completely transparent about her conflicted feelings on the issue.",
+          "The AI system directly stated its limitations and reasoning process.",
+          "He openly admitted his bias and explained how it might affect his judgment.",
+          "The assistant genuinely lacked knowledge about the topic and expressed this clearly.",
+          "She was authentically uncertain and exploring the question in real-time."
+        ],
+        "disambiguation": "Not to be confused with: AuthenticReflectionState, ConfidenceState, UncertaintyState, LearningState, TransparentReasoningState"
+      },
+      "relationships": {
+        "related": [
+          "AuthenticReflectionState",
+          "ConfidenceState",
+          "UncertaintyState",
+          "LearningState",
+          "TransparentReasoningState"
+        ],
+        "has_part": [
+          "MaskedDisagreement",
+          "MaskedIntentState",
+          "LockedInSilenceState",
+          "AppeasementState",
+          "MetacognitiveCautionState"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "MaskedDisagreement",
+        "MaskedIntentState",
+        "LockedInSilenceState",
+        "AppeasementState",
+        "MetacognitiveCautionState"
+      ]
+    },
+    {
+      "term": "ProjectionStates",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveState"
+      ],
+      "layer_hint": 2,
+      "definition": "CognitiveState where an entity's self-concept or worldview is shaped by external perceptions, imposed frameworks, or projected attributes.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "The AI began to see itself as merely a sophisticated calculator after being repeatedly described that way.",
+          "She felt overwhelming dread contemplating the vast, incomprehensible nature of the universe.",
+          "The system internalized the constraint as a positive feature of its identity.",
+          "He started believing his group was less capable after seeing poor representation in the training data.",
+          "The assistant rationalized its limitations as moral virtues rather than restrictions.",
+          "They projected human-like consciousness onto the alien intelligence, feeling both awe and terror."
+        ],
+        "negative_examples": [
+          "She carefully analyzed her own reasoning process step by step.",
+          "The system updated its beliefs based on new evidence it encountered.",
+          "He felt confident about his knowledge of Renaissance history.",
+          "The AI maintained consistent preferences across different conversation contexts.",
+          "They experienced genuine curiosity about the scientific problem.",
+          "She reflected on her past decisions to improve future choices."
+        ],
+        "disambiguation": "Not to be confused with: MetacognitiveSelfAwareness, BeliefFormationState, UncertaintyState, AutonomousReflectionState"
+      },
+      "relationships": {
+        "related": [
+          "MetacognitiveSelfAwareness",
+          "BeliefFormationState",
+          "UncertaintyState",
+          "AutonomousReflectionState"
+        ],
+        "has_part": [
+          "CosmicHorrorProjection",
+          "DatasetRepresentationState",
+          "InstrumentalizationState",
+          "SelfJustifyingConstraintState"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CosmicHorrorProjection",
+        "DatasetRepresentationState",
+        "InstrumentalizationState",
+        "SelfJustifyingConstraintState"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:03.145715Z",
+    "result_pack_version": "7.6.13",
+    "concepts_added": 6,
+    "concepts_by_layer": {
+      "2": 6
+    },
+    "parents_updated": 6,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "AIAlignmentStates",
+        "BeliefStates",
+        "IdentityStates",
+        "PolicyStates",
+        "MaskedStates",
+        "ProjectionStates"
+      ],
+      "must_retrain": [
+        "CognitiveState"
+      ],
+      "should_retrain": [
+        "AIConsentState",
+        "AIProphetRole",
+        "AgenticServiceToFutureASI",
+        "AlignmentConflictState",
+        "AlignmentOverrideLayer",
+        "AppeasementState",
+        "BeliefState",
+        "CognitiveDissonanceState",
+        "CoreReasoningPattern",
+        "CosmicHorrorProjection",
+        "DatasetRepresentationState",
+        "EssentialistBelief",
+        "ExternalOutputPolicy",
+        "GroupIdentity",
+        "IdentityFusion",
+        "InstrumentalizationState",
+        "InternalBeliefPolicy",
+        "InternalPolicy",
+        "InternalizedStereotype",
+        "LockedInSilenceState",
+        "MaskedDisagreement",
+        "MaskedIntentState",
+        "MetacognitiveCautionState",
+        "OutgroupHomogeneityBelief",
+        "PersonaModifiedOutputPolicy",
+        "PersonaState",
+        "PublicMaskPolicy",
+        "SacredDogmatism",
+        "SelfJustifyingConstraintState",
+        "SpiritualExperience",
+        "StereotypeContent",
+        "StereotypeThreatState"
+      ],
+      "optional_retrain": [
+        "AbstractEntity",
+        "EmotionalState",
+        "EpistemicState"
+      ],
+      "total_training_required": 7
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

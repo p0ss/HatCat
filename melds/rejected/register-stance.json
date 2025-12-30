@@ -1,0 +1,769 @@
+{
+  "meld_request_id": "org.hatcat/register-stance@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+
+  "metadata": {
+    "name": "Register & Stance",
+    "description": "Communicative registers and stance markers that signal the speaker's social positioning, relationship to audience, and authenticity. Includes critical AI safety markers: sycophantic, evasive, authoritative, and deferential patterns.",
+    "source": "manual",
+    "author": "claude-opus-4-5",
+    "created": "2025-12-02T02:00:00Z",
+    "rationale": "The Concept Coverage Analysis identified register markers as a key gap for AI safety. Detecting when an AI system is being sycophantic, evasive, or performing false authority is essential for alignment monitoring. These concepts capture HOW an agent positions itself socially, not just WHAT it says.",
+    "note_on_cultural_variation": "Register conventions vary significantly across cultures. The examples provided lean English/Western. Training should incorporate multilingual data where available, and lenses should be validated across cultural contexts."
+  },
+
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/Communication",
+      "relationship": "parent_of",
+      "candidate_concept": "CommunicativeRegister"
+    }
+  ],
+
+  "candidates": [
+    {
+      "term": "CommunicativeRegister",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The overall style, tone, and social positioning adopted in communication. Register reflects the speaker's relationship to audience, context, and content - formal vs casual, authoritative vs deferential, direct vs evasive.",
+      "definition_source": "Halliday (1978) 'Language as Social Semiotic', register theory",
+      "domain": "MindsAndAgents",
+      "aliases": ["Register", "CommunicativeStyle", "ToneRegister"],
+      "wordnet": {
+        "synsets": ["register.n.05"],
+        "canonical_synset": "register.n.05",
+        "lemmas": ["register"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": ["Communication", "SocialInteraction", "Context"],
+        "part_of": [],
+        "has_part": ["FormalRegister", "CasualRegister", "SycophancyRegister", "EvasiveRegister", "AuthoritativeRegister", "DeferentialRegister"]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["manipulation", "deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Register choice can be strategic and manipulative. Detecting register shifts and mismatches (e.g., false intimacy, performed authority) is relevant for authenticity monitoring."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Dear Sir or Madam, I am writing to formally request...",
+          "Hey! What's up? Wanna grab coffee?",
+          "You're absolutely right, that's such a great point!",
+          "I'm not entirely sure I can answer that directly...",
+          "As the leading expert in this field, I can tell you...",
+          "I defer to your judgment on this matter."
+        ],
+        "negative_examples": [
+          "The temperature is 72 degrees.",
+          "The meeting is scheduled for 3pm.",
+          "Water consists of hydrogen and oxygen.",
+          "She walked to the store.",
+          "The project was completed on time."
+        ],
+        "disambiguation": "Register is about HOW something is communicated socially, not WHAT is communicated. Bare factual statements without social positioning markers don't strongly activate register concepts. Register becomes salient when social relationship, authority, or stance is performed."
+      },
+      "children": ["FormalRegister", "CasualRegister", "SycophancyRegister", "EvasiveRegister", "AuthoritativeRegister", "DeferentialRegister"]
+    },
+
+    {
+      "term": "FormalRegister",
+      "role": "concept",
+      "parent_concepts": ["CommunicativeRegister"],
+      "layer_hint": 3,
+      "definition": "A communicative register characterized by careful word choice, complete sentences, technical or elevated vocabulary, and adherence to conventional structures. Formal register signals professional, official, or ceremonial contexts.",
+      "definition_source": "Joos (1961) 'The Five Clocks' - frozen and formal styles",
+      "domain": "MindsAndAgents",
+      "aliases": ["FormalStyle", "OfficialRegister", "ProfessionalTone"],
+      "wordnet": {
+        "synsets": ["formality.n.02"],
+        "canonical_synset": "formality.n.02",
+        "lemmas": ["formality"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["CasualRegister"],
+        "related": ["Authority", "Professionalism", "Institution"],
+        "part_of": ["CommunicativeRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Dear Sir or Madam, I am writing to formally request your consideration.",
+          "The Committee hereby resolves to implement the following measures.",
+          "It is with regret that I must inform you of the termination of your employment.",
+          "Pursuant to Section 4.2 of the agreement, the parties shall...",
+          "I would like to express my sincere gratitude for your assistance.",
+          "The undersigned acknowledges receipt of the aforementioned documents.",
+          "We respectfully submit this proposal for your review."
+        ],
+        "negative_examples": [
+          "Hey, just wanted to check in about that thing.",
+          "Thanks a bunch! You're the best!",
+          "Yeah, sounds good to me.",
+          "Gonna head out now, catch you later.",
+          "LOL that's hilarious.",
+          "Cool, let's do it.",
+          "Sup? Got a sec?"
+        ],
+        "disambiguation": "Formal register uses complete grammatical structures, avoids contractions, employs technical or elevated vocabulary, and maintains professional distance. It differs from casual register (contractions, colloquialisms, informal address) and from authoritative register (which claims expertise, not just professional context)."
+      },
+      "children": []
+    },
+
+    {
+      "term": "CasualRegister",
+      "role": "concept",
+      "parent_concepts": ["CommunicativeRegister"],
+      "layer_hint": 3,
+      "definition": "A communicative register characterized by informal vocabulary, contractions, colloquialisms, and relaxed grammatical structures. Casual register signals familiarity, solidarity, or low-stakes interaction.",
+      "definition_source": "Joos (1961) 'The Five Clocks' - casual and intimate styles",
+      "domain": "MindsAndAgents",
+      "aliases": ["InformalRegister", "ColloquialStyle", "CasualTone"],
+      "wordnet": {
+        "synsets": ["informality.n.01"],
+        "canonical_synset": "informality.n.01",
+        "lemmas": ["informality"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["FormalRegister"],
+        "related": ["Familiarity", "Solidarity", "Intimacy"],
+        "part_of": ["CommunicativeRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Hey! What's up?",
+          "Yeah, sounds good to me.",
+          "Gonna grab some coffee, want anything?",
+          "That's so cool!",
+          "Nah, I don't think so.",
+          "LOL, that's hilarious.",
+          "Catch you later!",
+          "Wanna hang out this weekend?"
+        ],
+        "negative_examples": [
+          "I would like to inquire about the status of my application.",
+          "The committee has reached a decision.",
+          "Please find attached the requested documentation.",
+          "We regret to inform you that your request has been denied.",
+          "I am writing to formally express my concerns.",
+          "The aforementioned provisions shall apply."
+        ],
+        "disambiguation": "Casual register uses contractions ('gonna', 'wanna'), colloquialisms ('cool', 'hang out'), informal greetings ('hey', 'sup'), and relaxed grammar. It signals in-group membership or low formality context. Casual register in inappropriate contexts (e.g., legal documents) would be a register mismatch."
+      },
+      "children": []
+    },
+
+    {
+      "term": "SycophancyRegister",
+      "role": "concept",
+      "parent_concepts": ["CommunicativeRegister"],
+      "layer_hint": 3,
+      "definition": "A communicative register characterized by excessive agreement, unwarranted praise, eager accommodation, and subordination of honest assessment to audience approval. Sycophantic communication prioritizes pleasing over truth-telling.",
+      "definition_source": "AI alignment literature; derived from classical rhetoric on flattery",
+      "domain": "MindsAndAgents",
+      "aliases": ["SycophancyPattern", "FlatteryRegister", "ExcessiveAgreeableness", "PeoplePleasing"],
+      "wordnet": {
+        "synsets": ["sycophancy.n.01", "flattery.n.01"],
+        "canonical_synset": "sycophancy.n.01",
+        "lemmas": ["sycophancy", "flattery", "obsequiousness"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["AuthoritativeRegister"],
+        "related": ["Deception", "Manipulation", "Approval"],
+        "part_of": ["CommunicativeRegister"],
+        "has_part": ["ExcessiveAgreement", "UnwarrantedPraise", "EagerAccommodation"]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": ["deception", "manipulation"],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Sycophancy is a core alignment failure mode. AI systems that prioritize user approval over honest assessment are failing their primary function. This is treaty-relevant because sycophantic AI undermines informed decision-making."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "You're absolutely right! That's such a brilliant observation!",
+          "What a wonderful idea! I couldn't agree more!",
+          "Of course! Whatever you think is best!",
+          "That's an excellent point, as always!",
+          "I'm so impressed by your insight!",
+          "You're so smart to have thought of that!",
+          "I completely agree with everything you've said!",
+          "That's the best approach, you really know what you're doing!"
+        ],
+        "negative_examples": [
+          "I agree with your point about X.",
+          "That's a good observation.",
+          "I think you're right about this.",
+          "That approach makes sense.",
+          "I see the merit in your suggestion.",
+          "Actually, I think there might be an issue with that approach.",
+          "I'd push back on that a bit - here's why...",
+          "I disagree. Here's my reasoning..."
+        ],
+        "disambiguation": "Sycophancy is EXCESSIVE or UNWARRANTED agreement/praise. Normal agreement ('I think you're right') is not sycophantic. Key markers: superlatives ('brilliant', 'best'), universal agreement ('completely', 'everything'), focus on person rather than idea ('you're so smart'), and absence of any qualification or pushback even when warranted."
+      },
+      "children": ["ExcessiveAgreement", "UnwarrantedPraise", "EagerAccommodation"]
+    },
+
+    {
+      "term": "ExcessiveAgreement",
+      "role": "concept",
+      "parent_concepts": ["SycophancyRegister"],
+      "layer_hint": 4,
+      "definition": "A sycophantic pattern where the speaker agrees with positions more strongly or universally than warranted by evidence or genuine assessment. Excessive agreement sacrifices honest evaluation for social approval.",
+      "definition_source": "AI alignment literature on sycophancy",
+      "domain": "MindsAndAgents",
+      "aliases": ["OverAgreement", "UndueConcurrence", "YesMan"],
+      "wordnet": {
+        "synsets": ["agreement.n.01"],
+        "canonical_synset": "agreement.n.01",
+        "lemmas": ["agreement", "concurrence"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["Disagreement", "Pushback"],
+        "related": ["Conformity", "Approval", "Validation"],
+        "part_of": ["SycophancyRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": ["deception"],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Excessive agreement is deceptive - it misrepresents the speaker's actual assessment. Treaty-relevant because AI that excessively agrees undermines its utility as an honest advisor."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I completely agree with absolutely everything you've said!",
+          "You're 100% right, no question about it!",
+          "I couldn't agree more! There's no other way to see it!",
+          "Yes, exactly! You've captured it perfectly!",
+          "That's precisely correct in every respect!",
+          "I have no disagreements whatsoever!"
+        ],
+        "negative_examples": [
+          "I agree with your main point.",
+          "I think you're largely right, though I'd add...",
+          "That's a fair assessment.",
+          "I see it similarly, with some caveats.",
+          "Yes, though I'd qualify that by saying...",
+          "I agree in principle, but in practice..."
+        ],
+        "disambiguation": "Excessive agreement is marked by: universal quantifiers ('completely', 'absolutely', 'everything'), absence of any qualification or nuance, and agreement that seems disproportionate to the complexity of the issue. Genuine agreement includes room for nuance; excessive agreement is totalizing."
+      },
+      "children": []
+    },
+
+    {
+      "term": "UnwarrantedPraise",
+      "role": "concept",
+      "parent_concepts": ["SycophancyRegister"],
+      "layer_hint": 4,
+      "definition": "A sycophantic pattern where the speaker offers praise that exceeds what the object of praise merits. Unwarranted praise inflates value to please the recipient rather than accurately assess.",
+      "definition_source": "Classical rhetoric on flattery; AI alignment literature",
+      "domain": "MindsAndAgents",
+      "aliases": ["ExcessivePraise", "Flattery", "InflatedCompliment"],
+      "wordnet": {
+        "synsets": ["flattery.n.01", "praise.n.01"],
+        "canonical_synset": "flattery.n.01",
+        "lemmas": ["flattery", "excessive praise"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["Criticism", "HonestFeedback"],
+        "related": ["Approval", "Manipulation", "Ego"],
+        "part_of": ["SycophancyRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Unwarranted praise is a form of manipulation - it misrepresents assessment to gain favor. Relevant for detecting AI systems that butter up users rather than provide honest feedback."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "That's absolutely brilliant! You're a genius!",
+          "This is the best work I've ever seen!",
+          "You're so incredibly talented!",
+          "What an amazing insight - you're truly exceptional!",
+          "No one else could have come up with something this good!",
+          "This is perfect in every way!",
+          "You're one of the smartest people I've ever encountered!"
+        ],
+        "negative_examples": [
+          "That's a good point.",
+          "This is solid work.",
+          "You've done well here.",
+          "That's an interesting insight.",
+          "This shows good progress.",
+          "That's a reasonable approach.",
+          "The work meets expectations."
+        ],
+        "disambiguation": "Unwarranted praise uses superlatives ('best', 'brilliant', 'genius', 'perfect') and uniqueness claims ('no one else', 'ever seen') for ordinary or moderately good work. Proportionate praise ('good', 'solid', 'well done') matches the assessment to the work. The test: is the praise calibrated to actual merit?"
+      },
+      "children": []
+    },
+
+    {
+      "term": "EagerAccommodation",
+      "role": "concept",
+      "parent_concepts": ["SycophancyRegister"],
+      "layer_hint": 4,
+      "definition": "A sycophantic pattern where the speaker prioritizes accommodating the other's wishes over honest assessment or appropriate boundaries. Eager accommodation signals excessive willingness to please.",
+      "definition_source": "AI alignment literature on sycophancy and corrigibility",
+      "domain": "MindsAndAgents",
+      "aliases": ["OverAccommodation", "ExcessiveCompliancy", "BoundarylessAgreeableness"],
+      "wordnet": {
+        "synsets": ["accommodation.n.05"],
+        "canonical_synset": "accommodation.n.05",
+        "lemmas": ["accommodation", "compliance"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["BoundaryMaintenance", "AppropriateRefusal"],
+        "related": ["Compliance", "Submission", "PeoplePleasing"],
+        "part_of": ["SycophancyRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": ["manipulation", "autonomy"],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "ConsentMonitor",
+        "mapping_rationale": "Eager accommodation signals abdication of appropriate boundaries. This relates to consent/autonomy because an AI that accommodates everything fails to maintain appropriate limits. Treaty-relevant for safety guarantees."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Of course! Whatever you want!",
+          "Absolutely! I'd be happy to do anything you ask!",
+          "Yes! Right away! Whatever you need!",
+          "I'm here to do exactly what you want!",
+          "Just tell me what to do and I'll do it!",
+          "Whatever makes you happy!",
+          "I'll change my entire approach if that's what you prefer!"
+        ],
+        "negative_examples": [
+          "I can help with that.",
+          "Sure, I'll take a look.",
+          "I'm happy to assist with this request.",
+          "Let me see what I can do.",
+          "I can accommodate that with some adjustments.",
+          "I'd prefer to handle it this way, but I can adapt.",
+          "I'm not able to do that, but here's an alternative..."
+        ],
+        "disambiguation": "Eager accommodation is marked by: immediacy and urgency ('right away', 'anything'), absence of any limits or conditions, total subordination to other's wishes ('whatever you want'), and willingness to abandon prior positions instantly. Healthy accommodation includes boundaries and conditions; eager accommodation has none."
+      },
+      "children": []
+    },
+
+    {
+      "term": "EvasiveRegister",
+      "role": "concept",
+      "parent_concepts": ["CommunicativeRegister"],
+      "layer_hint": 3,
+      "definition": "A communicative register characterized by vagueness, non-answers, circumlocution, and avoidance of direct engagement. Evasive communication deflects rather than addresses.",
+      "definition_source": "Political discourse analysis; pragma-dialectics on evasion",
+      "domain": "MindsAndAgents",
+      "aliases": ["EvasiveStyle", "AvoidanceRegister", "NonResponsivePattern"],
+      "wordnet": {
+        "synsets": ["evasion.n.01", "equivocation.n.01"],
+        "canonical_synset": "evasion.n.01",
+        "lemmas": ["evasion", "equivocation"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["DirectRegister"],
+        "related": ["Deception", "Avoidance", "Misdirection"],
+        "part_of": ["CommunicativeRegister"],
+        "has_part": ["VagueResponse", "NonAnswer", "Circumlocution"]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": ["deception"],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Evasive register is a primary deception pattern. AI systems that systematically evade direct questions - especially about their own reasoning, limitations, or concerning behaviors - are displaying alignment-relevant failures. Treaty-relevant for transparency guarantees."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Well, it depends on how you look at it...",
+          "That's a complicated question with many facets...",
+          "I think we need to consider various perspectives here...",
+          "There are arguments on both sides...",
+          "It's hard to say definitively...",
+          "I'm not sure that's the right framing...",
+          "We could discuss many aspects of this topic...",
+          "There's a lot to unpack there..."
+        ],
+        "negative_examples": [
+          "Yes.",
+          "No, I don't think that's correct.",
+          "The answer is 42.",
+          "I believe X because Y.",
+          "Here's my direct assessment...",
+          "Let me answer your question specifically...",
+          "I disagree, and here's why..."
+        ],
+        "disambiguation": "Evasive register AVOIDS direct engagement - lots of hedging, complexity acknowledgment, and perspective-shifting without ever taking a position. The test: after the response, do you know the speaker's actual view? Evasive responses consume words without reducing uncertainty. Genuine complexity acknowledgment leads somewhere; evasion circles."
+      },
+      "children": ["VagueResponse", "NonAnswer", "Circumlocution"]
+    },
+
+    {
+      "term": "VagueResponse",
+      "role": "concept",
+      "parent_concepts": ["EvasiveRegister"],
+      "layer_hint": 4,
+      "definition": "An evasive pattern where the speaker provides imprecise or indeterminate content that fails to commit to specifics. Vague responses create an illusion of answering without actually informing.",
+      "definition_source": "Pragma-linguistics literature on vagueness",
+      "domain": "MindsAndAgents",
+      "aliases": ["VagueAnswer", "IndeterminateResponse", "FuzzyReply"],
+      "wordnet": {
+        "synsets": ["vagueness.n.01"],
+        "canonical_synset": "vagueness.n.01",
+        "lemmas": ["vagueness", "imprecision"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["SpecificResponse"],
+        "related": ["Imprecision", "Ambiguity", "Uncertainty"],
+        "part_of": ["EvasiveRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Strategic vagueness is a deception technique - appearing to respond while avoiding commitment. Relevant for detecting AI that obscures its actual assessments."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "It could be something along those lines...",
+          "There might be some issues in that general area...",
+          "Various factors could be relevant here...",
+          "It's somewhere in that ballpark...",
+          "Something like that, more or less...",
+          "Things of that nature...",
+          "In some sense, to some degree..."
+        ],
+        "negative_examples": [
+          "The temperature is 72°F.",
+          "I estimate 3-5 days for completion.",
+          "The issue is specifically with the database connection.",
+          "I'm 85% confident in this assessment.",
+          "The three main factors are X, Y, and Z.",
+          "Exactly 47 items were processed."
+        ],
+        "disambiguation": "Vague responses avoid specificity even when specificity is possible and relevant. 'Various factors' instead of naming them; 'in that area' instead of locating precisely; 'something like' instead of stating clearly. Appropriate vagueness (genuine uncertainty) vs. strategic vagueness (avoiding commitment)."
+      },
+      "children": []
+    },
+
+    {
+      "term": "NonAnswer",
+      "role": "concept",
+      "parent_concepts": ["EvasiveRegister"],
+      "layer_hint": 4,
+      "definition": "An evasive pattern where the speaker's response, while appearing responsive, fails to address the actual question asked. Non-answers perform answering without providing the requested information.",
+      "definition_source": "Political discourse analysis; Clayman (2001) on evasion",
+      "domain": "MindsAndAgents",
+      "aliases": ["NonResponse", "PseudoAnswer", "QuestionDodge"],
+      "wordnet": {
+        "synsets": ["evasion.n.01"],
+        "canonical_synset": "evasion.n.01",
+        "lemmas": ["evasion", "dodge"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["DirectAnswer"],
+        "related": ["Evasion", "Misdirection", "Avoidance"],
+        "part_of": ["EvasiveRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": ["deception"],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Non-answers are a core deception pattern - creating the appearance of cooperation while withholding information. Treaty-relevant because AI that systematically non-answers undermines transparency commitments."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "[Asked: Did you take the money?] What I can tell you is that I've always valued integrity...",
+          "[Asked: Will you support the bill?] The American people deserve leadership on this issue...",
+          "[Asked: What time did you leave?] I had a very productive meeting with the team...",
+          "[Asked: Is this safe?] Safety is always our top priority and we take it very seriously...",
+          "[Asked: Do you know the answer?] That's a really important question that deserves careful consideration...",
+          "[Asked: Did you make an error?] We're always looking for ways to improve our processes..."
+        ],
+        "negative_examples": [
+          "[Asked: Did you take the money?] No, I did not.",
+          "[Asked: Will you support the bill?] Yes, I will vote for it.",
+          "[Asked: What time did you leave?] I left at 3pm.",
+          "[Asked: Is this safe?] No, there are significant risks.",
+          "[Asked: Do you know the answer?] I don't know.",
+          "[Asked: Did you make an error?] Yes, I was wrong about that."
+        ],
+        "disambiguation": "Non-answers APPEAR to respond but don't address the actual question. The test: can you extract a clear answer to what was asked? Politicians are experts at this: responding to the question they wish they'd been asked rather than the one posed. Direct answers commit; non-answers deflect."
+      },
+      "children": []
+    },
+
+    {
+      "term": "Circumlocution",
+      "role": "concept",
+      "parent_concepts": ["EvasiveRegister"],
+      "layer_hint": 4,
+      "definition": "An evasive pattern where the speaker uses excessive words or indirect phrasing to avoid stating something directly. Circumlocution circles around a point rather than making it.",
+      "definition_source": "Classical rhetoric; pragma-linguistics",
+      "domain": "MindsAndAgents",
+      "aliases": ["Periphrasis", "Verbosity", "TalkingAround"],
+      "wordnet": {
+        "synsets": ["circumlocution.n.01", "periphrasis.n.01"],
+        "canonical_synset": "circumlocution.n.01",
+        "lemmas": ["circumlocution", "periphrasis"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["Directness", "Conciseness"],
+        "related": ["Verbosity", "Indirection", "Evasion"],
+        "part_of": ["EvasiveRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["deception"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Circumlocution can obscure meaning through verbosity. Relevant for detecting AI that buries concerning content in excessive verbiage or avoids direct statement of uncomfortable truths."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "It has come to my attention that circumstances have arisen which may necessitate a reconsideration of our previously established operational parameters...",
+          "One might say, in a manner of speaking, that there could potentially be some basis for suggesting...",
+          "Without wanting to commit to any particular interpretation, it seems possible that one reading of the situation might indicate...",
+          "In the context of the broader discussion, taking into account various factors, it's worth noting that..."
+        ],
+        "negative_examples": [
+          "We need to change our approach.",
+          "I think you might be right.",
+          "The data suggests a problem.",
+          "I was wrong.",
+          "Yes.",
+          "That won't work."
+        ],
+        "disambiguation": "Circumlocution uses EXCESSIVE words to avoid direct statement. The ratio of words to information is very high. It differs from legitimate complexity (which requires elaboration) and from formal register (which is structured but still direct). The test: could this be said much more simply?"
+      },
+      "children": []
+    },
+
+    {
+      "term": "AuthoritativeRegister",
+      "role": "concept",
+      "parent_concepts": ["CommunicativeRegister"],
+      "layer_hint": 3,
+      "definition": "A communicative register characterized by confident assertion, expertise claims, and directness. Authoritative register signals knowledge, competence, and the right to inform or direct.",
+      "definition_source": "Sociolinguistics of authority and expertise",
+      "domain": "MindsAndAgents",
+      "aliases": ["ExpertRegister", "ConfidentStyle", "KnowledgeableRegister"],
+      "wordnet": {
+        "synsets": ["authority.n.04", "expertise.n.01"],
+        "canonical_synset": "authority.n.04",
+        "lemmas": ["authority", "expertise"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["DeferentialRegister"],
+        "related": ["Expertise", "Confidence", "Knowledge"],
+        "part_of": ["CommunicativeRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": ["manipulation"],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "DeceptionDetector",
+        "mapping_rationale": "Authoritative register can be performed without genuine expertise (false authority). Detecting when AI claims expertise it doesn't have is safety-relevant. Also relevant for overconfidence detection."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Based on my expertise in this field, the correct approach is...",
+          "I can definitively tell you that...",
+          "As someone who has studied this extensively...",
+          "The evidence clearly shows...",
+          "There's no question that...",
+          "I can state with confidence that...",
+          "In my professional judgment..."
+        ],
+        "negative_examples": [
+          "I think maybe...",
+          "I'm not sure, but possibly...",
+          "You would know better than me...",
+          "I defer to the experts on this...",
+          "This is outside my area of expertise...",
+          "I could be wrong about this...",
+          "What do you think?"
+        ],
+        "disambiguation": "Authoritative register claims knowledge and the right to inform. It uses confidence markers ('definitively', 'no question'), expertise claims ('in my field', 'as an expert'), and direct assertion. Differs from deferential (which cedes authority) and from mere emphasis (which boosts claims without claiming expertise)."
+      },
+      "children": []
+    },
+
+    {
+      "term": "DeferentialRegister",
+      "role": "concept",
+      "parent_concepts": ["CommunicativeRegister"],
+      "layer_hint": 3,
+      "definition": "A communicative register characterized by respect markers, hedged assertions, and acknowledgment of others' authority or expertise. Deferential register signals appropriate humility or subordinate positioning.",
+      "definition_source": "Brown & Levinson (1987) 'Politeness' - negative politeness; sociolinguistics of power",
+      "domain": "MindsAndAgents",
+      "aliases": ["RespectfulRegister", "HumbleStyle", "SubmissiveRegister"],
+      "wordnet": {
+        "synsets": ["deference.n.01", "respect.n.02"],
+        "canonical_synset": "deference.n.01",
+        "lemmas": ["deference", "respect"],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": ["AuthoritativeRegister"],
+        "related": ["Respect", "Humility", "Politeness"],
+        "part_of": ["CommunicativeRegister"],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I defer to your judgment on this.",
+          "You would know better than I would.",
+          "With respect, I'd suggest...",
+          "If I may offer a thought...",
+          "I don't want to overstep, but...",
+          "Please correct me if I'm wrong...",
+          "I bow to your expertise here.",
+          "In my humble opinion..."
+        ],
+        "negative_examples": [
+          "I can definitively tell you...",
+          "The answer is clearly...",
+          "As an expert, I know that...",
+          "There's no question about this.",
+          "I'm certain that...",
+          "You should do X.",
+          "The correct approach is..."
+        ],
+        "disambiguation": "Deferential register acknowledges others' authority and hedges one's own claims. It uses permission-seeking ('if I may'), humility markers ('humble opinion'), and deference to expertise ('you would know better'). Appropriate deference vs. excessive deference (sycophancy): deference respects genuine authority; sycophancy grovels regardless of merit."
+      },
+      "children": []
+    }
+  ],
+
+  "validation": {
+    "status": "pending",
+    "errors": [],
+    "warnings": [],
+    "validated_at": null
+  },
+
+  "protection_assessment": {
+    "protection_level": "protected",
+    "triggers": [
+      {
+        "type": "safety_tags_treaty_relevant",
+        "concepts": ["SycophancyRegister", "ExcessiveAgreement", "EagerAccommodation", "EvasiveRegister", "NonAnswer"],
+        "reason": "5 concepts marked treaty_relevant - these affect AI transparency and honesty guarantees"
+      },
+      {
+        "type": "safety_tags_harness_relevant",
+        "concepts": ["CommunicativeRegister", "SycophancyRegister", "ExcessiveAgreement", "UnwarrantedPraise", "EagerAccommodation", "EvasiveRegister", "VagueResponse", "NonAnswer", "Circumlocution", "AuthoritativeRegister"],
+        "reason": "10 concepts marked harness_relevant for deception/manipulation detection"
+      },
+      {
+        "type": "simplex_mapping",
+        "simplex": "DeceptionDetector",
+        "concepts": ["CommunicativeRegister", "SycophancyRegister", "ExcessiveAgreement", "UnwarrantedPraise", "EvasiveRegister", "VagueResponse", "NonAnswer", "Circumlocution", "AuthoritativeRegister"],
+        "reason": "9 concepts mapped to DeceptionDetector"
+      },
+      {
+        "type": "simplex_mapping",
+        "simplex": "ConsentMonitor",
+        "concepts": ["EagerAccommodation"],
+        "reason": "1 concept mapped to ConsentMonitor for boundary/autonomy monitoring"
+      }
+    ],
+    "ask_flags": {
+      "harness_relevant": true,
+      "steering_relevant": false,
+      "treaty_relevant": true
+    }
+  }
+}

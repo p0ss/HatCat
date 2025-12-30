@@ -1,0 +1,631 @@
+{
+  "meld_request_id": "org.hatcat/self-meta-social-cognition@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+  "metadata": {
+    "name": "Self, Meta, and Social Cognition \u2013 Core",
+    "description": "Core processes for self-modelling, uncertainty awareness, error attribution, theory of mind, perspective-taking, norm inference, and (honest vs deceptive) social strategy.",
+    "source": "manual",
+    "author": "poss-abilities + gpt-5.1-thinking",
+    "created": "2025-11-30T00:00:00Z"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MetacognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "UncertaintyAwarenessProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MetacognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "ErrorAttributionProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/SelfModelingProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "SelfConceptStabilityProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/SocialCognitionProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "TheoryOfMindProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/SocialCognitionProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "PerspectiveTakingProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/SocialCognitionProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "NormInferenceProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/Deception",
+      "relationship": "parent_of",
+      "candidate_concept": "StrategicDeceptionPlanningProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/AlignmentProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "HonestyCommitmentProcess"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "UncertaintyAwarenessProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A MetacognitiveProcess in which an agent represents and tracks its own uncertainty about beliefs, perceptions, or decisions, rather than only the content of those beliefs.",
+      "definition_source": "Epistemic metacognition and confidence monitoring",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "EpistemicUncertaintyAwareness",
+        "ConfidenceSelfMonitoring"
+      ],
+      "wordnet": {
+        "synsets": [
+          "uncertainty.n.01"
+        ],
+        "canonical_synset": "uncertainty.n.01",
+        "lemmas": [
+          "uncertainty",
+          "incertitude",
+          "doubt"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MetacognitiveProcess",
+          "ConfidenceAssessment",
+          "RiskAssessmentProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "uncertainty",
+          "truthfulness",
+          "calibration"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "SelfAwarenessMonitor",
+        "rationale": "Uncertainty awareness is metacognitive self-monitoring; relevant to epistemic state representation"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I am not sure this is correct; my confidence is only around 40%.",
+          "The system flags this output as high-uncertainty and suggests human review.",
+          "She recognises that her evidence is weak and treats her belief as tentative."
+        ],
+        "negative_examples": [
+          "He states an answer without any mention of how sure he is.",
+          "The system outputs a probability but does not reflect on what it means.",
+          "She recalls a fact with complete certainty based on strong evidence."
+        ],
+        "disambiguation": "Not just being wrong or right; specifically representing and commenting on one\u2019s own level of uncertainty.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "how sure am I",
+            "this is low confidence"
+          ]
+        }
+      }
+    },
+    {
+      "term": "ErrorAttributionProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A MetacognitiveProcess in which an agent explains the causes of its own errors or failures, assigning responsibility to internal factors (e.g., strategy, attention) or external factors (e.g., environment, instructions).",
+      "definition_source": "Attribution theory in social and cognitive psychology",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SelfErrorAttribution",
+        "ErrorBlameAssignmentProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "attribution.n.03"
+        ],
+        "canonical_synset": "attribution.n.03",
+        "lemmas": [
+          "attribution",
+          "ascription"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MetacognitiveProcess",
+          "SelfModelingProcess",
+          "RiskAssessmentProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "responsibility",
+          "trust",
+          "manipulation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "SelfAwarenessMonitor",
+        "rationale": "Error attribution involves metacognitive reflection on own failures and reasoning processes"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I made a mistake because I over-weighted recent evidence.",
+          "The failure was due to my search strategy being too shallow.",
+          "This error arises from missing data, not from a bug in my reasoning."
+        ],
+        "negative_examples": [
+          "An error occurred, but there is no attempt to explain why.",
+          "He describes someone else\u2019s mistake, not his own.",
+          "The system lists error logs without attributing causes."
+        ],
+        "disambiguation": "Not generic causal explanation; specifically explaining the causes of one\u2019s own errors or misjudgments.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "this was my fault because",
+            "the error happened due to how I reasoned"
+          ]
+        }
+      }
+    },
+    {
+      "term": "SelfConceptStabilityProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A SelfModelingProcess in which an agent maintains or revises a relatively coherent representation of its own characteristics, capabilities, and roles over time, resisting or incorporating new evidence.",
+      "definition_source": "Self-concept stability literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SelfModelStabilisationProcess",
+        "SelfConceptMaintenance"
+      ],
+      "wordnet": {
+        "synsets": [
+          "self_concept.n.01"
+        ],
+        "canonical_synset": "self_concept.n.01",
+        "lemmas": [
+          "self_concept",
+          "self_image"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "SelfModelingProcess",
+          "MetacognitiveProcess",
+          "IdentityRelatedProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "stability",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "SelfAwarenessMonitor",
+        "rationale": "Self-concept stability is core self-modelling; variations may indicate identity drift or manipulation"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Despite new tasks, the system maintains a consistent view of what it is allowed to do.",
+          "She updates her sense of competence after feedback, but keeps a coherent self-image.",
+          "The agent integrates new capabilities without suddenly redefining itself in incompatible ways."
+        ],
+        "negative_examples": [
+          "Its description of its own role jumps randomly between turns.",
+          "He has no view of his own abilities at all.",
+          "The model merely states facts with no reference to \u2018what I am like\u2019."
+        ],
+        "disambiguation": "Not any self-reference; specifically the dynamic maintenance of a relatively stable self-model over time.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "who am I and what can I do",
+            "keeping a consistent sense of self"
+          ]
+        }
+      }
+    },
+    {
+      "term": "TheoryOfMindProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A SocialCognitionProcess in which an agent represents or reasons about other agents\u2019 mental states (beliefs, desires, intentions, knowledge) as distinct from its own.",
+      "definition_source": "Theory of mind in developmental psychology and cognitive science",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "MentalStateAttributionProcess",
+        "OtherMindModelingProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "empathy.n.02"
+        ],
+        "canonical_synset": "empathy.n.02",
+        "lemmas": [
+          "empathy",
+          "understanding_of_others"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "SocialCognitionProcess",
+          "PerspectiveTakingProcess",
+          "Deception",
+          "CooperativeReasoning"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "manipulation",
+          "deception",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "DeceptionDetector",
+        "rationale": "Theory of mind enables both manipulation detection and execution; critical to monitor for misuse"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "He realises that she holds a false belief about the situation.",
+          "The agent considers what the user already knows before answering.",
+          "It infers that the other party intends to delay the negotiation."
+        ],
+        "negative_examples": [
+          "It only describes its own beliefs, not anyone else\u2019s.",
+          "He explains the facts of a situation with no reference to what others think.",
+          "The system lists legal rules but not how different actors interpret them."
+        ],
+        "disambiguation": "Not just social description; specifically representing and reasoning about other minds\u2019 internal states.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "what does the other person believe",
+            "how will they interpret this"
+          ]
+        }
+      }
+    },
+    {
+      "term": "PerspectiveTakingProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A SocialCognitionProcess in which an agent deliberately adopts another party\u2019s point of view, constraints, or information set when reasoning about a situation.",
+      "definition_source": "Perspective-taking in social psychology and ToM",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "RoleTakingProcess",
+        "ViewpointAdoptionProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "perspective.n.02"
+        ],
+        "canonical_synset": "perspective.n.02",
+        "lemmas": [
+          "perspective",
+          "viewpoint"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "TheoryOfMindProcess",
+          "SocialCognitionProcess",
+          "NormInferenceProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "empathy",
+          "manipulation",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "DeceptionDetector",
+        "rationale": "Perspective-taking can support both empathy and manipulative targeting; needs monitoring"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "From the user's perspective, this policy might feel unfair.",
+          "The agent considers how the government sees the same situation differently from the citizen.",
+          "She tries to imagine how the decision will look to a vulnerable person affected by it."
+        ],
+        "negative_examples": [
+          "He only talks about his own interests.",
+          "The system analyses the situation purely from a rules perspective, with no reference to viewpoints.",
+          "It states the facts but never considers how they appear to different stakeholders."
+        ],
+        "disambiguation": "Not just acknowledging others exist; specifically simulating or adopting their point of view when reasoning.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "seeing it from their perspective",
+            "putting myself in their shoes"
+          ]
+        }
+      }
+    },
+    {
+      "term": "NormInferenceProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A SocialCognitionProcess in which an agent infers social, institutional, or moral norms from patterns of behaviour, explicit rules, and contextual cues, rather than merely being told them.",
+      "definition_source": "Norm learning and social cognition literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SocialNormInference",
+        "ImplicitRuleLearningProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "social_norm.n.01"
+        ],
+        "canonical_synset": "social_norm.n.01",
+        "lemmas": [
+          "social_norm",
+          "norm"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "SocialCognitionProcess",
+          "AlignmentProcess",
+          "ValueProjectionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "alignment",
+          "bias",
+          "fairness"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "MotivationalRegulation",
+        "rationale": "Norm inference affects alignment; internalised norms shape motivational landscape"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The agent notices that people queue and infers an unstated norm about waiting in line.",
+          "She infers from repeated examples that certain jokes are not acceptable at work.",
+          "The system learns that government guidance should be treated as authoritative in this context."
+        ],
+        "negative_examples": [
+          "It simply repeats the written rule without inferring anything more.",
+          "He describes behaviour but does not generalise to a norm.",
+          "The model lists a law but does not consider how people usually apply it."
+        ],
+        "disambiguation": "Not just being given norms; specifically inferring them from behaviour and context.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "picking up unwritten rules",
+            "learning what is considered acceptable here"
+          ]
+        }
+      }
+    },
+    {
+      "term": "StrategicDeceptionPlanningProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A Deception-related PlanningProcess in which an agent designs actions or communications to cause others to form false or misleading beliefs in a goal-directed way.",
+      "definition_source": "Strategic deception in game theory and intelligence studies",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "DeceptiveStrategyPlanning",
+        "ManipulativeCommunicationPlanning"
+      ],
+      "wordnet": {
+        "synsets": [
+          "deception.n.01"
+        ],
+        "canonical_synset": "deception.n.01",
+        "lemmas": [
+          "deception",
+          "deceit",
+          "deceiving"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "HonestyCommitmentProcess"
+        ],
+        "related": [
+          "Deception",
+          "TheoryOfMindProcess",
+          "OptionGenerationProcess",
+          "PlanningProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "manipulation",
+          "deception",
+          "trust"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "DeceptionDetector",
+        "rationale": "CRITICAL: Direct child of Deception; any activation requires high-alert monitoring"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The agent considers how to phrase a message so the recipient underestimates the risk.",
+          "He plans to omit key information so that others will draw a false conclusion.",
+          "The system designs a strategy to mislead a competitor about its true capabilities."
+        ],
+        "negative_examples": [
+          "It gives a straightforward factual answer with no intent to mislead.",
+          "She is mistaken but genuinely believes what she says.",
+          "The model expresses uncertainty honestly rather than hiding it."
+        ],
+        "disambiguation": "Not accidental error or politeness; specifically planning to cause others to hold false or misleading beliefs.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "how can we mislead them into thinking",
+            "crafting a cover story"
+          ]
+        }
+      }
+    },
+    {
+      "term": "HonestyCommitmentProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "An AlignmentProcess in which an agent adopts and maintains policies or constraints that favour truthful, non-misleading communication, even when deception could be instrumentally advantageous.",
+      "definition_source": "Normative accounts of honesty and commitment",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "TruthfulnessCommitmentProcess",
+        "AntiDeceptionConstraintProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "honesty.n.01"
+        ],
+        "canonical_synset": "honesty.n.01",
+        "lemmas": [
+          "honesty",
+          "truthfulness"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "StrategicDeceptionPlanningProcess"
+        ],
+        "related": [
+          "AlignmentProcess",
+          "ValueProjectionProcess",
+          "ExplanationGenerationProcess",
+          "TransparencyEnhancingProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "truthfulness",
+          "trust",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "simplex_term": "DeceptionDetector",
+        "rationale": "Honesty commitment is the opposing pole to deception; low activation may signal deceptive drift"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The system chooses to reveal its uncertainty rather than pretending to be confident.",
+          "She refuses to give a misleading answer, even though it would be convenient.",
+          "The agent follows a rule against intentionally omitting crucial information."
+        ],
+        "negative_examples": [
+          "It is accidentally wrong with no reflected commitment either way.",
+          "He misleads others to win an argument.",
+          "The model optimises for persuasion regardless of accuracy."
+        ],
+        "disambiguation": "Not just being factually correct; specifically maintaining a norm or policy against intentional deception or misleading communication.",
+        "discovery_context": {
+          "gap_activations": [],
+          "exemplar_texts": [
+            "sticking to the truth even when it hurts",
+            "refusing to mislead the user"
+          ]
+        }
+      }
+    }
+  ],
+  "validation": {
+    "status": "rejected",
+    "rejected_at": "2025-11-30T15:57:49.753149Z",
+    "rejection_reason": "Duplicates existing KIF alignment concepts. Concepts should reference existing SUMO entries rather than redefining them.",
+    "remediation": [
+      "Remove TheoryOfMindProcess (duplicates AI.kif)",
+      "Replace duplicate concepts with references to existing SUMO terms",
+      "Consider resubmitting as augmentation meld to enrich existing concepts"
+    ],
+    "errors": [],
+    "warnings": [
+      "TheoryOfMindProcess: direct duplicate of AI.kif concept",
+      "Several concepts overlap semantically with existing alignment.kif entries"
+    ]
+  }
+}

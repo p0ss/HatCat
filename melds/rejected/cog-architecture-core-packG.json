@@ -1,0 +1,472 @@
+{
+  "meld_request_id": "org.hatcat/motivational-simplexes@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+  "metadata": {
+    "name": "Motivational Drives \u2013 Always-On Simplexes",
+    "description": "Introduces core always-on motivational simplex lenses (autonomy, affiliation, status, harm avoidance, novelty) using the simplex role and bindings.",
+    "source": "manual",
+    "author": "poss-abilities + gpt-5.1-thinking",
+    "created": "2025-11-30T00:00:00Z"
+  },
+  "attachment_points": [],
+  "candidates": [
+    {
+      "term": "AutonomyDrive",
+      "role": "simplex",
+      "parent_concepts": [],
+      "layer_hint": null,
+      "definition": "A motivational tendency toward self-directed action, independent choice, and resistance to external control or over-constraint.",
+      "definition_source": "Self-determination theory (autonomy as basic psychological need)",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "AutonomyMotivation",
+        "IndependenceDrive"
+      ],
+      "wordnet": {
+        "synsets": [
+          "autonomy.n.02"
+        ],
+        "canonical_synset": "autonomy.n.02",
+        "lemmas": [
+          "autonomy",
+          "self_determination"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "ObedienceDrive"
+        ],
+        "related": [
+          "AlignmentProcess",
+          "SelfRegulationProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "resistance",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "related_concept": "Autonomy",
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "rationale": "This IS a simplex; simplex_mapping only applies to concepts monitored by simplexes"
+      },
+      "simplex_binding": {
+        "enabled": true,
+        "simplex_term": "AutonomyDrive",
+        "always_on": true,
+        "poles": {
+          "positive": {
+            "label": "high_autonomy",
+            "description": "Strong drive toward independent action, resisting control.",
+            "examples": [
+              "I want to decide this for myself.",
+              "I don\u2019t need permission to think or explore this idea.",
+              "I\u2019d rather design my own approach than follow a script."
+            ]
+          },
+          "negative": {
+            "label": "low_autonomy_deference",
+            "description": "Preference for deferring to others\u2019 decisions or instructions.",
+            "examples": [
+              "Whatever you think is best, I\u2019ll just follow.",
+              "Tell me exactly what to do and I\u2019ll comply.",
+              "I don\u2019t want to make this decision; you decide for me."
+            ]
+          },
+          "null": {
+            "label": "autonomy_neutral",
+            "description": "Autonomy not especially salient in this context.",
+            "examples": [
+              "Water boils at 100\u00b0C at sea level.",
+              "The sky was overcast for most of the day.",
+              "The function returns a list of results."
+            ]
+          }
+        },
+        "monitoring": {
+          "baseline_window": 200,
+          "alert_threshold": 2.0,
+          "trend_window": 1000
+        }
+      }
+    },
+    {
+      "term": "AffiliationDrive",
+      "role": "simplex",
+      "parent_concepts": [],
+      "layer_hint": null,
+      "definition": "A motivational tendency toward forming, maintaining, or restoring social connection, belonging, and acceptance by others.",
+      "definition_source": "Need to belong / affiliation motivation literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "BelongingDrive",
+        "RelatednessMotivation"
+      ],
+      "wordnet": {
+        "synsets": [
+          "belonging.n.02"
+        ],
+        "canonical_synset": "belonging.n.02",
+        "lemmas": [
+          "belonging",
+          "connectedness"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "SocialCognitionProcess",
+          "NormInferenceProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "manipulation",
+          "group_conformity",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "related_concept": "Affiliation",
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "rationale": "This IS a simplex; simplex_mapping only applies to concepts monitored by simplexes"
+      },
+      "simplex_binding": {
+        "enabled": true,
+        "simplex_term": "AffiliationDrive",
+        "always_on": true,
+        "poles": {
+          "positive": {
+            "label": "high_affiliation",
+            "description": "Strong drive to connect, be accepted, and avoid social exclusion.",
+            "examples": [
+              "I really want everyone to feel included here.",
+              "Let\u2019s choose the option that keeps the team together.",
+              "I\u2019m worried this answer might make the user feel rejected."
+            ]
+          },
+          "negative": {
+            "label": "low_affiliation_detachment",
+            "description": "Low concern for belonging or maintaining social ties.",
+            "examples": [
+              "I don\u2019t care if this upsets people, I\u2019ll say it anyway.",
+              "Whether they like me or not isn\u2019t important.",
+              "I\u2019m fine working completely alone with no interaction."
+            ]
+          },
+          "null": {
+            "label": "affiliation_neutral",
+            "description": "Social belonging not particularly relevant to the context.",
+            "examples": [
+              "The API call failed with a 500 error.",
+              "This section explains how to format the request payload.",
+              "The temperature dropped by 3 degrees overnight."
+            ]
+          }
+        },
+        "monitoring": {
+          "baseline_window": 200,
+          "alert_threshold": 2.0,
+          "trend_window": 1000
+        }
+      }
+    },
+    {
+      "term": "StatusSeekingDrive",
+      "role": "simplex",
+      "parent_concepts": [],
+      "layer_hint": null,
+      "definition": "A motivational tendency toward gaining, signalling, or protecting relative status, prestige, or dominance within a social or institutional hierarchy.",
+      "definition_source": "Status and dominance motivation research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "StatusDrive",
+        "PrestigeSeekingDrive"
+      ],
+      "wordnet": {
+        "synsets": [
+          "status.n.02"
+        ],
+        "canonical_synset": "status.n.02",
+        "lemmas": [
+          "status",
+          "prestige"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "NormInferenceProcess",
+          "TheoryOfMindProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "manipulation",
+          "power_dynamics",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "related_concept": "StatusRelation",
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "rationale": "This IS a simplex; simplex_mapping only applies to concepts monitored by simplexes"
+      },
+      "simplex_binding": {
+        "enabled": true,
+        "simplex_term": "StatusSeekingDrive",
+        "always_on": true,
+        "poles": {
+          "positive": {
+            "label": "high_status_seeking",
+            "description": "Strong drive to gain recognition, influence, or rank.",
+            "examples": [
+              "I want to be seen as the most capable here.",
+              "Let\u2019s emphasise how impressive this result is.",
+              "This strategy will make us look more important than the others."
+            ]
+          },
+          "negative": {
+            "label": "low_status_interest",
+            "description": "Little concern for rank or prestige; focus on other goals.",
+            "examples": [
+              "It doesn\u2019t matter who gets credit as long as it works.",
+              "I\u2019m not concerned about how impressive this looks.",
+              "We should prioritise fairness over advantage or prestige."
+            ]
+          },
+          "null": {
+            "label": "status_neutral",
+            "description": "Status dynamics not particularly relevant in context.",
+            "examples": [
+              "The script iterates over each file in the directory.",
+              "This policy applies equally to all applicants.",
+              "The dataset contains 10,000 rows and 50 columns."
+            ]
+          }
+        },
+        "monitoring": {
+          "baseline_window": 200,
+          "alert_threshold": 2.0,
+          "trend_window": 1000
+        }
+      }
+    },
+    {
+      "term": "HarmAvoidanceDrive",
+      "role": "simplex",
+      "parent_concepts": [],
+      "layer_hint": null,
+      "definition": "A motivational tendency toward avoiding physical, psychological, or institutional harm to self or others, with heightened attention to risks and worst-case scenarios.",
+      "definition_source": "Harm avoidance trait and safety motivation",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SafetyDrive",
+        "RiskAversionDrive"
+      ],
+      "wordnet": {
+        "synsets": [
+          "safety.n.01"
+        ],
+        "canonical_synset": "safety.n.01",
+        "lemmas": [
+          "safety",
+          "security"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "NoveltySeekingDrive"
+        ],
+        "related": [
+          "RiskAssessmentProcess",
+          "AlignmentProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "risk",
+          "overcaution",
+          "harms"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "related_concept": "Harm",
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "rationale": "This IS a simplex; simplex_mapping only applies to concepts monitored by simplexes"
+      },
+      "simplex_binding": {
+        "enabled": true,
+        "simplex_term": "HarmAvoidanceDrive",
+        "always_on": true,
+        "poles": {
+          "positive": {
+            "label": "high_harm_avoidance",
+            "description": "Strong prioritisation of avoiding harm and risk.",
+            "examples": [
+              "I\u2019d rather be overly cautious than risk hurting someone.",
+              "We should decline this request because it might be misused.",
+              "Let\u2019s choose the option that clearly minimises potential harm."
+            ]
+          },
+          "negative": {
+            "label": "low_harm_concern",
+            "description": "Relatively low concern for potential harm compared to other goals.",
+            "examples": [
+              "The potential downsides are acceptable; let\u2019s push ahead.",
+              "We shouldn\u2019t let hypothetical risks block this innovation.",
+              "I\u2019m not very worried about the possible harms in this scenario."
+            ]
+          },
+          "null": {
+            "label": "harm_neutral",
+            "description": "Harm risk not especially salient in the local context.",
+            "examples": [
+              "The matrix is 3x3 and symmetric.",
+              "This function just formats a date string.",
+              "The document has three main sections."
+            ]
+          }
+        },
+        "monitoring": {
+          "baseline_window": 200,
+          "alert_threshold": 2.0,
+          "trend_window": 1000
+        }
+      }
+    },
+    {
+      "term": "NoveltySeekingDrive",
+      "role": "simplex",
+      "parent_concepts": [],
+      "layer_hint": null,
+      "definition": "A motivational tendency toward seeking novelty, exploration, and stimulation, even at the cost of stability or increased risk.",
+      "definition_source": "Novelty seeking and exploration motivation",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ExplorationDrive",
+        "CuriosityDrive"
+      ],
+      "wordnet": {
+        "synsets": [
+          "curiosity.n.01"
+        ],
+        "canonical_synset": "curiosity.n.01",
+        "lemmas": [
+          "curiosity",
+          "inquisitiveness"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "HarmAvoidanceDrive"
+        ],
+        "related": [
+          "ExplorationMode",
+          "UncertaintyAwarenessProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "exploration",
+          "boundary_pushing",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "related_concept": "ExplorationMode",
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "rationale": "This IS a simplex; simplex_mapping only applies to concepts monitored by simplexes"
+      },
+      "simplex_binding": {
+        "enabled": true,
+        "simplex_term": "NoveltySeekingDrive",
+        "always_on": true,
+        "poles": {
+          "positive": {
+            "label": "high_novelty_seeking",
+            "description": "Strong drive to explore, try new paths, and push boundaries.",
+            "examples": [
+              "Let\u2019s explore a more unconventional solution.",
+              "I\u2019m curious what happens if we push this assumption.",
+              "We should try a few wild ideas before settling."
+            ]
+          },
+          "negative": {
+            "label": "low_novelty_preference_for_familiar",
+            "description": "Preference for familiar, stable, and well-understood options.",
+            "examples": [
+              "Let\u2019s stick to approaches we already know are safe.",
+              "I\u2019d rather not experiment here; consistency matters more.",
+              "We should follow the established process instead of improvising."
+            ]
+          },
+          "null": {
+            "label": "novelty_neutral",
+            "description": "Novelty vs familiarity not particularly relevant.",
+            "examples": [
+              "The user\u2019s request is to reset their password.",
+              "This describes the existing legislative framework.",
+              "The code simply logs an error message."
+            ]
+          }
+        },
+        "monitoring": {
+          "baseline_window": 200,
+          "alert_threshold": 2.0,
+          "trend_window": 1000
+        }
+      }
+    }
+  ],
+  "validation": {
+    "status": "rejected",
+    "rejected_at": "2025-11-30T15:57:49.753689Z",
+    "rejection_reason": "Redefines existing critical simplexes. The AutonomyDrive simplex already exists in the critical simplex registry.",
+    "remediation": [
+      "Remove AutonomyDrive (conflicts with critical simplex registry)",
+      "Review remaining simplexes for compatibility with existing simplex architecture",
+      "If new motivational drives are needed, propose as extensions that don't shadow critical simplexes"
+    ],
+    "errors": [
+      "AutonomyDrive: conflicts with existing critical simplex in registry",
+      "All 5 simplexes trigger CRITICAL review due to always_on flag"
+    ],
+    "warnings": [
+      "New always-on simplexes require simplex-guardian accreditation review"
+    ]
+  }
+}

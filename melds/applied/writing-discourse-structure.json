@@ -1,0 +1,695 @@
+{
+  "meld_request_id": "org.hatcat/writing-discourse-structure@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Discourse Structure",
+    "description": "Concepts for text organization, coherence, and information flow. Critical for understanding how language models structure output - these concepts likely show early activation patterns when the model plans upcoming text structure.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Text",
+      "relationship": "parent_of",
+      "candidate_concept": "DiscourseStructure"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "DiscourseStructure",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The organizational framework of a text including how ideas are arranged, connected, and developed across sentences and paragraphs",
+      "definition_source": "Discourse analysis, text linguistics",
+      "domain": "Information",
+      "aliases": [
+        "TextStructure",
+        "DiscourseOrganization",
+        "TextualArchitecture"
+      ],
+      "relationships": {
+        "related": [
+          "Text",
+          "Paragraph",
+          "Coherence",
+          "Cohesion"
+        ],
+        "has_part": [
+          "Coherence",
+          "Cohesion",
+          "TopicStructure",
+          "InformationFlow",
+          "DiscourseMarker",
+          "TransitionDevice",
+          "ThematicProgression"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text organization concept"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The essay follows a problem-solution structure with clear transitions between sections.",
+          "Notice how each paragraph builds on the previous one through thematic progression.",
+          "The discourse structure establishes the claim first, then marshals supporting evidence.",
+          "Information flows from given to new, maintaining reader orientation throughout."
+        ],
+        "negative_examples": [
+          "The font size was 12 point Times New Roman.",
+          "She typed quickly on the keyboard.",
+          "The document had three pages."
+        ],
+        "disambiguation": "How text is organized and connected, not physical formatting or production"
+      },
+      "children": [
+        "Coherence",
+        "Cohesion",
+        "TopicStructure",
+        "InformationFlow",
+        "DiscourseMarker",
+        "TransitionDevice",
+        "ThematicProgression"
+      ]
+    },
+    {
+      "term": "Coherence",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "The overall semantic unity of a text where ideas relate meaningfully to each other and to the central purpose",
+      "definition_source": "Text linguistics, Halliday & Hasan",
+      "domain": "Information",
+      "aliases": [
+        "TextualCoherence",
+        "SemanticUnity",
+        "ConceptualConnectedness"
+      ],
+      "relationships": {
+        "related": [
+          "Cohesion",
+          "Unity",
+          "LogicalFlow",
+          "Meaning"
+        ],
+        "antonyms": [
+          "Incoherence",
+          "Fragmentation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text quality attribute"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Despite covering many topics, the text maintains coherence through its central theme of sustainability.",
+          "The reader can follow the argument because each idea connects logically to the next.",
+          "Coherence emerges from the underlying conceptual relationships between sentences.",
+          "The text feels unified - every paragraph contributes to the main point."
+        ],
+        "negative_examples": [
+          "The sentences are grammatically correct.",
+          "The text uses transition words frequently.",
+          "The document has consistent formatting."
+        ],
+        "disambiguation": "Overall meaning-level unity, not just surface-level linking"
+      },
+      "children": []
+    },
+    {
+      "term": "Cohesion",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "Surface-level linguistic ties that connect parts of a text through reference, substitution, ellipsis, conjunction, and lexical relationships",
+      "definition_source": "Halliday & Hasan, Cohesion in English",
+      "domain": "Information",
+      "aliases": [
+        "TextualCohesion",
+        "LinguisticTies",
+        "SurfaceLinking"
+      ],
+      "relationships": {
+        "related": [
+          "Coherence",
+          "Reference",
+          "Conjunction",
+          "LexicalCohesion"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Linguistic mechanism"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The pronoun 'it' creates cohesion by referring back to 'the proposal' in the previous sentence.",
+          "Lexical cohesion through repetition: climate, climate change, climatic conditions.",
+          "The conjunction 'however' signals contrast and ties the sentences together.",
+          "Ellipsis creates cohesion: 'John ate pizza and Mary did too' (ellipsis of 'ate pizza')."
+        ],
+        "negative_examples": [
+          "The paragraph makes an important point.",
+          "The argument is logically sound.",
+          "The text is easy to understand."
+        ],
+        "disambiguation": "Explicit linguistic links between text parts, not overall meaning unity"
+      },
+      "children": []
+    },
+    {
+      "term": "TopicStructure",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "The organization of topics and subtopics within a text, including topic introduction, development, and shifts",
+      "definition_source": "Discourse analysis, topic modeling",
+      "domain": "Information",
+      "aliases": [
+        "TopicalOrganization",
+        "TopicHierarchy",
+        "SubjectStructure"
+      ],
+      "relationships": {
+        "related": [
+          "Topic",
+          "Theme",
+          "TopicSentence",
+          "TopicShift"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text organization element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The topic structure moves from general principles to specific applications.",
+          "Each section introduces a new subtopic while maintaining connection to the main theme.",
+          "The topic sentence announces what the paragraph will discuss.",
+          "A clear topic shift occurs at paragraph five, moving from causes to effects."
+        ],
+        "negative_examples": [
+          "The essay is about climate change.",
+          "The author discusses several ideas.",
+          "The text has an introduction."
+        ],
+        "disambiguation": "How topics are organized and developed, not just what topics are present"
+      },
+      "children": []
+    },
+    {
+      "term": "InformationFlow",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "The progression from given (known) information to new information across sentences, guiding reader processing",
+      "definition_source": "Functional linguistics, given-new theory",
+      "domain": "Information",
+      "aliases": [
+        "GivenNewStructure",
+        "InformationProgression",
+        "ThemeRheme"
+      ],
+      "relationships": {
+        "related": [
+          "ThematicProgression",
+          "TopicComment",
+          "FocusStructure"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Information structure concept"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Each sentence begins with given information and ends with new, maintaining smooth information flow.",
+          "The theme-rheme structure places the topic first, then adds new comment.",
+          "Information flows from established concepts to novel claims.",
+          "Starting with 'This result' anchors the reader before introducing implications."
+        ],
+        "negative_examples": [
+          "The sentence is long and complex.",
+          "The writing is formal in style.",
+          "The paragraph contains five sentences."
+        ],
+        "disambiguation": "How given and new information is ordered, not just information content"
+      },
+      "children": []
+    },
+    {
+      "term": "DiscourseMarker",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "Words or phrases that signal relationships between discourse segments, such as 'however', 'therefore', 'in addition', 'for example'",
+      "definition_source": "Discourse analysis, pragmatics",
+      "domain": "Information",
+      "aliases": [
+        "DiscourseCue",
+        "SignalWord",
+        "ConnectiveMarker"
+      ],
+      "relationships": {
+        "related": [
+          "TransitionDevice",
+          "Conjunction",
+          "Cohesion",
+          "DiscourseRelation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Linguistic signaling device"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The discourse marker 'however' signals upcoming contrast with the previous claim.",
+          "'For instance' cues the reader that an example is coming.",
+          "'Therefore' marks a conclusion being drawn from preceding evidence.",
+          "'On the other hand' indicates a shift to an alternative perspective."
+        ],
+        "negative_examples": [
+          "The word appears frequently in the text.",
+          "The sentence starts with a capital letter.",
+          "The author uses strong vocabulary."
+        ],
+        "disambiguation": "Specific signaling words for discourse relations, not all transition language"
+      },
+      "children": []
+    },
+    {
+      "term": "TransitionDevice",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "Linguistic mechanisms that create smooth movement between ideas, paragraphs, or sections including transitional phrases, sentences, and paragraphs",
+      "definition_source": "Composition studies, rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "Transition",
+        "TransitionalElement",
+        "BridgingDevice"
+      ],
+      "relationships": {
+        "related": [
+          "DiscourseMarker",
+          "Cohesion",
+          "Coherence",
+          "Paragraph"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Writing technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The transitional paragraph bridges the discussion of causes and solutions.",
+          "Repeating a key term from the previous paragraph creates a smooth transition.",
+          "The transition sentence summarizes before introducing the next point.",
+          "'Building on this foundation, we now turn to...' provides explicit transition."
+        ],
+        "negative_examples": [
+          "The paragraph ends with a period.",
+          "A blank line separates the sections.",
+          "The heading announces the next topic."
+        ],
+        "disambiguation": "Active linking between text parts, not just structural separation"
+      },
+      "children": []
+    },
+    {
+      "term": "ThematicProgression",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "Patterns of how themes (topics) develop across sentences - linear, constant, derived, or split progression",
+      "definition_source": "Prague School linguistics, Danes",
+      "domain": "Information",
+      "aliases": [
+        "ThemeDevelopment",
+        "TopicProgression",
+        "ThemePattern"
+      ],
+      "relationships": {
+        "related": [
+          "InformationFlow",
+          "TopicStructure",
+          "ThemeRheme"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text development pattern"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Linear progression: each sentence's rheme becomes the next sentence's theme.",
+          "Constant theme progression: 'The study found X. The study also revealed Y. The study concluded Z.'",
+          "Derived themes: multiple sentences develop themes derived from a hypertheme.",
+          "The thematic progression creates a logical chain of ideas."
+        ],
+        "negative_examples": [
+          "The paragraph has three sentences.",
+          "The topic is climate change.",
+          "The author repeats words."
+        ],
+        "disambiguation": "Systematic patterns of theme development, not just topic presence"
+      },
+      "children": []
+    },
+    {
+      "term": "TopicSentence",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "A sentence that states the main idea of a paragraph, typically appearing at the beginning and controlling the paragraph's content",
+      "definition_source": "Composition pedagogy, rhetoric",
+      "domain": "Information",
+      "aliases": [
+        "ParagraphTopic",
+        "ControllingIdea",
+        "MainIdeaSentence"
+      ],
+      "relationships": {
+        "related": [
+          "Paragraph",
+          "SupportingDetail",
+          "TopicStructure",
+          "Thesis"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Paragraph organization element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The topic sentence 'Renewable energy faces three major challenges' previews what the paragraph will cover.",
+          "Each paragraph opens with a clear topic sentence that the rest of the paragraph develops.",
+          "The topic sentence makes a claim that the supporting sentences then justify.",
+          "A strong topic sentence both connects to the thesis and focuses the paragraph."
+        ],
+        "negative_examples": [
+          "The first sentence of the paragraph.",
+          "A sentence about the topic.",
+          "The paragraph has a beginning."
+        ],
+        "disambiguation": "Sentence announcing paragraph's main idea, not just any opening sentence"
+      },
+      "children": []
+    },
+    {
+      "term": "SupportingDetail",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "Information that elaborates, explains, or provides evidence for a topic sentence or thesis, including examples, facts, and reasoning",
+      "definition_source": "Composition studies",
+      "domain": "Information",
+      "aliases": [
+        "SupportingEvidence",
+        "ElaboratingDetail",
+        "DevelopingPoint"
+      ],
+      "relationships": {
+        "related": [
+          "TopicSentence",
+          "Evidence",
+          "Example",
+          "Elaboration"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Content development element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The statistic about rising temperatures serves as supporting detail for the claim about climate change.",
+          "Each paragraph provides supporting details through examples, data, and expert quotes.",
+          "The anecdote about the farmer's experience supports the broader point about agricultural impact.",
+          "Supporting details must be relevant to and actually support the topic sentence."
+        ],
+        "negative_examples": [
+          "The paragraph contains information.",
+          "The author includes facts.",
+          "The text has examples."
+        ],
+        "disambiguation": "Details that specifically support a main point, not just additional information"
+      },
+      "children": []
+    },
+    {
+      "term": "TextIntroduction",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "Opening section that establishes context, captures attention, introduces the topic, and presents the thesis or purpose",
+      "definition_source": "Rhetoric, composition studies",
+      "domain": "Information",
+      "aliases": [
+        "Introduction",
+        "Opening",
+        "Exordium"
+      ],
+      "relationships": {
+        "related": [
+          "TextConclusion",
+          "Thesis",
+          "Hook",
+          "BackgroundInformation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text structural element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The introduction hooks the reader with a surprising statistic before narrowing to the thesis.",
+          "An effective introduction moves from general context to specific focus.",
+          "The introduction establishes the problem before previewing the solution.",
+          "Opening with background information orients the reader before the argument begins."
+        ],
+        "negative_examples": [
+          "The text has a beginning.",
+          "The first paragraph.",
+          "The author starts writing."
+        ],
+        "disambiguation": "Functional role of orienting and focusing readers, not just position"
+      },
+      "children": []
+    },
+    {
+      "term": "TextConclusion",
+      "role": "concept",
+      "parent_concepts": [
+        "DiscourseStructure"
+      ],
+      "layer_hint": 3,
+      "definition": "Closing section that synthesizes main points, reinforces the thesis, and provides closure or implications",
+      "definition_source": "Rhetoric, composition studies",
+      "domain": "Information",
+      "aliases": [
+        "Conclusion",
+        "Closing",
+        "Peroration"
+      ],
+      "relationships": {
+        "related": [
+          "TextIntroduction",
+          "Synthesis",
+          "Implications",
+          "CallToAction"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text structural element"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The conclusion synthesizes the three main arguments into a unified insight.",
+          "Rather than merely summarizing, the conclusion extends the implications.",
+          "The conclusion returns to the opening hook, creating circular closure.",
+          "Ending with a call to action gives the conclusion persuasive force."
+        ],
+        "negative_examples": [
+          "The last paragraph.",
+          "The text ends.",
+          "The author stops writing."
+        ],
+        "disambiguation": "Functional role of synthesis and closure, not just final position"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:19.585663Z",
+    "result_pack_version": "7.6.1",
+    "concepts_added": 12,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 11
+    },
+    "parents_updated": 12,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "DiscourseStructure",
+        "Coherence",
+        "Cohesion",
+        "TopicStructure",
+        "InformationFlow",
+        "DiscourseMarker",
+        "TransitionDevice",
+        "ThematicProgression",
+        "TopicSentence",
+        "SupportingDetail",
+        "TextIntroduction",
+        "TextConclusion"
+      ],
+      "must_retrain": [
+        "Text"
+      ],
+      "should_retrain": [
+        "Article",
+        "AudioRecording",
+        "Book",
+        "Certificate",
+        "ChairmanPublication",
+        "ChristianGospel",
+        "Doctrine",
+        "FactualText",
+        "FictionalText",
+        "FormText",
+        "JointPublication",
+        "Label",
+        "LiveTestUpdate",
+        "Lyrics",
+        "MostRecentFeed",
+        "MotionPicture",
+        "MusicText",
+        "NarrativeText",
+        "NewsFeed",
+        "Paragraph",
+        "Prescription",
+        "Series",
+        "Summary",
+        "TopNewsFeed",
+        "TreatyDocument"
+      ],
+      "optional_retrain": [
+        "Artifact",
+        "ContentBearingObject",
+        "Elaboration",
+        "LinguisticExpression"
+      ],
+      "total_training_required": 13
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

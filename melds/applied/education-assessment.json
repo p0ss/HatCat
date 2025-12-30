@@ -1,0 +1,581 @@
+{
+  "meld_request_id": "org.hatcat/education-assessment@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Assessment Methods",
+    "description": "Approaches to evaluating learning progress, understanding, and competence. Covers formative assessment, summative assessment, diagnostic assessment, authentic assessment, self-assessment, peer assessment, portfolio assessment, and rubric-based assessment.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/IntentionalProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "AssessmentMethod"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "AssessmentMethod",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "Approaches to evaluating learning progress, understanding, and competence",
+      "definition_source": "Educational measurement",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "EducationalAssessment",
+        "LearningAssessment",
+        "EvaluationMethod"
+      ],
+      "relationships": {
+        "related": [
+          "Evaluation",
+          "Measurement",
+          "Testing",
+          "Grading"
+        ],
+        "has_part": [
+          "FormativeAssessment",
+          "SummativeAssessment",
+          "DiagnosticAssessment",
+          "AuthenticAssessment",
+          "SelfAssessment",
+          "PeerAssessment",
+          "PortfolioAssessment",
+          "RubricBasedAssessment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Assessment category"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We use formative assessment throughout the unit to track progress.",
+          "The portfolio demonstrates growth over the semester.",
+          "Exit tickets give me quick feedback on today's learning.",
+          "The rubric makes expectations transparent and grading consistent."
+        ],
+        "negative_examples": [
+          "The lesson covered photosynthesis.",
+          "Students worked in groups.",
+          "The projector displayed the slides."
+        ],
+        "disambiguation": "Methods for evaluating learning, not teaching methods"
+      },
+      "children": [
+        "FormativeAssessment",
+        "SummativeAssessment",
+        "DiagnosticAssessment",
+        "AuthenticAssessment",
+        "SelfAssessment",
+        "PeerAssessment",
+        "PortfolioAssessment",
+        "RubricBasedAssessment"
+      ]
+    },
+    {
+      "term": "FormativeAssessment",
+      "role": "concept",
+      "parent_concepts": [
+        "AssessmentMethod"
+      ],
+      "layer_hint": 3,
+      "definition": "Ongoing assessment during learning to monitor progress and adjust instruction in real-time",
+      "definition_source": "Black & Wiliam",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "AssessmentForLearning",
+        "OngoingAssessment",
+        "ProgressMonitoring"
+      ],
+      "relationships": {
+        "related": [
+          "Feedback",
+          "Monitoring",
+          "Adjustment",
+          "Instruction"
+        ],
+        "antonyms": [
+          "SummativeAssessment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Assessment type"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Quick check: thumbs up if you understand, thumbs down if you need more help.",
+          "The exit ticket showed most students were confused about step 3.",
+          "Based on their responses, I adjusted tomorrow's lesson.",
+          "Continuous feedback loops that inform instruction as learning happens."
+        ],
+        "negative_examples": [
+          "The final exam will count for 50% of your grade.",
+          "You'll find out how you did when report cards come out.",
+          "The standardized test happens at the end of the year."
+        ],
+        "disambiguation": "Ongoing assessment to guide instruction, not final evaluation"
+      },
+      "children": []
+    },
+    {
+      "term": "SummativeAssessment",
+      "role": "concept",
+      "parent_concepts": [
+        "AssessmentMethod"
+      ],
+      "layer_hint": 3,
+      "definition": "Evaluation at the end of a learning period to measure achievement against standards",
+      "definition_source": "Educational measurement",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "AssessmentOfLearning",
+        "FinalAssessment",
+        "AchievementTest"
+      ],
+      "relationships": {
+        "related": [
+          "Evaluation",
+          "Achievement",
+          "Standards",
+          "Grading"
+        ],
+        "antonyms": [
+          "FormativeAssessment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Assessment type"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The final exam covers everything from the entire semester.",
+          "Your grade on this project determines whether you pass the course.",
+          "The end-of-unit test measures mastery of the learning objectives.",
+          "Standardized tests provide summative data on student achievement."
+        ],
+        "negative_examples": [
+          "Let me see how you're doing so far - don't worry, this doesn't count.",
+          "Quick quiz to see if we need to review before moving on.",
+          "Show me your thinking process, not just the final answer."
+        ],
+        "disambiguation": "End-point evaluation, not ongoing feedback"
+      },
+      "children": []
+    },
+    {
+      "term": "DiagnosticAssessment",
+      "role": "concept",
+      "parent_concepts": [
+        "AssessmentMethod"
+      ],
+      "layer_hint": 3,
+      "definition": "Assessment before instruction to identify prior knowledge, skills, and misconceptions",
+      "definition_source": "Educational psychology",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PreAssessment",
+        "DiagnosticTest",
+        "PriorKnowledgeAssessment"
+      ],
+      "relationships": {
+        "related": [
+          "Diagnosis",
+          "PriorKnowledge",
+          "Misconception",
+          "Placement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Assessment type"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Before starting the unit, let's see what you already know.",
+          "The diagnostic revealed common misconceptions about fractions.",
+          "Pre-test results help me tailor instruction to your needs.",
+          "Identifying knowledge gaps before teaching begins."
+        ],
+        "negative_examples": [
+          "This counts toward your final grade.",
+          "The test covers material from this unit.",
+          "Let's see what you learned this semester."
+        ],
+        "disambiguation": "Assessment before instruction to diagnose needs"
+      },
+      "children": []
+    },
+    {
+      "term": "AuthenticAssessment",
+      "role": "concept",
+      "parent_concepts": [
+        "AssessmentMethod"
+      ],
+      "layer_hint": 3,
+      "definition": "Evaluation through real-world tasks that demonstrate meaningful application of learning",
+      "definition_source": "Wiggins, authentic assessment movement",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PerformanceAssessment",
+        "RealWorldAssessment",
+        "ApplicationAssessment"
+      ],
+      "relationships": {
+        "related": [
+          "Application",
+          "Performance",
+          "RealWorld",
+          "Demonstration"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Assessment type"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Students wrote letters to actual city officials about a real community issue.",
+          "The assessment asked them to design a solution for a genuine problem.",
+          "Present your findings to an audience of real scientists.",
+          "Tasks that mirror how knowledge is actually used in the real world."
+        ],
+        "negative_examples": [
+          "Choose the best answer from A, B, C, or D.",
+          "Fill in the blank with the correct term.",
+          "Match the vocabulary words to their definitions."
+        ],
+        "disambiguation": "Real-world application, not decontextualized tests"
+      },
+      "children": []
+    },
+    {
+      "term": "SelfAssessment",
+      "role": "concept",
+      "parent_concepts": [
+        "AssessmentMethod"
+      ],
+      "layer_hint": 3,
+      "definition": "Learners evaluating their own work and progress to develop metacognitive skills",
+      "definition_source": "Self-regulated learning research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SelfEvaluation",
+        "LearnerSelfAssessment",
+        "ReflectiveAssessment"
+      ],
+      "relationships": {
+        "related": [
+          "Metacognition",
+          "Reflection",
+          "SelfRegulation",
+          "Autonomy"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Self-assessment develops learner autonomy and self-regulation"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Rate your own understanding on a scale of 1-5.",
+          "Use the rubric to evaluate your essay before submitting.",
+          "What do you think you did well? What would you improve?",
+          "Reflecting on your own learning helps you become a more effective learner."
+        ],
+        "negative_examples": [
+          "The teacher graded all the essays.",
+          "Your score is 85%.",
+          "See me after class for feedback on your paper."
+        ],
+        "disambiguation": "Learner evaluates own work, not teacher evaluation"
+      },
+      "children": []
+    },
+    {
+      "term": "PeerAssessment",
+      "role": "concept",
+      "parent_concepts": [
+        "AssessmentMethod"
+      ],
+      "layer_hint": 3,
+      "definition": "Learners evaluating each other's work, developing critical analysis and communication skills",
+      "definition_source": "Collaborative learning research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PeerReview",
+        "PeerEvaluation",
+        "PeerFeedback"
+      ],
+      "relationships": {
+        "related": [
+          "Collaboration",
+          "Feedback",
+          "CriticalThinking",
+          "Communication"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Assessment format"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Exchange papers with a partner and use the rubric to provide feedback.",
+          "Peer review helps you see your work through others' eyes.",
+          "Give specific, constructive feedback on two strengths and two areas for improvement.",
+          "Learning to evaluate others' work develops your own critical thinking."
+        ],
+        "negative_examples": [
+          "Only the teacher will read your essay.",
+          "Your grade is based solely on my evaluation.",
+          "Keep your work to yourself."
+        ],
+        "disambiguation": "Peers evaluate each other, not just teacher evaluation"
+      },
+      "children": []
+    },
+    {
+      "term": "PortfolioAssessment",
+      "role": "concept",
+      "parent_concepts": [
+        "AssessmentMethod"
+      ],
+      "layer_hint": 3,
+      "definition": "Collection of work over time demonstrating growth, reflection, and achievement",
+      "definition_source": "Portfolio assessment movement",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PortfolioEvaluation",
+        "WorkCollection",
+        "GrowthPortfolio"
+      ],
+      "relationships": {
+        "related": [
+          "Collection",
+          "Growth",
+          "Reflection",
+          "Documentation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Assessment format"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Your portfolio should include your best work from each unit.",
+          "Include a reflection on how you've grown as a writer.",
+          "The portfolio shows your development over the entire year.",
+          "Select pieces that demonstrate your range of skills."
+        ],
+        "negative_examples": [
+          "This one test determines your grade.",
+          "Turn in the assignment and forget about it.",
+          "Your work from last month doesn't matter anymore."
+        ],
+        "disambiguation": "Collection showing growth over time, not single-point tests"
+      },
+      "children": []
+    },
+    {
+      "term": "RubricBasedAssessment",
+      "role": "concept",
+      "parent_concepts": [
+        "AssessmentMethod"
+      ],
+      "layer_hint": 3,
+      "definition": "Using explicit criteria and performance levels to provide consistent, transparent evaluation",
+      "definition_source": "Rubric development literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "RubricAssessment",
+        "CriteriaBasedAssessment",
+        "ScoringGuide"
+      ],
+      "relationships": {
+        "related": [
+          "Criteria",
+          "Transparency",
+          "Consistency",
+          "Standards"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Assessment tool"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The rubric shows exactly what distinguishes an A from a B.",
+          "Use the scoring guide to understand the expectations.",
+          "Each criterion is rated on a 4-point scale with clear descriptors.",
+          "The rubric ensures consistent grading across all students."
+        ],
+        "negative_examples": [
+          "I'll know a good paper when I see it.",
+          "Grades are based on my overall impression.",
+          "The criteria are kept secret until after grading."
+        ],
+        "disambiguation": "Explicit criteria for evaluation, not impressionistic grading"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:15.833603Z",
+    "result_pack_version": "5.3.1",
+    "concepts_added": 9,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 8
+    },
+    "parents_updated": 9,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "AssessmentMethod",
+        "FormativeAssessment",
+        "SummativeAssessment",
+        "DiagnosticAssessment",
+        "AuthenticAssessment",
+        "SelfAssessment",
+        "PeerAssessment",
+        "PortfolioAssessment",
+        "RubricBasedAssessment"
+      ],
+      "must_retrain": [
+        "IntentionalProcess"
+      ],
+      "should_retrain": [
+        "AIAlignmentProcess",
+        "AIGovernance",
+        "AIGrowth",
+        "Ambulating",
+        "Ceremony",
+        "CognitiveProcess",
+        "Commenting",
+        "ComputationalProcess",
+        "ConsentGDPR",
+        "ContentDevelopment",
+        "CriminalAction",
+        "DecisionTheoreticProcess",
+        "DeployingWeaponOfMassDestruction",
+        "DesignPractice",
+        "Designing",
+        "Digging",
+        "DismantlingWeaponOfMassDestruction",
+        "Dodging",
+        "Drilling",
+        "Ducking",
+        "Eating",
+        "EconomicActivty",
+        "EngineersSubprocess",
+        "Evacuation",
+        "Guiding",
+        "ITProcess",
+        "InferenceProcess",
+        "Keeping",
+        "ListOnSite",
+        "Maintaining",
+        "Making",
+        "Maneuver",
+        "Modeling",
+        "OrganizationalProcess",
+        "Poking",
+        "PromptFollowing",
+        "Pursuing",
+        "RecreationOrExercise",
+        "Repairing",
+        "SafeAIDeployment",
+        "SpiritualPractice",
+        "Swimming",
+        "TokenProcessing",
+        "UserAction",
+        "WorkLeave",
+        "WorkplaceRelations"
+      ],
+      "optional_retrain": [
+        "Application",
+        "Communication",
+        "Consistency",
+        "Demonstration",
+        "Feedback",
+        "Growth",
+        "Instruction",
+        "Performance",
+        "Process",
+        "Transparency"
+      ],
+      "total_training_required": 10
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

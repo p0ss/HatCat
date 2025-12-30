@@ -1,0 +1,498 @@
+{
+  "meld_request_id": "org.hatcat/proposition-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Proposition Melds",
+    "description": "New intermediate concepts under Proposition",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Proposition",
+      "relationship": "parent_of",
+      "candidate_concept": "FormalPropositions"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Proposition",
+      "relationship": "parent_of",
+      "candidate_concept": "LegalPropositions"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Proposition",
+      "relationship": "parent_of",
+      "candidate_concept": "ArgumentativePropositions"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Proposition",
+      "relationship": "parent_of",
+      "candidate_concept": "TheoryPropositions"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Proposition",
+      "relationship": "parent_of",
+      "candidate_concept": "BusinessPropositions"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Proposition",
+      "relationship": "parent_of",
+      "candidate_concept": "MethodsAndProcedures"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Proposition",
+      "relationship": "parent_of",
+      "candidate_concept": "ObjectivesAndGoals"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "FormalPropositions",
+      "role": "concept",
+      "parent_concepts": [
+        "Proposition"
+      ],
+      "layer_hint": 1,
+      "definition": "Structured mathematical or logical statements with precise symbolic representation or systematic form",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "The quadratic formula x = (-b \u00b1 \u221a(b\u00b2-4ac))/2a solves second-degree equations",
+          "Euclid's first axiom states that a straight line can be drawn between any two points",
+          "The graph shows the relationship between temperature and pressure using coordinate axes",
+          "Einstein's field equations model the curvature of spacetime in general relativity",
+          "The network diagram represents nodes connected by directed edges",
+          "The postulate assumes that electric charge is conserved in all interactions"
+        ],
+        "negative_examples": [
+          "I believe that honesty is the best policy in relationships",
+          "The hypothesis suggests that birds migrate due to seasonal changes",
+          "My opinion is that this movie deserves an award",
+          "The theory proposes that consciousness emerges from neural complexity",
+          "She argued that the policy would benefit small businesses",
+          "The claim states that exercise improves mental health"
+        ],
+        "disambiguation": "Not to be confused with: Hypothesis, Theory, Belief, Opinion"
+      },
+      "relationships": {
+        "related": [
+          "Hypothesis",
+          "Theory",
+          "Belief",
+          "Opinion"
+        ],
+        "has_part": [
+          "Equation",
+          "Graph",
+          "GraphElement",
+          "Axiom",
+          "Model",
+          "MultipolePostulate"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Equation",
+        "Graph",
+        "GraphElement",
+        "Axiom",
+        "Model",
+        "MultipolePostulate"
+      ]
+    },
+    {
+      "term": "LegalPropositions",
+      "role": "concept",
+      "parent_concepts": [
+        "Proposition"
+      ],
+      "layer_hint": 1,
+      "definition": "Formal principles, rules, or policies that govern behavior within legal or institutional frameworks.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "The new privacy policy outlines how customer data will be protected.",
+          "The constitutional amendment guarantees voting rights for all citizens.",
+          "State laws require businesses to obtain permits before operating.",
+          "Corporate governance rules mandate board independence requirements.",
+          "Municipal ordinances prohibit parking on designated streets.",
+          "International treaty provisions establish trade agreement terms."
+        ],
+        "negative_examples": [
+          "The scientific theory explains how gravity works.",
+          "His personal belief is that honesty is important.",
+          "The mathematical theorem proves that angles sum to 180 degrees.",
+          "Religious doctrine teaches about spiritual salvation.",
+          "The philosophical argument questions the nature of reality.",
+          "Historical facts show that the war ended in 1945."
+        ],
+        "disambiguation": "Not to be confused with: ScientificProposition, MathematicalProposition, PhilosophicalProposition, ReligiousProposition"
+      },
+      "relationships": {
+        "related": [
+          "ScientificProposition",
+          "MathematicalProposition",
+          "PhilosophicalProposition",
+          "ReligiousProposition"
+        ],
+        "has_part": [
+          "Policy",
+          "Constitution",
+          "RegionalLaw",
+          "SuffrageLaw",
+          "BindingCorporateRules"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Policy",
+        "Constitution",
+        "RegionalLaw",
+        "SuffrageLaw",
+        "BindingCorporateRules"
+      ]
+    },
+    {
+      "term": "ArgumentativePropositions",
+      "role": "concept",
+      "parent_concepts": [
+        "Proposition"
+      ],
+      "layer_hint": 1,
+      "definition": "Propositions that present reasoning, explanations, or persuasive claims to support or establish a point of view.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "The defense attorney's closing argument emphasized reasonable doubt based on inconsistent witness testimony.",
+          "Her hypothesis that increased screen time causes sleep disorders was supported by multiple studies.",
+          "The politician used rhetorical questions and emotional appeals to convince voters of his economic plan.",
+          "Scientists proposed that climate change explains the recent pattern of extreme weather events.",
+          "The debate team's argument connected historical precedents to justify their policy recommendation.",
+          "His persuasive essay used logical reasoning and evidence to argue for renewable energy investment."
+        ],
+        "negative_examples": [
+          "The mathematical theorem states that the sum of angles in a triangle equals 180 degrees.",
+          "Water boils at 100 degrees Celsius at sea level pressure.",
+          "The company's financial statement showed a 15% increase in quarterly profits.",
+          "The recipe calls for two cups of flour and one cup of sugar.",
+          "The dictionary defines 'democracy' as government by the people.",
+          "The map indicates that the library is located three blocks north of the school."
+        ],
+        "disambiguation": "Not to be confused with: FactualStatement, Definition, Instruction, Query, Assumption"
+      },
+      "relationships": {
+        "related": [
+          "FactualStatement",
+          "Definition",
+          "Instruction",
+          "Query",
+          "Assumption"
+        ],
+        "has_part": [
+          "Argument",
+          "RhetoricalConcept",
+          "ExplanatoryHypothesis"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Argument",
+        "RhetoricalConcept",
+        "ExplanatoryHypothesis"
+      ]
+    },
+    {
+      "term": "TheoryPropositions",
+      "role": "concept",
+      "parent_concepts": [
+        "Proposition"
+      ],
+      "layer_hint": 1,
+      "definition": "Systematic frameworks that explain or prescribe principles within a domain of knowledge or practice",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "Utilitarianism suggests that actions are right when they produce the greatest good for the greatest number",
+          "Social learning theory proposes that people learn through observation and imitation",
+          "Kant's categorical imperative provides a foundation for moral decision-making",
+          "Constructivist theory emphasizes that learners actively build their own understanding",
+          "Virtue ethics focuses on character traits rather than specific actions or consequences",
+          "Behaviorist theory explains learning through stimulus-response associations and reinforcement"
+        ],
+        "negative_examples": [
+          "The study found that students performed better with active learning methods",
+          "Murder is wrong according to most moral standards",
+          "She has a theory about why her plant keeps dying",
+          "The hypothesis was tested through controlled experiments",
+          "This research supports the effectiveness of spaced repetition",
+          "His personal philosophy guides his daily decisions"
+        ],
+        "disambiguation": "Not to be confused with: ScientificHypothesis, EmpiricalFinding, PersonalBelief, FactualClaim"
+      },
+      "relationships": {
+        "related": [
+          "ScientificHypothesis",
+          "EmpiricalFinding",
+          "PersonalBelief",
+          "FactualClaim"
+        ],
+        "has_part": [
+          "EthicalTheory",
+          "LearningTheory"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "EthicalTheory",
+        "LearningTheory"
+      ]
+    },
+    {
+      "term": "BusinessPropositions",
+      "role": "concept",
+      "parent_concepts": [
+        "Proposition"
+      ],
+      "layer_hint": 1,
+      "definition": "Formal offers, statements, or documents that propose commercial arrangements, financial terms, or business relationships.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "The quarterly earnings report showed strong revenue growth across all divisions.",
+          "Our hotel package includes breakfast, dinner, and spa access for $299 per night.",
+          "The merger agreement stipulates that shareholders will receive $45 per share.",
+          "This meal plan covers all dining options on campus for the semester.",
+          "Unemployment rates dropped to 3.2% according to the latest economic indicators.",
+          "My bank statement shows the monthly service fee was waived this period."
+        ],
+        "negative_examples": [
+          "The scientific hypothesis suggests that climate change affects migration patterns.",
+          "Her moral philosophy emphasizes the importance of individual responsibility.",
+          "The mathematical theorem states that parallel lines never intersect.",
+          "This recipe calls for two cups of flour and three eggs.",
+          "The weather forecast predicts rain for the next three days.",
+          "His political manifesto outlines plans for healthcare reform."
+        ],
+        "disambiguation": "Not to be confused with: ScientificProposition, PhilosophicalProposition, MathematicalProposition, PoliticalProposition"
+      },
+      "relationships": {
+        "related": [
+          "ScientificProposition",
+          "PhilosophicalProposition",
+          "MathematicalProposition",
+          "PoliticalProposition"
+        ],
+        "has_part": [
+          "EconomicIndicator",
+          "BankStatement",
+          "TPFDD",
+          "Agreement",
+          "HotelPackage",
+          "MealPlan"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "EconomicIndicator",
+        "BankStatement",
+        "TPFDD",
+        "Agreement",
+        "HotelPackage",
+        "MealPlan"
+      ]
+    },
+    {
+      "term": "MethodsAndProcedures",
+      "role": "concept",
+      "parent_concepts": [
+        "Proposition"
+      ],
+      "layer_hint": 1,
+      "definition": "Systematic approaches or step-by-step processes for accomplishing tasks or solving problems.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "Follow the standard operating procedure for equipment maintenance.",
+          "The scientific method requires careful observation and hypothesis testing.",
+          "Our company has established protocols for handling customer complaints.",
+          "The recipe provides a detailed method for baking sourdough bread.",
+          "Emergency evacuation procedures must be practiced regularly.",
+          "The algorithm sorts the data in ascending order efficiently."
+        ],
+        "negative_examples": [
+          "The theory of evolution explains species development over time.",
+          "Democracy is based on the principle of majority rule.",
+          "Gravity is a fundamental force in the universe.",
+          "The painting depicts a beautiful landscape scene.",
+          "She believes strongly in environmental conservation.",
+          "Mathematics involves abstract concepts like infinity."
+        ],
+        "disambiguation": "Not to be confused with: Theory, Principle, Belief, Concept"
+      },
+      "relationships": {
+        "related": [
+          "Theory",
+          "Principle",
+          "Belief",
+          "Concept"
+        ],
+        "has_part": [
+          "Procedure"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Procedure"
+      ]
+    },
+    {
+      "term": "ObjectivesAndGoals",
+      "role": "concept",
+      "parent_concepts": [
+        "Proposition"
+      ],
+      "layer_hint": 1,
+      "definition": "A stated aim, target, or desired outcome that guides decision-making and action.",
+      "domain": "Information",
+      "training_hints": {
+        "positive_examples": [
+          "Our company's objective is to reduce carbon emissions by 50% this year.",
+          "The goal of this medication is to lower blood pressure in patients.",
+          "My aim is to finish reading this book by the weekend.",
+          "The team's target is to increase sales revenue by 20% next quarter.",
+          "Her objective was to complete the marathon in under four hours.",
+          "The purpose of this meeting is to finalize the project timeline."
+        ],
+        "negative_examples": [
+          "The chemical reaction produced an unexpected outcome.",
+          "I believe that climate change is a serious problem.",
+          "The data shows a correlation between exercise and health.",
+          "It is likely to rain tomorrow according to the forecast.",
+          "The theory explains how gravity affects planetary motion.",
+          "This statement describes the current market conditions."
+        ],
+        "disambiguation": "Not to be confused with: Belief, Hypothesis, Prediction, Explanation"
+      },
+      "relationships": {
+        "related": [
+          "Belief",
+          "Hypothesis",
+          "Prediction",
+          "Explanation"
+        ],
+        "has_part": [
+          "Objective"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Objective"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:04.620277Z",
+    "result_pack_version": "7.6.29",
+    "concepts_added": 7,
+    "concepts_by_layer": {
+      "1": 7
+    },
+    "parents_updated": 7,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "FormalPropositions",
+        "LegalPropositions",
+        "ArgumentativePropositions",
+        "TheoryPropositions",
+        "BusinessPropositions",
+        "MethodsAndProcedures",
+        "ObjectivesAndGoals"
+      ],
+      "must_retrain": [
+        "Proposition"
+      ],
+      "should_retrain": [
+        "Agreement",
+        "Argument",
+        "Axiom",
+        "BankStatement",
+        "BindingCorporateRules",
+        "ClassificationScheme",
+        "ConceptualSituation",
+        "Constitution",
+        "EconomicIndicator",
+        "Equation",
+        "EthicalTheory",
+        "ExplanatoryHypothesis",
+        "FieldOfStudy",
+        "Graph",
+        "GraphElement",
+        "HotelPackage",
+        "LearningTheory",
+        "LyricalContent",
+        "MealPlan",
+        "Model",
+        "MultipolePostulate",
+        "Objective",
+        "Procedure",
+        "RegionalLaw",
+        "RhetoricalConcept",
+        "SuffrageLaw",
+        "TPFDD"
+      ],
+      "optional_retrain": [
+        "Abstract",
+        "Belief",
+        "Concept",
+        "Explanation",
+        "Hypothesis",
+        "Instruction",
+        "Prediction",
+        "Query"
+      ],
+      "total_training_required": 8
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

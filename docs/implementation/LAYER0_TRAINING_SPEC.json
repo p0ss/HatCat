@@ -1,0 +1,377 @@
+{
+  "description": "Layer 0 cross-concept distinction training specification",
+  "created": "2025-11-20T06:45:59.086749",
+  "strategy": {
+    "positive_examples": "ONLY the concepts own direct synsets (5-10 each)",
+    "negative_examples": "ALL synsets from the other 13 Layer 0 concepts",
+    "purpose": "Teach Layer 0 concepts to distinguish from each other",
+    "note": "Does NOT include descendant synsets - hierarchy is implicit through parent_concepts"
+  },
+  "hierarchical_suppression": {
+    "description": "At inference time, suppress parent activations when children activate",
+    "example": "If \"Bird\" activates strongly, suppress \"Physical\" and \"Object\"",
+    "implementation": "If child_score > threshold AND parent_score > threshold, output only child"
+  },
+  "concepts": {
+    "Abstract": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "abstraction.n.06",
+        "intangibility.n.01",
+        "immateriality.n.02",
+        "abstractness.n.01",
+        "representation.n.09"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "Attribute": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "attribute.n.02",
+        "human_nature.n.01",
+        "thing.n.09",
+        "common_denominator.n.02",
+        "ballast.n.03"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "Collection": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "chicane.n.01",
+        "royal_flush.n.01",
+        "straight_flush.n.01",
+        "full_house.n.01",
+        "flush.n.04"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "ContentBearingPhysical": {
+      "positive_synsets": 0,
+      "positive_examples": [],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 55,
+      "has_training_data": false
+    },
+    "Entity": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "entity.n.01",
+        "freshener.n.01",
+        "stinker.n.02",
+        "thing.n.08",
+        "right.n.01"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "List": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "string.n.05",
+        "combination.n.03",
+        "combination.n.02",
+        "fibonacci_sequence.n.01",
+        "hierarchy.n.01"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "Object": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "substance.n.07",
+        "matter.n.03",
+        "bezel.n.01",
+        "deckle_edge.n.01",
+        "tangibility.n.01"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "Physical": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "physical_entity.n.01",
+        "phenomenon.n.01",
+        "bandwagon_effect.n.01",
+        "butterfly_effect.n.01",
+        "coriolis_effect.n.01"
+      ],
+      "negative_concepts": [
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "PhysicalSystem": {
+      "positive_synsets": 0,
+      "positive_examples": [],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 55,
+      "has_training_data": false
+    },
+    "Process": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "process.n.06",
+        "abort.n.01",
+        "consummation.n.01",
+        "modulation.n.05",
+        "reorganization.n.02"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "Proposition": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "state.n.02",
+        "relativity.n.02",
+        "boatmanship.n.01",
+        "skillfulness.n.01",
+        "expertness.n.01"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "Quantity": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "increase.n.04",
+        "decrease.n.03",
+        "fare_increase.n.01",
+        "price_increase.n.01",
+        "supplement.n.02"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "Relation": {
+      "positive_synsets": 5,
+      "positive_examples": [
+        "associability.n.01",
+        "germaneness.n.01",
+        "number_agreement.n.01",
+        "person_agreement.n.01",
+        "case_agreement.n.01"
+      ],
+      "negative_concepts": [
+        "Physical",
+        "SetOrClass",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 50,
+      "has_training_data": true
+    },
+    "SetOrClass": {
+      "positive_synsets": 0,
+      "positive_examples": [],
+      "negative_concepts": [
+        "Physical",
+        "Quantity",
+        "PhysicalSystem",
+        "Proposition",
+        "Entity",
+        "ContentBearingPhysical",
+        "Process",
+        "Object",
+        "Attribute",
+        "Relation",
+        "List",
+        "Collection",
+        "Abstract"
+      ],
+      "negative_synsets": 55,
+      "has_training_data": false
+    }
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Software Engineering",
+    "id": "information.computer_science.software_engineering",
+    "level": 2,
+    "slug": "software-engineering",
+    "operations_count": 9,
+    "child_count": 8
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Software Engineering",
+        "target_id": "information.computer_science.software_engineering",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Modularity & Design",
+          "Architecture Styles",
+          "Testing & Quality",
+          "Build & Release",
+          "Configuration & Ops",
+          "Collaboration & Version Control",
+          "Performance & Reliability",
+          "Web Engineering"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.software_engineering.modularity_design",
+          "information.computer_science.software_engineering.architecture_styles",
+          "information.computer_science.software_engineering.testing_quality",
+          "information.computer_science.software_engineering.build_release",
+          "information.computer_science.software_engineering.configuration_ops",
+          "information.computer_science.software_engineering.collaboration_vc",
+          "information.computer_science.software_engineering.performance_reliability",
+          "information.computer_science.software_engineering.web_engineering"
+        ],
+        "target_layer": 2,
+        "child_count": 8
+      },
+      {
+        "operation": "create_meld",
+        "target": "Modularity & Design",
+        "target_id": "information.computer_science.software_engineering.modularity_design",
+        "new_parent": "Software Engineering",
+        "parent_id": "information.computer_science.software_engineering",
+        "source_concepts": [
+          "Abstraction",
+          "Encapsulation",
+          "Information Hiding",
+          "SOLID Principles",
+          "Design Patterns"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.software_engineering.modularity_design.abstraction",
+          "information.computer_science.software_engineering.modularity_design.encapsulation",
+          "information.computer_science.software_engineering.modularity_design.information_hiding",
+          "information.computer_science.software_engineering.modularity_design.solid_principles",
+          "information.computer_science.software_engineering.modularity_design.design_patterns"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Architecture Styles",
+        "target_id": "information.computer_science.software_engineering.architecture_styles",
+        "new_parent": "Software Engineering",
+        "parent_id": "information.computer_science.software_engineering",
+        "source_concepts": [
+          "Layered Architecture",
+          "Hexagonal/Ports & Adapters",
+          "Event-Driven",
+          "Microservices",
+          "Monolith"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.software_engineering.architecture_styles.layered_architecture",
+          "information.computer_science.software_engineering.architecture_styles.hexagonal_ports_adapters",
+          "information.computer_science.software_engineering.architecture_styles.event_driven",
+          "information.computer_science.software_engineering.architecture_styles.microservices",
+          "information.computer_science.software_engineering.architecture_styles.monolith"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Testing & Quality",
+        "target_id": "information.computer_science.software_engineering.testing_quality",
+        "new_parent": "Software Engineering",
+        "parent_id": "information.computer_science.software_engineering",
+        "source_concepts": [
+          "Unit Testing",
+          "Integration Testing",
+          "Property-Based Testing",
+          "Fuzzing",
+          "Static Analysis"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.software_engineering.testing_quality.unit_testing",
+          "information.computer_science.software_engineering.testing_quality.integration_testing",
+          "information.computer_science.software_engineering.testing_quality.property_based_testing",
+          "information.computer_science.software_engineering.testing_quality.fuzzing",
+          "information.computer_science.software_engineering.testing_quality.static_analysis"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Build & Release",
+        "target_id": "information.computer_science.software_engineering.build_release",
+        "new_parent": "Software Engineering",
+        "parent_id": "information.computer_science.software_engineering",
+        "source_concepts": [
+          "Build Systems",
+          "Dependency Management",
+          "Semantic Versioning",
+          "Packaging",
+          "CI/CD Pipelines"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.software_engineering.build_release.build_systems",
+          "information.computer_science.software_engineering.build_release.dependency_management",
+          "information.computer_science.software_engineering.build_release.semantic_versioning",
+          "information.computer_science.software_engineering.build_release.packaging",
+          "information.computer_science.software_engineering.build_release.ci_cd_pipelines"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Configuration & Ops",
+        "target_id": "information.computer_science.software_engineering.configuration_ops",
+        "new_parent": "Software Engineering",
+        "parent_id": "information.computer_science.software_engineering",
+        "source_concepts": [
+          "Infrastructure as Code",
+          "Observability (Logs/Metrics/Traces)",
+          "Incident Response",
+          "SLO/SLI"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.software_engineering.configuration_ops.infrastructure_as_code",
+          "information.computer_science.software_engineering.configuration_ops.observability_logs_metrics_traces",
+          "information.computer_science.software_engineering.configuration_ops.incident_response",
+          "information.computer_science.software_engineering.configuration_ops.slo_sli"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Collaboration & Version Control",
+        "target_id": "information.computer_science.software_engineering.collaboration_vc",
+        "new_parent": "Software Engineering",
+        "parent_id": "information.computer_science.software_engineering",
+        "source_concepts": [
+          "Git DAG Model",
+          "Branching Strategies",
+          "Code Review",
+          "Merge Conflict Resolution"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.software_engineering.collaboration_vc.git_dag_model",
+          "information.computer_science.software_engineering.collaboration_vc.branching_strategies",
+          "information.computer_science.software_engineering.collaboration_vc.code_review",
+          "information.computer_science.software_engineering.collaboration_vc.merge_conflict_resolution"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Performance & Reliability",
+        "target_id": "information.computer_science.software_engineering.performance_reliability",
+        "new_parent": "Software Engineering",
+        "parent_id": "information.computer_science.software_engineering",
+        "source_concepts": [
+          "Profiling",
+          "Load Testing",
+          "Capacity Planning",
+          "Backpressure",
+          "Graceful Degradation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.software_engineering.performance_reliability.profiling",
+          "information.computer_science.software_engineering.performance_reliability.load_testing",
+          "information.computer_science.software_engineering.performance_reliability.capacity_planning",
+          "information.computer_science.software_engineering.performance_reliability.backpressure",
+          "information.computer_science.software_engineering.performance_reliability.graceful_degradation"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Web Engineering",
+        "target_id": "information.computer_science.software_engineering.web_engineering",
+        "new_parent": "Software Engineering",
+        "parent_id": "information.computer_science.software_engineering",
+        "source_concepts": [
+          "Client\u2013Server",
+          "State Management",
+          "Progressive Enhancement",
+          "Caching Layers",
+          "Build Toolchains"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.software_engineering.web_engineering.client_server",
+          "information.computer_science.software_engineering.web_engineering.state_management",
+          "information.computer_science.software_engineering.web_engineering.progressive_enhancement",
+          "information.computer_science.software_engineering.web_engineering.caching_layers",
+          "information.computer_science.software_engineering.web_engineering.build_toolchains"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      }
+    ]
+  }
+}

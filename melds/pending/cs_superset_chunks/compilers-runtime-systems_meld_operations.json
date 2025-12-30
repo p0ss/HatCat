@@ -1,0 +1,313 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Compilers & Runtime Systems",
+    "id": "information.computer_science.compilers_runtimes",
+    "level": 2,
+    "slug": "compilers-runtime-systems",
+    "operations_count": 13,
+    "child_count": 8
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Compilers & Runtime Systems",
+        "target_id": "information.computer_science.compilers_runtimes",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Front End",
+          "Intermediate Representations",
+          "Optimizations",
+          "Code Generation",
+          "Execution Models",
+          "Memory Management",
+          "Runtime Concurrency",
+          "Debugging & Profiling"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.front_end",
+          "information.computer_science.compilers_runtimes.intermediate_representations",
+          "information.computer_science.compilers_runtimes.optimizations",
+          "information.computer_science.compilers_runtimes.code_generation",
+          "information.computer_science.compilers_runtimes.runtime_execution",
+          "information.computer_science.compilers_runtimes.memory_management",
+          "information.computer_science.compilers_runtimes.concurrency_runtime",
+          "information.computer_science.compilers_runtimes.debug_prof"
+        ],
+        "target_layer": 2,
+        "child_count": 8
+      },
+      {
+        "operation": "create_meld",
+        "target": "Front End",
+        "target_id": "information.computer_science.compilers_runtimes.front_end",
+        "new_parent": "Compilers & Runtime Systems",
+        "parent_id": "information.computer_science.compilers_runtimes",
+        "source_concepts": [
+          "Lexical Analysis",
+          "Parsing",
+          "Name Resolution",
+          "Type Checking",
+          "Desugaring"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.front_end.lexical_analysis",
+          "information.computer_science.compilers_runtimes.front_end.parsing",
+          "information.computer_science.compilers_runtimes.front_end.name_resolution",
+          "information.computer_science.compilers_runtimes.front_end.type_checking",
+          "information.computer_science.compilers_runtimes.front_end.desugaring"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Intermediate Representations",
+        "target_id": "information.computer_science.compilers_runtimes.intermediate_representations",
+        "new_parent": "Compilers & Runtime Systems",
+        "parent_id": "information.computer_science.compilers_runtimes",
+        "source_concepts": [
+          "AST",
+          "Control-Flow Graph (CFG)",
+          "Static Single Assignment (SSA)",
+          "Three-Address Code",
+          "Bytecode"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.intermediate_representations.ast",
+          "information.computer_science.compilers_runtimes.intermediate_representations.control_flow_graph_cfg",
+          "information.computer_science.compilers_runtimes.intermediate_representations.static_single_assignment_ssa",
+          "information.computer_science.compilers_runtimes.intermediate_representations.three_address_code",
+          "information.computer_science.compilers_runtimes.intermediate_representations.bytecode"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Optimizations",
+        "target_id": "information.computer_science.compilers_runtimes.optimizations",
+        "new_parent": "Compilers & Runtime Systems",
+        "parent_id": "information.computer_science.compilers_runtimes",
+        "source_concepts": [
+          "Dataflow",
+          "Loop Optimizations",
+          "Register Allocation",
+          "Interprocedural"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.optimizations.dataflow",
+          "information.computer_science.compilers_runtimes.optimizations.loop_opts",
+          "information.computer_science.compilers_runtimes.optimizations.register_alloc",
+          "information.computer_science.compilers_runtimes.optimizations.interprocedural"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Dataflow",
+        "target_id": "information.computer_science.compilers_runtimes.optimizations.dataflow",
+        "new_parent": "Optimizations",
+        "parent_id": "information.computer_science.compilers_runtimes.optimizations",
+        "source_concepts": [
+          "Reaching Definitions",
+          "Liveness Analysis",
+          "Constant Propagation",
+          "Common Subexpression Elimination"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.optimizations.dataflow.reaching_definitions",
+          "information.computer_science.compilers_runtimes.optimizations.dataflow.liveness_analysis",
+          "information.computer_science.compilers_runtimes.optimizations.dataflow.constant_propagation",
+          "information.computer_science.compilers_runtimes.optimizations.dataflow.common_subexpression_elimination"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Loop Optimizations",
+        "target_id": "information.computer_science.compilers_runtimes.optimizations.loop_opts",
+        "new_parent": "Optimizations",
+        "parent_id": "information.computer_science.compilers_runtimes.optimizations",
+        "source_concepts": [
+          "Loop Invariant Code Motion",
+          "Strength Reduction",
+          "Unrolling",
+          "Vectorization",
+          "Polyhedral Model"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.optimizations.loop_opts.loop_invariant_code_motion",
+          "information.computer_science.compilers_runtimes.optimizations.loop_opts.strength_reduction",
+          "information.computer_science.compilers_runtimes.optimizations.loop_opts.unrolling",
+          "information.computer_science.compilers_runtimes.optimizations.loop_opts.vectorization",
+          "information.computer_science.compilers_runtimes.optimizations.loop_opts.polyhedral_model"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Register Allocation",
+        "target_id": "information.computer_science.compilers_runtimes.optimizations.register_alloc",
+        "new_parent": "Optimizations",
+        "parent_id": "information.computer_science.compilers_runtimes.optimizations",
+        "source_concepts": [
+          "Graph Coloring Allocation",
+          "Linear Scan Allocation",
+          "Spilling"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.optimizations.register_alloc.graph_coloring_allocation",
+          "information.computer_science.compilers_runtimes.optimizations.register_alloc.linear_scan_allocation",
+          "information.computer_science.compilers_runtimes.optimizations.register_alloc.spilling"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Interprocedural",
+        "target_id": "information.computer_science.compilers_runtimes.optimizations.interprocedural",
+        "new_parent": "Optimizations",
+        "parent_id": "information.computer_science.compilers_runtimes.optimizations",
+        "source_concepts": [
+          "Inlining",
+          "Escape Analysis",
+          "Alias Analysis",
+          "Devirtualization"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.optimizations.interprocedural.inlining",
+          "information.computer_science.compilers_runtimes.optimizations.interprocedural.escape_analysis",
+          "information.computer_science.compilers_runtimes.optimizations.interprocedural.alias_analysis",
+          "information.computer_science.compilers_runtimes.optimizations.interprocedural.devirtualization"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Code Generation",
+        "target_id": "information.computer_science.compilers_runtimes.code_generation",
+        "new_parent": "Compilers & Runtime Systems",
+        "parent_id": "information.computer_science.compilers_runtimes",
+        "source_concepts": [
+          "Instruction Selection",
+          "Instruction Scheduling",
+          "Calling Conventions/ABI",
+          "Linking & Relocation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.code_generation.instruction_selection",
+          "information.computer_science.compilers_runtimes.code_generation.instruction_scheduling",
+          "information.computer_science.compilers_runtimes.code_generation.calling_conventions_abi",
+          "information.computer_science.compilers_runtimes.code_generation.linking_relocation"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Execution Models",
+        "target_id": "information.computer_science.compilers_runtimes.runtime_execution",
+        "new_parent": "Compilers & Runtime Systems",
+        "parent_id": "information.computer_science.compilers_runtimes",
+        "source_concepts": [
+          "Interpreter",
+          "Virtual Machine",
+          "JIT Compilation",
+          "AOT Compilation",
+          "Partial Evaluation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.runtime_execution.interpreter",
+          "information.computer_science.compilers_runtimes.runtime_execution.virtual_machine",
+          "information.computer_science.compilers_runtimes.runtime_execution.jit_compilation",
+          "information.computer_science.compilers_runtimes.runtime_execution.aot_compilation",
+          "information.computer_science.compilers_runtimes.runtime_execution.partial_evaluation"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Memory Management",
+        "target_id": "information.computer_science.compilers_runtimes.memory_management",
+        "new_parent": "Compilers & Runtime Systems",
+        "parent_id": "information.computer_science.compilers_runtimes",
+        "source_concepts": [
+          "Tracing GC",
+          "Generational GC",
+          "Mark\u2013Sweep",
+          "Copying GC",
+          "Reference Counting",
+          "Region/Arena Allocation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.memory_management.tracing_gc",
+          "information.computer_science.compilers_runtimes.memory_management.generational_gc",
+          "information.computer_science.compilers_runtimes.memory_management.mark_sweep",
+          "information.computer_science.compilers_runtimes.memory_management.copying_gc",
+          "information.computer_science.compilers_runtimes.memory_management.reference_counting",
+          "information.computer_science.compilers_runtimes.memory_management.region_arena_allocation"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Runtime Concurrency",
+        "target_id": "information.computer_science.compilers_runtimes.concurrency_runtime",
+        "new_parent": "Compilers & Runtime Systems",
+        "parent_id": "information.computer_science.compilers_runtimes",
+        "source_concepts": [
+          "Green Threads",
+          "Async/Await",
+          "Event Loops",
+          "Work Stealing Schedulers"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.concurrency_runtime.green_threads",
+          "information.computer_science.compilers_runtimes.concurrency_runtime.async_await",
+          "information.computer_science.compilers_runtimes.concurrency_runtime.event_loops",
+          "information.computer_science.compilers_runtimes.concurrency_runtime.work_stealing_schedulers"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Debugging & Profiling",
+        "target_id": "information.computer_science.compilers_runtimes.debug_prof",
+        "new_parent": "Compilers & Runtime Systems",
+        "parent_id": "information.computer_science.compilers_runtimes",
+        "source_concepts": [
+          "DWARF/Symbols",
+          "Sampling Profilers",
+          "Tracing",
+          "Sanitizers (ASan/TSan/UBSan)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.compilers_runtimes.debug_prof.dwarf_symbols",
+          "information.computer_science.compilers_runtimes.debug_prof.sampling_profilers",
+          "information.computer_science.compilers_runtimes.debug_prof.tracing",
+          "information.computer_science.compilers_runtimes.debug_prof.sanitizers_asan_tsan_ubsan"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      }
+    ]
+  }
+}

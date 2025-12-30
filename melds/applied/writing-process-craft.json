@@ -1,0 +1,705 @@
+{
+  "meld_request_id": "org.hatcat/writing-process-craft@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Writing Process and Craft",
+    "description": "Concepts for the stages and activities of writing including drafting, revision, editing, and genre forms. These probes can reveal meta-cognitive processes in language models as they plan, generate, and potentially self-correct output.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/ContentDevelopment",
+      "relationship": "parent_of",
+      "candidate_concept": "WritingProcess"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "WritingProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The cognitive and practical activities involved in producing written text, including planning, drafting, revising, and editing",
+      "definition_source": "Process-oriented composition research, Flower & Hayes",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "CompositionProcess",
+        "WritingWorkflow",
+        "TextProduction"
+      ],
+      "relationships": {
+        "related": [
+          "Writing",
+          "ContentDevelopment",
+          "Cognition",
+          "Production"
+        ],
+        "has_part": [
+          "Prewriting",
+          "Drafting",
+          "Revision",
+          "Editing",
+          "Proofreading",
+          "Publishing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Process category"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The writing process is recursive: writers move back and forth between planning, drafting, and revising.",
+          "Different writers have different processes; some plan extensively, others discover through drafting.",
+          "The process approach to teaching writing focuses on stages rather than just products.",
+          "Metacognition about writing process: knowing when to draft freely versus when to plan carefully."
+        ],
+        "negative_examples": [
+          "The author wrote the text.",
+          "The essay was produced.",
+          "Writing happened."
+        ],
+        "disambiguation": "Distinct stages and cognitive activities of composition, not just the act of writing"
+      },
+      "children": [
+        "Prewriting",
+        "Drafting",
+        "Revision",
+        "Editing",
+        "Proofreading",
+        "Publishing"
+      ]
+    },
+    {
+      "term": "Prewriting",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Activities before drafting that generate and organize ideas, including brainstorming, outlining, research, and planning",
+      "definition_source": "Composition pedagogy, process research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Planning",
+        "Brainstorming",
+        "Invention"
+      ],
+      "relationships": {
+        "related": [
+          "Drafting",
+          "Ideation",
+          "Organization",
+          "Research"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Process stage"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Prewriting strategies: freewriting, clustering, listing, questioning, outlining.",
+          "Time spent in prewriting reduces revision time by clarifying structure early.",
+          "Research is part of prewriting: gathering material before drafting.",
+          "The outline organizes prewriting ideas into a preliminary structure."
+        ],
+        "negative_examples": [
+          "The author thought about what to write.",
+          "Ideas came before writing.",
+          "Planning occurred."
+        ],
+        "disambiguation": "Specific ideation and organization activities before drafting, not just thinking"
+      },
+      "children": []
+    },
+    {
+      "term": "Drafting",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "The stage of writing where ideas are put into sentences and paragraphs, producing the initial version of the text",
+      "definition_source": "Composition pedagogy, process research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "FirstDraft",
+        "InitialWriting",
+        "RoughDraft"
+      ],
+      "relationships": {
+        "related": [
+          "Prewriting",
+          "Revision",
+          "Text",
+          "Generation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Process stage"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "During drafting, focus on getting ideas down rather than perfecting prose.",
+          "The first draft is often called the 'zero draft' or 'discovery draft.'",
+          "Draft freely now, edit critically later.",
+          "Some writers draft linearly; others compose out of order and assemble later."
+        ],
+        "negative_examples": [
+          "The author wrote.",
+          "Words were put on paper.",
+          "The text was created."
+        ],
+        "disambiguation": "Initial generation phase prioritizing ideas over polish, not just writing"
+      },
+      "children": []
+    },
+    {
+      "term": "Revision",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Substantial reworking of a draft focusing on content, structure, and clarity - 're-seeing' the text at a global level",
+      "definition_source": "Composition research, Nancy Sommers",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Rewriting",
+        "Reworking",
+        "GlobalRevision"
+      ],
+      "relationships": {
+        "related": [
+          "Drafting",
+          "Editing",
+          "Structure",
+          "Improvement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Process stage"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Revision involves cutting entire paragraphs, reorganizing structure, or rethinking arguments.",
+          "Revision differs from editing: revision addresses meaning and structure, editing addresses sentences.",
+          "Experienced writers revise more extensively than novices, who often just edit.",
+          "The revision revealed that the third section should come first."
+        ],
+        "negative_examples": [
+          "The author changed some things.",
+          "Improvements were made.",
+          "The text was fixed."
+        ],
+        "disambiguation": "Major structural and conceptual reworking, not just surface corrections"
+      },
+      "children": []
+    },
+    {
+      "term": "Editing",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Improving prose at the sentence level for clarity, style, flow, and concision",
+      "definition_source": "Composition pedagogy, publishing",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "LineEditing",
+        "SentenceLevelRevision",
+        "StyleEditing"
+      ],
+      "relationships": {
+        "related": [
+          "Revision",
+          "Proofreading",
+          "Clarity",
+          "Style"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Process stage"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Editing: tightening wordy sentences, improving word choice, varying sentence structure.",
+          "Edit for clarity: does each sentence communicate its meaning unambiguously?",
+          "Editing removes throat-clearing phrases and unnecessary qualifications.",
+          "Reading aloud helps with editing: awkward phrases become audible."
+        ],
+        "negative_examples": [
+          "The text was improved.",
+          "Changes were made.",
+          "The writing got better."
+        ],
+        "disambiguation": "Sentence-level improvement of prose, not global restructuring or error correction"
+      },
+      "children": []
+    },
+    {
+      "term": "Proofreading",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Final check for mechanical errors including spelling, punctuation, grammar, and formatting",
+      "definition_source": "Composition pedagogy, publishing",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ErrorChecking",
+        "CopyEditing",
+        "FinalPolish"
+      ],
+      "relationships": {
+        "related": [
+          "Editing",
+          "Grammar",
+          "Spelling",
+          "Punctuation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Process stage"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Proofreading catches typos, missing commas, and subject-verb agreement errors.",
+          "Proofreading is the final stage: don't proofread until revision and editing are complete.",
+          "Proofreading strategies: reading backward, reading aloud, using spell-check cautiously.",
+          "Common proofreading catches: its/it's, their/there/they're, missing words."
+        ],
+        "negative_examples": [
+          "The text was checked.",
+          "Errors were found.",
+          "The draft was reviewed."
+        ],
+        "disambiguation": "Catching surface mechanical errors, not improving content or style"
+      },
+      "children": []
+    },
+    {
+      "term": "Publishing",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Making the final text available to its intended audience through submission, distribution, or posting",
+      "definition_source": "Publishing industry, composition pedagogy",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Distribution",
+        "Submission",
+        "Release"
+      ],
+      "relationships": {
+        "related": [
+          "Audience",
+          "Dissemination",
+          "Finalization",
+          "Sharing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Process stage"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Publishing may mean submitting to a journal, posting on a blog, or presenting to a class.",
+          "The publishing stage requires formatting for the target medium and audience.",
+          "Self-publishing bypasses traditional gatekeepers but requires self-editing.",
+          "Publication is not the end: published works can be revised in later editions."
+        ],
+        "negative_examples": [
+          "The text was finished.",
+          "The work was done.",
+          "People read it."
+        ],
+        "disambiguation": "Deliberate release to audience through specific channels, not just completion"
+      },
+      "children": []
+    },
+    {
+      "term": "Essay",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "A prose composition presenting the author's argument, analysis, or reflection on a subject",
+      "definition_source": "Literary genre, Montaigne",
+      "domain": "Information",
+      "aliases": [
+        "ProseEssay",
+        "LongFormEssay",
+        "ArgumentativeEssay"
+      ],
+      "relationships": {
+        "related": [
+          "Article",
+          "Argument",
+          "Analysis",
+          "Prose"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text genre"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The personal essay blends narrative, reflection, and argument.",
+          "Academic essays require thesis statements, evidence, and formal structure.",
+          "The five-paragraph essay is a simplified pedagogical form, not a universal template.",
+          "Montaigne's essays pioneered the form: exploratory, personal, tentative."
+        ],
+        "negative_examples": [
+          "Someone wrote about something.",
+          "A piece of writing.",
+          "An opinion was expressed."
+        ],
+        "disambiguation": "Specific prose form with argument or reflection, not just any nonfiction"
+      },
+      "children": []
+    },
+    {
+      "term": "Poetry",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Literary composition using concentrated language, meter, imagery, and often line breaks to create aesthetic and emotional effects",
+      "definition_source": "Poetics, literary criticism",
+      "domain": "Information",
+      "aliases": [
+        "Verse",
+        "Poem",
+        "PoeticWriting"
+      ],
+      "relationships": {
+        "related": [
+          "Verse",
+          "Meter",
+          "Imagery",
+          "LineBreak"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text genre"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Poetry condenses meaning: every word must earn its place.",
+          "Free verse abandons regular meter but retains line breaks and imagery.",
+          "The poem's form (sonnet, haiku, villanelle) shapes its meaning.",
+          "Poetry uses sound: alliteration, assonance, rhyme, rhythm."
+        ],
+        "negative_examples": [
+          "Beautiful writing.",
+          "Expressive language.",
+          "Creative text."
+        ],
+        "disambiguation": "Specific literary form with formal features, not just aesthetically pleasing prose"
+      },
+      "children": []
+    },
+    {
+      "term": "Prose",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Ordinary written language without the metrical structure of verse, organized in sentences and paragraphs",
+      "definition_source": "Literary criticism, genre theory",
+      "domain": "Information",
+      "aliases": [
+        "ProseWriting",
+        "NonVerse",
+        "OrdinaryLanguage"
+      ],
+      "relationships": {
+        "related": [
+          "Sentence",
+          "Paragraph",
+          "Text"
+        ],
+        "antonyms": [
+          "Poetry",
+          "Verse"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text form"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Prose is the ordinary form of written language, without meter or line breaks.",
+          "Prose encompasses fiction (novels, stories) and nonfiction (essays, journalism).",
+          "Prose poetry occupies the boundary: poetic intensity in prose format.",
+          "Good prose has rhythm too, just not regular metrical patterns."
+        ],
+        "negative_examples": [
+          "Written text.",
+          "Normal writing.",
+          "Not poetry."
+        ],
+        "disambiguation": "Sentence-and-paragraph writing as distinct from verse, not just any text"
+      },
+      "children": []
+    },
+    {
+      "term": "Fiction",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Narrative prose that is imagined or invented rather than factual",
+      "definition_source": "Literary genre theory",
+      "domain": "Information",
+      "aliases": [
+        "FictionalWriting",
+        "ImaginativeProse",
+        "MadeUpStory"
+      ],
+      "relationships": {
+        "related": [
+          "Novel",
+          "Story",
+          "Imagination",
+          "Narrative"
+        ],
+        "antonyms": [
+          "Nonfiction",
+          "Factual"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text genre"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Fiction creates imaginary characters, events, and worlds.",
+          "Literary fiction emphasizes craft and meaning; genre fiction emphasizes plot and convention.",
+          "Fiction can reveal truth through invention: Orwell's 1984 illuminates totalitarianism.",
+          "The contract of fiction: readers suspend disbelief in exchange for narrative experience."
+        ],
+        "negative_examples": [
+          "Made up things.",
+          "Not true.",
+          "Stories."
+        ],
+        "disambiguation": "Imagined narrative prose as a literary category, not just lies or inventions"
+      },
+      "children": []
+    },
+    {
+      "term": "Nonfiction",
+      "role": "concept",
+      "parent_concepts": [
+        "WritingProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "Prose based on facts, real events, and real people, including memoir, essay, journalism, and academic writing",
+      "definition_source": "Literary genre theory, publishing",
+      "domain": "Information",
+      "aliases": [
+        "NonfictionWriting",
+        "FactualProse",
+        "DocumentaryWriting"
+      ],
+      "relationships": {
+        "related": [
+          "Essay",
+          "Journalism",
+          "Memoir",
+          "Academic"
+        ],
+        "antonyms": [
+          "Fiction",
+          "Imaginary"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Text genre"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Creative nonfiction uses literary techniques while maintaining factual accuracy.",
+          "Nonfiction genres: memoir, biography, essay, journalism, history, self-help.",
+          "Narrative nonfiction tells true stories with the craft of fiction.",
+          "The nonfiction writer is bound by what actually happened."
+        ],
+        "negative_examples": [
+          "True things.",
+          "Real information.",
+          "Facts."
+        ],
+        "disambiguation": "Factual prose as a literary category with its own craft, not just truth-telling"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:19.967335Z",
+    "result_pack_version": "7.6.4",
+    "concepts_added": 12,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 11
+    },
+    "parents_updated": 12,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "WritingProcess",
+        "Prewriting",
+        "Drafting",
+        "Revision",
+        "Editing",
+        "Proofreading",
+        "Publishing",
+        "Essay",
+        "Poetry",
+        "Prose",
+        "Fiction",
+        "Nonfiction"
+      ],
+      "must_retrain": [
+        "ContentDevelopment"
+      ],
+      "should_retrain": [
+        "ArtPainting",
+        "ComposingMusic",
+        "ComputerProgramming",
+        "Designing",
+        "Drawing",
+        "EnteringAPin",
+        "FilmMaking",
+        "PersonalDataProcessing",
+        "PersuasiveCommunication",
+        "Photographing",
+        "Posting",
+        "ProfessionalEditing",
+        "Publication",
+        "Reading",
+        "Sculpting",
+        "StatusUpdate",
+        "Tracing",
+        "Translating",
+        "Update",
+        "VideoSurveillance",
+        "Writing"
+      ],
+      "optional_retrain": [
+        "Argument",
+        "Article",
+        "Imagery",
+        "IntentionalProcess",
+        "Meter",
+        "Novel",
+        "Organization",
+        "Paragraph",
+        "Sentence",
+        "Sharing",
+        "Text"
+      ],
+      "total_training_required": 13
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

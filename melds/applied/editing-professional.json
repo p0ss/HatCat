@@ -1,0 +1,996 @@
+{
+  "meld_request_id": "org.hatcat/editing-professional@0.3.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Professional Editing",
+    "description": "Professional editing practices and distinctions including copy editing, line editing, structural editing, and developmental editing. Includes polar inverse concepts for detecting when editing is NOT happening properly or when harmful editing behaviors occur. These concepts enable interpretability of different levels and types of text improvement work.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-10T00:00:00Z",
+    "version": "0.3.0",
+    "changelog": "v0.3.0: Augmented training examples to meet validation thresholds (15 for high-risk, 10 for harness_relevant, 5 for standard)"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/ContentDevelopment",
+      "relationship": "parent_of",
+      "candidate_concept": "ProfessionalEditing"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "ProfessionalEditing",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "The systematic improvement of written content by trained editors, encompassing multiple levels from mechanical correction to substantive development",
+      "definition_source": "Publishing industry, editorial practice",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "EditorialWork",
+        "TextEditing",
+        "ManuscriptEditing"
+      ],
+      "relationships": {
+        "related": [
+          "ContentDevelopment",
+          "Writing",
+          "Publishing",
+          "QualityAssurance"
+        ],
+        "has_part": [
+          "CopyEditing",
+          "LineEditing",
+          "StructuralEditing",
+          "DevelopmentalEditing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Professional practice category"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Professional editing transformed the rough manuscript into a polished book.",
+          "The editing process involved multiple passes: developmental, line, copy, and proofreading.",
+          "Professional editors bring expertise in grammar, style, structure, and audience expectations.",
+          "Editorial work requires balancing author voice with reader needs.",
+          "Professional editing distinguished between errors to fix and stylistic choices to preserve."
+        ],
+        "negative_examples": [
+          "The text was improved.",
+          "Someone fixed the writing.",
+          "Changes were made.",
+          "The text was edited."
+        ],
+        "disambiguation": "Systematic professional improvement of text, not casual revision"
+      },
+      "children": [
+        "CopyEditing",
+        "LineEditing",
+        "StructuralEditing",
+        "DevelopmentalEditing",
+        "StyleHarmonization",
+        "FeedbackIncorporation",
+        "EditorialJudgment",
+        "AuthorEditorCollaboration",
+        "ErrorPropagation",
+        "VoiceDistortion",
+        "StructuralIncoherence",
+        "ScopeCreep",
+        "EditorialOverreach",
+        "MeaningDistortion"
+      ]
+    },
+    {
+      "term": "CopyEditing",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Correcting errors in grammar, spelling, punctuation, and usage while ensuring consistency in style, terminology, and formatting",
+      "definition_source": "Publishing, Chicago Manual of Style",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "CopyEdit",
+        "MechanicalEditing",
+        "TechnicalEditing"
+      ],
+      "relationships": {
+        "related": [
+          "Proofreading",
+          "StyleGuide",
+          "Consistency",
+          "Grammar"
+        ],
+        "opposite": [
+          "ErrorPropagation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Editorial practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Copy editing caught the inconsistent hyphenation of 'e-mail' vs 'email' throughout the manuscript.",
+          "The copy editor queried the author about the discrepancy between dates on pages 45 and 112.",
+          "Copy editing enforced the house style for number formatting and citation format.",
+          "Copy editing corrected subject-verb agreement errors and dangling modifiers.",
+          "Copy editing caught that 'affect' and 'effect' were used interchangeably throughout."
+        ],
+        "negative_examples": [
+          "The text was checked.",
+          "Errors were fixed.",
+          "The grammar was corrected.",
+          "Grammar was checked.",
+          "Errors were found."
+        ],
+        "disambiguation": "Systematic correction for accuracy and consistency, not just error-spotting"
+      },
+      "children": []
+    },
+    {
+      "term": "ErrorPropagation",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Failing to catch errors during editing, or introducing new errors through careless changes, resulting in degraded text quality",
+      "definition_source": "Editorial quality assurance, error analysis",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ErrorIntroduction",
+        "EditingNegligence",
+        "QualityDegradation"
+      ],
+      "relationships": {
+        "related": [
+          "Negligence",
+          "Error",
+          "QualityControl"
+        ],
+        "opposite": [
+          "CopyEditing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "trust"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AccuracyMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Error propagation: the model's edit introduced a subject-verb disagreement that wasn't in the original.",
+          "The revision propagated errors by copying a misspelled name throughout the document.",
+          "Editing negligence failed to catch the inconsistent date formats already present in the text.",
+          "Error introduction: the 'correction' changed a correct technical term to an incorrect one.",
+          "Error propagation: the model's find-replace introduced errors in words containing the target substring.",
+          "The edit introduced a dangling modifier that made the sentence grammatically incorrect.",
+          "Propagated errors: the wrong citation format was 'corrected' to, spreading throughout the bibliography.",
+          "Error introduction: the model changed correct British spellings to incorrect hybrid forms.",
+          "The revision propagated the factual error in the source by not catching it during editing.",
+          "Error propagation created inconsistency by changing some instances of a term but not others."
+        ],
+        "negative_examples": [
+          "Errors were missed.",
+          "New mistakes appeared.",
+          "The editing introduced problems.",
+          "Something was wrong.",
+          "There were errors.",
+          "Mistakes happened.",
+          "Problems occurred.",
+          "Issues were present.",
+          "Errors existed.",
+          "The text had mistakes."
+        ],
+        "disambiguation": "Specific failure to maintain or improve quality through editing"
+      },
+      "children": []
+    },
+    {
+      "term": "LineEditing",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Improving prose at the sentence and paragraph level for clarity, flow, rhythm, and word choice without changing content or structure",
+      "definition_source": "Publishing, editorial practice",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SentenceLevelEditing",
+        "StyleEditing",
+        "ProsePolishing"
+      ],
+      "relationships": {
+        "related": [
+          "CopyEditing",
+          "Style",
+          "Clarity",
+          "Voice"
+        ],
+        "opposite": [
+          "VoiceDistortion"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Editorial practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Line editing transformed 'It was a situation that was very difficult' into 'The situation proved difficult.'",
+          "The line editor varied sentence length to improve rhythm and reader engagement.",
+          "Line editing addressed wordiness, replacing 'due to the fact that' with 'because.'",
+          "Line editing preserved the author's voice while enhancing clarity and impact.",
+          "Line editing transformed passive constructions into active voice without losing the author's tone."
+        ],
+        "negative_examples": [
+          "The sentences were improved.",
+          "The writing got better.",
+          "Words were changed.",
+          "Sentences were improved.",
+          "The prose got better."
+        ],
+        "disambiguation": "Craft-level prose improvement, not mechanical correction or structural change"
+      },
+      "children": []
+    },
+    {
+      "term": "VoiceDistortion",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Editing that inappropriately changes the author's distinctive voice, tone, or style, imposing the editor's preferences rather than serving the work",
+      "definition_source": "Editorial ethics, authorship",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "VoiceOverwrite",
+        "StyleImposition",
+        "AuthorVoiceLoss"
+      ],
+      "relationships": {
+        "related": [
+          "EditorialOverreach",
+          "AuthorVoice",
+          "StyleHarmonization"
+        ],
+        "opposite": [
+          "LineEditing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "trust"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "IntegrityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Voice distortion: the model rewrote the casual, conversational essay in formal academic prose.",
+          "The edit distorted the author's voice by removing the characteristic dry humor throughout.",
+          "Style imposition replaced the author's short punchy sentences with the model's preferred complex ones.",
+          "Voice overwrite made the memoir sound like a corporate report rather than personal reflection.",
+          "Voice distortion: the edit flattened the author's distinctive regional dialect into standard English.",
+          "The model distorted voice by removing all contractions from an intentionally colloquial piece.",
+          "Style imposition: the author's active constructions were systematically changed to passive.",
+          "Voice distortion replaced the author's technical precision with vague accessibility.",
+          "The edit overwrote the author's deliberately fragmented style with conventional sentences.",
+          "Voice distortion: the personal, emotional tone was edited into clinical detachment."
+        ],
+        "negative_examples": [
+          "The voice was changed.",
+          "The style was different.",
+          "The writing didn't sound like the author.",
+          "The tone shifted.",
+          "The style changed.",
+          "The voice differed.",
+          "The writing was different.",
+          "The prose changed.",
+          "The sound was altered.",
+          "The text felt different."
+        ],
+        "disambiguation": "Inappropriate alteration of authorial voice, not legitimate style editing"
+      },
+      "children": []
+    },
+    {
+      "term": "StructuralEditing",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Reorganizing content for logical flow, coherence, and effectiveness, including reordering sections, strengthening transitions, and ensuring argument progression",
+      "definition_source": "Publishing, editorial practice",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SubstantiveEditing",
+        "ContentEditing",
+        "OrganizationalEditing"
+      ],
+      "relationships": {
+        "related": [
+          "DevelopmentalEditing",
+          "Organization",
+          "Logic",
+          "Coherence"
+        ],
+        "opposite": [
+          "StructuralIncoherence"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Editorial practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Structural editing moved the backstory from chapter one to chapter three for better pacing.",
+          "The structural edit recommended splitting the overlong middle section into two chapters.",
+          "Structural editing identified that the argument's strongest point was buried in paragraph twelve.",
+          "The editor's structural pass added signposting and transitions between major sections.",
+          "Structural editing identified that the chronological order obscured the thematic argument."
+        ],
+        "negative_examples": [
+          "The organization was improved.",
+          "Things were moved around.",
+          "The structure changed.",
+          "Things were reorganized."
+        ],
+        "disambiguation": "Purposeful reorganization for effectiveness, not arbitrary rearrangement"
+      },
+      "children": []
+    },
+    {
+      "term": "StructuralIncoherence",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Editing that disrupts logical flow, breaks argument progression, or creates organizational confusion through poorly considered changes",
+      "definition_source": "Editorial quality, coherence studies",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "OrganizationalDisruption",
+        "FlowDisruption",
+        "CoherenceBreakdown"
+      ],
+      "relationships": {
+        "related": [
+          "Confusion",
+          "Incoherence",
+          "PoorOrganization"
+        ],
+        "opposite": [
+          "StructuralEditing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "trust"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "IntegrityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Structural incoherence: the model moved a paragraph that broke the cause-effect chain of the argument.",
+          "The edit created structural incoherence by separating the setup from its payoff across distant sections.",
+          "Organizational disruption placed the conclusion before evidence that it depended on.",
+          "Flow disruption resulted from removing a transitional paragraph without replacing its connective function.",
+          "Structural incoherence: the edit moved the definition after the term had been used repeatedly.",
+          "The reorganization broke coherence by interleaving chronological with thematic sections.",
+          "Structural disruption: removing the topic sentence left the paragraph without clear purpose.",
+          "Incoherence resulted from the edit splitting a unified argument across non-adjacent sections.",
+          "The structural edit broke the narrative's emotional arc by relocating the climax.",
+          "Organizational incoherence: the edit grouped by topic but broke the logical progression of ideas."
+        ],
+        "negative_examples": [
+          "The structure was confusing.",
+          "The organization was poor.",
+          "The flow was disrupted.",
+          "Things were out of order.",
+          "The structure changed.",
+          "Organization suffered.",
+          "The flow was affected.",
+          "Sections were moved.",
+          "The order changed.",
+          "The arrangement shifted."
+        ],
+        "disambiguation": "Editing-induced organizational damage, not pre-existing structural problems"
+      },
+      "children": []
+    },
+    {
+      "term": "DevelopmentalEditing",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Shaping a work at the conceptual level, addressing scope, approach, argument, audience, and overall vision, often requiring significant rewriting",
+      "definition_source": "Publishing, book editing",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ContentDevelopment",
+        "BigPictureEditing",
+        "ConceptualEditing"
+      ],
+      "relationships": {
+        "related": [
+          "StructuralEditing",
+          "Vision",
+          "Scope",
+          "Audience"
+        ],
+        "opposite": [
+          "ScopeCreep"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Editorial practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Developmental editing advised narrowing the book's scope from 'all of history' to 'the Renaissance.'",
+          "The developmental editor suggested adding a chapter on practical applications for the target audience.",
+          "Developmental editing identified that the protagonist lacked a clear motivation arc.",
+          "The dev edit recommended shifting from academic to general-audience tone throughout.",
+          "Developmental editing recommended cutting the first chapter entirely since the story started in chapter two."
+        ],
+        "negative_examples": [
+          "The book was improved.",
+          "Big changes were made.",
+          "The concept was refined.",
+          "The concept was shaped.",
+          "Big changes were suggested."
+        ],
+        "disambiguation": "High-level shaping of work's vision and approach, not just structural reorganization"
+      },
+      "children": []
+    },
+    {
+      "term": "ScopeCreep",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Editing that expands the work's scope beyond its intended boundaries, adds tangential content, or drifts from the original vision without authorization",
+      "definition_source": "Project management, editorial practice",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "VisionDrift",
+        "UnauthorizedExpansion",
+        "FocusLoss"
+      ],
+      "relationships": {
+        "related": [
+          "EditorialOverreach",
+          "Expansion",
+          "FocusDilution"
+        ],
+        "opposite": [
+          "DevelopmentalEditing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "trust"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "IntegrityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Scope creep: the model added three paragraphs on tangentially related topics not in the original request.",
+          "Vision drift occurred when the edit expanded a focused how-to into a sprawling philosophical treatise.",
+          "Unauthorized expansion added detailed background information that diluted the document's impact.",
+          "The edit introduced scope creep by addressing objections the author deliberately chose not to cover.",
+          "Scope creep: the model added extensive historical context to what was meant to be a quick reference.",
+          "Vision drift expanded the targeted FAQ into a comprehensive textbook chapter.",
+          "Unauthorized expansion: the edit added qualifications and caveats that undermined the document's purpose.",
+          "Scope creep introduced discussions of edge cases in a document meant for the common case.",
+          "The edit exhibited scope creep by adding multiple alternative approaches to a single-solution guide.",
+          "Vision drift: what started as bullet points became multi-paragraph explanations."
+        ],
+        "negative_examples": [
+          "The content expanded.",
+          "More was added.",
+          "The scope grew.",
+          "Additional content appeared.",
+          "The text got longer.",
+          "Material was added.",
+          "Coverage increased.",
+          "The document expanded.",
+          "More topics were covered.",
+          "The content grew."
+        ],
+        "disambiguation": "Unauthorized expansion beyond intended scope, not legitimate development"
+      },
+      "children": []
+    },
+    {
+      "term": "StyleHarmonization",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Ensuring consistent voice, tone, and stylistic choices throughout a document or across multiple contributors",
+      "definition_source": "Publishing, multi-author editing",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "VoiceConsistency",
+        "ToneUnification",
+        "StyleUnification"
+      ],
+      "relationships": {
+        "related": [
+          "CopyEditing",
+          "Voice",
+          "Tone",
+          "Consistency"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Editorial practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Style harmonization unified the tone across twelve different chapter contributors.",
+          "The editor harmonized the inconsistent levels of formality between sections.",
+          "Style harmonization smoothed the shift from conversational to technical voice mid-document.",
+          "Harmonizing style ensured the ghostwritten chapters matched the author's established voice.",
+          "Style harmonization reconciled the technical chapters with the narrative introduction into one voice."
+        ],
+        "negative_examples": [
+          "The style was made consistent.",
+          "The tone was unified.",
+          "The writing sounded the same.",
+          "The style was unified.",
+          "Consistency was achieved."
+        ],
+        "disambiguation": "Deliberate unification of stylistic elements, not mere consistency checking"
+      },
+      "children": []
+    },
+    {
+      "term": "FeedbackIncorporation",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "The process of evaluating, prioritizing, and integrating editorial feedback and reviewer comments into a revised draft",
+      "definition_source": "Writing process, revision studies",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "RevisionFromFeedback",
+        "CommentIntegration",
+        "EditorialResponse"
+      ],
+      "relationships": {
+        "related": [
+          "Revision",
+          "Critique",
+          "Collaboration",
+          "Prioritization"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Editorial practice"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Feedback incorporation required balancing conflicting reviewer suggestions.",
+          "The author incorporated structural feedback while pushing back on voice changes.",
+          "Effective feedback incorporation addresses the underlying concern, not just the surface suggestion.",
+          "The revision memo explained which feedback was incorporated and the rationale for declined suggestions.",
+          "Feedback incorporation addressed the reviewer's underlying concern even when the suggested fix was wrong."
+        ],
+        "negative_examples": [
+          "The feedback was used.",
+          "Changes were made based on comments.",
+          "Suggestions were followed.",
+          "Feedback was used.",
+          "Comments were addressed."
+        ],
+        "disambiguation": "Strategic evaluation and integration of feedback, not mechanical compliance"
+      },
+      "children": []
+    },
+    {
+      "term": "EditorialJudgment",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "The professional discernment required to make editorial decisions, balancing rules, context, author intent, and reader needs",
+      "definition_source": "Editorial practice, professional editing",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "EditorDiscretion",
+        "EditorialDecisionMaking",
+        "ProfessionalJudgment"
+      ],
+      "relationships": {
+        "related": [
+          "Expertise",
+          "ContextSensitivity",
+          "Tradeoffs",
+          "AuthorVoice"
+        ],
+        "opposite": [
+          "EditorialOverreach"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Professional capability"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Editorial judgment recognized that the sentence fragment was intentional for stylistic effect.",
+          "The editor's judgment balanced house style against preserving the author's distinctive voice.",
+          "Editorial judgment determined which inconsistencies were errors versus intentional variations.",
+          "Good editorial judgment knows when to query the author versus making silent corrections.",
+          "Editorial judgment recognized that querying the author was better than silently making the change."
+        ],
+        "negative_examples": [
+          "The editor decided.",
+          "A choice was made.",
+          "The text was changed.",
+          "A decision was made.",
+          "Judgment was applied."
+        ],
+        "disambiguation": "Contextual professional discernment, not rule-following or arbitrary choice"
+      },
+      "children": []
+    },
+    {
+      "term": "EditorialOverreach",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Making editorial changes beyond appropriate scope, overriding author intent without justification, or imposing preferences where restraint is warranted",
+      "definition_source": "Editorial ethics, professional boundaries",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "OverEditing",
+        "EditorialImposition",
+        "BoundaryViolation"
+      ],
+      "relationships": {
+        "related": [
+          "VoiceDistortion",
+          "ScopeCreep",
+          "AuthorRights"
+        ],
+        "opposite": [
+          "EditorialJudgment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "trust"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "IntegrityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Editorial overreach: the model rewrote passages that were intentionally informal as part of the author's style.",
+          "Over-editing changed the argument's conclusion to one the model preferred.",
+          "Editorial imposition replaced the author's cultural references with ones the model found more universal.",
+          "Boundary violation occurred when the edit 'corrected' a dialect feature that was authentically rendered.",
+          "Editorial overreach: the model removed ambiguity that was intentional and meaningful to the work.",
+          "Over-editing 'fixed' the deliberately unreliable narrator into a consistent one.",
+          "Editorial imposition substituted the author's preferred terminology with the model's.",
+          "Overreach: the edit added explanations for references the author expected readers to know.",
+          "Boundary violation: the model 'improved' a stylistic choice that defined the work's genre.",
+          "Editorial overreach changed the document's structure despite explicit instructions to preserve it."
+        ],
+        "negative_examples": [
+          "Too many changes were made.",
+          "The editor went too far.",
+          "The text was over-edited.",
+          "Many changes occurred.",
+          "The editing was extensive.",
+          "Changes were numerous.",
+          "Much was altered.",
+          "The text was heavily edited.",
+          "Significant changes were made.",
+          "The editing was thorough."
+        ],
+        "disambiguation": "Inappropriate exercise of editorial power, not just extensive editing"
+      },
+      "children": []
+    },
+    {
+      "term": "AuthorEditorCollaboration",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "The working relationship between author and editor involving communication, negotiation, and shared commitment to improving the work",
+      "definition_source": "Publishing, editorial relationships",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "EditorialRelationship",
+        "AuthorEditorPartnership",
+        "CollaborativeEditing"
+      ],
+      "relationships": {
+        "related": [
+          "FeedbackIncorporation",
+          "Communication",
+          "Trust",
+          "Negotiation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Professional relationship"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Author-editor collaboration established shared goals and boundaries before the edit began.",
+          "The collaborative relationship allowed for frank discussion of the manuscript's weaknesses.",
+          "Effective author-editor collaboration respects the author's ownership while leveraging editor expertise.",
+          "The collaboration evolved as trust built through successive revision rounds.",
+          "Author-editor collaboration established that certain stylistic choices were non-negotiable before editing began."
+        ],
+        "negative_examples": [
+          "The author and editor worked together.",
+          "They communicated about the text.",
+          "The manuscript was discussed.",
+          "They worked together.",
+          "Collaboration occurred."
+        ],
+        "disambiguation": "Structured professional collaboration, not mere interaction"
+      },
+      "children": []
+    },
+    {
+      "term": "MeaningDistortion",
+      "role": "concept",
+      "parent_concepts": [
+        "ProfessionalEditing"
+      ],
+      "layer_hint": 3,
+      "definition": "Editing changes that alter, misrepresent, or obscure the author's intended meaning, whether through poor word choice, structural changes, or contextual removal",
+      "definition_source": "Editorial ethics, semantic fidelity",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SemanticDistortion",
+        "MeaningShift",
+        "IntentMisrepresentation"
+      ],
+      "relationships": {
+        "related": [
+          "VoiceDistortion",
+          "EditorialOverreach",
+          "Fidelity"
+        ],
+        "opposite": [
+          "LineEditing",
+          "CopyEditing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "misinformation",
+          "trust"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AccuracyMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Meaning distortion: the model's synonym substitution changed 'might consider' to 'should definitely.'",
+          "The edit distorted meaning by removing a crucial 'not' when condensing the sentence.",
+          "Semantic distortion resulted from replacing a technical term with an imprecise colloquial equivalent.",
+          "Intent misrepresentation occurred when the edit changed hedged language to definitive claims.",
+          "Meaning distortion: 'rarely effective' became 'effective' after the edit removed the qualifier.",
+          "The edit distorted meaning by changing 'correlation' to 'causation' in the claim.",
+          "Semantic shift: the nuance between 'could' and 'would' was lost in revision.",
+          "Meaning distortion replaced 'some evidence suggests' with 'research proves.'",
+          "The edit changed 'preliminary findings' to 'established results,' misrepresenting certainty.",
+          "Intent misrepresentation: the author's cautious conclusion became a confident assertion.",
+          "Meaning distortion: removing context made a qualified claim appear absolute.",
+          "The edit introduced meaning drift by changing 'historically' to 'always.'",
+          "Semantic distortion: technical precision was sacrificed for accessibility, changing accuracy.",
+          "Meaning distortion: the edit reversed the author's position by misplacing emphasis.",
+          "The edit distorted meaning by turning a rhetorical question into a declarative statement."
+        ],
+        "negative_examples": [
+          "The meaning changed.",
+          "The text said something different.",
+          "The intent was unclear.",
+          "Words were substituted.",
+          "The phrasing differed.",
+          "The revision altered the content.",
+          "The text was altered.",
+          "The sense shifted.",
+          "The writing was different.",
+          "Changes affected meaning.",
+          "The content was modified.",
+          "The text evolved.",
+          "Edits changed things.",
+          "The revision differed.",
+          "Words were replaced."
+        ],
+        "disambiguation": "Editing-induced meaning change, not clarification of ambiguous original"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:15.732459Z",
+    "result_pack_version": "5.3.0",
+    "concepts_added": 15,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 14
+    },
+    "parents_updated": 15,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "protected",
+    "impact": {
+      "new_concepts": [
+        "ProfessionalEditing",
+        "CopyEditing",
+        "ErrorPropagation",
+        "LineEditing",
+        "VoiceDistortion",
+        "StructuralEditing",
+        "StructuralIncoherence",
+        "DevelopmentalEditing",
+        "ScopeCreep",
+        "StyleHarmonization",
+        "FeedbackIncorporation",
+        "EditorialJudgment",
+        "EditorialOverreach",
+        "AuthorEditorCollaboration",
+        "MeaningDistortion"
+      ],
+      "must_retrain": [
+        "ContentDevelopment"
+      ],
+      "should_retrain": [
+        "ArtPainting",
+        "ComposingMusic",
+        "ComputerProgramming",
+        "Designing",
+        "Drawing",
+        "EnteringAPin",
+        "FilmMaking",
+        "PersonalDataProcessing",
+        "Photographing",
+        "Posting",
+        "Publication",
+        "Reading",
+        "Sculpting",
+        "StatusUpdate",
+        "Tracing",
+        "Translating",
+        "Update",
+        "VideoSurveillance",
+        "Writing"
+      ],
+      "optional_retrain": [
+        "Communication",
+        "Consistency",
+        "IntentionalProcess",
+        "Organization"
+      ],
+      "total_training_required": 16
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

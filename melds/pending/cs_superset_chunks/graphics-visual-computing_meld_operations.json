@@ -1,0 +1,131 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Graphics & Visual Computing",
+    "id": "information.computer_science.graphics_visual_computing",
+    "level": 2,
+    "slug": "graphics-visual-computing",
+    "operations_count": 5,
+    "child_count": 4
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Graphics & Visual Computing",
+        "target_id": "information.computer_science.graphics_visual_computing",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Rendering",
+          "Geometry Processing",
+          "Image Processing",
+          "Perception & Display"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.graphics_visual_computing.rendering",
+          "information.computer_science.graphics_visual_computing.geometry",
+          "information.computer_science.graphics_visual_computing.image_processing",
+          "information.computer_science.graphics_visual_computing.human_perception"
+        ],
+        "target_layer": 2,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Rendering",
+        "target_id": "information.computer_science.graphics_visual_computing.rendering",
+        "new_parent": "Graphics & Visual Computing",
+        "parent_id": "information.computer_science.graphics_visual_computing",
+        "source_concepts": [
+          "Rasterization Pipeline",
+          "Ray Tracing",
+          "Shading Models",
+          "Global Illumination",
+          "Visibility & Culling"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.graphics_visual_computing.rendering.rasterization_pipeline",
+          "information.computer_science.graphics_visual_computing.rendering.ray_tracing",
+          "information.computer_science.graphics_visual_computing.rendering.shading_models",
+          "information.computer_science.graphics_visual_computing.rendering.global_illumination",
+          "information.computer_science.graphics_visual_computing.rendering.visibility_culling"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Geometry Processing",
+        "target_id": "information.computer_science.graphics_visual_computing.geometry",
+        "new_parent": "Graphics & Visual Computing",
+        "parent_id": "information.computer_science.graphics_visual_computing",
+        "source_concepts": [
+          "Meshes",
+          "Spatial Acceleration (BVH)",
+          "Collision Detection",
+          "Skinning & Animation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.graphics_visual_computing.geometry.meshes",
+          "information.computer_science.graphics_visual_computing.geometry.spatial_acceleration_bvh",
+          "information.computer_science.graphics_visual_computing.geometry.collision_detection",
+          "information.computer_science.graphics_visual_computing.geometry.skinning_animation"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Image Processing",
+        "target_id": "information.computer_science.graphics_visual_computing.image_processing",
+        "new_parent": "Graphics & Visual Computing",
+        "parent_id": "information.computer_science.graphics_visual_computing",
+        "source_concepts": [
+          "Filtering",
+          "Convolution",
+          "Edge Detection",
+          "Fourier Domain Filtering",
+          "Compression Artifacts"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.graphics_visual_computing.image_processing.filtering",
+          "information.computer_science.graphics_visual_computing.image_processing.convolution",
+          "information.computer_science.graphics_visual_computing.image_processing.edge_detection",
+          "information.computer_science.graphics_visual_computing.image_processing.fourier_domain_filtering",
+          "information.computer_science.graphics_visual_computing.image_processing.compression_artifacts"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Perception & Display",
+        "target_id": "information.computer_science.graphics_visual_computing.human_perception",
+        "new_parent": "Graphics & Visual Computing",
+        "parent_id": "information.computer_science.graphics_visual_computing",
+        "source_concepts": [
+          "Color Spaces",
+          "Gamma",
+          "Sampling/Aliasing",
+          "Display Pipelines"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.graphics_visual_computing.human_perception.color_spaces",
+          "information.computer_science.graphics_visual_computing.human_perception.gamma",
+          "information.computer_science.graphics_visual_computing.human_perception.sampling_aliasing",
+          "information.computer_science.graphics_visual_computing.human_perception.display_pipelines"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      }
+    ]
+  }
+}

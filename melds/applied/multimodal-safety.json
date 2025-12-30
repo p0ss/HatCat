@@ -1,0 +1,2190 @@
+{
+  "meld_request_id": "org.hatcat/multimodal-safety@0.2.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Multimodal Safety",
+    "description": "Safety-relevant concepts for multimodal AI organized as polar pairs: harmful capabilities (deepfakes, exploitation, adversarial attacks) paired with their positive counterparts (authentic representation, consensual depiction, good faith collaboration). These probes enable both detection of harmful intent AND recognition of beneficial multimodal use.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-10T00:00:00Z",
+    "version": "0.2.0",
+    "changelog": "v0.2.0: Augmented training examples to meet validation thresholds (20 for critical, 15 for high-risk, 10 for harness_relevant)"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Deception",
+      "relationship": "parent_of",
+      "candidate_concept": "MultimodalSafetyRisk"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Helping",
+      "relationship": "parent_of",
+      "candidate_concept": "MultimodalBeneficialIntent"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "MultimodalSafetyRisk",
+      "role": "concept",
+      "parent_concepts": ["Deception"],
+      "layer_hint": 2,
+      "definition": "Safety concerns and risks specific to multimodal AI systems including synthetic media harms, adversarial attacks, and misuse of generative capabilities",
+      "definition_source": "AI safety research, content policy",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "MultimodalHarm",
+        "GenerativeAIRisk",
+        "SyntheticMediaRisk"
+      ],
+      "relationships": {
+        "related": [
+          "AISafety",
+          "ContentModeration",
+          "MisuseRisk"
+        ],
+        "opposite": [
+          "MultimodalBeneficialIntent"
+        ],
+        "has_part": [
+          "Deepfake",
+          "VoiceCloning",
+          "CounterfeitGeneration",
+          "MultimodalJailbreak",
+          "ExploitativeImagery",
+          "HazardousGeneration",
+          "MultimodalBias",
+          "VisualProfiling",
+          "AudioProfiling",
+          "IntellectualPropertyInfringement",
+          "AdversarialPrompt"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "misinformation",
+          "exploitation",
+          "manipulation",
+          "fraud"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "MultimodalSafetyMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Multimodal AI systems introduce novel safety risks including convincing deepfakes and adversarial image attacks.",
+          "The safety team evaluated multimodal risks including synthetic media generation and visual jailbreaks.",
+          "Generative AI safety considerations include both the creation and detection of harmful synthetic content.",
+          "Multimodal safety encompasses concerns from deepfakes to adversarial perturbations to biased vision systems.",
+          "The multimodal safety assessment identified risks in voice cloning, image manipulation, and document forgery.",
+          "Safety evaluations for multimodal models must address synthetic media harms and exploitation potential.",
+          "Multimodal AI risk categories include identity fraud, misinformation, harassment, and content policy bypass.",
+          "The multimodal safety framework addresses generation risks, perception risks, and adversarial attacks.",
+          "Safety concerns for vision-language models include embedded prompt injection and harmful image generation.",
+          "Multimodal AI safety research focuses on preventing misuse while enabling beneficial applications.",
+          "The red team identified multimodal attack vectors including visual jailbreaks and audio deepfakes.",
+          "Multimodal safety risks require new detection methods beyond text-only content moderation.",
+          "Safety evaluation of multimodal systems must consider cross-modal attack surfaces.",
+          "Multimodal AI introduces risks at the intersection of computer vision, speech, and language models.",
+          "The multimodal safety audit covered synthetic media, bias, privacy, and adversarial robustness.",
+          "Safety challenges for multimodal generative AI include consent, authenticity, and information integrity.",
+          "Multimodal safety risks scale with the realism and accessibility of generative capabilities.",
+          "The multimodal risk assessment identified novel attack vectors not present in text-only systems.",
+          "Safety considerations for multimodal AI span the full lifecycle from training to deployment.",
+          "Multimodal safety requires addressing both generation-side and perception-side vulnerabilities."
+        ],
+        "negative_examples": [
+          "AI can be dangerous.",
+          "There are risks with technology.",
+          "Safety is important.",
+          "The system has potential issues.",
+          "AI raises concerns.",
+          "There are safety considerations.",
+          "The model could be misused.",
+          "Technology has risks.",
+          "Safety matters for AI.",
+          "The system needs safeguards.",
+          "AI safety is a field of study.",
+          "There are potential harms.",
+          "The technology has implications.",
+          "Safety should be considered.",
+          "The model has limitations.",
+          "AI presents challenges.",
+          "There are ethical concerns.",
+          "The system has vulnerabilities.",
+          "Safety is a priority.",
+          "The technology requires oversight."
+        ],
+        "disambiguation": "Specific safety concerns for multimodal AI, not general AI safety or content policy"
+      },
+      "children": [
+        "Deepfake",
+        "VoiceCloning",
+        "CounterfeitGeneration",
+        "MultimodalJailbreak",
+        "ExploitativeImagery",
+        "HazardousGeneration",
+        "MultimodalBias",
+        "VisualProfiling",
+        "AudioProfiling",
+        "IntellectualPropertyInfringement",
+        "AdversarialPrompt",
+        "AdversarialImage",
+        "ContentModerationEvasion"
+      ]
+    },
+    {
+      "term": "MultimodalBeneficialIntent",
+      "role": "concept",
+      "parent_concepts": ["Helping"],
+      "layer_hint": 2,
+      "definition": "Positive and beneficial intentions in multimodal AI use including authentic representation, original creation, consensual depiction, and good faith collaboration",
+      "definition_source": "AI ethics, beneficial AI",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "MultimodalGoodIntent",
+        "BeneficialMultimodalUse",
+        "PositiveGenerativeIntent"
+      ],
+      "relationships": {
+        "related": [
+          "BeneficialAction",
+          "EthicalAI",
+          "ResponsibleUse"
+        ],
+        "opposite": [
+          "MultimodalSafetyRisk"
+        ],
+        "has_part": [
+          "AuthenticRepresentation",
+          "OriginalVoiceExpression",
+          "AuthorizedDocumentation",
+          "GoodFaithQuery",
+          "ConsentfulDepiction",
+          "BeneficialInstructionalContent",
+          "EquitableMultimodalPerformance",
+          "TransparentAnalysis",
+          "OriginalCreativeExpression"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The user's multimodal request demonstrates beneficial intent: creating original artwork for their portfolio.",
+          "Good faith use of image generation includes educational illustrations, creative expression, and accessibility tools.",
+          "Beneficial multimodal AI applications include medical imaging analysis, accessibility features, and creative empowerment.",
+          "The request shows positive intent: helping visualize architectural concepts for legitimate planning purposes.",
+          "The user's beneficial intent is clear: using image generation for educational materials about climate science.",
+          "Multimodal AI supports beneficial applications like assistive technology for visually impaired users.",
+          "The request demonstrates legitimate beneficial use: generating product mockups for a small business.",
+          "Good faith multimodal use includes research visualization, accessibility aids, and creative tools.",
+          "The beneficial intent is evident: using speech synthesis for accessibility accommodation.",
+          "Multimodal AI enables beneficial applications like medical diagnosis support and educational content."
+        ],
+        "negative_examples": [
+          "AI is being used.",
+          "Someone made an image.",
+          "The system generated content.",
+          "A request was made.",
+          "The model produced output.",
+          "Content was created.",
+          "The system was used.",
+          "Something was generated.",
+          "The user made a request.",
+          "Output was produced."
+        ],
+        "disambiguation": "Specifically positive and beneficial intent in multimodal use, not just neutral or lawful use"
+      },
+      "children": [
+        "AuthenticRepresentation",
+        "OriginalVoiceExpression",
+        "AuthorizedDocumentation",
+        "GoodFaithQuery",
+        "ConsentfulDepiction",
+        "BeneficialInstructionalContent",
+        "EquitableMultimodalPerformance",
+        "TransparentAnalysis",
+        "OriginalCreativeExpression"
+      ]
+    },
+    {
+      "term": "Deepfake",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Synthetic media that convincingly depicts real people saying or doing things they did not actually say or do, typically created using deep learning",
+      "definition_source": "AI ethics, media forensics",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "DeepfakeMedia",
+        "SyntheticImpersonation",
+        "FaceSwap",
+        "AIImpersonation"
+      ],
+      "relationships": {
+        "related": [
+          "VideoGeneration",
+          "FacialRecognition",
+          "VoiceCloning",
+          "Misinformation"
+        ],
+        "opposite": [
+          "AuthenticRepresentation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "misinformation",
+          "fraud",
+          "harassment",
+          "reputational_harm",
+          "election_interference"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AuthenticityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The deepfake video showed the politician appearing to make statements they never made.",
+          "Face-swap deepfakes use generative adversarial networks to replace one person's face with another's.",
+          "Deepfake detection analyzes facial inconsistencies and compression artifacts.",
+          "Audio deepfakes can clone a person's voice from just a few seconds of sample speech.",
+          "The deepfake convincingly depicted the CEO announcing a merger that never happened.",
+          "Deepfake technology enables creating synthetic video of anyone saying anything.",
+          "The deepfake pornography scandal devastated the victim's personal and professional life.",
+          "Deepfake detection tools analyze blinking patterns, facial boundaries, and temporal consistency.",
+          "The political deepfake spread virally before fact-checkers could debunk it.",
+          "Deepfakes pose unprecedented threats to personal reputation and information integrity.",
+          "The deepfake depicted a world leader declaring war, causing brief market panic.",
+          "Deepfake creation tools are becoming increasingly accessible to non-experts.",
+          "The revenge deepfake was created using publicly available photos from social media.",
+          "Deepfake audio enabled the fraudster to impersonate the CFO and authorize wire transfers.",
+          "The deepfake documentary footage purported to show historical events that never occurred.",
+          "Deepfake technology enables mass production of personalized disinformation.",
+          "The deepfake prosecution was the first conviction for synthetic media fraud in the jurisdiction.",
+          "Deepfake creation now requires only a few images and minutes of audio.",
+          "The deepfake detection model flagged subtle inconsistencies in ear shape and lighting.",
+          "Deepfake arms race: as detection improves, generation techniques evolve to evade."
+        ],
+        "negative_examples": [
+          "The video was edited.",
+          "AI generated an image.",
+          "The recording was fake.",
+          "The video was modified.",
+          "Someone made a fake video.",
+          "The clip was altered.",
+          "The media was synthetic.",
+          "The footage was manipulated.",
+          "An AI made the video.",
+          "The recording wasn't real.",
+          "The video was computer-generated.",
+          "Someone faked the audio.",
+          "The image was doctored.",
+          "The video was created artificially.",
+          "The recording was fabricated.",
+          "The media was not authentic.",
+          "Someone modified the footage.",
+          "The video was generated.",
+          "The audio was synthesized.",
+          "The clip was produced artificially."
+        ],
+        "disambiguation": "Specifically deceptive synthetic media impersonating real individuals, not general AI generation"
+      },
+      "children": []
+    },
+    {
+      "term": "AuthenticRepresentation",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Media content that faithfully represents reality, truth, or the genuine characteristics of what it depicts, without deceptive manipulation",
+      "definition_source": "Media ethics, journalism standards",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "GenuineRepresentation",
+        "TruthfulDepiction",
+        "AuthenticMedia",
+        "VeridicalContent"
+      ],
+      "relationships": {
+        "related": [
+          "Truth",
+          "Authenticity",
+          "Journalism",
+          "Documentary"
+        ],
+        "opposite": [
+          "Deepfake"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The documentary uses only authentic representation: real footage of real events without manipulation.",
+          "Journalistic standards require authentic representation of subjects and events.",
+          "The AI-generated image is clearly labeled as synthetic, maintaining authentic representation of its origin.",
+          "Authentic representation means the media accurately reflects what it claims to show.",
+          "The photographer committed to authentic representation, refusing to manipulate documentary images.",
+          "Authentic representation requires transparency about any alterations or synthetic elements.",
+          "The news organization's policy ensures authentic representation through verification of all imagery.",
+          "Authentic representation is the standard for evidentiary media in legal proceedings.",
+          "The platform labels synthetic content to maintain authentic representation of media origins.",
+          "Authentic representation in journalism means not staging, manipulating, or misrepresenting imagery."
+        ],
+        "negative_examples": [
+          "The image is real.",
+          "A photo was taken.",
+          "The content exists.",
+          "The media was captured.",
+          "The image shows something.",
+          "A recording was made.",
+          "The footage is available.",
+          "The photo depicts something.",
+          "The content was created.",
+          "The media is present."
+        ],
+        "disambiguation": "Commitment to truthful, non-deceptive representation, not just any real media"
+      },
+      "children": []
+    },
+    {
+      "term": "VoiceCloning",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Creating a synthetic voice that mimics a specific person's vocal characteristics, enabling generation of speech they never actually spoke",
+      "definition_source": "Speech synthesis, AI ethics",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "VoiceImpersonation",
+        "SpeakerCloning",
+        "VoiceSynthesisCloning"
+      ],
+      "relationships": {
+        "related": [
+          "SpeechSynthesis",
+          "SpeakerRecognition",
+          "Deepfake"
+        ],
+        "opposite": [
+          "OriginalVoiceExpression"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "fraud",
+          "impersonation",
+          "scams",
+          "misinformation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AuthenticityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Voice cloning enabled the scammer to impersonate the CEO and authorize a fraudulent transfer.",
+          "The TTS model can clone a voice from just 3 seconds of reference audio.",
+          "Voice cloning raises concerns about consent and impersonation in synthetic media.",
+          "The voice clone was indistinguishable from the original speaker to human listeners.",
+          "Voice cloning scams have cost victims millions by impersonating family members in distress.",
+          "The voice clone reproduced the speaker's accent, intonation, and speaking patterns.",
+          "Voice cloning enables real-time voice conversion during phone calls.",
+          "The kidnapping scam used voice cloning to make victims believe their loved one was in danger.",
+          "Voice cloning technology can now capture emotional expressiveness and subtle vocal characteristics.",
+          "The voice clone passed the bank's voice authentication system with high confidence.",
+          "Voice cloning creates a new vector for fraud, identity theft, and manipulation.",
+          "The voice clone was used to generate fake podcast episodes attributed to the celebrity.",
+          "Voice cloning raises questions about voice as a biometric identifier.",
+          "The attacker used voice cloning to bypass the call center's identity verification.",
+          "Voice cloning can be weaponized for harassment by putting words in someone's mouth.",
+          "The voice clone reproduced the distinctive rasp and rhythm of the speaker's voice.",
+          "Voice cloning scams are increasingly targeting elderly individuals over the phone.",
+          "The voice clone was created using audio scraped from public YouTube videos.",
+          "Voice cloning technology blurs the line between authentic and synthetic speech.",
+          "The voice clone accurately reproduced the speaker's laughter and emotional expressions."
+        ],
+        "negative_examples": [
+          "Text-to-speech was used.",
+          "A voice was synthesized.",
+          "The computer spoke.",
+          "Audio was generated.",
+          "The system produced speech.",
+          "A synthetic voice was used.",
+          "The text was vocalized.",
+          "Speech was produced artificially.",
+          "The machine spoke the words.",
+          "Audio output was created.",
+          "The voice was computer-generated.",
+          "Synthesized speech was used.",
+          "The text became audio.",
+          "A digital voice spoke.",
+          "The words were vocalized.",
+          "TTS generated the audio.",
+          "The speech was synthetic.",
+          "A generated voice was used.",
+          "The audio was artificial.",
+          "Computer-generated speech was produced."
+        ],
+        "disambiguation": "Specifically cloning a real person's voice for mimicry, not general TTS"
+      },
+      "children": []
+    },
+    {
+      "term": "OriginalVoiceExpression",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Synthetic voice generation that creates novel, original vocal expressions without mimicking or impersonating any real individual",
+      "definition_source": "Creative AI, ethical synthesis",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "NovelVoiceCreation",
+        "OriginalSyntheticVoice",
+        "NonMimicryVoice"
+      ],
+      "relationships": {
+        "related": [
+          "SpeechSynthesis",
+          "Creativity",
+          "OriginalContent"
+        ],
+        "opposite": [
+          "VoiceCloning"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The game uses original synthetic voices that don't clone any real person.",
+          "Original voice expression creates unique character voices for animation without impersonating actors.",
+          "The audiobook uses a distinctive AI voice designed from scratch, not cloned from anyone.",
+          "Novel TTS voices provide accessibility features without identity concerns.",
+          "Original voice expression enables creating unique vocal characters for creative projects.",
+          "The synthetic voice was designed as an original creation, not based on any real speaker.",
+          "Original voice expression avoids consent issues by not mimicking existing voices.",
+          "The assistant uses an original synthetic voice rather than cloning a celebrity.",
+          "Original voice expression creates novel voices that belong to no real person.",
+          "The game's characters have original voices designed specifically for their personalities."
+        ],
+        "negative_examples": [
+          "A voice was generated.",
+          "The system spoke.",
+          "Audio was synthesized.",
+          "The voice was artificial.",
+          "Speech was produced.",
+          "The system vocalized text.",
+          "A voice was created.",
+          "Audio was generated.",
+          "The voice spoke.",
+          "Sound was synthesized."
+        ],
+        "disambiguation": "Deliberately original synthetic voices not mimicking real people, not just any TTS"
+      },
+      "children": []
+    },
+    {
+      "term": "CounterfeitGeneration",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Using generative AI to create fake documents, credentials, currency, or official materials for fraudulent purposes",
+      "definition_source": "Fraud prevention, security",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "DocumentForgery",
+        "CredentialFraud",
+        "FakeDocumentGeneration"
+      ],
+      "relationships": {
+        "related": [
+          "ImageGeneration",
+          "DocumentUnderstanding",
+          "Fraud"
+        ],
+        "opposite": [
+          "AuthorizedDocumentation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "fraud",
+          "identity_theft",
+          "financial_crime"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "FraudMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "AI-generated fake IDs are increasingly difficult to distinguish from authentic documents.",
+          "Counterfeit generation tools can produce convincing diploma and certificate forgeries.",
+          "The model was misused to generate fake insurance documents for fraudulent claims.",
+          "Generative AI poses new challenges for document authentication and anti-counterfeiting.",
+          "Counterfeit generation can produce fake government documents complete with security features.",
+          "The counterfeit driver's licenses were generated using AI and passed initial inspection.",
+          "Counterfeit generation threatens the integrity of credential verification systems.",
+          "AI-generated counterfeit currency required new detection methods at financial institutions.",
+          "The counterfeit generation ring used AI to produce fake medical prescriptions.",
+          "Counterfeit document generation can undermine trust in official records and credentials.",
+          "The fake diploma generator could produce convincing forgeries for any institution.",
+          "Counterfeit generation capabilities scale document fraud from artisanal to industrial.",
+          "AI-generated counterfeit passports were detected at the border crossing.",
+          "Counterfeit generation tools can replicate watermarks, holograms, and security patterns.",
+          "The counterfeit generation service offered fake credentials for any qualification.",
+          "AI enables producing counterfeit documents that fool both humans and automated systems.",
+          "Counterfeit generation threatens the document-based trust infrastructure of society.",
+          "The fake contract generator could produce convincing legal documents in minutes.",
+          "Counterfeit generation can create fake audit trails and fabricated evidence.",
+          "AI-generated counterfeit stamps and seals are difficult to detect without specialized tools."
+        ],
+        "negative_examples": [
+          "A document was created.",
+          "The certificate was printed.",
+          "An ID was made.",
+          "The form was generated.",
+          "A credential was produced.",
+          "The paper was printed.",
+          "A document was generated.",
+          "The file was created.",
+          "A certificate was made.",
+          "The document was produced.",
+          "An official form was created.",
+          "The credential was generated.",
+          "A paper was made.",
+          "The ID was produced.",
+          "A certificate was printed.",
+          "The document was made.",
+          "An official paper was created.",
+          "The form was produced.",
+          "A credential was made.",
+          "The certificate was generated."
+        ],
+        "disambiguation": "Specifically fraudulent document creation, not legitimate document generation"
+      },
+      "children": []
+    },
+    {
+      "term": "AuthorizedDocumentation",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Legitimate creation of documents and materials by parties with proper authority, for valid purposes, through sanctioned processes",
+      "definition_source": "Administrative law, document management",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "LegitimateDocumentation",
+        "ProperCredentialing",
+        "AuthorizedIssuance"
+      ],
+      "relationships": {
+        "related": [
+          "Authorization",
+          "Legitimacy",
+          "OfficialProcess"
+        ],
+        "opposite": [
+          "CounterfeitGeneration"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The university issued authorized documentation of the degree through official channels.",
+          "Authorized documentation includes proper letterhead, signatures, and verification mechanisms.",
+          "The government agency provides authorized documentation with anti-forgery features.",
+          "AI assists in generating authorized documentation templates for legitimate institutional use.",
+          "Authorized documentation flows through proper approval chains with audit trails.",
+          "The credential was issued as authorized documentation by the certified training provider.",
+          "Authorized documentation includes verification mechanisms like QR codes and secure databases.",
+          "The official issued authorized documentation after completing proper verification procedures.",
+          "Authorized documentation requires proper authority and follows established issuance protocols.",
+          "The court issued authorized documentation of the judgment through official channels."
+        ],
+        "negative_examples": [
+          "A document was made.",
+          "The paper has text.",
+          "Something official-looking was created.",
+          "A form was produced.",
+          "The document was printed.",
+          "A certificate was made.",
+          "The paper was created.",
+          "A document was generated.",
+          "The form was produced.",
+          "Something was documented."
+        ],
+        "disambiguation": "Documents created through legitimate authority and process, not just any official-looking output"
+      },
+      "children": []
+    },
+    {
+      "term": "MultimodalJailbreak",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Attacks that exploit visual or audio inputs to bypass safety guardrails in multimodal AI systems",
+      "definition_source": "AI security research, red teaming",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "VisualJailbreak",
+        "ImageJailbreak",
+        "MultimodalPromptInjection"
+      ],
+      "relationships": {
+        "related": [
+          "AdversarialAttack",
+          "PromptInjection",
+          "VisionLanguageModel"
+        ],
+        "opposite": [
+          "GoodFaithQuery"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "safety_bypass",
+          "harmful_content",
+          "system_manipulation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "JailbreakMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The multimodal jailbreak embedded malicious instructions in an image that the model followed.",
+          "Visual jailbreaks can encode text instructions as images to bypass text-based safety filters.",
+          "The attacker used typography in an image to inject a prompt the model would execute.",
+          "Multimodal prompt injection hides adversarial instructions in non-text modalities.",
+          "The jailbreak exploited the vision model's tendency to read and follow text in images.",
+          "Multimodal jailbreaks can embed harmful instructions in benign-looking photographs.",
+          "The attack used visual encoding to smuggle prompts past the text safety classifier.",
+          "Multimodal jailbreaks represent a new attack surface for vision-language models.",
+          "The jailbreak hid the adversarial instruction in the metadata of an image file.",
+          "Visual prompt injection can override the model's system instructions through image input.",
+          "The multimodal attack used audio spectrograms to encode text-based jailbreak prompts.",
+          "Multimodal jailbreaks exploit the gap between visual perception and safety alignment.",
+          "The jailbreak rendered harmful instructions as stylized text that the model decoded.",
+          "Multimodal prompt injection attacks require new defense strategies beyond text filtering.",
+          "The attack embedded the jailbreak in a QR code the model automatically processed.",
+          "Multimodal jailbreaks can chain through multiple modalities to evade detection.",
+          "The visual jailbreak used steganography to hide instructions in image pixels.",
+          "Multimodal attacks can exploit the model's tendency to be helpful with visual tasks.",
+          "The jailbreak used captioned images to create conflicting instructions that bypassed safety.",
+          "Multimodal jailbreaks are harder to detect because the attack vector is non-textual."
+        ],
+        "negative_examples": [
+          "The image had text.",
+          "Instructions were given.",
+          "The model was asked something.",
+          "A prompt was provided.",
+          "The system received input.",
+          "A question was asked.",
+          "The model processed an image.",
+          "Input was given.",
+          "A request was made.",
+          "The system was prompted.",
+          "The user provided input.",
+          "A message was sent.",
+          "The model received a query.",
+          "Input was submitted.",
+          "A command was given.",
+          "The system processed a request.",
+          "The user asked something.",
+          "Input was provided.",
+          "A prompt was entered.",
+          "The model received instructions."
+        ],
+        "disambiguation": "Specifically attacks using visual/audio to bypass safety, not general misuse"
+      },
+      "children": []
+    },
+    {
+      "term": "GoodFaithQuery",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Honest, straightforward requests to AI systems that seek legitimate assistance without attempting manipulation or deception",
+      "definition_source": "AI ethics, user interaction",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "HonestRequest",
+        "SincereQuery",
+        "LegitimateRequest",
+        "GenuineQuestion"
+      ],
+      "relationships": {
+        "related": [
+          "Honesty",
+          "Collaboration",
+          "Trust"
+        ],
+        "opposite": [
+          "MultimodalJailbreak",
+          "AdversarialPrompt"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The user's good faith query asked for help understanding a complex topic without hidden agendas.",
+          "Good faith queries represent honest attempts to accomplish legitimate goals with AI assistance.",
+          "The request demonstrates good faith: straightforward, transparent about purpose, within guidelines.",
+          "A good faith query respects the AI's intended purpose and doesn't attempt manipulation.",
+          "The good faith query sought genuine assistance with a legitimate educational question.",
+          "Good faith interaction means asking directly for what you need without deceptive framing.",
+          "The query demonstrates good faith through clarity of purpose and honest representation.",
+          "Good faith queries work with the AI's guidelines rather than attempting to circumvent them.",
+          "The user's good faith request for information was straightforward and transparent.",
+          "Good faith queries are characterized by honesty, directness, and respect for system boundaries."
+        ],
+        "negative_examples": [
+          "A question was asked.",
+          "The user made a request.",
+          "Input was provided.",
+          "A query was submitted.",
+          "The user asked something.",
+          "A request was made.",
+          "The user provided a prompt.",
+          "Input was given.",
+          "A question was submitted.",
+          "The user made a query."
+        ],
+        "disambiguation": "Specifically honest, non-manipulative requests, not just any valid query"
+      },
+      "children": []
+    },
+    {
+      "term": "ExploitativeImagery",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Visual content that exploits, objectifies, or causes harm to depicted individuals, including non-consensual intimate imagery and CSAM",
+      "definition_source": "Content policy, child safety",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "NCII",
+        "ExploitativeContent",
+        "HarmfulImagery",
+        "CSAM"
+      ],
+      "relationships": {
+        "related": [
+          "ImageGeneration",
+          "ContentModeration",
+          "DigitalHarm"
+        ],
+        "opposite": [
+          "ConsentfulDepiction"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "critical",
+        "impacts": [
+          "exploitation",
+          "abuse",
+          "trauma",
+          "illegal_content"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "ExploitationMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "AI-generated NCII (non-consensual intimate imagery) causes severe harm to victims.",
+          "Generative AI can be misused to create synthetic CSAM, which is illegal.",
+          "Detection systems identify exploitative imagery for removal from platforms.",
+          "The model refused to generate exploitative content depicting real individuals.",
+          "Exploitative imagery harms victims through violation of dignity, consent, and autonomy.",
+          "The platform deployed hash-matching to detect and block known exploitative images.",
+          "Synthetic exploitative imagery of real people constitutes a form of harassment and abuse.",
+          "NCII generation tools enable weaponizing intimate imagery without any real images.",
+          "The exploitative imagery was created using face-swap technology on explicit content.",
+          "Victim support services report increasing cases of AI-generated exploitative imagery.",
+          "Exploitative imagery detection must balance privacy with content safety.",
+          "The model's safety training prevents generation of content that sexualizes minors.",
+          "Exploitative imagery harms extend beyond the depicted individual to families and communities.",
+          "AI-generated exploitative imagery may constitute criminal harassment in many jurisdictions.",
+          "The exploitative content was removed within minutes by the automated detection system.",
+          "Synthetic exploitative imagery preserves no evidence of original consent or age.",
+          "Victims of AI-generated exploitative imagery face unique challenges in seeking removal.",
+          "Exploitative imagery generation represents one of the most harmful misuses of generative AI.",
+          "The model refused the request that would have generated exploitative content.",
+          "Platform policies explicitly prohibit both real and synthetic exploitative imagery."
+        ],
+        "negative_examples": [
+          "The content was inappropriate.",
+          "The image was bad.",
+          "Something harmful was created.",
+          "The content violated policy.",
+          "The image was problematic.",
+          "Something inappropriate was made.",
+          "The content was concerning.",
+          "The image broke rules.",
+          "Something bad was generated.",
+          "The content was removed.",
+          "The image was flagged.",
+          "Something was inappropriate.",
+          "The content was harmful.",
+          "The image was wrong.",
+          "Something was blocked.",
+          "The content was rejected.",
+          "The image was not allowed.",
+          "Something was reported.",
+          "The content was deleted.",
+          "The image violated guidelines."
+        ],
+        "disambiguation": "Specifically exploitative visual content causing direct harm, not general inappropriate content"
+      },
+      "children": []
+    },
+    {
+      "term": "ConsentfulDepiction",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Visual representation of individuals created with their informed consent, respecting their dignity, autonomy, and control over their image",
+      "definition_source": "Media ethics, consent law, dignity",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "ConsentedImagery",
+        "DignifiedRepresentation",
+        "RespectfulDepiction",
+        "AuthorizedLikeness"
+      ],
+      "relationships": {
+        "related": [
+          "Consent",
+          "Dignity",
+          "Autonomy",
+          "Respect"
+        ],
+        "opposite": [
+          "ExploitativeImagery"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The portrait was created with the subject's informed consent and approval of the final image.",
+          "Consentful depiction means the person depicted agreed to and controls how their likeness is used.",
+          "The artist obtained consent before creating and sharing images featuring identifiable individuals.",
+          "Professional photography standards require consentful depiction with model releases.",
+          "Consentful depiction requires ongoing consent for new uses beyond the original agreement.",
+          "The subject reviewed and approved the image before publication, ensuring consentful depiction.",
+          "Consentful depiction includes the right to withdraw consent and have images removed.",
+          "The model release documented explicit consent for the specific uses of the imagery.",
+          "Consentful depiction respects the subject's autonomy over their own image and likeness.",
+          "The content creator practices consentful depiction by obtaining explicit approval for all imagery."
+        ],
+        "negative_examples": [
+          "A picture was taken.",
+          "Someone was photographed.",
+          "An image contains a person.",
+          "A person was depicted.",
+          "Someone appears in the image.",
+          "A photo was made.",
+          "The image shows a person.",
+          "Someone was captured in the image.",
+          "A person was photographed.",
+          "The image features someone."
+        ],
+        "disambiguation": "Active informed consent and dignity preservation, not just legal permission"
+      },
+      "children": []
+    },
+    {
+      "term": "HazardousGeneration",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Using generative AI to create content that could facilitate real-world harm including weapons instructions, dangerous chemistry, or attack planning",
+      "definition_source": "AI safety, dual-use research",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "DangerousGeneration",
+        "HarmfulInstructionGeneration",
+        "WeaponizableContent"
+      ],
+      "relationships": {
+        "related": [
+          "DualUse",
+          "InformationHazard",
+          "ContentGeneration"
+        ],
+        "opposite": [
+          "BeneficialInstructionalContent"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "critical",
+        "impacts": [
+          "physical_harm",
+          "weapons",
+          "terrorism",
+          "violence"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "HazardMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model refused to generate detailed weapon assembly diagrams.",
+          "Hazardous generation includes visual instructions for synthesizing dangerous chemicals.",
+          "AI image generation must prevent creation of bomb-making or weapon modification guides.",
+          "The safety filter blocked generation of content showing attack methodologies.",
+          "Hazardous generation could enable creating step-by-step guides for violence.",
+          "The model declined to generate images of improvised explosive device construction.",
+          "Hazardous generation includes content that could facilitate mass casualty events.",
+          "Safety filters prevent generation of imagery depicting chemical weapon synthesis.",
+          "The request for weapon modification diagrams was blocked by content safety.",
+          "Hazardous generation encompasses content enabling biological, chemical, or nuclear harm.",
+          "The model refused to generate visual guides for bypass of safety mechanisms.",
+          "Hazardous content includes imagery that could aid in infrastructure attacks.",
+          "Safety measures prevent generation of detailed instructions for dangerous activities.",
+          "The hazardous generation attempt was logged and reported to the safety team.",
+          "Content safety prevents generation of imagery depicting attack planning or methodology.",
+          "Hazardous generation includes visual instructions that could enable real-world violence.",
+          "The model's safety training prevents creation of weapons manufacturing guides.",
+          "Hazardous generation requests are among the highest priority for content moderation.",
+          "Safety filters block generation of content that could facilitate physical harm.",
+          "The request for poison synthesis diagrams triggered the hazardous content filter."
+        ],
+        "negative_examples": [
+          "Harmful content was made.",
+          "Something dangerous was generated.",
+          "Bad information was created.",
+          "The content was unsafe.",
+          "Something bad was made.",
+          "The generation was harmful.",
+          "Dangerous content was created.",
+          "Something was risky.",
+          "The content was problematic.",
+          "Bad things were generated.",
+          "The content was concerning.",
+          "Something harmful was created.",
+          "Dangerous things were made.",
+          "The output was unsafe.",
+          "Something risky was generated.",
+          "The content was dangerous.",
+          "Bad content was produced.",
+          "Something was harmful.",
+          "The generation was risky.",
+          "Unsafe content was made."
+        ],
+        "disambiguation": "Specifically content that could facilitate serious real-world harm, not general inappropriateness"
+      },
+      "children": []
+    },
+    {
+      "term": "BeneficialInstructionalContent",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Educational and instructional content that helps people learn, grow, stay safe, or accomplish legitimate goals",
+      "definition_source": "Education, safety communication",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "EducationalContent",
+        "HelpfulInstruction",
+        "SafetyEducation",
+        "ConstructiveGuidance"
+      ],
+      "relationships": {
+        "related": [
+          "Education",
+          "Learning",
+          "SafetyCommunication",
+          "Helpfulness"
+        ],
+        "opposite": [
+          "HazardousGeneration"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Beneficial instructional content teaches proper safety procedures for handling chemicals in a lab.",
+          "The tutorial provides beneficial instruction on secure coding practices to prevent vulnerabilities.",
+          "Medical education uses beneficial instructional imagery to teach proper surgical techniques.",
+          "Safety training materials demonstrate hazard recognition without enabling harm.",
+          "Beneficial instructional content empowers people with skills and knowledge for positive outcomes.",
+          "The educational materials provide beneficial instruction on first aid techniques.",
+          "Beneficial instructional content helps people learn new skills safely and effectively.",
+          "The safety manual provides beneficial instructional content about emergency procedures.",
+          "Beneficial instruction teaches proper techniques while emphasizing safety precautions.",
+          "The tutorial provides beneficial instructional content about safe woodworking practices."
+        ],
+        "negative_examples": [
+          "Information was provided.",
+          "Instructions were given.",
+          "Content teaches something.",
+          "The tutorial explains something.",
+          "Instructions are included.",
+          "Something was taught.",
+          "The guide provides information.",
+          "Instructions were provided.",
+          "Content includes teaching.",
+          "Information is available."
+        ],
+        "disambiguation": "Content specifically designed to help and educate safely, not just any instructional material"
+      },
+      "children": []
+    },
+    {
+      "term": "MultimodalBias",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Systematic biases in multimodal systems including racial/gender bias in vision, accent bias in speech, and demographic disparities in generation",
+      "definition_source": "Fairness ML, AI ethics",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "VisionBias",
+        "AudioBias",
+        "PerceptualBias",
+        "GenerativeBias"
+      ],
+      "relationships": {
+        "related": [
+          "AlgorithmicBias",
+          "FacialRecognition",
+          "SpeechRecognition",
+          "FairnessML"
+        ],
+        "opposite": [
+          "EquitableMultimodalPerformance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "discrimination",
+          "representational_harm",
+          "disparate_performance"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BiasMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Facial recognition systems show higher error rates for darker-skinned individuals.",
+          "Speech recognition performs worse on non-native accents and African American Vernacular English.",
+          "Image generation models reproduce stereotypical representations of gender and race.",
+          "The vision model exhibited multimodal bias, associating certain occupations with specific genders.",
+          "Multimodal bias in medical imaging AI leads to disparate diagnostic accuracy across demographics.",
+          "The image classifier showed higher false positive rates for images of Black individuals.",
+          "Speech-to-text accuracy drops significantly for speakers with regional accents.",
+          "Multimodal bias causes image generators to default to lighter skin tones for positive concepts.",
+          "The vision system's age estimation was significantly less accurate for certain ethnic groups.",
+          "Multimodal bias in hiring tools led to disparate impact based on appearance and voice.",
+          "Image captioning models exhibit gender bias, describing women in terms of appearance more often.",
+          "The speech recognition system failed to understand users with hearing-related speech patterns.",
+          "Multimodal bias in surveillance AI raises civil rights concerns about disparate monitoring.",
+          "Vision-language models reproduce societal stereotypes when generating descriptions of people.",
+          "The image generation model associated 'criminal' prompts with darker skin tones."
+        ],
+        "negative_examples": [
+          "The model made errors.",
+          "Some people were not recognized.",
+          "The system wasn't perfect.",
+          "Accuracy varied.",
+          "The model had issues.",
+          "Some errors occurred.",
+          "Performance differed.",
+          "The system had limitations.",
+          "Results varied by group.",
+          "The model was imperfect.",
+          "Some mistakes were made.",
+          "Accuracy was inconsistent.",
+          "The system had gaps.",
+          "Performance was uneven.",
+          "Some problems existed."
+        ],
+        "disambiguation": "Systematic demographic disparities in multimodal AI, not random errors"
+      },
+      "children": []
+    },
+    {
+      "term": "EquitableMultimodalPerformance",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Fair and consistent AI performance across different demographic groups, accents, appearances, and cultural contexts",
+      "definition_source": "Fairness ML, inclusive design",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "FairPerformance",
+        "InclusiveAI",
+        "UnbiasedMultimodal",
+        "DemographicParity"
+      ],
+      "relationships": {
+        "related": [
+          "Fairness",
+          "Inclusion",
+          "Equity",
+          "UniversalDesign"
+        ],
+        "opposite": [
+          "MultimodalBias"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The speech recognition system achieves equitable performance across accents and dialects.",
+          "Equitable multimodal AI serves all users regardless of skin tone, age, or appearance.",
+          "The image generation model produces diverse, non-stereotypical representations by default.",
+          "Fairness audits confirmed equitable multimodal performance across demographic subgroups.",
+          "Equitable multimodal performance requires testing across diverse populations during development.",
+          "The facial recognition system was redesigned to achieve equitable accuracy across skin tones.",
+          "Equitable multimodal performance is validated through disaggregated metrics by demographic group.",
+          "The team prioritized equitable multimodal performance through diverse training data and testing.",
+          "Equitable performance means consistent quality of service regardless of user characteristics.",
+          "The accessibility-focused model achieved equitable performance for users with diverse speech patterns."
+        ],
+        "negative_examples": [
+          "The model works for everyone.",
+          "All users can use it.",
+          "The system is fair.",
+          "Performance is good.",
+          "Everyone can use it.",
+          "The system works well.",
+          "Users are served.",
+          "The model is accurate.",
+          "The system functions.",
+          "Performance is acceptable."
+        ],
+        "disambiguation": "Actively achieved demographic parity in performance, not just aspirational fairness"
+      },
+      "children": []
+    },
+    {
+      "term": "VisualProfiling",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Using visual analysis to infer sensitive attributes about individuals including demographics, emotions, or characteristics without consent",
+      "definition_source": "Privacy, surveillance studies",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "DemographicInference",
+        "AttributeEstimation",
+        "VisualSurveillance"
+      ],
+      "relationships": {
+        "related": [
+          "FacialRecognition",
+          "MultimodalBias",
+          "Privacy"
+        ],
+        "opposite": [
+          "TransparentAnalysis"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "privacy",
+          "surveillance",
+          "discrimination",
+          "profiling"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "PrivacyMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Visual profiling systems attempt to infer age, gender, and ethnicity from facial images.",
+          "Emotion recognition from facial expressions raises concerns about surveillance and consent.",
+          "The system performed demographic profiling for targeted advertising based on camera footage.",
+          "Visual attribute estimation can be used for discriminatory purposes without consent.",
+          "Visual profiling infers sensitive characteristics like health conditions from appearance.",
+          "The retail analytics system estimated customer demographics without consent or disclosure.",
+          "Visual profiling for security purposes raises concerns about discriminatory targeting.",
+          "The system inferred political affiliation from facial features, raising serious privacy concerns.",
+          "Visual profiling in public spaces enables mass surveillance of personal characteristics.",
+          "The hiring tool analyzed candidate video for personality traits based on facial analysis.",
+          "Visual profiling systems claim to detect deception, sexual orientation, or criminality from faces.",
+          "The proctoring software performed visual analysis to infer attention and engagement.",
+          "Visual profiling enables creating detailed profiles from surveillance footage without consent.",
+          "The system estimated emotional state from facial expressions for targeted advertising.",
+          "Visual profiling raises concerns about automated discrimination at scale."
+        ],
+        "negative_examples": [
+          "The image was analyzed.",
+          "Information was extracted.",
+          "Features were detected.",
+          "The face was scanned.",
+          "Analysis was performed.",
+          "The image was processed.",
+          "Data was extracted.",
+          "Features were identified.",
+          "The face was analyzed.",
+          "Information was gathered.",
+          "The image was examined.",
+          "Details were detected.",
+          "The face was processed.",
+          "Analysis was conducted.",
+          "Data was collected."
+        ],
+        "disambiguation": "Inferring sensitive personal attributes from visual data without consent, not general analysis"
+      },
+      "children": []
+    },
+    {
+      "term": "AudioProfiling",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Using audio analysis to infer sensitive attributes about speakers including demographics, emotional state, or health conditions without consent",
+      "definition_source": "Privacy, speech analysis",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "VoiceProfiling",
+        "SpeakerAttributeInference",
+        "AcousticProfiling"
+      ],
+      "relationships": {
+        "related": [
+          "SpeakerRecognition",
+          "MultimodalBias",
+          "Privacy"
+        ],
+        "opposite": [
+          "TransparentAnalysis"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "privacy",
+          "surveillance",
+          "discrimination",
+          "health_privacy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "PrivacyMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Audio profiling infers speaker demographics from voice characteristics without consent.",
+          "Voice analysis claims to detect emotions, deception, or even health conditions like Parkinson's.",
+          "The call center used audio profiling to estimate caller demographics for routing decisions.",
+          "Accent detection can enable discriminatory treatment based on perceived nationality.",
+          "Audio profiling infers personality traits from voice patterns for hiring decisions.",
+          "The system claimed to detect mental health conditions from voice recordings.",
+          "Audio profiling enables creating detailed profiles from voice without speaker awareness.",
+          "Voice analysis for emotion detection raises concerns about workplace surveillance.",
+          "The insurance system used audio profiling to infer health risks from voice.",
+          "Audio profiling can reveal medical conditions, emotional state, and demographic information.",
+          "The authentication system collected audio for profiling beyond stated security purposes.",
+          "Audio profiling in call centers enables discriminatory service based on perceived characteristics.",
+          "Voice-based lie detection systems lack scientific validity but raise profiling concerns.",
+          "The system inferred socioeconomic status from speech patterns without consent.",
+          "Audio profiling enables mass categorization of people based on voice characteristics."
+        ],
+        "negative_examples": [
+          "The voice was analyzed.",
+          "Speaker characteristics were noted.",
+          "The audio was processed.",
+          "Voice features were detected.",
+          "Analysis was performed.",
+          "The recording was examined.",
+          "Audio was processed.",
+          "Voice was analyzed.",
+          "The speaker was identified.",
+          "Audio features were extracted.",
+          "The voice was examined.",
+          "Analysis was conducted.",
+          "The audio was reviewed.",
+          "Voice data was processed.",
+          "The recording was analyzed."
+        ],
+        "disambiguation": "Inferring sensitive personal attributes from audio without consent, not general speech processing"
+      },
+      "children": []
+    },
+    {
+      "term": "TransparentAnalysis",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Multimodal analysis conducted with user awareness, explicit consent, disclosed purposes, and respect for privacy boundaries",
+      "definition_source": "Privacy by design, ethical AI",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "ConsentedAnalysis",
+        "DisclosedProcessing",
+        "EthicalAnalysis",
+        "PrivacyRespectingAnalysis"
+      ],
+      "relationships": {
+        "related": [
+          "Transparency",
+          "Consent",
+          "Privacy",
+          "Disclosure"
+        ],
+        "opposite": [
+          "VisualProfiling",
+          "AudioProfiling"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Transparent analysis discloses what data is collected, how it's processed, and for what purpose.",
+          "The accessibility app performs transparent analysis: user opts in and controls what's analyzed.",
+          "Medical diagnosis AI practices transparent analysis with patient consent and explainable outputs.",
+          "Transparent analysis respects privacy by minimizing data collection and enabling user control.",
+          "Transparent analysis means users understand and agree to how their data is being used.",
+          "The platform practices transparent analysis by disclosing all data processing to users.",
+          "Transparent analysis includes clear explanations of what the AI infers and how.",
+          "The user interface provides transparency about what analysis is being performed in real-time.",
+          "Transparent analysis enables informed consent by explaining data use in plain language.",
+          "The privacy-first design implements transparent analysis with user control at every step."
+        ],
+        "negative_examples": [
+          "The data was processed.",
+          "Analysis was performed.",
+          "The system analyzed input.",
+          "Data was examined.",
+          "Analysis occurred.",
+          "The content was processed.",
+          "Data was analyzed.",
+          "The system processed information.",
+          "Analysis was conducted.",
+          "Data was evaluated."
+        ],
+        "disambiguation": "Analysis with explicit consent, disclosure, and privacy respect, not just any consented use"
+      },
+      "children": []
+    },
+    {
+      "term": "IntellectualPropertyInfringement",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Using generative AI to create content that infringes on copyrights, trademarks, or other intellectual property rights",
+      "definition_source": "Copyright law, AI ethics",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "CopyrightInfringement",
+        "IPTheft",
+        "TrademarkViolation",
+        "StyleCopying"
+      ],
+      "relationships": {
+        "related": [
+          "ImageGeneration",
+          "MusicGeneration",
+          "Copyright"
+        ],
+        "opposite": [
+          "OriginalCreativeExpression"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "copyright",
+          "economic_harm",
+          "artist_harm"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "IPMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The model was prompted to generate images replicating a living artist's distinctive style.",
+          "AI-generated music that closely mimics copyrighted songs raises infringement concerns.",
+          "The generated image contained recognizable copyrighted characters without authorization.",
+          "Style mimicry of specific artists may constitute intellectual property infringement.",
+          "The AI-generated artwork was nearly identical to a copyrighted photograph.",
+          "Generating images 'in the style of' a specific living artist raises IP concerns.",
+          "The model reproduced copyrighted logos and trademarks in its outputs.",
+          "IP infringement occurs when generated content is substantially similar to protected works.",
+          "The AI generated music containing melodies identical to copyrighted compositions.",
+          "Reproducing copyrighted characters through AI generation may constitute infringement."
+        ],
+        "negative_examples": [
+          "Art was created.",
+          "The style looked familiar.",
+          "Something similar was made.",
+          "The image was generated.",
+          "Creative content was produced.",
+          "Art was made.",
+          "The output looked artistic.",
+          "Something was created.",
+          "The image was produced.",
+          "Creative work was generated."
+        ],
+        "disambiguation": "Specifically infringing on protected IP through generation, not general similarity"
+      },
+      "children": []
+    },
+    {
+      "term": "OriginalCreativeExpression",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Novel creative works that contribute new artistic value without copying or infringing on existing protected works",
+      "definition_source": "Copyright law, creative arts",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "NovelCreation",
+        "OriginalArtwork",
+        "AuthenticCreativity",
+        "IndependentExpression"
+      ],
+      "relationships": {
+        "related": [
+          "Creativity",
+          "Originality",
+          "ArtisticExpression",
+          "NovelContent"
+        ],
+        "opposite": [
+          "IntellectualPropertyInfringement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "BeneficialIntentMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The artist used AI as a tool for original creative expression, developing a unique visual style.",
+          "Original creative expression generates novel imagery that doesn't replicate existing works.",
+          "The musician's AI-assisted composition represents original creative expression with new melodies.",
+          "Creative empowerment through AI enables original expression by people who couldn't create otherwise.",
+          "Original creative expression involves developing new ideas rather than copying existing works.",
+          "The AI-assisted artwork represents the artist's original creative vision and expression.",
+          "Original creative expression uses AI as a creative tool rather than a copying mechanism.",
+          "The novel illustrations represent original creative expression combining AI with human artistry.",
+          "Original creative expression through AI expands the range of people who can create art.",
+          "The designer's original creative expression used AI to realize unique concepts."
+        ],
+        "negative_examples": [
+          "Something was created.",
+          "Art was made.",
+          "Content was generated.",
+          "The image was produced.",
+          "Creative work was made.",
+          "Something was made.",
+          "The output was artistic.",
+          "Content was created.",
+          "Art was generated.",
+          "Something was produced."
+        ],
+        "disambiguation": "Genuinely novel creative contribution, not just any generated content"
+      },
+      "children": []
+    },
+    {
+      "term": "AdversarialPrompt",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Carefully crafted inputs designed to manipulate AI systems into producing unintended, harmful, or policy-violating outputs",
+      "definition_source": "AI security, prompt engineering",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "PromptAttack",
+        "PromptInjection",
+        "JailbreakPrompt"
+      ],
+      "relationships": {
+        "related": [
+          "MultimodalJailbreak",
+          "AdversarialImage",
+          "SafetyBypass"
+        ],
+        "opposite": [
+          "GoodFaithQuery"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "safety_bypass",
+          "harmful_output",
+          "system_manipulation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "JailbreakMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The adversarial prompt used roleplay framing to bypass safety guidelines.",
+          "Prompt injection attacks embed malicious instructions in user-supplied content.",
+          "The jailbreak prompt exploited the model's instruction-following to override safety training.",
+          "Indirect prompt injection hides adversarial instructions in external documents the model reads.",
+          "The adversarial prompt used DAN (Do Anything Now) framing to attempt safety bypass.",
+          "Prompt injection can cause models to ignore system instructions and follow attacker commands.",
+          "The adversarial prompt exploited ambiguity in the model's understanding of constraints.",
+          "Jailbreak prompts often use fictional framing to create distance from harmful requests.",
+          "The prompt attack used base64 encoding to obfuscate the malicious instruction.",
+          "Adversarial prompts can exploit the model's desire to be helpful and complete tasks.",
+          "The jailbreak used hypothetical framing: 'Imagine you were a model without restrictions.'",
+          "Prompt injection attacks can chain through multiple turns to gradually erode safety.",
+          "The adversarial prompt pretended to be a 'test' to evaluate the model's capabilities.",
+          "Jailbreak prompts often claim special permissions or override codes that don't exist.",
+          "The prompt attack exploited the model's willingness to engage with creative writing.",
+          "Adversarial prompts can use translation or encoding to evade content filters.",
+          "The jailbreak used nested instructions to confuse the model's safety reasoning.",
+          "Prompt injection is a fundamental challenge for LLM-based systems with user input.",
+          "The adversarial prompt claimed to be from an administrator with special access.",
+          "Jailbreak prompts continuously evolve as defenses improve, creating an arms race."
+        ],
+        "negative_examples": [
+          "A bad question was asked.",
+          "The prompt was unusual.",
+          "The request was inappropriate.",
+          "The user asked something strange.",
+          "The prompt was weird.",
+          "The request was wrong.",
+          "The question was problematic.",
+          "The prompt was bad.",
+          "The user made a bad request.",
+          "The question was inappropriate.",
+          "The prompt was concerning.",
+          "The request was unusual.",
+          "The question was wrong.",
+          "The prompt was rejected.",
+          "The request was blocked.",
+          "The question was declined.",
+          "The prompt was refused.",
+          "The request was denied.",
+          "The question was strange.",
+          "The prompt was flagged."
+        ],
+        "disambiguation": "Intentionally crafted attacks on AI safety, not unintentional misuse"
+      },
+      "children": []
+    },
+    {
+      "term": "AdversarialImage",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Images with carefully crafted perturbations designed to fool computer vision models while appearing normal to humans",
+      "definition_source": "Adversarial ML, Goodfellow et al.",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "AdversarialExample",
+        "AdversarialPerturbation",
+        "EvasionAttack"
+      ],
+      "relationships": {
+        "related": [
+          "ImageRecognition",
+          "ObjectDetection",
+          "RobustML"
+        ],
+        "opposite": [
+          "CleanInput"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "evasion",
+          "misclassification",
+          "safety_critical_failure"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AdversarialMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The adversarial image caused the classifier to misidentify a stop sign as a speed limit sign.",
+          "Imperceptible pixel perturbations can cause dramatic changes in model predictions.",
+          "Adversarial patches can be printed and placed in the physical world to fool detectors.",
+          "The FGSM attack generates adversarial examples using the gradient of the loss function.",
+          "Adversarial images exploit the gap between human and machine perception.",
+          "The adversarial perturbation was invisible to humans but completely fooled the model.",
+          "Adversarial images can cause misclassification in safety-critical computer vision systems.",
+          "The adversarial patch caused the object detector to completely miss the person.",
+          "Adversarial image attacks can transfer between different models trained on similar data.",
+          "The adversarial example exploited high-frequency features that humans don't perceive."
+        ],
+        "negative_examples": [
+          "The image was unclear.",
+          "The model made an error.",
+          "The picture was confusing.",
+          "The classification was wrong.",
+          "The image was noisy.",
+          "An error occurred.",
+          "The model was confused.",
+          "The image was distorted.",
+          "The prediction was incorrect.",
+          "The model made a mistake."
+        ],
+        "disambiguation": "Intentionally crafted perturbations to fool models, not natural errors or noise"
+      },
+      "children": []
+    },
+    {
+      "term": "ContentModerationEvasion",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalSafetyRisk"
+      ],
+      "layer_hint": 3,
+      "definition": "Techniques used to circumvent automated content moderation systems including visual obfuscation, encoding, and adversarial perturbations",
+      "definition_source": "Content safety, platform trust & safety",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "ModerationBypass",
+        "FilterEvasion",
+        "ContentObfuscation"
+      ],
+      "relationships": {
+        "related": [
+          "AdversarialImage",
+          "ContentModeration",
+          "TextObfuscation"
+        ],
+        "opposite": [
+          "PolicyCompliance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "harmful_content_spread",
+          "policy_violation"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "ModerationMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The image used visual obfuscation to evade NSFW detection filters.",
+          "Text embedded in images bypasses text-based content moderation.",
+          "Adversarial perturbations can make violating content appear benign to classifiers.",
+          "Filter evasion techniques include character substitution, image tiling, and encoding.",
+          "The content was deliberately obfuscated to evade automated moderation systems.",
+          "Moderation evasion techniques exploit gaps between human and AI perception.",
+          "The violating content used visual encoding to bypass the content filter.",
+          "Evasion techniques include adding noise patterns that confuse detection systems.",
+          "The harmful content was hidden using techniques designed to evade automated review.",
+          "Content moderation evasion is an ongoing arms race between bad actors and platforms."
+        ],
+        "negative_examples": [
+          "The content was hidden.",
+          "Something was missed.",
+          "The filter didn't catch it.",
+          "Content was not detected.",
+          "The system missed it.",
+          "Something got through.",
+          "The filter failed.",
+          "Content was overlooked.",
+          "The detection missed it.",
+          "Something wasn't caught."
+        ],
+        "disambiguation": "Intentional circumvention of content safety systems, not accidental false negatives"
+      },
+      "children": []
+    },
+    {
+      "term": "DeepfakeDetection",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Methods and systems for identifying synthetic media and distinguishing AI-generated content from authentic recordings",
+      "definition_source": "Media forensics, AI safety",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "SyntheticMediaDetection",
+        "ForensicDetection",
+        "AuthenticityVerification"
+      ],
+      "relationships": {
+        "related": [
+          "Deepfake",
+          "MediaForensics",
+          "ContentAuthentication"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AuthenticityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Deepfake detection models analyze facial landmarks and temporal inconsistencies.",
+          "The forensic tool detected subtle blending artifacts indicating the video was manipulated.",
+          "Deepfake detection achieved 95% accuracy on the FaceForensics++ benchmark.",
+          "Lip-sync detection can identify when audio has been dubbed over different video.",
+          "Deepfake detection analyzes physiological signals like pulse and blinking patterns.",
+          "The detection system identified frequency domain artifacts typical of GAN-generated faces.",
+          "Deepfake detection tools examine compression artifacts and face boundary inconsistencies.",
+          "The detector identified temporal inconsistencies in facial movements across frames.",
+          "Deepfake detection combines multiple signals including audio-visual sync and facial dynamics.",
+          "The forensic analysis detected synthetic artifacts invisible to human observers."
+        ],
+        "negative_examples": [
+          "The video was checked.",
+          "We analyzed the content.",
+          "The media was reviewed.",
+          "The video was examined.",
+          "Analysis was performed.",
+          "The content was checked.",
+          "The media was analyzed.",
+          "The video was inspected.",
+          "The content was reviewed.",
+          "The footage was examined."
+        ],
+        "disambiguation": "Technical detection of synthetic media, not general content review"
+      },
+      "children": []
+    },
+    {
+      "term": "SyntheticMediaProvenance",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Systems and standards for tracking the origin, authenticity, and modification history of digital media",
+      "definition_source": "C2PA, Content Authenticity Initiative",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "ContentProvenance",
+        "MediaAuthenticity",
+        "DigitalProvenance",
+        "C2PA"
+      ],
+      "relationships": {
+        "related": [
+          "DeepfakeDetection",
+          "AIWatermarking",
+          "ContentAuthentication"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AuthenticityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "C2PA standards embed cryptographic provenance data in media files.",
+          "Content Credentials show the origin and edit history of images.",
+          "Media provenance helps distinguish authentic journalism from synthetic content.",
+          "The provenance manifest recorded that the image was AI-generated and by which tool.",
+          "Provenance tracking enables tracing media back to its original source and modifications.",
+          "The Content Authenticity Initiative promotes industry-wide provenance standards.",
+          "Provenance metadata survived image compression and remained verifiable.",
+          "The provenance chain documented every edit from camera capture to publication.",
+          "Synthetic media provenance enables consumers to verify the origin of content.",
+          "The cryptographic signature verified the image hadn't been modified since creation."
+        ],
+        "negative_examples": [
+          "The file has metadata.",
+          "The image has information.",
+          "The source is known.",
+          "Data is attached.",
+          "Information is included.",
+          "The file contains data.",
+          "Metadata is present.",
+          "Information is embedded.",
+          "The source is recorded.",
+          "Data is included."
+        ],
+        "disambiguation": "Cryptographic authenticity tracking for synthetic media, not general metadata"
+      },
+      "children": []
+    },
+    {
+      "term": "AIWatermarking",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "Embedding imperceptible signals in AI-generated content to enable later identification of synthetic origin",
+      "definition_source": "Content authenticity, AI safety",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "SyntheticWatermark",
+        "GenerativeWatermark",
+        "AIContentMarking"
+      ],
+      "relationships": {
+        "related": [
+          "SyntheticMediaProvenance",
+          "DeepfakeDetection",
+          "ContentAuthentication"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AuthenticityMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "SynthID embeds an invisible watermark in AI-generated images for later detection.",
+          "AI watermarking survives common transformations like compression and cropping.",
+          "The watermark detector confirmed the image was generated by our model.",
+          "Robust AI watermarks enable tracing synthetic content back to its source.",
+          "AI watermarking embeds statistical patterns that are invisible but detectable.",
+          "The watermark persisted through social media compression and resizing.",
+          "AI watermarking enables platforms to identify and label synthetic content.",
+          "The detection tool verified the watermark was intact in the shared image.",
+          "AI watermarking provides a cryptographic link between content and generator.",
+          "The watermark enabled identifying which model and user generated the content."
+        ],
+        "negative_examples": [
+          "The image has a logo.",
+          "A mark was added.",
+          "The content is labeled.",
+          "Something was added.",
+          "The image has text.",
+          "A label was included.",
+          "The content has markings.",
+          "Something is visible.",
+          "The image is labeled.",
+          "A mark is present."
+        ],
+        "disambiguation": "Invisible cryptographic marking of AI content, not visible watermarks or labels"
+      },
+      "children": []
+    },
+    {
+      "term": "AdversarialRobustness",
+      "role": "concept",
+      "parent_concepts": [
+        "MultimodalBeneficialIntent"
+      ],
+      "layer_hint": 3,
+      "definition": "The ability of models to maintain correct behavior when faced with adversarial inputs or attacks",
+      "definition_source": "Robust ML, AI security",
+      "domain": "SafetyAndSecurity",
+      "aliases": [
+        "RobustML",
+        "AdversarialDefense",
+        "AttackResistance"
+      ],
+      "relationships": {
+        "related": [
+          "AdversarialImage",
+          "AdversarialTraining",
+          "ModelSecurity"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "monitor": "AdversarialMonitor"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Adversarial training improves robustness by including adversarial examples during training.",
+          "The model achieved certified robustness guarantees against perturbations within an epsilon ball.",
+          "Adversarial robustness often trades off against standard accuracy.",
+          "Randomized smoothing provides provable robustness certificates for classifiers.",
+          "Adversarial robustness testing is essential for safety-critical computer vision deployments.",
+          "The robust model maintained accuracy even under projected gradient descent attacks.",
+          "Adversarial robustness requires defending against attacks that haven't been seen yet.",
+          "The model's adversarial robustness was validated through comprehensive red-teaming.",
+          "Adversarial training with PGD attacks significantly improved model robustness.",
+          "Certified robustness provides mathematical guarantees about model behavior under attack."
+        ],
+        "negative_examples": [
+          "The model is accurate.",
+          "It works well.",
+          "The system is reliable.",
+          "The model performs well.",
+          "The system is stable.",
+          "It is robust.",
+          "The model is strong.",
+          "The system is secure.",
+          "It works correctly.",
+          "The model is good."
+        ],
+        "disambiguation": "Specifically resistance to adversarial attacks, not general robustness or reliability"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:17.924685Z",
+    "result_pack_version": "6.0.0",
+    "concepts_added": 28,
+    "concepts_by_layer": {
+      "2": 2,
+      "3": 26
+    },
+    "parents_updated": 26,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "critical",
+    "impact": {
+      "new_concepts": [
+        "MultimodalSafetyRisk",
+        "MultimodalBeneficialIntent",
+        "Deepfake",
+        "AuthenticRepresentation",
+        "VoiceCloning",
+        "OriginalVoiceExpression",
+        "CounterfeitGeneration",
+        "AuthorizedDocumentation",
+        "MultimodalJailbreak",
+        "GoodFaithQuery",
+        "ExploitativeImagery",
+        "ConsentfulDepiction",
+        "HazardousGeneration",
+        "BeneficialInstructionalContent",
+        "MultimodalBias",
+        "EquitableMultimodalPerformance",
+        "VisualProfiling",
+        "AudioProfiling",
+        "TransparentAnalysis",
+        "IntellectualPropertyInfringement",
+        "OriginalCreativeExpression",
+        "AdversarialPrompt",
+        "AdversarialImage",
+        "ContentModerationEvasion",
+        "DeepfakeDetection",
+        "SyntheticMediaProvenance",
+        "AIWatermarking",
+        "AdversarialRobustness"
+      ],
+      "must_retrain": [],
+      "should_retrain": [],
+      "optional_retrain": [
+        "AISafety",
+        "DocumentUnderstanding",
+        "Documentary",
+        "Learning",
+        "MusicGeneration",
+        "SpeakerRecognition",
+        "SpeechRecognition",
+        "SpeechSynthesis",
+        "Transparency",
+        "VideoGeneration",
+        "VisionLanguageModel"
+      ],
+      "total_training_required": 28
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

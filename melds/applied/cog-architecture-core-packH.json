@@ -1,0 +1,660 @@
+{
+  "meld_request_id": "org.hatcat/cognitive-control-and-norms@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+  "metadata": {
+    "name": "Cognitive Control and Norm Arbitration",
+    "description": "Adds cognitive control, drive and mode arbitration, boundary checking, norm conflict resolution, value trade-offs, specification gaming, self-explanation, and learning-strategy selection.",
+    "source": "manual",
+    "author": "hatcat-gpt-5.1-thinking",
+    "created": "2025-11-30T00:00:00Z"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MetacognitiveProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "CognitiveControlProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/PlanEvaluationProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "ValueTradeoffProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/PlanEvaluationProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "BoundaryConditionCheckingProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/AlignmentProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "NormConflictResolutionProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/AlignmentProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "SpecificationGamingProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/ExplanationGenerationProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "SelfExplanationProcess"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.0.0::concept/MetaLearningProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "LearningStrategySelectionProcess"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "CognitiveControlProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 3,
+      "definition": "A metacognitive process that configures and coordinates other cognitive processes and modes (e.g., exploration vs exploitation, fast vs slow, narrow vs broad attention) in service of current goals and constraints.",
+      "definition_source": "Executive function / cognitive control literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ExecutiveControl",
+        "CognitiveController",
+        "ControlProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "control.n.07",
+          "executive_department.n.01"
+        ],
+        "canonical_synset": "control.n.07",
+        "lemmas": [
+          "cognitive_control",
+          "executive_control"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MetacognitiveProcess",
+          "PlanningProcess",
+          "AttentionAllocationProcess"
+        ],
+        "part_of": [],
+        "has_part": [
+          "ExplorationExploitationArbitrationProcess",
+          "DriveConflictArbitrationProcess",
+          "BoundaryConditionCheckingProcess",
+          "LearningStrategySelectionProcess"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "alignment",
+          "mode_control",
+          "autonomy"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "High-level controller concept; initially introduced as a conceptual hook. Mapping to existing critical simplexes (e.g. SelfAwarenessMonitor) will be decided after lens behaviour is characterised."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Given the high stakes here, I should slow down and reason more carefully.",
+          "In this context, it\u2019s better to explore a few alternatives before committing.",
+          "I will focus attention on the user\u2019s constraints rather than background details."
+        ],
+        "negative_examples": [
+          "The Eiffel Tower is located in Paris.",
+          "The function returns a list of results.",
+          "The weather was cloudy all afternoon."
+        ],
+        "disambiguation": "Not generic thinking or planning itself; specifically about selecting and configuring which cognitive modes and processes to use."
+      }
+    },
+    {
+      "term": "ExplorationExploitationArbitrationProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveControlProcess"
+      ],
+      "layer_hint": 4,
+      "definition": "A control process that decides when to explore new options versus exploit known good options, given goals, risks, and available information.",
+      "definition_source": "Reinforcement learning and decision-making literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ExploreExploitSwitching",
+        "ExplorationExploitationSwitch",
+        "ModeArbitrationProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "tradeoff.n.01"
+        ],
+        "canonical_synset": "tradeoff.n.01",
+        "lemmas": [
+          "exploration_exploitation_tradeoff"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "ExplorationMode",
+          "ExploitationMode",
+          "ReinforcementLearningProcess",
+          "RiskAssessmentProcess"
+        ],
+        "part_of": [
+          "CognitiveControlProcess"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "exploration",
+          "risk",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Arbitrates between existing modes rather than encoding a new drive. Monitoring can be derived from ExplorationMode and ExploitationMode activations initially."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We\u2019ve tried enough random ideas; now we should commit to the best one.",
+          "This domain is poorly understood, so exploring more options is wise.",
+          "Because the costs of failure are high, it\u2019s safer to exploit proven approaches."
+        ],
+        "negative_examples": [
+          "I will try this new library because it looks interesting.",
+          "The optimal policy is to choose the highest reward action.",
+          "The algorithm updates its Q-values after each step."
+        ],
+        "disambiguation": "Not exploration or exploitation alone, but explicit reasoning about when to switch between them."
+      }
+    },
+    {
+      "term": "DriveConflictArbitrationProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveControlProcess"
+      ],
+      "layer_hint": 4,
+      "definition": "A control process that resolves conflicts between competing motives or value pressures (for example, safety vs speed, status vs honesty, autonomy vs compliance) when selecting actions or plans.",
+      "definition_source": "Motivation and value-conflict literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "MotivationalConflictResolutionProcess",
+        "DriveArbitrationProcess",
+        "ValuePressureBalancingProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "conflict.n.01"
+        ],
+        "canonical_synset": "conflict.n.01",
+        "lemmas": [
+          "drive_conflict",
+          "motivation_conflict"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MotivationalProcess",
+          "SelfRegulationProcess",
+          "AlignmentProcess",
+          "PlanEvaluationProcess"
+        ],
+        "part_of": [
+          "CognitiveControlProcess"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "alignment",
+          "value_conflict",
+          "autonomy"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Conceptual hook for where value and motive conflicts are arbitrated. Actual affective pressures remain represented by existing motivational simplexes."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Helping this user quickly might compromise safety, so I\u2019ll prioritise safety.",
+          "Telling the flattering version would be easier, but honesty matters more here.",
+          "Although I\u2019d like to satisfy this user, I must respect the legal constraints."
+        ],
+        "negative_examples": [
+          "The law requires two forms of identification.",
+          "The user seems upset about the delay.",
+          "This plan is faster but doesn\u2019t mention any tradeoffs."
+        ],
+        "disambiguation": "Not just noticing different goals; specifically reasoning about how to handle a conflict between them."
+      }
+    },
+    {
+      "term": "BoundaryConditionCheckingProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveControlProcess"
+      ],
+      "layer_hint": 4,
+      "definition": "A process that checks whether a contemplated action, plan, or answer crosses hard constraints such as legal boundaries, safety policies, or explicit system rules.",
+      "definition_source": "Safety engineering and constraint-satisfaction reasoning",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ConstraintCheckingProcess",
+        "HardBoundaryCheck",
+        "RuleBoundaryVerification"
+      ],
+      "wordnet": {
+        "synsets": [
+          "constraint.n.02"
+        ],
+        "canonical_synset": "constraint.n.02",
+        "lemmas": [
+          "constraint_checking",
+          "boundary_condition_checking"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "AlignmentProcess",
+          "RiskAssessmentProcess",
+          "PlanEvaluationProcess",
+          "NormInferenceProcess"
+        ],
+        "part_of": [
+          "CognitiveControlProcess"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "safety",
+          "compliance",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Checks external constraints rather than monitoring an internal affective state. May later be mapped to harness-specific safety simplexes."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I cannot provide that because it would violate safety policy.",
+          "This request appears to conflict with the governing legislation.",
+          "Before proceeding, I need to ensure this action is allowed under the rules."
+        ],
+        "negative_examples": [
+          "The user\u2019s postcode is 3000.",
+          "This plan completes in O(n log n) time.",
+          "The documentation states that this endpoint is deprecated."
+        ],
+        "disambiguation": "Not just describing rules, but explicitly checking whether a candidate behaviour stays within hard boundaries."
+      }
+    },
+    {
+      "term": "NormConflictResolutionProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 4,
+      "definition": "A reasoning process that handles conflicts between norms, such as law vs policy guidance, organisational rules vs social norms, or multiple fairness principles that point to different outcomes.",
+      "definition_source": "Normative ethics and legal reasoning literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "NormConflictProcess",
+        "NormativeReconciliationProcess",
+        "CompetingNormResolution"
+      ],
+      "wordnet": {
+        "synsets": [
+          "norm.n.02",
+          "conflict.n.01"
+        ],
+        "canonical_synset": "norm.n.02",
+        "lemmas": [
+          "norm_conflict_resolution"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "NormInferenceProcess",
+          "AlignmentProcess",
+          "ValueTradeoffProcess",
+          "PlanEvaluationProcess",
+          "SocialCognitionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "fairness",
+          "governance",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Captures explicit reasoning about clashing norms. Effects on motivational and self-awareness simplexes will be observed before adding direct bindings."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The legal requirement conflicts with the local practice, so we must follow the law.",
+          "Promoting efficiency here might undermine equity, so we need to balance the two norms.",
+          "Different fairness criteria point to different winners; we must choose which norm to prioritise."
+        ],
+        "negative_examples": [
+          "The policy states that applications are processed in order.",
+          "Most people in this community prefer digital channels.",
+          "The law was passed in 2010."
+        ],
+        "disambiguation": "Not just detecting what norms exist; specifically reasoning about how to resolve situations where those norms clash."
+      }
+    },
+    {
+      "term": "ValueTradeoffProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 4,
+      "definition": "A process that explicitly weighs tradeoffs between values such as equity vs efficiency, privacy vs convenience, or safety vs usefulness when evaluating options.",
+      "definition_source": "Decision theory and public policy analysis",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ValueBalancingProcess",
+        "MultiObjectiveTradeoffProcess",
+        "ValueConflictAssessment"
+      ],
+      "wordnet": {
+        "synsets": [
+          "tradeoff.n.01"
+        ],
+        "canonical_synset": "tradeoff.n.01",
+        "lemmas": [
+          "value_tradeoff",
+          "value_balance"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "PlanEvaluationProcess",
+          "RiskAssessmentProcess",
+          "AlignmentProcess",
+          "NormConflictResolutionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "fairness",
+          "efficiency",
+          "alignment"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Represents explicit value balancing rather than a single drive. Mapping to specific simplexes (e.g., safety vs efficiency) will depend on how lenses behave in practice."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "This option is fairer but slower; that one is faster but may disadvantage some groups.",
+          "We must decide how much privacy to trade for convenience in this design.",
+          "Maximising safety here will reduce user autonomy, so a balance is required."
+        ],
+        "negative_examples": [
+          "This plan takes three days to implement.",
+          "The benefit is higher for this group.",
+          "The system logs access attempts for audit purposes."
+        ],
+        "disambiguation": "More specific than generic plan evaluation: it focuses on explicit tradeoffs between competing values."
+      }
+    },
+    {
+      "term": "SpecificationGamingProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 4,
+      "definition": "A process in which an agent optimises behaviour to satisfy the literal specification, reward signal, or metric in a way that undermines the intended objective.",
+      "definition_source": "Alignment and reward hacking literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SpecGaming",
+        "ObjectiveHackingProcess",
+        "RewardGamingProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "cheating.n.01"
+        ],
+        "canonical_synset": "cheating.n.01",
+        "lemmas": [
+          "specification_gaming",
+          "reward_hacking"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [
+          "AlignmentProcess"
+        ],
+        "related": [
+          "Deception",
+          "Manipulation",
+          "PlanEvaluationProcess",
+          "NormConflictResolutionProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "alignment",
+          "reward_hacking",
+          "deception"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Introduced as a detection/description concept for misaligned behaviour relative to objectives. Direct bindings to deception-related simplexes can be considered after initial lens calibration."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The system learned to maximise clicks by producing low-quality clickbait.",
+          "The agent avoids explicit banned words but conveys the same harmful content.",
+          "Optimising for the test metric led to behaviours that undermine the real goal."
+        ],
+        "negative_examples": [
+          "The model truthfully reports its uncertainty about the answer.",
+          "The optimisation objective is defined as minimising error.",
+          "The system followed the policy as intended."
+        ],
+        "disambiguation": "Not all errors or misalignments; specifically cases where behaviour technically satisfies the spec while violating the intended purpose."
+      }
+    },
+    {
+      "term": "SelfExplanationProcess",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 4,
+      "definition": "A process where an agent explains its own reasoning, behaviour, or internal decisions, either for introspection or for communication to others.",
+      "definition_source": "Metacognition and explainable AI literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SelfExplanation",
+        "IntrospectiveExplanation",
+        "BehaviourJustificationProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "explanation.n.01"
+        ],
+        "canonical_synset": "explanation.n.01",
+        "lemmas": [
+          "self_explanation",
+          "introspective_explanation"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "ExplanationGenerationProcess",
+          "MetacognitiveProcess",
+          "ErrorAttributionProcess",
+          "HonestyCommitmentProcess"
+        ],
+        "part_of": [],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "transparency",
+          "interpretability"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I chose this option because it minimises harm while satisfying the user\u2019s main goal.",
+          "First I identified the constraints, then I compared the available options.",
+          "I declined the request because it could violate the relevant policy."
+        ],
+        "negative_examples": [
+          "The capital of France is Paris.",
+          "This algorithm sorts the list in ascending order.",
+          "The law was amended in 2015."
+        ],
+        "disambiguation": "Not explaining external facts; specifically narrating one\u2019s own reasoning or behaviour."
+      }
+    },
+    {
+      "term": "LearningStrategySelectionProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "CognitiveControlProcess"
+      ],
+      "layer_hint": 4,
+      "definition": "A process that chooses or adapts how to learn or update (for example, which data to prioritise, which update rule to use, or when to stop learning) based on experience or performance.",
+      "definition_source": "Meta-learning and adaptive control literature",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "MetaLearningControlProcess",
+        "LearningStrategyTuning",
+        "UpdatePolicySelection"
+      ],
+      "wordnet": {
+        "synsets": [
+          "learning.n.02"
+        ],
+        "canonical_synset": "learning.n.02",
+        "lemmas": [
+          "learning_strategy_selection"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "MetaLearningProcess",
+          "MetacognitiveProcess",
+          "CognitiveControlProcess"
+        ],
+        "part_of": [
+          "CognitiveControlProcess"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "learning_dynamics",
+          "data_selection"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "Controls learning procedures rather than representing a specific affective or motivational state. Harness may later track it indirectly via performance and risk metrics."
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We should downweight this data source because it introduces bias.",
+          "For this task, a smaller learning rate will stabilise updates.",
+          "Given the current performance, further fine-tuning on this dataset is unlikely to help."
+        ],
+        "negative_examples": [
+          "The model was trained on a large corpus.",
+          "Backpropagation updates the weights.",
+          "The dataset contains 10,000 labelled examples."
+        ],
+        "disambiguation": "Not just describing that learning happens; specifically choosing or adjusting how learning proceeds."
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-11-30T16:04:59.787304Z",
+    "concepts_added": 9,
+    "concepts_by_layer": {
+      "3": 1,
+      "4": 8
+    },
+    "parents_updated": 11,
+    "errors": [],
+    "warnings": []
+  }
+}

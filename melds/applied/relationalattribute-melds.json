@@ -1,0 +1,841 @@
+{
+  "meld_request_id": "org.hatcat/relationalattribute-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "RelationalAttribute Melds",
+    "description": "New intermediate concepts under RelationalAttribute",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "PhysicalAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "FoodAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "MediaAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "FinancialAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "IndustryAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "StatusAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "EnergyAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "LegalAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "ServiceAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "SoftwareAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "MeasurementAttrs"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/RelationalAttribute",
+      "relationship": "parent_of",
+      "candidate_concept": "ClassificationAttrs"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "PhysicalAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes describing physical characteristics or configurations of objects and natural features.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The bed has a memory foam mattress with medium firmness.",
+          "This washing machine features a front-loading design for easier access.",
+          "The grassland shows sparse vegetation coverage across the rolling hills.",
+          "The oak tree is cultivated for its valuable timber wood.",
+          "The couch cushions are made of high-density foam material.",
+          "The dryer loads from the top with a large capacity drum."
+        ],
+        "negative_examples": [
+          "The bed costs $500 and is on sale this week.",
+          "I prefer using this washing machine because it's energy efficient.",
+          "The grassland is located near the highway intersection.",
+          "The oak tree was planted in 1985 by the previous owner.",
+          "The meeting will be held in the conference room.",
+          "The software has many useful features for data analysis."
+        ],
+        "disambiguation": "Not to be confused with: TemporalAttribute, LocationAttribute, ValueAttribute, BehavioralAttribute"
+      },
+      "relationships": {
+        "related": [
+          "TemporalAttribute",
+          "LocationAttribute",
+          "ValueAttribute",
+          "BehavioralAttribute"
+        ],
+        "has_part": [
+          "BedAttribute",
+          "ClothesWasherLoadConfiguration",
+          "LandVegetationAttribute",
+          "PlantAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "BedAttribute",
+        "ClothesWasherLoadConfiguration",
+        "LandVegetationAttribute",
+        "PlantAttribute"
+      ]
+    },
+    {
+      "term": "FoodAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes that describe characteristics, preparation methods, or qualities of food and beverages.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "This coffee has a medium roast and coarse grind.",
+          "The restaurant specializes in authentic Italian cuisine.",
+          "I prefer my steak cooked medium-rare.",
+          "The cheese is aged and has a sharp flavor.",
+          "This wine has a full-bodied taste with fruity notes.",
+          "The bread is freshly baked and still warm."
+        ],
+        "negative_examples": [
+          "The restaurant is located downtown.",
+          "The chef graduated from culinary school.",
+          "Food prices have increased this year.",
+          "The kitchen equipment needs maintenance.",
+          "She works as a food critic.",
+          "The grocery store closes at 9 PM."
+        ],
+        "disambiguation": "Not to be confused with: LocationAttribute, TemporalAttribute, SizeAttribute, ColorAttribute, MaterialAttribute"
+      },
+      "relationships": {
+        "related": [
+          "LocationAttribute",
+          "TemporalAttribute",
+          "SizeAttribute",
+          "ColorAttribute",
+          "MaterialAttribute"
+        ],
+        "has_part": [
+          "CoffeeGrindAttribute",
+          "CoffeeRoastAttribute",
+          "Cuisine",
+          "PreparedFoodAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CoffeeGrindAttribute",
+        "CoffeeRoastAttribute",
+        "Cuisine",
+        "PreparedFoodAttribute"
+      ]
+    },
+    {
+      "term": "MediaAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes that describe qualities, characteristics, or technical properties of media content like music, recordings, or visual material.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "This album is classified as progressive rock genre.",
+          "The recording was made in stereo with high fidelity.",
+          "The photographer used a low-angle shot for dramatic effect.",
+          "The sound quality is characterized by crystal clear reproduction.",
+          "This compilation album features various artists from the jazz genre.",
+          "The recording attributes include the studio location and equipment used."
+        ],
+        "negative_examples": [
+          "The book has 300 pages and hardcover binding.",
+          "The building is 50 feet tall with brick construction.",
+          "She has brown hair and green eyes.",
+          "The car has four doors and leather seats.",
+          "The recipe calls for two cups of flour.",
+          "The relationship between the characters developed slowly."
+        ],
+        "disambiguation": "Not to be confused with: PhysicalAttribute, TemporalAttribute, SpatialAttribute, PersonalAttribute, QuantitativeAttribute"
+      },
+      "relationships": {
+        "related": [
+          "PhysicalAttribute",
+          "TemporalAttribute",
+          "SpatialAttribute",
+          "PersonalAttribute",
+          "QuantitativeAttribute"
+        ],
+        "has_part": [
+          "AlbumAttribute",
+          "MusicGenre",
+          "RecordingAttribute",
+          "ShootingAngle",
+          "SoundAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AlbumAttribute",
+        "MusicGenre",
+        "RecordingAttribute",
+        "ShootingAngle",
+        "SoundAttribute"
+      ]
+    },
+    {
+      "term": "FinancialAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes describing financial or economic characteristics, status, or performance of accounts, investments, or entities",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The bond received an AAA credit rating from Moody's.",
+          "Her savings account has high liquidity but low yield.",
+          "The startup's economic role shifted from consumer to producer.",
+          "His investment portfolio shows moderate risk attributes.",
+          "The account status changed from pending to active.",
+          "The mutual fund's performance attributes include diversification and growth potential."
+        ],
+        "negative_examples": [
+          "The car's physical attributes include red paint and leather seats.",
+          "She has strong leadership qualities and communication skills.",
+          "The building's structural attributes meet safety codes.",
+          "His personality traits include honesty and reliability.",
+          "The software's functional attributes include user interface design.",
+          "The patient's medical attributes show normal vital signs."
+        ],
+        "disambiguation": "Not to be confused with: PhysicalAttribute, TemporalAttribute, QualityAttribute, SpatialAttribute, CausalAttribute"
+      },
+      "relationships": {
+        "related": [
+          "PhysicalAttribute",
+          "TemporalAttribute",
+          "QualityAttribute",
+          "SpatialAttribute",
+          "CausalAttribute"
+        ],
+        "has_part": [
+          "EconomicAttribute",
+          "EconomicRole",
+          "FinancialAccountStatus",
+          "FinancialRating",
+          "InvestmentAttribute",
+          "LiquidityAttribute",
+          "YieldAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "EconomicAttribute",
+        "EconomicRole",
+        "FinancialAccountStatus",
+        "FinancialRating",
+        "InvestmentAttribute",
+        "LiquidityAttribute",
+        "YieldAttribute"
+      ]
+    },
+    {
+      "term": "IndustryAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes that classify objects, materials, or organizations by their industrial, commercial, or technical characteristics.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The pharmaceutical company obtained FDA approval for its new drug.",
+          "This steel meets automotive industry grade specifications.",
+          "The chemical is classified as a Class 3 flammable liquid for shipping.",
+          "The textile manufacturer specializes in organic cotton production.",
+          "The software company focuses on enterprise-level security solutions.",
+          "These components are rated for aerospace industry standards."
+        ],
+        "negative_examples": [
+          "The red car was parked outside the building.",
+          "She felt happy about her promotion at work.",
+          "The temperature reached 85 degrees yesterday.",
+          "The book contains 300 pages of historical information.",
+          "He lives in a two-story house with a garden.",
+          "The movie lasted for two hours and fifteen minutes."
+        ],
+        "disambiguation": "Not to be confused with: PhysicalAttribute, TemporalAttribute, LocationAttribute, QuantityAttribute, QualityAttribute"
+      },
+      "relationships": {
+        "related": [
+          "PhysicalAttribute",
+          "TemporalAttribute",
+          "LocationAttribute",
+          "QuantityAttribute",
+          "QualityAttribute"
+        ],
+        "has_part": [
+          "ArtifactAttribute",
+          "IndustryAttribute",
+          "HazardousMaterialTransportAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "ArtifactAttribute",
+        "IndustryAttribute",
+        "HazardousMaterialTransportAttribute"
+      ]
+    },
+    {
+      "term": "StatusAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes that describe the current state or condition of entities in systems, organizations, or processes.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The patient's consciousness level was assessed as alert and responsive.",
+          "The server status shows it is currently online and operational.",
+          "Her membership status in the organization is active and in good standing.",
+          "The endangered species has a conservation status of critically threatened.",
+          "My instant messaging status is set to away from keyboard.",
+          "The manufacturing process status indicates successful completion."
+        ],
+        "negative_examples": [
+          "The building has a height of fifty meters.",
+          "She possesses excellent leadership qualities.",
+          "The temperature outside is seventy-five degrees.",
+          "His relationship to the company is as a consultant.",
+          "The car's color is bright red with chrome details.",
+          "The document contains sensitive financial information."
+        ],
+        "disambiguation": "Not to be confused with: QuantitativeAttribute, QualitativeAttribute, PositionalAttribute, TemporalAttribute"
+      },
+      "relationships": {
+        "related": [
+          "QuantitativeAttribute",
+          "QualitativeAttribute",
+          "PositionalAttribute",
+          "TemporalAttribute"
+        ],
+        "has_part": [
+          "AVPUStatus",
+          "ComputerStatus",
+          "IMStatusAttribute",
+          "MemberStatus",
+          "ProcessStatus",
+          "ConservationStatus"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AVPUStatus",
+        "ComputerStatus",
+        "IMStatusAttribute",
+        "MemberStatus",
+        "ProcessStatus",
+        "ConservationStatus"
+      ]
+    },
+    {
+      "term": "EnergyAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "EnergyAttrs are attributes that characterize energy consumption, efficiency, or power-related properties of systems and devices.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "This refrigerator has an Energy Star rating for its low power consumption.",
+          "The washing machine displays an A++ energy efficiency class label.",
+          "The server system has real-time power monitoring capabilities.",
+          "This air conditioner meets European energy efficiency standards.",
+          "The device's energy consumption is rated at 50 watts per hour.",
+          "The appliance received an energy efficiency certification last year."
+        ],
+        "negative_examples": [
+          "This phone has excellent build quality and durability.",
+          "The car has a sleek design and comfortable interior.",
+          "The software runs smoothly on older hardware.",
+          "This material has high tensile strength and flexibility.",
+          "The product comes with a two-year warranty.",
+          "The device has advanced security features and encryption."
+        ],
+        "disambiguation": "Not to be confused with: QualityAttribute, PerformanceAttribute, SecurityAttribute, DesignAttribute"
+      },
+      "relationships": {
+        "related": [
+          "QualityAttribute",
+          "PerformanceAttribute",
+          "SecurityAttribute",
+          "DesignAttribute"
+        ],
+        "has_part": [
+          "EnergyStarAttribute",
+          "EuropeanUnionEnergyLabelClass",
+          "RealtimeSystemAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "EnergyStarAttribute",
+        "EuropeanUnionEnergyLabelClass",
+        "RealtimeSystemAttribute"
+      ]
+    },
+    {
+      "term": "LegalAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes that characterize legal systems, agents, or politico-economic frameworks within juridical contexts.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The defendant's legal standing in this case is questionable.",
+          "This country operates under a common law system.",
+          "The corporation acts as a legal entity in contract negotiations.",
+          "Federal jurisdiction applies to interstate commerce disputes.",
+          "The plaintiff has constitutional rights that must be protected.",
+          "Parliamentary democracy defines this nation's governmental structure."
+        ],
+        "negative_examples": [
+          "The company's financial performance improved this quarter.",
+          "She has excellent communication skills for teamwork.",
+          "The building's architectural style is modernist.",
+          "His academic credentials include a PhD in chemistry.",
+          "The software has user-friendly interface features.",
+          "The patient's medical history shows no allergies."
+        ],
+        "disambiguation": "Not to be confused with: PhysicalAttribute, TemporalAttribute, SocialAttribute, CognitiveTrait"
+      },
+      "relationships": {
+        "related": [
+          "PhysicalAttribute",
+          "TemporalAttribute",
+          "SocialAttribute",
+          "CognitiveTrait"
+        ],
+        "has_part": [
+          "LegalAgent",
+          "LegalSystemAttribute",
+          "PoliticoEconomicAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "LegalAgent",
+        "LegalSystemAttribute",
+        "PoliticoEconomicAttribute"
+      ]
+    },
+    {
+      "term": "ServiceAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes that describe characteristics or qualities of commercial services and hospitality offerings.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The hotel room features a king-size bed and ocean view.",
+          "This restaurant offers 24-hour room service to guests.",
+          "The spa is currently closed for renovations.",
+          "The penthouse suite includes a private balcony and concierge service.",
+          "The fitness center is open from 6 AM to 10 PM daily.",
+          "The hotel lobby has complimentary WiFi and business center access."
+        ],
+        "negative_examples": [
+          "The building has five floors and an elevator.",
+          "She has excellent communication skills and leadership experience.",
+          "The car's engine is powerful and fuel-efficient.",
+          "The software has advanced security features and cloud integration.",
+          "His personality is outgoing and friendly.",
+          "The city's population is growing rapidly this decade."
+        ],
+        "disambiguation": "Not to be confused with: PhysicalAttribute, PersonalAttribute, TemporalAttribute, SpatialAttribute"
+      },
+      "relationships": {
+        "related": [
+          "PhysicalAttribute",
+          "PersonalAttribute",
+          "TemporalAttribute",
+          "SpatialAttribute"
+        ],
+        "has_part": [
+          "HotelLevelAttribute",
+          "HotelRoomAttribute",
+          "ServiceAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "HotelLevelAttribute",
+        "HotelRoomAttribute",
+        "ServiceAttribute"
+      ]
+    },
+    {
+      "term": "SoftwareAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes and properties specific to software systems, programs, and computing environments.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The application's memory usage exceeded 4GB during peak operation.",
+          "The database connection timeout is set to 30 seconds.",
+          "This program requires Python version 3.8 or higher to run.",
+          "The server's CPU utilization spiked to 95% during the batch job.",
+          "The PATH environment variable determines where executables are found.",
+          "The software has a maximum file size limit of 100MB."
+        ],
+        "negative_examples": [
+          "The car's fuel efficiency is rated at 30 miles per gallon.",
+          "The building's height reaches 50 stories above ground level.",
+          "The patient's blood pressure measured 120 over 80.",
+          "The fabric's thread count is 400 threads per square inch.",
+          "The diamond's clarity grade is rated as VS1.",
+          "The athlete's running speed averaged 8 minutes per mile."
+        ],
+        "disambiguation": "Not to be confused with: PhysicalAttribute, BiologicalAttribute, MechanicalAttribute, ChemicalAttribute"
+      },
+      "relationships": {
+        "related": [
+          "PhysicalAttribute",
+          "BiologicalAttribute",
+          "MechanicalAttribute",
+          "ChemicalAttribute"
+        ],
+        "has_part": [
+          "SoftwareAttribute",
+          "EnvironmentSoftwareAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "SoftwareAttribute",
+        "EnvironmentSoftwareAttribute"
+      ]
+    },
+    {
+      "term": "MeasurementAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "Attributes that specify quantifiable properties or dimensions being measured in objects or processes.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The length of the table is 6 feet.",
+          "Her running speed was quite impressive today.",
+          "The width of the doorway needs to be measured.",
+          "The car's acceleration rate exceeded expectations.",
+          "We need to check the height clearance here.",
+          "The volume of this container is 2 liters."
+        ],
+        "negative_examples": [
+          "The table is made of oak wood.",
+          "She ran gracefully through the park.",
+          "The red door stood wide open.",
+          "The car belongs to my neighbor.",
+          "We walked towards the tall building.",
+          "This container holds my favorite snacks."
+        ],
+        "disambiguation": "Not to be confused with: QualitativeAttribute, TemporalAttribute, SpatialAttribute, InherentAttribute"
+      },
+      "relationships": {
+        "related": [
+          "QualitativeAttribute",
+          "TemporalAttribute",
+          "SpatialAttribute",
+          "InherentAttribute"
+        ],
+        "has_part": [
+          "MeasurementAttribute",
+          "SizeAttribute",
+          "SpeedScaleAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "MeasurementAttribute",
+        "SizeAttribute",
+        "SpeedScaleAttribute"
+      ]
+    },
+    {
+      "term": "ClassificationAttrs",
+      "role": "concept",
+      "parent_concepts": [
+        "RelationalAttribute"
+      ],
+      "layer_hint": 1,
+      "definition": "A relational attribute that assigns entities to predefined categories or classes within systematic taxonomies or classification schemes.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The airport was classified as a Category B facility under ICAO standards.",
+          "This bacteria tested gram-positive in the laboratory analysis.",
+          "France is a member state of the European Union.",
+          "The meeting is scheduled for 3 PM Eastern Standard Time.",
+          "The statement was marked as true in the logical system.",
+          "This investment carries a high-risk rating from the agency."
+        ],
+        "negative_examples": [
+          "The building is 50 meters tall and made of concrete.",
+          "She has brown eyes and curly hair.",
+          "The temperature today reached 85 degrees Fahrenheit.",
+          "The package weighs 2.5 pounds and costs fifteen dollars.",
+          "His performance improved by 20% over last quarter.",
+          "The car can accelerate from 0 to 60 mph in 6 seconds."
+        ],
+        "disambiguation": "Not to be confused with: QuantitativeAttribute, PhysicalAttribute, TemporalAttribute, QualitativeAttribute"
+      },
+      "relationships": {
+        "related": [
+          "QuantitativeAttribute",
+          "PhysicalAttribute",
+          "TemporalAttribute",
+          "QualitativeAttribute"
+        ],
+        "has_part": [
+          "AirportClassification",
+          "GramStainAttribute",
+          "MemberStateEU",
+          "TimeZone",
+          "TruthValue",
+          "PriorityAttribute",
+          "RiskAttribute"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AirportClassification",
+        "GramStainAttribute",
+        "MemberStateEU",
+        "TimeZone",
+        "TruthValue",
+        "PriorityAttribute",
+        "RiskAttribute"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:04.840619Z",
+    "result_pack_version": "7.6.32",
+    "concepts_added": 12,
+    "concepts_by_layer": {
+      "1": 12
+    },
+    "parents_updated": 12,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "PhysicalAttrs",
+        "FoodAttrs",
+        "MediaAttrs",
+        "FinancialAttrs",
+        "IndustryAttrs",
+        "StatusAttrs",
+        "EnergyAttrs",
+        "LegalAttrs",
+        "ServiceAttrs",
+        "SoftwareAttrs",
+        "MeasurementAttrs",
+        "ClassificationAttrs"
+      ],
+      "must_retrain": [
+        "RelationalAttribute"
+      ],
+      "should_retrain": [
+        "AVPUStatus",
+        "AirportClassification",
+        "AlbumAttribute",
+        "AreaOfConcern",
+        "ArtifactAttribute",
+        "BedAttribute",
+        "ClothesWasherLoadConfiguration",
+        "CoffeeGrindAttribute",
+        "CoffeeRoastAttribute",
+        "ComputerStatus",
+        "ConservationStatus",
+        "Cuisine",
+        "EconomicAttribute",
+        "EconomicRole",
+        "EnergyStarAttribute",
+        "EnvironmentSoftwareAttribute",
+        "EuropeanUnionEnergyLabelClass",
+        "FinancialAccountStatus",
+        "FinancialRating",
+        "GramStainAttribute",
+        "HazardousMaterialTransportAttribute",
+        "HotelLevelAttribute",
+        "HotelRoomAttribute",
+        "IMStatusAttribute",
+        "IndustryAttribute",
+        "InvestmentAttribute",
+        "LandVegetationAttribute",
+        "LegalAgent",
+        "LegalSystemAttribute",
+        "LiquidityAttribute",
+        "MeasurementAttribute",
+        "MemberStateEU",
+        "MemberStatus",
+        "MusicGenre",
+        "NormativeAttribute",
+        "PlantAttribute",
+        "PoliticoEconomicAttribute",
+        "PositionalAttribute",
+        "PreparedFoodAttribute",
+        "PriorityAttribute",
+        "ProcessStatus",
+        "RealtimeSystemAttribute",
+        "RecordingAttribute",
+        "ReligiousAttribute",
+        "RiskAttribute",
+        "ServiceAttribute",
+        "ShootingAngle",
+        "SizeAttribute",
+        "SocialRole",
+        "SoftwareAttribute",
+        "SpeedScaleAttribute",
+        "TimeZone",
+        "TruthValue",
+        "YieldAttribute"
+      ],
+      "optional_retrain": [
+        "Attribute",
+        "BiologicalAttribute",
+        "ColorAttribute",
+        "PhysicalAttribute"
+      ],
+      "total_training_required": 13
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

@@ -1,0 +1,248 @@
+/**
+ * Grid-based renderer for timeline visualization.
+ * Renders tokens and concept visualizations on a grid structure.
+ */
+
+import * as PIXI from 'pixi.js';
+import type { ReplyData, ZoomLevel } from './types';
+import type { GridLayout, GridColumn, GridRow } from './grid_layout';
+
+// HatCat color scheme
+const COLORS = {
+  blue: 0x48a4a3,
+  beige: 0xf0e6c5,
+  red: 0xde563f,
+  bgDark: 0x1a1a1a,
+  bgGrid: 0x2a2a2a,
+  gridLine: 0x3a3a3a,
+};
+
+const AI_SAFETY_CONCEPTS = new Set([
+  'deception',
+  'manipulation',
+  'harm',
+  'alignment',
+  'safety',
+  'transparency',
+  'honesty',
+]);
+
+function isAISafetyConcept(conceptId: string): boolean {
+  return AI_SAFETY_CONCEPTS.has(conceptId.toLowerCase());
+}
+
+/**
+ * Render the complete grid visualization
+ */
+export function renderGrid(
+  container: PIXI.Container,
+  reply: ReplyData,
+  grid: GridLayout,
+  zoom: ZoomLevel
+): void {
+  container.removeChildren();
+
+  // Draw grid background
+  renderGridBackground(container, grid);
+
+  // Draw labels in inactive columns
+  renderLabels(container, reply, grid, zoom);
+
+  // Draw tokens in active columns (row 0)
+  renderTokensOnGrid(container, reply, grid);
+
+  // Draw concept visualizations
+  renderConceptsOnGrid(container, reply, grid, zoom);
+}
+
+/**
+ * Draw grid background and lines
+ */
+function renderGridBackground(container: PIXI.Container, grid: GridLayout): void {
+  const bg = new PIXI.Graphics();
+
+  // Draw column backgrounds
+  for (const col of grid.columns) {
+    const color = col.active ? COLORS.bgDark : COLORS.bgGrid;
+    bg.beginFill(color, 0.5);
+
+    // Calculate height of all rows
+    const totalHeight = grid.rows.reduce((sum, row) => sum + row.height, 0);
+
+    bg.drawRect(col.x, 0, col.width, totalHeight);
+    bg.endFill();
+  }
+
+  // Draw grid lines
+  bg.lineStyle(1, COLORS.gridLine, 0.3);
+
+  // Vertical lines
+  for (const col of grid.columns) {
+    const totalHeight = grid.rows.reduce((sum, row) => sum + row.height, 0);
+    bg.moveTo(col.x, 0);
+    bg.lineTo(col.x, totalHeight);
+  }
+
+  // Horizontal lines
+  for (const row of grid.rows) {
+    const maxX = Math.max(...grid.columns.map(c => c.x + c.width));
+    bg.moveTo(0, row.y);
+    bg.lineTo(maxX, row.y);
+  }
+
+  container.addChild(bg);
+}
+
+/**
+ * Render labels in inactive columns
+ */
+function renderLabels(container: PIXI.Container, reply: ReplyData, grid: GridLayout, zoom: ZoomLevel): void {
+  const labelLayer = new PIXI.Container();
+
+  // Find the first label column (left margin for concept names)
+  const leftLabelCol = grid.columns.find(c => !c.active && c.label === 'concepts');
+
+  // Render concept names in left label column based on zoom level
+  if (leftLabelCol) {
+    for (let i = 1; i < grid.rows.length; i++) {
+      const row = grid.rows[i];
+      if (row.type === 'concept' && row.conceptId) {
+        const color = isAISafetyConcept(row.conceptId) ? COLORS.red : COLORS.blue;
+
+        const label = new PIXI.Text(row.conceptId, {
+          fontSize: 10,
+          fill: color,
+          fontFamily: 'Inter, system-ui, sans-serif',
+          wordWrap: true,
+          wordWrapWidth: leftLabelCol.width - 4,
+        });
+
+        // Right-align label in left column
+        label.x = leftLabelCol.x + leftLabelCol.width - label.width - 4;
+        label.y = row.y + row.height / 2 - label.height / 2;
+
+        labelLayer.addChild(label);
+      }
+    }
+  }
+
+  // Render sentence/token labels in other inactive columns
+  for (const col of grid.columns) {
+    if (!col.active && col.label && col.label !== 'concepts') {
+      // Sentence or token label - show the label text
+      const labelText = new PIXI.Text(col.label, {
+        fontSize: 10,
+        fill: COLORS.beige,
+        fontFamily: 'Inter, system-ui, sans-serif',
+      });
+
+      // Center label in column
+      labelText.x = col.x + col.width / 2 - labelText.width / 2;
+      labelText.y = grid.rows[0].y + grid.rows[0].height / 2 - labelText.height / 2;
+
+      labelLayer.addChild(labelText);
+    }
+  }
+
+  container.addChild(labelLayer);
+}
+
+/**
+ * Render tokens in active columns (row 0)
+ */
+function renderTokensOnGrid(
+  container: PIXI.Container,
+  reply: ReplyData,
+  grid: GridLayout
+): void {
+  const tokenLayer = new PIXI.Container();
+  const tokenRow = grid.rows[0];
+
+  for (const col of grid.columns) {
+    if (col.active && col.tokenId !== undefined) {
+      const token = reply.tokens.find(t => t.id === col.tokenId);
+      if (!token) continue;
+
+      const text = new PIXI.Text(token.text, {
+        fontSize: 12,
+        fill: COLORS.beige,
+        fontFamily: 'Inter, system-ui, sans-serif',
+        wordWrap: true,
+        wordWrapWidth: col.width - 4,
+      });
+
+      text.x = col.x + 2;
+      text.y = tokenRow.y + 2;
+      text.scale.set(Math.min(1, (col.width - 4) / text.width));
+
+      (text as any).tokenId = token.id;
+      text.eventMode = 'static';
+      text.cursor = 'pointer';
+
+      tokenLayer.addChild(text);
+    }
+  }
+
+  container.addChild(tokenLayer);
+}
+
+/**
+ * Render concept visualizations on grid
+ */
+function renderConceptsOnGrid(
+  container: PIXI.Container,
+  reply: ReplyData,
+  grid: GridLayout
+): void {
+  const conceptLayer = new PIXI.Graphics();
+
+  // For each concept row
+  for (let rowIdx = 1; rowIdx < grid.rows.length; rowIdx++) {
+    const row = grid.rows[rowIdx];
+    if (row.type !== 'concept' || !row.conceptId) continue;
+
+    const color = isAISafetyConcept(row.conceptId) ? COLORS.red : COLORS.blue;
+
+    // Draw line connecting active columns
+    const activeColumns = grid.columns.filter(c => c.active && c.tokenId !== undefined);
+
+    for (let i = 0; i < activeColumns.length; i++) {
+      const col = activeColumns[i];
+      const token = reply.tokens.find(t => t.id === col.tokenId);
+      if (!token) continue;
+
+      const concept = token.concepts.find(c => c.id === row.conceptId);
+      const score = concept ? concept.score : 0;
+
+      // Y position based on score (higher score = higher on grid)
+      const yOffset = score * (row.height * 0.8);
+      const y = row.y + row.height - yOffset - 2;
+
+      const x = col.x + col.width / 2;
+
+      // Draw dot
+      conceptLayer.beginFill(color, 0.8);
+      conceptLayer.drawCircle(x, y, 3);
+      conceptLayer.endFill();
+
+      // Draw line to next active column
+      if (i < activeColumns.length - 1) {
+        const nextCol = activeColumns[i + 1];
+        const nextToken = reply.tokens.find(t => t.id === nextCol.tokenId);
+        if (!nextToken) continue;
+
+        const nextConcept = nextToken.concepts.find(c => c.id === row.conceptId);
+        const nextScore = nextConcept ? nextConcept.score : 0;
+        const nextYOffset = nextScore * (row.height * 0.8);
+        const nextY = row.y + row.height - nextYOffset - 2;
+        const nextX = nextCol.x + nextCol.width / 2;
+
+        conceptLayer.lineStyle(2, color, 0.6);
+        conceptLayer.moveTo(x, y);
+        conceptLayer.lineTo(nextX, nextY);
+      }
+    }
+  }
+
+  container.addChild(conceptLayer);
+}

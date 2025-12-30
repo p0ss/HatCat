@@ -1,0 +1,231 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Networking & Internet",
+    "id": "information.computer_science.networks_internet",
+    "level": 2,
+    "slug": "networking-internet",
+    "operations_count": 9,
+    "child_count": 8
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Networking & Internet",
+        "target_id": "information.computer_science.networks_internet",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Models & Layers",
+          "Link & Network Layer",
+          "Routing & Switching",
+          "Transport",
+          "Application Protocols",
+          "Web Architecture",
+          "Wireless & Mobile",
+          "Network Measurement"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.networks_internet.network_models",
+          "information.computer_science.networks_internet.link_network",
+          "information.computer_science.networks_internet.routing_switching",
+          "information.computer_science.networks_internet.transport",
+          "information.computer_science.networks_internet.application",
+          "information.computer_science.networks_internet.web_architecture",
+          "information.computer_science.networks_internet.wireless",
+          "information.computer_science.networks_internet.measurement"
+        ],
+        "target_layer": 2,
+        "child_count": 8
+      },
+      {
+        "operation": "create_meld",
+        "target": "Models & Layers",
+        "target_id": "information.computer_science.networks_internet.network_models",
+        "new_parent": "Networking & Internet",
+        "parent_id": "information.computer_science.networks_internet",
+        "source_concepts": [
+          "OSI Model",
+          "TCP/IP Stack",
+          "Encapsulation",
+          "MTU & Fragmentation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.networks_internet.network_models.osi_model",
+          "information.computer_science.networks_internet.network_models.tcp_ip_stack",
+          "information.computer_science.networks_internet.network_models.encapsulation",
+          "information.computer_science.networks_internet.network_models.mtu_fragmentation"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Link & Network Layer",
+        "target_id": "information.computer_science.networks_internet.link_network",
+        "new_parent": "Networking & Internet",
+        "parent_id": "information.computer_science.networks_internet",
+        "source_concepts": [
+          "Ethernet",
+          "ARP",
+          "IP Addressing & Subnetting",
+          "IPv6",
+          "NAT"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.networks_internet.link_network.ethernet",
+          "information.computer_science.networks_internet.link_network.arp",
+          "information.computer_science.networks_internet.link_network.ip_addressing_subnetting",
+          "information.computer_science.networks_internet.link_network.ipv6",
+          "information.computer_science.networks_internet.link_network.nat"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Routing & Switching",
+        "target_id": "information.computer_science.networks_internet.routing_switching",
+        "new_parent": "Networking & Internet",
+        "parent_id": "information.computer_science.networks_internet",
+        "source_concepts": [
+          "Distance Vector (RIP)",
+          "Link State (OSPF)",
+          "BGP",
+          "Spanning Tree",
+          "SDN Basics"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.networks_internet.routing_switching.distance_vector_rip",
+          "information.computer_science.networks_internet.routing_switching.link_state_ospf",
+          "information.computer_science.networks_internet.routing_switching.bgp",
+          "information.computer_science.networks_internet.routing_switching.spanning_tree",
+          "information.computer_science.networks_internet.routing_switching.sdn_basics"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Transport",
+        "target_id": "information.computer_science.networks_internet.transport",
+        "new_parent": "Networking & Internet",
+        "parent_id": "information.computer_science.networks_internet",
+        "source_concepts": [
+          "TCP",
+          "UDP",
+          "QUIC",
+          "Flow Control",
+          "Congestion Control (AIMD)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.networks_internet.transport.tcp",
+          "information.computer_science.networks_internet.transport.udp",
+          "information.computer_science.networks_internet.transport.quic",
+          "information.computer_science.networks_internet.transport.flow_control",
+          "information.computer_science.networks_internet.transport.congestion_control_aimd"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Application Protocols",
+        "target_id": "information.computer_science.networks_internet.application",
+        "new_parent": "Networking & Internet",
+        "parent_id": "information.computer_science.networks_internet",
+        "source_concepts": [
+          "DNS",
+          "HTTP/1.1",
+          "HTTP/2",
+          "HTTP/3",
+          "TLS",
+          "SMTP"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.networks_internet.application.dns",
+          "information.computer_science.networks_internet.application.http_1_1",
+          "information.computer_science.networks_internet.application.http_2",
+          "information.computer_science.networks_internet.application.http_3",
+          "information.computer_science.networks_internet.application.tls",
+          "information.computer_science.networks_internet.application.smtp"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Web Architecture",
+        "target_id": "information.computer_science.networks_internet.web_architecture",
+        "new_parent": "Networking & Internet",
+        "parent_id": "information.computer_science.networks_internet",
+        "source_concepts": [
+          "URI/URL Design",
+          "REST Constraints",
+          "Caching Semantics",
+          "Content Negotiation",
+          "CORS"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.networks_internet.web_architecture.uri_url_design",
+          "information.computer_science.networks_internet.web_architecture.rest_constraints",
+          "information.computer_science.networks_internet.web_architecture.caching_semantics",
+          "information.computer_science.networks_internet.web_architecture.content_negotiation",
+          "information.computer_science.networks_internet.web_architecture.cors"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Wireless & Mobile",
+        "target_id": "information.computer_science.networks_internet.wireless",
+        "new_parent": "Networking & Internet",
+        "parent_id": "information.computer_science.networks_internet",
+        "source_concepts": [
+          "Wi\u2011Fi (802.11)",
+          "Cellular Basics",
+          "Bluetooth",
+          "Latency/Jitter Considerations"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.networks_internet.wireless.wi_fi_802_11",
+          "information.computer_science.networks_internet.wireless.cellular_basics",
+          "information.computer_science.networks_internet.wireless.bluetooth",
+          "information.computer_science.networks_internet.wireless.latency_jitter_considerations"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Network Measurement",
+        "target_id": "information.computer_science.networks_internet.measurement",
+        "new_parent": "Networking & Internet",
+        "parent_id": "information.computer_science.networks_internet",
+        "source_concepts": [
+          "Traceroute",
+          "Ping/ICMP",
+          "Throughput vs Latency",
+          "Queueing (Little\u2019s Law)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.networks_internet.measurement.traceroute",
+          "information.computer_science.networks_internet.measurement.ping_icmp",
+          "information.computer_science.networks_internet.measurement.throughput_vs_latency",
+          "information.computer_science.networks_internet.measurement.queueing_little_s_law"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      }
+    ]
+  }
+}

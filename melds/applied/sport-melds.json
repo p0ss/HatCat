@@ -1,0 +1,558 @@
+{
+  "meld_request_id": "org.hatcat/sport-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "Sport Melds",
+    "description": "New intermediate concepts under Sport",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Sport",
+      "relationship": "parent_of",
+      "candidate_concept": "WinterSports"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Sport",
+      "relationship": "parent_of",
+      "candidate_concept": "CombatSports"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Sport",
+      "relationship": "parent_of",
+      "candidate_concept": "RacquetSports"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Sport",
+      "relationship": "parent_of",
+      "candidate_concept": "TargetSports"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Sport",
+      "relationship": "parent_of",
+      "candidate_concept": "AnimalSports"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Sport",
+      "relationship": "parent_of",
+      "candidate_concept": "WheelSports"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Sport",
+      "relationship": "parent_of",
+      "candidate_concept": "StrengthSports"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/Sport",
+      "relationship": "parent_of",
+      "candidate_concept": "AdventureSports"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "WinterSports",
+      "role": "concept",
+      "parent_concepts": [
+        "Sport"
+      ],
+      "layer_hint": 2,
+      "definition": "Sports and recreational activities performed on snow or ice during cold weather conditions.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The Olympic figure skating competition was breathtaking to watch.",
+          "We went skiing in the Alps during our winter vacation.",
+          "The curling team practiced their sweeping technique on the ice rink.",
+          "Ice skating lessons help children develop balance and coordination.",
+          "The ski resort opened early due to excellent snow conditions.",
+          "She performed a perfect triple axel during her figure skating routine."
+        ],
+        "negative_examples": [
+          "The swimming competition was held at the indoor pool.",
+          "He scored three goals during the hockey game.",
+          "The tennis match was postponed due to rain.",
+          "Beach volleyball requires excellent teamwork and communication.",
+          "The basketball team practiced free throws in the gymnasium.",
+          "She ran a marathon through the city streets last weekend."
+        ],
+        "disambiguation": "Not to be confused with: WaterSports, TeamSports, TrackAndField, BallSports, CombatSports"
+      },
+      "relationships": {
+        "related": [
+          "WaterSports",
+          "TeamSports",
+          "TrackAndField",
+          "BallSports",
+          "CombatSports"
+        ],
+        "has_part": [
+          "Curling",
+          "FigureSkating",
+          "IceSkating",
+          "Skiing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Curling",
+        "FigureSkating",
+        "IceSkating",
+        "Skiing"
+      ]
+    },
+    {
+      "term": "CombatSports",
+      "role": "concept",
+      "parent_concepts": [
+        "Sport"
+      ],
+      "layer_hint": 2,
+      "definition": "Sports involving direct physical confrontation or simulated fighting between opponents.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The boxing match ended in a knockout in the third round.",
+          "She earned her black belt in karate after years of training.",
+          "The wrestling tournament featured competitors from around the world.",
+          "He practiced his sword techniques at the fencing academy.",
+          "The mixed martial arts fighter submitted his opponent with a chokehold.",
+          "The judo throw sent her opponent flying across the mat."
+        ],
+        "negative_examples": [
+          "The football team scored a touchdown in the final seconds.",
+          "She hit a perfect serve to win the tennis match.",
+          "The basketball player made a three-point shot from downtown.",
+          "He swam the butterfly stroke in the Olympic finals.",
+          "The soccer goalie made an incredible diving save.",
+          "The track athlete broke the world record in the 100 meters."
+        ],
+        "disambiguation": "Not to be confused with: TeamSports, RacketSports, WaterSports, TrackAndField"
+      },
+      "relationships": {
+        "related": [
+          "TeamSports",
+          "RacketSports",
+          "WaterSports",
+          "TrackAndField"
+        ],
+        "has_part": [
+          "Fencing",
+          "MartialArts",
+          "Wrestling"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Fencing",
+        "MartialArts",
+        "Wrestling"
+      ]
+    },
+    {
+      "term": "RacquetSports",
+      "role": "concept",
+      "parent_concepts": [
+        "Sport"
+      ],
+      "layer_hint": 2,
+      "definition": "Sports played with hand-held implements used to strike a ball or shuttlecock across a playing area",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She won the tennis championship with a powerful forehand",
+          "The badminton player made a spectacular overhead smash",
+          "He practiced his squash serves in the enclosed court",
+          "The ping-pong tournament featured incredible rallies",
+          "She joined the racquetball league at her local gym",
+          "The tennis coach taught proper grip technique"
+        ],
+        "negative_examples": [
+          "The baseball player swung his bat at the fastball",
+          "She kicked the soccer ball into the goal",
+          "He threw a perfect spiral in football practice",
+          "The basketball team practiced their free throws",
+          "She served an ace in the volleyball match",
+          "The golf club made contact with the ball on the tee"
+        ],
+        "disambiguation": "Not to be confused with: TeamSports, WaterSports, CombatSports, TrackAndField"
+      },
+      "relationships": {
+        "related": [
+          "TeamSports",
+          "WaterSports",
+          "CombatSports",
+          "TrackAndField"
+        ],
+        "has_part": [
+          "Badminton",
+          "Racquetball",
+          "SquashSport",
+          "TableTennis",
+          "Tennis"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Badminton",
+        "Racquetball",
+        "SquashSport",
+        "TableTennis",
+        "Tennis"
+      ]
+    },
+    {
+      "term": "TargetSports",
+      "role": "concept",
+      "parent_concepts": [
+        "Sport"
+      ],
+      "layer_hint": 2,
+      "definition": "Sports that involve aiming at and hitting specific targets for points or accuracy.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She drew back her bow and aimed carefully at the bullseye.",
+          "His golf shot landed precisely on the green near the pin.",
+          "The bowling ball struck all ten pins for a perfect strike.",
+          "He steadied his rifle and fired at the clay pigeon.",
+          "The archer's arrow hit the center ring for maximum points.",
+          "She lined up her putt to sink the ball in the hole."
+        ],
+        "negative_examples": [
+          "The soccer player kicked the ball into the goal.",
+          "She served the tennis ball across the net to her opponent.",
+          "The swimmer dove into the pool for the freestyle race.",
+          "He tackled the quarterback before he could throw the pass.",
+          "The basketball player dribbled down the court toward the hoop.",
+          "She caught the fly ball in her glove during the baseball game."
+        ],
+        "disambiguation": "Not to be confused with: TeamSports, RacingSports, CombatSports, WaterSports"
+      },
+      "relationships": {
+        "related": [
+          "TeamSports",
+          "RacingSports",
+          "CombatSports",
+          "WaterSports"
+        ],
+        "has_part": [
+          "Archery",
+          "Bowling",
+          "Golf",
+          "ShootingSport"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Archery",
+        "Bowling",
+        "Golf",
+        "ShootingSport"
+      ]
+    },
+    {
+      "term": "AnimalSports",
+      "role": "concept",
+      "parent_concepts": [
+        "Sport"
+      ],
+      "layer_hint": 2,
+      "definition": "Sports that involve animals as active participants or central elements of the competition",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She won the equestrian jumping competition on her mare.",
+          "The Kentucky Derby is one of the most famous horse races in America.",
+          "He spent the weekend fishing in the tournament at the lake.",
+          "The polo match featured skilled riders and well-trained horses.",
+          "She trained her dog for the agility competition next month.",
+          "The rodeo featured bull riding and barrel racing events."
+        ],
+        "negative_examples": [
+          "The football team practiced on the field every morning.",
+          "She lifted weights at the gym to build muscle strength.",
+          "The tennis match went into overtime with intense rallies.",
+          "He scored three goals in the soccer game yesterday.",
+          "The basketball tournament had sixteen competing teams.",
+          "They ran a marathon through the city streets."
+        ],
+        "disambiguation": "Not to be confused with: TeamSports, IndividualSports, WaterSports, WinterSports"
+      },
+      "relationships": {
+        "related": [
+          "TeamSports",
+          "IndividualSports",
+          "WaterSports",
+          "WinterSports"
+        ],
+        "has_part": [
+          "Equitation",
+          "FishingSport",
+          "HorseRacing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Equitation",
+        "FishingSport",
+        "HorseRacing"
+      ]
+    },
+    {
+      "term": "WheelSports",
+      "role": "concept",
+      "parent_concepts": [
+        "Sport"
+      ],
+      "layer_hint": 2,
+      "definition": "Sports involving competitive or recreational activities performed on wheeled equipment like bicycles, skates, or skateboards.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She won the gold medal in speed skating at the Olympics.",
+          "The BMX racing championship drew thousands of spectators.",
+          "He practiced skateboarding tricks at the local skate park.",
+          "The cycling tour covered 200 miles through mountain terrain.",
+          "Roller derby teams competed fiercely for the regional title.",
+          "Street skateboarding requires incredible balance and creativity."
+        ],
+        "negative_examples": [
+          "The marathon runner crossed the finish line exhausted.",
+          "She dove gracefully into the swimming pool.",
+          "The tennis match went into five grueling sets.",
+          "He scored the winning goal in overtime soccer.",
+          "The gymnast performed a perfect vault routine.",
+          "They played basketball until the court lights came on."
+        ],
+        "disambiguation": "Not to be confused with: WaterSports, BallSports, CombatSports, Athletics"
+      },
+      "relationships": {
+        "related": [
+          "WaterSports",
+          "BallSports",
+          "CombatSports",
+          "Athletics"
+        ],
+        "has_part": [
+          "CycleRacing",
+          "Racing",
+          "Skateboarding"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "CycleRacing",
+        "Racing",
+        "Skateboarding"
+      ]
+    },
+    {
+      "term": "StrengthSports",
+      "role": "concept",
+      "parent_concepts": [
+        "Sport"
+      ],
+      "layer_hint": 2,
+      "definition": "Sports that primarily emphasize physical strength, power, and muscular development through resistance training or bodyweight exercises.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She spent hours at the gym doing deadlifts and squats to build her physique for the bodybuilding competition.",
+          "The gymnast's routine on the rings required incredible upper body strength and control.",
+          "His powerlifting training focused on maximizing his one-rep max in bench press, squat, and deadlift.",
+          "The CrossFit athlete excelled in strength-based movements like muscle-ups and heavy lifts.",
+          "Olympic weightlifters train for years to perfect their snatch and clean-and-jerk techniques.",
+          "The gymnast's floor routine showcased amazing tumbling skills and muscular power."
+        ],
+        "negative_examples": [
+          "The marathon runner focused on building cardiovascular endurance rather than muscle mass.",
+          "She played tennis every weekend to improve her hand-eye coordination and agility.",
+          "The basketball team worked on their passing drills and shooting accuracy.",
+          "He joined the swimming team to develop better technique and speed in the water.",
+          "The soccer players practiced their footwork and ball handling skills.",
+          "The track and field sprinter worked on explosive speed and running form."
+        ],
+        "disambiguation": "Not to be confused with: EnduranceSports, TeamSports, RacketSports, WaterSports"
+      },
+      "relationships": {
+        "related": [
+          "EnduranceSports",
+          "TeamSports",
+          "RacketSports",
+          "WaterSports"
+        ],
+        "has_part": [
+          "Bodybuilding",
+          "Gymnastics"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Bodybuilding",
+        "Gymnastics"
+      ]
+    },
+    {
+      "term": "AdventureSports",
+      "role": "concept",
+      "parent_concepts": [
+        "Sport"
+      ],
+      "layer_hint": 2,
+      "definition": "High-risk recreational activities performed in challenging natural environments requiring specialized skills and equipment.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She spent the weekend rock climbing at Red Rock Canyon.",
+          "The caving expedition explored deep limestone caverns.",
+          "He's training for a multi-pitch climbing route in Yosemite.",
+          "The spelunking club discovered a new underground chamber.",
+          "They went bouldering at the local climbing gym.",
+          "The cave rescue team practiced rope techniques underground."
+        ],
+        "negative_examples": [
+          "She went hiking on the mountain trail.",
+          "The team practiced rock throwing for track and field.",
+          "He enjoys casual nature walks in the park.",
+          "They went swimming in the mountain lake.",
+          "She collects rocks and minerals as a hobby.",
+          "The geology class studied cave formations."
+        ],
+        "disambiguation": "Not to be confused with: TeamSports, WaterSports, WinterSports, TrackAndField, Gymnastics"
+      },
+      "relationships": {
+        "related": [
+          "TeamSports",
+          "WaterSports",
+          "WinterSports",
+          "TrackAndField",
+          "Gymnastics"
+        ],
+        "has_part": [
+          "Caving",
+          "RockClimbing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Caving",
+        "RockClimbing"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:05.251833Z",
+    "result_pack_version": "7.6.37",
+    "concepts_added": 8,
+    "concepts_by_layer": {
+      "2": 8
+    },
+    "parents_updated": 8,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "WinterSports",
+        "CombatSports",
+        "RacquetSports",
+        "TargetSports",
+        "AnimalSports",
+        "WheelSports",
+        "StrengthSports",
+        "AdventureSports"
+      ],
+      "must_retrain": [
+        "Sport"
+      ],
+      "should_retrain": [
+        "Archery",
+        "Badminton",
+        "Bodybuilding",
+        "Bowling",
+        "Boxing",
+        "Caving",
+        "Curling",
+        "CycleRacing",
+        "Diving",
+        "Equitation",
+        "Fencing",
+        "FigureSkating",
+        "FishingSport",
+        "Golf",
+        "Gymnastics",
+        "HorseRacing",
+        "IceSkating",
+        "KiteSurfing",
+        "Lacrosse",
+        "MartialArts",
+        "OlympicGames",
+        "Racing",
+        "Racquetball",
+        "RockClimbing",
+        "SailingSport",
+        "ShootingSport",
+        "Skateboarding",
+        "Skiing",
+        "SquashSport",
+        "SwimmingSport",
+        "TableTennis",
+        "TeamSport",
+        "Tennis",
+        "WaterSport",
+        "Wrestling"
+      ],
+      "optional_retrain": [
+        "Game",
+        "WaterSports"
+      ],
+      "total_training_required": 9
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

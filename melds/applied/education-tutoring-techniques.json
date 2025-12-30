@@ -1,0 +1,687 @@
+{
+  "meld_request_id": "org.hatcat/education-tutoring-techniques@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Tutoring Techniques",
+    "description": "Specific methods and strategies for one-on-one or small group instruction and guidance. Highly relevant to AI tutoring systems. Covers scaffolding, Socratic questioning, modeling/demonstration, guided practice, think-aloud, error analysis, progressive release, wait time, elaboration, and chunking.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/IntentionalProcess",
+      "relationship": "parent_of",
+      "candidate_concept": "TutoringTechnique"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "TutoringTechnique",
+      "role": "concept",
+      "parent_concepts": [],
+      "layer_hint": 2,
+      "definition": "Specific methods and strategies for one-on-one or small group instruction and guidance",
+      "definition_source": "Tutoring research, educational psychology",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "TutoringMethod",
+        "InstructionalTechnique",
+        "TeachingTechnique"
+      ],
+      "relationships": {
+        "related": [
+          "Tutoring",
+          "Instruction",
+          "Guidance",
+          "Teaching"
+        ],
+        "has_part": [
+          "Scaffolding",
+          "SocraticQuestioning",
+          "ModelingDemonstration",
+          "GuidedPractice",
+          "ThinkAloud",
+          "ErrorAnalysis",
+          "ProgressiveRelease",
+          "WaitTime",
+          "Elaboration",
+          "Chunking"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Instructional methods category"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The tutor used scaffolding to gradually remove support as the student gained confidence.",
+          "She asked probing questions rather than giving the answer directly.",
+          "Walking through my thinking out loud so you can see the problem-solving process.",
+          "Let me give you a hint rather than telling you the solution."
+        ],
+        "negative_examples": [
+          "The lecture hall seated 200 students.",
+          "The textbook explained the concept clearly.",
+          "The online course had video modules."
+        ],
+        "disambiguation": "Interactive tutoring techniques, not lecture or materials"
+      },
+      "children": [
+        "Scaffolding",
+        "SocraticQuestioning",
+        "ModelingDemonstration",
+        "GuidedPractice",
+        "ThinkAloud",
+        "ErrorAnalysis",
+        "ProgressiveRelease",
+        "WaitTime",
+        "Elaboration",
+        "Chunking"
+      ]
+    },
+    {
+      "term": "Scaffolding",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Providing temporary support structures that are gradually removed as learner competence increases",
+      "definition_source": "Wood, Bruner, Ross",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "InstructionalScaffolding",
+        "LearningSupport",
+        "FadingSupport"
+      ],
+      "relationships": {
+        "related": [
+          "ZoneOfProximalDevelopment",
+          "Support",
+          "Fading",
+          "Guidance"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Scaffolding builds toward learner independence"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'll do the first step for you, then we'll do the next one together.",
+          "At first I provided sentence starters; now she writes independently.",
+          "Gradually fading support as the student becomes more capable.",
+          "Training wheels that come off once balance is achieved."
+        ],
+        "negative_examples": [
+          "Here's the problem - figure it out yourself.",
+          "I'll just do it for you since you're struggling.",
+          "The same level of support was provided regardless of progress."
+        ],
+        "disambiguation": "Temporary support that fades, not permanent help or abandonment"
+      },
+      "children": []
+    },
+    {
+      "term": "SocraticQuestioning",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Using probing questions to stimulate critical thinking and illuminate ideas rather than providing direct answers",
+      "definition_source": "Socrates, Paul",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SocraticMethod",
+        "ProbingQuestions",
+        "DialogicQuestioning"
+      ],
+      "relationships": {
+        "related": [
+          "CriticalThinking",
+          "Questioning",
+          "Dialogue",
+          "Inquiry"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Questioning technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "What makes you think that? What evidence supports your view?",
+          "How would you respond to someone who disagreed?",
+          "What are the implications if your conclusion is correct?",
+          "Can you think of a counterexample to your claim?"
+        ],
+        "negative_examples": [
+          "The answer is 42.",
+          "Let me explain why that's wrong.",
+          "Here's the correct interpretation of the text."
+        ],
+        "disambiguation": "Questions that guide thinking, not direct answers"
+      },
+      "children": []
+    },
+    {
+      "term": "ModelingDemonstration",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Showing how to perform a task or think through a problem while making the process explicit",
+      "definition_source": "Bandura, cognitive apprenticeship",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "Modeling",
+        "Demonstration",
+        "ExpertModeling"
+      ],
+      "relationships": {
+        "related": [
+          "Imitation",
+          "Observation",
+          "Example",
+          "ThinkAloud"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Instructional technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Watch how I approach this problem, then you'll try one.",
+          "Let me show you how an expert would tackle this.",
+          "I'm going to demonstrate the technique while explaining each step.",
+          "Observe my process, then we'll discuss what you noticed."
+        ],
+        "negative_examples": [
+          "Just try it and see what happens.",
+          "Read the instructions and figure it out.",
+          "The textbook shows how to do it."
+        ],
+        "disambiguation": "Active demonstration by tutor, not self-directed learning"
+      },
+      "children": []
+    },
+    {
+      "term": "GuidedPractice",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Supervised practice with immediate feedback and support before independent application",
+      "definition_source": "Direct instruction research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "SupervisedPractice",
+        "CoachingPractice",
+        "PracticeWithFeedback"
+      ],
+      "relationships": {
+        "related": [
+          "Practice",
+          "Feedback",
+          "Coaching",
+          "Supervision"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Practice format"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Try the next problem while I watch and give you feedback.",
+          "Let's work through a few examples together before you do some on your own.",
+          "I'll observe your technique and correct any errors as you practice.",
+          "We do, then you do with my guidance, then you do independently."
+        ],
+        "negative_examples": [
+          "Read chapter 3 for homework.",
+          "Complete the worksheet independently.",
+          "Watch the video lecture at home."
+        ],
+        "disambiguation": "Supervised practice with feedback, not independent work"
+      },
+      "children": []
+    },
+    {
+      "term": "ThinkAloud",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Verbalizing thought processes during problem-solving to make reasoning visible and transferable",
+      "definition_source": "Cognitive science, protocol analysis",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ThinkingAloud",
+        "VerbalizedReasoning",
+        "ExplicitReasoning"
+      ],
+      "relationships": {
+        "related": [
+          "Metacognition",
+          "Reasoning",
+          "Verbalization",
+          "Transparency"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Reasoning transparency technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Let me walk you through my thinking as I solve this...",
+          "I'm noticing this pattern, which makes me think...",
+          "Hmm, I'm stuck here - let me reconsider my approach...",
+          "As I read this passage, I'm asking myself what the author means by..."
+        ],
+        "negative_examples": [
+          "Here's the answer.",
+          "Just follow these steps.",
+          "The solution is straightforward."
+        ],
+        "disambiguation": "Explicit verbalization of thinking, not just giving answers"
+      },
+      "children": []
+    },
+    {
+      "term": "ErrorAnalysis",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Examining mistakes to understand misconceptions and using errors as learning opportunities",
+      "definition_source": "Formative assessment research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "MistakeAnalysis",
+        "ErrorDiagnosis",
+        "LearningFromMistakes"
+      ],
+      "relationships": {
+        "related": [
+          "Feedback",
+          "Misconception",
+          "Diagnosis",
+          "Correction"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Diagnostic technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Let's look at where you went wrong - what does this mistake tell us?",
+          "This is a common error that reveals a misconception about fractions.",
+          "Your mistake here is actually very instructive - let's examine it.",
+          "Errors are diagnostic tools that show us where understanding breaks down."
+        ],
+        "negative_examples": [
+          "That's wrong, the answer is 7.",
+          "Try again.",
+          "You got 3 out of 10 correct."
+        ],
+        "disambiguation": "Analyzing errors for learning, not just marking wrong"
+      },
+      "children": []
+    },
+    {
+      "term": "ProgressiveRelease",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Gradual transfer of responsibility from instructor to learner: I do, we do, you do",
+      "definition_source": "Fisher & Frey, gradual release of responsibility",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "GradualRelease",
+        "ResponsibilityTransfer",
+        "IDoWeDoYouDo"
+      ],
+      "relationships": {
+        "related": [
+          "Scaffolding",
+          "Independence",
+          "Progression",
+          "Fading"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "mapped",
+        "mapped_simplex": "AutonomyDrive",
+        "mapping_rationale": "Progressive release builds learner independence"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "First I'll show you, then we'll do one together, then you try on your own.",
+          "I do, we do, you do.",
+          "Gradually shifting from teacher control to student control.",
+          "Watch me, help me, show me, let me watch you."
+        ],
+        "negative_examples": [
+          "Figure it out yourself from the start.",
+          "I'll always be here to help you through it.",
+          "Just keep watching me do it."
+        ],
+        "disambiguation": "Gradual handoff of control, not constant support or abandonment"
+      },
+      "children": []
+    },
+    {
+      "term": "WaitTime",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Pausing after questions to allow thinking time, improving response quality and participation",
+      "definition_source": "Rowe, classroom research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ThinkTime",
+        "PauseTime",
+        "ProcessingTime"
+      ],
+      "relationships": {
+        "related": [
+          "Questioning",
+          "Thinking",
+          "Patience",
+          "Processing"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Pacing technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "I'll give you a moment to think before you answer.",
+          "Take your time - there's no rush to respond.",
+          "Pausing for 5-10 seconds after a question improves the quality of answers.",
+          "Silence after a question is productive thinking time, not awkward dead air."
+        ],
+        "negative_examples": [
+          "Come on, hurry up with your answer.",
+          "Anyone? Anyone? Okay, the answer is...",
+          "If you don't know, just say so and we'll move on."
+        ],
+        "disambiguation": "Intentional pause for thinking, not rushing"
+      },
+      "children": []
+    },
+    {
+      "term": "Elaboration",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Prompting learners to explain concepts in their own words and connect to prior knowledge",
+      "definition_source": "Elaborative interrogation research",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "ElaborativeExplanation",
+        "SelfExplanation",
+        "Elaboration"
+      ],
+      "relationships": {
+        "related": [
+          "Explanation",
+          "Connection",
+          "Understanding",
+          "Verbalization"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Learning technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Can you explain that concept in your own words?",
+          "How does this connect to what you already know?",
+          "Why do you think this works that way?",
+          "Tell me more about your reasoning."
+        ],
+        "negative_examples": [
+          "Just memorize this definition.",
+          "Repeat after me.",
+          "The answer is correct, let's move on."
+        ],
+        "disambiguation": "Prompting deeper explanation, not surface repetition"
+      },
+      "children": []
+    },
+    {
+      "term": "Chunking",
+      "role": "concept",
+      "parent_concepts": [
+        "TutoringTechnique"
+      ],
+      "layer_hint": 3,
+      "definition": "Breaking complex information into manageable pieces that fit working memory capacity",
+      "definition_source": "Miller, cognitive psychology",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "InformationChunking",
+        "Segmentation",
+        "BiteSizing"
+      ],
+      "relationships": {
+        "related": [
+          "WorkingMemory",
+          "CognitiveLoad",
+          "Organization",
+          "Structure"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Information organization technique"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Let's break this into three smaller steps.",
+          "Focus on just this part first, then we'll add the next piece.",
+          "Instead of all 20 vocabulary words, let's do 5 at a time.",
+          "Grouping related items together makes them easier to remember."
+        ],
+        "negative_examples": [
+          "Here's the entire procedure at once.",
+          "Learn all 50 facts for tomorrow's test.",
+          "The whole chapter is assigned for tonight."
+        ],
+        "disambiguation": "Breaking into manageable pieces, not overwhelming with everything at once"
+      },
+      "children": []
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:16.454220Z",
+    "result_pack_version": "5.4.4",
+    "concepts_added": 11,
+    "concepts_by_layer": {
+      "2": 1,
+      "3": 10
+    },
+    "parents_updated": 11,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "TutoringTechnique",
+        "Scaffolding",
+        "SocraticQuestioning",
+        "ModelingDemonstration",
+        "GuidedPractice",
+        "ThinkAloud",
+        "ErrorAnalysis",
+        "ProgressiveRelease",
+        "WaitTime",
+        "Elaboration",
+        "Chunking"
+      ],
+      "must_retrain": [
+        "IntentionalProcess"
+      ],
+      "should_retrain": [
+        "AIAlignmentProcess",
+        "AIGovernance",
+        "AIGrowth",
+        "Ambulating",
+        "AssessmentMethod",
+        "Ceremony",
+        "CognitiveProcess",
+        "Commenting",
+        "ComputationalProcess",
+        "ConsentGDPR",
+        "ContentDevelopment",
+        "CriminalAction",
+        "CurriculumDesign",
+        "DecisionTheoreticProcess",
+        "DeployingWeaponOfMassDestruction",
+        "DesignPractice",
+        "Designing",
+        "Digging",
+        "DismantlingWeaponOfMassDestruction",
+        "Dodging",
+        "Drilling",
+        "Ducking",
+        "Eating",
+        "EconomicActivty",
+        "EngineersSubprocess",
+        "Evacuation",
+        "Guiding",
+        "ITProcess",
+        "InferenceProcess",
+        "Keeping",
+        "LearnerSupport",
+        "ListOnSite",
+        "Maintaining",
+        "Making",
+        "Maneuver",
+        "Modeling",
+        "OrganizationalProcess",
+        "PedagogicalApproach",
+        "Poking",
+        "PromptFollowing",
+        "Pursuing",
+        "RecreationOrExercise",
+        "Repairing",
+        "SafeAIDeployment",
+        "SpiritualPractice",
+        "Swimming",
+        "TokenProcessing",
+        "UserAction",
+        "WorkLeave",
+        "WorkplaceRelations"
+      ],
+      "optional_retrain": [
+        "Explanation",
+        "Feedback",
+        "Instruction",
+        "Observation",
+        "Organization",
+        "Process",
+        "Questioning",
+        "Reasoning",
+        "Transparency",
+        "Understanding",
+        "ZoneOfProximalDevelopment"
+      ],
+      "total_training_required": 12
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

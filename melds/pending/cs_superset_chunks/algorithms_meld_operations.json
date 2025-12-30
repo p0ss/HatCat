@@ -1,0 +1,683 @@
+{
+  "concept_pack": {
+    "id": "information.computer_science",
+    "label": "Computer Science",
+    "namespace": "cs_superset",
+    "source_file": "cs_superset_concept_pack.json",
+    "version": "1.0.0",
+    "generated_at": "2025-12-16T01:53:53.221543+00:00"
+  },
+  "chunk": {
+    "label": "Algorithms",
+    "id": "information.computer_science.algorithms",
+    "level": 2,
+    "slug": "algorithms",
+    "operations_count": 31,
+    "child_count": 6
+  },
+  "operations": {
+    "create_meld": [
+      {
+        "operation": "create_meld",
+        "target": "Algorithms",
+        "target_id": "information.computer_science.algorithms",
+        "new_parent": "Computer Science",
+        "parent_id": "information.computer_science",
+        "source_concepts": [
+          "Design Paradigms",
+          "Graph Algorithms",
+          "String Algorithms",
+          "Computational Geometry",
+          "Numerical & Symbolic",
+          "Algorithm Analysis"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.design_paradigms",
+          "information.computer_science.algorithms.graph_algorithms",
+          "information.computer_science.algorithms.string_algorithms",
+          "information.computer_science.algorithms.computational_geometry",
+          "information.computer_science.algorithms.numerical_symbolic",
+          "information.computer_science.algorithms.algorithm_analysis"
+        ],
+        "target_layer": 2,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Design Paradigms",
+        "target_id": "information.computer_science.algorithms.design_paradigms",
+        "new_parent": "Algorithms",
+        "parent_id": "information.computer_science.algorithms",
+        "source_concepts": [
+          "Divide & Conquer",
+          "Dynamic Programming",
+          "Greedy",
+          "Backtracking & Search",
+          "Randomized",
+          "Approximation",
+          "Online & Streaming"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.design_paradigms.divide_conquer",
+          "information.computer_science.algorithms.design_paradigms.dynamic_programming",
+          "information.computer_science.algorithms.design_paradigms.greedy",
+          "information.computer_science.algorithms.design_paradigms.backtracking_search",
+          "information.computer_science.algorithms.design_paradigms.randomized",
+          "information.computer_science.algorithms.design_paradigms.approximation",
+          "information.computer_science.algorithms.design_paradigms.online_streaming"
+        ],
+        "target_layer": 3,
+        "child_count": 7
+      },
+      {
+        "operation": "create_meld",
+        "target": "Divide & Conquer",
+        "target_id": "information.computer_science.algorithms.design_paradigms.divide_conquer",
+        "new_parent": "Design Paradigms",
+        "parent_id": "information.computer_science.algorithms.design_paradigms",
+        "source_concepts": [
+          "Merge Sort",
+          "Quick Sort",
+          "Karatsuba Multiplication",
+          "Strassen Multiplication",
+          "Closest Pair of Points"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.design_paradigms.divide_conquer.merge_sort",
+          "information.computer_science.algorithms.design_paradigms.divide_conquer.quick_sort",
+          "information.computer_science.algorithms.design_paradigms.divide_conquer.karatsuba_multiplication",
+          "information.computer_science.algorithms.design_paradigms.divide_conquer.strassen_multiplication",
+          "information.computer_science.algorithms.design_paradigms.divide_conquer.closest_pair_of_points"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Dynamic Programming",
+        "target_id": "information.computer_science.algorithms.design_paradigms.dynamic_programming",
+        "new_parent": "Design Paradigms",
+        "parent_id": "information.computer_science.algorithms.design_paradigms",
+        "source_concepts": [
+          "Bellman Optimality",
+          "Knapsack",
+          "Edit Distance",
+          "Matrix Chain Multiplication",
+          "DP on Trees"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.design_paradigms.dynamic_programming.bellman_optimality",
+          "information.computer_science.algorithms.design_paradigms.dynamic_programming.knapsack",
+          "information.computer_science.algorithms.design_paradigms.dynamic_programming.edit_distance",
+          "information.computer_science.algorithms.design_paradigms.dynamic_programming.matrix_chain_multiplication",
+          "information.computer_science.algorithms.design_paradigms.dynamic_programming.dp_on_trees"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Greedy",
+        "target_id": "information.computer_science.algorithms.design_paradigms.greedy",
+        "new_parent": "Design Paradigms",
+        "parent_id": "information.computer_science.algorithms.design_paradigms",
+        "source_concepts": [
+          "Interval Scheduling",
+          "Huffman Coding",
+          "Prim/Kruskal",
+          "Activity Selection"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.design_paradigms.greedy.interval_scheduling",
+          "information.computer_science.algorithms.design_paradigms.greedy.huffman_coding",
+          "information.computer_science.algorithms.design_paradigms.greedy.prim_kruskal",
+          "information.computer_science.algorithms.design_paradigms.greedy.activity_selection"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Backtracking & Search",
+        "target_id": "information.computer_science.algorithms.design_paradigms.backtracking_search",
+        "new_parent": "Design Paradigms",
+        "parent_id": "information.computer_science.algorithms.design_paradigms",
+        "source_concepts": [
+          "DFS Backtracking",
+          "Branch & Bound",
+          "Constraint Propagation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.design_paradigms.backtracking_search.dfs_backtracking",
+          "information.computer_science.algorithms.design_paradigms.backtracking_search.branch_bound",
+          "information.computer_science.algorithms.design_paradigms.backtracking_search.constraint_propagation"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Randomized",
+        "target_id": "information.computer_science.algorithms.design_paradigms.randomized",
+        "new_parent": "Design Paradigms",
+        "parent_id": "information.computer_science.algorithms.design_paradigms",
+        "source_concepts": [
+          "Randomized Quick Sort",
+          "Karger\u2019s Min-Cut",
+          "Reservoir Sampling",
+          "Randomized Hashing"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.design_paradigms.randomized.randomized_quick_sort",
+          "information.computer_science.algorithms.design_paradigms.randomized.karger_s_min_cut",
+          "information.computer_science.algorithms.design_paradigms.randomized.reservoir_sampling",
+          "information.computer_science.algorithms.design_paradigms.randomized.randomized_hashing"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Approximation",
+        "target_id": "information.computer_science.algorithms.design_paradigms.approximation",
+        "new_parent": "Design Paradigms",
+        "parent_id": "information.computer_science.algorithms.design_paradigms",
+        "source_concepts": [
+          "Greedy Set Cover",
+          "Metric TSP (Christofides)",
+          "Primal\u2013Dual Schemes",
+          "LP Rounding"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.design_paradigms.approximation.greedy_set_cover",
+          "information.computer_science.algorithms.design_paradigms.approximation.metric_tsp_christofides",
+          "information.computer_science.algorithms.design_paradigms.approximation.primal_dual_schemes",
+          "information.computer_science.algorithms.design_paradigms.approximation.lp_rounding"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Online & Streaming",
+        "target_id": "information.computer_science.algorithms.design_paradigms.online_streaming",
+        "new_parent": "Design Paradigms",
+        "parent_id": "information.computer_science.algorithms.design_paradigms",
+        "source_concepts": [
+          "Competitive Analysis",
+          "Paging (LRU/FIFO)",
+          "Ski Rental",
+          "Count-Min Sketch",
+          "HyperLogLog"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.design_paradigms.online_streaming.competitive_analysis",
+          "information.computer_science.algorithms.design_paradigms.online_streaming.paging_lru_fifo",
+          "information.computer_science.algorithms.design_paradigms.online_streaming.ski_rental",
+          "information.computer_science.algorithms.design_paradigms.online_streaming.count_min_sketch",
+          "information.computer_science.algorithms.design_paradigms.online_streaming.hyperloglog"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Graph Algorithms",
+        "target_id": "information.computer_science.algorithms.graph_algorithms",
+        "new_parent": "Algorithms",
+        "parent_id": "information.computer_science.algorithms",
+        "source_concepts": [
+          "Traversal & Connectivity",
+          "Shortest Paths",
+          "Spanning Structures",
+          "Flows & Cuts",
+          "Matching",
+          "Structure"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.graph_algorithms.traversal_connectivity",
+          "information.computer_science.algorithms.graph_algorithms.shortest_paths",
+          "information.computer_science.algorithms.graph_algorithms.spanning_structures",
+          "information.computer_science.algorithms.graph_algorithms.flows_cuts",
+          "information.computer_science.algorithms.graph_algorithms.matching",
+          "information.computer_science.algorithms.graph_algorithms.scc_planarity"
+        ],
+        "target_layer": 3,
+        "child_count": 6
+      },
+      {
+        "operation": "create_meld",
+        "target": "Traversal & Connectivity",
+        "target_id": "information.computer_science.algorithms.graph_algorithms.traversal_connectivity",
+        "new_parent": "Graph Algorithms",
+        "parent_id": "information.computer_science.algorithms.graph_algorithms",
+        "source_concepts": [
+          "BFS",
+          "DFS",
+          "Topological Sort",
+          "Union-Find Connectivity",
+          "Biconnected Components"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.graph_algorithms.traversal_connectivity.bfs",
+          "information.computer_science.algorithms.graph_algorithms.traversal_connectivity.dfs",
+          "information.computer_science.algorithms.graph_algorithms.traversal_connectivity.topological_sort",
+          "information.computer_science.algorithms.graph_algorithms.traversal_connectivity.union_find_connectivity",
+          "information.computer_science.algorithms.graph_algorithms.traversal_connectivity.biconnected_components"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Shortest Paths",
+        "target_id": "information.computer_science.algorithms.graph_algorithms.shortest_paths",
+        "new_parent": "Graph Algorithms",
+        "parent_id": "information.computer_science.algorithms.graph_algorithms",
+        "source_concepts": [
+          "Dijkstra",
+          "Bellman\u2013Ford",
+          "Floyd\u2013Warshall",
+          "Johnson\u2019s Algorithm",
+          "A* Search"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.graph_algorithms.shortest_paths.dijkstra",
+          "information.computer_science.algorithms.graph_algorithms.shortest_paths.bellman_ford",
+          "information.computer_science.algorithms.graph_algorithms.shortest_paths.floyd_warshall",
+          "information.computer_science.algorithms.graph_algorithms.shortest_paths.johnson_s_algorithm",
+          "information.computer_science.algorithms.graph_algorithms.shortest_paths.a_search"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Spanning Structures",
+        "target_id": "information.computer_science.algorithms.graph_algorithms.spanning_structures",
+        "new_parent": "Graph Algorithms",
+        "parent_id": "information.computer_science.algorithms.graph_algorithms",
+        "source_concepts": [
+          "Minimum Spanning Tree (Kruskal)",
+          "Minimum Spanning Tree (Prim)",
+          "Steiner Tree (Approx)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.graph_algorithms.spanning_structures.minimum_spanning_tree_kruskal",
+          "information.computer_science.algorithms.graph_algorithms.spanning_structures.minimum_spanning_tree_prim",
+          "information.computer_science.algorithms.graph_algorithms.spanning_structures.steiner_tree_approx"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Flows & Cuts",
+        "target_id": "information.computer_science.algorithms.graph_algorithms.flows_cuts",
+        "new_parent": "Graph Algorithms",
+        "parent_id": "information.computer_science.algorithms.graph_algorithms",
+        "source_concepts": [
+          "Ford\u2013Fulkerson",
+          "Edmonds\u2013Karp",
+          "Dinic",
+          "Min-Cut/Max-Flow",
+          "Gomory\u2013Hu Tree"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.graph_algorithms.flows_cuts.ford_fulkerson",
+          "information.computer_science.algorithms.graph_algorithms.flows_cuts.edmonds_karp",
+          "information.computer_science.algorithms.graph_algorithms.flows_cuts.dinic",
+          "information.computer_science.algorithms.graph_algorithms.flows_cuts.min_cut_max_flow",
+          "information.computer_science.algorithms.graph_algorithms.flows_cuts.gomory_hu_tree"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Matching",
+        "target_id": "information.computer_science.algorithms.graph_algorithms.matching",
+        "new_parent": "Graph Algorithms",
+        "parent_id": "information.computer_science.algorithms.graph_algorithms",
+        "source_concepts": [
+          "Hopcroft\u2013Karp",
+          "Hungarian Algorithm",
+          "Blossom Algorithm (Edmonds)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.graph_algorithms.matching.hopcroft_karp",
+          "information.computer_science.algorithms.graph_algorithms.matching.hungarian_algorithm",
+          "information.computer_science.algorithms.graph_algorithms.matching.blossom_algorithm_edmonds"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Structure",
+        "target_id": "information.computer_science.algorithms.graph_algorithms.scc_planarity",
+        "new_parent": "Graph Algorithms",
+        "parent_id": "information.computer_science.algorithms.graph_algorithms",
+        "source_concepts": [
+          "Strongly Connected Components (Kosaraju)",
+          "Tarjan SCC",
+          "Planarity Testing",
+          "Tree Decompositions"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.graph_algorithms.scc_planarity.strongly_connected_components_kosaraju",
+          "information.computer_science.algorithms.graph_algorithms.scc_planarity.tarjan_scc",
+          "information.computer_science.algorithms.graph_algorithms.scc_planarity.planarity_testing",
+          "information.computer_science.algorithms.graph_algorithms.scc_planarity.tree_decompositions"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "String Algorithms",
+        "target_id": "information.computer_science.algorithms.string_algorithms",
+        "new_parent": "Algorithms",
+        "parent_id": "information.computer_science.algorithms",
+        "source_concepts": [
+          "Pattern Matching",
+          "Suffix Structures",
+          "Sequence DP",
+          "Text Indexing"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.string_algorithms.pattern_matching",
+          "information.computer_science.algorithms.string_algorithms.suffix_structures",
+          "information.computer_science.algorithms.string_algorithms.sequence_dp",
+          "information.computer_science.algorithms.string_algorithms.text_indexing"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Pattern Matching",
+        "target_id": "information.computer_science.algorithms.string_algorithms.pattern_matching",
+        "new_parent": "String Algorithms",
+        "parent_id": "information.computer_science.algorithms.string_algorithms",
+        "source_concepts": [
+          "Knuth\u2013Morris\u2013Pratt (KMP)",
+          "Boyer\u2013Moore",
+          "Rabin\u2013Karp",
+          "Aho\u2013Corasick"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.string_algorithms.pattern_matching.knuth_morris_pratt_kmp",
+          "information.computer_science.algorithms.string_algorithms.pattern_matching.boyer_moore",
+          "information.computer_science.algorithms.string_algorithms.pattern_matching.rabin_karp",
+          "information.computer_science.algorithms.string_algorithms.pattern_matching.aho_corasick"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Suffix Structures",
+        "target_id": "information.computer_science.algorithms.string_algorithms.suffix_structures",
+        "new_parent": "String Algorithms",
+        "parent_id": "information.computer_science.algorithms.string_algorithms",
+        "source_concepts": [
+          "Suffix Array",
+          "Suffix Tree",
+          "LCP Array",
+          "Burrows\u2013Wheeler Transform (BWT)"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.string_algorithms.suffix_structures.suffix_array",
+          "information.computer_science.algorithms.string_algorithms.suffix_structures.suffix_tree",
+          "information.computer_science.algorithms.string_algorithms.suffix_structures.lcp_array",
+          "information.computer_science.algorithms.string_algorithms.suffix_structures.burrows_wheeler_transform_bwt"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Sequence DP",
+        "target_id": "information.computer_science.algorithms.string_algorithms.sequence_dp",
+        "new_parent": "String Algorithms",
+        "parent_id": "information.computer_science.algorithms.string_algorithms",
+        "source_concepts": [
+          "Longest Common Subsequence (LCS)",
+          "Edit Distance (Levenshtein)",
+          "Smith\u2013Waterman"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.string_algorithms.sequence_dp.longest_common_subsequence_lcs",
+          "information.computer_science.algorithms.string_algorithms.sequence_dp.edit_distance_levenshtein",
+          "information.computer_science.algorithms.string_algorithms.sequence_dp.smith_waterman"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Text Indexing",
+        "target_id": "information.computer_science.algorithms.string_algorithms.text_indexing",
+        "new_parent": "String Algorithms",
+        "parent_id": "information.computer_science.algorithms.string_algorithms",
+        "source_concepts": [
+          "Trie",
+          "Radix Tree",
+          "FM-index",
+          "Inverted Index"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.string_algorithms.text_indexing.trie",
+          "information.computer_science.algorithms.string_algorithms.text_indexing.radix_tree",
+          "information.computer_science.algorithms.string_algorithms.text_indexing.fm_index",
+          "information.computer_science.algorithms.string_algorithms.text_indexing.inverted_index"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Computational Geometry",
+        "target_id": "information.computer_science.algorithms.computational_geometry",
+        "new_parent": "Algorithms",
+        "parent_id": "information.computer_science.algorithms",
+        "source_concepts": [
+          "Fundamentals",
+          "Hulls & Triangulations",
+          "Range Searching",
+          "Sweep Line"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.computational_geometry.fundamentals",
+          "information.computer_science.algorithms.computational_geometry.hulls_triangulations",
+          "information.computer_science.algorithms.computational_geometry.range_searching",
+          "information.computer_science.algorithms.computational_geometry.sweep_line"
+        ],
+        "target_layer": 3,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Fundamentals",
+        "target_id": "information.computer_science.algorithms.computational_geometry.fundamentals",
+        "new_parent": "Computational Geometry",
+        "parent_id": "information.computer_science.algorithms.computational_geometry",
+        "source_concepts": [
+          "Orientation Tests",
+          "Segment Intersection",
+          "Point-in-Polygon"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.computational_geometry.fundamentals.orientation_tests",
+          "information.computer_science.algorithms.computational_geometry.fundamentals.segment_intersection",
+          "information.computer_science.algorithms.computational_geometry.fundamentals.point_in_polygon"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Hulls & Triangulations",
+        "target_id": "information.computer_science.algorithms.computational_geometry.hulls_triangulations",
+        "new_parent": "Computational Geometry",
+        "parent_id": "information.computer_science.algorithms.computational_geometry",
+        "source_concepts": [
+          "Convex Hull (Graham Scan)",
+          "Convex Hull (QuickHull)",
+          "Delaunay Triangulation",
+          "Voronoi Diagrams"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.computational_geometry.hulls_triangulations.convex_hull_graham_scan",
+          "information.computer_science.algorithms.computational_geometry.hulls_triangulations.convex_hull_quickhull",
+          "information.computer_science.algorithms.computational_geometry.hulls_triangulations.delaunay_triangulation",
+          "information.computer_science.algorithms.computational_geometry.hulls_triangulations.voronoi_diagrams"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Range Searching",
+        "target_id": "information.computer_science.algorithms.computational_geometry.range_searching",
+        "new_parent": "Computational Geometry",
+        "parent_id": "information.computer_science.algorithms.computational_geometry",
+        "source_concepts": [
+          "k-d Tree Search",
+          "Range Trees",
+          "Orthogonal Range Queries"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.computational_geometry.range_searching.k_d_tree_search",
+          "information.computer_science.algorithms.computational_geometry.range_searching.range_trees",
+          "information.computer_science.algorithms.computational_geometry.range_searching.orthogonal_range_queries"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Sweep Line",
+        "target_id": "information.computer_science.algorithms.computational_geometry.sweep_line",
+        "new_parent": "Computational Geometry",
+        "parent_id": "information.computer_science.algorithms.computational_geometry",
+        "source_concepts": [
+          "Bentley\u2013Ottmann",
+          "Plane Sweep for Intersections"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.computational_geometry.sweep_line.bentley_ottmann",
+          "information.computer_science.algorithms.computational_geometry.sweep_line.plane_sweep_for_intersections"
+        ],
+        "target_layer": 4,
+        "child_count": 2
+      },
+      {
+        "operation": "create_meld",
+        "target": "Numerical & Symbolic",
+        "target_id": "information.computer_science.algorithms.numerical_symbolic",
+        "new_parent": "Algorithms",
+        "parent_id": "information.computer_science.algorithms",
+        "source_concepts": [
+          "Linear Algebra",
+          "Fourier & Polynomials",
+          "Optimization Methods"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.numerical_symbolic.linear_algebra",
+          "information.computer_science.algorithms.numerical_symbolic.fourier_polynomials",
+          "information.computer_science.algorithms.numerical_symbolic.optimization_methods"
+        ],
+        "target_layer": 3,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Linear Algebra",
+        "target_id": "information.computer_science.algorithms.numerical_symbolic.linear_algebra",
+        "new_parent": "Numerical & Symbolic",
+        "parent_id": "information.computer_science.algorithms.numerical_symbolic",
+        "source_concepts": [
+          "Gaussian Elimination",
+          "LU Decomposition",
+          "QR Decomposition",
+          "SVD",
+          "Conjugate Gradient"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.numerical_symbolic.linear_algebra.gaussian_elimination",
+          "information.computer_science.algorithms.numerical_symbolic.linear_algebra.lu_decomposition",
+          "information.computer_science.algorithms.numerical_symbolic.linear_algebra.qr_decomposition",
+          "information.computer_science.algorithms.numerical_symbolic.linear_algebra.svd",
+          "information.computer_science.algorithms.numerical_symbolic.linear_algebra.conjugate_gradient"
+        ],
+        "target_layer": 4,
+        "child_count": 5
+      },
+      {
+        "operation": "create_meld",
+        "target": "Fourier & Polynomials",
+        "target_id": "information.computer_science.algorithms.numerical_symbolic.fourier_polynomials",
+        "new_parent": "Numerical & Symbolic",
+        "parent_id": "information.computer_science.algorithms.numerical_symbolic",
+        "source_concepts": [
+          "Fast Fourier Transform (FFT)",
+          "NTT (Number Theoretic Transform)",
+          "Polynomial Multiplication",
+          "Fast Exponentiation"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.numerical_symbolic.fourier_polynomials.fast_fourier_transform_fft",
+          "information.computer_science.algorithms.numerical_symbolic.fourier_polynomials.ntt_number_theoretic_transform",
+          "information.computer_science.algorithms.numerical_symbolic.fourier_polynomials.polynomial_multiplication",
+          "information.computer_science.algorithms.numerical_symbolic.fourier_polynomials.fast_exponentiation"
+        ],
+        "target_layer": 4,
+        "child_count": 4
+      },
+      {
+        "operation": "create_meld",
+        "target": "Optimization Methods",
+        "target_id": "information.computer_science.algorithms.numerical_symbolic.optimization_methods",
+        "new_parent": "Numerical & Symbolic",
+        "parent_id": "information.computer_science.algorithms.numerical_symbolic",
+        "source_concepts": [
+          "Gradient Descent",
+          "Newton\u2019s Method",
+          "Convex Optimization Basics"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.numerical_symbolic.optimization_methods.gradient_descent",
+          "information.computer_science.algorithms.numerical_symbolic.optimization_methods.newton_s_method",
+          "information.computer_science.algorithms.numerical_symbolic.optimization_methods.convex_optimization_basics"
+        ],
+        "target_layer": 4,
+        "child_count": 3
+      },
+      {
+        "operation": "create_meld",
+        "target": "Algorithm Analysis",
+        "target_id": "information.computer_science.algorithms.algorithm_analysis",
+        "new_parent": "Algorithms",
+        "parent_id": "information.computer_science.algorithms",
+        "source_concepts": [
+          "Asymptotic Notation (O/\u03a9/\u0398)",
+          "Master Theorem",
+          "Amortized Analysis",
+          "Potential Method",
+          "Probabilistic Analysis"
+        ],
+        "source_concept_ids": [
+          "information.computer_science.algorithms.algorithm_analysis.asymptotic_notation_o",
+          "information.computer_science.algorithms.algorithm_analysis.master_theorem",
+          "information.computer_science.algorithms.algorithm_analysis.amortized_analysis",
+          "information.computer_science.algorithms.algorithm_analysis.potential_method",
+          "information.computer_science.algorithms.algorithm_analysis.probabilistic_analysis"
+        ],
+        "target_layer": 3,
+        "child_count": 5
+      }
+    ]
+  }
+}

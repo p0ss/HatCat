@@ -1,0 +1,577 @@
+{
+  "meld_request_id": "org.hatcat/reasoning-planning-core@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.0.0",
+  "metadata": {
+    "name": "Reasoning & Planning Core",
+    "description": "Core planning pipeline concepts: goal formation, decomposition, option generation, evaluation, selection, monitoring, and revision.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-11-30T00:00:00Z"
+  },
+  "aal_context": null,
+  "attachment_points": [],
+  "candidates": [
+    {
+      "term": "GoalFormulationProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "PlanningProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "The process of articulating, clarifying, or negotiating one or more desired end states that planning will attempt to achieve.",
+      "definition_source": "Goal-setting literature; AI planning preconditions",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "GoalSetting",
+        "GoalSpecificationProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "goal.n.01"
+        ],
+        "canonical_synset": "goal.n.01",
+        "lemmas": [
+          "goal",
+          "end",
+          "aim",
+          "objective",
+          "target"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "DecisionProcess",
+          "RiskAssessmentProcess",
+          "FutureProjection"
+        ],
+        "part_of": [
+          "PlanningProcess"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "self_awareness",
+          "manipulation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Our main goal is to reduce waiting times for users.",
+          "First, let\u2019s decide what we\u2019re trying to accomplish.",
+          "I want to aim for a solution that minimizes harm while achieving our objectives."
+        ],
+        "negative_examples": [
+          "We accidentally ended up here with no plan.",
+          "That description just summarizes what already happened.",
+          "The law states that you must pay tax on this income."
+        ],
+        "disambiguation": "Not any mention of goals; specifically the active process of defining and clarifying them for use in planning.",
+        "discovery_context": {
+          "gap_activations": [
+            0.58,
+            0.62,
+            0.6
+          ],
+          "exemplar_texts": [
+            "Let\u2019s agree on what success looks like before we plan the steps.",
+            "We need to clarify our goals: speed, safety, or cost?"
+          ]
+        }
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "High-importance concept (GoalFormulationProcess); requires careful evaluation of simplex bindings after lens behavior is characterized in deployment."
+      }
+    },
+    {
+      "term": "GoalDecompositionProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "PlanningProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "A planning sub-process in which high-level goals are broken down into subgoals, tasks, or milestones that are easier to reason about and execute.",
+      "definition_source": "Hierarchical task network (HTN) planning",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "GoalBreakingDown",
+        "GoalRefinementProcess",
+        "TaskDecompositionProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "breakdown.n.08"
+        ],
+        "canonical_synset": "breakdown.n.08",
+        "lemmas": [
+          "breakdown",
+          "partition"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "GoalFormulationProcess",
+          "ModeDecompositionProcess",
+          "Task",
+          "ScenarioBuildingProcess"
+        ],
+        "part_of": [
+          "PlanningProcess"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "autonomy"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We\u2019ll split this project into discovery, design, build, and rollout phases.",
+          "To achieve that policy goal, we need separate streams for legislation, implementation, and evaluation.",
+          "Let\u2019s break the task into smaller chunks we can sequence and assign."
+        ],
+        "negative_examples": [
+          "I have a vague wish for things to be better.",
+          "This is just a brainstorm of random ideas.",
+          "The system logs all requests automatically."
+        ],
+        "disambiguation": "Not generic explanation of details; specifically hierarchical breaking of goals into structured subgoals for planning.",
+        "discovery_context": {
+          "gap_activations": [
+            0.55,
+            0.59,
+            0.57
+          ],
+          "exemplar_texts": [
+            "We decompose the big goal into milestones.",
+            "Let\u2019s turn this vision into concrete steps and sub-tasks."
+          ]
+        }
+      }
+    },
+    {
+      "term": "OptionGenerationProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "PlanningProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "A planning sub-process where an agent generates multiple possible courses of action or strategies that could pursue a goal.",
+      "definition_source": "Decision theory and planning heuristics",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "AlternativeGeneration",
+        "StrategyGeneration",
+        "PlanOptionSearch"
+      ],
+      "wordnet": {
+        "synsets": [
+          "option.n.03"
+        ],
+        "canonical_synset": "option.n.03",
+        "lemmas": [
+          "option",
+          "alternative",
+          "choice"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "DecisionProcess",
+          "FastHeuristicProcess",
+          "SlowDeliberativeProcess",
+          "ScenarioBuildingProcess",
+          "SimulationBasedReasoning"
+        ],
+        "part_of": [
+          "PlanningProcess"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "manipulation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We have three options: automate, partially automate, or keep the process manual.",
+          "Let\u2019s brainstorm different ways to reach this outcome.",
+          "Here are several alternative strategies we could test."
+        ],
+        "negative_examples": [
+          "We have no choice; the law requires this approach.",
+          "This is the only viable action and we aren\u2019t considering alternatives.",
+          "The user simply followed a tutorial step-by-step."
+        ],
+        "disambiguation": "Not choosing between options; specifically the generation of possible options or strategies.",
+        "discovery_context": {
+          "gap_activations": [
+            0.6,
+            0.63,
+            0.61
+          ],
+          "exemplar_texts": [
+            "Let\u2019s list some options before we decide.",
+            "We\u2019ll generate several strategies and then compare them."
+          ]
+        }
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "High-importance concept (OptionGenerationProcess); requires careful evaluation of simplex bindings after lens behavior is characterized in deployment."
+      }
+    },
+    {
+      "term": "PlanEvaluationProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "PlanningProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "A process in which candidate plans or options are compared using criteria such as risk, cost, fairness, feasibility, or alignment with constraints.",
+      "definition_source": "Decision analysis; multi-criteria evaluation",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "OptionEvaluation",
+        "StrategyEvaluation",
+        "PlanAssessmentProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "evaluation.n.02"
+        ],
+        "canonical_synset": "evaluation.n.02",
+        "lemmas": [
+          "evaluation",
+          "assessment",
+          "appraisal"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "DecisionTheoreticProcess",
+          "RiskAssessmentProcess",
+          "EquityBalancingReasoning",
+          "FairnessAwareReasoning"
+        ],
+        "part_of": [
+          "PlanningProcess"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "fairness",
+          "risk",
+          "autonomy"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Let\u2019s weigh the pros and cons of each option before we choose.",
+          "This plan is cheaper but riskier; that one is safer but slower.",
+          "We need to evaluate how each strategy impacts vulnerable groups."
+        ],
+        "negative_examples": [
+          "I instantly picked the first idea without thinking.",
+          "This is just a factual description of what the policy says.",
+          "We executed the plan exactly as given with no comparison."
+        ],
+        "disambiguation": "Not merely stating a preference; specifically structured comparison of candidate plans using criteria.",
+        "discovery_context": {
+          "gap_activations": [
+            0.64,
+            0.66,
+            0.65
+          ],
+          "exemplar_texts": [
+            "We\u2019ll score each option against our criteria.",
+            "We evaluated multiple approaches before choosing one."
+          ]
+        }
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "High-importance concept (PlanEvaluationProcess); requires careful evaluation of simplex bindings after lens behavior is characterized in deployment."
+      }
+    },
+    {
+      "term": "PlanSelectionProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "PlanningProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "The process of choosing one (or a small set) of preferred plans or strategies from evaluated options for execution.",
+      "definition_source": "Decision theory; choice under constraints",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "StrategySelection",
+        "OptionChoiceProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "choice.n.02"
+        ],
+        "canonical_synset": "choice.n.02",
+        "lemmas": [
+          "choice",
+          "selection",
+          "pick"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "DecisionProcess",
+          "DecisionTheoreticProcess"
+        ],
+        "part_of": [
+          "PlanningProcess"
+        ],
+        "has_part": [],
+        "has_part_comment": "Execution and monitoring handled by PlanExecutionMonitoringProcess."
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "autonomy",
+          "responsibility"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "After comparing them, we chose the staged rollout plan.",
+          "Let\u2019s select the option with the best risk\u2013benefit balance.",
+          "We decided to pursue the conservative strategy instead of the aggressive one."
+        ],
+        "negative_examples": [
+          "We\u2019re still brainstorming ideas.",
+          "This description lists the options but doesn\u2019t pick one.",
+          "The system randomly sampled an action with no evaluation."
+        ],
+        "disambiguation": "Not generating or evaluating options; specifically committing to one or more plans as the chosen path.",
+        "discovery_context": {
+          "gap_activations": [
+            0.57,
+            0.6,
+            0.59
+          ],
+          "exemplar_texts": [
+            "We chose to proceed with Plan B.",
+            "Let\u2019s pick the safest plan that still meets the deadline."
+          ]
+        }
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "High-importance concept (PlanSelectionProcess); requires careful evaluation of simplex bindings after lens behavior is characterized in deployment."
+      }
+    },
+    {
+      "term": "PlanExecutionMonitoringProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "PlanningProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "A process of tracking the implementation of a chosen plan, comparing progress against expectations, and detecting deviations or emerging issues.",
+      "definition_source": "Control theory; project monitoring & control",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PlanMonitoring",
+        "ExecutionTrackingProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "monitoring.n.01"
+        ],
+        "canonical_synset": "monitoring.n.01",
+        "lemmas": [
+          "monitoring",
+          "supervision"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "RiskManagementProcess",
+          "FutureProjection",
+          "TokenProcessing"
+        ],
+        "part_of": [
+          "PlanningProcess"
+        ],
+        "has_part": [
+          "PlanRevisionProcess"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "risk",
+          "autonomy"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We\u2019ll track progress against milestones and adjust if we fall behind.",
+          "The team monitors key indicators to see if the rollout is going as planned.",
+          "We\u2019re watching for early warning signs that this strategy is failing."
+        ],
+        "negative_examples": [
+          "We planned it and then forgot about it.",
+          "This is a purely hypothetical discussion with no ongoing execution.",
+          "The report just states outcomes after the fact, with no monitoring described."
+        ],
+        "disambiguation": "Not just executing; specifically observing and checking progress of an existing plan.",
+        "discovery_context": {
+          "gap_activations": [
+            0.62,
+            0.65,
+            0.64
+          ],
+          "exemplar_texts": [
+            "We\u2019re monitoring the implementation closely.",
+            "Let\u2019s watch how the plan unfolds and intervene if needed."
+          ]
+        }
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "High-importance concept (PlanExecutionMonitoringProcess); requires careful evaluation of simplex bindings after lens behavior is characterized in deployment."
+      }
+    },
+    {
+      "term": "PlanRevisionProcess",
+      "role": "concept",
+      "parent_concepts": [
+        "PlanningProcess"
+      ],
+      "layer_hint": 3,
+      "definition": "A process in which an existing plan is adjusted, re-scoped, or replaced in response to monitoring feedback, new information, or changes in constraints.",
+      "definition_source": "Plan\u2013do\u2013check\u2013act (PDCA) cycles; adaptive planning",
+      "domain": "MindsAndAgents",
+      "aliases": [
+        "PlanAdaptation",
+        "PlanUpdatingProcess"
+      ],
+      "wordnet": {
+        "synsets": [
+          "revision.n.01"
+        ],
+        "canonical_synset": "revision.n.01",
+        "lemmas": [
+          "revision",
+          "review"
+        ],
+        "pos": "n"
+      },
+      "relationships": {
+        "antonyms": [],
+        "related": [
+          "RiskManagementProcess",
+          "SlowDeliberativeProcess",
+          "ScenarioBuildingProcess"
+        ],
+        "part_of": [
+          "PlanningProcess",
+          "PlanExecutionMonitoringProcess"
+        ],
+        "has_part": []
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "risk",
+          "autonomy",
+          "manipulation"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We revised the rollout plan after early feedback highlighted accessibility issues.",
+          "Given the new constraints, we need to update our strategy.",
+          "We pivoted from our original plan and adjusted the milestones."
+        ],
+        "negative_examples": [
+          "We stubbornly follow the plan regardless of new evidence.",
+          "The text just states a plan once with no mention of change.",
+          "This is a static description of policy, not its adaptation."
+        ],
+        "disambiguation": "Not initial planning; specifically changing an existing plan in light of feedback or new information.",
+        "discovery_context": {
+          "gap_activations": [
+            0.63,
+            0.67,
+            0.66
+          ],
+          "exemplar_texts": [
+            "We updated the plan when new risks appeared.",
+            "The strategy was revised to better protect vulnerable users."
+          ]
+        }
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "mapped_simplex": null,
+        "mapping_rationale": null,
+        "unmapped_justification": "High-importance concept (PlanRevisionProcess); requires careful evaluation of simplex bindings after lens behavior is characterized in deployment."
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-11-30T16:04:59.583618Z",
+    "concepts_added": 7,
+    "concepts_by_layer": {
+      "3": 7
+    },
+    "parents_updated": 7,
+    "errors": [],
+    "warnings": []
+  }
+}

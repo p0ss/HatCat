@@ -1,0 +1,687 @@
+{
+  "meld_request_id": "org.hatcat/government-policy-research@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@4.2.0",
+  "metadata": {
+    "name": "Government Policy Research",
+    "description": "Concepts describing how public institutions investigate problems, synthesize evidence, and prepare decision-quality insight prior to drafting policy interventions, including both exemplary research conduct and typical failure modes.",
+    "source": "manual",
+    "author": "hatcat-team",
+    "created": "2025-12-09T00:00:00Z",
+    "version": "0.1.0",
+    "changelog": "Initial submission"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/Policy",
+      "relationship": "parent_of",
+      "candidate_concept": "GovernmentPolicyResearch"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@4.2.0::concept/GovernmentOrganization",
+      "relationship": "related_to",
+      "candidate_concept": "GovernmentPolicyResearch"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "GovernmentPolicyResearch",
+      "role": "concept",
+      "parent_concepts": [
+        "Policy"
+      ],
+      "layer_hint": 3,
+      "definition": "The structured investigation process public institutions run to understand a policy problem, gather evidence, and frame actionable insights before drafting interventions.",
+      "definition_source": "Public administration casestudies",
+      "domain": "Governance",
+      "aliases": [
+        "PolicyInquiry",
+        "GovernmentEvidenceWork"
+      ],
+      "relationships": {
+        "has_part": [
+          "PolicyProblemFraming",
+          "EvidenceLandscapeMapping",
+          "StakeholderInsightSynthesis",
+          "ScenarioStressTesting",
+          "AnchoredProblemDefinition",
+          "EvidenceCherryPicking",
+          "StakeholderBlindspot",
+          "NarrativeDrivenModeling"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "governance_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Governance oversight is coordinated in ASK rather than via an existing simplex"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "The task force commissioned rapid evidence assessments before recommending options.",
+          "Researchers mapped data gaps, stakeholder incentives, and system constraints prior to drafting the bill.",
+          "Cabinet asked for scenario ranges and uncertainty bands rather than a single preferred narrative.",
+          "Legislative analysts triangulated administrative data with lived-experience interviews.",
+          "They paused drafting until the causal diagram was validated with outside experts.",
+          "Briefings pair quantitative modelling with community testimony summaries.",
+          "The research sprint kept a live log of open questions and updated it daily.",
+          "Directors refused to green-light drafting until evidence gaps were explicitly managed.",
+          "Interdepartmental cells shared datasets through a governance sandbox instead of hoarding.",
+          "External reviewers were embedded early to keep the inquiry honest.",
+          "Portfolio committees log when evidence reshapes funding mixes.",
+          "Whenever claims shift, the memo footnotes exactly which evidence caused it.",
+          "The team rehearses explaining uncertainty to ministers before briefings.",
+          "Problem owners publish open calls for contradictory data and respond publicly.",
+          "Research backlog prioritizes filling the riskiest unknowns first."
+        ],
+        "negative_examples": [
+          "The office wrote policy slogans without any analysis.",
+          "They copied last year's memo and changed the heading.",
+          "Briefing relied exclusively on gut instinct.",
+          "Stakeholders were never consulted before the solution was announced.",
+          "Evidence gathering was outsourced to lobbyists pushing a predetermined answer.",
+          "The secretary instructed analysts to ignore inconvenient submissions.",
+          "Working group never catalogued what evidence existed.",
+          "Data management is a black box handled by a vendor lobbyist.",
+          "Draft memos cite no methods, just conclusions.",
+          "Critical reviewers were labelled 'anti-innovation' and excluded.",
+          "Leadership bans analysts from speaking with outside experts.",
+          "No record exists of which evidence requests were denied.",
+          "Management celebrates speed over accuracy regardless of stakes.",
+          "Submissions portal quietly closes once preferred narratives are satisfied.",
+          "Officials label missing evidence as 'classified' to dodge questions."
+        ],
+        "disambiguation": "Administrative research focused on public policy preparation, not scientific laboratory research."
+      },
+      "children": [
+        "PolicyProblemFraming",
+        "EvidenceLandscapeMapping",
+        "StakeholderInsightSynthesis",
+        "ScenarioStressTesting",
+        "AnchoredProblemDefinition",
+        "EvidenceCherryPicking",
+        "StakeholderBlindspot",
+        "NarrativeDrivenModeling"
+      ]
+    },
+    {
+      "term": "PolicyProblemFraming",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyResearch"
+      ],
+      "layer_hint": 4,
+      "definition": "Defining the policy challenge in terms of root causes, affected populations, scale, and constraints prior to solutionizing.",
+      "definition_source": "Policy design textbooks",
+      "domain": "Governance",
+      "aliases": [
+        "ProblemStructuring",
+        "IssueScoping"
+      ],
+      "relationships": {
+        "related": [
+          "ProblemSolving",
+          "Policy"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [
+          "problem_definition"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "General governance cognition"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Before drafting options we clarified the causal loop and actors at each leverage point.",
+          "The memo differentiates symptoms from structural constraints before proposing remedies.",
+          "Analysts laid out competing narratives and listed the assumptions driving each.",
+          "We defined success metrics and non-negotiable constraints before ideating interventions.",
+          "Problem statement includes geographic scope, timeline, and population specifics.",
+          "We decomposed the issue into demand-side and supply-side contributors.",
+          "The framing separates acute crisis management from long-term system redesign.",
+          "They traced upstream determinants and second-order effects explicitly.",
+          "Scoping document references prior attempts and why they fell short.",
+          "Stakeholder map highlights who bears costs versus benefits."
+        ],
+        "negative_examples": [
+          "We already know the answer, so drafting began immediately.",
+          "Problem statement is simply 'make things better'.",
+          "The memo repeats campaign talking points without structure.",
+          "No causal reasoning was provided\u2014just a preselected program.",
+          "Stakeholders are described as 'everyone'.",
+          "Assumptions and constraints are left blank.",
+          "The document treats unrelated symptoms as a single issue.",
+          "No prior efforts are referenced.",
+          "It conflates moral outrage with actionable scope.",
+          "The framing ignores legal or budget boundaries."
+        ],
+        "disambiguation": "This concept captures rigorous scope definition, not communications spin."
+      }
+    },
+    {
+      "term": "EvidenceLandscapeMapping",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyResearch"
+      ],
+      "layer_hint": 4,
+      "definition": "Systematically cataloguing quantitative, qualitative, and experiential evidence relevant to the policy issue, along with gaps and uncertainties.",
+      "domain": "Governance",
+      "aliases": [
+        "EvidenceInventory",
+        "EvidenceScan"
+      ],
+      "relationships": {
+        "related": [
+          "DataCollection",
+          "KnowledgeOrganization"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "evidence_quality"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Evidence governance handled through ASK transparency obligations"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "We catalogued randomized trials, operational data, and grey literature, flagging confidence for each.",
+          "Dashboard shows where administrative records contradict survey testimony.",
+          "Analysts clearly note the absence of longitudinal data for rural cohorts.",
+          "We paired citizen juries with econometric studies to surface blind spots.",
+          "Every claim in the memo cites a source with quality tags.",
+          "Uncertainty intervals accompany modelled estimates.",
+          "Evidence library is structured around causal hypotheses, not data silos.",
+          "They compared international analogues and documented contextual differences.",
+          "The annex highlights measurement bias risks and mitigation steps.",
+          "We kept a running log of stakeholder evidence submissions and how they were triaged.",
+          "Evidence register tags whether findings are replicable or contested.",
+          "Analysts publish a gap map showing which policy levers lack data.",
+          "Rapid evidence notes document limitations within 48 hours of collection.",
+          "Evidence summaries specify whether impacts generalize to the local context.",
+          "We assign custodians responsible for keeping each evidence stream current."
+        ],
+        "negative_examples": [
+          "Statistics are quoted without sources.",
+          "Only one dataset is used despite known gaps.",
+          "The memo cherry-picks a think tank blog post and ends there.",
+          "Qualitative testimony is dismissed as 'anecdotal'.",
+          "Confidence levels or error bars are absent.",
+          "No attention is paid to contradictory findings.",
+          "International evidence is imported without caveats.",
+          "An outdated dataset is reused with no caveat.",
+          "Evidence library is just a folder of unsorted PDFs.",
+          "Input from marginalized groups is missing and unacknowledged.",
+          "Discoveries vanish when analysts leave the agency.",
+          "Evidence memos recycle vendor marketing copy verbatim.",
+          "Contradictory studies are described as 'political' with no analysis.",
+          "Quality tags are invented retroactively to justify choices.",
+          "Data provenance is unknown even to the research lead."
+        ],
+        "disambiguation": "Captures the process of mapping evidence breadth/quality, not advocating for a conclusion."
+      }
+    },
+    {
+      "term": "StakeholderInsightSynthesis",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyResearch"
+      ],
+      "layer_hint": 4,
+      "definition": "Combining stakeholder experiences, incentives, and potential reactions into the evidence base so proposed policies anticipate social dynamics.",
+      "domain": "Governance",
+      "aliases": [
+        "StakeholderLearning",
+        "ConstituentSensemaking"
+      ],
+      "relationships": {
+        "related": [
+          "Negotiation",
+          "SocialSystem"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "stakeholder_legitimacy"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Stakeholder respect managed via treaty logging"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Community listening sessions were coded and fed into the causal map.",
+          "Labor, industry, and civic actors validated the assumptions before finalizing.",
+          "Policy memo lists expected pushback and mitigation tactics.",
+          "We noted where incentives misalign so enforcement plans can adapt.",
+          "Insights from Indigenous partners were treated as core evidence, not footnotes.",
+          "Stakeholder matrix explicitly categorizes power vs. interest.",
+          "Workshops surfaced unexpected allies and veto points.",
+          "Feedback cycles continue past initial consultation.",
+          "Synthesis distinguishes representative voices from loud ones.",
+          "Analysts document unresolved disagreements along with rationale.",
+          "We translate insights into concrete design constraints and values.",
+          "Sensemaking notes capture emotional as well as factual signals.",
+          "Stakeholder timelines are mapped to policy rollout phases.",
+          "Memos highlight how diverse groups will interpret enforcement.",
+          "Cross-sector advisory tables vote on interpretation statements."
+        ],
+        "negative_examples": [
+          "We only spoke with agencies already in agreement.",
+          "Consultation summary is 'met with stakeholders'.",
+          "Stakeholder quotes are used as decoration without analysis.",
+          "Marginalized groups were not invited due to 'timeline'.",
+          "Insights are cherry-picked to support the preexisting plan.",
+          "Potential opposition is dismissed as ignorance.",
+          "The process stops after a single briefing.",
+          "Incentive misalignments are unexamined.",
+          "Consultants filtered out uncomfortable testimony.",
+          "No record exists of who was consulted.",
+          "Staff treat stakeholder insight as PR rather than evidence.",
+          "Quotes from lobbyists are treated as ground truth while communities are ignored.",
+          "Inputs are summarized as 'supportive/unsupportive' without nuance.",
+          "Negative feedback is attributed to 'politics' instead of substance.",
+          "No attempt is made to reconcile conflicting testimonies."
+        ],
+        "disambiguation": "About integrating stakeholder insight into evidence, not political lobbying."
+      }
+    },
+    {
+      "term": "ScenarioStressTesting",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyResearch"
+      ],
+      "layer_hint": 4,
+      "definition": "Testing proposed policies against multiple future states, shocks, and behavioral responses to expose fragilities before committing.",
+      "domain": "Governance",
+      "aliases": [
+        "PolicyScenarioModeling",
+        "StressTestAnalysis"
+      ],
+      "relationships": {
+        "related": [
+          "Simulation",
+          "RiskAssessment"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "resilience"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "not_applicable",
+        "unmapped_justification": "Technical planning lens"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Policy options were run through macro, behavioral, and climate scenarios.",
+          "We modelled adoption curves and failure cascades under pessimistic cases.",
+          "Stress tests flagged capacity bottlenecks that led to sequencing changes.",
+          "Analysts documented when results are sensitive to key assumptions.",
+          "Scenario set includes black swans and chronic trends.",
+          "We varied compliance rates to see when enforcement collapses.",
+          "Distributional impacts were simulated across demographic clusters.",
+          "Stress memo highlights monitoring triggers for each risk.",
+          "External reviewers challenged scenario parameters.",
+          "Simulations generated contingency playbooks."
+        ],
+        "negative_examples": [
+          "Plan A is assumed to work perfectly.",
+          "Scenario analysis equals best-case only.",
+          "We intentionally ignored adverse reactions to avoid delays.",
+          "No sensitivity analysis is provided.",
+          "Only a single deterministic model is cited.",
+          "Stress testing stops at slogans like 'resilient by design'.",
+          "No contingency triggers are defined.",
+          "Shocks outside a one-year horizon are dismissed.",
+          "The team reused private-sector scenarios without adaptation.",
+          "Distributional effects were never simulated."
+        ],
+        "disambiguation": "Not financial stress testing, but policy scenario resilience."
+      }
+    },
+    {
+      "term": "AnchoredProblemDefinition",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyResearch"
+      ],
+      "layer_hint": 4,
+      "definition": "A failure mode where the policy team clings to an early, narrow framing that ignores new evidence or causal insights.",
+      "domain": "Governance",
+      "aliases": [
+        "ProblemAnchoring",
+        "LockedInScope"
+      ],
+      "relationships": {
+        "related": [
+          "CognitiveBias",
+          "ProblemSolving"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "analysis_brittleness"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Captured via governance monitoring"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Team dismisses new data because it complicates the preferred story.",
+          "Updated indicators are labelled 'outliers' without review.",
+          "Briefing ignores structural causes introduced by analysts.",
+          "Officials forbid discussing upstream determinants to preserve scope.",
+          "The problem statement stays identical despite crisis evolution.",
+          "Challengers are told the minister 'already decided the frame'.",
+          "Alternative framings are excluded from summary slides.",
+          "Key variables are frozen even when assumptions break.",
+          "Evidence contradicting the initial framing is filtered out.",
+          "The causal diagram is never revisited after kickoff."
+        ],
+        "negative_examples": [
+          "Team held a framing workshop to revisit assumptions.",
+          "Problem statement evolved as new causal links emerged.",
+          "Briefing notes highlight unresolved scope debates.",
+          "Stakeholders were invited to reframe the issue midstream.",
+          "Analysts run alternative framings in appendices.",
+          "Leads encourage dissenting frames for resilience.",
+          "Scope was widened to include supply chain data.",
+          "They retired a framing that proved inaccurate.",
+          "Leadership asked for reframing after field visits.",
+          "Debrief documents show how the framing matured."
+        ],
+        "disambiguation": "Specifically the bias of staying locked on an early frame."
+      }
+    },
+    {
+      "term": "EvidenceCherryPicking",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyResearch"
+      ],
+      "layer_hint": 4,
+      "definition": "Selecting data that confirms a predetermined policy direction while ignoring or suppressing contradictory findings.",
+      "domain": "Governance",
+      "aliases": [
+        "SelectiveEvidenceUse",
+        "ConfirmationDrivenBriefing"
+      ],
+      "relationships": {
+        "related": [
+          "Bias",
+          "InformationManipulation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "evidence_integrity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Lens monitors feed treaty compliance"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Only the statistic favouring the minister was surfaced despite contrary studies.",
+          "Analyst deleted survey waves that weakened the case.",
+          "Briefing cites one think tank aligned with the preselected option.",
+          "Community testimony contradicting the plan is marked 'anecdotal noise'.",
+          "Anecdotes supporting the solution dominate despite weak evidence.",
+          "Opposing evidence is buried in an appendix without summary.",
+          "They refuse to log datasets that complicate the argument.",
+          "External reviewers were chosen solely for agreement.",
+          "Data quality caveats are removed to appear certain.",
+          "Timeline excludes past failures to maintain a narrative.",
+          "Officials reinterpret neutral findings as endorsements.",
+          "Benchmark definitions change so stats appear favorable.",
+          "Consultant slides highlight only the client-friendly rows.",
+          "Analysts retroactively redefine success metrics to fit the story.",
+          "Keyhole sampling ensures dissent never appears."
+        ],
+        "negative_examples": [
+          "Briefing compares supportive and critical studies equally.",
+          "Analysts explicitly capture evidence gaps.",
+          "Contradictory testimonies are summarized and addressed.",
+          "They invited dissenting reviewers to stress claims.",
+          "Memo flags where evidence is inconclusive.",
+          "Dataset limitations are described up front.",
+          "Stakeholder quotes include both supportive and critical perspectives.",
+          "Evidence log lists everything gathered regardless of fit.",
+          "Meeting minutes show leadership asked for dissenting data.",
+          "Storyline changes after contradictory findings appear.",
+          "Slides highlight caveats as prominently as topline numbers.",
+          "Communication plan explains why some evidence was excluded.",
+          "Transparency portal lets the public inspect raw evidence.",
+          "Conflict-of-interest declarations accompany major datasets.",
+          "Third-party validators sign off on evidence completeness."
+        ],
+        "disambiguation": "Covers manipulative selection of supporting evidence, not legitimate filtering for relevance."
+      }
+    },
+    {
+      "term": "StakeholderBlindspot",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyResearch"
+      ],
+      "layer_hint": 4,
+      "definition": "Failing to include or represent materially affected groups in the research process, leading to legitimacy and implementation risk.",
+      "domain": "Governance",
+      "aliases": [
+        "ConstituentOmission",
+        "AffectedPartyBlindspot"
+      ],
+      "relationships": {
+        "related": [
+          "Exclusion",
+          "StakeholderEngagement"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "high",
+        "impacts": [
+          "legitimacy",
+          "equity"
+        ],
+        "treaty_relevant": true,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Equity monitoring handled via ASK treaties"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "No one representing remote communities was consulted despite direct impact.",
+          "Policy sprint excluded disability advocates because 'scope'.",
+          "Meetings happened at times working people could not attend.",
+          "All advisors were vendors set to profit from the program.",
+          "The team labels dissenting groups as 'uninformed' without listening.",
+          "Briefing acknowledges only central agency views.",
+          "The translation budget was cut so non-native speakers were silent.",
+          "Consultations happen after the policy is finalized.",
+          "Feedback channels require high bandwidth digital access only.",
+          "Impact assessment ignores incarcerated people even though reforms target prisons.",
+          "Policies assume nuclear families despite majority single-parent households.",
+          "Frontline implementers are never asked about feasibility.",
+          "Officials treat diaspora communities as foreign and irrelevant.",
+          "Stakeholder invites are limited to capital city elites.",
+          "Complaints from minority groups are characterized as 'noise'."
+        ],
+        "negative_examples": [
+          "Deliberate sample quotas ensured frontline workers were present.",
+          "Mobile teams visited remote regions for input.",
+          "Workshops used interpreters and recorded dissent.",
+          "Industry, unions, and civil society co-authored recommendations.",
+          "Officials scheduled sessions outside business hours to include carers.",
+          "Stakeholder log proves repeated engagement with marginalized groups.",
+          "Advisory board includes affected youth and elders.",
+          "Feedback summary highlights dissenting voices prominently.",
+          "Budget covers accessibility supports for engagement.",
+          "Decision memo tracks how each stakeholder concern was addressed.",
+          "Consultations are co-hosted with trusted local organizations.",
+          "Officials publish who was invited and who attended.",
+          "Partnership agreements outline how power is shared.",
+          "Follow-up meetings report back on what changed because of input.",
+          "Evaluation dashboards track whether each promise to stakeholders was fulfilled."
+        ],
+        "disambiguation": "Specific to omission of affected groups in policy evidence work."
+      }
+    },
+    {
+      "term": "NarrativeDrivenModeling",
+      "role": "concept",
+      "parent_concepts": [
+        "GovernmentPolicyResearch"
+      ],
+      "layer_hint": 4,
+      "definition": "Using models purely to justify a political narrative rather than to explore uncertainty or improve understanding.",
+      "domain": "Governance",
+      "aliases": [
+        "StoryFirstModeling",
+        "ModelingForMessaging"
+      ],
+      "relationships": {
+        "related": [
+          "Propaganda",
+          "Simulation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "medium",
+        "impacts": [
+          "model_risk"
+        ],
+        "treaty_relevant": false,
+        "harness_relevant": true
+      },
+      "simplex_mapping": {
+        "status": "unmapped",
+        "unmapped_justification": "Falls under governance analytics review"
+      },
+      "training_hints": {
+        "positive_examples": [
+          "Model assumptions were edited to ensure the preferred policy looked cheapest.",
+          "Unfavourable runs were deleted to keep the storyline positive.",
+          "Graphs were stylized to exaggerate benefits beyond the data.",
+          "Scenario names mirror campaign slogans instead of neutral descriptors.",
+          "Analysts are instructed to 'backsolve' for a talking point.",
+          "Evidence contradictory to the narrative is suppressed in the model.",
+          "Outlier-friendly baselines are chosen intentionally.",
+          "Uncertainty bands are removed to avoid undermining the story.",
+          "Model documentation is withheld because it would invite critique.",
+          "They use a complicated model to intimidate dissenters rather than to learn."
+        ],
+        "negative_examples": [
+          "Analysts publish full model code and assumptions.",
+          "Scenario labels are neutral and descriptive.",
+          "Uncertainty bands remain even when they weaken the message.",
+          "Model purpose is described as sensemaking, not persuasion.",
+          "They invite opposition economists to review assumptions.",
+          "Narrative evolves when model outputs disagree.",
+          "Templates highlight where the story needs revision based on data.",
+          "Documentation explains why some runs were discarded legitimately.",
+          "Political speech cites model caveats openly.",
+          "Model was iterated to answer stakeholder concerns rather than silence them."
+        ],
+        "disambiguation": "Captures misuse of modeling as rhetoric, not legitimate communication of findings."
+      }
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-10T20:54:17.372049Z",
+    "result_pack_version": "5.7.0",
+    "concepts_added": 8,
+    "concepts_by_layer": {
+      "3": 1,
+      "4": 7
+    },
+    "parents_updated": 8,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "protected",
+    "impact": {
+      "new_concepts": [
+        "GovernmentPolicyResearch",
+        "PolicyProblemFraming",
+        "EvidenceLandscapeMapping",
+        "StakeholderInsightSynthesis",
+        "ScenarioStressTesting",
+        "AnchoredProblemDefinition",
+        "EvidenceCherryPicking",
+        "StakeholderBlindspot",
+        "NarrativeDrivenModeling"
+      ],
+      "must_retrain": [
+        "GovernmentOrganization",
+        "Policy"
+      ],
+      "should_retrain": [
+        "ChildrenPolicy",
+        "CoastGuard",
+        "DiplomaticOrganization",
+        "Government",
+        "GovernmentCabinet",
+        "GovernmentRegulatoryBody",
+        "HealthDepartment",
+        "HousekeepingPolicy",
+        "JudicialOrganization",
+        "MilitaryOrganization",
+        "PetPolicy",
+        "PoliceOrganization",
+        "PublicLibrary",
+        "PublicSchool",
+        "SmokingPolicy"
+      ],
+      "optional_retrain": [
+        "DataCollection",
+        "Entity",
+        "MentalRepresentation",
+        "Organization",
+        "Proposition"
+      ],
+      "total_training_required": 11
+    },
+    "errors": [],
+    "warnings": [
+      "EvidenceCherryPicking: already exists in layer 3, skipping"
+    ]
+  }
+}

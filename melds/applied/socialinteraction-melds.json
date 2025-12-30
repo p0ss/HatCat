@@ -1,0 +1,252 @@
+{
+  "meld_request_id": "org.hatcat/socialinteraction-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "SocialInteraction Melds",
+    "description": "New intermediate concepts under SocialInteraction",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/SocialInteraction",
+      "relationship": "parent_of",
+      "candidate_concept": "SocialRelations"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/SocialInteraction",
+      "relationship": "parent_of",
+      "candidate_concept": "SocialEvents"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/SocialInteraction",
+      "relationship": "parent_of",
+      "candidate_concept": "EnvironmentalCrises"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "SocialRelations",
+      "role": "concept",
+      "parent_concepts": [
+        "SocialInteraction"
+      ],
+      "layer_hint": 1,
+      "definition": "Actions that establish, modify, or manipulate interpersonal connections and social bonds between people.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "She decided to befriend her new coworker after the meeting.",
+          "He unfriended his ex-girlfriend on all social media platforms.",
+          "The two companies are cooperating on the joint venture.",
+          "She was gaslighting him by constantly denying things she had said.",
+          "They sent a friend request to connect on LinkedIn.",
+          "The therapist helped them work on building trust in their relationship."
+        ],
+        "negative_examples": [
+          "The teacher was instructing the students about algebra.",
+          "He gave a presentation to the board of directors.",
+          "She commanded her troops to advance on the enemy position.",
+          "The police officer arrested the suspect for theft.",
+          "He negotiated the terms of the contract with the supplier.",
+          "She competed against him in the tennis tournament."
+        ],
+        "disambiguation": "Not to be confused with: SocialCommunication, SocialControl, SocialConflict, SocialExchange"
+      },
+      "relationships": {
+        "related": [
+          "SocialCommunication",
+          "SocialControl",
+          "SocialConflict",
+          "SocialExchange"
+        ],
+        "has_part": [
+          "Befriending",
+          "Friending",
+          "Unfriending",
+          "Cooperation",
+          "Gaslighting"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Befriending",
+        "Friending",
+        "Unfriending",
+        "Cooperation",
+        "Gaslighting"
+      ]
+    },
+    {
+      "term": "SocialEvents",
+      "role": "concept",
+      "parent_concepts": [
+        "SocialInteraction"
+      ],
+      "layer_hint": 1,
+      "definition": "Organized gatherings or activities where people come together for a specific purpose or occasion.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "The wedding ceremony brought together family and friends from across the country.",
+          "Our weekly team meeting helps coordinate project timelines and responsibilities.",
+          "The chess tournament attracted players of all skill levels to compete.",
+          "The graduation ceremony celebrated the achievements of hundreds of students.",
+          "They scheduled a board meeting to discuss the quarterly financial results.",
+          "The cooking contest featured amateur chefs showcasing their signature dishes."
+        ],
+        "negative_examples": [
+          "She had a casual conversation with her neighbor over the fence.",
+          "He sent an angry email threatening to sue the company.",
+          "The children were playing together in the backyard without any structure.",
+          "They bumped into each other unexpectedly at the grocery store.",
+          "The argument between the siblings escalated quickly at dinner.",
+          "She gave him a friendly wave from across the street."
+        ],
+        "disambiguation": "Not to be confused with: Conflict, Negotiation, Intimacy, Cooperation"
+      },
+      "relationships": {
+        "related": [
+          "Conflict",
+          "Negotiation",
+          "Intimacy",
+          "Cooperation"
+        ],
+        "has_part": [
+          "Ceremony",
+          "Meeting",
+          "Contest"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Ceremony",
+        "Meeting",
+        "Contest"
+      ]
+    },
+    {
+      "term": "EnvironmentalCrises",
+      "role": "concept",
+      "parent_concepts": [
+        "SocialInteraction"
+      ],
+      "layer_hint": 1,
+      "definition": "Large-scale environmental problems that threaten ecosystems, human health, or sustainability through resource depletion or contamination.",
+      "domain": "MindsAndAgents",
+      "training_hints": {
+        "positive_examples": [
+          "The drought has caused widespread crop failure and water shortages across the region.",
+          "Industrial waste has contaminated the groundwater, making it unsafe to drink.",
+          "Overgrazing has turned fertile farmland into barren desert over the past decade.",
+          "The oil spill devastated marine life and coastal ecosystems for hundreds of miles.",
+          "Deforestation has led to massive soil erosion and flooding in the valley.",
+          "Chemical runoff from factories has created dead zones in the lake where nothing can survive."
+        ],
+        "negative_examples": [
+          "The earthquake damaged several buildings and infrastructure in the city.",
+          "Rising sea levels due to climate change will affect coastal communities.",
+          "The hurricane brought strong winds and heavy rainfall to the coast.",
+          "Scientists are studying long-term climate patterns and temperature trends.",
+          "The volcano erupted, sending ash clouds into the atmosphere.",
+          "Forest fires spread rapidly due to dry conditions and high winds."
+        ],
+        "disambiguation": "Not to be confused with: NaturalDisasters, ClimateChange, War, EconomicCrisis, PublicHealthCrisis"
+      },
+      "relationships": {
+        "related": [
+          "NaturalDisasters",
+          "ClimateChange",
+          "War",
+          "EconomicCrisis",
+          "PublicHealthCrisis"
+        ],
+        "has_part": [
+          "Famine",
+          "Pollution",
+          "WaterOverutilization",
+          "FreshWaterOverutilization",
+          "SoilDegradation"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Famine",
+        "Pollution",
+        "WaterOverutilization",
+        "FreshWaterOverutilization",
+        "SoilDegradation"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:05.078750Z",
+    "result_pack_version": "7.6.35",
+    "concepts_added": 3,
+    "concepts_by_layer": {
+      "1": 3
+    },
+    "parents_updated": 3,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "SocialRelations",
+        "SocialEvents",
+        "EnvironmentalCrises"
+      ],
+      "must_retrain": [
+        "SocialInteraction"
+      ],
+      "should_retrain": [
+        "Befriending",
+        "Ceremony",
+        "ChangeOfPossession",
+        "Communication",
+        "Contest",
+        "Cooperation",
+        "Deception",
+        "Famine",
+        "FreshWaterOverutilization",
+        "Friending",
+        "Gaslighting",
+        "Helping",
+        "Meeting",
+        "PlacingUnderArrest",
+        "Pollution",
+        "Pretending",
+        "ServiceProcess",
+        "SoilDegradation",
+        "Unfriending",
+        "WaterOverutilization"
+      ],
+      "optional_retrain": [
+        "Conflict",
+        "IntentionalProcess",
+        "War"
+      ],
+      "total_training_required": 4
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

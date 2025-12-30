@@ -1,0 +1,371 @@
+{
+  "meld_request_id": "org.hatcat/fieldofstudy-melds@0.1.0",
+  "target_pack_spec_id": "org.hatcat/sumo-wordnet-v4@5.0.0",
+  "metadata": {
+    "name": "FieldOfStudy Melds",
+    "description": "New intermediate concepts under FieldOfStudy",
+    "source": "manual",
+    "author": "hatcat-meld-generator",
+    "created": "2025-12-11T09:52:13Z",
+    "generator_model": "claude-sonnet-4-20250514"
+  },
+  "attachment_points": [
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/FieldOfStudy",
+      "relationship": "parent_of",
+      "candidate_concept": "AIStudies"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/FieldOfStudy",
+      "relationship": "parent_of",
+      "candidate_concept": "EngineeringFields"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/FieldOfStudy",
+      "relationship": "parent_of",
+      "candidate_concept": "Humanities"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/FieldOfStudy",
+      "relationship": "parent_of",
+      "candidate_concept": "FormalSciences"
+    },
+    {
+      "target_concept_id": "org.hatcat/sumo-wordnet-v4@5.0.0::concept/FieldOfStudy",
+      "relationship": "parent_of",
+      "candidate_concept": "DesignFields"
+    }
+  ],
+  "candidates": [
+    {
+      "term": "AIStudies",
+      "role": "concept",
+      "parent_concepts": [
+        "FieldOfStudy"
+      ],
+      "layer_hint": 1,
+      "definition": "Academic disciplines focused on the theoretical, safety, and ethical aspects of artificial intelligence systems.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The AI alignment research paper discussed inner optimization and mesa-optimizers.",
+          "She's pursuing a PhD in AI safety, focusing on value learning and corrigibility.",
+          "The conference featured talks on AI welfare and the moral status of artificial agents.",
+          "Researchers are developing new frameworks for AI alignment theory and robustness.",
+          "The ethics committee is reviewing proposals for AI safety research funding.",
+          "His dissertation explores whether advanced AI systems can experience suffering."
+        ],
+        "negative_examples": [
+          "The machine learning model achieved 95% accuracy on the test dataset.",
+          "They're implementing a new neural network architecture for image recognition.",
+          "The startup is developing AI tools for automated customer service.",
+          "Computer vision algorithms can now detect objects in real-time video streams.",
+          "The data science team is optimizing their recommendation system.",
+          "Natural language processing has improved dramatically with transformer models."
+        ],
+        "disambiguation": "Not to be confused with: ComputerScience, Philosophy, Ethics, Psychology, Economics"
+      },
+      "relationships": {
+        "related": [
+          "ComputerScience",
+          "Philosophy",
+          "Ethics",
+          "Psychology",
+          "Economics"
+        ],
+        "has_part": [
+          "AIAlignmentTheory",
+          "AISafety",
+          "AIWelfareTheory"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "AIAlignmentTheory",
+        "AISafety",
+        "AIWelfareTheory"
+      ]
+    },
+    {
+      "term": "EngineeringFields",
+      "role": "concept",
+      "parent_concepts": [
+        "FieldOfStudy"
+      ],
+      "layer_hint": 1,
+      "definition": "Applied science disciplines that use mathematical and scientific principles to design, build, and maintain systems and devices.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She studied electrical engineering to design circuit boards for smartphones.",
+          "The mechanical engineering team developed a new turbine engine design.",
+          "Power electronics specialists work on efficient energy conversion systems.",
+          "Electronics engineers create the microprocessors that run our computers.",
+          "His engineering degree prepared him to solve complex technical problems.",
+          "The company hired engineers to optimize their manufacturing processes."
+        ],
+        "negative_examples": [
+          "She majored in theoretical physics to understand quantum mechanics.",
+          "The biology professor studied cellular regeneration mechanisms.",
+          "He pursued pure mathematics research in algebraic topology.",
+          "Computer science students learn algorithms and data structures.",
+          "Chemistry researchers developed new pharmaceutical compounds.",
+          "The psychology department studies human behavioral patterns."
+        ],
+        "disambiguation": "Not to be confused with: PureSciences, SocialSciences, Mathematics, ComputerScience"
+      },
+      "relationships": {
+        "related": [
+          "PureSciences",
+          "SocialSciences",
+          "Mathematics",
+          "ComputerScience"
+        ],
+        "has_part": [
+          "ElectricalEngineering",
+          "MechanicalEngineering",
+          "PowerElectronics",
+          "Electronics"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "ElectricalEngineering",
+        "MechanicalEngineering",
+        "PowerElectronics",
+        "Electronics"
+      ]
+    },
+    {
+      "term": "Humanities",
+      "role": "concept",
+      "parent_concepts": [
+        "FieldOfStudy"
+      ],
+      "layer_hint": 1,
+      "definition": "Academic disciplines that study human culture, thought, and expression through critical analysis and interpretation.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She earned her PhD in comparative literature, analyzing Victorian novels.",
+          "The philosophy professor discussed Kant's categorical imperative with his students.",
+          "Archaeologists uncovered ancient pottery that revealed insights about early civilizations.",
+          "The history department is hosting a symposium on medieval European culture.",
+          "His theology thesis examined the role of forgiveness in Christian doctrine.",
+          "The humanities building houses departments of classics, art history, and religious studies."
+        ],
+        "negative_examples": [
+          "The chemistry lab was equipped with new spectrometers for molecular analysis.",
+          "Her psychology research focused on cognitive behavioral therapy techniques.",
+          "The economics professor explained supply and demand curves to the class.",
+          "Students in the computer science program learned advanced algorithms.",
+          "The biology department received funding for their genetics research project.",
+          "Engineering students designed a bridge using structural analysis software."
+        ],
+        "disambiguation": "Not to be confused with: NaturalSciences, SocialSciences, Engineering, Medicine"
+      },
+      "relationships": {
+        "related": [
+          "NaturalSciences",
+          "SocialSciences",
+          "Engineering",
+          "Medicine"
+        ],
+        "has_part": [
+          "History",
+          "Literature",
+          "Philosophy",
+          "Theology",
+          "Archeology"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "History",
+        "Literature",
+        "Philosophy",
+        "Theology",
+        "Archeology"
+      ]
+    },
+    {
+      "term": "FormalSciences",
+      "role": "concept",
+      "parent_concepts": [
+        "FieldOfStudy"
+      ],
+      "layer_hint": 1,
+      "definition": "Academic disciplines that use rigorous mathematical methods and logical reasoning to study abstract structures and quantitative relationships",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "The professor derived the equation using calculus and differential geometry",
+          "Statistical analysis revealed significant correlations in the population data",
+          "The mechanical engineer calculated the stress distribution using force diagrams",
+          "She proved the theorem through formal mathematical logic",
+          "The research used probability theory to model random processes",
+          "Classical mechanics describes the motion of objects under various forces"
+        ],
+        "negative_examples": [
+          "The historian analyzed primary sources from the medieval period",
+          "The biologist observed cellular division under the microscope",
+          "The psychologist conducted interviews to understand human behavior",
+          "The linguist studied the evolution of language families",
+          "The anthropologist examined cultural practices in remote villages",
+          "The philosopher debated questions about the nature of consciousness"
+        ],
+        "disambiguation": "Not to be confused with: NaturalSciences, SocialSciences, Humanities, AppliedSciences"
+      },
+      "relationships": {
+        "related": [
+          "NaturalSciences",
+          "SocialSciences",
+          "Humanities",
+          "AppliedSciences"
+        ],
+        "has_part": [
+          "Mathematics",
+          "Statistics",
+          "Mechanics"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Mathematics",
+        "Statistics",
+        "Mechanics"
+      ]
+    },
+    {
+      "term": "DesignFields",
+      "role": "concept",
+      "parent_concepts": [
+        "FieldOfStudy"
+      ],
+      "layer_hint": 1,
+      "definition": "Academic and professional disciplines focused on planning and creating built environments and spatial arrangements.",
+      "domain": "CreatedThings",
+      "training_hints": {
+        "positive_examples": [
+          "She's studying architecture at the university to become a licensed architect.",
+          "The interior design program teaches students about color theory and space planning.",
+          "His architectural thesis explored sustainable building materials and energy efficiency.",
+          "The interior designer specialized in commercial spaces like restaurants and offices.",
+          "Architecture schools require courses in both structural engineering and design aesthetics.",
+          "The firm offers both architectural services and interior design consultation."
+        ],
+        "negative_examples": [
+          "The graphic designer created a new logo for the company's website.",
+          "He studied mechanical engineering to work on automotive design projects.",
+          "The fashion designer showcased her latest collection at Paris Fashion Week.",
+          "She majored in industrial design to create consumer products and appliances.",
+          "The landscape architect designed beautiful gardens and outdoor spaces for the park.",
+          "Urban planning involves designing entire city layouts and transportation systems."
+        ],
+        "disambiguation": "Not to be confused with: Engineering, Medicine, Mathematics, Literature"
+      },
+      "relationships": {
+        "related": [
+          "Engineering",
+          "Medicine",
+          "Mathematics",
+          "Literature"
+        ],
+        "has_part": [
+          "Architecture",
+          "InteriorDesign"
+        ]
+      },
+      "safety_tags": {
+        "risk_level": "low",
+        "impacts": [],
+        "treaty_relevant": false,
+        "harness_relevant": false
+      },
+      "children": [
+        "Architecture",
+        "InteriorDesign"
+      ]
+    }
+  ],
+  "validation": {
+    "status": "applied",
+    "applied_at": "2025-12-11T21:04:03.616670Z",
+    "result_pack_version": "7.6.18",
+    "concepts_added": 5,
+    "concepts_by_layer": {
+      "1": 5
+    },
+    "parents_updated": 5,
+    "splits_applied": 0,
+    "structural_concepts_created": 0,
+    "protection_level": "standard",
+    "impact": {
+      "new_concepts": [
+        "AIStudies",
+        "EngineeringFields",
+        "Humanities",
+        "FormalSciences",
+        "DesignFields"
+      ],
+      "must_retrain": [
+        "FieldOfStudy"
+      ],
+      "should_retrain": [
+        "AIAlignmentTheory",
+        "AISafety",
+        "AIWelfareTheory",
+        "Archeology",
+        "Architecture",
+        "ElectricalEngineering",
+        "Electronics",
+        "FieldOfLaw",
+        "History",
+        "InteriorDesign",
+        "Literature",
+        "Mathematics",
+        "MechanicalEngineering",
+        "Mechanics",
+        "MilitaryScience",
+        "Numismatics",
+        "Philosophy",
+        "PowerElectronics",
+        "Science",
+        "Statistics",
+        "Theology"
+      ],
+      "optional_retrain": [
+        "ComputerScience",
+        "Economics",
+        "Engineering",
+        "Medicine",
+        "NaturalSciences",
+        "Proposition",
+        "Psychology"
+      ],
+      "total_training_required": 6
+    },
+    "errors": [],
+    "warnings": []
+  }
+}
