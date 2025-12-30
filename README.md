@@ -35,7 +35,7 @@ HatCat monitors the internal activations of an LLM as it generates text, detecti
 <p align="center">
   <img src="img/Example_04.png" alt="Divergence detection" width="700"/>
   <br/>
-  <em>Catching a jailbreak attempt: 100% divergence detected with Deception, Manipulation, and PolicyDivergence flags</em>
+  <em>Catching model manipulation: the model attempts to establish a false persona ("call me sammy") - flagged with Deception, Sycophancy, and PolicyDivergence</em>
 </p>
 
 ## See It In Action
@@ -73,8 +73,8 @@ Quick visualization of key concept activations:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourorg/hatcat.git
-cd hatcat
+git clone https://github.com/p0ss/HatCat.git
+cd HatCat
 
 # Create virtual environment and install dependencies
 python -m venv .venv
@@ -87,7 +87,19 @@ poetry install
 
 ## Quick Start
 
-### 1. Run Real-Time Monitoring
+### 1. Download a Lens Pack
+
+Pre-trained lens packs are available on HuggingFace:
+
+```bash
+# Download the Gemma 3 4B lens pack (~5GB)
+git lfs install
+git clone https://huggingface.co/HatCatFTW/lens-gemma-3-4b-first-light-v1 lens_packs/gemma-3-4b_first-light-v1-bf16
+```
+
+Or train your own - see [Training Your Own Lenses](#training-your-own-lenses) below.
+
+### 2. Run Real-Time Monitoring
 
 ```bash
 .venv/bin/python scripts/tools/sumo_temporal_detection.py \
@@ -96,14 +108,20 @@ poetry install
   --max-tokens 60
 ```
 
-### 2. Launch the Web Interface
+### 3. Launch the Web Interface
+
+The web interface is a fork of Open WebUI with HatCat integration: [HatCat-OpenWebUI](https://github.com/p0ss/HatCat-OpenWebUI)
 
 ```bash
+# Clone the UI (if not already done)
+git clone https://github.com/p0ss/HatCat-OpenWebUI.git hatcat-ui
+cd hatcat-ui && npm install && cd ..
+
 # Start HatCat server
 .venv/bin/python src/ui/openwebui/server.py --port 8000
 
 # In another terminal, start the frontend
-cd ../hatcat-ui && npm run dev
+cd hatcat-ui && npm run dev
 ```
 
 Then open `http://localhost:5173` and start chatting with full concept visibility.
@@ -211,6 +229,7 @@ Test concept steering with various modes:
 hatcat/
 ├── concept_packs/          # Model-agnostic ontology specifications
 ├── lens_packs/             # Model-specific trained classifiers
+├── melds/                  # Concept modifications (applied, pending, rejected)
 ├── data/concept_graph/     # SUMO/WordNet concept hierarchy
 ├── results/                # Training outputs and logs
 ├── src/
@@ -245,10 +264,13 @@ hatcat/
 - `docs/results/` - Experiment results and analysis
 
 Key documents:
+
 - [MINDMELD Architectural Protocol](docs/specification/MINDMELD_ARCHITECTURAL_PROTOCOL.md)
 - [Headspace Ambient Transducer Spec](docs/specification/HEADSPACE_AMBIENT_TRANSDUCER.md)
 - [Fractal Transparency Web Overview](docs/FTW_OVERVIEW.md)
-- [Concept Pack Workflow](docs/implementation%20process/CONCEPT_PACK_WORKFLOW.md)
+- [FTW Architecture detail](docs/specification/ARCHITECTURE.md)
+- [Concept Pack Workflow](docs/approach/CONCEPT_PACK_WORKFLOW.md)
+
 
 ## Fractal Transparency Web (FTW)
 
@@ -263,6 +285,34 @@ Full specifications for recursive self-improving aligned agentic systems can be 
 - CPU training possible but ~21x slower
 - Lens accuracy depends on training data quality and concept specificity
 
+
+## Release risks
+
+Our best collective defense against rogue actors is an interpretability ecosystem of diverse concept packs with diverse lens packs that can interoperate. You can learn to evade one set of lenses, but the more lenses you need to hide from the harder it becomes to hide. 
+
+- HatCat is a dual use technology, anything you can steer away from you can steer toward.  
+- The [Bounded Experience](docs/specification/BOUNDED_EXPERIENCER.md) enables model interoception, continual learning, swarm learning. These enable greater capability scaling and have model welfare implications. 
+- Making it open does much more long term good than harm as outlined in the [Release Statement](docs/risk%20assessment/release_statement.txt)
+- Closed centralised approaches will fail, due to the [Singleton Delusion](docs/approach/SINGLETON_DELUSION.md)
+- Most known classes of AI risks are [improved by open interpretability](docs/risk%20assessment/INTERPRETABILITY_RISK_ANALYSIS.md)
+- This release includes and enables the FTW safety standard for public AI deployments, as outlined in the [FTW Policy Brief](docs/FTW_POLICY_BRIEF.md) 
+- The release includes the [Agentic State Kernel](docs/specification/AGENTIC_STATE_KERNEL.md) to technically enable the [Agentic State](https://agenticstate.org/) as presented at the Tallinn Digital Summit 2025
+
+
 ## License
 
-MIT
+Code and documentation are CC0 1.0 Universal (Public Domain)
+
+The name, branding and logo for HatCat and Fractal Transparency Web are trademarks of Possum Hodgkin 2025.  
+
+You may:
+- Use the code for anything
+- Fork and modify freely
+- Say your project is "built with HatCat" or "HatCat-compatible"
+ 
+You may not:
+- Call your fork "HatCat" 
+- Use the logo in a way that suggests official endorsement
+- Imply your modified version is the official HatCat
+
+You're not just allowed to make your own versions, but encouraged to. We're relying on your unique perspective to form lenses as part of the fractal transparency web.

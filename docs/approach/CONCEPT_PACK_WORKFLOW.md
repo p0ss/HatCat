@@ -4,7 +4,90 @@
 
 ---
 
-## Creating a New Concept Pack
+## Automated Generation (Recommended)
+
+The fastest way to create a complete concept pack is using the **University Builder** - an LLM-powered tool that generates entire concept hierarchies from a single subject prompt.
+
+### Quick Start: Generate a Full Concept Pack
+
+```bash
+# Generate a complete taxonomy for any subject (uses Claude API)
+python melds/helpers/university_builder.py \
+  --subject "Cybersecurity" \
+  --output melds/pending/cybersecurity_university.json
+
+# Convert to MAP meld format
+python melds/helpers/convert_generated_melds.py \
+  --input melds/pending/cybersecurity_university.json \
+  --output-dir melds/pending/cybersecurity/
+
+# Validate the generated melds
+python melds/helpers/validate_meld.py melds/pending/cybersecurity/*.json
+
+# Apply approved melds to concept pack
+python melds/helpers/apply_meld.py melds/approved/cybersecurity/*.json
+```
+
+### How University Builder Works
+
+The University Builder simulates an academic hierarchy to generate MECE (Mutually Exclusive, Collectively Exhaustive) concept taxonomies:
+
+| Level | Persona | Output |
+|-------|---------|--------|
+| L1→L2 | University Provost | 5-15 Schools (major divisions) |
+| L2→L3 | School Dean | 5-15 Courses per School |
+| L3→L4 | Professor | 5-15 Units per Course |
+| L4→L5 | Senior Lecturer | 5-15 Lessons per Unit |
+| L5→L6 | Teaching Assistant | 5-15 atomic Concepts per Lesson |
+
+Each level receives context about its siblings and adjacent domains to prevent overlap.
+
+### Alternative: Taxonomy Expander
+
+For expanding an existing seed tree:
+
+```bash
+# Start with a seed JSON file containing root concepts
+python melds/helpers/taxonomy_expander.py \
+  --input seed_tree.json \
+  --output full_taxonomy.json \
+  --max-depth 6
+```
+
+### Meld Pipeline
+
+Generated taxonomies go through a review pipeline:
+
+```
+melds/
+├── pending/      # Generated melds awaiting review
+├── approved/     # Validated and approved melds
+├── applied/      # Melds that have been applied to concept packs
+└── rejected/     # Melds that failed validation
+```
+
+**Validation checks:**
+- Protection levels (STANDARD → CRITICAL)
+- Mandatory hierarchy roots preserved
+- No policy violations
+- Parent concepts exist
+
+### Helper Scripts Reference
+
+| Script | Purpose |
+|--------|---------|
+| `university_builder.py` | Generate full taxonomy from subject prompt |
+| `taxonomy_expander.py` | Expand existing seed tree to target depth |
+| `convert_generated_melds.py` | Convert to MAP meld format |
+| `validate_meld.py` | Validate against MAP_MELD_PROTOCOL |
+| `apply_meld.py` | Apply approved melds to concept pack |
+| `meld_format.py` | Meld format utilities |
+
+---
+
+## Manual Creation
+
+For smaller additions or precise control, create concept packs manually:
 
 ### 1. Initialize Pack Structure
 
@@ -247,6 +330,9 @@ Before distribution:
 
 ## See Also
 
-- `docs/CONCEPT_PACK_FORMAT.md` - Full format specification
-- `docs/WORDNET_PATCH_SYSTEM.md` - WordNet patch schema
-- `concept_packs/ai-safety-v1/README.md` - Complete example
+- `docs/implementation/CONCEPT_PACK_FORMAT.md` - Full format specification
+- `docs/approach/WORDNET_PATCH_SYSTEM.md` - WordNet patch schema
+- `docs/specification/MAP/MAP_MELDING.md` - MAP Meld Protocol specification
+- `melds/helpers/` - Automated generation scripts
+- `melds/helpers/ontologist_prompt.txt` - Alternative "alien ontologist" prompt for comprehensive coverage
+- `concept_packs/first-light/` - Production concept pack example

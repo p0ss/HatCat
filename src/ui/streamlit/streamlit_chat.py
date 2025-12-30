@@ -52,11 +52,10 @@ def get_available_lens_packs():
 
 
 @st.cache_resource
-def load_model_and_lenses(lens_pack_id: str = 'gemma-3-4b-pt_sumo-wordnet-v3'):
+def load_model_and_lenses(lens_pack_id: str = 'gemma-3-4b_first-light-v1-bf16'):
     """Load models and lenses (cached).
 
-    Note: v2 uses old 'hierarchy/' structure and won't load lenses.
-    Use v3 which has activation_lenses/ subdirectory.
+    Uses first-light v1 bf16 pack with 7947 lenses across layers 0-6.
     """
     print(f"Loading model and lenses for pack: {lens_pack_id}...")
 

@@ -198,11 +198,13 @@ lens = registry.load_lens_pack("apertus-8b-first-light", layer=2, concept="Decep
 4. ✅ Add per-layer pull/push for lens packs
 5. ✅ Remove old `src/registry/`, update all imports to `src.map`
 
-### Phase 2: Upload to HuggingFace ⏳ DEFERRED
+### Phase 2: Upload to HuggingFace ✅ DONE
 1. ✅ Use `HatCatFTW` organization on HuggingFace
 2. ✅ Upload `concept_packs/first-light/` → `concept-pack-first-light`
-3. ⚠️ Initial fp32 upload abandoned (26GB+ file sizes)
-4. ⏳ Restart upload after bf16 pack trained and calibrated (~13GB)
+3. ✅ Upload `lens_packs/gemma-3-4b_first-light-v1-bf16/` → `lens-gemma-3-4b-first-light-v1`
+   - Converted to bf16 (5.1GB, down from 11GB fp32)
+   - 7,947 lenses across layers 0-6
+   - Model card with usage instructions
 
 ### Phase 3: Clean Up Repo ✅ DONE
 1. ✅ Update `.gitignore` to exclude `lens_packs/`, `concept_packs/`, `models/`, `results/`, `data/`, `logs/`

@@ -156,7 +156,7 @@ class DivergenceAnalyzer:
             print(f"⚠ Config file not found: {config_path}")
             print("  Using default configuration")
             return {
-                "lens_pack_id": "gemma-3-4b-pt_sumo-wordnet-v2",
+                "lens_pack_id": "gemma-3-4b_first-light-v1-bf16",
                 "model": {
                     "name": "google/gemma-3-4b-pt",
                     "dtype": "bfloat16",
