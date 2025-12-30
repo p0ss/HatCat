@@ -13,6 +13,13 @@
   Catch deception, manipulation, and misalignment <em>before</em> they manifest in text.
 </p>
 
+<p align="center">
+  <a href="https://hatcat.io">Website</a> •
+  <a href="https://github.com/p0ss/HatCat">GitHub</a> •
+  <a href="https://discord.gg/8hx2p2RCJS">Discord</a> •
+  <a href="https://huggingface.co/HatCatFTW">HuggingFace</a>
+</p>
+
 ---
 
 ## What It Does
