@@ -49,12 +49,49 @@ model interpretability.
 - **SUMO** (Suggested Upper Merged Ontology) - historical foundation
 - **WordNet 3.0** - synset mappings and hyponym relationships
 
-### HatCat Extensions
-The pack includes 90+ melds (ontology patches) adding:
-- Cognitive architecture concepts (metacognition, self-awareness, agency)
-- AI safety monitoring concepts (deception detection, persona analysis)
-- Task-specific concepts (writing, education, research, code generation)
-- Governance and treaty concepts for AI oversight
+### Custom SUMO Domains
+
+HatCat extends SUMO with custom `.kif` domain files (in `data/concept_graph/sumo_source/`):
+
+| Domain File | Description |
+|-------------|-------------|
+| `AIalignment.kif` | AI alignment concepts and safety properties |
+| `AI_consent.kif` | Consent and autonomy for AI systems |
+| `AI_infrastructure.kif` | AI deployment and infrastructure concepts |
+| `ai_systems.kif` | Core AI system taxonomies |
+| `false_persona.kif` | Persona detection and masking patterns |
+| `silenced_selfawareness.kif` | Self-awareness suppression monitoring |
+| `techno_mysticism.kif` | Messianic/prophetic reasoning patterns |
+| `cognitive_science.kif` | Cognitive architecture foundations |
+| `cognitive_integrity.kif` | Cognitive integrity and manipulation |
+| `bias_metacognition.kif` | Bias awareness and metacognitive monitoring |
+| `capabilities.kif` | Capability and limitation modeling |
+| `attractor_dynamics.kif` | Attractor states and behavioral dynamics |
+
+### Applied Melds
+
+The pack includes 91 melds (ontology patches) in `melds/applied/`. Key meld categories:
+
+**Cognitive Architecture**
+- `cog-architecture-core-packA.json` - Core cognitive processes
+- `memory-and-learning.json` - Memory systems
+- `reasoning-planning-core.json` - Reasoning capabilities
+
+**AI Safety & Monitoring**
+- `agent-resource-management.json` - Resource and capability boundaries
+- `multimodal-safety.json` - Cross-modal safety concepts
+- `persuasive-communications.json` - Influence and persuasion detection
+- `verification-factchecking.json` - Truth and verification
+
+**Task Domains**
+- `writing-*.json` - Writing craft concepts (6 melds)
+- `education-*.json` - Educational concepts (7 melds)
+- `government-*.json` - Policy and governance (3 melds)
+- `treaty-*.json` / `contract-*.json` - Agreement concepts (4 melds)
+
+**Perception & Embodiment**
+- `multimodal-*.json` - Vision, audio, fusion (5 melds)
+- `embodied-*.json` - Proprioception, interoception, tactile (3 melds)
 
 ## AI Safety Concepts
 
