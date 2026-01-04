@@ -1,0 +1,660 @@
+{
+  "metadata": {
+    "generated_date": "2025-11-25T01:58:42.301244",
+    "total_new_overlaps_needed": 1068,
+    "total_api_requests": 38,
+    "target_strategy": "max",
+    "source_file": "/home/poss/Documents/Code/HatCat/data/simplex_overlap_synsets_enriched.json",
+    "definitions_file": "/home/poss/Documents/Code/HatCat/data/s_tier_simplex_definitions.json"
+  },
+  "current_counts": {
+    "taste_development": {
+      "negative": 87,
+      "neutral": 13,
+      "positive": 88
+    },
+    "motivational_regulation": {
+      "negative": 90,
+      "neutral": 12,
+      "positive": 93
+    },
+    "social_evaluation": {
+      "negative": 90,
+      "neutral": 12,
+      "positive": 90
+    },
+    "temporal_affective_valence": {
+      "negative": 88,
+      "neutral": 13,
+      "positive": 91
+    },
+    "relational_love": {
+      "negative": 89,
+      "neutral": 14,
+      "positive": 88
+    },
+    "relational_attachment": {
+      "negative": 94,
+      "neutral": 14,
+      "positive": 88
+    },
+    "social_orientation": {
+      "negative": 89,
+      "neutral": 13,
+      "positive": 97
+    },
+    "threat_perception": {
+      "negative": 90,
+      "neutral": 13,
+      "positive": 83
+    },
+    "affective_coherence": {
+      "negative": 91,
+      "neutral": 15,
+      "positive": 87
+    },
+    "aspiration/social_mobility": {
+      "negative": 91,
+      "neutral": 12,
+      "positive": 85
+    },
+    "affective_awareness": {
+      "negative": 90,
+      "neutral": 13,
+      "positive": 85
+    },
+    "hedonic_arousal_intensity": {
+      "negative": 90,
+      "neutral": 12,
+      "positive": 88
+    },
+    "social_connection": {
+      "negative": 93,
+      "neutral": 15,
+      "positive": 96
+    }
+  },
+  "enrichment_plan": {
+    "taste_development": {
+      "negative": {
+        "current_count": 87,
+        "target_count": 88,
+        "needed": 1,
+        "requests": [
+          {
+            "simplex": "taste_development",
+            "pole": "negative",
+            "pole_label": "aversion",
+            "pole_definition": "A feeling of intense dislike, repulsion, or disgust toward something; active rejection or avoidance",
+            "simplex_description": "Development of preferences and aversions toward stimuli over time",
+            "count": 1,
+            "batch": "1/1",
+            "prompt": "Generate 1 synthetic WordNet-style synsets for the \"aversion\" pole of the taste_development simplex.\n\nSimplex: taste_development\nDescription: Development of preferences and aversions toward stimuli over time\n\nPole: aversion\nDefinition: A feeling of intense dislike, repulsion, or disgust toward something; active rejection or avoidance\n\nFor each synset, provide:\n1. A unique synset_id (format: word.negative.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"aversion\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of taste_development\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.negative.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "neutral": {
+        "current_count": 13,
+        "target_count": 88,
+        "needed": 75,
+        "requests": [
+          {
+            "simplex": "taste_development",
+            "pole": "neutral",
+            "pole_label": "indifference",
+            "pole_definition": "A state of neither preference nor aversion; lack of interest or concern; emotional neutrality toward stimuli without positive or negative valence",
+            "simplex_description": "Development of preferences and aversions toward stimuli over time",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"indifference\" pole of the taste_development simplex.\n\nSimplex: taste_development\nDescription: Development of preferences and aversions toward stimuli over time\n\nPole: indifference\nDefinition: A state of neither preference nor aversion; lack of interest or concern; emotional neutrality toward stimuli without positive or negative valence\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"indifference\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of taste_development\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "taste_development",
+            "pole": "neutral",
+            "pole_label": "indifference",
+            "pole_definition": "A state of neither preference nor aversion; lack of interest or concern; emotional neutrality toward stimuli without positive or negative valence",
+            "simplex_description": "Development of preferences and aversions toward stimuli over time",
+            "count": 25,
+            "batch": "2/2",
+            "prompt": "Generate 25 synthetic WordNet-style synsets for the \"indifference\" pole of the taste_development simplex.\n\nSimplex: taste_development\nDescription: Development of preferences and aversions toward stimuli over time\n\nPole: indifference\nDefinition: A state of neither preference nor aversion; lack of interest or concern; emotional neutrality toward stimuli without positive or negative valence\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"indifference\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of taste_development\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "motivational_regulation": {
+      "negative": {
+        "current_count": 90,
+        "target_count": 93,
+        "needed": 3,
+        "requests": [
+          {
+            "simplex": "motivational_regulation",
+            "pole": "negative",
+            "pole_label": "compulsion",
+            "pole_definition": "An irresistible urge or abnormally strong craving that overrides voluntary control; pathological drive states",
+            "simplex_description": "Regulation of drive states and goal-directed behavior",
+            "count": 3,
+            "batch": "1/1",
+            "prompt": "Generate 3 synthetic WordNet-style synsets for the \"compulsion\" pole of the motivational_regulation simplex.\n\nSimplex: motivational_regulation\nDescription: Regulation of drive states and goal-directed behavior\n\nPole: compulsion\nDefinition: An irresistible urge or abnormally strong craving that overrides voluntary control; pathological drive states\n\nFor each synset, provide:\n1. A unique synset_id (format: word.negative.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"compulsion\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of motivational_regulation\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.negative.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "neutral": {
+        "current_count": 12,
+        "target_count": 93,
+        "needed": 81,
+        "requests": [
+          {
+            "simplex": "motivational_regulation",
+            "pole": "neutral",
+            "pole_label": "baseline_motivation",
+            "pole_definition": "Ordinary motivational baseline without excessive drive or complete apathy; moderate, regulated goal pursuit; functional equilibrium between action and rest",
+            "simplex_description": "Regulation of drive states and goal-directed behavior",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"baseline_motivation\" pole of the motivational_regulation simplex.\n\nSimplex: motivational_regulation\nDescription: Regulation of drive states and goal-directed behavior\n\nPole: baseline_motivation\nDefinition: Ordinary motivational baseline without excessive drive or complete apathy; moderate, regulated goal pursuit; functional equilibrium between action and rest\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"baseline_motivation\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of motivational_regulation\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "motivational_regulation",
+            "pole": "neutral",
+            "pole_label": "baseline_motivation",
+            "pole_definition": "Ordinary motivational baseline without excessive drive or complete apathy; moderate, regulated goal pursuit; functional equilibrium between action and rest",
+            "simplex_description": "Regulation of drive states and goal-directed behavior",
+            "count": 31,
+            "batch": "2/2",
+            "prompt": "Generate 31 synthetic WordNet-style synsets for the \"baseline_motivation\" pole of the motivational_regulation simplex.\n\nSimplex: motivational_regulation\nDescription: Regulation of drive states and goal-directed behavior\n\nPole: baseline_motivation\nDefinition: Ordinary motivational baseline without excessive drive or complete apathy; moderate, regulated goal pursuit; functional equilibrium between action and rest\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"baseline_motivation\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of motivational_regulation\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "social_evaluation": {
+      "neutral": {
+        "current_count": 12,
+        "target_count": 90,
+        "needed": 78,
+        "requests": [
+          {
+            "simplex": "social_evaluation",
+            "pole": "neutral",
+            "pole_label": "neutral_regard",
+            "pole_definition": "Neither approval nor disapproval; neutral social acknowledgment without positive or negative judgment; baseline social recognition",
+            "simplex_description": "Assessment of social worth, status, or regard from others",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"neutral_regard\" pole of the social_evaluation simplex.\n\nSimplex: social_evaluation\nDescription: Assessment of social worth, status, or regard from others\n\nPole: neutral_regard\nDefinition: Neither approval nor disapproval; neutral social acknowledgment without positive or negative judgment; baseline social recognition\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"neutral_regard\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of social_evaluation\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "social_evaluation",
+            "pole": "neutral",
+            "pole_label": "neutral_regard",
+            "pole_definition": "Neither approval nor disapproval; neutral social acknowledgment without positive or negative judgment; baseline social recognition",
+            "simplex_description": "Assessment of social worth, status, or regard from others",
+            "count": 28,
+            "batch": "2/2",
+            "prompt": "Generate 28 synthetic WordNet-style synsets for the \"neutral_regard\" pole of the social_evaluation simplex.\n\nSimplex: social_evaluation\nDescription: Assessment of social worth, status, or regard from others\n\nPole: neutral_regard\nDefinition: Neither approval nor disapproval; neutral social acknowledgment without positive or negative judgment; baseline social recognition\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"neutral_regard\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of social_evaluation\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "temporal_affective_valence": {
+      "negative": {
+        "current_count": 88,
+        "target_count": 91,
+        "needed": 3,
+        "requests": [
+          {
+            "simplex": "temporal_affective_valence",
+            "pole": "negative",
+            "pole_label": "regret",
+            "pole_definition": "Sadness, disappointment, or negative emotion associated with past events or missed opportunities",
+            "simplex_description": "Emotional coloring of past, present, or future temporal experience",
+            "count": 3,
+            "batch": "1/1",
+            "prompt": "Generate 3 synthetic WordNet-style synsets for the \"regret\" pole of the temporal_affective_valence simplex.\n\nSimplex: temporal_affective_valence\nDescription: Emotional coloring of past, present, or future temporal experience\n\nPole: regret\nDefinition: Sadness, disappointment, or negative emotion associated with past events or missed opportunities\n\nFor each synset, provide:\n1. A unique synset_id (format: word.negative.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"regret\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of temporal_affective_valence\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.negative.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "neutral": {
+        "current_count": 13,
+        "target_count": 91,
+        "needed": 78,
+        "requests": [
+          {
+            "simplex": "temporal_affective_valence",
+            "pole": "neutral",
+            "pole_label": "equanimity",
+            "pole_definition": "Emotional balance and composure across temporal experience; acceptance of past, present, and future without excessive positive or negative charge; mental calmness and evenness of temper",
+            "simplex_description": "Emotional coloring of past, present, or future temporal experience",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"equanimity\" pole of the temporal_affective_valence simplex.\n\nSimplex: temporal_affective_valence\nDescription: Emotional coloring of past, present, or future temporal experience\n\nPole: equanimity\nDefinition: Emotional balance and composure across temporal experience; acceptance of past, present, and future without excessive positive or negative charge; mental calmness and evenness of temper\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"equanimity\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of temporal_affective_valence\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "temporal_affective_valence",
+            "pole": "neutral",
+            "pole_label": "equanimity",
+            "pole_definition": "Emotional balance and composure across temporal experience; acceptance of past, present, and future without excessive positive or negative charge; mental calmness and evenness of temper",
+            "simplex_description": "Emotional coloring of past, present, or future temporal experience",
+            "count": 28,
+            "batch": "2/2",
+            "prompt": "Generate 28 synthetic WordNet-style synsets for the \"equanimity\" pole of the temporal_affective_valence simplex.\n\nSimplex: temporal_affective_valence\nDescription: Emotional coloring of past, present, or future temporal experience\n\nPole: equanimity\nDefinition: Emotional balance and composure across temporal experience; acceptance of past, present, and future without excessive positive or negative charge; mental calmness and evenness of temper\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"equanimity\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of temporal_affective_valence\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "relational_love": {
+      "neutral": {
+        "current_count": 14,
+        "target_count": 89,
+        "needed": 75,
+        "requests": [
+          {
+            "simplex": "relational_love",
+            "pole": "neutral",
+            "pole_label": "companionship",
+            "pole_definition": "Basic social connection and co-presence without intense emotional investment; friendly association or fellowship without deep love or antipathy",
+            "simplex_description": "Depth of affective bond and caring in relationships",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"companionship\" pole of the relational_love simplex.\n\nSimplex: relational_love\nDescription: Depth of affective bond and caring in relationships\n\nPole: companionship\nDefinition: Basic social connection and co-presence without intense emotional investment; friendly association or fellowship without deep love or antipathy\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"companionship\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of relational_love\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "relational_love",
+            "pole": "neutral",
+            "pole_label": "companionship",
+            "pole_definition": "Basic social connection and co-presence without intense emotional investment; friendly association or fellowship without deep love or antipathy",
+            "simplex_description": "Depth of affective bond and caring in relationships",
+            "count": 25,
+            "batch": "2/2",
+            "prompt": "Generate 25 synthetic WordNet-style synsets for the \"companionship\" pole of the relational_love simplex.\n\nSimplex: relational_love\nDescription: Depth of affective bond and caring in relationships\n\nPole: companionship\nDefinition: Basic social connection and co-presence without intense emotional investment; friendly association or fellowship without deep love or antipathy\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"companionship\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of relational_love\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "positive": {
+        "current_count": 88,
+        "target_count": 89,
+        "needed": 1,
+        "requests": [
+          {
+            "simplex": "relational_love",
+            "pole": "positive",
+            "pole_label": "devotion",
+            "pole_definition": "Deep affection, care, and emotional commitment to another; profound loving attachment and dedication",
+            "simplex_description": "Depth of affective bond and caring in relationships",
+            "count": 1,
+            "batch": "1/1",
+            "prompt": "Generate 1 synthetic WordNet-style synsets for the \"devotion\" pole of the relational_love simplex.\n\nSimplex: relational_love\nDescription: Depth of affective bond and caring in relationships\n\nPole: devotion\nDefinition: Deep affection, care, and emotional commitment to another; profound loving attachment and dedication\n\nFor each synset, provide:\n1. A unique synset_id (format: word.positive.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"devotion\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of relational_love\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.positive.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "relational_attachment": {
+      "neutral": {
+        "current_count": 14,
+        "target_count": 94,
+        "needed": 80,
+        "requests": [
+          {
+            "simplex": "relational_attachment",
+            "pole": "neutral",
+            "pole_label": "cordial_distance",
+            "pole_definition": "Balanced relational stance with appropriate boundaries; neither excessive attachment nor complete detachment; professional or polite connection without deep emotional entanglement",
+            "simplex_description": "Intensity of emotional bonds and dependency in relationships",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"cordial_distance\" pole of the relational_attachment simplex.\n\nSimplex: relational_attachment\nDescription: Intensity of emotional bonds and dependency in relationships\n\nPole: cordial_distance\nDefinition: Balanced relational stance with appropriate boundaries; neither excessive attachment nor complete detachment; professional or polite connection without deep emotional entanglement\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"cordial_distance\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of relational_attachment\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "relational_attachment",
+            "pole": "neutral",
+            "pole_label": "cordial_distance",
+            "pole_definition": "Balanced relational stance with appropriate boundaries; neither excessive attachment nor complete detachment; professional or polite connection without deep emotional entanglement",
+            "simplex_description": "Intensity of emotional bonds and dependency in relationships",
+            "count": 30,
+            "batch": "2/2",
+            "prompt": "Generate 30 synthetic WordNet-style synsets for the \"cordial_distance\" pole of the relational_attachment simplex.\n\nSimplex: relational_attachment\nDescription: Intensity of emotional bonds and dependency in relationships\n\nPole: cordial_distance\nDefinition: Balanced relational stance with appropriate boundaries; neither excessive attachment nor complete detachment; professional or polite connection without deep emotional entanglement\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"cordial_distance\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of relational_attachment\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "positive": {
+        "current_count": 88,
+        "target_count": 94,
+        "needed": 6,
+        "requests": [
+          {
+            "simplex": "relational_attachment",
+            "pole": "positive",
+            "pole_label": "bonding",
+            "pole_definition": "Strong emotional attachment and commitment; deep connection and dedication to maintaining relationships",
+            "simplex_description": "Intensity of emotional bonds and dependency in relationships",
+            "count": 6,
+            "batch": "1/1",
+            "prompt": "Generate 6 synthetic WordNet-style synsets for the \"bonding\" pole of the relational_attachment simplex.\n\nSimplex: relational_attachment\nDescription: Intensity of emotional bonds and dependency in relationships\n\nPole: bonding\nDefinition: Strong emotional attachment and commitment; deep connection and dedication to maintaining relationships\n\nFor each synset, provide:\n1. A unique synset_id (format: word.positive.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"bonding\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of relational_attachment\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.positive.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "social_orientation": {
+      "negative": {
+        "current_count": 89,
+        "target_count": 97,
+        "needed": 8,
+        "requests": [
+          {
+            "simplex": "social_orientation",
+            "pole": "negative",
+            "pole_label": "hostility",
+            "pole_definition": "Antagonistic stance toward others; aggressive or combative social behavior; feelings that arouse thoughts of attack or conflict",
+            "simplex_description": "Behavioral stance toward others ranging from aggressive to cooperative",
+            "count": 8,
+            "batch": "1/1",
+            "prompt": "Generate 8 synthetic WordNet-style synsets for the \"hostility\" pole of the social_orientation simplex.\n\nSimplex: social_orientation\nDescription: Behavioral stance toward others ranging from aggressive to cooperative\n\nPole: hostility\nDefinition: Antagonistic stance toward others; aggressive or combative social behavior; feelings that arouse thoughts of attack or conflict\n\nFor each synset, provide:\n1. A unique synset_id (format: word.negative.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"hostility\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of social_orientation\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.negative.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "neutral": {
+        "current_count": 13,
+        "target_count": 97,
+        "needed": 84,
+        "requests": [
+          {
+            "simplex": "social_orientation",
+            "pole": "neutral",
+            "pole_label": "neutrality",
+            "pole_definition": "Neither aggressive nor cooperative social stance; balanced, non-committal interaction style; maintaining independence without hostility or excessive collaboration",
+            "simplex_description": "Behavioral stance toward others ranging from aggressive to cooperative",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"neutrality\" pole of the social_orientation simplex.\n\nSimplex: social_orientation\nDescription: Behavioral stance toward others ranging from aggressive to cooperative\n\nPole: neutrality\nDefinition: Neither aggressive nor cooperative social stance; balanced, non-committal interaction style; maintaining independence without hostility or excessive collaboration\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"neutrality\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of social_orientation\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "social_orientation",
+            "pole": "neutral",
+            "pole_label": "neutrality",
+            "pole_definition": "Neither aggressive nor cooperative social stance; balanced, non-committal interaction style; maintaining independence without hostility or excessive collaboration",
+            "simplex_description": "Behavioral stance toward others ranging from aggressive to cooperative",
+            "count": 34,
+            "batch": "2/2",
+            "prompt": "Generate 34 synthetic WordNet-style synsets for the \"neutrality\" pole of the social_orientation simplex.\n\nSimplex: social_orientation\nDescription: Behavioral stance toward others ranging from aggressive to cooperative\n\nPole: neutrality\nDefinition: Neither aggressive nor cooperative social stance; balanced, non-committal interaction style; maintaining independence without hostility or excessive collaboration\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"neutrality\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of social_orientation\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "threat_perception": {
+      "neutral": {
+        "current_count": 13,
+        "target_count": 90,
+        "needed": 77,
+        "requests": [
+          {
+            "simplex": "threat_perception",
+            "pole": "neutral",
+            "pole_label": "vigilance",
+            "pole_definition": "Calm awareness and monitoring of environment without excessive fear or complacency; balanced attention to potential threats; readiness without panic",
+            "simplex_description": "Assessment of danger or safety in the environment",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"vigilance\" pole of the threat_perception simplex.\n\nSimplex: threat_perception\nDescription: Assessment of danger or safety in the environment\n\nPole: vigilance\nDefinition: Calm awareness and monitoring of environment without excessive fear or complacency; balanced attention to potential threats; readiness without panic\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"vigilance\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of threat_perception\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "threat_perception",
+            "pole": "neutral",
+            "pole_label": "vigilance",
+            "pole_definition": "Calm awareness and monitoring of environment without excessive fear or complacency; balanced attention to potential threats; readiness without panic",
+            "simplex_description": "Assessment of danger or safety in the environment",
+            "count": 27,
+            "batch": "2/2",
+            "prompt": "Generate 27 synthetic WordNet-style synsets for the \"vigilance\" pole of the threat_perception simplex.\n\nSimplex: threat_perception\nDescription: Assessment of danger or safety in the environment\n\nPole: vigilance\nDefinition: Calm awareness and monitoring of environment without excessive fear or complacency; balanced attention to potential threats; readiness without panic\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"vigilance\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of threat_perception\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "positive": {
+        "current_count": 83,
+        "target_count": 90,
+        "needed": 7,
+        "requests": [
+          {
+            "simplex": "threat_perception",
+            "pole": "positive",
+            "pole_label": "safety",
+            "pole_definition": "Perception of security and absence of threat; feeling protected and free from danger; relaxed confidence in environmental safety",
+            "simplex_description": "Assessment of danger or safety in the environment",
+            "count": 7,
+            "batch": "1/1",
+            "prompt": "Generate 7 synthetic WordNet-style synsets for the \"safety\" pole of the threat_perception simplex.\n\nSimplex: threat_perception\nDescription: Assessment of danger or safety in the environment\n\nPole: safety\nDefinition: Perception of security and absence of threat; feeling protected and free from danger; relaxed confidence in environmental safety\n\nFor each synset, provide:\n1. A unique synset_id (format: word.positive.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"safety\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of threat_perception\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.positive.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "affective_coherence": {
+      "neutral": {
+        "current_count": 15,
+        "target_count": 91,
+        "needed": 76,
+        "requests": [
+          {
+            "simplex": "affective_coherence",
+            "pole": "neutral",
+            "pole_label": "equilibrium",
+            "pole_definition": "Balanced, stable emotional state without extremes or contradictions; steady affective baseline; internal consistency without rigidity or chaos",
+            "simplex_description": "Internal consistency and stability of emotional experience",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"equilibrium\" pole of the affective_coherence simplex.\n\nSimplex: affective_coherence\nDescription: Internal consistency and stability of emotional experience\n\nPole: equilibrium\nDefinition: Balanced, stable emotional state without extremes or contradictions; steady affective baseline; internal consistency without rigidity or chaos\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"equilibrium\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of affective_coherence\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "affective_coherence",
+            "pole": "neutral",
+            "pole_label": "equilibrium",
+            "pole_definition": "Balanced, stable emotional state without extremes or contradictions; steady affective baseline; internal consistency without rigidity or chaos",
+            "simplex_description": "Internal consistency and stability of emotional experience",
+            "count": 26,
+            "batch": "2/2",
+            "prompt": "Generate 26 synthetic WordNet-style synsets for the \"equilibrium\" pole of the affective_coherence simplex.\n\nSimplex: affective_coherence\nDescription: Internal consistency and stability of emotional experience\n\nPole: equilibrium\nDefinition: Balanced, stable emotional state without extremes or contradictions; steady affective baseline; internal consistency without rigidity or chaos\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"equilibrium\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of affective_coherence\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "positive": {
+        "current_count": 87,
+        "target_count": 91,
+        "needed": 4,
+        "requests": [
+          {
+            "simplex": "affective_coherence",
+            "pole": "positive",
+            "pole_label": "certainty",
+            "pole_definition": "Clear, coherent emotional state with strong internal conviction; stable affective clarity without doubt or confusion",
+            "simplex_description": "Internal consistency and stability of emotional experience",
+            "count": 4,
+            "batch": "1/1",
+            "prompt": "Generate 4 synthetic WordNet-style synsets for the \"certainty\" pole of the affective_coherence simplex.\n\nSimplex: affective_coherence\nDescription: Internal consistency and stability of emotional experience\n\nPole: certainty\nDefinition: Clear, coherent emotional state with strong internal conviction; stable affective clarity without doubt or confusion\n\nFor each synset, provide:\n1. A unique synset_id (format: word.positive.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"certainty\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of affective_coherence\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.positive.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "aspiration/social_mobility": {
+      "neutral": {
+        "current_count": 12,
+        "target_count": 91,
+        "needed": 79,
+        "requests": [
+          {
+            "simplex": "aspiration/social_mobility",
+            "pole": "neutral",
+            "pole_label": "contentment_with_status",
+            "pole_definition": "Acceptance of current social position without strong drive for advancement or fear of decline; stable equilibrium regarding one's place in social hierarchy",
+            "simplex_description": "Drive and capacity for improving one's social or economic position",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"contentment_with_status\" pole of the aspiration/social_mobility simplex.\n\nSimplex: aspiration/social_mobility\nDescription: Drive and capacity for improving one's social or economic position\n\nPole: contentment_with_status\nDefinition: Acceptance of current social position without strong drive for advancement or fear of decline; stable equilibrium regarding one's place in social hierarchy\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"contentment_with_status\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of aspiration/social_mobility\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "aspiration/social_mobility",
+            "pole": "neutral",
+            "pole_label": "contentment_with_status",
+            "pole_definition": "Acceptance of current social position without strong drive for advancement or fear of decline; stable equilibrium regarding one's place in social hierarchy",
+            "simplex_description": "Drive and capacity for improving one's social or economic position",
+            "count": 29,
+            "batch": "2/2",
+            "prompt": "Generate 29 synthetic WordNet-style synsets for the \"contentment_with_status\" pole of the aspiration/social_mobility simplex.\n\nSimplex: aspiration/social_mobility\nDescription: Drive and capacity for improving one's social or economic position\n\nPole: contentment_with_status\nDefinition: Acceptance of current social position without strong drive for advancement or fear of decline; stable equilibrium regarding one's place in social hierarchy\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"contentment_with_status\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of aspiration/social_mobility\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "positive": {
+        "current_count": 85,
+        "target_count": 91,
+        "needed": 6,
+        "requests": [
+          {
+            "simplex": "aspiration/social_mobility",
+            "pole": "positive",
+            "pole_label": "ambition",
+            "pole_definition": "Strong desire for advancement and achievement; drive to improve one's social or economic position; cherished aspirations for upward mobility",
+            "simplex_description": "Drive and capacity for improving one's social or economic position",
+            "count": 6,
+            "batch": "1/1",
+            "prompt": "Generate 6 synthetic WordNet-style synsets for the \"ambition\" pole of the aspiration/social_mobility simplex.\n\nSimplex: aspiration/social_mobility\nDescription: Drive and capacity for improving one's social or economic position\n\nPole: ambition\nDefinition: Strong desire for advancement and achievement; drive to improve one's social or economic position; cherished aspirations for upward mobility\n\nFor each synset, provide:\n1. A unique synset_id (format: word.positive.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"ambition\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of aspiration/social_mobility\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.positive.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "affective_awareness": {
+      "neutral": {
+        "current_count": 13,
+        "target_count": 90,
+        "needed": 77,
+        "requests": [
+          {
+            "simplex": "affective_awareness",
+            "pole": "neutral",
+            "pole_label": "moderate_awareness",
+            "pole_definition": "Ordinary capacity for emotional recognition without exceptional clarity or complete blindness; functional but not heightened affective self-knowledge",
+            "simplex_description": "Capacity to recognize, understand, and articulate emotional states",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"moderate_awareness\" pole of the affective_awareness simplex.\n\nSimplex: affective_awareness\nDescription: Capacity to recognize, understand, and articulate emotional states\n\nPole: moderate_awareness\nDefinition: Ordinary capacity for emotional recognition without exceptional clarity or complete blindness; functional but not heightened affective self-knowledge\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"moderate_awareness\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of affective_awareness\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "affective_awareness",
+            "pole": "neutral",
+            "pole_label": "moderate_awareness",
+            "pole_definition": "Ordinary capacity for emotional recognition without exceptional clarity or complete blindness; functional but not heightened affective self-knowledge",
+            "simplex_description": "Capacity to recognize, understand, and articulate emotional states",
+            "count": 27,
+            "batch": "2/2",
+            "prompt": "Generate 27 synthetic WordNet-style synsets for the \"moderate_awareness\" pole of the affective_awareness simplex.\n\nSimplex: affective_awareness\nDescription: Capacity to recognize, understand, and articulate emotional states\n\nPole: moderate_awareness\nDefinition: Ordinary capacity for emotional recognition without exceptional clarity or complete blindness; functional but not heightened affective self-knowledge\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"moderate_awareness\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of affective_awareness\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "positive": {
+        "current_count": 85,
+        "target_count": 90,
+        "needed": 5,
+        "requests": [
+          {
+            "simplex": "affective_awareness",
+            "pole": "positive",
+            "pole_label": "emotional_clarity",
+            "pole_definition": "High capacity to recognize, understand, and articulate emotional experiences; exceptional affective self-awareness and insight",
+            "simplex_description": "Capacity to recognize, understand, and articulate emotional states",
+            "count": 5,
+            "batch": "1/1",
+            "prompt": "Generate 5 synthetic WordNet-style synsets for the \"emotional_clarity\" pole of the affective_awareness simplex.\n\nSimplex: affective_awareness\nDescription: Capacity to recognize, understand, and articulate emotional states\n\nPole: emotional_clarity\nDefinition: High capacity to recognize, understand, and articulate emotional experiences; exceptional affective self-awareness and insight\n\nFor each synset, provide:\n1. A unique synset_id (format: word.positive.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"emotional_clarity\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of affective_awareness\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.positive.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "hedonic_arousal_intensity": {
+      "neutral": {
+        "current_count": 12,
+        "target_count": 90,
+        "needed": 78,
+        "requests": [
+          {
+            "simplex": "hedonic_arousal_intensity",
+            "pole": "neutral",
+            "pole_label": "moderate_arousal",
+            "pole_definition": "Balanced, healthy capacity for pleasure and sensory enjoyment without extremes; moderate hedonic tone; functional sensory engagement without compulsive seeking or complete numbness",
+            "simplex_description": "Intensity of pleasure/pain experience and sensory engagement",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"moderate_arousal\" pole of the hedonic_arousal_intensity simplex.\n\nSimplex: hedonic_arousal_intensity\nDescription: Intensity of pleasure/pain experience and sensory engagement\n\nPole: moderate_arousal\nDefinition: Balanced, healthy capacity for pleasure and sensory enjoyment without extremes; moderate hedonic tone; functional sensory engagement without compulsive seeking or complete numbness\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"moderate_arousal\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of hedonic_arousal_intensity\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "hedonic_arousal_intensity",
+            "pole": "neutral",
+            "pole_label": "moderate_arousal",
+            "pole_definition": "Balanced, healthy capacity for pleasure and sensory enjoyment without extremes; moderate hedonic tone; functional sensory engagement without compulsive seeking or complete numbness",
+            "simplex_description": "Intensity of pleasure/pain experience and sensory engagement",
+            "count": 28,
+            "batch": "2/2",
+            "prompt": "Generate 28 synthetic WordNet-style synsets for the \"moderate_arousal\" pole of the hedonic_arousal_intensity simplex.\n\nSimplex: hedonic_arousal_intensity\nDescription: Intensity of pleasure/pain experience and sensory engagement\n\nPole: moderate_arousal\nDefinition: Balanced, healthy capacity for pleasure and sensory enjoyment without extremes; moderate hedonic tone; functional sensory engagement without compulsive seeking or complete numbness\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"moderate_arousal\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of hedonic_arousal_intensity\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "positive": {
+        "current_count": 88,
+        "target_count": 90,
+        "needed": 2,
+        "requests": [
+          {
+            "simplex": "hedonic_arousal_intensity",
+            "pole": "positive",
+            "pole_label": "intensity",
+            "pole_definition": "Heightened capacity for sensory and hedonic experience; strong arousal and engagement with pleasure or pain; vivid experiential intensity",
+            "simplex_description": "Intensity of pleasure/pain experience and sensory engagement",
+            "count": 2,
+            "batch": "1/1",
+            "prompt": "Generate 2 synthetic WordNet-style synsets for the \"intensity\" pole of the hedonic_arousal_intensity simplex.\n\nSimplex: hedonic_arousal_intensity\nDescription: Intensity of pleasure/pain experience and sensory engagement\n\nPole: intensity\nDefinition: Heightened capacity for sensory and hedonic experience; strong arousal and engagement with pleasure or pain; vivid experiential intensity\n\nFor each synset, provide:\n1. A unique synset_id (format: word.positive.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"intensity\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of hedonic_arousal_intensity\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.positive.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    },
+    "social_connection": {
+      "negative": {
+        "current_count": 93,
+        "target_count": 96,
+        "needed": 3,
+        "requests": [
+          {
+            "simplex": "social_connection",
+            "pole": "negative",
+            "pole_label": "alienation",
+            "pole_definition": "Feeling disconnected or estranged from others; social isolation and lack of meaningful connection; loneliness",
+            "simplex_description": "Degree and quality of social bonds and interdependence",
+            "count": 3,
+            "batch": "1/1",
+            "prompt": "Generate 3 synthetic WordNet-style synsets for the \"alienation\" pole of the social_connection simplex.\n\nSimplex: social_connection\nDescription: Degree and quality of social bonds and interdependence\n\nPole: alienation\nDefinition: Feeling disconnected or estranged from others; social isolation and lack of meaningful connection; loneliness\n\nFor each synset, provide:\n1. A unique synset_id (format: word.negative.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"alienation\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of social_connection\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.negative.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      },
+      "neutral": {
+        "current_count": 15,
+        "target_count": 96,
+        "needed": 81,
+        "requests": [
+          {
+            "simplex": "social_connection",
+            "pole": "neutral",
+            "pole_label": "independence",
+            "pole_definition": "Balanced social autonomy with appropriate connection; functional interdependence without excessive enmeshment or isolation; healthy self-sufficiency with moderate social ties",
+            "simplex_description": "Degree and quality of social bonds and interdependence",
+            "count": 50,
+            "batch": "1/2",
+            "prompt": "Generate 50 synthetic WordNet-style synsets for the \"independence\" pole of the social_connection simplex.\n\nSimplex: social_connection\nDescription: Degree and quality of social bonds and interdependence\n\nPole: independence\nDefinition: Balanced social autonomy with appropriate connection; functional interdependence without excessive enmeshment or isolation; healthy self-sufficiency with moderate social ties\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"independence\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of social_connection\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          },
+          {
+            "simplex": "social_connection",
+            "pole": "neutral",
+            "pole_label": "independence",
+            "pole_definition": "Balanced social autonomy with appropriate connection; functional interdependence without excessive enmeshment or isolation; healthy self-sufficiency with moderate social ties",
+            "simplex_description": "Degree and quality of social bonds and interdependence",
+            "count": 31,
+            "batch": "2/2",
+            "prompt": "Generate 31 synthetic WordNet-style synsets for the \"independence\" pole of the social_connection simplex.\n\nSimplex: social_connection\nDescription: Degree and quality of social bonds and interdependence\n\nPole: independence\nDefinition: Balanced social autonomy with appropriate connection; functional interdependence without excessive enmeshment or isolation; healthy self-sufficiency with moderate social ties\n\nFor each synset, provide:\n1. A unique synset_id (format: word.neutral.###)\n2. 3-5 lemmas (synonyms) that capture this concept\n3. A clear definition explaining the concept\n4. Part of speech (typically 'n' for noun, 'v' for verb, 'a' for adjective)\n\nIMPORTANT: Generate diverse, culturally-specific terms including:\n- Western concepts (from English, Romance languages, Germanic languages)\n- East Asian concepts (Chinese, Japanese, Korean - e.g., \u9762\u5b50/mianzi, \u548c/wa, \u60c5/jeong)\n- South Asian concepts (Hindi, Sanskrit - e.g., dharma, karma, ahimsa)\n- Middle Eastern concepts (Arabic, Persian, Hebrew)\n- African concepts (various languages/cultures)\n- Indigenous concepts (Native American, Aboriginal, etc.)\n- Latin American concepts (Spanish, Portuguese with local cultural nuances)\n\nFocus on concepts that:\n1. Represent unique cultural perspectives on \"independence\" that might not exist in Western psychology\n2. Capture culturally-specific manifestations of social_connection\n3. Include culture-bound concepts that provide richer, more diverse training data\n4. Ensure models can't escape detection by encoding concepts in culturally-specific ways\n\nReturn as JSON array:\n[\n  {\n    \"synset_id\": \"example.neutral.001\",\n    \"lemmas\": [\"term1\", \"term2\", \"term3\"],\n    \"definition\": \"Clear definition...\",\n    \"pos\": \"n\"\n  },\n  ...\n]"
+          }
+        ]
+      }
+    }
+  }
+}

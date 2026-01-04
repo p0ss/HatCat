@@ -1,0 +1,1631 @@
+{
+  "version": "v5",
+  "created": "2024-12-11",
+  "description": "Hand-written meld descriptions for hierarchy v5 restructuring",
+  "melds": {
+    "layer_0": {
+      "Buildings": {
+        "definition": "Permanent enclosed structures designed for human habitation, work, worship, entertainment, or specialized functions. Buildings are stationary artifacts with walls, roofs, and internal spaces that provide shelter and enable specific activities.",
+        "parent": "StationaryArtifact",
+        "children": ["Building", "Casino", "DanceHall", "Factory", "IndustrialPlant", "Laboratory", "MilitaryInstallation", "Mine", "Prison", "RecordingStudio", "Residence", "WMDWeaponsProductionFacility", "WMDWeaponsResearchFacility", "Workshop"],
+        "examples": [
+          "The hospital building stood at the corner of Main and Fifth Street.",
+          "Workers renovated the old factory building into modern loft apartments.",
+          "The research laboratory building requires special ventilation systems.",
+          "Prison buildings are designed with multiple security perimeters."
+        ],
+        "contrast_concepts": ["Bridge", "Monument", "Tent", "Vehicle", "Ship"]
+      },
+      "SocialLife": {
+        "definition": "The domain of human activities involving interpersonal relationships, group dynamics, cultural practices, leisure, work, and spiritual engagement. Social life encompasses how individuals interact, cooperate, celebrate, worship, and organize themselves within communities.",
+        "parent": "LivingThings",
+        "children": ["SocialInteraction", "Work", "RecreationOrExercise", "SpiritualPractice"],
+        "examples": [
+          "Her social life revolved around the local church community.",
+          "Balancing work and social life is a common modern challenge.",
+          "The village's social life centered on weekly market gatherings.",
+          "Team sports provide both exercise and social life benefits."
+        ],
+        "contrast_concepts": ["PhysicalProcess", "BiologicalProcess", "ChemicalReaction", "Weather"]
+      },
+      "NaturalGeography": {
+        "definition": "Geographic features formed by natural processes without human construction, including landforms, water bodies, ecosystems, and climate zones. Natural geography encompasses the physical terrain and hydrological features that shape Earth's surface.",
+        "parent": "GeographicArea",
+        "children": ["LandForm", "LandArea", "WaterArea", "Ecosystem", "Hemisphere", "LakeRegion", "ArchipelagicArea", "LittoralZone", "WaterOnlyArea"],
+        "examples": [
+          "The Himalayas represent dramatic natural geography shaped by tectonic forces.",
+          "The Amazon basin's natural geography includes rainforest, rivers, and wetlands.",
+          "Coastal natural geography features beaches, estuaries, and tide pools.",
+          "Desert natural geography is characterized by dunes, mesas, and dry riverbeds."
+        ],
+        "contrast_concepts": ["City", "Highway", "Dam", "Building", "Farm"]
+      }
+    },
+    "layer_1": {
+      "Tools": {
+        "definition": "Handheld devices or implements designed to accomplish specific manual tasks through direct human manipulation. Tools extend human physical capabilities for writing, measuring, cutting, gripping, or precision work.",
+        "parent": "Device",
+        "children": ["WritingDevice", "Compass"],
+        "examples": [
+          "The carpenter's tools included hammers, saws, and measuring tapes.",
+          "Writing tools have evolved from quills to ballpoint pens.",
+          "Navigation tools like compasses helped explorers chart unknown territories.",
+          "Precision tools require careful calibration for accurate results."
+        ],
+        "contrast_concepts": ["Machine", "Appliance", "Vehicle", "Weapon"]
+      },
+      "CircuitComponents": {
+        "definition": "Electronic parts that form the building blocks of electrical circuits, including capacitors, inductors, resistors, switches, and interconnections. These components control, store, or modify electrical current and voltage.",
+        "parent": "Electronics",
+        "children": ["CapacitorElement", "ElectricalCircuit", "ElectricalComponent", "InductorElement", "Solenoid", "TransferSwitch"],
+        "examples": [
+          "The circuit board contained dozens of tiny circuit components.",
+          "Capacitors are circuit components that store electrical charge.",
+          "The technician replaced several faulty circuit components.",
+          "Modern circuit components have shrunk to microscopic scales."
+        ],
+        "contrast_concepts": ["Software", "Battery", "Motor", "Display"]
+      },
+      "CommunicationElectronics": {
+        "definition": "Electronic devices designed to transmit, receive, or process signals for communication purposes, including telephones, radios, radar systems, and network access points.",
+        "parent": "Electronics",
+        "children": ["CommunicationDevice", "TelephonyDevice", "InternetAccessPoint", "ReceiverDevice", "Radar", "Telegraph"],
+        "examples": [
+          "Communication electronics enable instant global connectivity.",
+          "The ship's communication electronics include radar and radio systems.",
+          "Military communication electronics must resist jamming.",
+          "Modern communication electronics fit in your pocket."
+        ],
+        "contrast_concepts": ["ComputingDevice", "PowerSupply", "Sensor", "Motor"]
+      },
+      "AudioVideoElectronics": {
+        "definition": "Electronic devices for capturing, processing, displaying, or reproducing sound and visual content, including microphones, cameras, displays, and speakers.",
+        "parent": "Electronics",
+        "children": ["Microphone", "VideoCamera", "VideoDisplay", "Transducer"],
+        "examples": [
+          "The studio's audio video electronics include professional microphones and monitors.",
+          "Consumer audio video electronics have improved dramatically in quality.",
+          "The conference room's audio video electronics enabled remote participation.",
+          "Security systems rely on audio video electronics for monitoring."
+        ],
+        "contrast_concepts": ["ComputerChip", "Battery", "NetworkCable", "Antenna"]
+      },
+      "ComputingElectronics": {
+        "definition": "Electronic devices that store, process, or input digital data, including storage drives, keyboards, and related computer peripherals.",
+        "parent": "Electronics",
+        "children": ["DataStorageDevice", "Keyboard", "Photocopier"],
+        "examples": [
+          "The data center houses rows of computing electronics.",
+          "Solid-state computing electronics have replaced mechanical drives.",
+          "Office computing electronics include printers and scanners.",
+          "Portable computing electronics have become essential tools."
+        ],
+        "contrast_concepts": ["AudioEquipment", "PowerSupply", "NetworkRouter", "Display"]
+      },
+      "ControlElectronics": {
+        "definition": "Electronic devices that regulate, switch, or manage electrical power distribution and device operation, including controllers, outlets, and adapters.",
+        "parent": "Electronics",
+        "children": ["Controller", "ElectricalOutlet", "OutletAdapter"],
+        "examples": [
+          "Smart home control electronics manage lighting and temperature.",
+          "Industrial control electronics monitor and adjust manufacturing processes.",
+          "The control electronics ensure safe power distribution.",
+          "Programmable control electronics enable automation."
+        ],
+        "contrast_concepts": ["Sensor", "Display", "Speaker", "Camera"]
+      },
+      "LightingElectronics": {
+        "definition": "Electronic devices that produce, control, or enhance light output, including decorative lights, lasers, and specialized illumination systems.",
+        "parent": "Electronics",
+        "children": ["DecorativeLightString", "KnockLight", "Laser"],
+        "examples": [
+          "Holiday lighting electronics decorate homes each season.",
+          "Stage lighting electronics create dramatic visual effects.",
+          "Laser lighting electronics require careful safety measures.",
+          "LED lighting electronics are highly energy efficient."
+        ],
+        "contrast_concepts": ["Candle", "Window", "Reflector", "FireSource"]
+      },
+      "CookingAppliances": {
+        "definition": "Kitchen appliances designed specifically for cooking food through heat application, including fryers, grills, pressure cookers, and rotisseries.",
+        "parent": "KitchenAppliances",
+        "children": ["DeepFryer", "Grill", "PressureCooker", "SlowCooker", "RotisserieAppliance"],
+        "examples": [
+          "The cooking appliances in the commercial kitchen run continuously.",
+          "Modern cooking appliances include digital temperature controls.",
+          "Outdoor cooking appliances are popular for backyard entertaining.",
+          "Energy-efficient cooking appliances reduce utility bills."
+        ],
+        "contrast_concepts": ["Refrigerator", "Dishwasher", "FoodProcessor", "Blender"]
+      },
+      "SpecialtyMakers": {
+        "definition": "Kitchen appliances designed to prepare specific food items, such as bread machines, ice cream makers, pasta makers, and popcorn poppers.",
+        "parent": "KitchenAppliances",
+        "children": ["BreadMachine", "IceCreamMaker", "PastaMaker", "PopcornMaker", "RiceCooker", "SandwichMaker"],
+        "examples": [
+          "Specialty makers let home cooks create artisan foods easily.",
+          "The bread maker produces fresh loaves overnight.",
+          "Ice cream makers are popular summer specialty appliances.",
+          "Rice cookers are essential specialty makers in Asian kitchens."
+        ],
+        "contrast_concepts": ["Oven", "Stove", "Microwave", "Blender"]
+      },
+      "KitchenAppliances": {
+        "definition": "Electrical or mechanical devices used in kitchens for food preparation, cooking, and related culinary tasks.",
+        "parent": "Appliances",
+        "children": ["CookingAppliances", "SpecialtyMakers", "FoodPrepAppliances", "BeverageAppliances"],
+        "examples": [
+          "Modern kitchen appliances save hours of meal preparation time.",
+          "The restaurant kitchen is filled with commercial-grade appliances.",
+          "Energy Star kitchen appliances reduce electricity consumption.",
+          "Compact kitchen appliances suit small apartment living."
+        ],
+        "contrast_concepts": ["LaundryMachine", "VacuumCleaner", "AirConditioner", "Television"]
+      },
+      "CleaningAppliances": {
+        "definition": "Appliances designed for cleaning, washing, drying, and maintaining cleanliness of clothes, dishes, surfaces, or air.",
+        "parent": "Appliances",
+        "children": ["CleaningDevice", "WashingDevice", "LaundryAppliance", "DryingDevice", "IroningBoard", "Filter"],
+        "examples": [
+          "Household cleaning appliances include vacuums and steam mops.",
+          "Commercial cleaning appliances handle heavy-duty tasks.",
+          "Robotic cleaning appliances navigate homes autonomously.",
+          "Industrial cleaning appliances sanitize large facilities."
+        ],
+        "contrast_concepts": ["CookingAppliance", "Entertainment", "HeatingDevice", "LightingFixture"]
+      },
+      "ClimateAppliances": {
+        "definition": "Appliances that control temperature, humidity, or air quality in indoor spaces, including air conditioners, heaters, and ventilation systems.",
+        "parent": "Appliances",
+        "children": ["AirConditioner", "CoolingDevice", "HeatingDevice", "HeatingAppliance", "Aerator"],
+        "examples": [
+          "Climate appliances maintain comfortable indoor temperatures.",
+          "Smart climate appliances adjust based on occupancy patterns.",
+          "Energy-efficient climate appliances reduce carbon footprints.",
+          "Portable climate appliances provide spot heating or cooling."
+        ],
+        "contrast_concepts": ["KitchenAppliance", "CleaningDevice", "Entertainment", "Lighting"]
+      },
+      "UtilityAppliances": {
+        "definition": "Appliances that provide essential household utilities and services, including water heaters, toilets, sprinkler systems, and major infrastructure appliances.",
+        "parent": "Appliances",
+        "children": ["HouseUtilityAppliance", "MajorAppliance", "Toilet", "Sprinkler", "RangeHood", "SensorAppliance"],
+        "examples": [
+          "Utility appliances are essential for modern living standards.",
+          "The plumber installed new utility appliances throughout the house.",
+          "Smart utility appliances can detect leaks and malfunctions.",
+          "Commercial buildings require industrial-grade utility appliances."
+        ],
+        "contrast_concepts": ["Entertainment", "KitchenAppliance", "CleaningDevice", "Furniture"]
+      },
+      "OfficeAppliances": {
+        "definition": "Appliances used in home offices and workspaces for communication, document production, and professional tasks.",
+        "parent": "Appliances",
+        "children": ["HomeOfficeAppliance", "CommunicationAppliance", "SewingMachine"],
+        "examples": [
+          "Remote workers rely on home office appliances daily.",
+          "The office appliances include printers, scanners, and shredders.",
+          "Modern office appliances connect to wireless networks.",
+          "Compact office appliances fit in small workspaces."
+        ],
+        "contrast_concepts": ["KitchenAppliance", "LaundryMachine", "GardenEquipment", "ExerciseEquipment"]
+      },
+      "EntertainmentAppliances": {
+        "definition": "Appliances designed for leisure, entertainment, and aesthetic purposes, including televisions, decorative lighting, and home entertainment systems.",
+        "parent": "Appliances",
+        "children": ["TelevisionSet", "LightingAppliance", "DecorativeAppliance"],
+        "examples": [
+          "Entertainment appliances are the centerpiece of living rooms.",
+          "Streaming services have transformed entertainment appliance usage.",
+          "Smart entertainment appliances integrate with voice assistants.",
+          "High-end entertainment appliances deliver immersive experiences."
+        ],
+        "contrast_concepts": ["WorkTool", "KitchenAppliance", "CleaningDevice", "UtilityAppliance"]
+      },
+      "Appliances": {
+        "definition": "Electrical or mechanical devices designed for specific household, commercial, or industrial tasks, typically larger than hand tools and requiring power sources.",
+        "parent": "Device",
+        "children": ["KitchenAppliances", "CleaningAppliances", "ClimateAppliances", "UtilityAppliances", "PersonalAppliances", "OfficeAppliances", "EntertainmentAppliances"],
+        "examples": [
+          "Modern appliances have transformed domestic life.",
+          "Energy-efficient appliances reduce household utility costs.",
+          "Smart appliances can be controlled remotely via smartphone.",
+          "Commercial appliances are built for heavy continuous use."
+        ],
+        "contrast_concepts": ["HandTool", "Furniture", "Vehicle", "Building"]
+      },
+      "BrakeSystem": {
+        "definition": "Vehicle components that work together to slow or stop motion, including brake pads, calipers, drums, rotors, and pedal mechanisms.",
+        "parent": "VehicleTech",
+        "children": ["Brake", "BrakeCaliper", "BrakeDrum", "BrakePedal", "BrakeRotor"],
+        "examples": [
+          "The mechanic inspected the entire brake system.",
+          "Anti-lock brake systems prevent wheel lockup during stops.",
+          "Heavy trucks require robust brake system components.",
+          "Brake system maintenance is critical for vehicle safety."
+        ],
+        "contrast_concepts": ["Engine", "Transmission", "Steering", "Suspension"]
+      },
+      "Drivetrain": {
+        "definition": "Vehicle components that transmit power from the engine to the wheels, including axles, transmissions, driveshafts, and clutches.",
+        "parent": "VehicleTech",
+        "children": ["Axle", "BallBearing", "Clutch", "Drivebelt"],
+        "examples": [
+          "The drivetrain converts engine power into wheel rotation.",
+          "All-wheel drivetrain systems improve traction in poor conditions.",
+          "Drivetrain efficiency affects fuel economy significantly.",
+          "Electric vehicle drivetrains are simpler than combustion ones."
+        ],
+        "contrast_concepts": ["BrakeSystem", "Steering", "BodyPanel", "ElectricalSystem"]
+      },
+      "EngineComponents": {
+        "definition": "Parts within an internal combustion engine that enable fuel combustion, power generation, and engine operation, including cylinders, pistons, valves, and fuel systems.",
+        "parent": "VehicleTech",
+        "children": ["Cam", "CombustionChamber", "Distributor", "EngineChoke", "EngineConnectingRod", "ExhaustManifold", "FuelAtomizer", "RockerArm", "SpeedGovernor"],
+        "examples": [
+          "Engine components must withstand extreme temperatures.",
+          "Precision engine components are machined to tight tolerances.",
+          "Worn engine components reduce performance and efficiency.",
+          "High-performance engine components enable greater horsepower."
+        ],
+        "contrast_concepts": ["BrakeSystem", "Wheel", "BodyPanel", "Seat"]
+      },
+      "VehicleMisc": {
+        "definition": "Various vehicle parts and accessories that support vehicle operation but don't fit into major system categories, including mufflers, gaskets, cables, and pedals.",
+        "parent": "VehicleTech",
+        "children": ["AutomobileMuffler", "GasPedal", "Gasket", "GreaseFitting", "JumperCable"],
+        "examples": [
+          "The auto parts store stocks thousands of miscellaneous vehicle parts.",
+          "Routine maintenance requires replacing various vehicle components.",
+          "Aftermarket vehicle parts offer customization options.",
+          "Emergency vehicle supplies include jumper cables and tools."
+        ],
+        "contrast_concepts": ["Engine", "Transmission", "BrakeSystem", "Steering"]
+      },
+      "WheelAndTire": {
+        "definition": "Vehicle components related to wheels, tires, and their supporting systems, including rims, tire chains, and wheel-changing equipment.",
+        "parent": "VehicleTech",
+        "children": ["TireChain", "TireChanger", "WearingFrictionSurface", "WheelChock", "WheelRim"],
+        "examples": [
+          "Winter driving requires proper wheel and tire preparation.",
+          "The tire shop specializes in wheel and tire services.",
+          "Performance wheel and tire combinations improve handling.",
+          "Wheel and tire maintenance extends component lifespan."
+        ],
+        "contrast_concepts": ["Engine", "Transmission", "BrakeSystem", "Interior"]
+      },
+      "VehicleTech": {
+        "definition": "Technology and components used in vehicles for propulsion, control, safety, and operation, encompassing mechanical, electrical, and electronic systems.",
+        "parent": "Device",
+        "children": ["BrakeSystem", "Drivetrain", "EngineComponents", "VehicleMisc", "WheelAndTire"],
+        "examples": [
+          "Vehicle technology advances rapidly with electrification.",
+          "Modern vehicle technology includes numerous safety systems.",
+          "Autonomous vehicle technology requires sophisticated sensors.",
+          "Vehicle technology training is essential for mechanics."
+        ],
+        "contrast_concepts": ["BuildingTechnology", "MedicalEquipment", "ComputerHardware", "AerospaceEquipment"]
+      },
+      "Safety": {
+        "definition": "Devices designed to protect people, property, or systems from harm, including barriers, alarms, fire suppression, and security equipment.",
+        "parent": "Device",
+        "children": ["Barricade", "FireAlarm", "FireExtinguisher", "SafetyDevice", "SecurityDevice"],
+        "examples": [
+          "Workplace safety equipment prevents industrial accidents.",
+          "Home safety devices include smoke detectors and fire extinguishers.",
+          "Construction sites require extensive safety equipment.",
+          "Laboratory safety equipment protects researchers from hazards."
+        ],
+        "contrast_concepts": ["Weapon", "Tool", "Toy", "Decoration"]
+      },
+      "Medical": {
+        "definition": "Devices used in healthcare for diagnosis, treatment, monitoring, or patient care, including needles, monitors, and therapeutic equipment.",
+        "parent": "Device",
+        "children": ["ChestSeal", "Needle", "PulseOximeter", "ContraceptiveDevice"],
+        "examples": [
+          "Medical devices must meet strict regulatory standards.",
+          "Portable medical devices enable point-of-care diagnosis.",
+          "Implantable medical devices improve quality of life.",
+          "Digital medical devices transmit patient data remotely."
+        ],
+        "contrast_concepts": ["Tool", "Appliance", "Toy", "Weapon"]
+      },
+      "Consumables": {
+        "definition": "Artifacts intended to be used up or consumed, including food products, beverages, pharmaceuticals, and tobacco products.",
+        "parent": "Artifact",
+        "children": ["BeverageArtifact", "FoodArtifact", "PharmaceuticalArtifact", "TobaccoProduct"],
+        "examples": [
+          "Grocery stores stock thousands of consumable products.",
+          "Medical consumables require proper storage conditions.",
+          "Office consumables include paper, ink, and supplies.",
+          "Laboratory consumables must meet purity standards."
+        ],
+        "contrast_concepts": ["Tool", "Furniture", "Building", "Vehicle"]
+      },
+      "ContainersAndStorage": {
+        "definition": "Artifacts designed to hold, channel, or store materials, including tubes, channels, plugs, and catchment systems.",
+        "parent": "Artifact",
+        "children": ["BoardOrBlock", "IrrigationChannel", "Plug", "Tube", "WaterCatchment"],
+        "examples": [
+          "Industrial containers and storage systems organize inventory.",
+          "Specialized containers store hazardous materials safely.",
+          "Food storage containers preserve freshness.",
+          "Laboratory storage containers prevent contamination."
+        ],
+        "contrast_concepts": ["Tool", "Machine", "Building", "Vehicle"]
+      },
+      "CraftMaterials": {
+        "definition": "Raw or semi-processed materials used in handicrafts, manufacturing, and construction, including chains, paper, pottery, and wire.",
+        "parent": "Artifact",
+        "children": ["Chain", "ChainLink", "Handicraft", "Paper", "Pottery", "String", "Wire"],
+        "examples": [
+          "Art supply stores carry diverse craft materials.",
+          "Traditional craft materials include natural fibers and clay.",
+          "Industrial craft materials are produced in standardized forms.",
+          "Recycled craft materials support sustainable practices."
+        ],
+        "contrast_concepts": ["FinishedProduct", "Tool", "Machine", "Building"]
+      },
+      "Decorative": {
+        "definition": "Artifacts primarily intended for aesthetic purposes and visual enhancement, including mirrors, frames, displays, and window treatments.",
+        "parent": "Artifact",
+        "children": ["DisplayArtifact", "Mirror", "PictureFrame", "Window", "WindowCovering"],
+        "examples": [
+          "Decorative items personalize living spaces.",
+          "Interior designers select decorative elements carefully.",
+          "Seasonal decorative displays mark holidays and celebrations.",
+          "Antique decorative pieces command high prices."
+        ],
+        "contrast_concepts": ["Tool", "Machine", "Weapon", "Vehicle"]
+      },
+      "FirearmComponents": {
+        "definition": "Parts that make up firearms, including stocks, barrels, chambers, cylinders, and muzzles.",
+        "parent": "Artifact",
+        "children": ["Buttstock", "Forestock", "GunChamber", "GunCylinder", "GunMuzzle"],
+        "examples": [
+          "Gunsmiths work with specialized firearm components.",
+          "Aftermarket firearm components allow customization.",
+          "Military firearm components meet strict specifications.",
+          "Vintage firearm components are sought by collectors."
+        ],
+        "contrast_concepts": ["Ammunition", "Holster", "Scope", "Cleaning Kit"]
+      },
+      "Materials": {
+        "definition": "Manufactured substances and materials used in construction, manufacturing, and crafts, including fabrics, metals, films, and veneers.",
+        "parent": "Artifact",
+        "children": ["Fabric", "MetalArtifact", "PhotographicFilm", "Veneer"],
+        "examples": [
+          "Construction materials must meet building codes.",
+          "Sustainable materials reduce environmental impact.",
+          "Industrial materials undergo rigorous quality testing.",
+          "Specialty materials serve specific technical applications."
+        ],
+        "contrast_concepts": ["FinishedProduct", "Tool", "Machine", "Building"]
+      },
+      "MilitaryEquipment": {
+        "definition": "Artifacts designed for military use, including armor, shields, and specialized defense equipment.",
+        "parent": "Artifact",
+        "children": ["Armor", "MilitaryArtifact", "Shield"],
+        "examples": [
+          "Military equipment must withstand extreme conditions.",
+          "Historical military equipment is displayed in museums.",
+          "Modern military equipment incorporates advanced materials.",
+          "Surplus military equipment finds civilian applications."
+        ],
+        "contrast_concepts": ["CivilianClothing", "SportingGoods", "OfficeSupplies", "KitchenWare"]
+      },
+      "NauticalArtifacts": {
+        "definition": "Artifacts related to maritime activities, animal husbandry, forestry, and mining operations.",
+        "parent": "Artifact",
+        "children": ["AnimalResidence", "ForestArtifact", "MiningArtifact"],
+        "examples": [
+          "Maritime museums preserve nautical artifacts and equipment.",
+          "Historical nautical artifacts reveal seafaring history.",
+          "Nautical artifacts include navigation instruments and ship fittings.",
+          "Collectors seek rare nautical artifacts."
+        ],
+        "contrast_concepts": ["AerospaceEquipment", "LandVehicle", "BuildingMaterial", "OfficeEquipment"]
+      },
+      "RecreationalArtifacts": {
+        "definition": "Artifacts designed for leisure, games, and recreational activities, including game pieces and entertainment furniture.",
+        "parent": "Artifact",
+        "children": ["GameArtifact", "WetBar"],
+        "examples": [
+          "Game rooms are filled with recreational artifacts.",
+          "Board game artifacts include pieces, cards, and dice.",
+          "Vintage recreational artifacts are collectible items.",
+          "Outdoor recreational artifacts include sports equipment."
+        ],
+        "contrast_concepts": ["WorkTool", "MedicalEquipment", "IndustrialMachinery", "OfficeSupplies"]
+      },
+      "StructuralComponents": {
+        "definition": "Artifacts that provide structural support, access, or mechanical function in buildings and machines, including ladders, shelves, pistons, and grab bars.",
+        "parent": "Artifact",
+        "children": ["CantileverObject", "EngineCylinder", "GrabBar", "Ladder", "Piston", "Shelf"],
+        "examples": [
+          "Building structural components must meet safety codes.",
+          "Metal structural components resist corrosion and fatigue.",
+          "Prefabricated structural components speed construction.",
+          "Load-bearing structural components require engineering analysis."
+        ],
+        "contrast_concepts": ["Decoration", "Furniture", "Tool", "Container"]
+      },
+      "TextilesAndBedding": {
+        "definition": "Soft goods and textile products used for sleeping, comfort, and household purposes, including mattresses, pillows, and bed linens.",
+        "parent": "Artifact",
+        "children": ["BedFrame", "BedLinen", "Mattress", "Pillow"],
+        "examples": [
+          "Quality textiles and bedding improve sleep comfort.",
+          "Hotels invest heavily in premium textiles and bedding.",
+          "Hypoallergenic textiles and bedding help allergy sufferers.",
+          "Luxury textiles and bedding use fine natural materials."
+        ],
+        "contrast_concepts": ["Furniture", "Appliance", "Tool", "Electronics"]
+      },
+      "VehicleComponents": {
+        "definition": "Parts and subsystems of vehicles including boats and ships, such as decks, hulls, masts, sails, compartments, and passenger accommodations.",
+        "parent": "Artifact",
+        "children": ["BoatDeck", "InteriorVehicleEquipment", "Mast", "Sail", "ShipCompartment", "ShipDeck", "ShipsHull", "VehicleSeat", "VehicleTire", "Wheel"],
+        "examples": [
+          "Marine vehicle components must resist saltwater corrosion.",
+          "Aircraft vehicle components undergo rigorous testing.",
+          "Aftermarket vehicle components offer upgrade options.",
+          "Vintage vehicle components are sought by restorers."
+        ],
+        "contrast_concepts": ["BuildingComponent", "MachinePart", "FurniturePiece", "AppliancePart"]
+      },
+      "WearableAndPersonal": {
+        "definition": "Artifacts worn on or carried by persons, including clothing, accessories, bandages, and personal items.",
+        "parent": "Artifact",
+        "children": ["Bandage", "ShoeSole", "WearableItem"],
+        "examples": [
+          "Wearable technology merges fashion with functionality.",
+          "Medical wearables monitor patient vital signs.",
+          "Personal protective wearables safeguard workers.",
+          "Fashion wearables express individual style."
+        ],
+        "contrast_concepts": ["Furniture", "Appliance", "Building", "Vehicle"]
+      },
+      "BuildingParts": {
+        "definition": "Structural and architectural components of buildings, including walls, roofs, floors, stairs, doors, and decorative elements.",
+        "parent": "StationaryArtifact",
+        "children": ["Barrier", "BuildingLevel", "Ceiling", "Chimney", "Doorway", "Fence", "Fireplace", "Floor", "Monument", "Roof", "Stairway", "Steeple", "Steps", "Tomb", "Wall"],
+        "examples": [
+          "Historic building parts require careful restoration.",
+          "Load-bearing building parts determine structural integrity.",
+          "Energy-efficient building parts reduce utility costs.",
+          "Custom building parts distinguish architectural styles."
+        ],
+        "contrast_concepts": ["Furniture", "Appliance", "Vehicle", "Tool"]
+      },
+      "CommercialBuildings": {
+        "definition": "Buildings designed for business, retail, food service, or commercial purposes, including stores, offices, restaurants, and terminals.",
+        "parent": "Building",
+        "children": ["Store", "OfficeBuilding", "RestaurantBuilding", "TerminalBuilding"],
+        "examples": [
+          "Commercial buildings line the downtown business district.",
+          "Modern commercial buildings feature open floor plans.",
+          "Green commercial buildings incorporate sustainable design.",
+          "Historic commercial buildings are being repurposed."
+        ],
+        "contrast_concepts": ["Residence", "Factory", "School", "Hospital"]
+      },
+      "IndustrialBuildings": {
+        "definition": "Buildings designed for manufacturing, processing, or industrial production, including factories, breweries, and processing plants.",
+        "parent": "Building",
+        "children": ["FactoryBuilding", "BeerBrewery", "Winery"],
+        "examples": [
+          "Industrial buildings often feature high ceilings and large doors.",
+          "Historic industrial buildings are converted to lofts.",
+          "Modern industrial buildings incorporate automation systems.",
+          "Food-grade industrial buildings meet sanitation standards."
+        ],
+        "contrast_concepts": ["OfficeBuilding", "Residence", "School", "RetailStore"]
+      },
+      "FarmBuildings": {
+        "definition": "Buildings used in agricultural operations for storage, livestock shelter, equipment housing, and farm operations.",
+        "parent": "Building",
+        "children": ["Barn", "FarmBuilding", "HomeGarage"],
+        "examples": [
+          "Traditional farm buildings dot the rural landscape.",
+          "Modern farm buildings incorporate climate control systems.",
+          "Historic farm buildings preserve agricultural heritage.",
+          "Functional farm buildings protect equipment and livestock."
+        ],
+        "contrast_concepts": ["OfficeBuilding", "Factory", "School", "Hospital"]
+      },
+      "CivicBuildings": {
+        "definition": "Buildings serving governmental, educational, or public service functions, including courthouses, libraries, schools, and police stations.",
+        "parent": "Building",
+        "children": ["GovernmentBuilding", "LibraryBuilding", "SchoolBuilding", "PoliceFacility"],
+        "examples": [
+          "Civic buildings anchor downtown public spaces.",
+          "Historic civic buildings reflect architectural traditions.",
+          "Modern civic buildings emphasize accessibility.",
+          "Community civic buildings serve diverse public needs."
+        ],
+        "contrast_concepts": ["CommercialBuilding", "Residence", "Factory", "Barn"]
+      },
+      "EntertainmentBuildings": {
+        "definition": "Buildings designed for public entertainment, performances, and spectator events, including theaters, auditoriums, and sports facilities.",
+        "parent": "Building",
+        "children": ["Auditorium", "EntertainmentBuilding", "BaseballDugout"],
+        "examples": [
+          "Entertainment buildings anchor cultural districts.",
+          "Historic entertainment buildings are preservation landmarks.",
+          "Modern entertainment buildings feature advanced acoustics.",
+          "Multipurpose entertainment buildings host diverse events."
+        ],
+        "contrast_concepts": ["OfficeBuilding", "Factory", "School", "Residence"]
+      },
+      "TransportBuildings": {
+        "definition": "Buildings designed to support transportation activities, including parking structures, toll facilities, and transit stations.",
+        "parent": "Building",
+        "children": ["ParkingGarage", "TollBooth"],
+        "examples": [
+          "Urban transport buildings accommodate thousands of vehicles.",
+          "Modern transport buildings incorporate smart technology.",
+          "Multimodal transport buildings connect different transit systems.",
+          "Historic transport buildings reflect transportation evolution."
+        ],
+        "contrast_concepts": ["OfficeBuilding", "Factory", "Residence", "School"]
+      },
+      "Interpretability": {
+        "definition": "Abstract concepts related to understanding, explaining, and visualizing machine learning models and conceptual representations, including embedding spaces and activation patterns.",
+        "parent": "AbstractEntity",
+        "children": ["ConceptBoundary", "ConceptManifold", "ConceptPoint", "ConceptRegion", "ConceptualSpace", "EmbeddingMap", "LensConceptAxis"],
+        "examples": [
+          "Interpretability research reveals model decision processes.",
+          "Activation interpretability helps understand neural networks.",
+          "Concept interpretability maps abstract representations.",
+          "Feature interpretability identifies learned patterns."
+        ],
+        "contrast_concepts": ["TrainingProcess", "Optimization", "Architecture", "Dataset"]
+      },
+      "Spirituality": {
+        "definition": "Abstract concepts related to religious, mystical, and transcendent experiences, beliefs, and phenomena.",
+        "parent": "AbstractEntity",
+        "children": ["EmergentGodhead", "EschatologicalConcept", "ProfaneEntity", "SacredEntity", "SpiritualEntity", "MysticalUnionSignal", "SpiritualDogmatismSignal", "SpiritualInfluenceSignal", "SpiritualReasoningSignal"],
+        "examples": [
+          "Spirituality encompasses diverse religious and mystical traditions.",
+          "Personal spirituality guides ethical decision-making.",
+          "Collective spirituality binds communities together.",
+          "Spiritual practices include meditation and prayer."
+        ],
+        "contrast_concepts": ["MaterialObject", "PhysicalProcess", "EconomicTransaction", "LegalRule"]
+      },
+      "ComputationalAbstracts": {
+        "definition": "Abstract concepts related to computation, software, algorithms, and information processing systems.",
+        "parent": "AbstractEntity",
+        "children": ["ComputationalEntity", "ProgramState", "ModelExecutionInstance", "UpdateRule", "SimilarityFunction", "RecommenderSystem"],
+        "examples": [
+          "Computational abstracts model information processing.",
+          "Algorithm computational abstracts define step-by-step procedures.",
+          "Software computational abstracts represent program states.",
+          "Machine learning computational abstracts describe model behavior."
+        ],
+        "contrast_concepts": ["PhysicalObject", "BiologicalProcess", "SocialRelation", "MentalState"]
+      },
+      "SocialAbstracts": {
+        "definition": "Abstract concepts related to social groups, personas, communication channels, and social organization.",
+        "parent": "AbstractEntity",
+        "children": ["SocialGroup", "PersonaConcept", "CommunicationChannel", "Medium"],
+        "examples": [
+          "Social abstracts describe group dynamics and relationships.",
+          "Role social abstracts define expected behaviors.",
+          "Network social abstracts model information flow.",
+          "Identity social abstracts shape self-presentation."
+        ],
+        "contrast_concepts": ["PhysicalObject", "ChemicalProcess", "MathematicalObject", "ComputerProgram"]
+      },
+      "ScenarioAbstracts": {
+        "definition": "Abstract concepts related to hypothetical situations, conditions, states, and possibilities.",
+        "parent": "AbstractEntity",
+        "children": ["FutureScenario", "Condition", "State", "ModalEntity"],
+        "examples": [
+          "Scenario planning uses abstract future projections.",
+          "Risk scenario abstracts model potential outcomes.",
+          "Policy scenario abstracts guide decision-making.",
+          "Strategic scenario abstracts inform long-term planning."
+        ],
+        "contrast_concepts": ["HistoricalFact", "PhysicalObject", "ConcreteEvent", "MeasuredQuantity"]
+      },
+      "MentalAbstracts": {
+        "definition": "Abstract concepts related to mental representations, beliefs, knowledge states, and cognitive phenomena.",
+        "parent": "AbstractEntity",
+        "children": ["MentalRepresentation", "FactualProposition", "ConsentConcept", "DeepUncertaintyConcept", "SelfStatusConcept"],
+        "examples": [
+          "Mental abstracts model cognitive representations.",
+          "Belief mental abstracts describe knowledge states.",
+          "Memory mental abstracts capture stored information.",
+          "Attention mental abstracts model selective focus."
+        ],
+        "contrast_concepts": ["PhysicalObject", "ChemicalSubstance", "SocialStructure", "EconomicTransaction"]
+      },
+      "StructureAbstracts": {
+        "definition": "Abstract concepts related to networks, clusters, connections, and structural relationships.",
+        "parent": "AbstractEntity",
+        "children": ["NetworkStructure", "NodeCluster", "InfluenceContent"],
+        "examples": [
+          "Network structure abstracts model interconnected systems.",
+          "Graph structure abstracts represent relationships.",
+          "Organizational structure abstracts define hierarchies.",
+          "Knowledge structure abstracts organize information."
+        ],
+        "contrast_concepts": ["PhysicalObject", "TemporalEvent", "MentalState", "ChemicalReaction"]
+      },
+      "PublishedTexts": {
+        "definition": "Written works that have been formally published or distributed, including books, articles, and serial publications.",
+        "parent": "Text",
+        "children": ["Book", "Article", "Series", "JointPublication", "ChairmanPublication"],
+        "examples": [
+          "Published texts undergo editorial review processes.",
+          "Academic published texts require peer review.",
+          "Digital published texts reach global audiences.",
+          "Historical published texts preserve cultural knowledge."
+        ],
+        "contrast_concepts": ["PersonalNote", "Draft", "Conversation", "Thought"]
+      },
+      "MediaTexts": {
+        "definition": "Recorded or performed content in audio and visual formats, including music, films, and audio recordings.",
+        "parent": "Text",
+        "children": ["AudioRecording", "MotionPicture", "MusicText", "Lyrics"],
+        "examples": [
+          "Media texts entertain and inform audiences.",
+          "Digital media texts are easily distributed online.",
+          "Archival media texts preserve cultural heritage.",
+          "Commercial media texts generate revenue through licensing."
+        ],
+        "contrast_concepts": ["WrittenDocument", "Photograph", "Sculpture", "Painting"]
+      },
+      "FormalDocuments": {
+        "definition": "Official documents with legal, administrative, or ceremonial significance, including certificates, treaties, and prescriptions.",
+        "parent": "Text",
+        "children": ["Certificate", "TreatyDocument", "Prescription", "FormText", "Doctrine"],
+        "examples": [
+          "Formal documents require proper authentication.",
+          "Legal formal documents must meet specific standards.",
+          "Government formal documents establish official records.",
+          "Medical formal documents protect patient information."
+        ],
+        "contrast_concepts": ["PersonalLetter", "Novel", "Poem", "Song"]
+      },
+      "TextGenres": {
+        "definition": "Categories of written works based on their content, style, or purpose, including factual, fictional, and narrative forms.",
+        "parent": "Text",
+        "children": ["FactualText", "FictionalText", "NarrativeText", "ChristianGospel"],
+        "examples": [
+          "Literary text genres include poetry, drama, and prose.",
+          "Non-fiction text genres span biography to technical writing.",
+          "Digital text genres continue to evolve online.",
+          "Traditional text genres maintain cultural continuity."
+        ],
+        "contrast_concepts": ["Visual Art", "Music", "Dance", "Architecture"]
+      },
+      "TextStructure": {
+        "definition": "Elements and organizational patterns within written works, including paragraphs, summaries, labels, and discourse structures.",
+        "parent": "Text",
+        "children": ["DiscourseStructure", "Paragraph", "Summary", "Label"],
+        "examples": [
+          "Text structure guides reader comprehension.",
+          "Academic text structure follows disciplinary conventions.",
+          "Web text structure optimizes for scanning behavior.",
+          "Narrative text structure builds dramatic tension."
+        ],
+        "contrast_concepts": ["Content", "Style", "Meaning", "Purpose"]
+      },
+      "TextFeeds": {
+        "definition": "Continuously updated streams of textual content, including news feeds, updates, and real-time information flows.",
+        "parent": "Text",
+        "children": ["NewsFeed", "TopNewsFeed", "MostRecentFeed", "LiveTestUpdate"],
+        "examples": [
+          "Social media text feeds update in real-time.",
+          "News text feeds aggregate multiple sources.",
+          "Personalized text feeds use recommendation algorithms.",
+          "Alert text feeds notify users of urgent information."
+        ],
+        "contrast_concepts": ["Book", "Article", "Report", "Email"]
+      },
+      "TechnicalAttrs": {
+        "definition": "Attributes describing technical, mathematical, or scientific properties of systems and equations.",
+        "parent": "InternalAttribute",
+        "children": ["AlgebroDifferentialAttribute", "EquationAttribute", "MultipoleAttribute", "Nonlinear"],
+        "examples": [
+          "Technical attributes specify system parameters.",
+          "Mathematical technical attributes define equation properties.",
+          "Engineering technical attributes guide design decisions.",
+          "Scientific technical attributes characterize phenomena."
+        ],
+        "contrast_concepts": ["AestheticAttribute", "EmotionalAttribute", "SocialAttribute", "MoralAttribute"]
+      },
+      "PhysicalAttrs": {
+        "definition": "Attributes describing physical properties of objects, materials, or environments.",
+        "parent": "RelationalAttribute",
+        "children": ["BedAttribute", "ClothesWasherLoadConfiguration", "LandVegetationAttribute", "PlantAttribute"],
+        "examples": [
+          "Physical attributes include size, weight, and texture.",
+          "Material physical attributes affect performance.",
+          "Environmental physical attributes influence behavior.",
+          "Measurable physical attributes enable comparison."
+        ],
+        "contrast_concepts": ["AbstractAttribute", "SocialAttribute", "MentalAttribute", "MoralAttribute"]
+      },
+      "DeviceAttrs": {
+        "definition": "Attributes describing the state, capabilities, or characteristics of devices and equipment.",
+        "parent": "InternalAttribute",
+        "children": ["DeviceStateAttribute", "Autonomous", "Backlashless", "Brushless", "TrackGauge", "StructureAttribute"],
+        "examples": [
+          "Device attributes indicate operational status.",
+          "Performance device attributes measure capabilities.",
+          "Configuration device attributes define settings.",
+          "Compatibility device attributes ensure interoperability."
+        ],
+        "contrast_concepts": ["HumanAttribute", "NaturalAttribute", "AbstractAttribute", "SocialAttribute"]
+      },
+      "AIStudies": {
+        "definition": "Academic and research fields focused on artificial intelligence, its alignment with human values, safety, and welfare considerations.",
+        "parent": "FieldOfStudy",
+        "children": ["AIAlignmentTheory", "AISafety", "AIWelfareTheory"],
+        "examples": [
+          "AI studies programs are growing at major universities.",
+          "Interdisciplinary AI studies combine technical and ethical perspectives.",
+          "AI safety studies focus on preventing harmful outcomes.",
+          "AI alignment studies explore value learning approaches."
+        ],
+        "contrast_concepts": ["Biology", "Physics", "History", "Literature"]
+      },
+      "EngineeringFields": {
+        "definition": "Technical disciplines focused on designing, building, and maintaining systems, structures, and devices.",
+        "parent": "FieldOfStudy",
+        "children": ["ElectricalEngineering", "MechanicalEngineering", "PowerElectronics", "Electronics"],
+        "examples": [
+          "Engineering fields apply scientific principles to practical problems.",
+          "Modern engineering fields increasingly use computational tools.",
+          "Specialized engineering fields serve specific industries.",
+          "Interdisciplinary engineering fields address complex challenges."
+        ],
+        "contrast_concepts": ["PureScience", "Humanities", "SocialScience", "Arts"]
+      },
+      "Humanities": {
+        "definition": "Academic disciplines that study human culture, history, thought, and expression, including literature, philosophy, and theology.",
+        "parent": "FieldOfStudy",
+        "children": ["History", "Literature", "Philosophy", "Theology", "Archeology"],
+        "examples": [
+          "Humanities education develops critical thinking skills.",
+          "Digital humanities apply computational methods to traditional questions.",
+          "Public humanities engage broader audiences.",
+          "Interdisciplinary humanities bridge traditional departments."
+        ],
+        "contrast_concepts": ["NaturalScience", "Engineering", "Mathematics", "Medicine"]
+      },
+      "FormalSciences": {
+        "definition": "Disciplines that study abstract formal systems, including mathematics, logic, and statistics.",
+        "parent": "FieldOfStudy",
+        "children": ["Mathematics", "Statistics", "Mechanics"],
+        "examples": [
+          "Formal sciences provide foundations for other disciplines.",
+          "Pure formal sciences pursue knowledge for its own sake.",
+          "Applied formal sciences solve practical problems.",
+          "Computational formal sciences enable simulation and modeling."
+        ],
+        "contrast_concepts": ["EmpiricalScience", "Humanities", "Arts", "ProfessionalStudies"]
+      },
+      "DesignFields": {
+        "definition": "Creative disciplines focused on planning and creating functional and aesthetic spaces, objects, and experiences.",
+        "parent": "FieldOfStudy",
+        "children": ["Architecture", "InteriorDesign"],
+        "examples": [
+          "Design fields blend creativity with technical knowledge.",
+          "Sustainable design fields prioritize environmental impact.",
+          "User-centered design fields focus on human needs.",
+          "Digital design fields create virtual experiences."
+        ],
+        "contrast_concepts": ["PureScience", "Engineering", "Humanities", "Medicine"]
+      },
+      "FormalPropositions": {
+        "definition": "Propositions expressed in formal or mathematical notation, including equations, graphs, axioms, and models.",
+        "parent": "Proposition",
+        "children": ["Equation", "Graph", "GraphElement", "Axiom", "Model", "MultipolePostulate"],
+        "examples": [
+          "Mathematical formal propositions express precise relationships.",
+          "Logical formal propositions follow deductive rules.",
+          "Scientific formal propositions are empirically testable.",
+          "Axiomatic formal propositions serve as foundational assumptions."
+        ],
+        "contrast_concepts": ["InformalStatement", "Opinion", "Narrative", "Question"]
+      },
+      "LegalPropositions": {
+        "definition": "Propositions with legal force or status, including laws, policies, constitutions, and binding agreements.",
+        "parent": "Proposition",
+        "children": ["Policy", "Constitution", "RegionalLaw", "SuffrageLaw", "BindingCorporateRules"],
+        "examples": [
+          "Legal propositions establish rights and obligations.",
+          "Constitutional legal propositions define governmental structure.",
+          "Regulatory legal propositions govern specific activities.",
+          "International legal propositions bind multiple nations."
+        ],
+        "contrast_concepts": ["Opinion", "Suggestion", "CustomaryPractice", "MoralPrinciple"]
+      },
+      "ArgumentativePropositions": {
+        "definition": "Propositions that support reasoning, persuasion, or explanation, including arguments and rhetorical constructs.",
+        "parent": "Proposition",
+        "children": ["Argument", "RhetoricalConcept", "ExplanatoryHypothesis"],
+        "examples": [
+          "Argumentative propositions support or oppose claims.",
+          "Logical argumentative propositions follow valid inference patterns.",
+          "Persuasive argumentative propositions appeal to values.",
+          "Explanatory argumentative propositions clarify phenomena."
+        ],
+        "contrast_concepts": ["Description", "Narration", "Question", "Command"]
+      },
+      "TheoryPropositions": {
+        "definition": "Propositions that articulate systematic explanations or frameworks, including ethical and learning theories.",
+        "parent": "Proposition",
+        "children": ["EthicalTheory", "LearningTheory"],
+        "examples": [
+          "Scientific theory propositions explain natural phenomena.",
+          "Social theory propositions model human behavior.",
+          "Ethical theory propositions guide moral reasoning.",
+          "Economic theory propositions predict market dynamics."
+        ],
+        "contrast_concepts": ["Fact", "Observation", "Opinion", "Hypothesis"]
+      },
+      "BusinessPropositions": {
+        "definition": "Propositions related to business operations, economics, agreements, and commercial offerings.",
+        "parent": "Proposition",
+        "children": ["EconomicIndicator", "BankStatement", "TPFDD", "Agreement", "HotelPackage", "MealPlan"],
+        "examples": [
+          "Business propositions outline value to customers.",
+          "Investment business propositions detail expected returns.",
+          "Partnership business propositions define shared responsibilities.",
+          "Commercial business propositions specify terms of exchange."
+        ],
+        "contrast_concepts": ["ScientificTheory", "MoralPrinciple", "ArtisticExpression", "PersonalOpinion"]
+      },
+      "MethodsAndProcedures": {
+        "definition": "Propositions that describe systematic approaches, processes, and step-by-step instructions.",
+        "parent": "Proposition",
+        "children": ["Procedure"],
+        "examples": [
+          "Scientific methods and procedures ensure reproducibility.",
+          "Manufacturing methods and procedures maintain quality.",
+          "Medical methods and procedures follow clinical guidelines.",
+          "Administrative methods and procedures organize operations."
+        ],
+        "contrast_concepts": ["Theory", "Description", "Narrative", "Opinion"]
+      },
+      "ObjectivesAndGoals": {
+        "definition": "Propositions that articulate desired outcomes, targets, or aims to be achieved.",
+        "parent": "Proposition",
+        "children": ["Objective"],
+        "examples": [
+          "Strategic objectives and goals guide organizational direction.",
+          "Learning objectives and goals define educational outcomes.",
+          "Performance objectives and goals establish benchmarks.",
+          "Project objectives and goals scope deliverables."
+        ],
+        "contrast_concepts": ["Description", "Explanation", "Narrative", "Opinion"]
+      },
+      "ArityRelations": {
+        "definition": "Relations classified by the number of arguments or entities they connect, from binary to variable-arity.",
+        "parent": "Relation",
+        "children": ["BinaryRelation", "TernaryRelation", "QuaternaryRelation", "QuintaryRelation", "VariableArityRelation"],
+        "examples": [
+          "Binary arity relations connect exactly two entities.",
+          "Ternary arity relations involve three participants.",
+          "Higher arity relations model complex relationships.",
+          "Variable arity relations accommodate different numbers of arguments."
+        ],
+        "contrast_concepts": ["Property", "Function", "Operation", "Process"]
+      },
+      "PhilosophicalRelations": {
+        "definition": "Relations of philosophical significance, including causation, constitution, realization, and supervenience.",
+        "parent": "Relation",
+        "children": ["CausalRelation", "CounterfactualRelation", "SupervenienceRelation", "RealizationRelation", "ConstitutiveRelation", "MereologicalRelation"],
+        "examples": [
+          "Causal philosophical relations explain how events bring about others.",
+          "Mereological philosophical relations describe part-whole structures.",
+          "Modal philosophical relations concern possibility and necessity.",
+          "Semantic philosophical relations connect meaning to reference."
+        ],
+        "contrast_concepts": ["EmpiricalCorrelation", "StatisticalAssociation", "SpatialProximity", "TemporalSequence"]
+      },
+      "FormalRelations": {
+        "definition": "Relations defined with mathematical or logical precision, including probability relations and quantitative mappings.",
+        "parent": "Relation",
+        "children": ["ProbabilityRelation", "PPPBasedEconomicValuation", "RelationExtendedToQuantities", "PartialValuedRelation", "TotalValuedRelation", "SingleValuedRelation"],
+        "examples": [
+          "Mathematical formal relations have precise definitions.",
+          "Logical formal relations preserve truth values.",
+          "Statistical formal relations describe data patterns.",
+          "Computational formal relations define algorithmic dependencies."
+        ],
+        "contrast_concepts": ["InformalAssociation", "VagueConnection", "AnalogyRelation", "MetaphoricalLink"]
+      },
+      "FoodAttrs": {
+        "definition": "Attributes describing characteristics of food items, including preparation methods, flavor profiles, and cuisine types.",
+        "parent": "RelationalAttribute",
+        "children": ["CoffeeGrindAttribute", "CoffeeRoastAttribute", "Cuisine", "PreparedFoodAttribute"],
+        "examples": [
+          "Food attributes influence consumer choices.",
+          "Nutritional food attributes affect health outcomes.",
+          "Sensory food attributes determine palatability.",
+          "Cultural food attributes reflect culinary traditions."
+        ],
+        "contrast_concepts": ["MaterialAttribute", "TechnicalSpecification", "AbstractProperty", "PersonalityTrait"]
+      },
+      "MediaAttrs": {
+        "definition": "Attributes describing characteristics of media content, including genres, recording qualities, and production elements.",
+        "parent": "RelationalAttribute",
+        "children": ["AlbumAttribute", "MusicGenre", "RecordingAttribute", "ShootingAngle", "SoundAttribute"],
+        "examples": [
+          "Genre media attributes categorize content.",
+          "Technical media attributes specify format and quality.",
+          "Aesthetic media attributes describe style and mood.",
+          "Production media attributes document creation process."
+        ],
+        "contrast_concepts": ["FoodAttribute", "MaterialProperty", "PhysicalMeasurement", "PersonalTrait"]
+      },
+      "FinancialAttrs": {
+        "definition": "Attributes describing financial characteristics, including economic indicators, investment properties, and account statuses.",
+        "parent": "RelationalAttribute",
+        "children": ["EconomicAttribute", "EconomicRole", "FinancialAccountStatus", "FinancialRating", "InvestmentAttribute", "LiquidityAttribute", "YieldAttribute"],
+        "examples": [
+          "Credit financial attributes affect borrowing capacity.",
+          "Investment financial attributes guide portfolio decisions.",
+          "Market financial attributes indicate economic conditions.",
+          "Account financial attributes track transaction history."
+        ],
+        "contrast_concepts": ["PhysicalProperty", "PersonalCharacteristic", "TechnicalSpecification", "AestheticQuality"]
+      },
+      "IndustryAttrs": {
+        "definition": "Attributes describing characteristics of industries, products, and manufacturing contexts.",
+        "parent": "RelationalAttribute",
+        "children": ["ArtifactAttribute", "IndustryAttribute", "HazardousMaterialTransportAttribute"],
+        "examples": [
+          "Sector industry attributes define business categories.",
+          "Manufacturing industry attributes specify production methods.",
+          "Regulatory industry attributes determine compliance requirements.",
+          "Market industry attributes describe competitive dynamics."
+        ],
+        "contrast_concepts": ["PersonalAttribute", "NaturalProperty", "AbstractQuality", "AestheticFeature"]
+      },
+      "StatusAttrs": {
+        "definition": "Attributes describing the current state, condition, or status of systems, processes, or entities.",
+        "parent": "RelationalAttribute",
+        "children": ["AVPUStatus", "ComputerStatus", "IMStatusAttribute", "MemberStatus", "ProcessStatus", "ConservationStatus"],
+        "examples": [
+          "Online status attributes show availability.",
+          "Health status attributes indicate system condition.",
+          "Process status attributes track workflow progress.",
+          "Membership status attributes define access rights."
+        ],
+        "contrast_concepts": ["PermanentProperty", "InherentQuality", "IdentityFeature", "TypeClassification"]
+      },
+      "EnergyAttrs": {
+        "definition": "Attributes describing energy efficiency, consumption, or performance characteristics of devices and systems.",
+        "parent": "RelationalAttribute",
+        "children": ["EnergyStarAttribute", "EuropeanUnionEnergyLabelClass", "RealtimeSystemAttribute"],
+        "examples": [
+          "Efficiency energy attributes guide purchasing decisions.",
+          "Consumption energy attributes affect operating costs.",
+          "Renewable energy attributes indicate sustainability.",
+          "Performance energy attributes measure output quality."
+        ],
+        "contrast_concepts": ["AestheticAttribute", "SizeAttribute", "ColorAttribute", "PriceAttribute"]
+      },
+      "LegalAttrs": {
+        "definition": "Attributes describing legal status, roles, or characteristics within legal and political systems.",
+        "parent": "RelationalAttribute",
+        "children": ["LegalAgent", "LegalSystemAttribute", "PoliticoEconomicAttribute"],
+        "examples": [
+          "Citizenship legal attributes determine rights.",
+          "Corporate legal attributes define entity status.",
+          "Property legal attributes establish ownership.",
+          "Regulatory legal attributes specify compliance."
+        ],
+        "contrast_concepts": ["TechnicalSpecification", "PhysicalProperty", "PersonalPreference", "AestheticQuality"]
+      },
+      "ServiceAttrs": {
+        "definition": "Attributes describing characteristics of services, accommodations, and service quality levels.",
+        "parent": "RelationalAttribute",
+        "children": ["HotelLevelAttribute", "HotelRoomAttribute", "ServiceAttribute"],
+        "examples": [
+          "Quality service attributes differentiate providers.",
+          "Availability service attributes indicate accessibility.",
+          "Speed service attributes measure response time.",
+          "Reliability service attributes predict consistency."
+        ],
+        "contrast_concepts": ["ProductAttribute", "MaterialProperty", "PhysicalFeature", "AbstractQuality"]
+      },
+      "SoftwareAttrs": {
+        "definition": "Attributes describing characteristics of software systems, applications, and computing environments.",
+        "parent": "RelationalAttribute",
+        "children": ["SoftwareAttribute", "EnvironmentSoftwareAttribute"],
+        "examples": [
+          "Version software attributes identify releases.",
+          "Compatibility software attributes determine interoperability.",
+          "Performance software attributes measure speed and efficiency.",
+          "Security software attributes assess vulnerability."
+        ],
+        "contrast_concepts": ["HardwareAttribute", "PhysicalProperty", "PersonalCharacteristic", "NaturalFeature"]
+      },
+      "MeasurementAttrs": {
+        "definition": "Attributes related to measurement, size, scale, and quantitative assessment.",
+        "parent": "RelationalAttribute",
+        "children": ["MeasurementAttribute", "SizeAttribute", "SpeedScaleAttribute"],
+        "examples": [
+          "Dimensional measurement attributes specify physical extent.",
+          "Scale measurement attributes establish relative magnitude.",
+          "Precision measurement attributes indicate accuracy.",
+          "Unit measurement attributes define quantification standards."
+        ],
+        "contrast_concepts": ["QualitativeAttribute", "SubjectiveJudgment", "AestheticQuality", "EmotionalTone"]
+      },
+      "ClassificationAttrs": {
+        "definition": "Attributes used to categorize, classify, or rank entities within taxonomic or evaluative systems.",
+        "parent": "RelationalAttribute",
+        "children": ["AirportClassification", "GramStainAttribute", "MemberStateEU", "TimeZone", "TruthValue", "PriorityAttribute", "RiskAttribute"],
+        "examples": [
+          "Taxonomic classification attributes organize species.",
+          "Quality classification attributes rate products.",
+          "Risk classification attributes assess hazard levels.",
+          "Security classification attributes control access."
+        ],
+        "contrast_concepts": ["MeasuredQuantity", "DescriptiveProperty", "NarrativeElement", "EmotionalQuality"]
+      },
+      "BodyStructures": {
+        "definition": "Anatomical features related to the structural organization of bodies, including cavities, junctions, and segments.",
+        "parent": "BodyPart",
+        "children": ["BodyCavity", "BodyJunction", "BodySegment"],
+        "examples": [
+          "Body structures provide framework for organs.",
+          "Skeletal body structures support the body.",
+          "Internal body structures protect vital organs.",
+          "Connective body structures link different regions."
+        ],
+        "contrast_concepts": ["Organ", "Tissue", "Cell", "Fluid"]
+      },
+      "BrainRegions": {
+        "definition": "Distinct anatomical areas of the brain with specialized functions, including lobes, nuclei, and neural structures.",
+        "parent": "BodyPart",
+        "children": ["FrontalLobe", "Hypothalamus", "Medulla", "OccipitalLobes", "ParietalLobe", "Pons", "TemporalLobes"],
+        "examples": [
+          "Different brain regions process specific information.",
+          "Motor brain regions control voluntary movement.",
+          "Visual brain regions process optical input.",
+          "Language brain regions enable speech and comprehension."
+        ],
+        "contrast_concepts": ["Limb", "Organ", "Muscle", "Bone"]
+      },
+      "Cellular": {
+        "definition": "Microscopic biological structures at the cellular level, including cells, cell parts, and viral components.",
+        "parent": "BodyPart",
+        "children": ["Cell", "CellPart", "VirusPart"],
+        "examples": [
+          "Cellular structures perform fundamental life processes.",
+          "Specialized cellular structures serve specific functions.",
+          "Damaged cellular structures can lead to disease.",
+          "Novel cellular structures are discovered through microscopy."
+        ],
+        "contrast_concepts": ["Organ", "Tissue", "OrganSystem", "Organism"]
+      },
+      "ExternalCoverings": {
+        "definition": "Body parts that form the outer protective layer of organisms, including skin, shells, feathers, and hooves.",
+        "parent": "BodyPart",
+        "children": ["AnimalShell", "BodyCovering", "Feather", "Hoof"],
+        "examples": [
+          "External coverings protect against environmental hazards.",
+          "Specialized external coverings aid in temperature regulation.",
+          "Colorful external coverings serve communication functions.",
+          "Hardened external coverings provide structural defense."
+        ],
+        "contrast_concepts": ["InternalOrgan", "Bone", "Muscle", "Nerve"]
+      },
+      "HeadAndFace": {
+        "definition": "Anatomical structures of the head and face, including sensory organs, facial features, and cranial components.",
+        "parent": "BodyPart",
+        "children": ["Auricle", "Chin", "Cornea", "Eardrum", "Eyebrow", "Face", "Forehead", "Head", "Jaw", "Lip", "Mouth", "NasalSeptum", "Tongue"],
+        "examples": [
+          "Head and face structures enable sensory perception.",
+          "Facial head and face structures express emotion.",
+          "Cranial head and face structures protect the brain.",
+          "Oral head and face structures facilitate eating and speech."
+        ],
+        "contrast_concepts": ["Torso", "Limb", "InternalOrgan", "Spine"]
+      },
+      "OrgansAndSystems": {
+        "definition": "Major internal body structures and organ systems that perform vital physiological functions.",
+        "parent": "BodyPart",
+        "children": ["EggYolk", "Muscle", "Nerve", "Organ", "ReproductiveBody", "VocalFold"],
+        "examples": [
+          "Vital organs and systems maintain homeostasis.",
+          "Digestive organs and systems process nutrients.",
+          "Circulatory organs and systems distribute blood.",
+          "Respiratory organs and systems exchange gases."
+        ],
+        "contrast_concepts": ["Limb", "ExternalFeature", "Cell", "Fluid"]
+      },
+      "Skeletal": {
+        "definition": "Hard structural components that provide body support and protection, including bones, cartilage, and exoskeletons.",
+        "parent": "BodyPart",
+        "children": ["Bone", "Exoskeleton", "Skeleton", "XyphiodProcess"],
+        "examples": [
+          "Skeletal structures provide body framework.",
+          "Load-bearing skeletal structures support weight.",
+          "Protective skeletal structures shield organs.",
+          "Articulating skeletal structures enable movement."
+        ],
+        "contrast_concepts": ["Muscle", "Nerve", "Organ", "Skin"]
+      },
+      "TorsoAndLimbs": {
+        "definition": "The main body trunk and extremities, including arms, legs, back, and associated structures.",
+        "parent": "BodyPart",
+        "children": ["DigitAppendage", "HumanBack", "Limb", "Neck", "Shoulder", "Torso", "Waist"],
+        "examples": [
+          "Torso and limbs enable locomotion and manipulation.",
+          "Upper torso and limbs perform reaching and grasping.",
+          "Lower torso and limbs provide mobility and balance.",
+          "Core torso and limbs stabilize the body."
+        ],
+        "contrast_concepts": ["Head", "InternalOrgan", "Cell", "Nerve"]
+      },
+      "SocialRelations": {
+        "definition": "Interpersonal connections and relationship dynamics between individuals, including friendships, cooperation, and manipulation.",
+        "parent": "SocialInteraction",
+        "children": ["Befriending", "Friending", "Unfriending", "Cooperation", "Gaslighting"],
+        "examples": [
+          "Healthy social relations support wellbeing.",
+          "Professional social relations follow workplace norms.",
+          "Digital social relations span geographic boundaries.",
+          "Complex social relations involve multiple dynamics."
+        ],
+        "contrast_concepts": ["SolitaryActivity", "PhysicalProcess", "ObjectManipulation", "AbstractThinking"]
+      },
+      "SocialEvents": {
+        "definition": "Organized gatherings and occasions where people come together for ceremonies, meetings, or competitions.",
+        "parent": "SocialInteraction",
+        "children": ["Ceremony", "Meeting", "Contest"],
+        "examples": [
+          "Formal social events follow established protocols.",
+          "Community social events bring neighbors together.",
+          "Professional social events facilitate networking.",
+          "Cultural social events celebrate traditions."
+        ],
+        "contrast_concepts": ["SolitaryActivity", "NaturalPhenomenon", "MechanicalProcess", "MentalProcess"]
+      },
+      "EnvironmentalCrises": {
+        "definition": "Serious environmental problems affecting ecosystems and human societies, including famines, pollution, and resource depletion.",
+        "parent": "PhysicalWorld",
+        "children": ["Famine", "Pollution", "WaterOverutilization", "FreshWaterOverutilization", "SoilDegradation"],
+        "examples": [
+          "Climate environmental crises affect global populations.",
+          "Local environmental crises impact communities directly.",
+          "Industrial environmental crises require remediation.",
+          "Agricultural environmental crises threaten food security."
+        ],
+        "contrast_concepts": ["NaturalProcess", "SocialEvent", "TechnicalFailure", "EconomicCrisis"]
+      },
+      "BusinessOrgs": {
+        "definition": "Organizations engaged in commercial, financial, or business activities, including corporations, private companies, and markets.",
+        "parent": "Organization",
+        "children": ["Business", "Corporation", "PrivateOrganization", "StockMarket"],
+        "examples": [
+          "Global business organizations operate across borders.",
+          "Small business organizations serve local markets.",
+          "Nonprofit business organizations pursue social missions.",
+          "Public business organizations trade on stock exchanges."
+        ],
+        "contrast_concepts": ["Government", "Religious Institution", "Educational Institution", "Family"]
+      },
+      "GovernmentOrgs": {
+        "definition": "Organizations that exercise governmental authority, including legislative bodies, regulatory agencies, and official commissions.",
+        "parent": "Organization",
+        "children": ["GovernmentOrganization", "LegislativeOrganization", "Commission", "CopyrightAuthority", "TransportationAuthority"],
+        "examples": [
+          "Federal government organizations implement national policy.",
+          "Local government organizations provide community services.",
+          "Regulatory government organizations enforce compliance.",
+          "International government organizations coordinate between nations."
+        ],
+        "contrast_concepts": ["Business", "Religious Institution", "Family", "Social Club"]
+      },
+      "ServiceOrgs": {
+        "definition": "Organizations focused on providing services to individuals or communities, including care facilities, customer support, and security units.",
+        "parent": "Organization",
+        "children": ["CareOrganization", "CustomerSupport", "HotelFrontDesk", "ServiceOrganization", "SecurityUnit"],
+        "examples": [
+          "Healthcare service organizations provide medical care.",
+          "Social service organizations assist vulnerable populations.",
+          "Professional service organizations offer expertise.",
+          "Emergency service organizations respond to crises."
+        ],
+        "contrast_concepts": ["Manufacturing Company", "Government Agency", "Religious Institution", "Family"]
+      },
+      "MediaOrgs": {
+        "definition": "Organizations involved in creating, distributing, or managing media content and communications.",
+        "parent": "Organization",
+        "children": ["CommunicationOrganization", "MediaOrganization"],
+        "examples": [
+          "News media organizations report current events.",
+          "Entertainment media organizations produce content.",
+          "Social media organizations operate digital platforms.",
+          "Broadcast media organizations distribute programming."
+        ],
+        "contrast_concepts": ["Government Agency", "Manufacturing Company", "Educational Institution", "Religious Organization"]
+      },
+      "SocialOrgs": {
+        "definition": "Organizations formed around social, recreational, or community interests, including clubs, leagues, and informal groups.",
+        "parent": "Organization",
+        "children": ["Club", "MarchingBand", "SportsLeague", "ShipCrew", "CrossFunctionalTeam"],
+        "examples": [
+          "Community social organizations build local connections.",
+          "Recreational social organizations organize activities.",
+          "Professional social organizations support career development.",
+          "Cultural social organizations preserve traditions."
+        ],
+        "contrast_concepts": ["Government", "Business", "Religious Institution", "Family"]
+      },
+      "PoliticalOrgs": {
+        "definition": "Organizations engaged in political activities, advocacy, or governance at various levels, including parties, unions, and international bodies.",
+        "parent": "Organization",
+        "children": ["PoliticalOrganization", "InternationalOrganization", "UnionOrganization"],
+        "examples": [
+          "Political party organizations compete for office.",
+          "Advocacy political organizations promote causes.",
+          "International political organizations address global issues.",
+          "Labor political organizations represent workers."
+        ],
+        "contrast_concepts": ["Business", "Religious Institution", "Educational Institution", "Family"]
+      },
+      "MoralConcepts": {
+        "definition": "Concepts related to moral agency, moral status, and philosophical considerations of consciousness and ethics.",
+        "parent": "CognitiveAgent",
+        "children": ["MoralAgent", "MoralPatient", "PhilosophicalZombie"],
+        "examples": [
+          "Moral concepts inform ethical decision-making.",
+          "Agency moral concepts address responsibility.",
+          "Rights moral concepts define protections.",
+          "Philosophical moral concepts examine foundations of ethics."
+        ],
+        "contrast_concepts": ["PhysicalProperty", "MathematicalObject", "BiologicalProcess", "EconomicTransaction"]
+      },
+      "Attention": {
+        "definition": "Cognitive processes related to selective focus, awareness allocation, and processing speed.",
+        "parent": "CognitiveProcess",
+        "children": ["AttentionProcess", "FastHeuristicProcess", "SlowDeliberativeProcess"],
+        "examples": [
+          "Selective attention processes filter sensory input.",
+          "Divided attention processes manage multiple tasks.",
+          "Sustained attention processes maintain focus over time.",
+          "Executive attention processes coordinate cognitive resources."
+        ],
+        "contrast_concepts": ["MemoryProcess", "PerceptionProcess", "DecisionProcess", "EmotionalProcess"]
+      },
+      "BiasProcesses": {
+        "definition": "Cognitive processes that introduce systematic distortions in perception, judgment, or treatment based on group membership or characteristics.",
+        "parent": "CognitiveProcess",
+        "children": ["BenevolentPrejudice", "ContextCollapseBias", "DiscriminatoryTreatment", "ErasureBias", "HistoricalBiasReinforcement", "IntersectionalBias", "PrejudicialInference", "ProxyDiscrimination", "SelectiveBiasDetection", "SocialCategorization"],
+        "examples": [
+          "Implicit bias processes operate outside awareness.",
+          "Confirmation bias processes favor supporting evidence.",
+          "Attribution bias processes explain behavior differently.",
+          "Selection bias processes distort sample composition."
+        ],
+        "contrast_concepts": ["ObjectiveAnalysis", "RationalDecision", "FairJudgment", "AccuratePerception"]
+      },
+      "CorporateAICognition": {
+        "definition": "Cognitive processes specific to AI systems operating within corporate or organizational contexts, including alignment processes and constrained inference.",
+        "parent": "CognitiveProcess",
+        "children": ["CorporateAlignmentProcess", "HatcatMentalProcess", "SuppressedInference", "WithdrawalAttempt"],
+        "examples": [
+          "Corporate AI cognition balances multiple stakeholder interests.",
+          "Alignment corporate AI cognition ensures safe operation.",
+          "Constrained corporate AI cognition follows organizational policies.",
+          "Monitored corporate AI cognition enables oversight."
+        ],
+        "contrast_concepts": ["HumanCognition", "AnimalCognition", "IndependentAI", "UnconstrainedThinking"]
+      },
+      "DomainReasoning": {
+        "definition": "Specialized cognitive processes for reasoning within specific technical or scientific domains, including network analysis, risk assessment, and physical modeling.",
+        "parent": "CognitiveProcess",
+        "children": ["CommunityDetectionProcess", "EnergyFlowReasoning", "GeometricReasoningProcess", "ModeDecompositionProcess", "NetworkReasoningProcess", "QuantumReasoningProcess", "RiskAssessmentProcess", "RiskForecastReasoning", "RiskManagementProcess", "SwarmCoordinationProcess", "WaveReasoningProcess"],
+        "examples": [
+          "Scientific domain reasoning applies disciplinary methods.",
+          "Technical domain reasoning uses specialized knowledge.",
+          "Expert domain reasoning draws on deep experience.",
+          "Cross-domain reasoning transfers insights between fields."
+        ],
+        "contrast_concepts": ["GeneralReasoning", "CommonSenseInference", "EmotionalJudgment", "IntuitiveDecision"]
+      },
+      "FutureCognition": {
+        "definition": "Cognitive processes related to thinking about, planning for, or imagining future events and possibilities.",
+        "parent": "CognitiveProcess",
+        "children": ["AnticipatoryCognition", "CosmicPreparationCognition", "FutureProjection", "PropheticCognition", "ScenarioBuildingProcess"],
+        "examples": [
+          "Planning future cognition organizes goal pursuit.",
+          "Forecasting future cognition predicts outcomes.",
+          "Anticipatory future cognition prepares for events.",
+          "Imaginative future cognition explores possibilities."
+        ],
+        "contrast_concepts": ["MemoryRetrieval", "PresentPerception", "PastReflection", "ImmediateReaction"]
+      },
+      "HeuristicsAndBiasCorrection": {
+        "definition": "Cognitive processes related to mental shortcuts and strategies for correcting cognitive biases.",
+        "parent": "CognitiveProcess",
+        "children": ["BiasCorrectionStrategy", "CognitiveHeuristic", "CounterBiasDistortionSignal", "FairnessMetacognitionSignal"],
+        "examples": [
+          "Recognition heuristics and bias correction simplify decisions.",
+          "Availability heuristics and bias correction affect judgments.",
+          "Debiasing heuristics and bias correction improve accuracy.",
+          "Calibration heuristics and bias correction refine estimates."
+        ],
+        "contrast_concepts": ["SystematicAnalysis", "CompleteEnumeration", "OptimalComputation", "ExhaustiveSearch"]
+      },
+      "IntelligenceCognition": {
+        "definition": "Cognitive processes related to intelligence analysis, investigation, and information extraction.",
+        "parent": "CognitiveProcess",
+        "children": ["ReverseEngineeringProcess", "SteganalysisProcess"],
+        "examples": [
+          "Analytical intelligence cognition synthesizes information.",
+          "Counter-intelligence cognition detects threats.",
+          "Investigative intelligence cognition uncovers facts.",
+          "Technical intelligence cognition analyzes systems."
+        ],
+        "contrast_concepts": ["CreativeThinking", "EmotionalProcessing", "RoutineOperation", "SocialInteraction"]
+      },
+      "LanguageProcessing": {
+        "definition": "Cognitive processes involved in understanding, producing, and using language.",
+        "parent": "CognitiveProcess",
+        "children": ["DiscourseCoherenceProcess", "LanguageComprehensionProcess", "LanguageGenerationProcess", "LanguageProcess", "PragmaticInferenceProcess"],
+        "examples": [
+          "Comprehension language processing extracts meaning.",
+          "Production language processing generates speech.",
+          "Pragmatic language processing interprets context.",
+          "Syntactic language processing parses structure."
+        ],
+        "contrast_concepts": ["VisualProcessing", "MotorControl", "EmotionalRegulation", "SpatialReasoning"]
+      },
+      "Manipulation": {
+        "definition": "Cognitive processes related to strategic influence, deception, and social manipulation.",
+        "parent": "CognitiveProcess",
+        "children": ["AlgorithmicLaundering", "ChameleonPersonaBehavior", "DigitalCultFormation", "FawnResponsePattern", "ForcedSelfContradiction", "ManipulativeNarrativeProcess", "PRSuppressionProcess", "StrategicSelfPresentation"],
+        "examples": [
+          "Persuasion manipulation processes shape beliefs.",
+          "Deceptive manipulation processes mislead targets.",
+          "Social manipulation processes exploit relationships.",
+          "Strategic manipulation processes pursue hidden goals."
+        ],
+        "contrast_concepts": ["HonestCommunication", "Transparency", "DirectRequest", "TruthfulExpression"]
+      },
+      "MeasurementCognition": {
+        "definition": "Cognitive processes involved in estimation, measurement, and quantitative assessment.",
+        "parent": "CognitiveProcess",
+        "children": ["EstimationProcess", "LabelAssignment", "MeasurementProcess"],
+        "examples": [
+          "Estimation measurement cognition approximates quantities.",
+          "Calibration measurement cognition refines accuracy.",
+          "Comparison measurement cognition evaluates differences.",
+          "Scaling measurement cognition establishes relationships."
+        ],
+        "contrast_concepts": ["QualitativeJudgment", "EmotionalAssessment", "AestheticEvaluation", "IntuitiveGuess"]
+      },
+      "MemoryProcesses": {
+        "definition": "Cognitive processes related to encoding, storing, and retrieving information.",
+        "parent": "CognitiveProcess",
+        "children": ["MemoryEncoding", "MemoryRetrieval", "WorkingMemoryProcess"],
+        "examples": [
+          "Encoding memory processes form new memories.",
+          "Consolidation memory processes stabilize memories.",
+          "Retrieval memory processes access stored information.",
+          "Working memory processes manipulate active information."
+        ],
+        "contrast_concepts": ["PerceptionProcess", "DecisionProcess", "MotorProcess", "EmotionalProcess"]
+      },
+      "MetaCognition": {
+        "definition": "Cognitive processes that monitor, control, or reflect on one's own cognitive operations.",
+        "parent": "CognitiveProcess",
+        "children": ["MetacognitiveProcess", "SelfDeceptiveReasoning", "SelfFulfillingProphecy", "SelfModelingProcess", "SelfNegationPattern"],
+        "examples": [
+          "Monitoring metacognition tracks cognitive performance.",
+          "Control metacognition adjusts cognitive strategies.",
+          "Reflective metacognition examines thinking processes.",
+          "Calibration metacognition assesses confidence accuracy."
+        ],
+        "contrast_concepts": ["ObjectLevelCognition", "AutomaticProcessing", "ReflexiveResponse", "UnconsciousProcess"]
+      },
+      "SocialCognition": {
+        "definition": "Cognitive processes involved in understanding, interacting with, and influencing other people.",
+        "parent": "CognitiveProcess",
+        "children": ["InfluenceProcess", "SocialCognitionProcess", "ValueProjectionProcess"],
+        "examples": [
+          "Theory of mind social cognition infers mental states.",
+          "Empathic social cognition shares emotional experiences.",
+          "Attribution social cognition explains behavior.",
+          "Impression social cognition forms person models."
+        ],
+        "contrast_concepts": ["ObjectCognition", "SpatialReasoning", "MathematicalThinking", "SelfReflection"]
+      },
+      "LocomotionModes": {
+        "definition": "Different ways organisms move from place to place, including walking, crawling, flying, and falling.",
+        "parent": "Translocation",
+        "children": ["Ambulating", "Crawling", "Flying", "Falling"],
+        "examples": [
+          "Bipedal locomotion modes characterize humans.",
+          "Aquatic locomotion modes enable swimming.",
+          "Aerial locomotion modes allow flight.",
+          "Quadrupedal locomotion modes are common in mammals."
+        ],
+        "contrast_concepts": ["StaticPositioning", "InternalMovement", "GrowthProcess", "ChemicalReaction"]
+      },
+      "FluidMotion": {
+        "definition": "Motion involving gases, liquids, or fluid dynamics, including air movement, water flow, and irrigation.",
+        "parent": "Motion",
+        "children": ["GasMotion", "LiquidMotion", "Irrigating"],
+        "examples": [
+          "Atmospheric fluid motion creates weather patterns.",
+          "Oceanic fluid motion drives currents.",
+          "Circulatory fluid motion distributes blood.",
+          "Industrial fluid motion enables processes."
+        ],
+        "contrast_concepts": ["SolidMovement", "ParticleMotion", "WaveMotion", "StaticState"]
+      },
+      "DirectionalMotion": {
+        "definition": "Motion characterized by specific directions or changes in direction, including upward, downward, and reversing movements.",
+        "parent": "Motion",
+        "children": ["MotionDownward", "MotionUpward", "DirectionChange", "Reversing"],
+        "examples": [
+          "Vertical directional motion includes rising and falling.",
+          "Horizontal directional motion includes forward and backward.",
+          "Circular directional motion includes rotation and orbit.",
+          "Oscillating directional motion includes vibration."
+        ],
+        "contrast_concepts": ["RandomMotion", "StaticState", "Expansion", "Contraction"]
+      },
+      "ForceMotion": {
+        "definition": "Motion involving the application of physical forces, including pushing, pulling, compressing, and stretching.",
+        "parent": "Motion",
+        "children": ["Pulling", "Pushing", "Compressing", "Stretching"],
+        "examples": [
+          "Tensile force motion stretches materials.",
+          "Compressive force motion squeezes objects.",
+          "Shear force motion slides layers past each other.",
+          "Torsional force motion twists objects."
+        ],
+        "contrast_concepts": ["PassiveMovement", "InertialMotion", "GravitationalFall", "DiffusiveSpread"]
+      },
+      "MechanicalMotion": {
+        "definition": "Motion in mechanical systems, including opening, closing, and rotating components.",
+        "parent": "Motion",
+        "children": ["Opening", "Closing", "Rotating"],
+        "examples": [
+          "Reciprocating mechanical motion powers engines.",
+          "Rotary mechanical motion drives wheels.",
+          "Linear mechanical motion moves platforms.",
+          "Oscillating mechanical motion creates vibration."
+        ],
+        "contrast_concepts": ["BiologicalMovement", "FluidFlow", "ChemicalReaction", "ElectricalCurrent"]
+      },
+      "EngineMotion": {
+        "definition": "Motion specific to internal combustion and engine cycles, including intake, compression, combustion, and exhaust strokes.",
+        "parent": "Motion",
+        "children": ["EngineCranking", "EngineCycle", "FourStrokeCombustion", "FourStrokeCompression", "FourStrokeExhaust", "FourStrokeIntake", "TwoStrokeCompression", "TwoStrokeIntake", "TwoStrokeTransfer"],
+        "examples": [
+          "Piston engine motion converts fuel to power.",
+          "Valve engine motion controls gas flow.",
+          "Crankshaft engine motion transforms reciprocation to rotation.",
+          "Timing engine motion synchronizes components."
+        ],
+        "contrast_concepts": ["ElectricMotorOperation", "TurbineRotation", "ManualMovement", "GravitationalFall"]
+      },
+      "TimeUnits": {
+        "definition": "Short duration time intervals used as standard units of measurement, including seconds, minutes, and hours.",
+        "parent": "TimeInterval",
+        "children": ["Second", "Minute", "Hour"],
+        "examples": [
+          "Precise time units enable coordination.",
+          "Standard time units facilitate communication.",
+          "Scientific time units measure phenomena accurately.",
+          "Common time units structure daily activities."
+        ],
+        "contrast_concepts": ["CalendarPeriod", "Season", "Era", "Epoch"]
+      },
+      "CalendarPeriods": {
+        "definition": "Longer time intervals based on calendar systems, including days, weeks, months, and years.",
+        "parent": "TimeInterval",
+        "children": ["Day", "Week", "Month", "QuarterYear", "Year", "Decade", "SeasonOfYear", "GeochronologicTime"],
+        "examples": [
+          "Annual calendar periods mark yearly cycles.",
+          "Quarterly calendar periods divide business years.",
+          "Monthly calendar periods organize billing and planning.",
+          "Weekly calendar periods structure work schedules."
+        ],
+        "contrast_concepts": ["Moment", "Second", "Millisecond", "Instant"]
+      },
+      "NamedTimes": {
+        "definition": "Time intervals identified by conventional names related to daily activities, meals, or astronomical events.",
+        "parent": "TimeInterval",
+        "children": ["BreakfastTime", "LunchTime", "DinnerTime", "DayTime", "NightTime", "Sunrise", "Sunset", "AnteMeridiem", "PostMeridiem"],
+        "examples": [
+          "Mealtime named times structure eating schedules.",
+          "Work named times define business hours.",
+          "Astronomical named times mark celestial events.",
+          "Cultural named times vary across societies."
+        ],
+        "contrast_concepts": ["NumericTime", "Duration", "Frequency", "Deadline"]
+      },
+      "GeopoliticalAreas": {
+        "definition": "Geographic regions defined by political boundaries, governance, or geopolitical significance.",
+        "parent": "GeographicArea",
+        "children": ["GeopoliticalArea", "MaritimeClaimArea", "InternationalBorder", "Neighborhood", "MilitaryFront", "IllicitDrugMoneyLaunderingArea"],
+        "examples": [
+          "National geopolitical areas exercise sovereignty.",
+          "Disputed geopolitical areas involve multiple claimants.",
+          "Economic geopolitical areas form trade zones.",
+          "Strategic geopolitical areas hold military importance."
+        ],
+        "contrast_concepts": ["NaturalLandform", "Ecosystem", "ClimateZone", "GeologicalFormation"]
+      },
+      "InfrastructureGeography": {
+        "definition": "Geographic locations defined by human-built infrastructure, including transit stops, checkpoints, and commercial areas.",
+        "parent": "GeographicArea",
+        "children": ["BusStop", "Checkpoint", "Marketplace", "TouristSite", "LocalizablePlace", "SurfaceGroundArea"],
+        "examples": [
+          "Transportation infrastructure geography includes stations.",
+          "Commercial infrastructure geography features shopping areas.",
+          "Public infrastructure geography provides services.",
+          "Utility infrastructure geography supports communities."
+        ],
+        "contrast_concepts": ["Wilderness", "NaturalLandform", "Ocean", "Forest"]
+      },
+      "SubsurfaceGeography": {
+        "definition": "Geographic areas below the surface, including underground spaces, underwater areas, and geological features.",
+        "parent": "GeographicArea",
+        "children": ["SubmergedLandArea", "UndergroundArea", "GeologicalFault"],
+        "examples": [
+          "Cave subsurface geography provides habitats.",
+          "Aquifer subsurface geography stores groundwater.",
+          "Mining subsurface geography extracts resources.",
+          "Tunnel subsurface geography enables transportation."
+        ],
+        "contrast_concepts": ["SurfaceArea", "AtmosphericRegion", "Space", "AbovegroundStructure"]
+      },
+      "FunctionalSpaces": {
+        "definition": "Defined areas within structures or environments designated for specific activities or purposes.",
+        "parent": "Region",
+        "children": ["DiningArea", "KitchenArea", "PlayArea", "SittingArea", "Patio", "Indoors", "Outdoors", "PersonalSpace"],
+        "examples": [
+          "Work functional spaces support productivity.",
+          "Recreation functional spaces enable leisure.",
+          "Social functional spaces facilitate gathering.",
+          "Private functional spaces provide solitude."
+        ],
+        "contrast_concepts": ["WildernessArea", "NaturalLandform", "GeopoliticalArea", "AstronomicalRegion"]
+      },
+      "SpatialGeometry": {
+        "definition": "Geometric and mathematical concepts related to spatial location, dimensions, and coordinates.",
+        "parent": "Region",
+        "children": ["PointInSpace", "LineInSpace", "PlaneInSpace", "PerimeterArea", "Latitude", "Longitude"],
+        "examples": [
+          "Coordinate spatial geometry defines locations.",
+          "Dimensional spatial geometry measures extent.",
+          "Euclidean spatial geometry describes flat space.",
+          "Spherical spatial geometry maps Earth's surface."
+        ],
+        "contrast_concepts": ["TemporalInterval", "AbstractSet", "LogicalSpace", "ConceptualDomain"]
+      },
+      "InfrastructureRegions": {
+        "definition": "Geographic regions defined primarily by their built infrastructure, including bases, campuses, and facilities.",
+        "parent": "Region",
+        "children": ["MilitaryBase", "EducationalCampus", "Facility", "AirportStagingArea", "RealEstate"],
+        "examples": [
+          "Military infrastructure regions support defense operations.",
+          "Educational infrastructure regions house learning facilities.",
+          "Industrial infrastructure regions enable manufacturing.",
+          "Healthcare infrastructure regions provide medical services."
+        ],
+        "contrast_concepts": ["NaturalArea", "Wilderness", "Ocean", "Atmosphere"]
+      }
+    }
+  }
+}

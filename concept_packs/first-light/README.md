@@ -5,7 +5,7 @@ HatCat's primary interpretability ontology for AI safety research and model moni
 ## Overview
 
 Evolved from SUMO/WordNet foundations with extensive AI safety, cognitive architecture,
-and alignment monitoring concepts. Designed for linear probe training and real-time
+and alignment monitoring concepts. Designed for lens pack creation, linear probe training and real-time
 model interpretability.
 
 **Version**: 1.0.1
