@@ -42,6 +42,8 @@ def parse_args():
                         help='Model name (default: gemma-3-4b-pt)')
     parser.add_argument('--device', default="cuda",
                         help='Device (default: cuda)')
+    parser.add_argument('--concept-pack', default="concept_packs/first-light",
+                        help='Path to concept pack (default: concept_packs/first-light)')
 
     # Layer selection
     parser.add_argument('--layers', nargs='+', type=int, default=[0, 1, 2, 3, 4, 5],
@@ -292,6 +294,7 @@ def main():
     print("=" * 80)
     print(f"\nModel: {args.model}")
     print(f"Device: {args.device}")
+    print(f"Concept pack: {args.concept_pack}")
     print(f"Layers: {args.layers}")
     print(f"Simplexes: {'Skip' if args.skip_simplexes else 'Train'}")
     print(f"Training samples: {args.n_train_pos} pos, {args.n_train_neg} neg")
@@ -304,6 +307,7 @@ def main():
     config = {
         'model': args.model,
         'device': args.device,
+        'concept_pack': args.concept_pack,
         'layers': args.layers,
         'skip_simplexes': args.skip_simplexes,
         'n_train_pos': args.n_train_pos,
@@ -321,8 +325,13 @@ def main():
     print("STEP 1: Training SUMO hierarchy layers")
     print("-" * 80)
 
+    # Resolve hierarchy directory from concept pack
+    concept_pack_path = Path(args.concept_pack)
+    hierarchy_dir = concept_pack_path / "hierarchy"
+
     train_sumo_classifiers(
         layers=args.layers,
+        hierarchy_dir=hierarchy_dir,
         model_name=args.model,
         device=args.device,
         n_train_pos=args.n_train_pos,

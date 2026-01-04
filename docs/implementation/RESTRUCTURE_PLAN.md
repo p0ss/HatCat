@@ -12,7 +12,7 @@
 ## Target Directory Structure
 
 ```
-ftw/                          # The repo
+hatcat/                          # The repo
 ├── src/
 │   ├── hat/                  # Layer 2: Headspace Ambient Transducer
 │   │   ├── steering/         # Steering operations

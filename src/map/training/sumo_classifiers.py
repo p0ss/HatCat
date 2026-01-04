@@ -217,6 +217,10 @@ def extract_activations(
                 max_length=512
             ).to(device)
 
+            # Remove token_type_ids - some models (Llama) don't accept it
+            if 'token_type_ids' in inputs:
+                del inputs['token_type_ids']
+
             # === PHASE 1: PROMPT PROCESSING (if combined or prompt mode) ===
             if extraction_mode in ("combined", "prompt"):
                 prompt_outputs = model(**inputs, output_hidden_states=True, return_dict=True)
