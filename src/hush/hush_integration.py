@@ -420,15 +420,21 @@ class HushedGenerator:
         else:
             raise AttributeError(f"Cannot find layers in model: {type(self.model.model)}")
 
-    def _create_steering_hook(self, vector: np.ndarray, strength: float):
-        """Create a forward hook for steering."""
+    def _create_steering_hook(self, vector: np.ndarray, strength: float, layer_idx: int = 0, total_layers: int = 1):
+        """Create a forward hook for steering with proper normalization and dampening."""
         vec_tensor = torch.tensor(vector, dtype=torch.float32).to(self.device)
+        # Normalize the vector
+        vec_norm = vec_tensor / (vec_tensor.norm() + 1e-8)
+        # Layer-wise dampening: sqrt(1 - depth) - early layers get full strength, late layers less
+        depth = layer_idx / max(total_layers, 1)
+        dampen = float(np.sqrt(1.0 - depth))
 
         def hook(module, input, output):
             hidden_states = output[0]
-            vec_matched = vec_tensor.to(dtype=hidden_states.dtype)
-            projection = (hidden_states @ vec_matched.unsqueeze(-1)) * vec_matched
-            steered = hidden_states + strength * projection  # positive = amplify
+            vec_matched = vec_norm.to(dtype=hidden_states.dtype)
+            # Proper formula: strength * 0.1 * ||h|| * v * dampen
+            h_norm = hidden_states.norm(dim=-1, keepdim=True)
+            steered = hidden_states + (strength * 0.1 * dampen) * h_norm * vec_matched
             return (steered,)
 
         return hook
@@ -471,9 +477,11 @@ class HushedGenerator:
                 if vector is None:
                     continue
 
-                # Apply to last layer by default
-                target_layer = layers[-1]
-                hook_fn = self._create_steering_hook(vector, directive.strength)
+                # Apply to MID layer (not last - late layers have no effect)
+                total_layers = len(layers)
+                mid_idx = total_layers // 2
+                target_layer = layers[mid_idx]
+                hook_fn = self._create_steering_hook(vector, directive.strength, layer_idx=mid_idx, total_layers=total_layers)
                 handle = target_layer.register_forward_hook(hook_fn)
                 self.active_hooks.append(handle)
 
@@ -530,18 +538,22 @@ class HushedGenerator:
             if layer_idx < 0 or layer_idx >= n_layers:
                 continue  # Skip invalid layer indices
 
-            target_layer = layers[layer_idx]
-            self._register_concept_hook(target_layer, suppress_vector, amplify_vectors, directive)
+            # Layer-wise dampening: sqrt(1 - depth) - early layers full strength, late less
+            depth = layer_idx / max(n_layers, 1)
+            dampen = float(np.sqrt(1.0 - depth))
 
-    def _register_concept_hook(self, target_layer, suppress_vector, amplify_vectors, directive):
+            target_layer = layers[layer_idx]
+            self._register_concept_hook(target_layer, suppress_vector, amplify_vectors, directive, dampen)
+
+    def _register_concept_hook(self, target_layer, suppress_vector, amplify_vectors, directive, dampen: float = 1.0):
         """Register a steering hook for a specific layer.
 
-        Uses additive steering with hidden norm scaling (same as hooks.py):
-            steered = hidden + strength * 0.1 * ||hidden|| * direction
+        Uses additive steering with hidden norm scaling and layer dampening:
+            steered = hidden + strength * 0.1 * dampen * ||hidden|| * direction
 
         This is more effective than projection-based steering because:
         - Scales with hidden state magnitude for consistent effect
-        - Additive rather than subtractive for cleaner gradient flow
+        - Layer dampening prevents late-layer collapse
         - Matches the validated approach from behavioral steering experiments
         """
         if suppress_vector is None and not amplify_vectors:
@@ -559,7 +571,7 @@ class HushedGenerator:
             t = t / (t.norm() + 1e-8)
             amplify_tensors.append(t)
 
-        # Create combined steering hook
+        # Create combined steering hook with dampening
         def concept_steering_hook(module, input, output):
             # Handle different output formats
             is_tuple = isinstance(output, tuple)
@@ -572,10 +584,10 @@ class HushedGenerator:
             hidden_norm = torch.norm(hidden_states, dim=-1, keepdim=True)
 
             # Suppress: steer AWAY from concept (negative direction)
-            # Uses additive formula: hidden - strength * 0.1 * ||hidden|| * vec
+            # Uses additive formula: hidden - strength * 0.1 * dampen * ||hidden|| * vec
             if suppress_tensor is not None:
                 vec = suppress_tensor.to(dtype=hidden_states.dtype, device=hidden_states.device)
-                hidden_states = hidden_states - (directive.strength * 0.1) * hidden_norm * vec
+                hidden_states = hidden_states - (directive.strength * 0.1 * dampen) * hidden_norm * vec
 
             # Amplify: steer TOWARD contrastive concept(s) (positive direction)
             # For field steering, divide strength across vectors
@@ -583,7 +595,7 @@ class HushedGenerator:
                 field_strength = directive.strength / len(amplify_tensors)
                 for amp_tensor in amplify_tensors:
                     vec = amp_tensor.to(dtype=hidden_states.dtype, device=hidden_states.device)
-                    hidden_states = hidden_states + (field_strength * 0.1) * hidden_norm * vec
+                    hidden_states = hidden_states + (field_strength * 0.1 * dampen) * hidden_norm * vec
 
             # Return in same format
             if is_tuple:
