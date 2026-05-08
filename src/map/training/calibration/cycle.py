@@ -255,7 +255,7 @@ def run_calibration_cycle(
         print(f"{'='*80}")
         print("  Measuring per-concept noise floors for normalized scoring...")
 
-        from .cross_activation import run_cross_activation_calibration
+        from .cross_activation import run_cross_activation_calibration, run_noise_calibration
 
         cross_activation_result = run_cross_activation_calibration(
             lens_pack_dir=lens_pack_dir,
@@ -269,6 +269,22 @@ def run_calibration_cycle(
             layer_idx=layer_idx,
             max_concepts=max_concepts,
             activation_cache=activation_cache,
+        )
+
+        # Step 3b: Noise calibration - test lens response to random noise
+        # This catches chronic over-firers that fire high on anything
+        print(f"\n{'='*80}")
+        print("NOISE RESPONSE CALIBRATION")
+        print(f"{'='*80}")
+        print("  Testing lens response to random noise (catches chronic over-firers)...")
+
+        cross_activation_result = run_noise_calibration(
+            lens_pack_dir=lens_pack_dir,
+            device=device,
+            layers=layers,
+            n_noise_samples=100,
+            firing_threshold=cross_activation_threshold,
+            existing_calibration=cross_activation_result,
         )
 
         # Save calibration.json
@@ -287,6 +303,16 @@ def run_calibration_cycle(
                 print(f"    {i+1:2d}. {c['concept']:35s} L{c['layer']} "
                       f"cross_rate={c['cross_fire_rate']:.3f} "
                       f"self={c['self_mean']:.2f} cross={c['cross_mean']:.2f}")
+
+            # Also show noise over-firers
+            by_noise_rate = sorted(cal_data.values(), key=lambda x: x.get('noise_fire_rate', 0), reverse=True)
+            print(f"\n  Top noise over-firers (fire on random noise):")
+            for i, c in enumerate(by_noise_rate[:10]):
+                noise_rate = c.get('noise_fire_rate', 0)
+                noise_mean = c.get('noise_mean', 0)
+                if noise_rate > 0:
+                    print(f"    {i+1:2d}. {c['concept']:35s} L{c['layer']} "
+                          f"noise_rate={noise_rate:.3f} noise_mean={noise_mean:.3f}")
 
     # Step 4: Validation (final step)
     validation_result = None

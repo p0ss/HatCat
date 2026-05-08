@@ -74,19 +74,20 @@ class ConceptCalibration:
     """
     Per-concept calibration data for normalizing detection scores.
 
-    Uses continuous normalization with two noise signals:
+    Uses continuous normalization with THREE noise signals:
     1. cross_fire_rate: How often it fires on OTHER concepts' prompts (from cross-activation calibration)
     2. gen_fire_rate: How often it fires during FREE GENERATION (from generation calibration)
+    3. noise_fire_rate: How often it fires on RANDOM NOISE (from noise calibration)
 
     Three-stage normalization:
 
     1. Range Transformation: Map [cross_mean, self_mean] → [0.5, 1.0]
        - Spreads the concept's discriminative gap to a standard scale
 
-    2. Confidence Weighting: Uses BOTH noise signals
-       - confidence = (1 - cross_fire_rate) * (1 - gen_fire_rate)
-       - High noise (either signal) → pull toward 0.5
-       - Low noise (both signals) → trust the signal
+    2. Confidence Weighting: Uses ALL noise signals
+       - confidence = (1 - cross_fire_rate) * (1 - gen_fire_rate) * (1 - noise_fire_rate)
+       - High noise (any signal) → pull toward 0.5
+       - Low noise (all signals) → trust the signal
        - Result: output = 0.5 + (range_transformed - 0.5) * confidence
 
     3. Sigmoid Compression: Soft-bounds to (0, 1)
@@ -99,6 +100,7 @@ class ConceptCalibration:
     cross_std: float = 0.0  # Std on cross-fires
     cross_fire_rate: float = 0.0  # Fraction of other-concept prompts it fired on
     gen_fire_rate: float = 0.0  # Fraction of generation tokens it fired on
+    noise_fire_rate: float = 0.0  # Fraction of random noise samples it fired on (chronic over-firer signal)
 
     def normalize(self, raw_prob: float) -> float:
         """
@@ -125,13 +127,27 @@ class ConceptCalibration:
         """
         import math
 
-        # Compute confidence from noise signals
+        # CRITICAL FIX: Concepts with very low fire rates are "rarely seen"
+        # This means INSUFFICIENT DATA, not "high quality concept"
+        # If a concept barely fired during calibration, we can't trust it
+        # Pull toward 0.5 (prior) for these under-observed concepts
+        MIN_OBSERVATION_RATE = 0.05  # Need at least 5% fire rate to trust calibration
+
+        if self.cross_fire_rate < MIN_OBSERVATION_RATE and self.gen_fire_rate < MIN_OBSERVATION_RATE:
+            # Insufficient calibration data - pull toward prior
+            # Use observation rate as confidence (more observations = more confidence)
+            observation_confidence = max(self.cross_fire_rate, self.gen_fire_rate) / MIN_OBSERVATION_RATE
+            weighted = 0.5 + (raw_prob - 0.5) * observation_confidence
+            return self._sigmoid_compress(weighted)
+
+        # Compute confidence from ALL noise signals
         cross_confidence = 1.0 - self.cross_fire_rate
         gen_confidence = 1.0 - self.gen_fire_rate
+        noise_confidence = 1.0 - self.noise_fire_rate  # Penalize chronic over-firers
 
         # Need valid calibration data for range transformation
         if self.cross_mean <= 0 or self.self_mean <= self.cross_mean:
-            confidence = cross_confidence * gen_confidence
+            confidence = cross_confidence * gen_confidence * noise_confidence
             weighted = 0.5 + (raw_prob - 0.5) * confidence
             return self._sigmoid_compress(weighted)
 
@@ -141,8 +157,8 @@ class ConceptCalibration:
         gap = self.self_mean - self.cross_mean
         gap_confidence = min(1.0, gap / 0.2)
 
-        # Combined confidence: all three must be good
-        confidence = cross_confidence * gen_confidence * gap_confidence
+        # Combined confidence: all four factors must be good
+        confidence = cross_confidence * gen_confidence * gap_confidence * noise_confidence
 
         # Stage 1: Range transformation
         if raw_prob >= self.cross_mean:
@@ -435,6 +451,7 @@ class DeploymentManifest:
                 cross_std=cal.get("cross_std", 0.0),
                 cross_fire_rate=cal.get("cross_fire_rate", 0.0),
                 gen_fire_rate=cal.get("gen_fire_rate", 0.0),
+                noise_fire_rate=cal.get("noise_fire_rate", 0.0),  # From noise calibration
             )
             count += 1
 

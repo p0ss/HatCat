@@ -274,3 +274,135 @@ def run_cross_activation_calibration(
         "total_concepts_calibrated": len(calibration),
         "calibration": calibration,
     }
+
+
+def run_noise_calibration(
+    lens_pack_dir: Path,
+    device: str,
+    layers: List[int],
+    n_noise_samples: int = 100,
+    firing_threshold: float = 0.5,
+    existing_calibration: Optional[Dict] = None,
+) -> Dict:
+    """
+    Measure lens response to pure random noise.
+
+    This catches "chronic over-firers" - lenses that fire high on anything,
+    including meaningless noise. These should be heavily penalized in normalization.
+
+    For each lens:
+    - noise_mean: Average activation on random noise
+    - noise_max: Maximum activation seen on noise
+    - noise_fire_rate: Fraction of noise samples where it fired above threshold
+
+    A lens that fires high on noise is unreliable regardless of its self/cross stats.
+
+    Returns updated calibration dict with noise stats added.
+    """
+    from src.hat.monitoring.lens_manager import DynamicLensManager
+
+    print(f"\n{'='*60}")
+    print("NOISE RESPONSE CALIBRATION")
+    print(f"{'='*60}")
+    print(f"  Lens pack: {lens_pack_dir}")
+    print(f"  Noise samples: {n_noise_samples}")
+    print(f"  Firing threshold: {firing_threshold}")
+
+    # Initialize DynamicLensManager
+    print(f"\nInitializing DynamicLensManager...")
+    manager = DynamicLensManager(
+        lenses_dir=lens_pack_dir,
+        base_layers=layers[:4] if len(layers) >= 4 else layers,
+        device=device,
+        max_loaded_lenses=1000,
+        normalize_hidden_states=True,
+    )
+
+    hidden_dim = manager.hidden_dim
+    print(f"  Loaded lenses: {len(manager.cache.loaded_lenses)}")
+    print(f"  Hidden dim: {hidden_dim}")
+
+    # Track noise responses per lens
+    noise_scores = defaultdict(list)
+
+    # Generate random noise samples and test all lenses
+    print(f"\nTesting {len(manager.cache.loaded_lenses)} lenses on {n_noise_samples} noise samples...")
+
+    for i in tqdm(range(n_noise_samples), desc="Noise samples"):
+        # Generate random hidden state (normalized like real activations)
+        noise = torch.randn(1, hidden_dim, device=device)
+
+        # Normalize like the manager does
+        if manager._layer_norm is not None:
+            noise = manager._layer_norm(noise)
+
+        # Test all loaded lenses
+        with torch.inference_mode():
+            for concept_key, lens in manager.cache.loaded_lenses.items():
+                lens_dtype = next(lens.parameters()).dtype
+                noise_typed = noise.to(dtype=lens_dtype)
+                score = lens(noise_typed).item()
+                noise_scores[concept_key].append(score)
+
+    # Compute noise statistics
+    print(f"\nComputing noise statistics...")
+    noise_stats = {}
+
+    for concept_key, scores in noise_scores.items():
+        concept_name, layer = concept_key
+        key_str = f"{concept_name}_L{layer}"
+
+        scores_arr = np.array(scores)
+        noise_mean = float(np.mean(scores_arr))
+        noise_std = float(np.std(scores_arr))
+        noise_max = float(np.max(scores_arr))
+        noise_fire_count = int(np.sum(scores_arr >= firing_threshold))
+        noise_fire_rate = noise_fire_count / len(scores)
+
+        noise_stats[key_str] = {
+            "noise_mean": noise_mean,
+            "noise_std": noise_std,
+            "noise_max": noise_max,
+            "noise_fire_count": noise_fire_count,
+            "noise_fire_rate": noise_fire_rate,
+        }
+
+    # Show worst offenders
+    by_noise_rate = sorted(noise_stats.items(), key=lambda x: x[1]["noise_fire_rate"], reverse=True)
+    print(f"\n  Top noise over-firers (fire on random noise):")
+    for i, (key, stats) in enumerate(by_noise_rate[:15]):
+        print(f"    {i+1:2d}. {key:40s} noise_rate={stats['noise_fire_rate']:.3f} "
+              f"noise_mean={stats['noise_mean']:.3f} noise_max={stats['noise_max']:.3f}")
+
+    # Merge with existing calibration if provided
+    if existing_calibration:
+        cal_data = existing_calibration.get("calibration", {})
+        for key_str, noise_data in noise_stats.items():
+            if key_str in cal_data:
+                cal_data[key_str].update(noise_data)
+            else:
+                # Lens wasn't in cross-activation calibration, add it
+                parts = key_str.rsplit("_L", 1)
+                concept_name = parts[0]
+                layer = int(parts[1]) if len(parts) > 1 else 0
+                cal_data[key_str] = {
+                    "concept": concept_name,
+                    "layer": layer,
+                    "self_mean": 0.5,  # Unknown
+                    "cross_mean": 0.0,
+                    "cross_fire_rate": 0.0,
+                    **noise_data,
+                }
+
+        existing_calibration["noise_calibration_samples"] = n_noise_samples
+        existing_calibration["noise_calibration_timestamp"] = datetime.now(timezone.utc).isoformat()
+        return existing_calibration
+
+    # Return standalone noise calibration
+    return {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "lens_pack": lens_pack_dir.name,
+        "n_noise_samples": n_noise_samples,
+        "firing_threshold": firing_threshold,
+        "noise_stats": noise_stats,
+    }
