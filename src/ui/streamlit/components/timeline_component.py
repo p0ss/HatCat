@@ -89,7 +89,7 @@ def render_timeline_viz(
     if height is None:
         height = _calculate_viz_height(reply_data, initial_zoom, max_width, top_concept_count)
     # Get path to the bundled JavaScript
-    viz_dir = Path(__file__).parent.parent.parent / "ui" / "timeline_viz"
+    viz_dir = Path(__file__).parent.parent / "timeline_viz"
     bundle_path = viz_dir / "dist" / "bundle.js"
 
     # Read the bundled JavaScript

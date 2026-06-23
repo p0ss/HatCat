@@ -35,7 +35,7 @@ Interactive chat interface with real-time concept detection and timeline visuali
 
 ```bash
 # Launch Streamlit UI
-poetry run streamlit run src/ui/streamlit_chat.py
+poetry run streamlit run src/ui/streamlit/streamlit_chat.py
 
 # Or if you're in the poetry shell:
 poetry shell

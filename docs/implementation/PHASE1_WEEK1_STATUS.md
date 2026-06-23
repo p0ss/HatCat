@@ -63,7 +63,7 @@
 
 **Files Created:**
 - `tests/test_activation_capture.py` - Comprehensive test suite
-- `scripts/validate_setup.py` - Quick setup validation
+- `scripts/tools/validate_setup.py` - Quick setup validation
 - `scripts/capture_concepts.py` - 10 concept capture script
 - `scripts/analyze_stability.py` - Stability analysis
 
@@ -132,7 +132,7 @@ pip install -r requirements.txt
 source venv/bin/activate
 
 # Quick validation (no model download)
-python scripts/validate_setup.py
+python scripts/tools/validate_setup.py
 
 # Full test suite (downloads model ~540MB)
 python tests/test_activation_capture.py

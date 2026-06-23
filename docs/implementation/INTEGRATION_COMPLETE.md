@@ -273,7 +273,7 @@ pooled = (hs * mask).sum(dim=1) / mask.sum(dim=1).clamp_min(1)
 
 ### Immediate (With GPU):
 1. Run `./setup.sh` to install dependencies
-2. Run `python scripts/validate_setup.py` to verify
+2. Run `python scripts/tools/validate_setup.py` to verify
 3. Run convergence validation (30 min)
 4. Bootstrap 1K concepts (2 min)
 5. Train interpreter v0 (15 min)

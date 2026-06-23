@@ -15,7 +15,7 @@ import sys
 # Add project root to path for src.* imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
-from src.hat.classifiers.classifiers.capture import ActivationCapture, ActivationConfig
+from src.hat.classifiers.capture import ActivationCapture, ActivationConfig
 from src.hat.utils.model_loader import ModelLoader
 
 

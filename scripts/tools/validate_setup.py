@@ -94,7 +94,7 @@ def main():
     print("=" * 80)
     print("\nNext steps:")
     print("1. Run: python tests/test_activation_capture.py")
-    print("2. Run: python scripts/capture_concepts.py")
+    print("2. Run: python scripts/tools/capture_concepts.py")
     print("\nNote: First run will download Gemma-3 270M (~540MB)")
     print("=" * 80)
 

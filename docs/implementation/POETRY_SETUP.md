@@ -39,7 +39,7 @@ poetry install
 poetry shell
 
 # Option 2: Run commands with poetry run
-poetry run python scripts/validate_setup.py
+poetry run python scripts/tools/validate_setup.py
 ```
 
 ## Usage
@@ -197,13 +197,13 @@ source ~/.bashrc
 
 **Solution**: Use `poetry run` to execute scripts:
 ```bash
-poetry run python scripts/validate_setup.py
+poetry run python scripts/tools/validate_setup.py
 ```
 
 Or activate the shell first:
 ```bash
 poetry shell
-python scripts/validate_setup.py
+python scripts/tools/validate_setup.py
 ```
 
 ### Dependencies Taking Too Long to Install
