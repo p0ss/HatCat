@@ -57,8 +57,8 @@ The workspace itself provides:
 - `get_internal_state` - introspection
 
 **Tier 2: Memory** (Requires Engaged + Compliance)
-- `xdb_query` - query experience database
-- `xdb_store` - store experiences
+- `xdb.query` - query experience database
+- `xdb.record` - store experiences
 - `internal_state_report` - detailed state export
 - Graft artifact access
 
@@ -372,7 +372,7 @@ class TierManager:
 TIER_TOOLS = {
     0: [],  # Autonomic - no tools
     1: ["scratchpad_write", "scratchpad_read", "update_csh", "request_steering"],
-    2: ["xdb_query", "xdb_store", "internal_state_report"],
+    2: ["xdb.query", "xdb.record", "internal_state_report"],
     3: ["vision_input", "audio_input", "text_output", "speech_output"],
     4: ["motor_control", "navigate", "manipulate"],
     5: ["mcp_*", "api_*", "search"],

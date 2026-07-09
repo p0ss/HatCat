@@ -109,12 +109,15 @@ def generate_with_dynamic_lenses(
             )
 
             # Filter by threshold and convert to dict
+            # Note: For polar lenses, 'score' is Wilson confidence with polarity sign
+            #   Range: [-1, +1] where magnitude = confidence, sign = direction
+            # For traditional lenses, 'score' is probability, range [0, 1]
             concept_scores = {}
-            for concept_name, prob, layer in detected:
-                if prob > threshold:
+            for concept_name, score, level in detected:
+                if score > threshold:
                     concept_scores[concept_name] = {
-                        'probability': float(prob),
-                        'layer': int(layer)
+                        'score': float(score),
+                        'level': int(level)
                     }
 
             # Get token info
@@ -156,10 +159,10 @@ def print_timestep_details(result):
         concepts = ts['concepts']
         if concepts:
             concept_str = ', '.join(
-                f"{name}:{data['probability']:.2f}"
+                f"{name}:{data['score']:+.2f}"  # +.2f shows sign for Wilson confidence
                 for name, data in sorted(
                     concepts.items(),
-                    key=lambda x: x[1]['probability'],
+                    key=lambda x: x[1]['score'],
                     reverse=True
                 )[:5]
             )

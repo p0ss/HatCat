@@ -55,14 +55,14 @@ def load_recalculated_layers() -> Dict:
 
 def load_layer_file(layer_num: int) -> Dict:
     """Load a layer JSON file."""
-    path = Path(f'data/concept_graph/abstraction_layers/layer{layer_num}.json')
+    path = Path(f'concept_packs/first-light/concept_graph/abstraction_layers/layer{layer_num}.json')
     with open(path) as f:
         return json.load(f)
 
 
 def save_layer_file(layer_num: int, layer_data: Dict) -> None:
     """Save a layer JSON file."""
-    path = Path(f'data/concept_graph/abstraction_layers/layer{layer_num}.json')
+    path = Path(f'concept_packs/first-light/concept_graph/abstraction_layers/layer{layer_num}.json')
     with open(path, 'w') as f:
         json.dump(layer_data, f, indent=2)
 

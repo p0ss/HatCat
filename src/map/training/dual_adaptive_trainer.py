@@ -760,7 +760,8 @@ class DualAdaptiveTrainer:
                 n_samples_per_class = required_samples // 2
 
                 # Find where negatives start
-                neg_start = np.where(train_labels == 0)[0][0] if 0 in train_labels else len(train_labels)
+                _neg_idx = np.where(np.atleast_1d(train_labels) == 0)[0]
+                neg_start = int(_neg_idx[0]) if len(_neg_idx) > 0 else len(train_labels)
 
                 # Get balanced positives and negatives
                 n_pos = min(n_samples_per_class, neg_start)
@@ -1062,7 +1063,8 @@ class DualAdaptiveTrainer:
                 n_samples_per_class = text_level // 2
 
                 # Find where negatives start (labels switch from 1 to 0)
-                neg_start = np.where(train_labels == 0)[0][0] if 0 in train_labels else len(train_labels)
+                _neg_idx = np.where(np.atleast_1d(train_labels) == 0)[0]
+                neg_start = int(_neg_idx[0]) if len(_neg_idx) > 0 else len(train_labels)
 
                 # Get balanced positives and negatives
                 n_pos = min(n_samples_per_class, neg_start)

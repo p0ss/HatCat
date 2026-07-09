@@ -25,7 +25,7 @@ def load_all_concepts() -> Tuple[List[Dict], Dict[str, Dict]]:
     concept_map = {}
 
     for layer_num in range(6):
-        layer_path = Path(f"data/concept_graph/abstraction_layers/layer{layer_num}.json")
+        layer_path = Path(f"concept_packs/first-light/concept_graph/abstraction_layers/layer{layer_num}.json")
         if layer_path.exists():
             with open(layer_path) as f:
                 data = json.load(f)

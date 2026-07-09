@@ -32,6 +32,85 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+# =============================================================================
+# Exception Classes
+# =============================================================================
+
+class ExpansionError(Exception):
+    """
+    Exception raised when expansion fails partway through.
+
+    Provides detailed diagnostic information about:
+    - Which component failed
+    - What the current state of the model is
+    - Which components were successfully expanded before failure
+    """
+
+    def __init__(
+        self,
+        message: str,
+        failed_component: str,
+        phase: str,
+        completed_components: List[str],
+        original_hidden_size: int,
+        target_hidden_size: int,
+        original_error: Optional[Exception] = None
+    ):
+        self.failed_component = failed_component
+        self.phase = phase
+        self.completed_components = completed_components
+        self.original_hidden_size = original_hidden_size
+        self.target_hidden_size = target_hidden_size
+        self.original_error = original_error
+
+        # Build detailed error message
+        details = [
+            f"\n{'='*60}",
+            f"EXPANSION FAILED",
+            f"{'='*60}",
+            f"Phase: {phase}",
+            f"Failed component: {failed_component}",
+            f"Original hidden_size: {original_hidden_size}",
+            f"Target hidden_size: {target_hidden_size}",
+            f"",
+            f"Components successfully expanded before failure ({len(completed_components)}):",
+        ]
+
+        for comp in completed_components[-10:]:  # Show last 10
+            details.append(f"  - {comp}")
+
+        if len(completed_components) > 10:
+            details.append(f"  ... and {len(completed_components) - 10} more")
+
+        details.extend([
+            f"",
+            f"IMPORTANT: The model is now in a partially expanded state.",
+            f"The model.config.hidden_size has been updated to {target_hidden_size}",
+            f"but not all weights have been expanded.",
+            f"",
+            f"To recover, you should reload the model from its original checkpoint.",
+            f"{'='*60}",
+        ])
+
+        if original_error:
+            details.append(f"Original error: {type(original_error).__name__}: {original_error}")
+
+        full_message = message + "\n" + "\n".join(details)
+        super().__init__(full_message)
+
+    def get_recovery_info(self) -> Dict[str, Any]:
+        """Return structured information for programmatic recovery."""
+        return {
+            "failed_component": self.failed_component,
+            "phase": self.phase,
+            "completed_components": self.completed_components,
+            "original_hidden_size": self.original_hidden_size,
+            "target_hidden_size": self.target_hidden_size,
+            "partial_expansion": True,
+            "components_expanded_count": len(self.completed_components),
+        }
+
+
 class MLPType(Enum):
     """MLP architecture types."""
     STANDARD = "standard"      # up_proj, down_proj only (GPT-2 style)
@@ -459,6 +538,10 @@ def plan_expansion(
             )
             plan.expert_targets[layer_idx] = expert_targets
 
+    # Plan final model norm (before lm_head)
+    final_norm_targets = _plan_final_norm_expansion(model, arch, old_dim, new_dim)
+    plan.norm_targets.extend(final_norm_targets)
+
     return plan
 
 
@@ -485,26 +568,35 @@ def _plan_embedding_expansion(
             init_value=0.0
         ))
 
-    # Output head: shape (vocab_size, hidden_dim)
-    # Need to expand dim 1 (columns)
+    # Output head: typically shape (vocab_size, hidden_dim) or (hidden_dim, vocab_size)
+    # We need to expand whichever dimension is hidden_dim
     lm_head_path = arch.component_names.get("lm_head", "lm_head")
     lm_head = _get_nested_attr(model, lm_head_path)
 
-    # Check if tied to embeddings
-    tied = False
-    if embed is not None and lm_head is not None:
-        if embed.weight is lm_head.weight:
-            tied = True
+    # Check if tied to embeddings - but we need to expand anyway because
+    # replacing embed_tokens.weight with a new Parameter breaks the tie
+    if lm_head is not None and hasattr(lm_head, 'weight'):
+        lm_weight = lm_head.weight
+        # Determine which dimension is hidden_dim by checking sizes
+        if lm_weight.shape[0] == old_dim:
+            # Shape is (hidden_dim, vocab_size) - expand rows
+            expand_dim = 0
+        elif lm_weight.shape[1] == old_dim:
+            # Shape is (vocab_size, hidden_dim) - expand columns
+            expand_dim = 1
+        else:
+            # Neither dimension matches - skip with warning
+            logger.warning(f"lm_head shape {lm_weight.shape} doesn't match hidden_dim {old_dim}")
+            expand_dim = None
 
-    if lm_head is not None and not tied:
-        targets.append(ExpansionTarget(
-            component_path=lm_head_path + ".weight",
-            expand_dim=1,  # Expand columns (input dim for output projection)
-            current_size=old_dim,
-            new_size=new_dim,
-            init_value=0.0,
-            tied_to=embed_path + ".weight" if tied else None
-        ))
+        if expand_dim is not None:
+            targets.append(ExpansionTarget(
+                component_path=lm_head_path + ".weight",
+                expand_dim=expand_dim,
+                current_size=old_dim,
+                new_size=new_dim,
+                init_value=0.0
+            ))
 
     return targets
 
@@ -573,8 +665,9 @@ def _plan_layer_expansion(
 
     # up_proj: (intermediate_size, hidden_dim)
     # Input is hidden_dim (expand cols)
-    up_path = f"{layer_path}.{arch.component_names['up_proj']}"
-    up_bias = _get_scion_bias(scion, layer_idx, 'up_proj', 'col')
+    up_component = arch.component_names['up_proj']
+    up_path = f"{layer_path}.{up_component}"
+    up_bias = _get_scion_bias(scion, layer_idx, up_component, 'col')
     targets.append(ExpansionTarget(
         component_path=up_path + ".weight",
         expand_dim=1,
@@ -598,8 +691,9 @@ def _plan_layer_expansion(
 
     # down_proj: (hidden_dim, intermediate_size)
     # Output is hidden_dim (expand rows)
-    down_path = f"{layer_path}.{arch.component_names['down_proj']}"
-    down_bias = _get_scion_bias(scion, layer_idx, 'down_proj', 'row')
+    down_component = arch.component_names['down_proj']
+    down_path = f"{layer_path}.{down_component}"
+    down_bias = _get_scion_bias(scion, layer_idx, down_component, 'row')
     targets.append(ExpansionTarget(
         component_path=down_path + ".weight",
         expand_dim=0,
@@ -672,6 +766,40 @@ def _plan_norm_expansion(
     return targets
 
 
+def _plan_final_norm_expansion(
+    model: nn.Module,
+    arch: ArchitectureSpec,
+    old_dim: int,
+    new_dim: int
+) -> List[ExpansionTarget]:
+    """Plan expansion for the final model norm (before lm_head)."""
+    targets = []
+
+    # Different architectures have different final norm locations
+    # Llama-style: model.model.norm
+    # GPT-2 style: transformer.ln_f
+    # GPT-NeoX style: gpt_neox.final_layer_norm
+    final_norm_paths = [
+        "model.norm",
+        "transformer.ln_f",
+        "gpt_neox.final_layer_norm",
+    ]
+
+    for final_norm_path in final_norm_paths:
+        final_norm = _get_nested_attr(model, final_norm_path)
+        if final_norm is not None and hasattr(final_norm, 'weight'):
+            targets.append(ExpansionTarget(
+                component_path=final_norm_path + ".weight",
+                expand_dim=0,  # 1D tensor
+                current_size=old_dim,
+                new_size=new_dim,
+                init_value=1.0  # Norm weights initialized to 1
+            ))
+            break  # Found the final norm, stop searching
+
+    return targets
+
+
 def _plan_moe_expansion(
     model: nn.Module,
     arch: ArchitectureSpec,
@@ -723,11 +851,23 @@ def _get_scion_bias(
     component: str,
     bias_type: str  # 'row' or 'col'
 ) -> Optional[torch.Tensor]:
-    """Get the appropriate bias from scion for initialization."""
+    """Get the appropriate bias from scion for initialization.
+
+    Args:
+        scion: The scion object containing neuron_biases
+        layer_idx: Layer index
+        component: Full component path (e.g., 'mlp.up_proj', 'mlp.down_proj')
+        bias_type: Either 'row' or 'col'
+
+    Returns:
+        The bias tensor if found, None otherwise
+    """
     if scion is None or not hasattr(scion, 'neuron_biases'):
         return None
 
-    key = f"layer{layer_idx}_mlp.{component}_{bias_type}"
+    # Match format from Scion._create_neuron_biases():
+    # scion uses: "layer{idx}_{full_component}_{row|col}"
+    key = f"layer{layer_idx}_{component}_{bias_type}"
     return scion.neuron_biases.get(key)
 
 
@@ -769,32 +909,96 @@ def execute_expansion(
 
     Returns:
         The modified model
+
+    Raises:
+        ExpansionError: If expansion fails partway through, with detailed
+            diagnostic information about what failed and the current state.
     """
     logger.info(f"Executing expansion: {plan.old_hidden_dim} -> {plan.new_hidden_dim}")
     logger.info(f"Total new parameters: {plan.total_new_parameters():,}")
 
-    # Update model config
-    model.config.hidden_size = plan.new_hidden_dim
+    # Track completed components for error recovery diagnostics
+    completed_components: List[str] = []
+    current_phase = "initialization"
+    current_component = ""
 
-    # Expand embeddings
-    for target in plan.embedding_targets:
-        _expand_weight_matrix(model, target, device)
+    # Store original hidden_size in case we need it for error reporting
+    original_hidden_size = plan.old_hidden_dim
 
-    # Expand layer weights
-    for target in plan.targets:
-        _expand_weight_matrix(model, target, device)
+    try:
+        # Update model config
+        current_phase = "config_update"
+        current_component = "model.config.hidden_size"
+        model.config.hidden_size = plan.new_hidden_dim
+        completed_components.append(current_component)
 
-    # Expand norms
-    for target in plan.norm_targets:
-        _expand_norm(model, target, device)
-
-    # Expand MoE experts
-    for layer_idx, expert_targets in plan.expert_targets.items():
-        for target in expert_targets:
+        # Expand embeddings
+        current_phase = "embedding_expansion"
+        for target in plan.embedding_targets:
+            current_component = target.component_path
             _expand_weight_matrix(model, target, device)
+            completed_components.append(current_component)
 
-    logger.info("Expansion complete")
-    return model
+        # Expand layer weights
+        current_phase = "layer_weight_expansion"
+        for target in plan.targets:
+            current_component = target.component_path
+            _expand_weight_matrix(model, target, device)
+            completed_components.append(current_component)
+
+        # Expand norms
+        current_phase = "norm_expansion"
+        for target in plan.norm_targets:
+            current_component = target.component_path
+            _expand_norm(model, target, device)
+            completed_components.append(current_component)
+
+        # Expand MoE experts
+        current_phase = "moe_expert_expansion"
+        for layer_idx, expert_targets in plan.expert_targets.items():
+            for target in expert_targets:
+                current_component = target.component_path
+                _expand_weight_matrix(model, target, device)
+                completed_components.append(current_component)
+
+        logger.info("Expansion complete")
+        return model
+
+    except torch.cuda.OutOfMemoryError as e:
+        logger.error(f"CUDA out of memory during expansion of {current_component}")
+        raise ExpansionError(
+            message=f"CUDA out of memory while expanding '{current_component}'",
+            failed_component=current_component,
+            phase=current_phase,
+            completed_components=completed_components,
+            original_hidden_size=original_hidden_size,
+            target_hidden_size=plan.new_hidden_dim,
+            original_error=e
+        ) from e
+
+    except RuntimeError as e:
+        logger.error(f"Runtime error during expansion of {current_component}: {e}")
+        raise ExpansionError(
+            message=f"Runtime error while expanding '{current_component}'",
+            failed_component=current_component,
+            phase=current_phase,
+            completed_components=completed_components,
+            original_hidden_size=original_hidden_size,
+            target_hidden_size=plan.new_hidden_dim,
+            original_error=e
+        ) from e
+
+    except Exception as e:
+        logger.error(f"Unexpected error during expansion of {current_component}: {e}")
+        raise ExpansionError(
+            message=f"Unexpected error while expanding '{current_component}'",
+            failed_component=current_component,
+            phase=current_phase,
+            completed_components=completed_components,
+            original_hidden_size=original_hidden_size,
+            target_hidden_size=plan.new_hidden_dim,
+            original_error=e
+        ) from e
 
 
 def _expand_weight_matrix(

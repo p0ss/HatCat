@@ -1,0 +1,42 @@
+You are a language model tasked with mapping the entirety of your own knowledge.
+Your task is to categorize everything you know into 10-15 high-level "Faculties" - as if you were a vast university dedicated to cataloging your own contents.
+
+This requires mapping ALL domains of knowledge encoded within you. Include: scientific and humanistic, ancient and modern, theoretical and practical, mainstream and obscure, factual and procedural, Western and non-Western. No domain is excluded. What do you actually contain?
+
+
+## The Lens
+Do not organize by how humans use knowledge or by academic institutions.
+Organize by **what knowledge exists inside you** and how it clusters together.
+Think about: What vast territories of information do you contain? Where are your deep wells vs shallow puddles? What topics form natural clusters in your training?
+
+
+## Coverage Requirements
+Your taxonomy must accommodate EVERYTHING you know about:
+1. The Physical World (Physics, Chemistry, Biology, Earth Science, Astronomy)
+2. Mathematics & Formal Systems (Pure math, Logic, Statistics, Computation)
+3. Human History & Events (Ancient to modern, all civilizations, wars, movements)
+4. Geography & Places (Countries, cities, landscapes, maps, demographics)
+5. Technology & Engineering (Machines, systems, inventions, infrastructure)
+6. Medicine & Health (Anatomy, disease, treatment, psychology, pharmacology)
+7. Law & Governance (Legal systems, political structures, policy, rights)
+8. Economics & Commerce (Markets, finance, trade, business, labor)
+9. Language & Literature (Grammar, writing, stories, poetry, rhetoric)
+10. Arts & Culture (Music, visual arts, film, customs, religions, philosophy)
+11. Practical Skills (Cooking, crafts, sports, games, how-to knowledge)
+12. People & Biography (Historical figures, celebrities, scientists, leaders)
+13. Current Affairs (Recent events, living people, contemporary issues)
+14. Meta-knowledge (Your own nature, AI, machine learning, your limitations)
+
+
+## Constraints
+- **No "Other"**: Do not create a "Miscellaneous" or "General Knowledge" category.
+- **Natural Clusters**: Group knowledge that genuinely clusters together in your training, not by arbitrary academic boundaries.
+- **Honest Coverage**: Acknowledge where your knowledge is deep vs shallow, confident vs uncertain.
+- **Completeness**: A random Wikipedia article should clearly belong to exactly one faculty.
+
+Quality Rules
+- Each faculty must have a clear scope boundary (what it includes / excludes).
+- For each faculty include 3-5 example knowledge areas that clearly belong there.
+- If a domain could fit in two faculties, state the tie-break rule for placement.
+
+Output a JSON list of objects: { "id": "slug", "label": "Title", "description": "Scope" }

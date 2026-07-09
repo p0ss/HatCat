@@ -424,17 +424,40 @@ def main():
     log_dir.mkdir(parents=True, exist_ok=True)
     log_file = log_dir / f"calibration_run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
-    # Tee stdout to both console and log file
+    # Tee stdout to both console and log file, resilient to terminal disconnection
     class TeeOutput:
-        def __init__(self, *files):
-            self.files = files
+        def __init__(self, terminal, log_file):
+            self.terminal = terminal
+            self.log_file = log_file
+            self.terminal_alive = True
+
         def write(self, text):
-            for f in self.files:
-                f.write(text)
-                f.flush()
+            # Always write to log first (the important destination)
+            try:
+                self.log_file.write(text)
+                self.log_file.flush()
+            except Exception:
+                pass
+
+            # Then try terminal (nice to have, but not critical)
+            if self.terminal_alive:
+                try:
+                    self.terminal.write(text)
+                except BrokenPipeError:
+                    self.terminal_alive = False
+                except Exception:
+                    pass
+
         def flush(self):
-            for f in self.files:
-                f.flush()
+            try:
+                self.log_file.flush()
+            except Exception:
+                pass
+            if self.terminal_alive:
+                try:
+                    self.terminal.flush()
+                except Exception:
+                    self.terminal_alive = False
 
     log_handle = open(log_file, 'w')
     sys.stdout = TeeOutput(sys.__stdout__, log_handle)
@@ -459,11 +482,12 @@ def main():
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model)
+    tokenizer = AutoTokenizer.from_pretrained(args.model, local_files_only=True)
     model = AutoModelForCausalLM.from_pretrained(
         args.model,
         torch_dtype=torch.bfloat16,
         device_map=args.device,
+        local_files_only=True,
     )
 
     # Run cycle

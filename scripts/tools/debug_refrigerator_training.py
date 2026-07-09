@@ -43,7 +43,7 @@ def main():
 
     # Get from layer file
     import json
-    with open("data/concept_graph/abstraction_layers/layer3.json", "r") as f:
+    with open("concept_packs/first-light/concept_graph/abstraction_layers/layer3.json", "r") as f:
         layer_data = json.load(f)
 
     refrigerator_concept = None

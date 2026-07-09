@@ -26,12 +26,24 @@ seaborn = ">=0.12.0"
 nltk = "^3.9.2"
 sentence-transformers = "^5.1.2"
 rdflib = "^7.4.0"
-networkx = "3.1"
+networkx = ">=3.1"
 fastapi = ">=0.104.0"
 uvicorn = ">=0.24.0"
 pydantic = ">=2.0.0"
 sse-starlette = ">=1.6.0"
 plotly = "^6.5.0"
+motor = ">=3.3.0"
+PyJWT = ">=2.8.0"
+
+[tool.poetry.group.inspect.dependencies]
+inspect-ai = {version = ">=0.3.0", python = ">=3.10"}
+inspect-evals = {version = ">=0.1.0", python = ">=3.10", optional = true}
+
+[tool.poetry.extras]
+inspect = ["inspect-ai", "inspect-evals"]
+
+[tool.poetry.plugins."inspect_ai"]
+hatcat_wrapped = "src.inspect_integration.tasks.wrapped:hatcat_wrapped"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.0.0"

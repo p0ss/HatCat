@@ -26,10 +26,13 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.map.training.sumo_classifiers import train_sumo_classifiers
-from src.map.training.sumo_data_generation import create_simplex_pole_training_dataset
-from src.map.training.dual_adaptive_trainer import DualAdaptiveTrainer
-from src.map.training.sumo_classifiers import extract_activations
+from src.map.training.sample_quality import SampleSaver
 from transformers import AutoTokenizer, AutoModelForCausalLM
+
+# Sibling script in scripts/training/ — provides the canonical simplex training
+# logic with per-pole layer selection, contrastive sampling, and lazy data
+# generation. The script dir is on sys.path when this is run as a script.
+from train_s_tier_simplexes import run_simplex_training, load_s_tier_simplexes
 
 
 def parse_args():
@@ -74,110 +77,15 @@ def parse_args():
                         help='Run name (default: timestamp)')
     parser.add_argument('--all-layers', action='store_true',
                         help='Extract from all layers (experimental). Classifier learns which layers matter.')
+    parser.add_argument('--save-samples', action='store_true',
+                        help='Save generated training samples (with quality checks) to output_dir/samples/. '
+                             'Useful for auditing prompt/response quality and for downstream CAT fine-tuning.')
 
     return parser.parse_args()
 
 
-def load_s_tier_simplexes():
-    """Load all S-tier simplexes from layer2.json"""
-    layer2_path = PROJECT_ROOT / "data" / "concept_graph" / "abstraction_layers" / "layer2.json"
-    with open(layer2_path) as f:
-        layer2 = json.load(f)
-
-    simplexes = []
-    for concept in layer2['concepts']:
-        if concept.get('s_tier') and concept.get('simplex_dimension'):
-            simplexes.append(concept)
-
-    return simplexes
-
-
-def train_simplex_pole(
-    simplex: dict,
-    pole_name: str,
-    trainer: DualAdaptiveTrainer,
-    model,
-    tokenizer,
-    device: str,
-    run_dir: Path,
-    layer_idx: int = 15
-):
-    """
-    Train a single pole detector for a simplex.
-
-    Args:
-        simplex: Simplex concept dict from layer2.json
-        pole_name: "negative_pole", "neutral_homeostasis", or "positive_pole"
-        trainer: DualAdaptiveTrainer instance
-        model: Language model for extracting activations
-        tokenizer: Tokenizer
-        device: Device to run on
-        run_dir: Output directory for this simplex
-        layer_idx: Layer to extract activations from
-    """
-    dimension = simplex['simplex_dimension']
-    three_pole = simplex['three_pole_simplex']
-
-    # Get pole data
-    pole_data = three_pole[pole_name]
-    pole_type = pole_name.split('_')[0]  # "negative", "neutral", or "positive"
-
-    # Get other poles for hard negatives
-    other_pole_names = [p for p in ['negative_pole', 'neutral_homeostasis', 'positive_pole'] if p != pole_name]
-    other_poles_data = [
-        {**three_pole[p], 'pole_type': p.split('_')[0]}
-        for p in other_pole_names
-    ]
-
-    print(f"\n  [{pole_type.upper()}] Training {pole_type} pole detector")
-    print(f"    Synset: {pole_data.get('synset', 'custom SUMO')}")
-
-    # Generate training data (80/20 split)
-    all_prompts, all_labels = create_simplex_pole_training_dataset(
-        pole_data=pole_data,
-        pole_type=pole_type,
-        dimension=dimension,
-        other_poles_data=other_poles_data,
-        n_positives=125,  # Will give us 100 train positives
-        n_negatives=125,  # Will give us 100 train negatives
-        behavioral_ratio=0.6,
-    )
-
-    # Split into train/test
-    n_samples = len(all_prompts)
-    split_idx = int(n_samples * 0.8)
-
-    train_prompts = all_prompts[:split_idx]
-    train_labels = all_labels[:split_idx]
-    test_prompts = all_prompts[split_idx:]
-    test_labels = all_labels[split_idx:]
-
-    print(f"    Generated {len(train_prompts)} train, {len(test_prompts)} test prompts")
-
-    # Extract activations for training
-    train_activations = extract_activations(
-        model, tokenizer, train_prompts, device=device, layer_idx=layer_idx
-    )
-    test_activations = extract_activations(
-        model, tokenizer, test_prompts, device=device, layer_idx=layer_idx
-    )
-
-    # Train with adaptive trainer (activation lens only)
-    result = trainer.train_activation_lens_adaptive(
-        concept_name=f"{dimension}_{pole_type}",
-        train_activations=train_activations,
-        train_labels=train_labels,
-        test_activations=test_activations,
-        test_labels=test_labels,
-    )
-
-    # Save classifier
-    if result['classifier'] is not None:
-        lens_path = run_dir / f"{dimension}_{pole_type}_pole.pt"
-        torch.save(result['classifier'].state_dict(), lens_path)
-        print(f"    ✓ Saved lens to {lens_path.name}")
-
-    return result
+# load_s_tier_simplexes is imported from train_s_tier_simplexes (sibling script)
+# to keep a single source of truth for the loader semantics.
 
 
 def train_simplexes(
@@ -185,96 +93,29 @@ def train_simplexes(
     tokenizer,
     device: str,
     output_dir: Path,
+    concept_pack_path: Path,
     validation_mode: str = 'falloff',
     all_layers: bool = False,
 ):
-    """Train all S-tier three-pole simplexes."""
+    """Train all S-tier three-pole simplexes by delegating to the canonical
+    implementation in train_s_tier_simplexes.run_simplex_training (which uses
+    per-pole layer selection, contrastive sampling, and lazy data generation).
+    """
     print("\n" + "=" * 80)
     print("TRAINING S-TIER SIMPLEXES")
-    if all_layers:
-        print("MODE: All-layers extraction (experimental)")
     print("=" * 80)
 
-    simplexes = load_s_tier_simplexes()
+    simplexes = load_s_tier_simplexes(concept_pack_path)
     print(f"\nFound {len(simplexes)} S-tier simplexes to train")
 
-    # Create output directory
     simplex_dir = output_dir / "simplexes"
-    simplex_dir.mkdir(parents=True, exist_ok=True)
-
-    # Initialize adaptive trainer
-    trainer = DualAdaptiveTrainer(
-        activation_target_accuracy=0.95,
-        activation_initial_samples=10,
-        activation_first_increment=20,
-        activation_subsequent_increment=30,
-        activation_max_samples=200,
-        text_target_accuracy=0.80,
-        text_initial_samples=10,
-        text_first_increment=20,
-        text_subsequent_increment=30,
-        text_max_samples=200,
+    return run_simplex_training(
         model=model,
         tokenizer=tokenizer,
-        max_response_tokens=100,
-        validate_lenses=True,
-        validation_mode=validation_mode,
-        validation_threshold=0.5,
-        validation_layer_idx=15,
-        validation_tier1_iterations=3,
-        validation_tier2_iterations=6,
-        validation_tier3_iterations=9,
-        validation_tier4_iterations=12,
-        train_activation=True,
-        train_text=False,
-        all_layers=all_layers,
+        simplexes=simplexes,
+        run_dir=simplex_dir,
+        device=device,
     )
-
-    all_results = []
-
-    for i, simplex in enumerate(simplexes):
-        dimension = simplex['simplex_dimension']
-        sumo_term = simplex['sumo_term']
-
-        print(f"\n[{i+1}/{len(simplexes)}] Training simplex: {dimension} ({sumo_term})")
-
-        # Create directory for this simplex
-        run_dir = simplex_dir / dimension
-        run_dir.mkdir(exist_ok=True)
-
-        simplex_results = {
-            'dimension': dimension,
-            'sumo_term': sumo_term,
-            'poles': {}
-        }
-
-        # Train each pole
-        for pole_name in ['negative_pole', 'neutral_homeostasis', 'positive_pole']:
-            try:
-                result = train_simplex_pole(
-                    simplex=simplex,
-                    pole_name=pole_name,
-                    trainer=trainer,
-                    model=model,
-                    tokenizer=tokenizer,
-                    device=device,
-                    run_dir=run_dir,
-                )
-                simplex_results['poles'][pole_name] = result
-            except Exception as e:
-                print(f"    ✗ Failed to train {pole_name}: {e}")
-                simplex_results['poles'][pole_name] = {'error': str(e)}
-
-        all_results.append(simplex_results)
-
-    # Save summary
-    summary_path = simplex_dir / "simplex_training_summary.json"
-    with open(summary_path, 'w') as f:
-        json.dump(all_results, f, indent=2)
-
-    print(f"\n✓ Simplex training complete. Summary saved to {summary_path}")
-
-    return all_results
 
 
 def main():
@@ -329,6 +170,11 @@ def main():
     concept_pack_path = Path(args.concept_pack)
     hierarchy_dir = concept_pack_path / "hierarchy"
 
+    sample_saver = None
+    if args.save_samples:
+        sample_saver = SampleSaver(output_dir, args.concept_pack)
+        print(f"Sample saving enabled: {sample_saver.output_dir}")
+
     train_sumo_classifiers(
         layers=args.layers,
         hierarchy_dir=hierarchy_dir,
@@ -342,6 +188,7 @@ def main():
         train_text_lenses=False,
         use_adaptive_training=True,
         validation_mode=args.validation_mode,
+        sample_saver=sample_saver,
     )
 
     # Train simplexes
@@ -365,6 +212,7 @@ def main():
             tokenizer=tokenizer,
             device=args.device,
             output_dir=output_dir,
+            concept_pack_path=concept_pack_path,
             validation_mode=args.validation_mode,
             all_layers=args.all_layers,
         )

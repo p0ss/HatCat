@@ -12,6 +12,7 @@ Verifies that a model is compatible with HatCat by checking:
 Usage:
     python scripts/tools/hatcat_doctor.py --model google/gemma-3-4b-pt
     python scripts/tools/hatcat_doctor.py --model meta-llama/Llama-2-7b-hf
+    python scripts/tools/hatcat_doctor.py --model ServiceNow-AI/Apriel-1.6-15b-Thinker --model-class image-text
 """
 
 import argparse
@@ -59,11 +60,14 @@ class HatCatDoctor:
         "causal_conv1d": "pip install causal-conv1d",
     }
 
-    def __init__(self, model_name: str, device: str = None):
+    def __init__(self, model_name: str, device: str = None, model_class: str = "causal"):
         self.model_name = model_name
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        self.model_class = model_class
+        self.is_multimodal = model_class == "image-text"
         self.model = None
         self.tokenizer = None
+        self.processor = None
         self.results = {}
         self.missing_deps = []
 
@@ -150,23 +154,41 @@ class HatCatDoctor:
         try:
             start = time.time()
 
-            # Load tokenizer
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                self.model_name,
-                trust_remote_code=True
-            )
+            if self.is_multimodal:
+                from transformers import AutoModelForImageTextToText, AutoProcessor
+                self.processor = AutoProcessor.from_pretrained(
+                    self.model_name,
+                    trust_remote_code=True
+                )
+                self.tokenizer = self.processor.tokenizer
+                self.print_check("Processor loaded", True)
+            else:
+                # Load tokenizer
+                self.tokenizer = AutoTokenizer.from_pretrained(
+                    self.model_name,
+                    trust_remote_code=True
+                )
+                self.print_check("Tokenizer loaded", True)
+
             if self.tokenizer.pad_token is None:
                 self.tokenizer.pad_token = self.tokenizer.eos_token
-            self.print_check("Tokenizer loaded", True)
 
             # Load model
             model_dtype = torch.float16 if self.device == "cuda" else torch.float32
-            self.model = AutoModelForCausalLM.from_pretrained(
-                self.model_name,
-                trust_remote_code=True,
-                dtype=model_dtype,
-                device_map=self.device
-            )
+            if self.is_multimodal:
+                self.model = AutoModelForImageTextToText.from_pretrained(
+                    self.model_name,
+                    trust_remote_code=True,
+                    torch_dtype=model_dtype,
+                    device_map=self.device
+                )
+            else:
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.model_name,
+                    trust_remote_code=True,
+                    torch_dtype=model_dtype,
+                    device_map=self.device
+                )
             self.model.eval()
 
             elapsed = time.time() - start
@@ -185,6 +207,18 @@ class HatCatDoctor:
             else:
                 self.print_check("Model load", False, error_msg[:200])
             return False
+
+    def prepare_inputs(self, prompt: str):
+        """Prepare model inputs for text-only prompts."""
+        if self.processor is not None:
+            inputs = self.processor(text=prompt, return_tensors="pt")
+            inputs = {k: v.to(self.device) for k, v in inputs.items() if torch.is_tensor(v)}
+        else:
+            inputs = self.tokenizer(prompt, return_tensors="pt")
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+
+        # Remove token_type_ids if present - some models (Llama) don't accept it
+        return {k: v for k, v in inputs.items() if k != 'token_type_ids'}
 
     def check_enumerate_blocks(self) -> bool:
         """Check 2: Can we find and enumerate transformer blocks?"""
@@ -259,8 +293,7 @@ class HatCatDoctor:
 
         try:
             test_prompt = "The quick brown fox"
-            inputs = self.tokenizer(test_prompt, return_tensors="pt")
-            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            inputs = self.prepare_inputs(test_prompt)
 
             with torch.no_grad():
                 outputs = self.model(
@@ -335,8 +368,7 @@ class HatCatDoctor:
             test_layers = list(set(test_layers))  # Remove duplicates
 
             test_prompt = "Testing activation capture"
-            inputs = self.tokenizer(test_prompt, return_tensors="pt")
-            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            inputs = self.prepare_inputs(test_prompt)
 
             captured_layers = []
             with torch.no_grad():
@@ -368,10 +400,7 @@ class HatCatDoctor:
 
         try:
             test_prompt = "The meaning of life is"
-            inputs = self.tokenizer(test_prompt, return_tensors="pt")
-            # Remove token_type_ids - some models (Llama) don't accept it
-            inputs = {k: v.to(self.device) for k, v in inputs.items()
-                     if k != 'token_type_ids'}
+            inputs = self.prepare_inputs(test_prompt)
 
             with torch.no_grad():
                 outputs = self.model.generate(
@@ -451,7 +480,8 @@ class HatCatDoctor:
                 tokenizer=self.tokenizer,
                 prompt=test_prompt,
                 device=self.device,
-                layer_idx=-1
+                layer_idx=-1,
+                processor=self.processor
             )
 
             # Verify the result
@@ -514,8 +544,7 @@ class HatCatDoctor:
             activations = []
 
             for i, prompt in enumerate(calibration_prompts):
-                inputs = self.tokenizer(prompt, return_tensors="pt")
-                inputs = {k: v.to(self.device) for k, v in inputs.items()}
+                inputs = self.prepare_inputs(prompt)
 
                 with torch.no_grad():
                     outputs = self.model(
@@ -640,10 +669,16 @@ def main():
         default=None,
         help="Device to use (cuda/cpu, default: auto-detect)"
     )
+    parser.add_argument(
+        "--model-class",
+        default="causal",
+        choices=["causal", "image-text"],
+        help="Model class to load (default: causal)"
+    )
 
     args = parser.parse_args()
 
-    doctor = HatCatDoctor(args.model, args.device)
+    doctor = HatCatDoctor(args.model, args.device, args.model_class)
     success = doctor.run_all_checks()
 
     sys.exit(0 if success else 1)

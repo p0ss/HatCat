@@ -199,9 +199,9 @@ Query timesteps with filters.
   "input_schema": {
     "type": "object",
     "properties": {
-      "session_id": {
+      "xdb_id": {
         "type": "string",
-        "description": "Session to query. Defaults to current."
+        "description": "Experience database to query. Defaults to current."
       },
       "tick_range": {
         "type": "object",

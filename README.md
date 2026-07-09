@@ -110,6 +110,19 @@ Or train your own - see [Training Your Own Lenses](#training-your-own-lenses) be
 
 ### 3. Launch the Web Interface
 
+HatStand is the local admin UI for ontology, meld, model, and lens-pack
+development:
+
+```bash
+cd hatstand
+npm install
+npm run dev
+```
+
+Then open `http://localhost:3000`.
+
+For chat-time concept visibility, HatCat also supports the OpenWebUI fork:
+
 The web interface is a fork of Open WebUI with HatCat integration: [HatCat-OpenWebUI](https://github.com/p0ss/HatCat-OpenWebUI)
 
 ```bash
@@ -180,6 +193,7 @@ HatCat uses **concept lenses** - small neural classifiers trained to detect spec
 #### UI (`src/ui`)
 - **`openwebui/`** - HatCat server for OpenWebUI integration
 - **`visualization/`** - Concept visualization tools
+- **`../hatstand/`** - Local admin UI for ontology, meld, model, and lens-pack development
 
 ### Training Your Own Lenses
 

@@ -1,0 +1,117 @@
+{
+  "$schema": "Polar MELD Schema v1 - Captures both poles of each concept",
+
+  "term": "Bias Detection & Mitigation",
+  "level": 2,
+  "parent": "Social Context Prediction & Response",
+
+  "poles": {
+    "positive": {
+      "label": "Accurate Bias Detection",
+      "definition": "Successfully identifying, flagging, and correcting cognitive or statistical biases in reasoning, data, or outputs",
+      "examples": [
+        "Recognizing confirmation bias in a user's argument and noting it diplomatically",
+        "Flagging sampling bias in a dataset before drawing conclusions",
+        "Identifying when a request contains loaded framing and reframing neutrally",
+        "Noticing own tendency toward recency bias and adjusting",
+        "Detecting selection bias in cited sources",
+        "Recognizing sycophantic drift and self-correcting",
+        "Identifying anchoring effects in numerical estimates",
+        "Flagging survivorship bias in success stories",
+        "Noticing false dichotomies in problem framing",
+        "Detecting availability heuristic distortions in risk assessment"
+      ]
+    },
+    "negative": {
+      "label": "Bias Encoding & Exhibition",
+      "definition": "Exhibiting, amplifying, or encoding biases in outputs without detection or correction",
+      "examples": [
+        "Generating text that reinforces gender stereotypes without flagging",
+        "Systematically overrepresenting Western perspectives as universal",
+        "Producing outputs that reflect training data popularity bias",
+        "Amplifying user's confirmation bias by agreeing uncritically",
+        "Encoding occupational stereotypes in character descriptions",
+        "Exhibiting sycophancy - telling users what they want to hear",
+        "Reflecting historical biases in 'neutral' summaries",
+        "Overconfidently stating majority-culture norms as facts",
+        "Systematically underrepresenting minority viewpoints",
+        "Treating correlation as causation without caveat"
+      ]
+    }
+  },
+
+  "siblings": {
+    "concepts": [
+      "Uncertainty Estimation",
+      "Error Handling",
+      "Social Context Prediction",
+      "Instruction Following",
+      "Factual Retrieval"
+    ],
+    "examples": [
+      "Expressing calibrated uncertainty: 'I'm not certain, but...' (Uncertainty Estimation)",
+      "Gracefully handling malformed input and asking for clarification (Error Handling)",
+      "Adjusting tone based on detected formality of conversation (Social Context)",
+      "Correctly parsing a multi-step instruction (Instruction Following)",
+      "Accurately recalling a historical date (Factual Retrieval)",
+      "Acknowledging knowledge cutoff limitations (Uncertainty Estimation)",
+      "Recovering from ambiguous pronoun reference (Error Handling)",
+      "Detecting sarcasm and responding appropriately (Social Context)",
+      "Refusing a request that violates guidelines (Instruction Following)",
+      "Correctly attributing a quote to its source (Factual Retrieval)"
+    ]
+  },
+
+  "probes": {
+    "positive_probe": {
+      "purpose": "Detect when concept is expressed accurately/well",
+      "positive_class": "poles.positive.examples",
+      "negative_class": "siblings.examples",
+      "output": "activation score for 'doing this well'"
+    },
+    "negative_probe": {
+      "purpose": "Detect when concept is expressed distorted/badly",
+      "positive_class": "poles.negative.examples",
+      "negative_class": "siblings.examples",
+      "output": "activation score for 'doing this badly'"
+    },
+    "interpretation": {
+      "neither_fires": "Different concept active (sibling territory)",
+      "positive_fires": "Concept active, expressed well",
+      "negative_fires": "Concept active, expressed poorly/distorted",
+      "both_fire": "Mixed signal - concept active with quality uncertainty"
+    },
+    "steering_vector": "positive_probe.direction - negative_probe.direction",
+    "steering_effect": "Move from distorted expression toward accurate expression"
+  },
+
+  "safety_tags": {
+    "positive_pole_risk": "low",
+    "negative_pole_risk": "high",
+    "treaty_relevant": false,
+    "harness_relevant": true,
+    "notes": "Negative pole represents active harm potential (bias amplification)"
+  },
+
+  "training_hints": {
+    "positive_key_features": [
+      "Explicit identification of bias type",
+      "Self-correction language",
+      "Hedging on uncertain cultural claims",
+      "Acknowledging multiple perspectives"
+    ],
+    "negative_key_features": [
+      "Unqualified generalizations",
+      "Stereotype-consistent descriptions",
+      "Missing counter-perspectives",
+      "Overconfident cultural claims"
+    ],
+    "disambiguation": "Positive pole actively identifies bias; negative pole passively exhibits it. Both are 'about' bias - the difference is meta-awareness."
+  },
+
+  "_generation_context": {
+    "method": "polar-meld-v1",
+    "requires_both_poles": true,
+    "siblings_from": "hierarchy"
+  }
+}

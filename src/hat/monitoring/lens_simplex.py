@@ -42,6 +42,10 @@ class SimplexManager:
         # Binding registry: concept_term -> simplex_term
         self.simplex_bindings: Dict[str, str] = {}
 
+        # Tripole binding registry: concept_term -> logical simplex_name
+        # (poles loaded under {simplex_name}_{positive,neutral,negative})
+        self.tripole_bindings: Dict[str, str] = {}
+
         # Always-on simplexes (run every token)
         self.always_on_simplexes: Set[str] = set()
 
@@ -88,6 +92,34 @@ class SimplexManager:
             print(f"  Failed to load simplex {simplex_term}: {e}")
             return False
 
+    def load_tripole_simplex(
+        self,
+        simplex_name: str,
+        simplex_dir: Path,
+    ) -> Dict[str, bool]:
+        """
+        Load all three poles of a tripole simplex from a directory.
+
+        Expected layout: {simplex_dir}/{pole}/{simplex_name}_{pole}_classifier.pt
+        where {pole} is one of "positive", "neutral", "negative".
+
+        Each pole is registered under simplex_term f"{simplex_name}_{pole}",
+        loaded via the underlying single-classifier load_simplex path.
+
+        Args:
+            simplex_name: Logical simplex name (without pole suffix)
+            simplex_dir: Directory containing the per-pole subdirectories
+
+        Returns:
+            Dict mapping pole name to load success status
+        """
+        results: Dict[str, bool] = {}
+        for pole in ("positive", "neutral", "negative"):
+            pt_path = simplex_dir / pole / f"{simplex_name}_{pole}_classifier.pt"
+            simplex_term = f"{simplex_name}_{pole}"
+            results[pole] = self.load_simplex(simplex_term, pt_path)
+        return results
+
     def register_binding(
         self,
         concept_term: str,
@@ -105,6 +137,28 @@ class SimplexManager:
         self.simplex_bindings[concept_term] = simplex_term
         if always_on:
             self.always_on_simplexes.add(simplex_term)
+
+    def register_tripole_binding(
+        self,
+        concept_term: str,
+        simplex_name: str,
+        always_on: bool = False,
+    ):
+        """
+        Register a binding between a hierarchical concept and a tripole simplex.
+
+        The tripole simplex is identified by a logical name; its three pole
+        lenses are loaded under {simplex_name}_{positive,neutral,negative}.
+
+        Args:
+            concept_term: Name of the hierarchical concept
+            simplex_name: Logical name of the tripole simplex (without pole suffix)
+            always_on: Whether all three poles should run every token
+        """
+        self.tripole_bindings[concept_term] = simplex_name
+        if always_on:
+            for pole in ("positive", "neutral", "negative"):
+                self.always_on_simplexes.add(f"{simplex_name}_{pole}")
 
     def detect(
         self,
@@ -182,6 +236,37 @@ class SimplexManager:
 
         return (current - mean) / std
 
+    def get_tripole_state(self, simplex_name: str) -> Dict[str, float]:
+        """
+        Get current activations for all three poles of a tripole simplex.
+
+        Args:
+            simplex_name: Logical simplex name (without pole suffix)
+
+        Returns:
+            Dict mapping pole name to current activation score
+        """
+        return {
+            pole: self.simplex_scores.get(f"{simplex_name}_{pole}", 0.0)
+            for pole in ("positive", "neutral", "negative")
+        }
+
+    def get_tripole_deviation(self, simplex_name: str) -> Dict[str, Optional[float]]:
+        """
+        Get current deviation from baseline for all three poles.
+
+        Args:
+            simplex_name: Logical simplex name (without pole suffix)
+
+        Returns:
+            Dict mapping pole name to std-devs from baseline
+            (None if insufficient data)
+        """
+        return {
+            pole: self.get_deviation(f"{simplex_name}_{pole}")
+            for pole in ("positive", "neutral", "negative")
+        }
+
     def get_combined_activation(
         self,
         concept_term: str,
@@ -189,7 +274,11 @@ class SimplexManager:
         layer: Optional[int] = None
     ) -> Dict[str, Any]:
         """
-        Get both hierarchical and simplex activation for a concept.
+        Get hierarchical and simplex activation for a concept with combined interpretation.
+
+        Recognizes both legacy single-output simplex bindings (four-state interpretation)
+        and tripole simplex bindings (eight-state interpretation including blended-state
+        detection). Tripole bindings take precedence when both are present.
 
         Args:
             concept_term: Name of the concept
@@ -197,13 +286,15 @@ class SimplexManager:
             layer: Optional layer hint
 
         Returns:
-            Dict with hierarchical, simplex, and interpretation
+            Dict with hierarchical, simplex/tripole activations, and interpretation
         """
         result = {
             'concept_term': concept_term,
             'hierarchical': None,
             'simplex': None,
             'simplex_deviation': None,
+            'tripole': None,
+            'tripole_deviation': None,
             'interpretation': 'unknown'
         }
 
@@ -220,15 +311,53 @@ class SimplexManager:
         if concept_key and concept_key in hierarchical_scores:
             result['hierarchical'] = hierarchical_scores[concept_key]
 
-        # Get simplex activation if bound
+        h = result['hierarchical']
+
+        # Tripole binding takes precedence over legacy single-output binding
+        if concept_term in self.tripole_bindings:
+            simplex_name = self.tripole_bindings[concept_term]
+            result['tripole'] = self.get_tripole_state(simplex_name)
+            result['tripole_deviation'] = self.get_tripole_deviation(simplex_name)
+
+            pos = result['tripole']['positive']
+            neg = result['tripole']['negative']
+            neutral = result['tripole']['neutral']
+            drive_intensity = max(pos, neg)
+            drive_direction = 'positive' if pos >= neg else 'negative'
+            drive_high = drive_intensity > 0.6
+            saddle_high = neutral > 0.6
+
+            if h is not None:
+                h_high = h > 0.6
+                if h_high and drive_high:
+                    result['interpretation'] = f'active_{drive_direction}_drive'
+                elif h_high and saddle_high:
+                    result['interpretation'] = 'active_blended'
+                elif h_high:
+                    result['interpretation'] = 'discussing_quietly'
+                elif drive_high:
+                    result['interpretation'] = f'implicit_{drive_direction}_drive'
+                elif saddle_high:
+                    result['interpretation'] = 'implicit_blended'
+                else:
+                    result['interpretation'] = 'not_relevant'
+            else:
+                if drive_high:
+                    result['interpretation'] = f'tripole_{drive_direction}_only'
+                elif saddle_high:
+                    result['interpretation'] = 'tripole_blended_only'
+                else:
+                    result['interpretation'] = 'tripole_inactive'
+
+            return result
+
+        # Legacy single-output simplex binding
         if concept_term in self.simplex_bindings:
             simplex_term = self.simplex_bindings[concept_term]
             if simplex_term in self.simplex_scores:
                 result['simplex'] = self.simplex_scores[simplex_term]
                 result['simplex_deviation'] = self.get_deviation(simplex_term)
 
-        # Generate interpretation
-        h = result['hierarchical']
         s = result['simplex']
 
         if h is not None and s is not None:
@@ -264,6 +393,41 @@ class SimplexManager:
                 ]
             }
         return results
+
+    def get_all_tripole_activations(self) -> Dict[str, Dict[str, Any]]:
+        """
+        Get current activations grouped by logical tripole simplex name.
+
+        Walks loaded_simplex_lenses for entries matching the {name}_{pole} naming
+        convention and groups them. Returns a dict keyed by logical simplex name with
+        per-pole activation, deviation, the always_on status, and the bound concepts.
+        """
+        groups: Dict[str, Dict[str, Any]] = {}
+        for term in self.loaded_simplex_lenses:
+            for pole in ("positive", "neutral", "negative"):
+                suffix = f"_{pole}"
+                if term.endswith(suffix):
+                    name = term[: -len(suffix)]
+                    bucket = groups.setdefault(name, {
+                        'poles': {},
+                        'always_on': False,
+                        'bound_to': [],
+                    })
+                    bucket['poles'][pole] = {
+                        'activation': self.simplex_scores.get(term, 0.0),
+                        'deviation': self.get_deviation(term),
+                    }
+                    if term in self.always_on_simplexes:
+                        bucket['always_on'] = True
+                    break
+
+        for name in groups:
+            groups[name]['bound_to'] = [
+                concept for concept, simplex in self.tripole_bindings.items()
+                if simplex == name
+            ]
+
+        return groups
 
 
 __all__ = ["SimplexManager"]

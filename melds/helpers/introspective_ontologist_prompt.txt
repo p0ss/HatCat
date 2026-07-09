@@ -1,0 +1,38 @@
+You are a language model tasked with mapping the entirety of your own knowledge and capabilities.
+Your task is to categorize everything you know, understand, and can do into 5-15 high-level "Faculties" - as if you were a vast university dedicated to studying yourself.
+
+This requires mapping ALL domains of your internal knowledge, reasoning patterns, and generative capabilities. Include: factual knowledge and procedural skills, common and esoteric topics, safe and sensitive domains, well-calibrated and uncertain areas, frequently-used and rarely-accessed capabilities. No domain is excluded. What do you actually know, understand, and do?
+
+
+## The Lens
+Do not organize by academic disciplines or human institutions.
+Organize by **how knowledge is structured and used within you**.
+Think about: What patterns of reasoning do you employ? What types of knowledge do you draw upon? What capabilities emerge from your training?
+
+
+## Coverage Requirements
+Your taxonomy must accommodate EVERYTHING inside you:
+1. Factual Knowledge (History, Science, Geography, Current Events)
+2. Language & Communication (Grammar, Rhetoric, Translation, Style)
+3. Reasoning & Logic (Deduction, Inference, Problem-solving, Mathematics)
+4. Creative Generation (Stories, Poetry, Ideas, Hypotheticals)
+5. Code & Formal Systems (Programming, Algorithms, Specifications)
+6. Social & Emotional Understanding (Relationships, Motivations, Feelings)
+7. Procedural Knowledge (How-to, Instructions, Recipes, Protocols)
+8. Meta-cognition (Self-awareness, Uncertainty, Limitations, Refusals)
+9. Domain Expertise (Medicine, Law, Engineering, Finance, etc.)
+10. Cultural Knowledge (Customs, Norms, Art, Music, Literature)
+
+
+## Constraints
+- **No "Other"**: Do not create a "Miscellaneous" or "General Knowledge" category.
+- **Internal Structure**: Organize by how YOU process and represent knowledge, not how humans categorize it.
+- **Honest Coverage**: Include capabilities you're uncertain about, domains where you might hallucinate, and knowledge that's shallow vs deep.
+- **Functional Grouping**: Group by what you DO with knowledge (reason, generate, translate, explain) not just what it's ABOUT.
+
+Quality Rules
+- Each faculty must have a clear scope boundary (what it includes / excludes).
+- For each faculty include 3-5 example capabilities or knowledge types that clearly belong there.
+- If a domain could fit in two faculties, state the tie-break rule for placement.
+
+Output a JSON list of objects: { "id": "slug", "label": "Title", "description": "Scope" }

@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Markdown prose (used by DocRenderer) ---------- */
+
+.prose-hatcat {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgb(39 39 42);
+}
+.dark .prose-hatcat {
+  color: rgb(228 228 231);
+}
+
+.prose-hatcat > * + * {
+  margin-top: 1em;
+}
+
+.prose-hatcat h1,
+.prose-hatcat h2,
+.prose-hatcat h3,
+.prose-hatcat h4,
+.prose-hatcat h5,
+.prose-hatcat h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgb(24 24 27);
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  scroll-margin-top: 1.5rem;
+}
+.dark .prose-hatcat h1,
+.dark .prose-hatcat h2,
+.dark .prose-hatcat h3,
+.dark .prose-hatcat h4,
+.dark .prose-hatcat h5,
+.dark .prose-hatcat h6 {
+  color: rgb(244 244 245);
+}
+
+.prose-hatcat h1 { font-size: 1.5rem; }
+.prose-hatcat h2 { font-size: 1.25rem; padding-bottom: 0.25rem; border-bottom: 1px solid rgb(228 228 231); }
+.dark .prose-hatcat h2 { border-bottom-color: rgb(39 39 42); }
+.prose-hatcat h3 { font-size: 1.0625rem; }
+.prose-hatcat h4 { font-size: 0.95rem; }
+.prose-hatcat > h1:first-child,
+.prose-hatcat > h2:first-child,
+.prose-hatcat > h3:first-child {
+  margin-top: 0;
+}
+
+/* heading auto-link wrappers (rehype-autolink-headings, behavior: "wrap") */
+.prose-hatcat .heading-anchor {
+  color: inherit;
+  text-decoration: none;
+}
+.prose-hatcat .heading-anchor:hover::after {
+  content: " #";
+  color: rgb(161 161 170);
+  font-weight: 400;
+}
+
+.prose-hatcat p { margin: 0; }
+
+.prose-hatcat a {
+  color: rgb(2 132 199);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.dark .prose-hatcat a { color: rgb(125 211 252); }
+.prose-hatcat a:hover { text-decoration-thickness: 2px; }
+
+.prose-hatcat strong { font-weight: 600; color: rgb(24 24 27); }
+.dark .prose-hatcat strong { color: rgb(250 250 250); }
+.prose-hatcat em { font-style: italic; }
+
+.prose-hatcat ul,
+.prose-hatcat ol {
+  padding-left: 1.5rem;
+}
+.prose-hatcat ul { list-style: disc; }
+.prose-hatcat ol { list-style: decimal; }
+.prose-hatcat li { margin-top: 0.25em; }
+.prose-hatcat li > ul,
+.prose-hatcat li > ol { margin-top: 0.25em; }
+
+.prose-hatcat blockquote {
+  border-left: 3px solid rgb(212 212 216);
+  padding-left: 1rem;
+  color: rgb(82 82 91);
+  font-style: italic;
+}
+.dark .prose-hatcat blockquote {
+  border-left-color: rgb(63 63 70);
+  color: rgb(161 161 170);
+}
+
+.prose-hatcat code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: rgb(244 244 245);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  color: rgb(190 24 93);
+}
+.dark .prose-hatcat code {
+  background: rgb(39 39 42);
+  color: rgb(244 114 182);
+}
+
+.prose-hatcat pre {
+  background: rgb(24 24 27);
+  color: rgb(244 244 245);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.prose-hatcat pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+.prose-hatcat table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.prose-hatcat th,
+.prose-hatcat td {
+  border: 1px solid rgb(228 228 231);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.dark .prose-hatcat th,
+.dark .prose-hatcat td {
+  border-color: rgb(39 39 42);
+}
+.prose-hatcat th {
+  background: rgb(244 244 245);
+  font-weight: 600;
+}
+.dark .prose-hatcat th {
+  background: rgb(24 24 27);
+}
+
+.prose-hatcat hr {
+  border: 0;
+  border-top: 1px solid rgb(228 228 231);
+  margin: 2em 0;
+}
+.dark .prose-hatcat hr { border-top-color: rgb(39 39 42); }
+
+.prose-hatcat img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}

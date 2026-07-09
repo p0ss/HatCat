@@ -13,7 +13,8 @@ def get_mean_activation(
     tokenizer,
     prompt: str,
     device: str = "cuda",
-    layer_idx: int = -1
+    layer_idx: int = -1,
+    processor=None
 ) -> np.ndarray:
     """
     Extract mean activation from model for a given prompt.
@@ -35,7 +36,11 @@ def get_mean_activation(
         >>> activation.shape
         (2560,)
     """
-    inputs = tokenizer(prompt, return_tensors="pt").to(device)
+    if processor is not None:
+        inputs = processor(text=prompt, return_tensors="pt")
+        inputs = {k: v.to(device) for k, v in inputs.items() if torch.is_tensor(v)}
+    else:
+        inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
     # Remove token_type_ids if present - some models (Llama) don't accept it
     inputs = {k: v for k, v in inputs.items() if k != 'token_type_ids'}

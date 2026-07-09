@@ -58,6 +58,11 @@ class LensCacheManager:
         self.lens_scores: Dict[Tuple[str, int], float] = {}
         self.lens_access_count: Dict[Tuple[str, int], int] = defaultdict(int)
 
+        # Polar lens support: negative pole lenses (positive goes in main cache)
+        # Key: (concept_term, layer), same as activation lenses
+        self.loaded_polar_negative_lenses: Dict[Tuple[str, int], nn.Module] = {}
+        self.polar_concepts: Set[Tuple[str, int]] = set()  # Track which concepts are polar
+
         # Warm tier: VRAM cache for fast reactivation
         # Key: (sumo_term, layer), Value: (lens, reactivation_count)
         self.warm_cache: Dict[Tuple[str, int], Tuple[nn.Module, int]] = {}
@@ -171,6 +176,45 @@ class LensCacheManager:
 
         self.mark_lens_bank_dirty()
 
+    def add_polar_lens(
+        self,
+        concept_key: Tuple[str, int],
+        positive_lens: nn.Module,
+        negative_lens: nn.Module,
+        is_base_layer: bool = False
+    ):
+        """
+        Add a polar lens pair (positive and negative) to the active set.
+
+        The positive lens is stored in the main activation lens cache,
+        the negative lens in the polar negative cache.
+        """
+        # Store positive in main cache
+        self.loaded_activation_lenses[concept_key] = positive_lens
+        self.loaded_lenses[concept_key] = positive_lens
+        self.lens_scores[concept_key] = 0.0
+
+        # Store negative in polar cache
+        self.loaded_polar_negative_lenses[concept_key] = negative_lens
+
+        # Mark as polar concept
+        self.polar_concepts.add(concept_key)
+
+        self.stats['total_loads'] += 2  # Both poles count
+
+        if is_base_layer:
+            self.base_layer_lenses.add(concept_key)
+
+        self.mark_lens_bank_dirty()
+
+    def is_polar_concept(self, concept_key: Tuple[str, int]) -> bool:
+        """Check if a concept is a polar concept (has positive and negative probes)."""
+        return concept_key in self.polar_concepts
+
+    def get_polar_negative_lens(self, concept_key: Tuple[str, int]) -> Optional[nn.Module]:
+        """Get the negative lens for a polar concept, or None if not polar."""
+        return self.loaded_polar_negative_lenses.get(concept_key)
+
     def move_to_warm_cache(self, concept_keys: List[Tuple[str, int]]):
         """Move lenses from active to warm cache."""
         for concept_key in concept_keys:
@@ -190,6 +234,12 @@ class LensCacheManager:
                     del self.loaded_lenses[concept_key]
                 if concept_key in self.lens_scores:
                     del self.lens_scores[concept_key]
+
+                # Also remove polar negative lens if present
+                if concept_key in self.loaded_polar_negative_lenses:
+                    del self.loaded_polar_negative_lenses[concept_key]
+                if concept_key in self.polar_concepts:
+                    self.polar_concepts.remove(concept_key)
 
         self.mark_lens_bank_dirty()
 
@@ -331,7 +381,9 @@ class LensCacheManager:
             self._lens_bank.clear()
 
         if self.loaded_lenses:
-            self._lens_bank.add_lenses(self.loaded_lenses)
+            # Include polar negative lenses if any are loaded
+            negative_lenses = self.loaded_polar_negative_lenses if self.loaded_polar_negative_lenses else None
+            self._lens_bank.add_lenses(self.loaded_lenses, negative_lenses=negative_lenses)
 
         self._lens_bank_dirty = False
 

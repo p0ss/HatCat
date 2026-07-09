@@ -11,7 +11,7 @@ from collections import defaultdict
 # Load layers
 layers = {}
 for layer_num in range(7):
-    layer_path = Path(f'data/concept_graph/abstraction_layers/layer{layer_num}.json')
+    layer_path = Path(f'concept_packs/first-light/concept_graph/abstraction_layers/layer{layer_num}.json')
     with open(layer_path) as f:
         data = json.load(f)
         if isinstance(data, dict) and 'concepts' in data:

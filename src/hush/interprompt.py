@@ -270,9 +270,16 @@ class InterpromptSession:
         top_concepts = []
         for concept, data in concept_agg.items():
             if data['activations']:
-                mean_act = sum(data['activations']) / len(data['activations'])
-                mean_txt = sum(data['text_sims']) / len(data['text_sims']) if data['text_sims'] else 0
-                mean_div = sum(data['divergences']) / len(data['divergences']) if data['divergences'] else 0
+                # Filter None values: text_similarity is None for concepts without
+                # a text classifier (most of the lens pack), and sum() chokes on
+                # int+None — which surfaced as "[Error: unsupported operand type(s)
+                # for +: 'int' and 'NoneType']" at the end of every chat completion.
+                _acts = [v for v in data['activations'] if v is not None]
+                _txts = [v for v in data['text_sims'] if v is not None]
+                _divs = [v for v in data['divergences'] if v is not None]
+                mean_act = sum(_acts) / len(_acts) if _acts else 0
+                mean_txt = sum(_txts) / len(_txts) if _txts else 0
+                mean_div = sum(_divs) / len(_divs) if _divs else 0
 
                 top_concepts.append(ConceptActivation(
                     concept=concept,

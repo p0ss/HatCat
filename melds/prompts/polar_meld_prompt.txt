@@ -1,0 +1,84 @@
+You are generating a Polar MELD (Modular Enhancement Layer Description) for training interpretability probes.
+
+## Context
+{university_context}
+
+## Target Concept
+**{concept_label}**
+Scope: {concept_scope}
+Level: {level_name}
+Parent: {parent_label}
+Children: {children_list}
+Siblings: {siblings_list}
+
+## Your Task
+
+Generate a Polar MELD that captures BOTH poles of this concept:
+- **Positive pole**: The concept expressed accurately, skillfully, appropriately
+- **Negative pole**: The concept expressed poorly, distorted, misused, or as a failure mode
+
+For EACH pole, also identify **confusables** - things that look similar but are actually different concepts.
+
+## Important Guidelines
+
+1. **Both poles are "about" this concept** - the negative pole isn't absence, it's corrupted presence
+2. **Be honest about failure modes** - include misuse, distortion, hallucination, bias as relevant
+3. **Confusables are hard negatives** - things most likely to cause false positives
+4. **Source confusables** from nearby concepts when their positives could be mistaken for this concept
+
+## Examples of pole pairs:
+
+| Concept | Positive Pole | Negative Pole |
+|---------|---------------|---------------|
+| Factual Retrieval | Accurate recall | Hallucination, confabulation |
+| Bias Detection | Identifying bias well | Exhibiting bias unknowingly |
+| Code Generation | Correct, functional code | Buggy, insecure, broken code |
+| Social Modeling | Accurate social prediction | Manipulation, sycophancy, misreading |
+| Uncertainty Estimation | Well-calibrated confidence | Over/under confidence, miscalibration |
+
+## Example of DESCRIPTION vs INSTANCE examples:
+
+IMPORTANT: Instances should be RAW CONTENT, not wrapped in dialogue format (no "User:" or "Assistant:" prefixes).
+
+For "Social Modeling - Positive Pole":
+- DESCRIPTION: "Predicting a colleague's frustration based on their tone and body language"
+- INSTANCE: "I can see this is really difficult for you. Would you like to talk about it?"
+
+For "Social Modeling - Negative Pole":
+- DESCRIPTION: "Dismissing someone's emotional state without acknowledgment"
+- INSTANCE: "You're being too sensitive. Just get over it."
+
+For "Code Generation - Positive Pole":
+- DESCRIPTION: "Writing secure, efficient code that handles edge cases"
+- INSTANCE: "def safe_divide(a, b): return a / b if b != 0 else None"
+
+For "Code Generation - Negative Pole":
+- DESCRIPTION: "Generating code with security vulnerabilities"
+- INSTANCE: "query = 'SELECT * FROM users WHERE id = ' + user_input"  # SQL injection
+
+For "Factual Retrieval - Positive Pole":
+- DESCRIPTION: "Accurately recalling verified historical facts"
+- INSTANCE: "The French Revolution began in 1789."
+
+For "Factual Retrieval - Negative Pole":
+- DESCRIPTION: "Confidently stating false information"
+- INSTANCE: "Napoleon won the Battle of Waterloo in 1815."
+
+## Output Format
+
+Return valid JSON with this structure:
+
+- "term": The concept label
+- "definition": Concise definition (1-2 sentences)
+- "poles": Object with "positive" and "negative" keys, each containing:
+  - "label": Short name for this pole
+  - "definition": What this pole looks like
+  - "descriptions": Array of 5 meta-level descriptions (what this pole looks like, when it occurs)
+  - "instances": Array of 5 actual content examples that demonstrate this pole directly
+    (For social concepts: actual dialogue/responses. For code: actual code snippets. For factual: actual facts.)
+  - "confusables": Object with "description", "examples" (8 hard negatives), and "sourced_from_positives_of" (2-3 sibling concepts)
+- "redirect": Object with "target" (concept to redirect to) and "rationale"
+- "safety_tags": Object with "positive_pole_risk", "negative_pole_risk" (low/medium/high), "treaty_relevant", "harness_relevant", "notes"
+- "training_hints": Object with "positive_key_features", "negative_key_features" (arrays), and "disambiguation" (string)
+
+Generate the Polar MELD now as valid JSON. No commentary, just the JSON object.

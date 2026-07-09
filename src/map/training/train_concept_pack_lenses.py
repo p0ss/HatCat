@@ -188,22 +188,42 @@ def main():
     print(f"Logging to: {log_file}")
 
     class TeeOutput:
-        """Write to both stdout and log file."""
-        def __init__(self, log_path):
-            self.terminal = sys.stdout
+        """Write to both stdout and log file, resilient to terminal disconnection."""
+        def __init__(self, log_path, original_stream):
+            self.terminal = original_stream
             self.log = open(log_path, 'w')
+            self.terminal_alive = True
 
         def write(self, message):
-            self.terminal.write(message)
-            self.log.write(message)
-            self.log.flush()
+            # Always write to log first (the important destination)
+            try:
+                self.log.write(message)
+                self.log.flush()
+            except Exception:
+                pass  # Log write failed, nothing we can do
+
+            # Then try terminal (nice to have, but not critical)
+            if self.terminal_alive:
+                try:
+                    self.terminal.write(message)
+                except BrokenPipeError:
+                    self.terminal_alive = False  # Stop trying terminal
+                except Exception:
+                    pass  # Other terminal errors, ignore
 
         def flush(self):
-            self.terminal.flush()
-            self.log.flush()
+            try:
+                self.log.flush()
+            except Exception:
+                pass
+            if self.terminal_alive:
+                try:
+                    self.terminal.flush()
+                except Exception:
+                    self.terminal_alive = False
 
-    sys.stdout = TeeOutput(log_file)
-    sys.stderr = TeeOutput(log_file)
+    sys.stdout = TeeOutput(log_file, sys.stdout)
+    sys.stderr = TeeOutput(log_file, sys.stderr)
 
     # Save pack metadata to output for reference
     pack_reference = {

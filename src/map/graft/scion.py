@@ -26,7 +26,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 from pathlib import Path
-from typing import List, Dict, Optional, Tuple, Any
+from typing import List, Dict, Optional, Tuple, Any, Union
 from dataclasses import dataclass, field
 from datetime import datetime
 import logging
@@ -34,6 +34,9 @@ import json
 import copy
 
 from .cleft import Cleft, UnionCleft, CleftAwareFreezer, merge_clefts, _get_layer, _get_component, _get_model_layers
+
+# Import classifier utilities for bound lens training
+from ...hat.classifiers.classifier import MLPClassifier, save_classifier
 
 logger = logging.getLogger(__name__)
 
@@ -450,27 +453,42 @@ class ScionTrainer:
 def apply_scion(
     model: nn.Module,
     scion: Scion,
-    mode: str = "delta"
-) -> nn.Module:
+    mode: str = "delta",
+    # New parameters for expand mode with lens training:
+    tokenizer: Any = None,
+    training_data: Optional[Dict[str, List[str]]] = None,
+    auxiliary_dimensions: Optional[List[int]] = None,
+    output_dir: Optional[Path] = None,
+    device: str = "cuda",
+) -> Union[nn.Module, Tuple[nn.Module, Optional[Path]]]:
     """
     Apply a scion to a model, permanently modifying it.
 
     Modes:
     - "delta": Add the training deltas back to the weights
-    - "expand": Actually expand hidden_dim and add new neuron (complex)
+    - "expand": Actually expand hidden_dim and add new neuron
 
-    For initial testing, we use "delta" mode which re-applies the
-    weight changes from training. This is equivalent to keeping the
-    model in its post-training state.
+    For expand mode, if training_data is provided, also trains a bound
+    lens that monitors the new dimension.
 
     Args:
         model: The model to modify
         scion: The scion to apply
-        mode: Application mode
+        mode: Application mode ("delta" or "expand")
+        tokenizer: Tokenizer (required for expand mode with lens training)
+        training_data: Dict with "positive" and "negative" examples for lens training
+        auxiliary_dimensions: Additional dimensions for the bound lens to read
+        output_dir: Directory to save the bound lens
+        device: Device for lens training
 
     Returns:
-        The modified model
+        For backward compatibility:
+        - If training_data is provided: Tuple[nn.Module, Optional[Path]] with
+          (modified_model, lens_path)
+        - Otherwise: nn.Module (just the modified model)
     """
+    lens_path = None
+
     if mode == "delta":
         # Simply add the deltas back to the weights
         for delta in scion.weight_deltas:
@@ -492,8 +510,10 @@ def apply_scion(
         # Full dimension expansion
         from .expand import plan_expansion, execute_expansion
 
-        # Create expansion plan
-        plan = plan_expansion(model, scion, target_layers=scion.training_config.injection_layers)
+        # Create expansion plan for ALL layers (required for model consistency)
+        # The scion's injection_layers only affect biased initialization, not which
+        # layers get expanded - all layers must expand for the model to be valid
+        plan = plan_expansion(model, scion, target_layers=None)
 
         # Execute the expansion
         execute_expansion(model, plan, device=str(next(model.parameters()).device))
@@ -501,9 +521,28 @@ def apply_scion(
         scion.applied = True
         logger.info(f"Applied scion {scion.scion_id} in expand mode (hidden_dim +1)")
 
+        # Train bound lens if training data provided
+        if training_data is not None and tokenizer is not None:
+            logger.info("Training bound lens for expanded dimension...")
+            lens_path = train_bound_lens(
+                model=model,
+                tokenizer=tokenizer,
+                scion=scion,
+                dataset=training_data,
+                auxiliary_dimensions=auxiliary_dimensions,
+                output_dir=output_dir,
+                device=device,
+            )
+        elif training_data is not None:
+            logger.warning("training_data provided but tokenizer is None; skipping lens training")
+
     else:
         raise ValueError(f"Unknown apply mode: {mode}")
 
+    # Return tuple only when training_data is provided (new behavior)
+    # Otherwise return just the model for backward compatibility
+    if training_data is not None:
+        return model, lens_path
     return model
 
 
@@ -533,3 +572,359 @@ def revert_scion(model: nn.Module, scion: Scion) -> nn.Module:
     logger.info(f"Reverted scion {scion.scion_id}")
 
     return model
+
+
+def derive_auxiliary_dimensions(scion: Scion, top_k: int = 10) -> List[int]:
+    """
+    Automatically derive auxiliary dimensions from a scion's training data.
+
+    This function analyzes the scion's neuron_biases and/or weight_deltas
+    to identify which dimensions in the model's hidden state are most
+    related to the concept this scion represents.
+
+    Strategy:
+    1. First, examine neuron_biases to find dimensions with highest magnitude
+       changes (these indicate features strongly affected during training)
+    2. If neuron_biases are insufficient, fall back to extract_expand_metadata()
+       to get top_features from weight deltas
+
+    Args:
+        scion: The trained Scion object
+        top_k: Number of top dimension indices to return
+
+    Returns:
+        List of dimension indices (up to top_k) most related to the concept
+    """
+    from .expand import extract_expand_metadata
+
+    dimension_scores: Dict[int, float] = {}
+
+    # Strategy 1: Extract from neuron_biases
+    # neuron_biases has keys like "layer{idx}_{component}_row" or "_col"
+    # Row biases indicate output feature importance
+    for key, bias_tensor in scion.neuron_biases.items():
+        # We care about row biases which represent hidden_dim features
+        if not key.endswith("_row"):
+            continue
+
+        # bias_tensor has shape (hidden_dim,) or (output_dim,)
+        # For down_proj, this represents hidden_dim output features
+        if "down_proj" in key or "o_proj" in key:
+            # These output to hidden_dim, so indices correspond to hidden dimensions
+            for idx in range(len(bias_tensor)):
+                magnitude = abs(float(bias_tensor[idx]))
+                if magnitude > 0:
+                    # Accumulate scores across layers/components
+                    dimension_scores[idx] = dimension_scores.get(idx, 0.0) + magnitude
+
+    # Strategy 2: If we didn't get enough from neuron_biases, use weight_deltas
+    if len(dimension_scores) < top_k and scion.weight_deltas:
+        try:
+            expand_meta = extract_expand_metadata(scion)
+            # top_features: Dict[int, List[Tuple[int, float]]]
+            # Maps layer -> list of (dimension_idx, importance)
+            for layer_idx, features in expand_meta.top_features.items():
+                for dim_idx, importance in features:
+                    dimension_scores[dim_idx] = dimension_scores.get(dim_idx, 0.0) + importance
+        except Exception as e:
+            logger.debug(f"Could not extract expand metadata: {e}")
+
+    # Sort by score descending and take top_k
+    if not dimension_scores:
+        logger.warning("No dimension scores found; returning empty list")
+        return []
+
+    sorted_dims = sorted(dimension_scores.items(), key=lambda x: x[1], reverse=True)
+    top_dims = [dim_idx for dim_idx, score in sorted_dims[:top_k]]
+
+    logger.info(f"Derived {len(top_dims)} auxiliary dimensions from scion training data")
+    logger.debug(f"Top auxiliary dimensions: {top_dims}")
+
+    return top_dims
+
+
+def train_bound_lens(
+    model: nn.Module,
+    tokenizer: Any,
+    scion: Scion,
+    dataset: Dict[str, List[str]],
+    auxiliary_dimensions: Optional[List[int]] = None,
+    output_dir: Optional[Path] = None,
+    device: str = "cuda",
+    epochs: int = 10,
+    learning_rate: float = 1e-3,
+    batch_size: int = 16,
+) -> Path:
+    """
+    Train a lens bound to the scion's new dimension.
+
+    The lens reads from:
+    - Primary: scion.neuron_index (the new dimension)
+    - Auxiliary: top dimensions from cleft analysis (auto-derived if not provided)
+
+    This creates a specialized classifier that monitors the new concept
+    dimension along with auxiliary context dimensions. The classifier
+    is saved in a format compatible with the HAT lens loading infrastructure.
+
+    Output files:
+    - {concept_id}_bound_lens.pt: MLPClassifier state dict (compatible with load_classifier)
+    - {concept_id}_bound_lens_metadata.json: Bound lens metadata (primary/aux dimensions)
+
+    Args:
+        model: The model (already expanded)
+        tokenizer: The tokenizer
+        scion: The scion that was applied
+        dataset: Dict with "positive" and "negative" examples
+        auxiliary_dimensions: Additional dimension indices to read from.
+            If None, automatically derived from the scion's training data
+            using derive_auxiliary_dimensions().
+        output_dir: Directory to save the lens (default: temp directory)
+        device: Device for training
+        epochs: Number of training epochs
+        learning_rate: Learning rate for optimizer
+        batch_size: Training batch size
+
+    Returns:
+        Path to saved lens weights (.pt file)
+    """
+    import tempfile
+
+    positive_texts = dataset.get("positive", [])
+    negative_texts = dataset.get("negative", [])
+
+    if not positive_texts or not negative_texts:
+        raise ValueError("Dataset must contain positive and negative examples")
+
+    # Determine input dimensions for the lens
+    # Primary dimension is the new neuron
+    primary_dim = scion.neuron_index
+
+    # Automatically derive auxiliary dimensions if not provided
+    if auxiliary_dimensions is None:
+        aux_dims = derive_auxiliary_dimensions(scion)
+        logger.info(f"  Auto-derived {len(aux_dims)} auxiliary dimensions from training data")
+    else:
+        aux_dims = auxiliary_dimensions
+
+    # Total input size for the lens classifier
+    input_size = 1 + len(aux_dims)
+
+    # Get the injection layer (first layer from config)
+    injection_layer = scion.training_config.injection_layers[0] if scion.training_config.injection_layers else 18
+
+    logger.info(f"Training bound lens for {scion.concept_id}")
+    logger.info(f"  Primary dimension: {primary_dim}")
+    logger.info(f"  Auxiliary dimensions: {aux_dims}")
+    logger.info(f"  Injection layer: {injection_layer}")
+
+    # Collect training features
+    def extract_features(texts: List[str]) -> torch.Tensor:
+        """Extract features from texts at the injection layer."""
+        all_features = []
+
+        model.eval()
+        with torch.no_grad():
+            for i in range(0, len(texts), batch_size):
+                batch_texts = texts[i:i + batch_size]
+                inputs = tokenizer(
+                    batch_texts,
+                    return_tensors="pt",
+                    padding=True,
+                    truncation=True,
+                    max_length=256
+                ).to(device)
+
+                outputs = model(**inputs, output_hidden_states=True)
+
+                # Get hidden states at injection layer
+                hidden = outputs.hidden_states[min(injection_layer, len(outputs.hidden_states) - 1)]
+
+                # Mean pool over sequence
+                mask = inputs.attention_mask.unsqueeze(-1).float()
+                pooled = (hidden * mask).sum(dim=1) / mask.sum(dim=1)
+
+                # Extract primary and auxiliary dimensions
+                primary_feat = pooled[:, primary_dim:primary_dim + 1]
+                if aux_dims:
+                    aux_feat = pooled[:, aux_dims]
+                    features = torch.cat([primary_feat, aux_feat], dim=-1)
+                else:
+                    features = primary_feat
+
+                all_features.append(features.cpu())
+
+        return torch.cat(all_features, dim=0)
+
+    # Extract features
+    logger.info("  Extracting features from positive examples...")
+    pos_features = extract_features(positive_texts)
+
+    logger.info("  Extracting features from negative examples...")
+    neg_features = extract_features(negative_texts)
+
+    # Create labels
+    pos_labels = torch.ones(len(pos_features), 1)
+    neg_labels = torch.zeros(len(neg_features), 1)
+
+    # Combine into training set
+    all_features = torch.cat([pos_features, neg_features], dim=0)
+    all_labels = torch.cat([pos_labels, neg_labels], dim=0)
+
+    # Shuffle
+    perm = torch.randperm(len(all_features))
+    all_features = all_features[perm]
+    all_labels = all_labels[perm]
+
+    # Create classifier using HAT MLPClassifier
+    # For bound lenses with small input sizes, we use a smaller hidden_dim
+    # to keep the architecture appropriate for the reduced input dimensionality
+    hidden_dim = min(32, max(16, input_size * 4))  # Scale hidden size with input
+    classifier = MLPClassifier(
+        input_dim=input_size,
+        hidden_dim=hidden_dim,
+        dropout=0.1,
+        layer_norm=True,
+    ).to(device)
+
+    optimizer = torch.optim.AdamW(classifier.parameters(), lr=learning_rate)
+    criterion = nn.BCEWithLogitsLoss()
+
+    # Training loop
+    logger.info(f"  Training classifier for {epochs} epochs...")
+    classifier.train()
+
+    for epoch in range(epochs):
+        epoch_loss = 0.0
+        n_batches = 0
+
+        for i in range(0, len(all_features), batch_size):
+            batch_features = all_features[i:i + batch_size].to(device)
+            batch_labels = all_labels[i:i + batch_size].to(device)
+
+            optimizer.zero_grad()
+            logits = classifier(batch_features)
+            loss = criterion(logits, batch_labels)
+            loss.backward()
+            optimizer.step()
+
+            epoch_loss += loss.item()
+            n_batches += 1
+
+        avg_loss = epoch_loss / max(n_batches, 1)
+        if (epoch + 1) % 5 == 0 or epoch == 0:
+            logger.info(f"    Epoch {epoch + 1}/{epochs}: loss={avg_loss:.4f}")
+
+    # Evaluate
+    classifier.eval()
+    with torch.no_grad():
+        all_preds = classifier.predict_proba(all_features.to(device))
+        accuracy = ((all_preds > 0.5).float() == all_labels.to(device).squeeze(-1)).float().mean()
+        logger.info(f"  Training accuracy: {accuracy:.4f}")
+
+    # Save the classifier
+    if output_dir is None:
+        output_dir = Path(tempfile.mkdtemp(prefix="bound_lens_"))
+    else:
+        output_dir = Path(output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+    # Use HAT's save_classifier for the weights (.pt file)
+    lens_path = output_dir / f"{scion.concept_id}_bound_lens.pt"
+    save_classifier(classifier, lens_path)
+
+    # Save bound lens metadata as separate JSON (compatible with LensManager discovery)
+    # This allows LensManager to load the lens and understand its special requirements
+    metadata_path = output_dir / f"{scion.concept_id}_bound_lens_metadata.json"
+    metadata = {
+        "lens_type": "bound",
+        "scion_id": scion.scion_id,
+        "concept_id": scion.concept_id,
+        "primary_dimension": primary_dim,
+        "auxiliary_dimensions": aux_dims,
+        "injection_layer": injection_layer,
+        "input_size": input_size,
+        "hidden_dim": hidden_dim,
+        "technique": "mlp",
+        "metrics": {
+            "accuracy": float(accuracy.item()),
+            "epochs": epochs,
+            "learning_rate": learning_rate,
+        },
+        "created_at": datetime.now().isoformat(),
+        "source_cleft_concepts": scion.source_cleft_concepts,
+    }
+
+    with open(metadata_path, 'w') as f:
+        json.dump(metadata, f, indent=2)
+
+    logger.info(f"  Bound lens saved to: {lens_path}")
+    logger.info(f"  Metadata saved to: {metadata_path}")
+
+    return lens_path
+
+
+def load_bound_lens(
+    lens_path: Path,
+    device: str = "cuda",
+) -> Tuple[nn.Module, Dict[str, Any]]:
+    """
+    Load a bound lens and its metadata.
+
+    This is a convenience function for loading bound lenses that were
+    saved using train_bound_lens(). It loads both the classifier weights
+    and the associated metadata.
+
+    Args:
+        lens_path: Path to the .pt file
+        device: Device to load onto
+
+    Returns:
+        Tuple of (classifier, metadata) where metadata contains:
+        - primary_dimension: The new neuron index
+        - auxiliary_dimensions: Additional dimension indices
+        - injection_layer: Model layer to extract activations from
+        - input_size: Expected input dimension
+        - Other training metadata
+    """
+    lens_path = Path(lens_path)
+
+    # Load metadata first to get classifier architecture
+    metadata_path = lens_path.parent / f"{lens_path.stem}_metadata.json"
+    if metadata_path.exists():
+        with open(metadata_path) as f:
+            metadata = json.load(f)
+    else:
+        # Fallback: try to infer from state_dict
+        logger.warning(f"Metadata file not found: {metadata_path}")
+        metadata = None
+
+    # Load the state dict
+    state_dict = torch.load(lens_path, map_location=device, weights_only=True)
+
+    # Create classifier with correct architecture from metadata
+    if metadata and "input_size" in metadata:
+        input_size = metadata["input_size"]
+        hidden_dim = metadata.get("hidden_dim", min(32, max(16, input_size * 4)))
+        classifier = MLPClassifier(
+            input_dim=input_size,
+            hidden_dim=hidden_dim,
+            dropout=0.1,
+            layer_norm=True,
+        )
+        classifier.load_state_dict(state_dict)
+        classifier.to(device)
+        classifier.eval()
+    else:
+        # Fallback to load_classifier for standard HAT format
+        from ...hat.classifiers.classifier import load_classifier
+        classifier = load_classifier(lens_path, device=device, classifier_type="mlp")
+        metadata = {
+            "lens_type": "bound",
+            "concept_id": lens_path.stem.replace("_bound_lens", ""),
+            "input_size": classifier.input_dim,
+            "primary_dimension": None,
+            "auxiliary_dimensions": [],
+            "injection_layer": None,
+        }
+
+    return classifier, metadata

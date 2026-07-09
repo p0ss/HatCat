@@ -13,9 +13,10 @@ import json
 from pathlib import Path
 from nltk.corpus import wordnet as wn
 
-PROJECT_ROOT = Path(__file__).parent.parent
-LAYER2_PATH = PROJECT_ROOT / "data" / "concept_graph" / "abstraction_layers" / "layer2.json"
-SUMO_CONCEPTS_PATH = PROJECT_ROOT / "data" / "concept_graph" / "custom_sumo_concepts.json"
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+CONCEPT_PACK = PROJECT_ROOT / "concept_packs" / "first-light"
+LAYER2_PATH = CONCEPT_PACK / "concept_graph" / "abstraction_layers" / "layer2.json"
+SUMO_CONCEPTS_PATH = CONCEPT_PACK / "concept_graph" / "custom_sumo_concepts.json"
 
 # Problematic simplexes to remove
 REMOVE_SIMPLEXES = [

@@ -183,12 +183,16 @@ a specific storage engine. Concrete implementations may use:
 
 ### 3.1 Timestep (Atomic Unit)
 
+**Identifier note:** `xdb_id` identifies the persistent Experience Database
+that can span contract sessions. `session_id` refers to a runtime slice and
+is stored separately when needed (for example, in session graph fragments).
+
 The **Timestep** is the finest-grained record in XDB:
 
 ```jsonc
 TimestepRecord = {
-  "id": "ts-session-abc-1234",
-  "session_id": "session-abc",
+  "id": "ts-xdb-abc-1234",
+  "xdb_id": "xdb-abc",
   "tick": 1234,                          // Monotonic within session
   "timestamp": "2025-11-29T01:23:45Z",
 
@@ -256,8 +260,8 @@ TagApplication = {
   "id": "ta-xyz",
   "tag_id": "tag-abc123",
   "target_type": "timestep|event|range",
-  "session_id": "session-abc",
-  "timestep_id": "ts-session-abc-1234",   // If timestep
+  "xdb_id": "xdb-abc",
+  "timestep_id": "ts-xdb-abc-1234",       // If timestep
   "event_id": "tool-call-xyz",            // If event
   "range_start": 100,                     // If range
   "range_end": 150,                       // If range
@@ -274,7 +278,7 @@ BEs can add **commentary** to their own experience:
 ```jsonc
 Comment = {
   "id": "comment-xyz",
-  "session_id": "session-abc",
+  "xdb_id": "xdb-abc",
   "target_type": "timestep|event|range",
   "timestep_id": "...",
   "content": "I found this confusing because...",

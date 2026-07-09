@@ -89,10 +89,21 @@ class DynamicLensManager:
 
     @staticmethod
     def discover_lens_packs(
-        lens_packs_dir: Path = Path("lens_packs"),
+        lens_packs_dir: Optional[Path] = None,
         substrate_id: Optional[str] = None
     ) -> Dict[str, Dict]:
-        """Discover all available lens packs (both legacy and MAP-compliant)."""
+        """Discover all available lens packs (both legacy and MAP-compliant).
+
+        When `lens_packs_dir` is None we resolve it from this file's location:
+        `src/lens_packs/`. This makes discovery robust to the caller's cwd
+        (uvicorn, training scripts, ad-hoc REPLs all worked previously only
+        because a top-level `lens_packs -> src/lens_packs` symlink was present).
+        """
+        if lens_packs_dir is None:
+            # lens_manager.py lives at src/hat/monitoring/, so parent×3 = src/
+            lens_packs_dir = (
+                Path(__file__).resolve().parent.parent.parent / "lens_packs"
+            )
         packs = {}
         if not lens_packs_dir.exists():
             return packs
@@ -251,6 +262,16 @@ class DynamicLensManager:
                 self.manifest = DeploymentManifest.default("auto-calibrated")
             count = self.manifest.load_calibration(calibration_path)
             print(f"✓ Loaded calibration for {count} concepts")
+        else:
+            # Noisy on purpose: previously this branch was silent and a
+            # path-resolution bug made calibration vanish without anyone
+            # noticing. Runtime falls back to default conservative dampening.
+            print(
+                f"⚠ No calibration.json at {calibration_path} — "
+                f"runtime will apply default conservative dampening for all "
+                f"concepts. Run scripts/run_calibration.sh on this pack to "
+                f"produce one."
+            )
 
         # === LOAD METADATA ===
         self._load_all_metadata()
@@ -287,6 +308,68 @@ class DynamicLensManager:
         if self.manifest:
             print(f"  Manifest: {self.manifest.manifest_id}")
         self._load_base_layers()
+        self._auto_load_simplexes_from_pack()
+
+    def _auto_load_simplexes_from_pack(self):
+        """
+        Auto-load any simplexes packaged under {lenses_dir}/simplex/.
+
+        Recognises two layouts:
+        - Tripole directory:
+              simplex/{name}/{positive,neutral,negative}/{name}_{pole}_classifier.pt
+          → loaded via load_tripole_simplex; tripole binding self-registered with
+          always_on=True so all three poles fire alongside hierarchical detection.
+        - Legacy single file:
+              simplex/{name}_tripole.pt
+          → loaded via load_simplex; not auto-bound (caller responsibility).
+
+        Silent no-op if simplex/ doesn't exist in the pack. Hush controllers
+        loading specific required_simplexes via _load_required_simplexes still
+        work as before; this is additive auto-load for observability.
+        """
+        if not hasattr(self, 'lenses_dir') or self.lenses_dir is None:
+            return
+
+        simplex_dir = Path(self.lenses_dir) / "simplex"
+        if not simplex_dir.exists() or not simplex_dir.is_dir():
+            return
+
+        if self.hidden_dim is not None:
+            self.simplex.set_hidden_dim(self.hidden_dim)
+
+        tripole_loaded: List[str] = []
+        legacy_loaded: List[str] = []
+
+        for child in sorted(simplex_dir.iterdir()):
+            if child.is_dir():
+                simplex_name = child.name
+                results = self.simplex.load_tripole_simplex(simplex_name, child)
+                if all(results.values()):
+                    self.simplex.register_tripole_binding(
+                        concept_term=simplex_name,
+                        simplex_name=simplex_name,
+                        always_on=True,
+                    )
+                    tripole_loaded.append(simplex_name)
+            elif (
+                child.is_file()
+                and child.suffix == '.pt'
+                and child.name.endswith('_tripole.pt')
+            ):
+                simplex_term = child.stem[: -len('_tripole')]
+                if self.simplex.load_simplex(simplex_term, child):
+                    legacy_loaded.append(simplex_term)
+
+        if tripole_loaded:
+            print(
+                f"✓ Auto-loaded {len(tripole_loaded)} tripole simplex(es): "
+                f"{', '.join(tripole_loaded)}"
+            )
+        if legacy_loaded:
+            print(
+                f"✓ Auto-loaded {len(legacy_loaded)} legacy simplex(es): "
+                f"{', '.join(legacy_loaded)}"
+            )
 
     def _setup_lens_pack(self, lens_pack_id: str, lenses_dir: Path):
         """Setup lens pack from ID."""
@@ -436,7 +519,18 @@ class DynamicLensManager:
 
     def _load_base_layers(self):
         """Load base layers for broad coverage."""
-        if self.manifest_resolver is not None:
+        # Check if this is a polar lens pack (no hierarchical expansion)
+        is_polar_pack = any(meta.is_polar for meta in self.concept_metadata.values())
+
+        if is_polar_pack:
+            # For polar packs, load all concepts (or up to max_loaded_lenses)
+            # Since polar packs don't use hierarchical expansion
+            all_keys = list(self.concept_metadata.keys())
+            max_to_load = min(len(all_keys), self.cache.max_loaded_lenses)
+            keys_to_load = all_keys[:max_to_load]
+            self._load_concepts(keys_to_load, reason="polar_base")
+            print(f"  Polar pack: loaded {len(keys_to_load)} concepts")
+        elif self.manifest_resolver is not None:
             # Use manifest's always_load_layers, not the parameter
             # Skip sibling expansion - let detect_and_expand handle it dynamically
             always_load = self.manifest.layer_bounds.always_load_layers
@@ -563,6 +657,16 @@ class DynamicLensManager:
         if timing is not None:
             timing['initial_detection'] = (time.time() - t1) * 1000
 
+        # 1.5 Run simplex/tripole lenses on the same hidden state.
+        # Independent of hierarchical decomposition; updates SimplexManager's
+        # state stores (scores + rolling baselines). Runs whichever simplexes
+        # are registered as always_on; cheap if none are loaded.
+        if self.simplex.loaded_simplex_lenses:
+            t_simplex = time.time()
+            self.simplex.detect(hidden_state)
+            if timing is not None:
+                timing['simplex_detection'] = (time.time() - t_simplex) * 1000
+
         # 2. Iterative decomposition: replace parents with children
         t2 = time.time()
         total_children_loaded = 0
@@ -669,22 +773,26 @@ class DynamicLensManager:
             if concept_key in decomposed_parents:
                 continue
 
-            concept_name, layer = concept_key
+            concept_name, model_layer = concept_key
+
+            # Get ontological level from metadata (defaults to model_layer for backward compat)
+            metadata = self.concept_metadata.get(concept_key)
+            ontological_level = metadata.ontological_level if metadata else model_layer
 
             # Apply calibration normalization
             # Uncalibrated concepts get a default conservative calibration (confidence=0)
             # which pulls scores toward 0.5 (noise floor). This prevents uncalibrated
             # over-firers from dominating top-k with raw 100% scores.
             display_prob = prob
-            cal_key = f"{concept_name}_L{layer}"
+            cal_key = f"{concept_name}_L{model_layer}"
 
             if calibration_data and cal_key in calibration_data:
                 # Use specific calibration for this concept
                 display_prob = calibration_data[cal_key].normalize(prob)
-            elif use_calibration:
-                # Default calibration for uncalibrated concepts: pull to 0.5
-                # Use high cross_fire_rate (1.0) to give confidence=0
-                # This applies whether calibration_data is None or concept is missing
+            elif use_calibration and calibration_data is not None:
+                # Default calibration for uncalibrated concepts within a calibrated manifest
+                # Only apply when we have a manifest with calibration data - otherwise
+                # we have no reference for what "calibrated" means (e.g., polar packs)
                 from .deployment_manifest import ConceptCalibration
                 default_cal = ConceptCalibration(
                     self_mean=0.9, cross_mean=0.5, self_std=0.1, cross_std=0.2,
@@ -692,11 +800,12 @@ class DynamicLensManager:
                 )
                 display_prob = default_cal.normalize(prob)
 
+            # Report ontological level (not model layer) in results
             if return_logits:
                 logit = current_logits.get(concept_key, 0.0)
-                results.append((concept_name, display_prob, logit, layer))
+                results.append((concept_name, display_prob, logit, ontological_level))
             else:
-                results.append((concept_name, display_prob, layer))
+                results.append((concept_name, display_prob, ontological_level))
 
         results.sort(key=lambda x: x[1], reverse=True)
         top_k_results = results[:top_k]
@@ -837,6 +946,26 @@ class DynamicLensManager:
     def get_all_simplex_activations(self):
         """Get current activations for all loaded simplexes."""
         return self.simplex.get_all_activations()
+
+    def load_tripole_simplex(self, simplex_name: str, simplex_dir: Path) -> Dict[str, bool]:
+        """Load all three poles of a tripole simplex from a directory."""
+        return self.simplex.load_tripole_simplex(simplex_name, simplex_dir)
+
+    def register_tripole_binding(self, concept_term: str, simplex_name: str, always_on: bool = False):
+        """Register a binding between a concept and a tripole simplex."""
+        self.simplex.register_tripole_binding(concept_term, simplex_name, always_on)
+
+    def get_tripole_state(self, simplex_name: str) -> Dict[str, float]:
+        """Get current activations for all three poles of a tripole simplex."""
+        return self.simplex.get_tripole_state(simplex_name)
+
+    def get_tripole_deviation(self, simplex_name: str) -> Dict[str, Optional[float]]:
+        """Get current deviation from baseline for all three poles."""
+        return self.simplex.get_tripole_deviation(simplex_name)
+
+    def get_all_tripole_activations(self) -> Dict[str, Dict[str, Any]]:
+        """Get current activations grouped by logical tripole simplex name."""
+        return self.simplex.get_all_tripole_activations()
 
     # === BE WORKSPACE TOOLS ===
 

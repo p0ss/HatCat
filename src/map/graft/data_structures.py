@@ -331,14 +331,18 @@ class DimensionEntry:
     concept_id: str
     graft_id: str
     grafted_at: str
+    lens_path: Optional[str] = None  # Path to bound lens for this dimension
 
     def to_dict(self) -> Dict:
-        return {
+        d = {
             "dimension_index": self.dimension_index,
             "concept_id": self.concept_id,
             "graft_id": self.graft_id,
             "grafted_at": self.grafted_at
         }
+        if self.lens_path:
+            d["lens_path"] = self.lens_path
+        return d
 
     @classmethod
     def from_dict(cls, d: Dict) -> "DimensionEntry":
@@ -346,7 +350,8 @@ class DimensionEntry:
             dimension_index=d["dimension_index"],
             concept_id=d["concept_id"],
             graft_id=d["graft_id"],
-            grafted_at=d["grafted_at"]
+            grafted_at=d["grafted_at"],
+            lens_path=d.get("lens_path"),
         )
 
 
@@ -489,6 +494,43 @@ class SubstrateManifest:
         self.current_hidden_dim = graft.post_graft_dim
         self.total_grafts_applied += 1
         self.updated_at = datetime.now().isoformat()
+
+    def record_expansion(
+        self,
+        scion: 'Scion',
+        lens_path: Optional[str] = None,
+        new_hidden_dim: Optional[int] = None,
+    ):
+        """
+        Record a dimension expansion from a scion.
+
+        This tracks when hidden_dim is expanded by +1 to accommodate
+        a new concept neuron from scion application.
+
+        Args:
+            scion: The scion that was applied to expand the substrate
+            lens_path: Path to the bound lens for monitoring this dimension
+            new_hidden_dim: The new hidden dimension after expansion
+                           (if None, uses current_hidden_dim + 1)
+        """
+        if new_hidden_dim is None:
+            new_hidden_dim = self.current_hidden_dim + 1
+
+        entry = DimensionEntry(
+            dimension_index=scion.neuron_index,
+            concept_id=scion.concept_id,
+            graft_id=scion.scion_id,
+            grafted_at=datetime.now().isoformat(),
+            lens_path=lens_path,
+        )
+        self.dimension_table.append(entry)
+        self.current_hidden_dim = new_hidden_dim
+        self.total_grafts_applied += 1
+        self.updated_at = datetime.now().isoformat()
+
+        # Update architecture if present
+        if self.architecture:
+            self.architecture.hidden_size = new_hidden_dim
 
     def get_concept_for_dimension(self, dim_index: int) -> Optional[str]:
         """Look up which concept owns a dimension."""

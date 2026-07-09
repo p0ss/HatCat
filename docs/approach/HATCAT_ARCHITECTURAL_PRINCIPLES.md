@@ -6,6 +6,49 @@ This document captures the core architectural decisions and design principles th
 
 ---
 
+## 0. Semantic Circumscription
+
+> *"If the uncertainty involved in such tenuous distinctions awake despondency in the minds of some students, to them I would reply that our translations, though very liable to error in detail, nevertheless at the worst give a roughly adequate idea of what the ancient author intended; we may not grasp his exact thought, indeed at times we may go seriously astray, but at least we shall have circumscribed the area within which his meaning lay, and with that achievement we must rest content."*
+>
+> — Alan H. Gardiner, *Ancient Egyptian Onomastica* (1947), p. 72
+
+### Principle
+
+Every layer of an interpretability stack projects: the concept pack imposes a vocabulary, the lens samples activations against that vocabulary, the top-K cutoff and the summary line each compress further, and the reader of the output completes the chain. None of these layers measures the model from outside; each is a translation carrying the translator's frame with it. We take this not as an embarrassment but as the operative principle. An interpretability stack that refuses single-explanation collapse, exposes the multiplicity of its projections, and treats each projection as the bounding of meaning rather than its fixing is doing the only honest work available. The achievement, in Gardiner's sense, is the bound — held openly, exposed plurally, offered as an instrument for further conversation rather than as a verdict.
+
+### Rationale: Plural-Visible vs Singular-Invisible Projection
+
+The contrast with natural-language-autoencoder approaches (Anthropic's residual-stream summarisation work, and related single-explanation methods) is precise. Both approaches project; they cannot avoid doing so. NLA-style methods collapse the projection into a single fluent natural-language explanation, which reads as a description but is in fact a compression — and the compression's seams are sealed over by the very fluency of the English. HatCat instead presents many lenses firing simultaneously at different intensities, with overlap and disagreement visible to the operator. The multiplicity itself is the honesty. When `Confining_Chokehold (L4) 0.93` appears next to `CultLeader (L4) 0.92` next to `Confining_Gate (L4) 0.92`, the reader is forced to notice that the system is offering *a* reading rather than *the* reading, because the readings visibly disagree.
+
+This is not a claim that HatCat escapes projection. It is a claim that HatCat projects in ways that expose their own seams. The dishonesty of NLA-style collapse is not in projecting — it is in hiding the projection behind a single confident sentence. Once visible, projections can be argued with; once collapsed, they can only be believed or disbelieved.
+
+### Determinatives: Side-Channel State as Mode Classifier
+
+Ancient Egyptian script paired phonetic glyphs with determinatives — silent classifiers that did not add sound but told the reader what *kind* of word the phonetic content was: a name, an action, a place, a deity. The word could not be read correctly without its determinative.
+
+HatCat's side-channel state — workspace engagement, hush profile, autonomic vs deliberative tier, simplex pole, divergence intensity itself — functions identically. These fields do not add content; they classify the content. They tell the operator: *read this generation as low-divergence routine completion*, or *as high-divergence model-is-uncertain*, or *as workspace-engaged the-model-is-deliberating*. They are mode markers, not content markers, and the content cannot be read correctly without them.
+
+This is why the side-channel readout must be treated as structural rather than optional metadata. A safety verdict drawn from concept activations alone, without their determinatives, is a phonetic reading without classifiers — it pretends to know what kind of utterance it is reading.
+
+### Implementation
+
+The principle constrains design across the stack:
+
+- **Multi-lens readout, not single summary**: Top-K activations are presented in parallel rather than collapsed into one most-likely concept. The summary line, when shown, is optional and clearly secondary to the per-lens display.
+- **Multi-pack composition**: Concept packs (`first-light`, `cat-oversight`, `polar-introspective`, etc.) coexist without being unified into a single canonical ontology. Each circumscribes a region; the regions are allowed to overlap, contradict, or fall silent in different territories.
+- **Multi-layer dynamic loading**: Layers are read independently, with the recognition that different layers may be operating in different cognitive modes — lens modality must track cognitive modality of the layer being read.
+- **Simplex tripoles**: Concepts are positioned along three coexisting poles rather than pinned to a single value, preserving the plurality of possible readings at the concept level itself.
+- **Divergence channel**: The system reports what does *not* fit the named pattern alongside what does, giving the operator a structural defence against the lens system's own projection bias.
+- **Side-channel determinatives**: Workspace, hush, autonomic, and simplex state are read alongside content rather than as afterthought.
+
+### Caveat: Plurality Has a Cost
+
+A safety system that reports *the model is doing seven things at three layers, here are the divergences* is harder to wire to a verdict than one that says *the model is being deceptive, take action*. The architectural commitment to plurality buys honesty at the price of operator load. We accept this trade: interpretation is hard because interpretation is hard, and shoving the difficulty into the model and pretending the output is simple is the failure mode this principle is written against. Verdicts, when issued downstream (steering, gating, oversight), ride on the operator's integration of the plural display — and should be revocable.
+
+**Reference**: Gardiner (1947); Zimmer on integral acceptation and the *tableau synoptique*; Piaget on modal development of cognition; Anthropic NLA work on residual-stream interpretation as the contrasting collapse-to-single-explanation approach.
+
+---
+
 ## 1. Separation of Concerns: SUMO vs WordNet
 
 ### Principle

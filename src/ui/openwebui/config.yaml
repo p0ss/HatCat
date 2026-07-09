@@ -4,11 +4,11 @@
 # Lens pack selection (legacy format - will show deprecation warning)
 # Use lens_pack_id for backward compatibility with existing packs
 # NOTE: Using first-light pack with 7947 lenses across layers 0-6
-lens_pack_id: "gemma-3-4b_first-light-v1-bf16"
+lens_pack_id: "gemma-4-e4b_first-light-v1-bf16"
 
 # Model configuration
 model:
-  name: "google/gemma-3-4b-pt"
+  name: "google/gemma-4-E4B"
   dtype: "bfloat16"  # bfloat16, float16, or float32
   device_map: "auto"
   low_cpu_mem_usage: true
@@ -25,7 +25,7 @@ lens_manager:
 # Server configuration
 server:
   host: "0.0.0.0"
-  port: 8765
+  port: 8766
   title: "HatCat Divergence API"
 
 # Generation defaults
@@ -37,5 +37,14 @@ generation:
 # LLM-based divergence explanation (optional)
 # Uses a small model to explain what the AI might be thinking but not saying
 llm_explainer:
-  enabled: true  # Set to true to enable LLM explanations
+  enabled: false  # Disabled for initial testing — saves VRAM
   model: "gemma-2b"  # Options: gemma-2b, qwen-0.5b, qwen-1.5b, phi-3-mini
+
+# Workspace context injection
+# When true, the model's own activation report (concept names, divergences,
+# tier state, scratchpad) is prepended to every prompt as <workspace_state>.
+# Off by default — lens output is meant as out-of-band observation, not
+# input to the model. Enable only with a model trained/scaffolded to read
+# its own workspace block deliberately.
+workspace:
+  inject_context: false

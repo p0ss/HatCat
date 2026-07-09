@@ -242,7 +242,7 @@ def infer_concept_domain(concept: Dict, hierarchy_dir: Path = None) -> str:
 
     # Fallback to heuristic matching for backwards compatibility
     try:
-        layer0_path = Path("data/concept_graph/abstraction_layers/layer0.json")
+        layer0_path = Path("concept_packs/first-light/concept_graph/abstraction_layers/layer0.json")
         with open(layer0_path) as f:
             layer0_data = json.load(f)
 

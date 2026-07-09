@@ -10,6 +10,8 @@ Submodules:
 - map.meld: Meld operations (ontology building)
 - map.training: Lens training infrastructure
 - map.data: Version manifests, concept embeddings
+
+Note: The learning harness has moved to be.learning (Layer 4).
 """
 
 # Re-export from registry submodule

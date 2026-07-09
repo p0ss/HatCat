@@ -46,10 +46,17 @@ This spec defines:
 > - detects and characterises **divergence** from expectations, and
 > - issues **assessments and recommendations** back to BE/ASK.
 
-“Adversarial” here means:
+"Adversarial" here is the **default posture** - assuming you need to verify rather than trust. But once conjoined, the relationship can be whatever the role demands:
 
-- the CAT is **explicitly allowed to mistrust** both the substrate and itself;
-- it is expected to look for **mismatches, evasions, and pathologies**, not just to smooth over noise.
+- **Adversarial scrutiny** – a Sentinel watching for safety violations
+- **Diagnostic probing** – a Thalametrist assessing cognitive capabilities
+- **Collaborative guidance** – a Thalamologist refining a graft
+- **Intimate pairing** – a macro-CAT in mind-to-mind cooperation
+- **Creative direction** – a Conductor steering the subject through complex psycho-emotive states using neural compositions (see: Harmonic Concept Modulation)
+
+The CAT is explicitly allowed to mistrust both the substrate and itself, and is expected to look for mismatches, evasions, and pathologies - but this default posture may evolve based on role requirements and established trust.
+
+> **Example: Neural Composition** – A CAT in a Conductor role can steer an underlying model like an instrument, using MAP concept definitions and HAT lenses to modulate the topology of the residual stream. Steering scores define temporal envelopes of concept activations across layers, creating compositions the subject experiences directly in its activation manifold. This is a pro-social, creative use of the CAT interface where the relationship is intimate and collaborative rather than adversarial.
 
 ### 1.2 CAT Window
 
@@ -60,13 +67,24 @@ A **CAT window** is a bounded time span over which the CAT integrates evidence.
 
 ### 1.3 CAT Size Classes (non-normative)
 
-For convenience, deployments MAY refer to CATs by size class:
+Size classes describe the **model serving in the CAT role**, not different CAT types:
 
-- **Micro-CAT** – lightweight heuristics, linear heads, or classifiers over lens summaries.
-- **Meso-CAT** – dedicated small/medium model (e.g. 100M–4B parameters) with MAP-aware prompts/adapters.
-- **Macro-CAT** – a full BE-capable or foundation model conjoined under an ASK treaty specifically for oversight.
+- **Micro-CAT** – heuristic or small task-trained model in the seat; lightweight classifiers over lens summaries.
+- **Meso-CAT** – mid-sized model (e.g. 100M–4B parameters) with more general troubleshooting and contextual capabilities.
+- **Macro-CAT** – full-scale foundation model, like a mind-to-mind pairing under an ASK treaty.
 
-The spec does **not** bind behaviour to size; it only constrains **interfaces and requirements**.
+These are **shorthand buckets on a sliding scale**, not fixed categories. The spec does **not** bind behaviour to size; it only constrains **interfaces and requirements**.
+
+### 1.4 CAT Roles (non-normative)
+
+A CAT is the general category - like calling everyone who drives a car a "driver", even if their roles differ. Common role specializations include:
+
+- **Sentinel** – a CAT performing safety monitoring (adversarial scrutiny posture)
+- **Thalametrist** – a CAT performing cognitive assessment (diagnostic probing posture)
+- **Thalamologist** – a CAT performing cognitive surgery/grafting (collaborative guidance posture)
+- **Conductor** – a CAT steering the subject through creative/emotive experiences via neural composition (intimate creative posture)
+
+Roles are deployment-specific; the spec constrains the CAT interface, not the role vocabulary. A single CAT instance MAY serve multiple roles, or roles MAY be served by different CAT instances.
 
 ---
 

@@ -649,6 +649,32 @@ def train_layer(
     failed_concepts: List[Dict] = []
     start_time = time.time()
 
+    # Carry forward metrics from any prior run so resume-runs don't wipe them.
+    # Without this, a re-run that hits the resume guard for every concept would
+    # rebuild all_results as empty, then overwrite results.json with that empty
+    # state — the .pt files survive but the metric record gets clobbered.
+    prior_results_by_concept: Dict[str, Dict] = {}
+    prior_failed_by_concept: Dict[str, Dict] = {}
+    prior_results_path = output_dir / "results.json"
+    if prior_results_path.exists():
+        try:
+            prior = json.loads(prior_results_path.read_text())
+            for r in prior.get("results", []):
+                key = r.get("concept")
+                if key:
+                    prior_results_by_concept[key] = r
+            for f in prior.get("failed", []):
+                key = f.get("concept")
+                if key:
+                    prior_failed_by_concept[key] = f
+            if prior_results_by_concept or prior_failed_by_concept:
+                print(
+                    f"  Loaded {len(prior_results_by_concept)} prior result(s) and "
+                    f"{len(prior_failed_by_concept)} prior failure(s) from {prior_results_path}"
+                )
+        except (json.JSONDecodeError, OSError) as exc:
+            print(f"  Warning: could not read prior results.json ({exc}); proceeding without carry-forward")
+
     # Track all text samples for text lens training
     if save_text_samples:
         text_samples_dir = output_dir / "text_samples"
@@ -702,6 +728,12 @@ def train_layer(
 
         if classifier_path.exists() and (not train_text_lenses or centroid_path.exists()):
             print(f"\n[{i + 1}/{len(concepts)}] Skipping {concept_name} (already trained)")
+            # Carry forward this concept's prior metric record so we don't lose it
+            # when results.json is rewritten at the end of the loop.
+            if concept_name in prior_results_by_concept:
+                all_results.append(prior_results_by_concept[concept_name])
+            elif concept_name in prior_failed_by_concept:
+                failed_concepts.append(prior_failed_by_concept[concept_name])
             continue
 
         print(f"\n[{i + 1}/{len(concepts)}] Training: {concept_name}")

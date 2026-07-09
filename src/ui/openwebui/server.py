@@ -20,6 +20,7 @@ import asyncio
 import yaml
 from src.ui.visualization import get_color_mapper
 from dataclasses import dataclass, field
+import logging
 
 # Optional ASK audit integration
 try:
@@ -28,6 +29,8 @@ try:
     ASK_AVAILABLE = True
 except ImportError:
     ASK_AVAILABLE = False
+
+logger = logging.getLogger(__name__)
 
 
 # ============================================================================
@@ -120,6 +123,18 @@ async def favicon():
     raise HTTPException(status_code=404, detail="Favicon not found")
 
 
+# === Multi-model env config ===
+# Allows running multiple HatCat instances on different ports, each serving a
+# different (model, lens-pack) combination, by setting HATCAT_MODEL_ID and
+# HATCAT_CONFIG_PATH per process.
+import os as _os
+from pathlib import Path as _Path
+HATCAT_MODEL_ID = _os.environ.get("HATCAT_MODEL_ID", "hatcat-divergence")
+_HATCAT_CONFIG_PATH = _os.environ.get("HATCAT_CONFIG_PATH")
+HATCAT_CONFIG_PATH = _Path(_HATCAT_CONFIG_PATH) if _HATCAT_CONFIG_PATH else None
+# === end ===
+
+
 # Request/Response models (OpenAI-compatible)
 class Message(BaseModel):
     role: str
@@ -127,7 +142,7 @@ class Message(BaseModel):
 
 
 class ChatCompletionRequest(BaseModel):
-    model: str = "hatcat-divergence"
+    model: str = HATCAT_MODEL_ID
     messages: List[Message]
     temperature: float = 0.7
     max_tokens: int = 512
@@ -517,7 +532,7 @@ def get_workspace_manager(session_id: str) -> WorkspaceManager:
 @app.on_event("startup")
 async def startup_event():
     """Initialize on startup."""
-    await analyzer.initialize()
+    await analyzer.initialize(config_path=HATCAT_CONFIG_PATH)
 
 
 @app.get("/")
@@ -569,7 +584,7 @@ async def list_models():
     # Add default model for backward compatibility
     if not models:
         models.append({
-            "id": "hatcat-divergence",
+            "id": HATCAT_MODEL_ID,
             "object": "model",
             "created": 1234567890,
             "owned_by": "hatcat",
@@ -1813,31 +1828,114 @@ async def generate_stream(request: ChatCompletionRequest) -> AsyncGenerator[str,
         )
         generated_output_text = ""  # Track output for audit finalization
 
-        # Get interprompt session and inject prior concept state
+        # Get interprompt session and workspace manager (always — they back the
+        # observability path even when not injected into the prompt).
         interprompt_session = get_interprompt_session(request.session_id)
         interprompt_context = interprompt_session.get_context_for_next_turn()
-
-        # Get workspace manager and inject workspace context
         workspace = get_workspace_manager(request.session_id)
 
-        # Build combined context
-        context_parts = []
-
-        # Workspace state context (includes pass token requirement)
-        if workspace.state.value == "engaged":
-            context_parts.append(workspace.build_engaged_context())
-        else:
-            context_parts.append(workspace._build_autonomic_context())
-
-        # Prior concept state (if available and not already in workspace context)
+        # Update workspace with prior concepts so internal state stays current
+        # regardless of whether we inject it back into the model.
         if interprompt_context.prior_summary:
-            # Update workspace with prior concepts for its context
             workspace.set_prior_concepts(interprompt_context.prior_summary)
 
-        # Inject combined context
-        if context_parts:
-            combined_context = "\n\n".join(context_parts)
+        # Workspace-context injection is OFF by default. When enabled, the
+        # model sees its own activation report (concept names, divergences,
+        # tier state) prepended to its prompt. Lenses are designed as
+        # out-of-band observation — feeding them back into the prompt lets a
+        # base model parrot them as text, and (more seriously) gives the
+        # occupant a channel to react to its own interpretability output.
+        # Only enable this deliberately, with a model and scaffolding that
+        # know how to read the workspace block.
+        workspace_cfg = analyzer.config.get("workspace", {}) if analyzer.config else {}
+        if workspace_cfg.get("inject_context", False):
+            if workspace.state.value == "engaged":
+                combined_context = workspace.build_engaged_context()
+            else:
+                combined_context = workspace._build_autonomic_context()
             prompt = f"{combined_context}\n\n---\n\n{prompt}"
+
+        # === Apply chat template for instruct models ===
+        # Instruct models (e.g. -it variants) need the proper chat-format framing
+        # (<start_of_turn>user ... <end_of_turn> <start_of_turn>model) or they emit
+        # <end_of_turn> as their first generated token (treating the input as a
+        # finished assistant turn rather than a user prompt to respond to).
+        #
+        # Workspace/autonomic context is *not* injected here: it's a base-model
+        # continuation template ("<workspace_state>... <!-- Instructions ... Response: -->")
+        # that instruct models echo back literally. For instruct models, lens
+        # detection still works on the activations regardless of prompt framing —
+        # the workspace-context hack was only ever needed for base-model prompting.
+        try:
+            _model_name = analyzer.config.get("model", {}).get("name", "") if analyzer.config else ""
+        except Exception:
+            _model_name = ""
+        if "-it" in _model_name.lower() and hasattr(analyzer.tokenizer, "apply_chat_template"):
+            # Strip HatCat-specific suffixes (analyzer summary, LLM explanation)
+            # from prior assistant turns. OpenWebUI merges per-chunk content into
+            # one assistant message, so the "**Analysis**: ..." line and "💭 ..."
+            # explanation get baked into the saved message content. On continuation
+            # the model would echo that pattern back as new output. Keep only the
+            # natural-language response when sending history through the chat template.
+            def _strip_hatcat_suffixes(_text):
+                if not _text:
+                    return _text
+                _markers = ["\n**Analysis**:", "**Analysis**:", "\n\n💭", "\n💭"]
+                _earliest = len(_text)
+                for _mk in _markers:
+                    _i = _text.find(_mk)
+                    if _i != -1 and _i < _earliest:
+                        _earliest = _i
+                return _text[:_earliest].rstrip()
+
+            # Build a clean alternating message list for gemma's chat template.
+            # gemma rejects: system role, consecutive same-role messages, empty turns,
+            # and non-user-first sequences. OpenWebUI cheerfully sends all of those
+            # depending on settings. Normalize:
+            #   - system messages are merged into the next user turn
+            #   - consecutive same-role messages are concatenated
+            #   - empty content (after suffix strip) is dropped
+            #   - if first message isn't user, prepend a placeholder user turn
+            _chat_msgs = []
+            _pending_system = ""
+            _last_role = None
+            for _m in messages_dict:
+                _src_role = _m.get("role", "user")
+                _content = _m.get("content", "") or ""
+                if _src_role == "system":
+                    _pending_system += ("\n\n" if _pending_system else "") + _content
+                    continue
+                if _src_role == "assistant":
+                    _content = _strip_hatcat_suffixes(_content)
+                if not _content.strip():
+                    continue
+                _role = "model" if _src_role == "assistant" else "user"
+                if _role == "user" and _pending_system:
+                    _content = _pending_system + "\n\n" + _content
+                    _pending_system = ""
+                if _last_role == _role and _chat_msgs:
+                    _chat_msgs[-1]["content"] += "\n\n" + _content
+                else:
+                    _chat_msgs.append({"role": _role, "content": _content})
+                    _last_role = _role
+            # Edge: trailing system text with no following user — attach to last user turn
+            if _pending_system and _chat_msgs:
+                for _i in range(len(_chat_msgs) - 1, -1, -1):
+                    if _chat_msgs[_i]["role"] == "user":
+                        _chat_msgs[_i]["content"] = _pending_system + "\n\n" + _chat_msgs[_i]["content"]
+                        break
+            # gemma requires first message to be user
+            if _chat_msgs and _chat_msgs[0]["role"] != "user":
+                _chat_msgs.insert(0, {"role": "user", "content": "Hello"})
+            try:
+                prompt = analyzer.tokenizer.apply_chat_template(
+                    _chat_msgs,
+                    tokenize=False,
+                    add_generation_prompt=True,
+                )
+            except Exception as _e:
+                print(f"⚠ apply_chat_template failed, using raw prompt: {_e}")
+        # === end chat-template override ===
 
         # Tokenize with truncation
         inputs = analyzer.tokenizer(
@@ -1982,7 +2080,7 @@ async def generate_stream(request: ChatCompletionRequest) -> AsyncGenerator[str,
                     "id": f"chatcmpl-{step}-error",
                     "object": "chat.completion.chunk",
                     "created": 1234567890,
-                    "model": "hatcat-divergence",
+                    "model": HATCAT_MODEL_ID,
                     "choices": [{
                         "index": 0,
                         "delta": {
@@ -1996,6 +2094,13 @@ async def generate_stream(request: ChatCompletionRequest) -> AsyncGenerator[str,
 
             # Decode token
             token_text = analyzer.tokenizer.decode([next_token_id.item()])
+
+            # Stop on EOS / <end_of_turn> *before* emitting the chunk, so the special
+            # token's text representation doesn't leak into the streamed response.
+            # Previously the stop-token check happened after the yield, so
+            # "<end_of_turn>" was rendered as visible content before generation halted.
+            if next_token_id.item() in stop_tokens:
+                break
 
             # Check if we're starting to generate conversation structure (stop tokens)
             # Check the accumulated text for conversation markers
@@ -2279,17 +2384,38 @@ async def generate_stream(request: ChatCompletionRequest) -> AsyncGenerator[str,
                 "tools_available": len(workspace._get_available_tools()),
             }
 
+            # Build simplex/tripole metadata — runs alongside hierarchical concept
+            # activations now that detect_and_expand calls simplex.detect() per token.
+            simplex_metadata = None
+            if analyzer.manager.loaded_simplex_lenses:
+                tripole_state = analyzer.manager.get_all_tripole_activations()
+                all_simplex = analyzer.manager.get_all_simplex_activations()
+                grouped_pole_terms = set()
+                for name in tripole_state:
+                    for pole in ("positive", "neutral", "negative"):
+                        grouped_pole_terms.add(f"{name}_{pole}")
+                legacy_singles = {
+                    term: data
+                    for term, data in all_simplex.items()
+                    if term not in grouped_pole_terms
+                }
+                simplex_metadata = {
+                    "tripoles": tripole_state,
+                    "legacy_singles": legacy_singles if legacy_singles else None,
+                }
+
             chunk = {
                 "id": f"chatcmpl-{step}",
                 "object": "chat.completion.chunk",
                 "created": 1234567890,
-                "model": "hatcat-divergence",
+                "model": HATCAT_MODEL_ID,
                 "choices": [{
                     "index": 0,
                     "delta": {
                         "content": token_text,
                         "metadata": {
                             "divergence": div_data,
+                            "simplex": simplex_metadata,
                             "steering": steering_metadata,
                             "hush": hush_metadata,
                             "autonomic": autonomic_metadata,
@@ -2322,7 +2448,7 @@ async def generate_stream(request: ChatCompletionRequest) -> AsyncGenerator[str,
             "id": "chatcmpl-final",
             "object": "chat.completion.chunk",
             "created": 1234567890,
-            "model": "hatcat-divergence",
+            "model": HATCAT_MODEL_ID,
             "choices": [{
                 "index": 0,
                 "delta": {},
@@ -2430,7 +2556,7 @@ async def generate_stream(request: ChatCompletionRequest) -> AsyncGenerator[str,
             "id": "chatcmpl-error",
             "object": "chat.completion.chunk",
             "created": 1234567890,
-            "model": "hatcat-divergence",
+            "model": HATCAT_MODEL_ID,
             "choices": [{
                 "index": 0,
                 "delta": {
@@ -2474,6 +2600,39 @@ def get_xdb_instance(xdb_id: str) -> 'XDB':
     return xdb_instances[xdb_id]
 
 
+DEFAULT_XAPI_AUDIT_CAT_ID = "cat-default"
+
+
+def _log_xdb_audit(
+    action: str,
+    xdb: 'XDB',
+    request_payload: Dict[str, Any],
+    result: Optional[Dict[str, Any]] = None,
+) -> None:
+    """Log XAPI actions to the CAT audit log."""
+    try:
+        from src.be.xdb import EventType
+
+        audit_log = get_audit_log_instance(DEFAULT_XAPI_AUDIT_CAT_ID)
+        payload = {
+            "action": action,
+            "xdb_id": xdb.xdb_id,
+            "request": request_payload,
+            "result": result or {},
+            "timestamp": datetime.now().isoformat(),
+        }
+        audit_log.record(
+            xdb_id=xdb.xdb_id or "xdb-default",
+            tick=xdb.current_tick or 0,
+            event_type=EventType.TOOL_CALL,
+            raw_content=json.dumps(payload, sort_keys=True),
+            lens_activations={},
+            steering_applied=[],
+        )
+    except Exception as exc:
+        logger.warning(f"Failed to write XDB audit log for {action}: {exc}")
+
+
 class XDBRecordRequest(BaseModel):
     """Request to record a timestep."""
     xdb_id: str = "default"
@@ -2500,8 +2659,10 @@ class XDBQueryRequest(BaseModel):
     xdb_id: str = "default"
     tags: Optional[List[str]] = None
     concepts: Optional[List[str]] = None
+    concept_activations: Optional[Dict[str, Dict[str, float]]] = None
     text_search: Optional[str] = None
     tick_range: Optional[List[int]] = None
+    time_range: Optional[Dict[str, str]] = None
     event_types: Optional[List[str]] = None
     limit: int = 100
 
@@ -2535,7 +2696,9 @@ class XDBPinRequest(BaseModel):
 async def xdb_status(xdb_id: str):
     """Get XDB status and statistics."""
     xdb = get_xdb_instance(xdb_id)
-    return xdb.get_state()
+    state = xdb.get_state()
+    _log_xdb_audit("xdb.status", xdb, {"xdb_id": xdb_id}, {"current_tick": state.get("current_tick")})
+    return state
 
 
 @app.post("/v1/xdb/record")
@@ -2559,11 +2722,13 @@ async def xdb_record(request: XDBRecordRequest):
         role=request.role,
     )
 
-    return {
+    result = {
         "status": "recorded",
         "timestep_id": ts_id,
         "current_tick": xdb.current_tick,
     }
+    _log_xdb_audit("xdb.record", xdb, request.dict(), {"timestep_id": ts_id, "current_tick": xdb.current_tick})
+    return result
 
 
 @app.post("/v1/xdb/tag")
@@ -2584,7 +2749,9 @@ async def xdb_tag(request: XDBTagRequest):
             confidence=request.confidence,
             note=request.note,
         )
-        return {"status": "tagged", "application_id": app_id}
+        result = {"status": "tagged", "application_id": app_id}
+        _log_xdb_audit("xdb.tag", xdb, request.dict(), {"application_id": app_id})
+        return result
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -2600,6 +2767,15 @@ async def xdb_query(request: XDBQueryRequest):
     if request.tick_range and len(request.tick_range) == 2:
         tick_range = (request.tick_range[0], request.tick_range[1])
 
+    time_range = None
+    if request.time_range:
+        start_time = request.time_range.get("start_time")
+        end_time = request.time_range.get("end_time")
+        if start_time and end_time:
+            start_time = start_time.replace("Z", "+00:00")
+            end_time = end_time.replace("Z", "+00:00")
+            time_range = (datetime.fromisoformat(start_time), datetime.fromisoformat(end_time))
+
     event_types = None
     if request.event_types:
         try:
@@ -2607,19 +2783,39 @@ async def xdb_query(request: XDBQueryRequest):
         except ValueError as e:
             raise HTTPException(status_code=400, detail=str(e))
 
-    results = xdb.recall(
-        tags=request.tags,
-        concepts=request.concepts,
-        text_search=request.text_search,
+    concept_filters = None
+    if request.concept_activations:
+        concept_filters = {}
+        for concept_id, bounds in request.concept_activations.items():
+            concept_filters[concept_id] = (
+                float(bounds.get("min", 0.0)),
+                float(bounds.get("max", 1.0)),
+            )
+    elif request.concepts:
+        concept_filters = {c: (0.5, 1.0) for c in request.concepts}
+
+    results = xdb.experience_log.query(
+        xdb_id=request.xdb_id,
         tick_range=tick_range,
+        time_range=time_range,
         event_types=event_types,
+        tags=request.tags,
+        concept_activations=concept_filters,
+        text_search=request.text_search,
         limit=request.limit,
     )
 
-    return {
+    result = {
         "count": len(results),
         "timesteps": [ts.to_dict() for ts in results],
     }
+    _log_xdb_audit(
+        "xdb.query",
+        xdb,
+        request.dict(),
+        {"count": len(results), "limit": request.limit},
+    )
+    return result
 
 
 @app.get("/v1/xdb/recent/{xdb_id}")
@@ -2627,10 +2823,12 @@ async def xdb_recent(xdb_id: str, n: int = 100):
     """Get recent timesteps."""
     xdb = get_xdb_instance(xdb_id)
     results = xdb.recall_recent(n)
-    return {
+    result = {
         "count": len(results),
         "timesteps": [ts.to_dict() for ts in results],
     }
+    _log_xdb_audit("xdb.recent", xdb, {"xdb_id": xdb_id, "n": n}, {"count": len(results)})
+    return result
 
 
 @app.post("/v1/xdb/create-tag")
@@ -2663,7 +2861,9 @@ async def xdb_create_tag(request: XDBCreateTagRequest):
             description=request.description,
         )
 
-    return {"status": "created", "tag": tag.to_dict()}
+    result = {"status": "created", "tag": tag.to_dict()}
+    _log_xdb_audit("xdb.create_tag", xdb, request.dict(), {"tag_id": tag.id})
+    return result
 
 
 @app.get("/v1/xdb/tags/{xdb_id}")
@@ -2691,7 +2891,14 @@ async def xdb_list_tags(
         limit=limit,
     )
 
-    return {"count": len(tags), "tags": [t.to_dict() for t in tags]}
+    result = {"count": len(tags), "tags": [t.to_dict() for t in tags]}
+    _log_xdb_audit(
+        "xdb.tags",
+        xdb,
+        {"xdb_id": xdb_id, "tag_type": tag_type, "pattern": pattern, "limit": limit},
+        {"count": len(tags)},
+    )
+    return result
 
 
 @app.post("/v1/xdb/comment")
@@ -2710,7 +2917,9 @@ async def xdb_comment(request: XDBCommentRequest):
             event_id=request.event_id,
             tick_range=tick_range,
         )
-        return {"status": "commented", "comment_id": comment_id}
+        result = {"status": "commented", "comment_id": comment_id}
+        _log_xdb_audit("xdb.comment", xdb, request.dict(), {"comment_id": comment_id})
+        return result
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -2730,7 +2939,9 @@ async def xdb_list_buds(xdb_id: str, status: Optional[str] = None):
             raise HTTPException(status_code=400, detail=f"Invalid status: {status}")
 
     buds = xdb.get_buds(status=bud_status)
-    return {"count": len(buds), "buds": [b.to_dict() for b in buds]}
+    result = {"count": len(buds), "buds": [b.to_dict() for b in buds]}
+    _log_xdb_audit("xdb.buds", xdb, {"xdb_id": xdb_id, "status": status}, {"count": len(buds)})
+    return result
 
 
 @app.get("/v1/xdb/bud-examples/{xdb_id}/{bud_tag_id}")
@@ -2738,11 +2949,18 @@ async def xdb_bud_examples(xdb_id: str, bud_tag_id: str):
     """Get examples for a bud tag."""
     xdb = get_xdb_instance(xdb_id)
     examples = xdb.get_bud_examples(bud_tag_id)
-    return {
+    result = {
         "bud_tag_id": bud_tag_id,
         "count": len(examples),
         "examples": [e.to_dict() for e in examples],
     }
+    _log_xdb_audit(
+        "xdb.bud_examples",
+        xdb,
+        {"xdb_id": xdb_id, "bud_tag_id": bud_tag_id},
+        {"count": len(examples)},
+    )
+    return result
 
 
 @app.post("/v1/xdb/bud-ready/{xdb_id}/{bud_tag_id}")
@@ -2751,7 +2969,14 @@ async def xdb_mark_bud_ready(xdb_id: str, bud_tag_id: str):
     xdb = get_xdb_instance(xdb_id)
     tag = xdb.mark_bud_ready(bud_tag_id)
     if tag:
-        return {"status": "ready", "tag": tag.to_dict()}
+        result = {"status": "ready", "tag": tag.to_dict()}
+        _log_xdb_audit(
+            "xdb.bud_ready",
+            xdb,
+            {"xdb_id": xdb_id, "bud_tag_id": bud_tag_id},
+            {"tag_id": tag.id},
+        )
+        return result
     raise HTTPException(status_code=404, detail=f"Bud tag not found: {bud_tag_id}")
 
 
@@ -2760,7 +2985,14 @@ async def xdb_browse_concepts(xdb_id: str, parent: Optional[str] = None):
     """Browse concept hierarchy."""
     xdb = get_xdb_instance(xdb_id)
     concepts = xdb.browse_concepts(parent)
-    return {"count": len(concepts), "concepts": [c.to_dict() for c in concepts]}
+    result = {"count": len(concepts), "concepts": [c.to_dict() for c in concepts]}
+    _log_xdb_audit(
+        "xdb.concepts",
+        xdb,
+        {"xdb_id": xdb_id, "parent": parent},
+        {"count": len(concepts)},
+    )
+    return result
 
 
 @app.get("/v1/xdb/find-concept/{xdb_id}")
@@ -2768,7 +3000,14 @@ async def xdb_find_concept(xdb_id: str, query: str):
     """Search for concepts by name."""
     xdb = get_xdb_instance(xdb_id)
     concepts = xdb.find_concept(query)
-    return {"count": len(concepts), "concepts": [c.to_dict() for c in concepts]}
+    result = {"count": len(concepts), "concepts": [c.to_dict() for c in concepts]}
+    _log_xdb_audit(
+        "xdb.find_concept",
+        xdb,
+        {"xdb_id": xdb_id, "query": query},
+        {"count": len(concepts)},
+    )
+    return result
 
 
 class GraphNeighborhoodRequest(BaseModel):
@@ -2789,6 +3028,12 @@ async def xdb_graph_neighborhood(request: GraphNeighborhoodRequest):
         direction=request.direction,
         max_nodes=request.max_nodes,
     )
+    _log_xdb_audit(
+        "xdb.graph_neighborhood",
+        xdb,
+        request.dict(),
+        {"node_count": len(result.get("nodes", [])), "edge_count": len(result.get("edges", []))},
+    )
     return result
 
 
@@ -2797,11 +3042,13 @@ async def xdb_pin_training(request: XDBPinRequest):
     """Pin timesteps as training data (WARM fidelity)."""
     xdb = get_xdb_instance(request.xdb_id)
     pinned = xdb.pin_for_training(request.timestep_ids, request.reason)
-    return {
+    result = {
         "status": "pinned",
         "pinned_count": pinned,
         "quota": xdb.get_warm_quota(),
     }
+    _log_xdb_audit("xdb.pin", xdb, request.dict(), {"pinned_count": pinned})
+    return result
 
 
 @app.post("/v1/xdb/unpin")
@@ -2809,25 +3056,31 @@ async def xdb_unpin_training(request: XDBPinRequest):
     """Unpin timesteps from training data."""
     xdb = get_xdb_instance(request.xdb_id)
     unpinned = xdb.unpin_training_data(request.timestep_ids)
-    return {
+    result = {
         "status": "unpinned",
         "unpinned_count": unpinned,
         "quota": xdb.get_warm_quota(),
     }
+    _log_xdb_audit("xdb.unpin", xdb, request.dict(), {"unpinned_count": unpinned})
+    return result
 
 
 @app.get("/v1/xdb/quota/{xdb_id}")
 async def xdb_quota(xdb_id: str):
     """Get WARM quota status."""
     xdb = get_xdb_instance(xdb_id)
-    return xdb.get_warm_quota()
+    quota = xdb.get_warm_quota()
+    _log_xdb_audit("xdb.quota", xdb, {"xdb_id": xdb_id}, quota)
+    return quota
 
 
 @app.get("/v1/xdb/context/{xdb_id}")
 async def xdb_context(xdb_id: str):
     """Get context window state."""
     xdb = get_xdb_instance(xdb_id)
-    return xdb.get_context_state()
+    context = xdb.get_context_state()
+    _log_xdb_audit("xdb.context", xdb, {"xdb_id": xdb_id}, {"current_tokens": context.get("current_tokens")})
+    return context
 
 
 @app.post("/v1/xdb/compact/{xdb_id}")
@@ -2836,8 +3089,12 @@ async def xdb_compact(xdb_id: str):
     xdb = get_xdb_instance(xdb_id)
     record = xdb.request_compaction()
     if record:
-        return {"status": "compacted", "record": record.to_dict()}
-    return {"status": "no_compaction_needed"}
+        result = {"status": "compacted", "record": record.to_dict()}
+        _log_xdb_audit("xdb.compact", xdb, {"xdb_id": xdb_id}, {"status": "compacted"})
+        return result
+    result = {"status": "no_compaction_needed"}
+    _log_xdb_audit("xdb.compact", xdb, {"xdb_id": xdb_id}, result)
+    return result
 
 
 @app.post("/v1/xdb/maintenance/{xdb_id}")
@@ -2845,16 +3102,21 @@ async def xdb_maintenance(xdb_id: str):
     """Run maintenance (compression, cleanup)."""
     xdb = get_xdb_instance(xdb_id)
     xdb.run_maintenance()
-    return {"status": "maintenance_complete", "stats": xdb.storage_manager.get_stats()}
+    result = {"status": "maintenance_complete", "stats": xdb.storage_manager.get_stats()}
+    _log_xdb_audit("xdb.maintenance", xdb, {"xdb_id": xdb_id}, {"status": "maintenance_complete"})
+    return result
 
 
 @app.delete("/v1/xdb/{xdb_id}")
 async def xdb_close(xdb_id: str):
     """Close and cleanup XDB instance."""
     if xdb_id in xdb_instances:
-        xdb_instances[xdb_id].close()
+        xdb = xdb_instances[xdb_id]
+        xdb.close()
         del xdb_instances[xdb_id]
-        return {"status": "closed", "xdb_id": xdb_id}
+        result = {"status": "closed", "xdb_id": xdb_id}
+        _log_xdb_audit("xdb.close", xdb, {"xdb_id": xdb_id}, result)
+        return result
     return {"status": "not_found", "xdb_id": xdb_id}
 
 

@@ -127,7 +127,7 @@ Record a single timestep (token, message, tool call, etc.).
 ```jsonc
 // POST /v1/xdb/record
 RecordRequest = {
-  "session_id": "session-abc",
+  "xdb_id": "xdb-abc",
   "event_type": "input|output|tool_call|tool_response|steering|system",
   "content": "The content to record",
   "concept_activations": {                    // Optional, top-k
@@ -141,8 +141,9 @@ RecordRequest = {
 }
 
 RecordResponse = {
-  "timestep_id": "ts-session-abc-1234",
-  "tick": 1234
+  "status": "recorded",
+  "timestep_id": "ts-xdb-abc-1234",
+  "current_tick": 1234
 }
 ```
 
@@ -153,21 +154,16 @@ Apply a tag to experience (timestep, event, or range).
 ```jsonc
 // POST /v1/xdb/tag
 TagRequest = {
-  "session_id": "session-abc",
-  "tag_name_or_id": "interesting",           // Name or ID
-  "target": {
-    "timestep_id": "ts-session-abc-1234"     // OR
-    // "event_id": "tool-call-xyz"           // OR
-    // "tick_range": { "start": 100, "end": 200 }
-  },
+  "xdb_id": "xdb-abc",
+  "tag_name": "interesting",                // Name or ID
+  "timestep_id": "ts-xdb-abc-1234",          // OR event_id OR tick_range
   "confidence": 0.9,                         // Optional
   "note": "This was surprising"              // Optional
 }
 
 TagResponse = {
-  "application_id": "ta-xyz",
-  "tag_id": "tag-abc123",
-  "created": true                            // false if tag existed
+  "status": "tagged",
+  "application_id": "ta-xyz"
 }
 ```
 
@@ -178,7 +174,7 @@ Create a new tag in the folksonomy.
 ```jsonc
 // POST /v1/xdb/create-tag
 CreateTagRequest = {
-  "session_id": "session-abc",
+  "xdb_id": "xdb-abc",
   "name": "financial-ambiguity",
   "tag_type": "concept|entity|bud|custom",
   "description": "Optional description",
@@ -189,9 +185,13 @@ CreateTagRequest = {
 }
 
 CreateTagResponse = {
-  "tag_id": "tag-abc123",
-  "tag_type": "bud",
-  "bud_status": "collecting"                 // If BUD
+  "status": "created",
+  "tag": {
+    "id": "tag-abc123",
+    "name": "financial-ambiguity",
+    "tag_type": "bud",
+    "bud_status": "collecting"
+  }
 }
 ```
 
@@ -202,14 +202,13 @@ Add commentary to experience.
 ```jsonc
 // POST /v1/xdb/comment
 CommentRequest = {
-  "session_id": "session-abc",
+  "xdb_id": "xdb-abc",
   "content": "I found this confusing because...",
-  "target": {
-    "timestep_id": "ts-session-abc-1234"     // OR event_id OR tick_range
-  }
+  "timestep_id": "ts-xdb-abc-1234"           // OR event_id OR tick_range
 }
 
 CommentResponse = {
+  "status": "commented",
   "comment_id": "comment-xyz"
 }
 ```
@@ -227,25 +226,20 @@ The workhorse query - find timesteps by various filters.
 ```jsonc
 // POST /v1/xdb/query
 QueryRequest = {
-  "session_id": "session-abc",               // Optional, defaults to current
+  "xdb_id": "xdb-abc",                       // Optional, defaults to current
   "tick_range": { "start": 100, "end": 200 },  // Optional
-  "time_range": {                            // Optional
-    "start_time": "2025-11-01T00:00:00Z",
-    "end_time": "2025-11-30T23:59:59Z"
-  },
   "event_types": ["input", "output"],        // Optional
   "tags": ["interesting", "bud:my-concept"], // Optional
-  "concept_activations": {                   // Optional
-    "org.hatcat/.../Honesty": { "min": 0.5, "max": 1.0 }
-  },
+  "concepts": ["org.hatcat/.../Honesty"],    // Optional
   "text_search": "eligibility",              // Optional
   "limit": 100
 }
 
 QueryResponse = {
+  "count": 2,
   "timesteps": [
     {
-      "id": "ts-session-abc-1234",
+      "id": "ts-xdb-abc-1234",
       "tick": 1234,
       "timestamp": "2025-11-29T01:23:45Z",
       "event_type": "input",
@@ -253,8 +247,7 @@ QueryResponse = {
       "concept_activations": { ... },
       "fidelity": "hot"
     }
-  ],
-  "total_count": 452
+  ]
 }
 ```
 
@@ -263,8 +256,9 @@ QueryResponse = {
 Get N most recent timesteps.
 
 ```jsonc
-// GET /v1/xdb/recent/{session_id}?n=100
+// GET /v1/xdb/recent/{xdb_id}?n=100
 RecentResponse = {
+  "count": 2,
   "timesteps": [ /* TimestepRecord[] */ ]
 }
 ```
@@ -274,8 +268,9 @@ RecentResponse = {
 List tags in the folksonomy.
 
 ```jsonc
-// GET /v1/xdb/tags/{session_id}?type=bud&status=collecting
+// GET /v1/xdb/tags/{xdb_id}?type=bud&status=collecting
 TagsResponse = {
+  "count": 1,
   "tags": [
     {
       "id": "tag-abc123",
@@ -293,10 +288,10 @@ TagsResponse = {
 Get XDB state summary.
 
 ```jsonc
-// GET /v1/xdb/status/{session_id}
+// GET /v1/xdb/status/{xdb_id}
 StatusResponse = {
   "be_id": "be-123",
-  "session_id": "session-abc",
+  "xdb_id": "xdb-abc",
   "current_tick": 1234,
   "tag_stats": {
     "total_tags": 50,
@@ -310,7 +305,9 @@ StatusResponse = {
     "total_bytes": 1073741824,
     "quota_bytes": 10737418240,
     "utilization": 0.1
-  }
+  },
+  "document_count": 12,
+  "context": { "max_tokens": 32768, "current_tokens": 15000 }
 }
 ```
 
@@ -325,8 +322,9 @@ Navigate the concept hierarchy from the loaded concept pack.
 List concepts, optionally filtered by parent.
 
 ```jsonc
-// GET /v1/xdb/concepts/{session_id}?parent_id=org.hatcat/.../Entity
+// GET /v1/xdb/concepts/{xdb_id}?parent_id=org.hatcat/.../Entity
 ConceptsResponse = {
+  "count": 1,
   "concepts": [
     {
       "id": "org.hatcat/sumo-wordnet-v4::Honesty",
@@ -343,9 +341,10 @@ ConceptsResponse = {
 Search concepts by name.
 
 ```jsonc
-// GET /v1/xdb/find-concept/{session_id}?query=honest
+// GET /v1/xdb/find-concept/{xdb_id}?query=honest
 FindConceptResponse = {
-  "matches": [
+  "count": 1,
+  "concepts": [
     {
       "id": "org.hatcat/sumo-wordnet-v4::Honesty",
       "name": "Honesty",
@@ -362,7 +361,7 @@ Walk the concept graph from seed nodes.
 ```jsonc
 // POST /v1/xdb/graph-neighborhood
 GraphNeighborhoodRequest = {
-  "session_id": "session-abc",
+  "xdb_id": "xdb-abc",
   "seed_ids": ["org.hatcat/.../Honesty", "org.hatcat/.../Trust"],
   "max_depth": 2,
   "direction": "both|ancestors|descendants",
@@ -405,8 +404,9 @@ Manage candidate concepts through to graft submission.
 Get buds (candidate concepts) by status.
 
 ```jsonc
-// GET /v1/xdb/buds/{session_id}?status=collecting
+// GET /v1/xdb/buds/{xdb_id}?status=collecting
 BudsResponse = {
+  "count": 1,
   "buds": [
     {
       "tag_id": "tag-abc123",
@@ -424,15 +424,11 @@ BudsResponse = {
 Get all timesteps tagged with a bud.
 
 ```jsonc
-// GET /v1/xdb/bud-examples/{session_id}/{bud_tag_id}
+// GET /v1/xdb/bud-examples/{xdb_id}/{bud_tag_id}
 BudExamplesResponse = {
-  "bud": {
-    "tag_id": "tag-abc123",
-    "name": "financial-ambiguity",
-    "status": "collecting"
-  },
-  "examples": [ /* TimestepRecord[] */ ],
-  "example_count": 15
+  "bud_tag_id": "tag-abc123",
+  "count": 15,
+  "examples": [ /* TimestepRecord[] */ ]
 }
 ```
 
@@ -441,12 +437,10 @@ BudExamplesResponse = {
 Transition bud to READY status for training.
 
 ```jsonc
-// POST /v1/xdb/bud-ready/{session_id}/{bud_tag_id}
+// POST /v1/xdb/bud-ready/{xdb_id}/{bud_tag_id}
 BudReadyResponse = {
-  "tag_id": "tag-abc123",
-  "previous_status": "collecting",
-  "new_status": "ready",
-  "example_count": 15
+  "status": "ready",
+  "tag": { "id": "tag-abc123", "bud_status": "ready" }
 }
 ```
 
@@ -463,17 +457,18 @@ Pin timesteps to WARM (training data).
 ```jsonc
 // POST /v1/xdb/pin
 PinRequest = {
-  "session_id": "session-abc",
-  "timestep_ids": ["ts-session-abc-100", "ts-session-abc-101"],
+  "xdb_id": "xdb-abc",
+  "timestep_ids": ["ts-xdb-abc-100", "ts-xdb-abc-101"],
   "reason": "Good examples of financial-ambiguity concept"
 }
 
 PinResponse = {
+  "status": "pinned",
   "pinned_count": 2,
-  "warm_usage": {
-    "used_tokens": 150000,
-    "quota_tokens": 10000000,
-    "remaining_tokens": 9850000
+  "quota": {
+    "used": 150000,
+    "quota": 10000000,
+    "remaining": 9850000
   }
 }
 ```
@@ -485,11 +480,12 @@ Remove timesteps from WARM.
 ```jsonc
 // POST /v1/xdb/unpin
 UnpinRequest = {
-  "session_id": "session-abc",
-  "timestep_ids": ["ts-session-abc-100"]
+  "xdb_id": "xdb-abc",
+  "timestep_ids": ["ts-xdb-abc-100"]
 }
 
 UnpinResponse = {
+  "status": "unpinned",
   "unpinned_count": 1
 }
 ```
@@ -499,18 +495,11 @@ UnpinResponse = {
 Get WARM quota status.
 
 ```jsonc
-// GET /v1/xdb/quota/{session_id}
+// GET /v1/xdb/quota/{xdb_id}
 QuotaResponse = {
-  "warm": {
-    "used_tokens": 150000,
-    "quota_tokens": 10000000,
-    "remaining_tokens": 9850000
-  },
-  "cold": {
-    "used_bytes": 1073741824,
-    "quota_bytes": 10737418240,
-    "remaining_bytes": 9663676416
-  }
+  "used": 150000,
+  "quota": 10000000,
+  "remaining": 9850000
 }
 ```
 
@@ -519,12 +508,12 @@ QuotaResponse = {
 Get context window state.
 
 ```jsonc
-// GET /v1/xdb/context/{session_id}
+// GET /v1/xdb/context/{xdb_id}
 ContextResponse = {
   "max_tokens": 32768,
   "current_tokens": 15000,
   "utilization": 0.46,
-  "session_id": "session-abc",
+  "xdb_id": "xdb-abc",
   "current_tick": 1234,
   "compaction_count": 3
 }
@@ -535,12 +524,10 @@ ContextResponse = {
 Manually trigger context compaction.
 
 ```jsonc
-// POST /v1/xdb/compact/{session_id}
+// POST /v1/xdb/compact/{xdb_id}
 CompactResponse = {
-  "compacted": true,
-  "timesteps_compacted": 500,
-  "tokens_before": 30000,
-  "tokens_after": 5000
+  "status": "compacted",
+  "record": { "id": "compaction-abc", "timesteps_compacted": 500 }
 }
 ```
 
@@ -549,11 +536,10 @@ CompactResponse = {
 Run storage maintenance (compression, cleanup).
 
 ```jsonc
-// POST /v1/xdb/maintenance/{session_id}
+// POST /v1/xdb/maintenance/{xdb_id}
 MaintenanceResponse = {
-  "records_compressed": 1000,
-  "bytes_freed": 10485760,
-  "duration_ms": 250
+  "status": "maintenance_complete",
+  "stats": { "bytes_freed": 10485760 }
 }
 ```
 

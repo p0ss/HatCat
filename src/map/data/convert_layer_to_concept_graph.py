@@ -86,10 +86,15 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--layer', type=int, required=True, help='Layer number (0-6)')
-    parser.add_argument('--output-dir', type=Path, default=Path('data/concept_graph'), help='Output directory')
+    parser.add_argument('--concept-pack', type=Path, default=Path('concept_packs/first-light'),
+                        help='Concept pack root (default: concept_packs/first-light)')
+    parser.add_argument('--output-dir', type=Path, default=None,
+                        help='Output directory (default: <concept-pack>/concept_graph)')
     args = parser.parse_args()
+    if args.output_dir is None:
+        args.output_dir = args.concept_pack / 'concept_graph'
 
-    layer_path = Path(f'data/concept_graph/abstraction_layers/layer{args.layer}.json')
+    layer_path = args.concept_pack / 'concept_graph' / 'abstraction_layers' / f'layer{args.layer}.json'
     output_path = args.output_dir / f'layer{args.layer}_concepts.json'
 
     convert_layer_to_concept_graph(layer_path, output_path)

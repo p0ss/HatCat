@@ -23,6 +23,7 @@ SHARED_DIRS=(
     "melds"
     "tests"
     "img"
+    "hatstand"
 )
 
 # Files at root that are shared
@@ -44,6 +45,26 @@ RSYNC_EXCLUDES=(
     --exclude='*.pyc'
     --exclude='.pytest_cache'
     --exclude='*.egg-info'
+    --exclude='.git'
+    --exclude='.claude'
+    --exclude='AGENTS.md'
+    --exclude='CLAUDE.md'
+    --exclude='lens_packs'
+    --exclude='concept_packs'
+    --exclude='chorion'
+    --exclude='be/harness'
+    --exclude='be/liaison'
+    --exclude='be/thalamos'
+    --exclude='run_graft_harness.py'
+    --exclude='node_modules'
+    --exclude='.next'
+    --exclude='out'
+    --exclude='build'
+    --include='.env.example'
+    --exclude='.env'
+    --exclude='.env.*'
+    --exclude='*.tsbuildinfo'
+    --exclude='next-env.d.ts'
 )
 
 sync_dev_to_public() {

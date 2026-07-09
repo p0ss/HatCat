@@ -160,7 +160,7 @@ class LensLoader:
         concept_metadata: Dict[Tuple[str, int], ConceptMetadata],
         cache_manager: "LensCacheManager",
     ) -> int:
-        """Load activation lenses from disk."""
+        """Load activation lenses from disk (supports both standard and polar lenses)."""
         # Infer hidden dim if needed
         if cache_manager.hidden_dim is None:
             for key in keys_to_load:
@@ -175,7 +175,35 @@ class LensLoader:
                     if cache_manager.hidden_dim is not None:
                         break
 
-        # Batch load state dicts in parallel
+        # Separate polar and non-polar concepts
+        polar_keys = []
+        standard_keys = []
+        for key in keys_to_load:
+            metadata = concept_metadata.get(key)
+            if metadata and metadata.is_polar:
+                polar_keys.append(key)
+            else:
+                standard_keys.append(key)
+
+        loaded_count = 0
+
+        # Load standard (non-polar) lenses
+        if standard_keys:
+            loaded_count += self._load_standard_lenses(standard_keys, concept_metadata, cache_manager)
+
+        # Load polar lenses
+        if polar_keys:
+            loaded_count += self._load_polar_lenses(polar_keys, concept_metadata, cache_manager)
+
+        return loaded_count
+
+    def _load_standard_lenses(
+        self,
+        keys_to_load: List[Tuple[str, int]],
+        concept_metadata: Dict[Tuple[str, int], ConceptMetadata],
+        cache_manager: "LensCacheManager",
+    ) -> int:
+        """Load standard (single probe) activation lenses."""
         def load_lens_state_dict(concept_key):
             metadata = concept_metadata.get(concept_key)
             if not metadata or not metadata.activation_lens_path:
@@ -231,6 +259,65 @@ class LensLoader:
 
         return len(valid_keys)
 
+    def _load_polar_lenses(
+        self,
+        keys_to_load: List[Tuple[str, int]],
+        concept_metadata: Dict[Tuple[str, int], ConceptMetadata],
+        cache_manager: "LensCacheManager",
+    ) -> int:
+        """Load polar lenses (positive + negative probe pairs)."""
+        def load_polar_state_dicts(concept_key):
+            metadata = concept_metadata.get(concept_key)
+            if not metadata or not metadata.is_polar:
+                return None, None, concept_key
+
+            pos_path = metadata.polar_lenses.get("positive")
+            neg_path = metadata.polar_lenses.get("negative")
+
+            if not pos_path or not neg_path:
+                return None, None, concept_key
+
+            try:
+                pos_state = torch.load(pos_path, map_location=self.device, weights_only=True)
+                neg_state = torch.load(neg_path, map_location=self.device, weights_only=True)
+                return pos_state, neg_state, concept_key
+            except Exception:
+                return None, None, concept_key
+
+        # Parallel loading
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            results = list(executor.map(load_polar_state_dicts, keys_to_load))
+
+        loaded_count = 0
+        for pos_state, neg_state, concept_key in results:
+            if pos_state is None or neg_state is None:
+                continue
+
+            # Create positive lens
+            has_ln = detect_layer_norm(pos_state)
+            if has_ln:
+                pos_lens = create_lens_from_state_dict(pos_state, cache_manager.hidden_dim, self.device)
+            else:
+                pos_lens = SimpleMLP(cache_manager.hidden_dim).to(self.device)
+                pos_lens.eval()
+                pos_lens.load_state_dict(pos_state)
+
+            # Create negative lens
+            has_ln_neg = detect_layer_norm(neg_state)
+            if has_ln_neg:
+                neg_lens = create_lens_from_state_dict(neg_state, cache_manager.hidden_dim, self.device)
+            else:
+                neg_lens = SimpleMLP(cache_manager.hidden_dim).to(self.device)
+                neg_lens.eval()
+                neg_lens.load_state_dict(neg_state)
+
+            # Add both to cache as polar pair
+            cache_manager.add_polar_lens(concept_key, pos_lens, neg_lens)
+            cache_manager.stats['cache_misses'] += 1
+            loaded_count += 1
+
+        return loaded_count
+
     def _load_text_lenses(
         self,
         keys_to_load: List[Tuple[str, int]],
@@ -270,6 +357,7 @@ class MetadataLoader:
     - Deduplication across layers
     - Lens path discovery
     - Hierarchy loading
+    - Polar lens packs (L1/L2/L3 structure with positive/negative probes)
     """
 
     def __init__(
@@ -286,6 +374,116 @@ class MetadataLoader:
         self.activation_lenses_dir = activation_lenses_dir or lenses_dir / "activation_lenses"
         self.text_lenses_dir = text_lenses_dir or lenses_dir / "text_lenses"
 
+        # Detect if this is a polar lens pack
+        self._is_polar_pack = self._detect_polar_pack()
+
+    def _detect_polar_pack(self) -> bool:
+        """Detect if this is a polar lens pack (L1/L2/L3 structure)."""
+        # Check for L1/, L2/, L3/ directories with results.json containing polar format
+        for level_dir in ["L1", "L2", "L3"]:
+            level_path = self.lenses_dir / level_dir
+            if level_path.is_dir():
+                # Check for layer subdirs with results.json
+                for layer_dir in level_path.iterdir():
+                    if layer_dir.is_dir() and layer_dir.name.startswith("layer"):
+                        results_path = layer_dir / "results.json"
+                        if results_path.exists():
+                            try:
+                                with open(results_path) as f:
+                                    data = json.load(f)
+                                # Check if concepts have positive/negative structure
+                                concepts = data.get("concepts", [])
+                                if concepts and "positive" in concepts[0] and "negative" in concepts[0]:
+                                    return True
+                            except (json.JSONDecodeError, KeyError, IndexError):
+                                pass
+        return False
+
+    def load_polar_metadata(self) -> Dict[Tuple[str, int], ConceptMetadata]:
+        """
+        Load metadata for polar lens pack (L1/L2/L3 structure).
+
+        Returns:
+            Dict of (concept_term, layer) -> ConceptMetadata with polar_lenses populated
+        """
+        concept_metadata = {}
+
+        # Scan L1, L2, L3 directories
+        for level_name in ["L1", "L2", "L3"]:
+            level_path = self.lenses_dir / level_name
+            if not level_path.is_dir():
+                continue
+
+            # Extract ontological level number from directory name (L1->1, L2->2, L3->3)
+            ontological_level = int(level_name[1:])
+
+            # Each level can have multiple layer subdirectories
+            for layer_dir in sorted(level_path.iterdir()):
+                if not layer_dir.is_dir() or not layer_dir.name.startswith("layer"):
+                    continue
+
+                try:
+                    layer = int(layer_dir.name.replace("layer", ""))
+                except ValueError:
+                    continue
+
+                results_path = layer_dir / "results.json"
+                if not results_path.exists():
+                    continue
+
+                with open(results_path) as f:
+                    data = json.load(f)
+
+                for concept in data.get("concepts", []):
+                    node_id = concept.get("node_id", "")
+                    term = concept.get("term", node_id)
+                    pos_info = concept.get("positive") or {}
+                    neg_info = concept.get("negative") or {}
+
+                    pos_file = pos_info.get("file")
+                    neg_file = neg_info.get("file")
+
+                    if not pos_file or not neg_file:
+                        continue
+
+                    pos_path = layer_dir / pos_file
+                    neg_path = layer_dir / neg_file
+
+                    if not pos_path.exists() or not neg_path.exists():
+                        continue
+
+                    concept_key = (node_id, layer)
+
+                    # Skip duplicates (prefer first occurrence)
+                    if concept_key in concept_metadata:
+                        continue
+
+                    metadata = ConceptMetadata(
+                        sumo_term=node_id,
+                        layer=layer,  # Model layer (e.g., 17)
+                        level=ontological_level,  # Ontological level (1, 2, or 3)
+                        category_children=[],
+                        parent_concepts=[],
+                        synset_count=0,
+                        sumo_depth=0,
+                        polar_lenses={
+                            "positive": pos_path,
+                            "negative": neg_path,
+                        },
+                    )
+                    # Set activation_lens_path for backward compat (use positive as default)
+                    metadata.activation_lens_path = pos_path
+                    metadata.has_activation_lens = True
+
+                    # Store display name if different from node_id
+                    if term != node_id:
+                        metadata.domain = term  # Reuse domain field for display name
+
+                    concept_metadata[concept_key] = metadata
+
+        print(f"\n✓ Loaded {len(concept_metadata)} polar concepts from {self.lenses_dir.name}")
+        return concept_metadata
+
     def load_all_metadata(self) -> Dict[Tuple[str, int], ConceptMetadata]:
         """
         Load lightweight metadata for all concepts.
@@ -293,6 +491,10 @@ class MetadataLoader:
         Returns:
             Dict of (sumo_term, layer) -> ConceptMetadata
         """
+        # Check for polar lens pack first
+        if self._is_polar_pack:
+            return self.load_polar_metadata()
+
         layer_files = sorted(self.layers_data_dir.glob("layer*.json"))
 
         # First pass: collect concepts and find best layer for each from layer JSON files

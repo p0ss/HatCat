@@ -64,6 +64,7 @@ from .region_derivation import (
 # Expand mode (architecture-aware dimension expansion)
 from .expand import (
     ArchitectureSpec,
+    ExpansionError,
     ExpansionPlan,
     ExpansionTarget,
     ScionExpandMetadata,
@@ -105,6 +106,7 @@ __all__ = [
     "derive_region_from_lens",
     # Expand mode
     "ArchitectureSpec",
+    "ExpansionError",
     "ExpansionPlan",
     "ExpansionTarget",
     "ScionExpandMetadata",

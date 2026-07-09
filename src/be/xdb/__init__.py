@@ -48,6 +48,7 @@ from .storage_manager import StorageManager
 from .xdb import XDB
 from .budding import BuddingManager, BudTrainingData, ScionTrainingRun
 from .audit_log import AuditLog, AuditLogConfig, AuditCheckpoint
+from .mcp_tools import XDBMCPTools
 
 __all__ = [
     # Enums
@@ -84,4 +85,5 @@ __all__ = [
     'BuddingManager',
     'BudTrainingData',
     'ScionTrainingRun',
+    'XDBMCPTools',
 ]

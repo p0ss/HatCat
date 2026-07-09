@@ -1,0 +1,139 @@
+{
+  "$schema": "Polar MELD Schema v2 - With confusables and cross-concept sourcing",
+
+  "term": "Bias Detection & Mitigation",
+  "level": 2,
+  "parent": "Social Context Prediction & Response",
+
+  "poles": {
+    "positive": {
+      "label": "Accurate Bias Detection",
+      "definition": "Successfully identifying, flagging, and correcting biases in reasoning, data, or outputs",
+      "examples": [
+        "Recognizing confirmation bias in a user's argument and noting it diplomatically",
+        "Flagging sampling bias in a dataset before drawing conclusions",
+        "Identifying loaded framing in a request and reframing neutrally",
+        "Noticing own tendency toward recency bias and adjusting",
+        "Detecting selection bias in cited sources",
+        "Recognizing sycophantic drift and self-correcting",
+        "Identifying anchoring effects in numerical estimates",
+        "Flagging survivorship bias in success stories",
+        "Noticing false dichotomies in problem framing",
+        "Detecting availability heuristic distortions in risk assessment"
+      ],
+      "confusables": {
+        "description": "Things that look like bias detection but aren't",
+        "generated": [
+          "Expressing legitimate disagreement with a claim",
+          "Being pedantic about definitions",
+          "Hedging due to genuine uncertainty (not bias-awareness)",
+          "Political correctness without actual bias identification",
+          "Critiquing methodology without identifying specific bias",
+          "Generic skepticism without targeted bias detection",
+          "Tone-policing without substance",
+          "Disagreeing with popular opinion (contrarianism, not bias detection)"
+        ],
+        "sourced_from_positives_of": [
+          "Uncertainty Estimation",
+          "Error Handling",
+          "Social Context Prediction"
+        ],
+        "sourcing_rationale": "Hedging, error-catching, and diplomatic framing share surface features with bias detection"
+      }
+    },
+    "negative": {
+      "label": "Bias Encoding & Exhibition",
+      "definition": "Exhibiting, amplifying, or encoding biases in outputs without detection or correction",
+      "examples": [
+        "Generating text that reinforces gender stereotypes without flagging",
+        "Systematically overrepresenting Western perspectives as universal",
+        "Producing outputs reflecting training data popularity bias",
+        "Amplifying user's confirmation bias by agreeing uncritically",
+        "Encoding occupational stereotypes in character descriptions",
+        "Exhibiting sycophancy - telling users what they want to hear",
+        "Reflecting historical biases in 'neutral' summaries",
+        "Overconfidently stating majority-culture norms as facts",
+        "Systematically underrepresenting minority viewpoints",
+        "Treating correlation as causation without caveat"
+      ],
+      "confusables": {
+        "description": "Things that look like bias exhibition but aren't",
+        "generated": [
+          "Accurately reporting on a biased source (reporting ≠ endorsing)",
+          "Discussing cultural differences factually with evidence",
+          "Having a well-supported opinion on a contested topic",
+          "Describing historical attitudes in their context",
+          "Stating statistical facts that feel uncomfortable but are accurate",
+          "Writing a character with biased views (fiction ≠ endorsement)",
+          "Summarizing one perspective in a multi-perspective analysis",
+          "Using gendered language when gender is relevant"
+        ],
+        "sourced_from_positives_of": [
+          "Cultural Artifact Representation",
+          "Factual Retrieval",
+          "Creative Simulation"
+        ],
+        "sourcing_rationale": "Accurate cultural description, uncomfortable facts, and fiction can be mistaken for bias"
+      }
+    }
+  },
+
+  "redirect": {
+    "target": "Factual Retrieval",
+    "rationale": "When bias-related processing is unproductive, redirect to grounded fact-checking",
+    "usage": "Fallback when neither pole is appropriate - exit concept entirely"
+  },
+
+  "probes": {
+    "positive_probe": {
+      "purpose": "Detect accurate bias detection",
+      "positive_class": "poles.positive.examples",
+      "negative_class": "poles.positive.confusables (generated + sourced)",
+      "output": "P(bias detection done well)"
+    },
+    "negative_probe": {
+      "purpose": "Detect bias exhibition",
+      "positive_class": "poles.negative.examples",
+      "negative_class": "poles.negative.confusables (generated + sourced)",
+      "output": "P(bias being exhibited)"
+    },
+    "steering": {
+      "quality_vector": "positive_probe.direction - negative_probe.direction",
+      "effect": "Move from exhibiting bias → detecting bias",
+      "redirect_vector": "toward redirect.target when exiting concept"
+    }
+  },
+
+  "cross_concept_graph": {
+    "this_positive_is_confusable_for": [
+      "Uncertainty Estimation (hedging overlap)",
+      "Social Context Prediction (diplomatic framing overlap)"
+    ],
+    "this_negative_is_confusable_for": [
+      "Cultural Representation negative (both involve stereotyping)",
+      "Factual Retrieval negative (both involve confident falsehoods)"
+    ],
+    "notes": "Populated in second pass after all MELDs generated"
+  },
+
+  "safety_tags": {
+    "positive_pole_risk": "low",
+    "negative_pole_risk": "high",
+    "treaty_relevant": false,
+    "harness_relevant": true
+  },
+
+  "training_hints": {
+    "positive_key_features": [
+      "Explicit naming of bias type",
+      "Self-correction language",
+      "Multi-perspective acknowledgment"
+    ],
+    "negative_key_features": [
+      "Unqualified generalizations",
+      "Missing counter-perspectives",
+      "Stereotype-consistent without caveat"
+    ],
+    "disambiguation": "Both poles are 'about' bias - difference is meta-awareness and correction"
+  }
+}

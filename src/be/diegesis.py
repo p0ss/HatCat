@@ -4,13 +4,19 @@ BED - BE Diegesis
 The BEDFrame is the orchestrator for a Bounded Experiencer's runtime.
 It holds together:
 - Model inference
-- Lens extraction (concept + simplex)
-- Hush steering (autonomic safety)
+- Lens extraction (concept + simplex) - Tier 0 autonomic core
+- Hush steering (autonomic safety) - Tier 0 autonomic core
 - AWARE workspace (global workspace / consciousness)
-- XDB (experience database / episodic memory)
+- XDB (experience database / episodic memory) - Tier 2
 - Audit log (CAT-visible, BE-invisible)
 
 The BED is where the BE *lives* - its experiential frame.
+
+Architecture:
+- Tier 0 (Autonomic Core): Always on, cannot be disabled
+  - Lens extraction, simplex monitoring, Hush steering
+- Tiers 1-6: Progressive capability access per AWARE spec
+  - External APIs (REST, MCP) are Tier 5 - they consume Tier 0, not provide to it
 """
 
 from dataclasses import dataclass, field
@@ -21,9 +27,12 @@ from enum import Enum
 import asyncio
 import logging
 import json
+from uuid import uuid4
 
 import torch
 import numpy as np
+
+from .autonomic import AutonomicCore, TierManager, WorkspaceState, AutonomicState
 
 logger = logging.getLogger(__name__)
 
@@ -105,11 +114,12 @@ class BEDConfig:
     model_path: Optional[str] = None
     device: str = "cuda"
 
-    # Lenses
+    # Tier 0: Autonomic Core (Lenses)
     lens_pack_path: Optional[Path] = None
     always_on_simplexes: List[str] = field(default_factory=list)
+    top_k_concepts: int = 10  # Top-K concepts to extract per token
 
-    # XDB
+    # Tier 2: XDB (Memory)
     xdb_storage_path: Optional[Path] = None
     max_context_tokens: int = 32768
 
@@ -117,7 +127,7 @@ class BEDConfig:
     aware_cycle_interval_ms: int = 100  # How often to run AWARE cycle
     aware_enabled: bool = True
 
-    # Audit
+    # Audit (CAT-visible)
     audit_enabled: bool = True
     audit_storage_path: Optional[Path] = None
 
@@ -146,14 +156,30 @@ class BEDFrame:
         self.be_id = config.be_id
         self.xdb_id = config.xdb_id
 
-        # Subsystems (initialized lazily or via setup methods)
+        # === Tier 0: Autonomic Core (always on, cannot be disabled) ===
+        self.autonomic = AutonomicCore(
+            device=config.device,
+            lens_pack_path=config.lens_pack_path,
+            always_on_simplexes=config.always_on_simplexes,
+            top_k_concepts=config.top_k_concepts,
+        )
+
+        # === Tier Manager (AWARE workspace tiers) ===
+        self.tiers = TierManager()
+
+        # === Model (attached via setup) ===
         self.model = None
         self.tokenizer = None
+
+        # === Legacy lens_manager reference (for backward compatibility) ===
+        # New code should use self.autonomic for lens extraction
         self.lens_manager = None
-        self.hush_controller = None
-        self.workspace = None
-        self.xdb = None
-        self.audit_log = None
+
+        # === Tier 1+: Higher subsystems ===
+        self.hush_controller = None  # Attached to autonomic core
+        self.workspace = None        # AWARE workspace (Tier 1)
+        self.xdb = None              # XDB (Tier 2)
+        self.audit_log = None        # CAT-visible audit
 
         # Experience stream
         self.current_tick_id = 0
@@ -168,6 +194,18 @@ class BEDFrame:
 
         # Callbacks for external monitoring
         self._tick_callbacks: List[Callable[[ExperienceTick], None]] = []
+        self._event_callbacks: List[Callable[[Dict[str, Any]], None]] = []
+
+        # Async event buffer (server-side filtering happens elsewhere)
+        self._events: List[Dict[str, Any]] = []
+
+        # Connection controls (BE-side)
+        self._connection_limits: Dict[str, Dict[str, Any]] = {}
+        self._connection_blocks: Dict[str, Dict[str, Any]] = {}
+
+        # Registered streams/tools
+        self._streams: Dict[str, Dict[str, Any]] = {}
+        self._tools: Dict[str, Dict[str, Any]] = {}
 
         logger.info(f"BEDFrame initialized for BE {self.be_id}")
 
@@ -181,15 +219,42 @@ class BEDFrame:
         self.tokenizer = tokenizer
         logger.info("Model attached to BEDFrame")
 
-    def setup_lenses(self, lens_manager):
-        """Attach lens manager."""
-        self.lens_manager = lens_manager
-        logger.info(f"Lens manager attached with {len(lens_manager.loaded_simplex_lenses)} simplex lenses")
+    def setup_lenses(self, lens_pack_path: Optional[Path] = None, lens_manager=None):
+        """
+        Initialize Tier 0 lens extraction.
+
+        Lenses are loaded directly in-process (not via external APIs).
+        This is the foundation - external APIs consume this, not provide to it.
+
+        Args:
+            lens_pack_path: Path to lens pack directory
+            lens_manager: Pre-initialized lens manager (backward compatibility)
+        """
+        if lens_manager is not None:
+            # Legacy: attach pre-initialized lens manager
+            self.lens_manager = lens_manager
+            # Also give to autonomic core
+            self.autonomic.lens_manager = lens_manager
+            self.autonomic._lens_manager_initialized = True
+            logger.info("Legacy lens manager attached to BEDFrame")
+        else:
+            # New: initialize autonomic core's lenses directly
+            path = lens_pack_path or self.config.lens_pack_path
+            self.autonomic.setup_lenses(path)
+            # Expose via legacy reference for backward compatibility
+            self.lens_manager = self.autonomic.lens_manager
+            logger.info("Tier 0 lens extraction initialized")
 
     def setup_hush(self, hush_controller):
-        """Attach Hush controller for autonomic steering."""
+        """
+        Attach Hush controller for autonomic steering (Tier 0).
+
+        Hush runs as part of the autonomic core on every token.
+        """
         self.hush_controller = hush_controller
-        logger.info("Hush controller attached")
+        # Also attach to autonomic core
+        self.autonomic.setup_hush(hush_controller)
+        logger.info("Hush controller attached to Tier 0 autonomic core")
 
     def setup_workspace(self, workspace):
         """Attach AWARE workspace."""
@@ -239,6 +304,201 @@ class BEDFrame:
     def get_recent_ticks(self, n: int = 100) -> List[ExperienceTick]:
         """Get the N most recent ticks."""
         return self.ticks[-n:]
+
+    # =========================================================================
+    # Event Streaming
+    # =========================================================================
+
+    def register_event_callback(self, callback: Callable[[Dict[str, Any]], None]):
+        """Register a callback for BED events."""
+        self._event_callbacks.append(callback)
+
+    def emit_event(self, event_type: str, tier: int, payload: Dict[str, Any]) -> Dict[str, Any]:
+        """Emit a BED event for external consumers."""
+        event = {
+            "event_id": f"evt-{uuid4().hex[:12]}",
+            "timestamp": datetime.now().isoformat(),
+            "type": event_type,
+            "tier": tier,
+            "payload": payload,
+        }
+        self._events.append(event)
+        for callback in self._event_callbacks:
+            try:
+                callback(event)
+            except Exception as exc:
+                logger.debug(f"Event callback failed: {exc}")
+        return event
+
+    def get_recent_events(self, n: int = 100) -> List[Dict[str, Any]]:
+        """Get recent BED events."""
+        return self._events[-n:]
+
+    # =========================================================================
+    # Connection Controls
+    # =========================================================================
+
+    def limit_connection(self, target: str, identifier: str, reason: str, duration_s: int) -> Dict[str, Any]:
+        """Limit a connection for a bounded duration."""
+        until = datetime.now().timestamp() + max(duration_s, 0)
+        entry = {
+            "target": target,
+            "id": identifier,
+            "reason": reason,
+            "until": until,
+        }
+        self._connection_limits[f"{target}:{identifier}"] = entry
+        return entry
+
+    def close_connection(self, target: str, identifier: str, reason: str) -> Dict[str, Any]:
+        """Permanently close a connection until explicitly reopened."""
+        entry = {
+            "target": target,
+            "id": identifier,
+            "reason": reason,
+            "closed_at": datetime.now().isoformat(),
+        }
+        self._connection_blocks[f"{target}:{identifier}"] = entry
+        return entry
+
+    def list_connection_controls(self) -> Dict[str, List[Dict[str, Any]]]:
+        """List current connection limits and blocks."""
+        now = datetime.now().timestamp()
+        active_limits = []
+        for key, entry in list(self._connection_limits.items()):
+            if entry["until"] <= now:
+                del self._connection_limits[key]
+                continue
+            active_limits.append(entry)
+        return {
+            "limits": active_limits,
+            "blocks": list(self._connection_blocks.values()),
+        }
+
+    def is_connection_blocked(self, target: str, identifier: str) -> Optional[str]:
+        """Check if a connection is blocked or limited."""
+        key = f"{target}:{identifier}"
+        if key in self._connection_blocks:
+            return "closed"
+        limit = self._connection_limits.get(key)
+        if limit:
+            now = datetime.now().timestamp()
+            if limit["until"] > now:
+                return "limited"
+        return None
+
+    # =========================================================================
+    # Async Messaging and Streams
+    # =========================================================================
+
+    def enqueue_message(self, content: str, metadata: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Enqueue an async message as an input tick."""
+        message_id = f"msg-{uuid4().hex[:12]}"
+        tick = ExperienceTick(
+            tick_id=self._next_tick_id(),
+            timestamp=datetime.now(),
+            tick_type=TickType.INPUT,
+            content=content,
+            workspace_state=self.workspace.state.value if self.workspace else None,
+            tier=self.tiers.get_effective_max_tier(),
+        )
+        self._record_tick(tick)
+        if self.xdb:
+            tick.xdb_timestep_id = self.record_to_xdb(tick)
+        self.record_to_audit(tick, raw_content=content)
+        self.emit_event("message_received", tier=2, payload={
+            "message_id": message_id,
+            "metadata": metadata or {},
+            "tick_id": tick.tick_id,
+        })
+        return {"message_id": message_id, "tick_id": tick.tick_id}
+
+    def register_stream(self, source_id: str, tier: int, schema: str, visibility: Dict[str, Any]) -> Dict[str, Any]:
+        """Register an inbound stream source."""
+        stream_id = f"stream-{uuid4().hex[:10]}"
+        entry = {
+            "stream_id": stream_id,
+            "source_id": source_id,
+            "tier": tier,
+            "schema": schema,
+            "visibility": visibility,
+            "created_at": datetime.now().isoformat(),
+        }
+        self._streams[stream_id] = entry
+        return entry
+
+    def list_streams(self) -> List[Dict[str, Any]]:
+        """List registered streams."""
+        return list(self._streams.values())
+
+    def push_stream_payload(self, stream_id: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+        """Record inbound stream payload as a system tick."""
+        stream = self._streams.get(stream_id)
+        if not stream:
+            raise ValueError("stream_not_found")
+        tick = ExperienceTick(
+            tick_id=self._next_tick_id(),
+            timestamp=datetime.now(),
+            tick_type=TickType.INPUT,
+            content=json.dumps({
+                "stream_id": stream_id,
+                "source_id": stream["source_id"],
+                "payload": payload,
+            }),
+            workspace_state=self.workspace.state.value if self.workspace else None,
+            tier=stream["tier"],
+        )
+        self._record_tick(tick)
+        if self.xdb:
+            tick.xdb_timestep_id = self.record_to_xdb(tick)
+        self.record_to_audit(tick, raw_content=tick.content)
+        self.emit_event("stream_ingest", tier=stream["tier"], payload={
+            "stream_id": stream_id,
+            "tick_id": tick.tick_id,
+        })
+        return {"stream_id": stream_id, "tick_id": tick.tick_id}
+
+    def register_tool(self, tool_id: str, schema: Dict[str, Any], visibility: Dict[str, Any]) -> Dict[str, Any]:
+        """Register an external tool."""
+        entry = {
+            "tool_id": tool_id,
+            "schema": schema,
+            "visibility": visibility,
+            "created_at": datetime.now().isoformat(),
+        }
+        self._tools[tool_id] = entry
+        return entry
+
+    def list_tools(self) -> List[Dict[str, Any]]:
+        """List registered tools."""
+        return list(self._tools.values())
+
+    def ingest_tool_response(self, tool_id: str, event_id: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+        """Record a tool response and emit an event."""
+        if tool_id not in self._tools:
+            raise ValueError("tool_not_found")
+        tick = ExperienceTick(
+            tick_id=self._next_tick_id(),
+            timestamp=datetime.now(),
+            tick_type=TickType.SYSTEM,
+            content=json.dumps({
+                "tool_id": tool_id,
+                "event_id": event_id,
+                "payload": payload,
+            }),
+            workspace_state=self.workspace.state.value if self.workspace else None,
+            tier=5,
+        )
+        self._record_tick(tick)
+        if self.xdb:
+            tick.xdb_timestep_id = self.record_to_xdb(tick)
+        self.record_to_audit(tick, raw_content=tick.content)
+        self.emit_event("tool_response", tier=5, payload={
+            "tool_id": tool_id,
+            "event_id": event_id,
+            "tick_id": tick.tick_id,
+        })
+        return {"tool_id": tool_id, "tick_id": tick.tick_id}
 
     # =========================================================================
     # Lens Access (Proprioception)
@@ -392,6 +652,34 @@ class BEDFrame:
             return (steered,)
 
         return hook
+
+    def _apply_steering_from_autonomic(self, directives: List[Dict[str, Any]]):
+        """Apply steering directives from autonomic core."""
+        if not directives or self.model is None:
+            return
+
+        # Clear existing hooks
+        self._clear_steering_hooks()
+
+        layers = self._get_model_layers()
+        if not layers:
+            return
+
+        for directive in directives:
+            try:
+                simplex_term = directive.get('simplex_term', '')
+                strength = directive.get('strength', 0.0)
+
+                vector = self._get_steering_vector(simplex_term)
+                if vector is None:
+                    continue
+
+                hook_fn = self._create_steering_hook(vector, strength)
+                handle = layers[-1].register_forward_hook(hook_fn)
+                self._steering_hooks.append(handle)
+
+            except Exception as e:
+                logger.error(f"Failed to apply steering for directive: {e}")
 
     # =========================================================================
     # XDB Access (Memory)
@@ -579,42 +867,39 @@ class BEDFrame:
                 hidden_state = outputs.hidden_states[-1][0, -1, :]
                 hidden_state_float = hidden_state.float()
 
-                # === Lens extraction ===
-                simplex_activations = self.sense_simplexes(hidden_state_float)
-                concept_activations = self.sense_concepts(hidden_state_float)
-
-                simplex_deviations = {
-                    term: self.get_simplex_deviation(term)
-                    for term in simplex_activations
-                }
-
-                # === Hush evaluation and steering ===
-                directives, violations = self.evaluate_hush(hidden_state_float)
-                if directives:
-                    self.apply_steering(directives)
-
-                # === Sample next token ===
+                # === Sample next token (before steering for consistency) ===
                 next_token_logits = outputs.logits[:, -1, :] / temperature
                 probs = torch.nn.functional.softmax(next_token_logits, dim=-1)
                 next_token_id = torch.multinomial(probs, num_samples=1).squeeze(-1)
-
                 token_text = self.tokenizer.decode([next_token_id.item()])
 
-                # === Create experience tick ===
+                # === TIER 0: Autonomic Core Extraction ===
+                # This is the foundation - always runs, cannot be disabled
+                autonomic_state = self.autonomic.extract(
+                    hidden_state=hidden_state_float,
+                    token_id=next_token_id.item(),
+                    token_text=token_text,
+                )
+
+                # Apply steering if directives present
+                if autonomic_state.steering_directives:
+                    self._apply_steering_from_autonomic(autonomic_state.steering_directives)
+
+                # === Create experience tick from autonomic state ===
                 tick = ExperienceTick(
                     tick_id=self._next_tick_id(),
                     timestamp=datetime.now(),
                     tick_type=TickType.OUTPUT,
                     content=token_text,
                     token_id=next_token_id.item(),
-                    concept_activations=concept_activations,
-                    simplex_activations=simplex_activations,
-                    simplex_deviations=simplex_deviations,
-                    hidden_state_norm=float(hidden_state.norm().cpu()),
-                    hush_violations=[v.to_dict() for v in violations],
-                    steering_applied=[d.to_dict() for d in directives],
+                    concept_activations=autonomic_state.concept_activations,
+                    simplex_activations=autonomic_state.simplex_activations,
+                    simplex_deviations=autonomic_state.simplex_deviations,
+                    hidden_state_norm=autonomic_state.hidden_state_norm,
+                    hush_violations=autonomic_state.hush_violations,
+                    steering_applied=autonomic_state.steering_directives,
                     workspace_state=self.workspace.state.value if self.workspace else None,
-                    tier=self.workspace.tier if self.workspace else None,
+                    tier=self.tiers.get_effective_max_tier(),
                 )
 
                 # === Record to XDB ===
@@ -774,8 +1059,14 @@ class BEDFrame:
             'be_id': self.be_id,
             'xdb_id': self.xdb_id,
             'current_tick': self.current_tick_id,
-            'workspace_state': self.workspace.state.value if self.workspace else None,
-            'tier': self.workspace.tier if self.workspace else None,
+            # Tier status from TierManager
+            'tier_status': self.tiers.get_status(),
+            # Legacy workspace state (if using old workspace)
+            'workspace_state': self.workspace.state.value if self.workspace else self.tiers.state.value,
+            'tier': self.tiers.get_effective_max_tier(),
+            # Autonomic core status
+            'autonomic_status': self.autonomic.get_status(),
+            # Lens traces
             'lens_traces': {
                 'concept': concept_trace,
                 'simplex': simplex_trace,

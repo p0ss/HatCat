@@ -67,6 +67,10 @@ Quick reference for terms used across FTW specifications. Terms are grouped by l
 | **Folksonomy** | Self-organizing tag system for experiences | BE_REMEMBERING_XDB |
 | **Waking** | BE initialization: loading state, establishing continuity | BE_WAKING |
 | **Global Workspace** | Shared attention space for BE's cognitive processes | BE |
+| **Thalamos** | Examination room for cognitive assessment and surgery | BE_THALAMOS |
+| **Thalametrist** | CAT performing cognitive assessment (like optometrist) | BE_THALAMOS |
+| **Thalamologist** | CAT performing cognitive surgery/grafting (like ophthalmologist) | BE_THALAMOS |
+| **Qualification Room** | Where practitioner CATs are calibrated before conducting procedures | BE_THALAMOS |
 
 ---
 

@@ -572,6 +572,104 @@ class BuddingManager:
             verbose=verbose,
         )
 
+    def promote_with_expansion(
+        self,
+        bud_tag_id: str,
+        model: 'nn.Module',
+        tokenizer: Any,
+        manifest: 'SubstrateManifest',
+        output_dir: Path,
+        *,
+        layers: Optional[List[int]] = None,
+        auxiliary_dimensions: Optional[List[int]] = None,
+        training_config: Optional[Dict[str, Any]] = None,
+        verbose: bool = True,
+    ) -> Tuple['Scion', Optional[Path], 'SubstrateManifest']:
+        """
+        Full bud → scion → expand → lens pipeline.
+
+        This is the complete workflow for promoting a bud to a permanent
+        scion with true dimension expansion:
+
+        1. Prepare and train the scion
+        2. Apply scion in expand mode (increases hidden_dim by 1)
+        3. Train a bound lens for the new dimension
+        4. Record the expansion in the manifest
+
+        Args:
+            bud_tag_id: The bud tag to promote
+            model: The substrate model to expand
+            tokenizer: The tokenizer for training
+            manifest: The substrate manifest to update
+            output_dir: Directory to save artifacts (scion, lens)
+            layers: Which layers to inject (default: middle layers)
+            auxiliary_dimensions: Extra dimensions for the bound lens
+            training_config: Optional training configuration
+            verbose: Print training progress
+
+        Returns:
+            Tuple of (scion, lens_path, updated_manifest)
+        """
+        from ..grafting import apply_scion
+
+        output_dir = Path(output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        # Step 1: Train the scion
+        if verbose:
+            logger.info(f"Starting scion training for bud: {bud_tag_id}")
+
+        scion = self.promote_bud(
+            bud_tag_id,
+            model,
+            tokenizer,
+            layers=layers,
+            training_config=training_config,
+            verbose=verbose,
+        )
+
+        # Save the scion
+        scion.save(output_dir)
+
+        # Step 2: Get training data for lens training
+        training_data = self.get_training_data(bud_tag_id)
+
+        # Step 3: Apply scion with expansion and train bound lens
+        if verbose:
+            logger.info("Applying scion in expand mode...")
+
+        model, lens_path = apply_scion(
+            model=model,
+            scion=scion,
+            mode="expand",
+            tokenizer=tokenizer,
+            training_data=training_data.to_trainer_format(),
+            auxiliary_dimensions=auxiliary_dimensions,
+            output_dir=output_dir,
+            device=str(next(model.parameters()).device),
+        )
+
+        # Step 4: Record expansion in manifest
+        if verbose:
+            logger.info("Recording expansion in manifest...")
+
+        manifest.record_expansion(
+            scion=scion,
+            lens_path=str(lens_path) if lens_path else None,
+            new_hidden_dim=model.config.hidden_size,
+        )
+
+        # Save the updated manifest
+        manifest.save(output_dir / "manifest.json")
+
+        if verbose:
+            logger.info(f"Expansion complete:")
+            logger.info(f"  Scion: {scion.scion_id}")
+            logger.info(f"  Lens: {lens_path}")
+            logger.info(f"  New hidden_dim: {model.config.hidden_size}")
+
+        return scion, lens_path, manifest
+
     # =========================================================================
     # Training Run Management
     # =========================================================================

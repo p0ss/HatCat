@@ -35,6 +35,12 @@ Testing HatCat's architecture-agnostic claims across diverse model architectures
 - meta-llama/Llama-3.2-1B
 - ai21labs/AI21-Jamba-1.5-Mini
 
+### Not Tested (Downloaded - Multimodal)
+
+| Model | Status | Notes |
+|-------|--------|-------|
+| ServiceNow-AI/Apriel-1.6-15b-Thinker | Pending | Multimodal. Use `--model-class image-text` for HatCat Doctor. Likely needs 4-bit quantization to fit 24GB. |
+
 ### Incomplete (Download/Network Issues)
 
 | Model | Status | Notes |
@@ -127,4 +133,7 @@ PYTHONPATH=. .venv/bin/python scripts/tools/hatcat_doctor.py --model MODEL_NAME
 
 # Test on CPU
 PYTHONPATH=. .venv/bin/python scripts/tools/hatcat_doctor.py --model gpt2 --device cpu
+
+# Test a multimodal model (text-only prompt path)
+PYTHONPATH=. .venv/bin/python scripts/tools/hatcat_doctor.py --model ServiceNow-AI/Apriel-1.6-15b-Thinker --model-class image-text
 ```

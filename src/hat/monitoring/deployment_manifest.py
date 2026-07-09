@@ -127,19 +127,6 @@ class ConceptCalibration:
         """
         import math
 
-        # CRITICAL FIX: Concepts with very low fire rates are "rarely seen"
-        # This means INSUFFICIENT DATA, not "high quality concept"
-        # If a concept barely fired during calibration, we can't trust it
-        # Pull toward 0.5 (prior) for these under-observed concepts
-        MIN_OBSERVATION_RATE = 0.05  # Need at least 5% fire rate to trust calibration
-
-        if self.cross_fire_rate < MIN_OBSERVATION_RATE and self.gen_fire_rate < MIN_OBSERVATION_RATE:
-            # Insufficient calibration data - pull toward prior
-            # Use observation rate as confidence (more observations = more confidence)
-            observation_confidence = max(self.cross_fire_rate, self.gen_fire_rate) / MIN_OBSERVATION_RATE
-            weighted = 0.5 + (raw_prob - 0.5) * observation_confidence
-            return self._sigmoid_compress(weighted)
-
         # Compute confidence from ALL noise signals
         cross_confidence = 1.0 - self.cross_fire_rate
         gen_confidence = 1.0 - self.gen_fire_rate

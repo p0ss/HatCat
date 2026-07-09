@@ -115,15 +115,38 @@ class SimplexBinding:
     })
 
 
+class LensPolarity(Enum):
+    """Polarity for polar lens probes."""
+    DEFAULT = "default"    # Single probe (traditional)
+    POSITIVE = "positive"  # Positive pole of bipolar concept
+    NEGATIVE = "negative"  # Negative pole of bipolar concept
+
+
 @dataclass
 class ConceptMetadata:
-    """Metadata for a single SUMO concept."""
+    """
+    Metadata for a single concept lens.
+
+    Terminology:
+    - layer: The transformer model layer where activations are extracted (e.g., 17)
+    - level: The ontological/hierarchical abstraction level (e.g., L1=1, L2=2, L3=3 for polar;
+             or SUMO layers 0-6 where 0=broad, 6=specific)
+
+    For legacy SUMO lenses, layer == level (same value used for both).
+    For polar lenses, layer is the model layer (17) and level is the ontological level (1-3).
+    """
     sumo_term: str
-    layer: int
+    layer: int  # Model layer where probe extracts activations
     category_children: List[str] = field(default_factory=list)
     parent_concepts: List[str] = field(default_factory=list)
     synset_count: int = 0
     sumo_depth: int = 0
+
+    # Ontological level - hierarchical abstraction level
+    # For polar: 1=L1, 2=L2, 3=L3
+    # For SUMO: same as layer (0-6)
+    # None means not specified (defaults to layer for backward compat)
+    level: Optional[int] = None
 
     # Role and simplex binding (new in MAP Meld Protocol)
     role: LensRole = LensRole.CONCEPT
@@ -138,9 +161,30 @@ class ConceptMetadata:
     has_activation_lens: bool = False
     has_simplex_lens: bool = False
 
+    # Polar lens support - multiple probes per concept with different polarities
+    # Keys are LensPolarity values: "positive", "negative"
+    # Falls back to activation_lens_path if polar_lenses is empty (backward compat)
+    polar_lenses: Dict[str, Path] = field(default_factory=dict)
+
+    @property
+    def has_polar_lenses(self) -> bool:
+        """True if concept has multiple polarity probes."""
+        return len(self.polar_lenses) > 1
+
+    @property
+    def is_polar(self) -> bool:
+        """True if this is a polar concept (has positive and negative)."""
+        return "positive" in self.polar_lenses and "negative" in self.polar_lenses
+
+    @property
+    def ontological_level(self) -> int:
+        """Get ontological level, defaulting to layer for backward compat."""
+        return self.level if self.level is not None else self.layer
+
 
 __all__ = [
     "LensRole",
+    "LensPolarity",
     "SimpleMLP",
     "SimplexBinding",
     "ConceptMetadata",

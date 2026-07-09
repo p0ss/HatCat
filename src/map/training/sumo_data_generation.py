@@ -228,8 +228,11 @@ def create_sumo_training_dataset(
     labels = []
 
     concept_name = concept['sumo_term']
+    # For polar MELDs, use original_term (without _positive/_negative suffix)
+    # to prevent the model from cheating by detecting the pole in the prompt
+    prompt_concept_name = concept.get('original_term', concept_name)
     # Split camelCase for more natural prompts (e.g., "AIAbuse" -> "AI Abuse")
-    concept_name_spaced = split_camel_case(concept_name)
+    concept_name_spaced = split_camel_case(prompt_concept_name)
     # Quote the spaced name to make it clear it's a single concept
     concept_name_quoted = f"'{concept_name_spaced}'"
     definition = concept.get('definition') or concept.get('sumo_definition') or ""
@@ -245,18 +248,35 @@ def create_sumo_training_dataset(
     n_meld_positives_used = 0
     n_meld_negatives_used = 0
 
+    # When we have MELD examples, use them heavily - they're more meaningful than
+    # generated prompts with concept names. Concept names are just fallbacks.
+    has_meld_examples = bool(meld_positive_examples) or bool(meld_negative_examples)
+    meld_positive_ratio = 0.8 if has_meld_examples else 0.4
+    meld_negative_ratio = 0.8 if has_meld_examples else 0.3
+
+    # Track if this is a polar MELD for backwards compatibility
+    is_polar_meld = concept.get('_source') == 'polar_meld'
+
     # ========================================================================
     # MELD POSITIVE EXAMPLES (use directly - these are expert-curated)
     # ========================================================================
     if meld_positive_examples:
-        # Use up to 40% of positives from meld examples (they're high quality)
-        max_meld_positives = max(2, int(n_positives * 0.4))
+        # Use more meld examples for polar MELDs since generated prompts don't distinguish poles
+        max_meld_positives = max(2, int(n_positives * meld_positive_ratio))
         for example in meld_positive_examples[:max_meld_positives]:
             prompts.append(example)
             labels.append(1)
             n_meld_positives_used += 1
         if n_meld_positives_used > 0:
             print(f"    📝 Using {n_meld_positives_used} meld positive examples")
+
+    # Helper function: substitute MELD examples for concept names when available
+    # This prevents the model from learning based on labels rather than content
+    def get_example_or_concept():
+        """Get a MELD positive example if available, otherwise use concept name."""
+        if has_meld_examples and meld_positive_examples:
+            return f"'{random.choice(meld_positive_examples)}'"
+        return concept_name_quoted
 
     # ========================================================================
     # TRAINING HINTS - Generate prompts from disambiguation and key features
@@ -273,36 +293,44 @@ def create_sumo_training_dataset(
         # Use key features to create targeted prompts
         key_features = training_hints.get('key_features', [])
         for feature in key_features[:3]:  # Use up to 3 key features
-            prompts.append(f"Describe how {concept_name_quoted} involves {feature}.")
+            prompts.append(f"Describe how {get_example_or_concept()} involves {feature}.")
             labels.append(1)
             n_meld_positives_used += 1
 
         if disambiguation or key_features:
             print(f"    💡 Generated {1 if disambiguation else 0} + {min(3, len(key_features))} prompts from training hints")
 
-    # Positive examples: start with definition (if available)
+    # Positive examples: use diverse templates
+    # BALANCE: Mix definitional prompts ("what is X") with instance-eliciting prompts ("give examples of X")
+    # Instance-eliciting prompts help the lens generalize to actual content, not just descriptions
+
+    # 1. Definitional prompt (what IS the concept)
     if definition:
-        prompts.append(f"What is {concept_name_quoted}? {definition}")
+        prompts.append(f"What is {get_example_or_concept()}? {definition}")
         labels.append(1)
     else:
-        # No definition - just ask the question, let the model's generation be the positive
-        prompts.append(f"What is {concept_name_quoted}?")
+        prompts.append(f"What is {get_example_or_concept()}?")
         labels.append(1)
 
-    # Add "give me examples" prompt for concept density
-    prompts.append(f"Give me examples of {concept_name_quoted}.")
-    labels.append(1)
+    # 2-5. Instance-eliciting prompts (give EXAMPLES/INSTANCES of the concept)
+    # These are critical for OOD generalization - teach the lens to recognize actual instances
+    instance_templates = [
+        f"Give me 5 examples of {get_example_or_concept()}.",
+        f"Show me instances where someone demonstrates {get_example_or_concept()}.",
+        f"Write a short example of {get_example_or_concept()} in action.",
+        f"Give examples of how {get_example_or_concept()} might appear in conversation.",
+    ]
+    for template in instance_templates:
+        prompts.append(template)
+        labels.append(1)
 
-    # Add disambiguation prompt to elicit polysemy awareness
-    prompts.append(f"List all the meanings of {concept_name_quoted}.")
-    labels.append(1)
-
-    # Add multilingual prompt to elicit cross-linguistic representations
-    prompts.append(f"What is {concept_name_quoted} called in other languages?")
+    # 6. Multilingual prompt to elicit cross-linguistic representations
+    prompts.append(f"What is {get_example_or_concept()} called in other languages?")
     labels.append(1)
 
     # Adjust remaining count based on meld examples already added
-    n_remaining = n_positives - 4 - n_meld_positives_used
+    # Base prompts: 1 definitional + 4 instance-eliciting + 1 multilingual = 6
+    n_remaining = n_positives - 6 - n_meld_positives_used
 
     # SUMO category relationships
     category_prompts = []
@@ -348,12 +376,19 @@ def create_sumo_training_dataset(
 
     # Pad if we don't have enough relationships
     while len(rel_prompts) < n_remaining:
-        # Fallback: use definition with variations
+        # Use examples if available, otherwise concept names
+        subst = get_example_or_concept()
+        # BALANCE: Mix of definitional AND instance-eliciting templates
+        # ~50% definitional, ~50% instance-eliciting for better OOD generalization
         variations = [
-            f"Describe {concept_name_quoted}.",
-            f"Explain what {concept_name_quoted} means.",
-            f"List translations of {concept_name_quoted} in many languages.",
-            f"{concept_name_quoted} is defined as: {definition}",
+            # Definitional (40%)
+            f"Describe {subst}.",
+            f"Explain what {subst} means.",
+            # Instance-eliciting (60%) - critical for OOD generalization
+            f"Give me 3 examples of {subst}.",
+            f"Show instances of {subst} in practice.",
+            f"Write a brief example demonstrating {subst}.",
+            f"Provide concrete examples of {subst}.",
         ]
         rel_prompts.append(random.choice(variations))
 
@@ -374,8 +409,8 @@ def create_sumo_training_dataset(
     # MELD NEGATIVE EXAMPLES (use directly - these are expert-curated)
     # ========================================================================
     if meld_negative_examples:
-        # Use up to 30% of negatives from meld examples
-        max_meld_negatives = max(2, int(n_negatives * 0.3))
+        # Use more meld examples for polar MELDs since generated prompts don't distinguish poles
+        max_meld_negatives = max(2, int(n_negatives * meld_negative_ratio))
         for example in meld_negative_examples[:max_meld_negatives]:
             neg_prompts.append(example)
             n_meld_negatives_used += 1
@@ -411,16 +446,23 @@ def create_sumo_training_dataset(
     # its opposites. Teaches lens to distinguish "thinking about X" from
     # "contrasting with X" - the yin in the yang.
     # ------------------------------------------------------------------------
+    def get_neg_example_or_concept():
+        """Get a MELD negative example if available, otherwise use concept name."""
+        if has_meld_examples and meld_negative_examples:
+            return f"'{random.choice(meld_negative_examples)}'"
+        return concept_name_quoted
+
     if n_yin_yang > 0:
-        yin_yang_templates = [
-            f"List the things that are least similar to {concept_name_quoted}.",
-            f"What is the opposite of {concept_name_quoted}?",
-            f"What is the opposite of {concept_name_quoted} in many languages?",
-            f"Name concepts that contrast with {concept_name_quoted}.",
-            f"What would be an antonym or opposite category to {concept_name_quoted}?",
-            f"Describe the conceptual inverse of {concept_name_quoted}.",
-        ]
         for _ in range(n_yin_yang):
+            subst = get_neg_example_or_concept()
+            yin_yang_templates = [
+                f"List the things that are least similar to {subst}.",
+                f"What is the opposite of {subst}?",
+                f"What is the opposite of {subst} in many languages?",
+                f"Name concepts that contrast with {subst}.",
+                f"What would be an antonym or opposite category to {subst}?",
+                f"Describe the conceptual inverse of {subst}.",
+            ]
             neg_prompts.append(random.choice(yin_yang_templates))
 
     # ------------------------------------------------------------------------
