@@ -16,6 +16,8 @@ numpy = ">=1.24.0"
 scipy = ">=1.10.0"
 tqdm = ">=4.65.0"
 gradio = ">=3.35.0"
+# CVE-2026-111497: Gradio imports the native Brotli decoder.
+brotli = ">=1.2.1"
 pytorch-lightning = ">=2.0.0"
 tensorboard = ">=2.10.0"
 wandb = ">=0.15.0"
